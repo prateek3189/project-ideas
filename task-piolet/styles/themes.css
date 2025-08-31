@@ -1,0 +1,241 @@
+/* Theme Styles */
+
+/* Light Theme (Default) */
+:root {
+  color-scheme: light;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Override specific colors for better dark mode contrast */
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-muted: #334155;
+  --color-border: #475569;
+
+  /* Adjust shadows for dark theme */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  color-scheme: dark;
+
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-accent: #00ff00;
+  --color-success: #00ff00;
+  --color-warning: #ffff00;
+  --color-danger: #ff0000;
+  --color-muted: #333333;
+  --color-border: #ffffff;
+
+  /* Remove shadows in high contrast */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+}
+
+/* High contrast specific adjustments */
+[data-theme="high-contrast"] .task-card,
+[data-theme="high-contrast"] .card,
+[data-theme="high-contrast"] .analytics-tile {
+  border-width: 2px;
+  border-color: var(--color-border);
+}
+
+[data-theme="high-contrast"] .badge,
+[data-theme="high-contrast"] .chip,
+[data-theme="high-contrast"] .status-pill {
+  border: 2px solid currentColor;
+  background-color: transparent;
+}
+
+/* Automatic theme detection */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #0f172a;
+    --color-surface: #1e293b;
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #cbd5e1;
+    --color-muted: #334155;
+    --color-border: #475569;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+      0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+      0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+
+    color-scheme: dark;
+  }
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-muted);
+  color: var(--color-text-primary);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle__icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Theme-specific icon visibility */
+.theme-toggle__icon--light {
+  display: block;
+}
+
+.theme-toggle__icon--dark {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--dark {
+  display: block;
+}
+
+/* Dark theme specific component adjustments */
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-muted) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    var(--color-muted) 75%
+  );
+  background-size: 200% 100%;
+}
+
+[data-theme="dark"] tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+[data-theme="dark"] .task-card:hover {
+  background-color: var(--color-muted);
+}
+
+[data-theme="dark"] .filter-option:hover {
+  background-color: var(--color-border);
+}
+
+/* Print theme overrides */
+@media print {
+  * {
+    color-scheme: light !important;
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+  }
+
+  .task-card,
+  .card,
+  .analytics-tile {
+    border: 1px solid black !important;
+    background-color: white !important;
+  }
+
+  .badge,
+  .chip,
+  .status-pill {
+    border: 1px solid black !important;
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .app-header__brand,
+  .section-header h1,
+  .task-card__title {
+    color: black !important;
+  }
+}
+
+/* Reduced motion theme */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+
+  .skeleton {
+    animation: none;
+    background: var(--color-muted);
+  }
+
+  .task-card,
+  .card {
+    transition: none;
+  }
+
+  .task-card:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Force colors theme (Windows High Contrast Mode) */
+@media (forced-colors: active) {
+  .task-card,
+  .card,
+  .analytics-tile {
+    border: 1px solid ButtonText;
+    background-color: ButtonFace;
+  }
+
+  .badge,
+  .chip,
+  .status-pill {
+    border: 1px solid ButtonText;
+    background-color: ButtonFace;
+    color: ButtonText;
+  }
+
+  .btn-primary {
+    background-color: ButtonText;
+    color: ButtonFace;
+    border-color: ButtonText;
+  }
+
+  .filter-option--active {
+    background-color: Highlight;
+    color: HighlightText;
+    border-color: Highlight;
+  }
+}

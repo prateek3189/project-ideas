@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics — Smart Task Manager</title>
+    <meta
+      name="description"
+      content="Track your productivity and task completion patterns with smart analytics."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>"
+    />
+  </head>
+  <body data-theme="">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Layout -->
+    <div class="app app--with-sidebar">
+      <!-- Header -->
+      <header class="app-header" role="banner">
+        <div class="app-header__content">
+          <a href="index.html" class="app-header__brand">
+            <div class="app-header__logo" aria-hidden="true">✓</div>
+            Smart Task Manager
+          </a>
+
+          <nav
+            class="app-header__nav"
+            role="navigation"
+            aria-label="Header navigation"
+          >
+            <div class="app-header__search">
+              <span class="app-header__search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+                disabled
+              />
+            </div>
+
+            <div class="app-header__actions">
+              <span class="app-header__date" aria-label="Today's date">
+                <script>
+                  document.write(
+                    new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  );
+                </script>
+                <noscript>Today</noscript>
+              </span>
+              <button
+                class="theme-toggle"
+                aria-label="Toggle theme"
+                title="Toggle between light and dark themes"
+              >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--light"
+                  aria-hidden="true"
+                  >☀️</span
+                >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--dark"
+                  aria-hidden="true"
+                  >🌙</span
+                >
+              </button>
+              <a
+                href="javascript:window.print()"
+                class="btn btn-ghost btn-sm"
+                aria-label="Print page"
+                >🖨️ Print</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- App Body -->
+      <div class="app__body">
+        <!-- Sidebar -->
+        <aside
+          class="app-sidebar"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Main</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="index.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >🏠</span
+                  >
+                  Dashboard
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="tasks.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📋</span
+                  >
+                  All Tasks
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="task-form.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >➕</span
+                  >
+                  Add Task
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a
+                  href="analytics.html"
+                  class="app-sidebar__nav-link app-sidebar__nav-link--active"
+                >
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📊</span
+                  >
+                  Analytics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Settings</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="settings.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >⚙️</span
+                  >
+                  Settings
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="about.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >ℹ️</span
+                  >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Profile -->
+          <div class="app-sidebar__profile">
+            <div class="app-sidebar__profile-info">
+              <div class="app-sidebar__avatar" aria-hidden="true">U</div>
+              <div class="app-sidebar__profile-name">Demo User</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content" role="main">
+          <div class="app-content">
+            <!-- Page Header -->
+            <header class="section-header">
+              <div class="section-header__content">
+                <div class="section-header__info">
+                  <h1>Analytics</h1>
+                  <p class="section-header__subtitle">
+                    Insights into your productivity and task patterns
+                  </p>
+                </div>
+                <div class="section-header__actions">
+                  <select class="border rounded px-3 py-2 bg-surface" disabled>
+                    <option>Last 7 days</option>
+                    <option>Last 30 days</option>
+                    <option>Last 3 months</option>
+                  </select>
+                </div>
+              </div>
+            </header>
+
+            <!-- Analytics Layout -->
+            <div class="analytics-layout">
+              <!-- Overview Metrics -->
+              <section
+                class="analytics-overview"
+                aria-labelledby="overview-title"
+              >
+                <h2 class="sr-only" id="overview-title">Overview Metrics</h2>
+
+                <div class="analytics-grid">
+                  <!-- Total Tasks -->
+                  <div class="analytics-tile">
+                    <div class="analytics-tile__header">
+                      <h3 class="analytics-tile__title">Total Tasks</h3>
+                      <span class="analytics-tile__icon" aria-hidden="true"
+                        >📋</span
+                      >
+                    </div>
+                    <div class="analytics-tile__value">42</div>
+                    <p class="analytics-tile__description">
+                      All time task count
+                    </p>
+                  </div>
+
+                  <!-- Completed This Week -->
+                  <div class="analytics-tile">
+                    <div class="analytics-tile__header">
+                      <h3 class="analytics-tile__title">Completed This Week</h3>
+                      <span class="analytics-tile__icon" aria-hidden="true"
+                        >✅</span
+                      >
+                    </div>
+                    <div class="analytics-tile__value">8</div>
+                    <p class="analytics-tile__description">
+                      +60% from last week
+                    </p>
+                  </div>
+
+                  <!-- Average Priority Score -->
+                  <div class="analytics-tile">
+                    <div class="analytics-tile__header">
+                      <h3 class="analytics-tile__title">Avg Priority Score</h3>
+                      <span class="analytics-tile__icon" aria-hidden="true"
+                        >⚡</span
+                      >
+                    </div>
+                    <div class="analytics-tile__value">67</div>
+                    <p class="analytics-tile__description">
+                      Smart priority average
+                    </p>
+                  </div>
+
+                  <!-- Overdue Tasks -->
+                  <div class="analytics-tile">
+                    <div class="analytics-tile__header">
+                      <h3 class="analytics-tile__title">Overdue Tasks</h3>
+                      <span class="analytics-tile__icon" aria-hidden="true"
+                        >⚠️</span
+                      >
+                    </div>
+                    <div class="analytics-tile__value">3</div>
+                    <p class="analytics-tile__description">
+                      Need immediate attention
+                    </p>
+                  </div>
+
+                  <!-- Completion Rate -->
+                  <div class="analytics-tile">
+                    <div class="analytics-tile__header">
+                      <h3 class="analytics-tile__title">Completion Rate</h3>
+                      <span class="analytics-tile__icon" aria-hidden="true"
+                        >📈</span
+                      >
+                    </div>
+                    <div class="analytics-tile__value">78%</div>
+                    <p class="analytics-tile__description">
+                      Tasks finished on time
+                    </p>
+                  </div>
+
+                  <!-- Energy Efficiency -->
+                  <div class="analytics-tile">
+                    <div class="analytics-tile__header">
+                      <h3 class="analytics-tile__title">Energy Efficiency</h3>
+                      <span class="analytics-tile__icon" aria-hidden="true"
+                        >🔋</span
+                      >
+                    </div>
+                    <div class="analytics-tile__value">85%</div>
+                    <p class="analytics-tile__description">
+                      Energy-task matching score
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Detailed Analytics -->
+              <div class="analytics-details">
+                <!-- Left Column - Status Breakdown -->
+                <section class="analytics-details__main">
+                  <!-- Status Distribution -->
+                  <div class="card mb-6">
+                    <div class="card__header">
+                      <h2 class="card__title">Status Distribution</h2>
+                      <p class="card__subtitle">
+                        Current task status breakdown
+                      </p>
+                    </div>
+                    <div class="card__content">
+                      <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                          <span class="status-pill status-pill--open"
+                            >Open</span
+                          >
+                          <span class="text-secondary">Ready to start</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-gray-400 rounded-full"
+                              style="width: 55%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">11</span>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                          <span class="status-pill status-pill--progress"
+                            >In Progress</span
+                          >
+                          <span class="text-secondary">Currently working</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-accent rounded-full"
+                              style="width: 25%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">5</span>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                          <span class="status-pill status-pill--blocked"
+                            >Blocked</span
+                          >
+                          <span class="text-secondary">Waiting on others</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-warning rounded-full"
+                              style="width: 15%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">3</span>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                          <span class="status-pill status-pill--done"
+                            >Done</span
+                          >
+                          <span class="text-secondary">Completed</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-success rounded-full"
+                              style="width: 85%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">23</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Effort Distribution -->
+                  <div class="card mb-6">
+                    <div class="card__header">
+                      <h2 class="card__title">Effort Distribution</h2>
+                      <p class="card__subtitle">
+                        How you spend your task effort
+                      </p>
+                    </div>
+                    <div class="card__content">
+                      <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                          <span class="chip chip--effort-s">Small</span>
+                          <span class="text-secondary"
+                            >Quick wins (15-30 min)</span
+                          >
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-success rounded-full"
+                              style="width: 40%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">18</span>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                          <span class="chip chip--effort-m">Medium</span>
+                          <span class="text-secondary"
+                            >Focused work (1-3 hours)</span
+                          >
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-warning rounded-full"
+                              style="width: 50%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">16</span>
+                        </div>
+                      </div>
+
+                      <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                          <span class="chip chip--effort-l">Large</span>
+                          <span class="text-secondary"
+                            >Deep work (3+ hours)</span
+                          >
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <div
+                            class="w-24 h-2 bg-muted rounded-full overflow-hidden"
+                          >
+                            <div
+                              class="h-full bg-danger rounded-full"
+                              style="width: 20%"
+                            ></div>
+                          </div>
+                          <span class="font-semibold text-sm">8</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Upcoming Deadlines -->
+                  <div class="card">
+                    <div class="card__header">
+                      <h2 class="card__title">Upcoming Deadlines</h2>
+                      <p class="card__subtitle">Tasks due in the next 7 days</p>
+                    </div>
+                    <div class="card__content">
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">Today</span>
+                        <span class="badge badge--today">2 tasks</span>
+                      </div>
+
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">Tomorrow</span>
+                        <span class="badge badge--soon">1 task</span>
+                      </div>
+
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">This Week</span>
+                        <span class="badge badge--soon">4 tasks</span>
+                      </div>
+
+                      <div class="flex justify-between items-center">
+                        <span class="text-secondary">Next Week</span>
+                        <span class="badge badge--later">6 tasks</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Right Column - Insights -->
+                <aside class="analytics-details__sidebar">
+                  <!-- Productivity Trends -->
+                  <div class="card mb-6">
+                    <div class="card__header">
+                      <h2 class="card__title">Productivity Insights</h2>
+                    </div>
+                    <div class="card__content">
+                      <div class="mb-4">
+                        <h3 class="font-semibold text-sm mb-2">
+                          Best Performance Days
+                        </h3>
+                        <p class="text-secondary text-sm">
+                          Tuesday & Wednesday
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h3 class="font-semibold text-sm mb-2">
+                          Optimal Energy Time
+                        </h3>
+                        <p class="text-secondary text-sm">9 AM - 11 AM</p>
+                      </div>
+
+                      <div class="mb-4">
+                        <h3 class="font-semibold text-sm mb-2">
+                          Most Productive Mood
+                        </h3>
+                        <p class="text-secondary text-sm">Focused & Alert</p>
+                      </div>
+
+                      <div>
+                        <h3 class="font-semibold text-sm mb-2">
+                          Completion Pattern
+                        </h3>
+                        <p class="text-secondary text-sm">
+                          Small tasks in morning, large tasks afternoon
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Smart Priority Legend -->
+                  <div class="card mb-6">
+                    <div class="card__header">
+                      <h2 class="card__title">Smart Priority Legend</h2>
+                    </div>
+                    <div class="card__content">
+                      <div class="mb-4">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-4 h-2 bg-danger rounded-full"></div>
+                          <span class="text-sm font-medium">90-100</span>
+                        </div>
+                        <p class="text-secondary text-sm">
+                          Critical: Overdue or due today
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-4 h-2 bg-warning rounded-full"></div>
+                          <span class="text-sm font-medium">70-89</span>
+                        </div>
+                        <p class="text-secondary text-sm">
+                          High: Due soon, good energy match
+                        </p>
+                      </div>
+
+                      <div class="mb-4">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-4 h-2 bg-accent rounded-full"></div>
+                          <span class="text-sm font-medium">50-69</span>
+                        </div>
+                        <p class="text-secondary text-sm">
+                          Medium: Moderate urgency
+                        </p>
+                      </div>
+
+                      <div>
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-4 h-2 bg-success rounded-full"></div>
+                          <span class="text-sm font-medium">10-49</span>
+                        </div>
+                        <p class="text-secondary text-sm">
+                          Low: Future tasks, poor energy fit
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Weekly Goals -->
+                  <div class="card">
+                    <div class="card__header">
+                      <h2 class="card__title">Weekly Goals</h2>
+                    </div>
+                    <div class="card__content">
+                      <div class="mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                          <span class="text-sm">Complete 10 tasks</span>
+                          <span class="text-sm font-semibold text-success"
+                            >8/10</span
+                          >
+                        </div>
+                        <div
+                          class="w-full h-2 bg-muted rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-success rounded-full"
+                            style="width: 80%"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div class="mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                          <span class="text-sm">Zero overdue tasks</span>
+                          <span class="text-sm font-semibold text-danger"
+                            >3 left</span
+                          >
+                        </div>
+                        <div
+                          class="w-full h-2 bg-muted rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-danger rounded-full"
+                            style="width: 25%"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="flex justify-between items-center mb-2">
+                          <span class="text-sm">Maintain 80% energy match</span>
+                          <span class="text-sm font-semibold text-success"
+                            >85%</span
+                          >
+                        </div>
+                        <div
+                          class="w-full h-2 bg-muted rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-success rounded-full"
+                            style="width: 85%"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+
+              <!-- Info Banner -->
+              <div class="toast toast--success">
+                <span class="toast__icon">ℹ️</span>
+                <div class="toast__content">
+                  <div class="toast__title">Analytics Preview</div>
+                  <p class="toast__message">
+                    This is a static snapshot for V1. AI insights and real-time
+                    analytics will be available in future versions with backend
+                    integration.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page__footer" data-print-date="">
+            <p>&copy; 2024 Smart Task Manager. Version 1.0 - Static UI Demo</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Theme toggle script -->
+    <script>
+      // Set print date
+      document
+        .querySelector(".page__footer")
+        .setAttribute("data-print-date", new Date().toLocaleDateString());
+
+      // Theme toggle
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const body = document.body;
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "" : "dark";
+          body.setAttribute("data-theme", newTheme);
+
+          if (newTheme) {
+            localStorage.setItem("theme", newTheme);
+          } else {
+            localStorage.removeItem("theme");
+          }
+        });
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.setAttribute("data-theme", savedTheme);
+        }
+      }
+    </script>
+  </body>
+</html>

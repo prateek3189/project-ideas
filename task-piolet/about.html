@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Smart Task Manager</title>
+    <meta
+      name="description"
+      content="Learn about Smart Task Manager's mission, features, and future roadmap for AI-powered task prioritization."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>"
+    />
+  </head>
+  <body data-theme="">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Layout -->
+    <div class="app app--with-sidebar">
+      <!-- Header -->
+      <header class="app-header" role="banner">
+        <div class="app-header__content">
+          <a href="index.html" class="app-header__brand">
+            <div class="app-header__logo" aria-hidden="true">✓</div>
+            Smart Task Manager
+          </a>
+
+          <nav
+            class="app-header__nav"
+            role="navigation"
+            aria-label="Header navigation"
+          >
+            <div class="app-header__search">
+              <span class="app-header__search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+                disabled
+              />
+            </div>
+
+            <div class="app-header__actions">
+              <span class="app-header__date" aria-label="Today's date">
+                <script>
+                  document.write(
+                    new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  );
+                </script>
+                <noscript>Today</noscript>
+              </span>
+              <button
+                class="theme-toggle"
+                aria-label="Toggle theme"
+                title="Toggle between light and dark themes"
+              >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--light"
+                  aria-hidden="true"
+                  >☀️</span
+                >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--dark"
+                  aria-hidden="true"
+                  >🌙</span
+                >
+              </button>
+              <a
+                href="javascript:window.print()"
+                class="btn btn-ghost btn-sm"
+                aria-label="Print page"
+                >🖨️ Print</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- App Body -->
+      <div class="app__body">
+        <!-- Sidebar -->
+        <aside
+          class="app-sidebar"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Main</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="index.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >🏠</span
+                  >
+                  Dashboard
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="tasks.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📋</span
+                  >
+                  All Tasks
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="task-form.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >➕</span
+                  >
+                  Add Task
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="analytics.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📊</span
+                  >
+                  Analytics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Settings</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="settings.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >⚙️</span
+                  >
+                  Settings
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a
+                  href="about.html"
+                  class="app-sidebar__nav-link app-sidebar__nav-link--active"
+                >
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >ℹ️</span
+                  >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Profile -->
+          <div class="app-sidebar__profile">
+            <div class="app-sidebar__profile-info">
+              <div class="app-sidebar__avatar" aria-hidden="true">U</div>
+              <div class="app-sidebar__profile-name">Demo User</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content" role="main">
+          <div class="app-content">
+            <!-- Page Header -->
+            <header class="section-header">
+              <div class="section-header__content">
+                <div class="section-header__info">
+                  <h1>About Smart Task Manager</h1>
+                  <p class="section-header__subtitle">
+                    Intelligent task prioritization powered by your mood and
+                    energy
+                  </p>
+                </div>
+              </div>
+            </header>
+
+            <!-- About Layout -->
+            <div class="about-layout">
+              <!-- Mission -->
+              <section class="about-section">
+                <h2 class="about-section__title">Our Mission</h2>
+                <div class="about-section__content">
+                  <p>
+                    Smart Task Manager revolutionizes productivity by
+                    understanding that the best task to work on isn't just the
+                    most urgent one—it's the task that matches your current
+                    mood, energy level, and available time.
+                  </p>
+
+                  <p>
+                    We believe that productivity isn't about forcing yourself to
+                    work harder, but about working smarter by aligning your
+                    tasks with your natural rhythms and mental state.
+                  </p>
+                </div>
+              </section>
+
+              <!-- What is Smart Priority -->
+              <section class="about-section">
+                <h2 class="about-section__title">What is Smart Priority?</h2>
+                <div class="about-section__content">
+                  <p>
+                    Smart Priority is our AI-powered task ranking system that
+                    considers multiple factors beyond traditional deadline-based
+                    prioritization:
+                  </p>
+
+                  <ul>
+                    <li>
+                      <strong>Deadline Urgency</strong> - How soon the task is
+                      due
+                    </li>
+                    <li>
+                      <strong>Task Effort Level</strong> - Whether it's a quick
+                      win or deep work
+                    </li>
+                    <li>
+                      <strong>Your Current Mood</strong> - Calm, focused,
+                      creative, or stressed
+                    </li>
+                    <li>
+                      <strong>Your Energy Level</strong> - Low, medium, or high
+                      mental/physical energy
+                    </li>
+                    <li>
+                      <strong>Historical Patterns</strong> - When you're most
+                      productive with similar tasks
+                    </li>
+                  </ul>
+
+                  <p>
+                    The result is a priority score (0-100) that helps you choose
+                    the right task for the right moment, maximizing both
+                    productivity and well-being.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Current Version -->
+              <section class="about-section">
+                <h2 class="about-section__title">
+                  Version 1.0 - Static UI Demo
+                </h2>
+                <div class="about-section__content">
+                  <p>
+                    This version showcases the complete user interface and user
+                    experience design for Smart Task Manager. It includes:
+                  </p>
+
+                  <ul>
+                    <li>
+                      ✅ Complete responsive design with light/dark themes
+                    </li>
+                    <li>✅ Accessible, semantic HTML structure</li>
+                    <li>
+                      ✅ Task management workflow (create, view, filter,
+                      prioritize)
+                    </li>
+                    <li>✅ Analytics and insights visualization</li>
+                    <li>✅ Settings and customization options</li>
+                    <li>✅ Print-friendly layouts</li>
+                  </ul>
+
+                  <p>
+                    <strong>Note:</strong> All AI features, data persistence,
+                    and dynamic functionality are represented as static
+                    placeholders in this version. The UI is fully ready for
+                    integration with backend systems and machine learning
+                    models.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Future Roadmap -->
+              <section class="about-section">
+                <h2 class="about-section__title">Future Enhancements</h2>
+                <div class="about-section__content">
+                  <h3>Version 2.0 - Dynamic Functionality</h3>
+                  <ul>
+                    <li>Real task creation, editing, and persistence</li>
+                    <li>Dynamic filtering and sorting</li>
+                    <li>Local storage for offline capability</li>
+                    <li>Keyboard shortcuts and quick actions</li>
+                    <li>Export/import functionality</li>
+                  </ul>
+
+                  <h3>Version 3.0 - Smart AI Integration</h3>
+                  <ul>
+                    <li>AI-powered priority scoring algorithm</li>
+                    <li>Machine learning from user behavior</li>
+                    <li>Intelligent task suggestions and scheduling</li>
+                    <li>Pattern recognition for optimal work times</li>
+                    <li>Predictive deadline management</li>
+                  </ul>
+
+                  <h3>Version 4.0 - Advanced Features</h3>
+                  <ul>
+                    <li>Calendar integration (Google, Outlook, Apple)</li>
+                    <li>Team collaboration and shared tasks</li>
+                    <li>Advanced analytics and productivity insights</li>
+                    <li>Mobile app with sync capabilities</li>
+                    <li>Third-party integrations (Slack, Notion, etc.)</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- Technical Details -->
+              <section class="about-section">
+                <h2 class="about-section__title">Technical Implementation</h2>
+                <div class="about-section__content">
+                  <h3>Current Stack (V1)</h3>
+                  <ul>
+                    <li>
+                      <strong>HTML5</strong> - Semantic, accessible markup
+                    </li>
+                    <li>
+                      <strong>CSS3</strong> - Modern layout with Grid and
+                      Flexbox
+                    </li>
+                    <li>
+                      <strong>Vanilla JavaScript</strong> - Minimal scripting
+                      for theme toggle and form interactions
+                    </li>
+                    <li>
+                      <strong>Progressive Enhancement</strong> - Works without
+                      JavaScript
+                    </li>
+                  </ul>
+
+                  <h3>Planned Stack (V2+)</h3>
+                  <ul>
+                    <li>
+                      <strong>Frontend</strong> - React, TypeScript, and modern
+                      tooling
+                    </li>
+                    <li>
+                      <strong>Backend</strong> - Node.js with Express or Python
+                      with FastAPI
+                    </li>
+                    <li>
+                      <strong>Database</strong> - PostgreSQL for relational
+                      data, Redis for caching
+                    </li>
+                    <li>
+                      <strong>AI/ML</strong> - TensorFlow.js or scikit-learn for
+                      priority algorithms
+                    </li>
+                    <li>
+                      <strong>Deployment</strong> - Docker containers with cloud
+                      hosting
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- Accessibility -->
+              <section class="about-section">
+                <h2 class="about-section__title">Accessibility Commitment</h2>
+                <div class="about-section__content">
+                  <p>
+                    Smart Task Manager is designed to be accessible to all
+                    users, regardless of their abilities or the technology they
+                    use:
+                  </p>
+
+                  <ul>
+                    <li>
+                      <strong>WCAG 2.1 AA Compliance</strong> - Meeting web
+                      accessibility standards
+                    </li>
+                    <li>
+                      <strong>Keyboard Navigation</strong> - Full functionality
+                      without a mouse
+                    </li>
+                    <li>
+                      <strong>Screen Reader Support</strong> - Semantic HTML and
+                      ARIA labels
+                    </li>
+                    <li>
+                      <strong>High Contrast Mode</strong> - For users with
+                      visual impairments
+                    </li>
+                    <li>
+                      <strong>Reduced Motion</strong> - Respects user
+                      preferences for motion
+                    </li>
+                    <li>
+                      <strong>Print Accessibility</strong> - Clean, readable
+                      printed outputs
+                    </li>
+                  </ul>
+
+                  <p>
+                    We continuously test with assistive technologies and gather
+                    feedback from users with disabilities to improve
+                    accessibility.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Open Source -->
+              <section class="about-section">
+                <h2 class="about-section__title">Open Source & Community</h2>
+                <div class="about-section__content">
+                  <p>
+                    Smart Task Manager is committed to transparency and
+                    community involvement:
+                  </p>
+
+                  <ul>
+                    <li>
+                      <strong>Open Source</strong> - Core codebase available on
+                      GitHub
+                    </li>
+                    <li>
+                      <strong>Community Driven</strong> - Feature requests and
+                      feedback welcomed
+                    </li>
+                    <li>
+                      <strong>Privacy First</strong> - No tracking, data stays
+                      with you
+                    </li>
+                    <li>
+                      <strong>Extensible</strong> - Plugin architecture for
+                      custom features
+                    </li>
+                  </ul>
+
+                  <p>
+                    We believe productivity tools should empower users, not
+                    exploit them. Your data, your tasks, your privacy.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Contact -->
+              <section class="about-section">
+                <h2 class="about-section__title">Get Involved</h2>
+                <div class="about-section__content">
+                  <p>
+                    Want to contribute, provide feedback, or stay updated on our
+                    progress?
+                  </p>
+
+                  <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="card card--compact">
+                      <h3 class="font-semibold mb-2">Developers</h3>
+                      <p class="text-secondary text-sm mb-3">
+                        Contribute code, report bugs, or suggest features
+                      </p>
+                      <a href="#" class="btn btn-secondary btn-sm"
+                        >GitHub Repository</a
+                      >
+                    </div>
+
+                    <div class="card card--compact">
+                      <h3 class="font-semibold mb-2">Users</h3>
+                      <p class="text-secondary text-sm mb-3">
+                        Share feedback and feature requests
+                      </p>
+                      <a href="#" class="btn btn-secondary btn-sm"
+                        >Feedback Form</a
+                      >
+                    </div>
+
+                    <div class="card card--compact">
+                      <h3 class="font-semibold mb-2">Researchers</h3>
+                      <p class="text-secondary text-sm mb-3">
+                        Collaborate on productivity and AI research
+                      </p>
+                      <a href="#" class="btn btn-secondary btn-sm"
+                        >Research Partnership</a
+                      >
+                    </div>
+
+                    <div class="card card--compact">
+                      <h3 class="font-semibold mb-2">Community</h3>
+                      <p class="text-secondary text-sm mb-3">
+                        Join discussions and get support
+                      </p>
+                      <a href="#" class="btn btn-secondary btn-sm"
+                        >Community Forum</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Version Info -->
+              <section class="about-section">
+                <div class="card">
+                  <div class="card__content">
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                      <div>
+                        <div class="text-2xl font-bold text-accent mb-2">
+                          v1.0.0
+                        </div>
+                        <div class="text-sm text-secondary">Static UI Demo</div>
+                      </div>
+
+                      <div>
+                        <div class="text-2xl font-bold text-accent mb-2">
+                          2024
+                        </div>
+                        <div class="text-sm text-secondary">
+                          Initial Release
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class="text-2xl font-bold text-accent mb-2">
+                          100%
+                        </div>
+                        <div class="text-sm text-secondary">Accessible</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page__footer" data-print-date="">
+            <p>
+              &copy; 2024 Smart Task Manager. Version 1.0 - Static UI Demo.
+              Built with ❤️ for productivity.
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Theme toggle script -->
+    <script>
+      // Set print date
+      document
+        .querySelector(".page__footer")
+        .setAttribute("data-print-date", new Date().toLocaleDateString());
+
+      // Theme toggle
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const body = document.body;
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "" : "dark";
+          body.setAttribute("data-theme", newTheme);
+
+          if (newTheme) {
+            localStorage.setItem("theme", newTheme);
+          } else {
+            localStorage.removeItem("theme");
+          }
+        });
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.setAttribute("data-theme", savedTheme);
+        }
+      }
+    </script>
+  </body>
+</html>

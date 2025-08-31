@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings — Smart Task Manager</title>
+    <meta
+      name="description"
+      content="Customize your Smart Task Manager experience with appearance and preference settings."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>"
+    />
+  </head>
+  <body data-theme="">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Layout -->
+    <div class="app app--with-sidebar">
+      <!-- Header -->
+      <header class="app-header" role="banner">
+        <div class="app-header__content">
+          <a href="index.html" class="app-header__brand">
+            <div class="app-header__logo" aria-hidden="true">✓</div>
+            Smart Task Manager
+          </a>
+
+          <nav
+            class="app-header__nav"
+            role="navigation"
+            aria-label="Header navigation"
+          >
+            <div class="app-header__search">
+              <span class="app-header__search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+                disabled
+              />
+            </div>
+
+            <div class="app-header__actions">
+              <span class="app-header__date" aria-label="Today's date">
+                <script>
+                  document.write(
+                    new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  );
+                </script>
+                <noscript>Today</noscript>
+              </span>
+              <button
+                class="theme-toggle"
+                aria-label="Toggle theme"
+                title="Toggle between light and dark themes"
+              >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--light"
+                  aria-hidden="true"
+                  >☀️</span
+                >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--dark"
+                  aria-hidden="true"
+                  >🌙</span
+                >
+              </button>
+              <a
+                href="javascript:window.print()"
+                class="btn btn-ghost btn-sm"
+                aria-label="Print page"
+                >🖨️ Print</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- App Body -->
+      <div class="app__body">
+        <!-- Sidebar -->
+        <aside
+          class="app-sidebar"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Main</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="index.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >🏠</span
+                  >
+                  Dashboard
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="tasks.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📋</span
+                  >
+                  All Tasks
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="task-form.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >➕</span
+                  >
+                  Add Task
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="analytics.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📊</span
+                  >
+                  Analytics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Settings</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a
+                  href="settings.html"
+                  class="app-sidebar__nav-link app-sidebar__nav-link--active"
+                >
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >⚙️</span
+                  >
+                  Settings
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="about.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >ℹ️</span
+                  >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Profile -->
+          <div class="app-sidebar__profile">
+            <div class="app-sidebar__profile-info">
+              <div class="app-sidebar__avatar" aria-hidden="true">U</div>
+              <div class="app-sidebar__profile-name">Demo User</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content" role="main">
+          <div class="app-content">
+            <!-- Page Header -->
+            <header class="section-header">
+              <div class="section-header__content">
+                <div class="section-header__info">
+                  <h1>Settings</h1>
+                  <p class="section-header__subtitle">
+                    Customize your task management experience
+                  </p>
+                </div>
+              </div>
+            </header>
+
+            <!-- Settings Layout -->
+            <div class="settings-layout">
+              <!-- Appearance Settings -->
+              <section class="settings-section">
+                <div class="settings-section__header">
+                  <h2 class="settings-section__title">Appearance</h2>
+                  <p class="settings-section__description">
+                    Customize the look and feel of your interface
+                  </p>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Theme</div>
+                    <p class="settings-item__description">
+                      Choose between light, dark, or high contrast themes
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <select
+                      id="theme-select"
+                      class="border rounded px-3 py-2 bg-surface"
+                    >
+                      <option value="">Auto (System)</option>
+                      <option value="light">Light</option>
+                      <option value="dark">Dark</option>
+                      <option value="high-contrast">High Contrast</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Density</div>
+                    <p class="settings-item__description">
+                      Adjust spacing and size of interface elements
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle"
+                      id="density-toggle"
+                      role="switch"
+                      aria-checked="false"
+                      aria-labelledby="density-label"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                    <span class="text-sm text-secondary ml-2" id="density-label"
+                      >Compact</span
+                    >
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Animations</div>
+                    <p class="settings-item__description">
+                      Enable or disable interface animations and transitions
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle toggle--active"
+                      id="animations-toggle"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="animations-label"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Smart Priority Settings -->
+              <section class="settings-section">
+                <div class="settings-section__header">
+                  <h2 class="settings-section__title">Smart Priority</h2>
+                  <p class="settings-section__description">
+                    Configure how AI prioritizes your tasks
+                  </p>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Default Energy Bands</div>
+                    <p class="settings-item__description">
+                      Define what Low, Medium, and High energy means for you
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Configure
+                    </button>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Mood Preferences</div>
+                    <p class="settings-item__description">
+                      Set your preferred mood states and their characteristics
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Configure
+                    </button>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Priority Weights</div>
+                    <p class="settings-item__description">
+                      Adjust how much deadline, effort, and energy affect
+                      priority scoring
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Configure
+                    </button>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Learning Mode</div>
+                    <p class="settings-item__description">
+                      Allow AI to learn from your completion patterns and
+                      preferences
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle toggle--active"
+                      id="learning-toggle"
+                      role="switch"
+                      aria-checked="true"
+                      aria-labelledby="learning-label"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Notifications Settings -->
+              <section class="settings-section">
+                <div class="settings-section__header">
+                  <h2 class="settings-section__title">Notifications</h2>
+                  <p class="settings-section__description">
+                    Manage when and how you receive notifications
+                  </p>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Deadline Reminders</div>
+                    <p class="settings-item__description">
+                      Get notified about upcoming task deadlines
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle toggle--active"
+                      id="deadline-notifications"
+                      role="switch"
+                      aria-checked="true"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Daily Summary</div>
+                    <p class="settings-item__description">
+                      Receive a daily summary of your tasks and priorities
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle"
+                      id="daily-summary"
+                      role="switch"
+                      aria-checked="false"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">
+                      Energy State Reminders
+                    </div>
+                    <p class="settings-item__description">
+                      Get reminded to update your mood and energy levels
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle toggle--active"
+                      id="energy-reminders"
+                      role="switch"
+                      aria-checked="true"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Smart Suggestions</div>
+                    <p class="settings-item__description">
+                      Receive AI-powered suggestions for task scheduling and
+                      optimization
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <div
+                      class="toggle"
+                      id="smart-suggestions"
+                      role="switch"
+                      aria-checked="false"
+                      tabindex="0"
+                    >
+                      <div class="toggle__thumb"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Data & Privacy -->
+              <section class="settings-section">
+                <div class="settings-section__header">
+                  <h2 class="settings-section__title">Data & Privacy</h2>
+                  <p class="settings-section__description">
+                    Control your data and privacy settings
+                  </p>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Export Data</div>
+                    <p class="settings-item__description">
+                      Download all your tasks and analytics data
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Export
+                    </button>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Clear Analytics Data</div>
+                    <p class="settings-item__description">
+                      Reset all analytics and learning data while keeping tasks
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Clear
+                    </button>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Delete All Data</div>
+                    <p class="settings-item__description">
+                      Permanently delete all tasks, settings, and data
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button
+                      class="btn btn-secondary btn-sm text-danger"
+                      disabled
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Keyboard Shortcuts -->
+              <section class="settings-section">
+                <div class="settings-section__header">
+                  <h2 class="settings-section__title">Keyboard Shortcuts</h2>
+                  <p class="settings-section__description">
+                    Quick access keys for common actions
+                  </p>
+                </div>
+
+                <div class="card__content">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">Add new task</span>
+                      <code class="bg-muted px-2 py-1 rounded text-sm"
+                        >Ctrl + N</code
+                      >
+                    </div>
+
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">Search tasks</span>
+                      <code class="bg-muted px-2 py-1 rounded text-sm"
+                        >Ctrl + K</code
+                      >
+                    </div>
+
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">Toggle theme</span>
+                      <code class="bg-muted px-2 py-1 rounded text-sm"
+                        >Ctrl + Shift + T</code
+                      >
+                    </div>
+
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">Print page</span>
+                      <code class="bg-muted px-2 py-1 rounded text-sm"
+                        >Ctrl + P</code
+                      >
+                    </div>
+
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">Go to dashboard</span>
+                      <code class="bg-muted px-2 py-1 rounded text-sm"
+                        >G then D</code
+                      >
+                    </div>
+
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">Go to all tasks</span>
+                      <code class="bg-muted px-2 py-1 rounded text-sm"
+                        >G then T</code
+                      >
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- About Section -->
+              <section class="settings-section">
+                <div class="settings-section__header">
+                  <h2 class="settings-section__title">About</h2>
+                  <p class="settings-section__description">
+                    App version and system information
+                  </p>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Version</div>
+                    <p class="settings-item__description">
+                      Smart Task Manager v1.0.0 (Static UI Demo)
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Check Updates
+                    </button>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">System Requirements</div>
+                    <p class="settings-item__description">
+                      Modern web browser with CSS Grid and Flexbox support
+                    </p>
+                  </div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="settings-item__info">
+                    <div class="settings-item__label">Feedback</div>
+                    <p class="settings-item__description">
+                      Help us improve by sharing your feedback
+                    </p>
+                  </div>
+                  <div class="settings-item__control">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                      Send Feedback
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Info Banner -->
+              <div class="toast toast--warning">
+                <span class="toast__icon">⚠️</span>
+                <div class="toast__content">
+                  <div class="toast__title">Settings Preview</div>
+                  <p class="toast__message">
+                    These settings control the appearance of the static UI.
+                    Functional changes will be available with JavaScript and
+                    backend integration in future versions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page__footer" data-print-date="">
+            <p>&copy; 2024 Smart Task Manager. Version 1.0 - Static UI Demo</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Settings interaction script -->
+    <script>
+      // Set print date
+      document
+        .querySelector(".page__footer")
+        .setAttribute("data-print-date", new Date().toLocaleDateString());
+
+      // Theme toggle in header
+      const themeToggle = document.querySelector(".theme-toggle");
+      const themeSelect = document.getElementById("theme-select");
+
+      function updateTheme(theme) {
+        document.body.setAttribute("data-theme", theme);
+        if (theme) {
+          localStorage.setItem("theme", theme);
+        } else {
+          localStorage.removeItem("theme");
+        }
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "" : "dark";
+          updateTheme(newTheme);
+
+          // Update select to match
+          themeSelect.value = newTheme || "";
+        });
+      }
+
+      // Theme select dropdown
+      if (themeSelect) {
+        themeSelect.addEventListener("change", (e) => {
+          updateTheme(e.target.value);
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme") || "";
+        themeSelect.value = savedTheme;
+        updateTheme(savedTheme);
+      }
+
+      // Toggle switches
+      function setupToggle(toggleId) {
+        const toggle = document.getElementById(toggleId);
+        if (toggle) {
+          toggle.addEventListener("click", () => {
+            const isActive = toggle.classList.contains("toggle--active");
+            toggle.classList.toggle("toggle--active");
+            toggle.setAttribute("aria-checked", !isActive);
+          });
+
+          // Keyboard support
+          toggle.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggle.click();
+            }
+          });
+        }
+      }
+
+      // Setup all toggles
+      [
+        "density-toggle",
+        "animations-toggle",
+        "learning-toggle",
+        "deadline-notifications",
+        "daily-summary",
+        "energy-reminders",
+        "smart-suggestions",
+      ].forEach(setupToggle);
+
+      // Density toggle special handling
+      const densityToggle = document.getElementById("density-toggle");
+      const densityLabel = document.getElementById("density-label");
+
+      if (densityToggle && densityLabel) {
+        densityToggle.addEventListener("click", () => {
+          const isCompact = densityToggle.classList.contains("toggle--active");
+          densityLabel.textContent = isCompact ? "Comfortable" : "Compact";
+
+          // Apply compact class to body (demo only)
+          document.body.classList.toggle("compact-mode", !isCompact);
+        });
+      }
+
+      // Simple validation demo for disabled buttons
+      document.querySelectorAll("button[disabled]").forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          // Could show a toast here explaining the feature is coming soon
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,395 @@
+/* Print Styles */
+
+@media print {
+  /* Reset for print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: letter;
+  }
+
+  /* Hide elements not needed in print */
+  .app-header__search,
+  .app-header__actions,
+  .app-sidebar,
+  .section-header__actions,
+  .filter-bar,
+  .btn,
+  button,
+  .theme-toggle,
+  .toast,
+  .empty-state__actions,
+  .form-actions,
+  nav,
+  .skip-link {
+    display: none !important;
+  }
+
+  /* Reset layout for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  .app-layout {
+    display: block;
+  }
+
+  .app-main {
+    width: 100%;
+  }
+
+  .app-content {
+    padding: 0;
+    max-width: none;
+  }
+
+  /* Header adjustments */
+  .app-header {
+    position: static;
+    background: white !important;
+    border-bottom: 2px solid black !important;
+    box-shadow: none !important;
+    margin-bottom: 20pt;
+  }
+
+  .app-header__content {
+    max-width: none;
+  }
+
+  .app-header__brand {
+    color: black !important;
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  /* Page structure */
+  .page__header {
+    margin-bottom: 15pt;
+    border-bottom: 1px solid black;
+    padding-bottom: 10pt;
+  }
+
+  .section-header h1 {
+    color: black !important;
+    font-size: 16pt;
+    margin-bottom: 5pt;
+  }
+
+  .section-header__subtitle {
+    color: #333 !important;
+    font-size: 10pt;
+  }
+
+  /* Task cards for print */
+  .task-card {
+    background: white !important;
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    margin-bottom: 10pt;
+    padding: 8pt;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .task-card__title {
+    color: black !important;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+
+  .task-card__meta {
+    margin-bottom: 6pt;
+  }
+
+  .task-card__priority-bar {
+    display: none;
+  }
+
+  .task-card__notes {
+    color: #333 !important;
+    font-size: 10pt;
+    white-space: pre-wrap;
+    max-height: none;
+    overflow: visible;
+  }
+
+  /* Badges and chips for print */
+  .badge,
+  .chip,
+  .status-pill {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    font-size: 9pt;
+    padding: 1pt 3pt;
+  }
+
+  .badge--overdue {
+    background: #f0f0f0 !important;
+  }
+
+  .badge--today {
+    background: #e0e0e0 !important;
+  }
+
+  .tag {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    font-size: 9pt;
+    padding: 1pt 3pt;
+  }
+
+  /* Analytics tiles for print */
+  .analytics-tile {
+    background: white !important;
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    margin-bottom: 10pt;
+    padding: 8pt;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .analytics-tile__title {
+    color: black !important;
+    font-size: 11pt;
+    font-weight: bold;
+  }
+
+  .analytics-tile__value {
+    color: black !important;
+    font-size: 16pt;
+    font-weight: bold;
+  }
+
+  .analytics-tile__description {
+    color: #333 !important;
+    font-size: 9pt;
+  }
+
+  /* Grid layouts for print */
+  .analytics-grid {
+    display: block;
+  }
+
+  .dashboard__content {
+    display: block;
+  }
+
+  .dashboard__state {
+    margin-bottom: 15pt;
+    break-inside: avoid;
+  }
+
+  /* State panel for print */
+  .state-panel {
+    background: white !important;
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    padding: 8pt;
+  }
+
+  .state-panel__title {
+    color: black !important;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+
+  .state-control__label {
+    color: black !important;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+
+  .state-control__value {
+    color: #333 !important;
+    font-size: 9pt;
+  }
+
+  .slider {
+    display: none;
+  }
+
+  /* Form elements for print */
+  .form-layout {
+    max-width: none;
+  }
+
+  input,
+  textarea,
+  select {
+    background: white !important;
+    border: 1px solid black !important;
+    color: black !important;
+    border-radius: 0 !important;
+  }
+
+  label {
+    color: black !important;
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  .form-help {
+    color: #333 !important;
+    font-size: 9pt;
+  }
+
+  /* Table styles for print */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10pt;
+  }
+
+  th,
+  td {
+    border: 1px solid black !important;
+    padding: 4pt;
+    text-align: left;
+    font-size: 10pt;
+  }
+
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+  }
+
+  /* Typography for print */
+  h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 8pt;
+  }
+
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 6pt;
+  }
+
+  h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 4pt;
+  }
+
+  p {
+    font-size: 10pt;
+    color: black !important;
+    margin-bottom: 6pt;
+  }
+
+  /* Footer for print */
+  .page__footer {
+    border-top: 1px solid black !important;
+    padding-top: 8pt;
+    margin-top: 15pt;
+    text-align: center;
+    font-size: 9pt;
+    color: #666 !important;
+  }
+
+  .page__footer::after {
+    content: "Smart Task Manager — Printed on " attr(data-print-date);
+  }
+
+  /* Print-specific utility classes */
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Ensure links show URLs in print */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  a[href^="#"]:after,
+  a[href^="/"]:after {
+    content: "";
+  }
+
+  /* Remove hover effects in print */
+  .task-card:hover,
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Spacing adjustments for print */
+  .mt-4,
+  .my-4 {
+    margin-top: 8pt !important;
+  }
+
+  .mb-4,
+  .my-4 {
+    margin-bottom: 8pt !important;
+  }
+
+  .mt-6,
+  .my-6 {
+    margin-top: 12pt !important;
+  }
+
+  .mb-6,
+  .my-6 {
+    margin-bottom: 12pt !important;
+  }
+
+  .p-4 {
+    padding: 6pt !important;
+  }
+
+  .p-6 {
+    padding: 8pt !important;
+  }
+
+  /* Make sure important content doesn't get cut off */
+  .task-list {
+    orphans: 2;
+    widows: 2;
+  }
+
+  .analytics-grid .analytics-tile {
+    orphans: 2;
+    widows: 2;
+  }
+}

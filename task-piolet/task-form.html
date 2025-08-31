@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task — Smart Task Manager</title>
+    <meta
+      name="description"
+      content="Create a new task with smart prioritization settings."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>"
+    />
+  </head>
+  <body data-theme="">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Layout -->
+    <div class="app app--with-sidebar">
+      <!-- Header -->
+      <header class="app-header" role="banner">
+        <div class="app-header__content">
+          <a href="index.html" class="app-header__brand">
+            <div class="app-header__logo" aria-hidden="true">✓</div>
+            Smart Task Manager
+          </a>
+
+          <nav
+            class="app-header__nav"
+            role="navigation"
+            aria-label="Header navigation"
+          >
+            <div class="app-header__search">
+              <span class="app-header__search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+                disabled
+              />
+            </div>
+
+            <div class="app-header__actions">
+              <span class="app-header__date" aria-label="Today's date">
+                <script>
+                  document.write(
+                    new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  );
+                </script>
+                <noscript>Today</noscript>
+              </span>
+              <button
+                class="theme-toggle"
+                aria-label="Toggle theme"
+                title="Toggle between light and dark themes"
+              >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--light"
+                  aria-hidden="true"
+                  >☀️</span
+                >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--dark"
+                  aria-hidden="true"
+                  >🌙</span
+                >
+              </button>
+              <a
+                href="javascript:window.print()"
+                class="btn btn-ghost btn-sm"
+                aria-label="Print page"
+                >🖨️ Print</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- App Body -->
+      <div class="app__body">
+        <!-- Sidebar -->
+        <aside
+          class="app-sidebar"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Main</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="index.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >🏠</span
+                  >
+                  Dashboard
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="tasks.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📋</span
+                  >
+                  All Tasks
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a
+                  href="task-form.html"
+                  class="app-sidebar__nav-link app-sidebar__nav-link--active"
+                >
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >➕</span
+                  >
+                  Add Task
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="analytics.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📊</span
+                  >
+                  Analytics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Settings</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="settings.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >⚙️</span
+                  >
+                  Settings
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="about.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >ℹ️</span
+                  >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Profile -->
+          <div class="app-sidebar__profile">
+            <div class="app-sidebar__profile-info">
+              <div class="app-sidebar__avatar" aria-hidden="true">U</div>
+              <div class="app-sidebar__profile-name">Demo User</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content" role="main">
+          <div class="app-content">
+            <!-- Page Header -->
+            <header class="section-header">
+              <div class="section-header__content">
+                <div class="section-header__info">
+                  <h1>Add New Task</h1>
+                  <p class="section-header__subtitle">
+                    Create a task with smart prioritization
+                  </p>
+                </div>
+                <div class="section-header__actions">
+                  <a href="tasks.html" class="btn btn-secondary">Cancel</a>
+                </div>
+              </div>
+            </header>
+
+            <!-- Form Layout -->
+            <div class="form-layout">
+              <form class="card" novalidate>
+                <!-- Basic Information -->
+                <section class="form-section">
+                  <h2 class="form-section__title">Basic Information</h2>
+
+                  <div class="form-row">
+                    <div>
+                      <label for="task-title"
+                        >Task Title
+                        <span class="text-danger" aria-label="required"
+                          >*</span
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        id="task-title"
+                        name="title"
+                        required
+                        placeholder="Enter a clear, actionable title"
+                      />
+                      <div class="form-help">
+                        Use action words like "Review", "Create", or "Fix" for
+                        clarity.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div>
+                      <label for="task-description">Description</label>
+                      <textarea
+                        id="task-description"
+                        name="description"
+                        rows="3"
+                        placeholder="Brief description of what needs to be done"
+                      ></textarea>
+                      <div class="form-help">
+                        Optional: Add context or requirements for this task.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row form-row--2col">
+                    <div>
+                      <label for="task-deadline">Deadline</label>
+                      <input type="date" id="task-deadline" name="deadline" />
+                      <div class="form-help">
+                        When does this task need to be completed?
+                      </div>
+                    </div>
+                    <div>
+                      <label for="task-status">Status</label>
+                      <select id="task-status" name="status">
+                        <option value="open">Open</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="blocked">Blocked</option>
+                        <option value="done">Done</option>
+                      </select>
+                      <div class="form-help">Current status of this task.</div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Smart Priority Settings -->
+                <section class="form-section">
+                  <h2 class="form-section__title">Smart Priority Settings</h2>
+                  <p class="text-secondary mb-4">
+                    These settings help the AI prioritize this task based on
+                    your current state.
+                  </p>
+
+                  <div class="form-row form-row--3col">
+                    <div>
+                      <label for="task-effort"
+                        >Effort Level
+                        <span class="text-danger" aria-label="required"
+                          >*</span
+                        ></label
+                      >
+                      <select id="task-effort" name="effort" required>
+                        <option value="">Select effort level</option>
+                        <option value="small">Small (15-30 min)</option>
+                        <option value="medium">Medium (1-3 hours)</option>
+                        <option value="large">Large (3+ hours)</option>
+                      </select>
+                      <div class="form-help">
+                        How much time and energy will this take?
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="task-energy">Energy Required</label>
+                      <select id="task-energy" name="energy">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                      </select>
+                      <div class="form-help">
+                        Mental/physical energy needed.
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="task-mood">Best Mood Match</label>
+                      <select id="task-mood" name="mood">
+                        <option value="any" selected>Any</option>
+                        <option value="calm">Calm/Relaxed</option>
+                        <option value="focused">Focused/Alert</option>
+                        <option value="creative">Creative/Inspired</option>
+                        <option value="stressed">Stressed/Urgent</option>
+                      </select>
+                      <div class="form-help">
+                        What mood is best for this task?
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Organization -->
+                <section class="form-section">
+                  <h2 class="form-section__title">Organization</h2>
+
+                  <div class="form-row">
+                    <div>
+                      <label for="task-tags">Tags</label>
+                      <input
+                        type="text"
+                        id="task-tags"
+                        name="tags"
+                        placeholder="work, urgent, meeting, design"
+                      />
+                      <div class="form-help">
+                        Comma-separated tags for easy filtering (e.g., work,
+                        urgent, meeting).
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div>
+                      <label for="task-notes">Additional Notes</label>
+                      <textarea
+                        id="task-notes"
+                        name="notes"
+                        rows="4"
+                        placeholder="Any additional context, links, or requirements..."
+                      ></textarea>
+                      <div class="form-help">
+                        Optional: Links, dependencies, or detailed requirements.
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Preview Section -->
+                <section class="form-section">
+                  <h2 class="form-section__title">Preview</h2>
+                  <p class="text-secondary mb-4">
+                    Here's how your task will appear:
+                  </p>
+
+                  <div class="task-card">
+                    <div class="task-card__header">
+                      <h3 class="task-card__title" id="preview-title">
+                        Your task title will appear here
+                      </h3>
+                      <div class="task-card__priority">??</div>
+                    </div>
+
+                    <div class="task-card__priority-bar">
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta" id="preview-meta">
+                      <span class="badge badge--later">No deadline</span>
+                      <span class="chip">Select effort</span>
+                      <span class="badge badge--energy-ok">Energy TBD</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags" id="preview-tags">
+                      <span class="tag">Add tags...</span>
+                    </div>
+
+                    <p class="task-card__notes" id="preview-notes">
+                      Your description and notes will appear here...
+                    </p>
+                  </div>
+
+                  <div
+                    class="toast toast--success mt-4"
+                    style="display: none"
+                    id="preview-info"
+                  >
+                    <span class="toast__icon">ℹ️</span>
+                    <div class="toast__content">
+                      <div class="toast__title">Smart Priority</div>
+                      <p class="toast__message">
+                        AI will calculate the priority score based on deadline,
+                        effort, and your current mood/energy when the task is
+                        saved.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                  <a href="tasks.html" class="btn btn-secondary">Cancel</a>
+                  <button type="button" class="btn btn-ghost">
+                    Save as Draft
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    Save Task
+                  </button>
+                </div>
+              </form>
+
+              <!-- Success message (hidden) -->
+              <div
+                class="toast toast--success mt-6"
+                style="display: none"
+                id="success-message"
+              >
+                <span class="toast__icon">✅</span>
+                <div class="toast__content">
+                  <div class="toast__title">Task Created!</div>
+                  <p class="toast__message">
+                    Your task has been added and will appear in your smart
+                    priority list.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Validation errors (hidden) -->
+              <div
+                class="toast toast--danger mt-6"
+                style="display: none"
+                id="error-message"
+              >
+                <span class="toast__icon">⚠️</span>
+                <div class="toast__content">
+                  <div class="toast__title">
+                    Please fix the following errors:
+                  </div>
+                  <p class="toast__message" id="error-details">
+                    Task title is required.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page__footer" data-print-date="">
+            <p>&copy; 2024 Smart Task Manager. Version 1.0 - Static UI Demo</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Form interaction script -->
+    <script>
+      // Set print date
+      document
+        .querySelector(".page__footer")
+        .setAttribute("data-print-date", new Date().toLocaleDateString());
+
+      // Theme toggle
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const body = document.body;
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "" : "dark";
+          body.setAttribute("data-theme", newTheme);
+
+          if (newTheme) {
+            localStorage.setItem("theme", newTheme);
+          } else {
+            localStorage.removeItem("theme");
+          }
+        });
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.setAttribute("data-theme", savedTheme);
+        }
+      }
+
+      // Form preview updates
+      const form = document.querySelector("form");
+      const titleInput = document.getElementById("task-title");
+      const deadlineInput = document.getElementById("task-deadline");
+      const effortSelect = document.getElementById("task-effort");
+      const energySelect = document.getElementById("task-energy");
+      const statusSelect = document.getElementById("task-status");
+      const tagsInput = document.getElementById("task-tags");
+      const descriptionTextarea = document.getElementById("task-description");
+      const notesTextarea = document.getElementById("task-notes");
+
+      // Preview elements
+      const previewTitle = document.getElementById("preview-title");
+      const previewMeta = document.getElementById("preview-meta");
+      const previewTags = document.getElementById("preview-tags");
+      const previewNotes = document.getElementById("preview-notes");
+      const previewInfo = document.getElementById("preview-info");
+
+      function updatePreview() {
+        // Update title
+        const title =
+          titleInput.value.trim() || "Your task title will appear here";
+        previewTitle.textContent = title;
+
+        // Update deadline badge
+        let deadlineBadge =
+          '<span class="badge badge--later">No deadline</span>';
+        if (deadlineInput.value) {
+          const deadline = new Date(deadlineInput.value);
+          const today = new Date();
+          const diffTime = deadline - today;
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+          if (diffDays < 0) {
+            deadlineBadge = '<span class="badge badge--overdue">Overdue</span>';
+          } else if (diffDays === 0) {
+            deadlineBadge = '<span class="badge badge--today">Due Today</span>';
+          } else if (diffDays <= 3) {
+            deadlineBadge =
+              '<span class="badge badge--soon">' +
+              diffDays +
+              " day" +
+              (diffDays > 1 ? "s" : "") +
+              "</span>";
+          } else {
+            deadlineBadge =
+              '<span class="badge badge--later">' +
+              deadline.toLocaleDateString() +
+              "</span>";
+          }
+        }
+
+        // Update effort chip
+        let effortChip = '<span class="chip">Select effort</span>';
+        if (effortSelect.value) {
+          const effortClass =
+            effortSelect.value === "small"
+              ? "chip--effort-s"
+              : effortSelect.value === "medium"
+              ? "chip--effort-m"
+              : "chip--effort-l";
+          const effortText =
+            effortSelect.value.charAt(0).toUpperCase() +
+            effortSelect.value.slice(1);
+          effortChip = `<span class="chip ${effortClass}">${effortText}</span>`;
+        }
+
+        // Update energy badge
+        let energyBadge =
+          '<span class="badge badge--energy-ok">Energy TBD</span>';
+        if (energySelect.value) {
+          const energyClass =
+            energySelect.value === "low"
+              ? "badge--energy-ok"
+              : energySelect.value === "medium"
+              ? "badge--energy-good"
+              : "badge--energy-good";
+          energyBadge = `<span class="badge ${energyClass}">Good Fit</span>`;
+        }
+
+        // Update status pill
+        let statusPill =
+          '<span class="status-pill status-pill--open">Open</span>';
+        if (statusSelect.value) {
+          const statusClass =
+            statusSelect.value === "open"
+              ? "status-pill--open"
+              : statusSelect.value === "in-progress"
+              ? "status-pill--progress"
+              : statusSelect.value === "blocked"
+              ? "status-pill--blocked"
+              : "status-pill--done";
+          const statusText = statusSelect.value
+            .split("-")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
+          statusPill = `<span class="status-pill ${statusClass}">${statusText}</span>`;
+        }
+
+        previewMeta.innerHTML =
+          deadlineBadge + effortChip + energyBadge + statusPill;
+
+        // Update tags
+        const tags = tagsInput.value.trim();
+        if (tags) {
+          const tagList = tags
+            .split(",")
+            .map((tag) => `<span class="tag">${tag.trim()}</span>`)
+            .join("");
+          previewTags.innerHTML = tagList;
+        } else {
+          previewTags.innerHTML = '<span class="tag">Add tags...</span>';
+        }
+
+        // Update notes
+        const description = descriptionTextarea.value.trim();
+        const notes = notesTextarea.value.trim();
+        const combinedNotes =
+          [description, notes].filter(Boolean).join(" ") ||
+          "Your description and notes will appear here...";
+        previewNotes.textContent = combinedNotes;
+
+        // Show info about smart priority
+        if (titleInput.value.trim() && effortSelect.value) {
+          previewInfo.style.display = "flex";
+        } else {
+          previewInfo.style.display = "none";
+        }
+      }
+
+      // Add event listeners for real-time preview
+      [
+        titleInput,
+        deadlineInput,
+        effortSelect,
+        energySelect,
+        statusSelect,
+        tagsInput,
+        descriptionTextarea,
+        notesTextarea,
+      ].forEach((element) => {
+        element.addEventListener("input", updatePreview);
+        element.addEventListener("change", updatePreview);
+      });
+
+      // Form submission
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const errors = [];
+
+        // Validate required fields
+        if (!titleInput.value.trim()) {
+          errors.push("Task title is required");
+        }
+
+        if (!effortSelect.value) {
+          errors.push("Effort level is required");
+        }
+
+        const errorMessage = document.getElementById("error-message");
+        const successMessage = document.getElementById("success-message");
+        const errorDetails = document.getElementById("error-details");
+
+        if (errors.length > 0) {
+          errorDetails.textContent = errors.join(". ") + ".";
+          errorMessage.style.display = "flex";
+          successMessage.style.display = "none";
+
+          // Scroll to error
+          errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+          // Success (in real app, would save to backend)
+          errorMessage.style.display = "none";
+          successMessage.style.display = "flex";
+
+          // Scroll to success message
+          successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+
+          // Reset form after delay
+          setTimeout(() => {
+            if (confirm("Task created! Would you like to add another task?")) {
+              form.reset();
+              updatePreview();
+              successMessage.style.display = "none";
+            } else {
+              window.location.href = "tasks.html";
+            }
+          }, 2000);
+        }
+      });
+
+      // Initialize preview
+      updatePreview();
+    </script>
+  </body>
+</html>

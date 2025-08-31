@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Smart Task Manager</title>
+    <meta
+      name="description"
+      content="Smart Task Manager helps you prioritize tasks based on deadlines, effort, and your current mood and energy levels."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>"
+    />
+  </head>
+  <body data-theme="">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Layout -->
+    <div class="app app--with-sidebar">
+      <!-- Header -->
+      <header class="app-header" role="banner">
+        <div class="app-header__content">
+          <a href="index.html" class="app-header__brand">
+            <div class="app-header__logo" aria-hidden="true">✓</div>
+            Smart Task Manager
+          </a>
+
+          <nav
+            class="app-header__nav"
+            role="navigation"
+            aria-label="Header navigation"
+          >
+            <div class="app-header__search">
+              <span class="app-header__search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+                disabled
+              />
+            </div>
+
+            <div class="app-header__actions">
+              <span class="app-header__date" aria-label="Today's date">
+                <script>
+                  document.write(
+                    new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  );
+                </script>
+                <noscript>Today</noscript>
+              </span>
+              <button
+                class="theme-toggle"
+                aria-label="Toggle theme"
+                title="Toggle between light and dark themes"
+              >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--light"
+                  aria-hidden="true"
+                  >☀️</span
+                >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--dark"
+                  aria-hidden="true"
+                  >🌙</span
+                >
+              </button>
+              <a
+                href="javascript:window.print()"
+                class="btn btn-ghost btn-sm"
+                aria-label="Print page"
+                >🖨️ Print</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- App Body -->
+      <div class="app__body">
+        <!-- Sidebar -->
+        <aside
+          class="app-sidebar"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Main</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a
+                  href="index.html"
+                  class="app-sidebar__nav-link app-sidebar__nav-link--active"
+                >
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >🏠</span
+                  >
+                  Dashboard
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="tasks.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📋</span
+                  >
+                  All Tasks
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="task-form.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >➕</span
+                  >
+                  Add Task
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="analytics.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📊</span
+                  >
+                  Analytics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Settings</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="settings.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >⚙️</span
+                  >
+                  Settings
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="about.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >ℹ️</span
+                  >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Profile -->
+          <div class="app-sidebar__profile">
+            <div class="app-sidebar__profile-info">
+              <div class="app-sidebar__avatar" aria-hidden="true">U</div>
+              <div class="app-sidebar__profile-name">Demo User</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content" role="main">
+          <div class="app-content">
+            <!-- Page Header -->
+            <header class="section-header">
+              <div class="section-header__content">
+                <div class="section-header__info">
+                  <h1>Today</h1>
+                  <p class="section-header__subtitle">
+                    Your smart-prioritized task list
+                  </p>
+                </div>
+                <div class="section-header__actions">
+                  <a href="task-form.html" class="btn btn-primary">Add Task</a>
+                </div>
+              </div>
+            </header>
+
+            <!-- Dashboard Layout -->
+            <div class="dashboard">
+              <!-- Your State Panel -->
+              <section class="dashboard__state" aria-labelledby="state-title">
+                <div class="state-panel">
+                  <h2 class="state-panel__title" id="state-title">
+                    Your State
+                  </h2>
+                  <p class="text-secondary mb-4">
+                    Use your current mood and energy to choose the right work.
+                  </p>
+
+                  <div class="state-panel__controls">
+                    <div class="state-control">
+                      <label class="state-control__label">Current Mood</label>
+                      <div class="slider">
+                        <div class="slider__track" style="width: 60%"></div>
+                        <div class="slider__thumb" style="left: 60%"></div>
+                      </div>
+                      <div class="slider__labels">
+                        <span class="slider__label">Stressed</span>
+                        <span class="slider__label">Calm</span>
+                        <span class="slider__label">Focused</span>
+                        <span class="slider__label">Creative</span>
+                      </div>
+                      <div class="state-control__value">Currently: Focused</div>
+                    </div>
+
+                    <div class="state-control">
+                      <label class="state-control__label">Energy Level</label>
+                      <div class="slider">
+                        <div class="slider__track" style="width: 75%"></div>
+                        <div class="slider__thumb" style="left: 75%"></div>
+                      </div>
+                      <div class="slider__labels">
+                        <span class="slider__label">Low</span>
+                        <span class="slider__label">Medium</span>
+                        <span class="slider__label">High</span>
+                      </div>
+                      <div class="state-control__value">Currently: High</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Main Content Area -->
+              <div class="dashboard__content">
+                <!-- Smart Priority Tasks -->
+                <section class="dashboard__tasks" aria-labelledby="tasks-title">
+                  <div class="card">
+                    <div class="card__header">
+                      <h2 class="card__title" id="tasks-title">
+                        Smart Priority
+                      </h2>
+                      <p class="card__subtitle">
+                        AI-ranked tasks based on urgency, effort, and your
+                        current state
+                      </p>
+                    </div>
+
+                    <div class="task-list">
+                      <!-- Task 1 - High Priority, Overdue -->
+                      <article
+                        class="task-card"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Review Q4 budget proposal"
+                      >
+                        <div class="task-card__header">
+                          <h3 class="task-card__title">
+                            Review Q4 budget proposal
+                          </h3>
+                          <div class="task-card__priority">95</div>
+                        </div>
+
+                        <div
+                          class="task-card__priority-bar"
+                          role="progressbar"
+                          aria-valuenow="95"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          aria-label="Priority score 95 out of 100"
+                        >
+                          <div
+                            class="task-card__priority-fill"
+                            style="width: 95%"
+                          ></div>
+                        </div>
+
+                        <div class="task-card__meta">
+                          <span class="badge badge--overdue">Overdue</span>
+                          <span class="chip chip--effort-l">Large</span>
+                          <span class="badge badge--energy-good">Good Fit</span>
+                          <span class="status-pill status-pill--open"
+                            >Open</span
+                          >
+                        </div>
+
+                        <div class="task-card__tags">
+                          <span class="tag">work</span>
+                          <span class="tag">finance</span>
+                          <span class="tag">important</span>
+                        </div>
+
+                        <p class="task-card__notes">
+                          Final review needed before board meeting. Check all
+                          department submissions and ensure compliance with new
+                          policies.
+                        </p>
+                      </article>
+
+                      <!-- Task 2 - High Priority, Due Today -->
+                      <article
+                        class="task-card"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Submit timesheet"
+                      >
+                        <div class="task-card__header">
+                          <h3 class="task-card__title">Submit timesheet</h3>
+                          <div class="task-card__priority">88</div>
+                        </div>
+
+                        <div
+                          class="task-card__priority-bar"
+                          role="progressbar"
+                          aria-valuenow="88"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          aria-label="Priority score 88 out of 100"
+                        >
+                          <div
+                            class="task-card__priority-fill"
+                            style="width: 88%"
+                          ></div>
+                        </div>
+
+                        <div class="task-card__meta">
+                          <span class="badge badge--today">Due Today</span>
+                          <span class="chip chip--effort-s">Small</span>
+                          <span class="badge badge--energy-good">Good Fit</span>
+                          <span class="status-pill status-pill--open"
+                            >Open</span
+                          >
+                        </div>
+
+                        <div class="task-card__tags">
+                          <span class="tag">admin</span>
+                          <span class="tag">quick-win</span>
+                        </div>
+
+                        <p class="task-card__notes">
+                          Weekly timesheet due by 5 PM. Include client project
+                          hours and internal meeting time.
+                        </p>
+                      </article>
+
+                      <!-- Task 3 - Medium Priority -->
+                      <article
+                        class="task-card"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Design new feature mockups"
+                      >
+                        <div class="task-card__header">
+                          <h3 class="task-card__title">
+                            Design new feature mockups
+                          </h3>
+                          <div class="task-card__priority">72</div>
+                        </div>
+
+                        <div
+                          class="task-card__priority-bar"
+                          role="progressbar"
+                          aria-valuenow="72"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          aria-label="Priority score 72 out of 100"
+                        >
+                          <div
+                            class="task-card__priority-fill"
+                            style="width: 72%"
+                          ></div>
+                        </div>
+
+                        <div class="task-card__meta">
+                          <span class="badge badge--soon">This Week</span>
+                          <span class="chip chip--effort-m">Medium</span>
+                          <span class="badge badge--energy-good">Good Fit</span>
+                          <span class="status-pill status-pill--progress"
+                            >In Progress</span
+                          >
+                        </div>
+
+                        <div class="task-card__tags">
+                          <span class="tag">design</span>
+                          <span class="tag">creative</span>
+                          <span class="tag">deep-work</span>
+                        </div>
+
+                        <p class="task-card__notes">
+                          Create high-fidelity mockups for the user dashboard
+                          redesign. Focus on mobile-first approach and
+                          accessibility.
+                        </p>
+                      </article>
+
+                      <!-- Task 4 - Medium Priority -->
+                      <article
+                        class="task-card"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Update project documentation"
+                      >
+                        <div class="task-card__header">
+                          <h3 class="task-card__title">
+                            Update project documentation
+                          </h3>
+                          <div class="task-card__priority">65</div>
+                        </div>
+
+                        <div
+                          class="task-card__priority-bar"
+                          role="progressbar"
+                          aria-valuenow="65"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          aria-label="Priority score 65 out of 100"
+                        >
+                          <div
+                            class="task-card__priority-fill"
+                            style="width: 65%"
+                          ></div>
+                        </div>
+
+                        <div class="task-card__meta">
+                          <span class="badge badge--soon">2 Days</span>
+                          <span class="chip chip--effort-m">Medium</span>
+                          <span class="badge badge--energy-ok">OK Fit</span>
+                          <span class="status-pill status-pill--open"
+                            >Open</span
+                          >
+                        </div>
+
+                        <div class="task-card__tags">
+                          <span class="tag">documentation</span>
+                          <span class="tag">work</span>
+                        </div>
+
+                        <p class="task-card__notes">
+                          Update API documentation with recent changes. Include
+                          new endpoints and authentication methods.
+                        </p>
+                      </article>
+
+                      <!-- Task 5 - Lower Priority -->
+                      <article
+                        class="task-card"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Research competitor analysis"
+                      >
+                        <div class="task-card__header">
+                          <h3 class="task-card__title">
+                            Research competitor analysis
+                          </h3>
+                          <div class="task-card__priority">45</div>
+                        </div>
+
+                        <div
+                          class="task-card__priority-bar"
+                          role="progressbar"
+                          aria-valuenow="45"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          aria-label="Priority score 45 out of 100"
+                        >
+                          <div
+                            class="task-card__priority-fill"
+                            style="width: 45%"
+                          ></div>
+                        </div>
+
+                        <div class="task-card__meta">
+                          <span class="badge badge--later">Next Week</span>
+                          <span class="chip chip--effort-l">Large</span>
+                          <span class="badge badge--energy-poor">Poor Fit</span>
+                          <span class="status-pill status-pill--open"
+                            >Open</span
+                          >
+                        </div>
+
+                        <div class="task-card__tags">
+                          <span class="tag">research</span>
+                          <span class="tag">analysis</span>
+                          <span class="tag">low-priority</span>
+                        </div>
+
+                        <p class="task-card__notes">
+                          Comprehensive analysis of top 5 competitors. Include
+                          feature comparison, pricing, and market positioning.
+                        </p>
+                      </article>
+
+                      <!-- Task 6 - Done -->
+                      <article
+                        class="task-card"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Team standup meeting"
+                      >
+                        <div class="task-card__header">
+                          <h3 class="task-card__title">Team standup meeting</h3>
+                          <div class="task-card__priority">100</div>
+                        </div>
+
+                        <div
+                          class="task-card__priority-bar"
+                          role="progressbar"
+                          aria-valuenow="100"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          aria-label="Priority score 100 out of 100"
+                        >
+                          <div
+                            class="task-card__priority-fill"
+                            style="width: 100%"
+                          ></div>
+                        </div>
+
+                        <div class="task-card__meta">
+                          <span class="badge badge--today">Today</span>
+                          <span class="chip chip--effort-s">Small</span>
+                          <span class="badge badge--energy-good">Good Fit</span>
+                          <span class="status-pill status-pill--done"
+                            >Done</span
+                          >
+                        </div>
+
+                        <div class="task-card__tags">
+                          <span class="tag">meeting</span>
+                          <span class="tag">team</span>
+                        </div>
+
+                        <p class="task-card__notes">
+                          Daily standup completed. Discussed blockers and sprint
+                          progress.
+                        </p>
+                      </article>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="dashboard__sidebar">
+                  <!-- Quick Stats -->
+                  <section
+                    class="card card--compact"
+                    aria-labelledby="stats-title"
+                  >
+                    <div class="card__header">
+                      <h2 class="card__title" id="stats-title">
+                        Today's Summary
+                      </h2>
+                    </div>
+                    <div class="card__content">
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">Due Today</span>
+                        <span class="font-semibold text-warning">2</span>
+                      </div>
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">Completed</span>
+                        <span class="font-semibold text-success">1</span>
+                      </div>
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">In Progress</span>
+                        <span class="font-semibold text-accent">1</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-secondary">Overdue</span>
+                        <span class="font-semibold text-danger">1</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- Energy Distribution -->
+                  <section
+                    class="card card--compact"
+                    aria-labelledby="energy-title"
+                  >
+                    <div class="card__header">
+                      <h2 class="card__title" id="energy-title">
+                        Energy Match
+                      </h2>
+                    </div>
+                    <div class="card__content">
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">Good Fit</span>
+                        <span class="font-semibold text-success">4</span>
+                      </div>
+                      <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary">OK Fit</span>
+                        <span class="font-semibold text-warning">1</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-secondary">Poor Fit</span>
+                        <span class="font-semibold text-danger">1</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- Priority Explanation -->
+                  <section
+                    class="card card--compact"
+                    aria-labelledby="priority-title"
+                  >
+                    <div class="card__header">
+                      <h2 class="card__title" id="priority-title">
+                        Smart Priority
+                      </h2>
+                    </div>
+                    <div class="card__content">
+                      <p class="text-secondary text-sm mb-3">
+                        Priority scores (0-100) consider:
+                      </p>
+                      <ul class="text-sm text-secondary list-none">
+                        <li class="mb-2">• Deadline urgency</li>
+                        <li class="mb-2">• Task effort level</li>
+                        <li class="mb-2">• Your current mood</li>
+                        <li class="mb-2">• Your energy level</li>
+                      </ul>
+                      <p class="text-xs text-secondary mt-4">
+                        <em
+                          >AI ranking coming soon! Current scores are
+                          placeholders.</em
+                        >
+                      </p>
+                    </div>
+                  </section>
+                </aside>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page__footer" data-print-date="">
+            <p>&copy; 2024 Smart Task Manager. Version 1.0 - Static UI Demo</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Simple theme toggle script -->
+    <script>
+      // Set print date
+      document
+        .querySelector(".page__footer")
+        .setAttribute("data-print-date", new Date().toLocaleDateString());
+
+      // Simple theme toggle (visual only in V1)
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const body = document.body;
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "" : "dark";
+          body.setAttribute("data-theme", newTheme);
+
+          // Save to localStorage
+          if (newTheme) {
+            localStorage.setItem("theme", newTheme);
+          } else {
+            localStorage.removeItem("theme");
+          }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.setAttribute("data-theme", savedTheme);
+        }
+      }
+    </script>
+  </body>
+</html>

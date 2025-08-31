@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Tasks — Smart Task Manager</title>
+    <meta
+      name="description"
+      content="View and manage all your tasks with filtering and sorting options."
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>"
+    />
+  </head>
+  <body data-theme="">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Layout -->
+    <div class="app app--with-sidebar">
+      <!-- Header -->
+      <header class="app-header" role="banner">
+        <div class="app-header__content">
+          <a href="index.html" class="app-header__brand">
+            <div class="app-header__logo" aria-hidden="true">✓</div>
+            Smart Task Manager
+          </a>
+
+          <nav
+            class="app-header__nav"
+            role="navigation"
+            aria-label="Header navigation"
+          >
+            <div class="app-header__search">
+              <span class="app-header__search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+                disabled
+              />
+            </div>
+
+            <div class="app-header__actions">
+              <span class="app-header__date" aria-label="Today's date">
+                <script>
+                  document.write(
+                    new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      month: "short",
+                      day: "numeric",
+                    })
+                  );
+                </script>
+                <noscript>Today</noscript>
+              </span>
+              <button
+                class="theme-toggle"
+                aria-label="Toggle theme"
+                title="Toggle between light and dark themes"
+              >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--light"
+                  aria-hidden="true"
+                  >☀️</span
+                >
+                <span
+                  class="theme-toggle__icon theme-toggle__icon--dark"
+                  aria-hidden="true"
+                  >🌙</span
+                >
+              </button>
+              <a
+                href="javascript:window.print()"
+                class="btn btn-ghost btn-sm"
+                aria-label="Print page"
+                >🖨️ Print</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- App Body -->
+      <div class="app__body">
+        <!-- Sidebar -->
+        <aside
+          class="app-sidebar"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Main</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="index.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >🏠</span
+                  >
+                  Dashboard
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a
+                  href="tasks.html"
+                  class="app-sidebar__nav-link app-sidebar__nav-link--active"
+                >
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📋</span
+                  >
+                  All Tasks
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="task-form.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >➕</span
+                  >
+                  Add Task
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="analytics.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >📊</span
+                  >
+                  Analytics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="app-sidebar__section">
+            <h2 class="app-sidebar__title">Settings</h2>
+            <ul class="app-sidebar__nav list-none">
+              <li class="app-sidebar__nav-item">
+                <a href="settings.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >⚙️</span
+                  >
+                  Settings
+                </a>
+              </li>
+              <li class="app-sidebar__nav-item">
+                <a href="about.html" class="app-sidebar__nav-link">
+                  <span class="app-sidebar__nav-icon" aria-hidden="true"
+                    >ℹ️</span
+                  >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Profile -->
+          <div class="app-sidebar__profile">
+            <div class="app-sidebar__profile-info">
+              <div class="app-sidebar__avatar" aria-hidden="true">U</div>
+              <div class="app-sidebar__profile-name">Demo User</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content" role="main">
+          <div class="app-content">
+            <!-- Page Header -->
+            <header class="section-header">
+              <div class="section-header__content">
+                <div class="section-header__info">
+                  <h1>All Tasks</h1>
+                  <p class="section-header__subtitle">
+                    Manage and organize all your tasks
+                  </p>
+                </div>
+                <div class="section-header__actions">
+                  <a href="task-form.html" class="btn btn-primary">Add Task</a>
+                </div>
+              </div>
+            </header>
+
+            <!-- Tasks Layout -->
+            <div class="tasks-layout">
+              <!-- Filter Bar -->
+              <section class="filter-bar" aria-labelledby="filters-title">
+                <h2 class="sr-only" id="filters-title">Task Filters</h2>
+
+                <div class="filter-bar__section">
+                  <label class="filter-bar__label">Status</label>
+                  <div
+                    class="filter-bar__options"
+                    role="group"
+                    aria-label="Filter by status"
+                  >
+                    <a
+                      href="#"
+                      class="filter-option filter-option--active"
+                      aria-pressed="true"
+                      >All</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Open</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >In Progress</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Blocked</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Done</a
+                    >
+                  </div>
+                </div>
+
+                <div class="filter-bar__section">
+                  <label class="filter-bar__label">Deadline</label>
+                  <div
+                    class="filter-bar__options"
+                    role="group"
+                    aria-label="Filter by deadline"
+                  >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Overdue</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Today</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >This Week</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Next Week</a
+                    >
+                  </div>
+                </div>
+
+                <div class="filter-bar__section">
+                  <label class="filter-bar__label">Tags</label>
+                  <div
+                    class="filter-bar__options"
+                    role="group"
+                    aria-label="Filter by tags"
+                  >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >work</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >personal</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >urgent</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >deep-work</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >quick-win</a
+                    >
+                  </div>
+                </div>
+
+                <div class="filter-bar__section mb-0">
+                  <label class="filter-bar__label">Effort</label>
+                  <div
+                    class="filter-bar__options"
+                    role="group"
+                    aria-label="Filter by effort level"
+                  >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Small</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Medium</a
+                    >
+                    <a href="#" class="filter-option" aria-pressed="false"
+                      >Large</a
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <!-- Tasks Header -->
+              <div class="tasks-layout__header">
+                <div class="tasks-layout__sort">
+                  <label for="sort-select" class="font-medium text-secondary"
+                    >Sort by:</label
+                  >
+                  <select
+                    id="sort-select"
+                    class="border rounded px-3 py-1 bg-surface"
+                    disabled
+                  >
+                    <option value="smart">Smart Priority</option>
+                    <option value="deadline">Deadline</option>
+                    <option value="effort">Effort</option>
+                    <option value="created">Date Created</option>
+                    <option value="title">Title</option>
+                  </select>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="text-secondary text-sm">18 tasks</span>
+                  <div class="flex items-center gap-2">
+                    <label for="view-toggle" class="sr-only"
+                      >Toggle compact view</label
+                    >
+                    <input type="checkbox" id="view-toggle" class="sr-only" />
+                    <span class="text-sm text-secondary">Compact</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Task List -->
+              <section
+                class="tasks-layout__content"
+                aria-labelledby="task-list-title"
+              >
+                <h2 class="sr-only" id="task-list-title">Task List</h2>
+
+                <div class="task-list">
+                  <!-- Task 1 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Review Q4 budget proposal"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">
+                        Review Q4 budget proposal
+                      </h3>
+                      <div class="task-card__priority">95</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="95"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 95 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 95%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--overdue">Overdue</span>
+                      <span class="chip chip--effort-l">Large</span>
+                      <span class="badge badge--energy-good">Good Fit</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">work</span>
+                      <span class="tag">finance</span>
+                      <span class="tag">important</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Final review needed before board meeting. Check all
+                      department submissions and ensure compliance with new
+                      policies.
+                    </p>
+                  </article>
+
+                  <!-- Task 2 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Submit timesheet"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">Submit timesheet</h3>
+                      <div class="task-card__priority">88</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="88"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 88 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 88%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--today">Due Today</span>
+                      <span class="chip chip--effort-s">Small</span>
+                      <span class="badge badge--energy-good">Good Fit</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">admin</span>
+                      <span class="tag">quick-win</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Weekly timesheet due by 5 PM. Include client project hours
+                      and internal meeting time.
+                    </p>
+                  </article>
+
+                  <!-- Task 3 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Team standup meeting"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">Team standup meeting</h3>
+                      <div class="task-card__priority">100</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="100"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 100 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 100%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--today">Today</span>
+                      <span class="chip chip--effort-s">Small</span>
+                      <span class="badge badge--energy-good">Good Fit</span>
+                      <span class="status-pill status-pill--done">Done</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">meeting</span>
+                      <span class="tag">team</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Daily standup completed. Discussed blockers and sprint
+                      progress.
+                    </p>
+                  </article>
+
+                  <!-- Task 4 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Design new feature mockups"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">
+                        Design new feature mockups
+                      </h3>
+                      <div class="task-card__priority">72</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="72"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 72 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 72%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--soon">This Week</span>
+                      <span class="chip chip--effort-m">Medium</span>
+                      <span class="badge badge--energy-good">Good Fit</span>
+                      <span class="status-pill status-pill--progress"
+                        >In Progress</span
+                      >
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">design</span>
+                      <span class="tag">creative</span>
+                      <span class="tag">deep-work</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Create high-fidelity mockups for the user dashboard
+                      redesign. Focus on mobile-first approach and
+                      accessibility.
+                    </p>
+                  </article>
+
+                  <!-- Task 5 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Update project documentation"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">
+                        Update project documentation
+                      </h3>
+                      <div class="task-card__priority">65</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="65"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 65 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 65%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--soon">2 Days</span>
+                      <span class="chip chip--effort-m">Medium</span>
+                      <span class="badge badge--energy-ok">OK Fit</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">documentation</span>
+                      <span class="tag">work</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Update API documentation with recent changes. Include new
+                      endpoints and authentication methods.
+                    </p>
+                  </article>
+
+                  <!-- Task 6 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Prepare client presentation"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">
+                        Prepare client presentation
+                      </h3>
+                      <div class="task-card__priority">78</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="78"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 78 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 78%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--soon">Tomorrow</span>
+                      <span class="chip chip--effort-m">Medium</span>
+                      <span class="badge badge--energy-good">Good Fit</span>
+                      <span class="status-pill status-pill--progress"
+                        >In Progress</span
+                      >
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">presentation</span>
+                      <span class="tag">client</span>
+                      <span class="tag">important</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Create PowerPoint presentation for quarterly business
+                      review. Include metrics, achievements, and Q1 goals.
+                    </p>
+                  </article>
+
+                  <!-- Task 7 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Fix login bug"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">Fix login bug</h3>
+                      <div class="task-card__priority">82</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="82"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 82 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 82%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--today">Due Today</span>
+                      <span class="chip chip--effort-s">Small</span>
+                      <span class="badge badge--energy-good">Good Fit</span>
+                      <span class="status-pill status-pill--blocked"
+                        >Blocked</span
+                      >
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">bug</span>
+                      <span class="tag">urgent</span>
+                      <span class="tag">dev</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Users can't log in with Google OAuth. Waiting for API key
+                      from IT department.
+                    </p>
+                  </article>
+
+                  <!-- Task 8 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Research competitor analysis"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">
+                        Research competitor analysis
+                      </h3>
+                      <div class="task-card__priority">45</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="45"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 45 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 45%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--later">Next Week</span>
+                      <span class="chip chip--effort-l">Large</span>
+                      <span class="badge badge--energy-poor">Poor Fit</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">research</span>
+                      <span class="tag">analysis</span>
+                      <span class="tag">low-priority</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Comprehensive analysis of top 5 competitors. Include
+                      feature comparison, pricing, and market positioning.
+                    </p>
+                  </article>
+
+                  <!-- Task 9 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Book vacation time"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">Book vacation time</h3>
+                      <div class="task-card__priority">35</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="35"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 35 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 35%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--later">2 Weeks</span>
+                      <span class="chip chip--effort-s">Small</span>
+                      <span class="badge badge--energy-ok">OK Fit</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">personal</span>
+                      <span class="tag">planning</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Submit vacation request for summer holiday. Check team
+                      calendar for conflicts.
+                    </p>
+                  </article>
+
+                  <!-- Task 10 -->
+                  <article
+                    class="task-card"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Review team performance"
+                  >
+                    <div class="task-card__header">
+                      <h3 class="task-card__title">Review team performance</h3>
+                      <div class="task-card__priority">58</div>
+                    </div>
+
+                    <div
+                      class="task-card__priority-bar"
+                      role="progressbar"
+                      aria-valuenow="58"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label="Priority score 58 out of 100"
+                    >
+                      <div
+                        class="task-card__priority-fill"
+                        style="width: 58%"
+                      ></div>
+                    </div>
+
+                    <div class="task-card__meta">
+                      <span class="badge badge--soon">3 Days</span>
+                      <span class="chip chip--effort-m">Medium</span>
+                      <span class="badge badge--energy-ok">OK Fit</span>
+                      <span class="status-pill status-pill--open">Open</span>
+                    </div>
+
+                    <div class="task-card__tags">
+                      <span class="tag">management</span>
+                      <span class="tag">review</span>
+                      <span class="tag">team</span>
+                    </div>
+
+                    <p class="task-card__notes">
+                      Quarterly performance reviews for direct reports. Prepare
+                      feedback and development goals.
+                    </p>
+                  </article>
+
+                  <!-- Empty state would show here if no tasks match filters -->
+                  <div class="empty-state print-hidden" style="display: none">
+                    <div class="empty-state__icon" aria-hidden="true">📋</div>
+                    <h2 class="empty-state__title">
+                      No tasks match your filters
+                    </h2>
+                    <p class="empty-state__description">
+                      Try adjusting your filters or add a new task to get
+                      started.
+                    </p>
+                    <div class="empty-state__actions">
+                      <a href="task-form.html" class="btn btn-primary"
+                        >Add Task</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="page__footer" data-print-date="">
+            <p>&copy; 2024 Smart Task Manager. Version 1.0 - Static UI Demo</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <!-- Simple theme toggle script -->
+    <script>
+      // Set print date
+      document
+        .querySelector(".page__footer")
+        .setAttribute("data-print-date", new Date().toLocaleDateString());
+
+      // Simple theme toggle (visual only in V1)
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const body = document.body;
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "" : "dark";
+          body.setAttribute("data-theme", newTheme);
+
+          // Save to localStorage
+          if (newTheme) {
+            localStorage.setItem("theme", newTheme);
+          } else {
+            localStorage.removeItem("theme");
+          }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.setAttribute("data-theme", savedTheme);
+        }
+      }
+
+      // Simple filter toggle demo (visual only)
+      document.querySelectorAll(".filter-option").forEach((option) => {
+        option.addEventListener("click", (e) => {
+          e.preventDefault();
+          const isActive = option.classList.contains("filter-option--active");
+
+          // For "All" buttons, clear other selections in the same group
+          if (option.textContent.trim() === "All") {
+            option.parentNode
+              .querySelectorAll(".filter-option")
+              .forEach((opt) => {
+                opt.classList.remove("filter-option--active");
+                opt.setAttribute("aria-pressed", "false");
+              });
+            option.classList.add("filter-option--active");
+            option.setAttribute("aria-pressed", "true");
+          } else {
+            // Toggle this option
+            option.classList.toggle("filter-option--active");
+            option.setAttribute("aria-pressed", !isActive);
+
+            // Remove "All" if any specific option is selected
+            const allOption = option.parentNode.querySelector(
+              '.filter-option[aria-pressed="true"]'
+            );
+            if (allOption && allOption.textContent.trim() === "All") {
+              allOption.classList.remove("filter-option--active");
+              allOption.setAttribute("aria-pressed", "false");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
