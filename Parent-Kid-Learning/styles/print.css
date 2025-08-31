@@ -1,0 +1,484 @@
+/* Import tokens first */
+@import 'tokens.css';
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  /* Reset print styles */
+  * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Hide non-printable elements */
+  .header,
+  .footer,
+  .quick-nav,
+  .filters,
+  .story-page__pager,
+  .rhyme-card__actions,
+  .word-card__actions,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    background: #FFFFFF;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  p, blockquote, ul, ol, dl {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: underline;
+    color: #000000;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666666;
+  }
+  
+  /* ===== STORYBOOK PRINT MODE ===== */
+  .story-reader.print-mode {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .story-page {
+    page-break-inside: avoid;
+    margin-bottom: 20pt;
+    padding: 0;
+  }
+  
+  .story-page__image {
+    width: 100%;
+    max-width: none;
+    height: 300pt;
+    background: #F0F0F0 !important;
+    border: 2pt solid #000000;
+    margin-bottom: 15pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48pt;
+    color: #333333;
+  }
+  
+  .story-page__text {
+    font-size: 16pt;
+    line-height: 1.5;
+    margin-bottom: 15pt;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .story-page__keyword {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .story-page__parent-tip {
+    font-size: 12pt;
+    color: #666666;
+    font-style: italic;
+    margin-bottom: 15pt;
+    text-align: center;
+  }
+  
+  .story-page__vocab {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10pt;
+    margin-bottom: 20pt;
+  }
+  
+  .story-page__vocab .word-chip {
+    padding: 8pt 12pt;
+    background: #F0F0F0 !important;
+    border: 1pt solid #000000;
+    border-radius: 20pt;
+    font-size: 12pt;
+    color: #000000;
+  }
+  
+  /* ===== FLASHCARDS PRINT MODE ===== */
+  .flashcards-print {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20pt;
+    padding: 20pt;
+  }
+  
+  .flashcard {
+    page-break-inside: avoid;
+    border: 2pt solid #000000;
+    border-radius: 10pt;
+    padding: 15pt;
+    text-align: center;
+    background: #FFFFFF;
+  }
+  
+  .flashcard__image {
+    width: 100%;
+    height: 120pt;
+    background: #F0F0F0 !important;
+    border: 1pt solid #000000;
+    border-radius: 8pt;
+    margin-bottom: 15pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36pt;
+    color: #333333;
+  }
+  
+  .flashcard__word {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 10pt;
+    color: #000000;
+  }
+  
+  .flashcard__translation {
+    font-size: 14pt;
+    color: #666666;
+    margin-bottom: 8pt;
+  }
+  
+  .flashcard__syllables {
+    display: flex;
+    justify-content: center;
+    gap: 6pt;
+    margin-bottom: 15pt;
+  }
+  
+  .flashcard__syllable-dot {
+    width: 6pt;
+    height: 6pt;
+    background: #000000 !important;
+    border-radius: 50%;
+  }
+  
+  /* ===== COLORING SHEETS PRINT MODE ===== */
+  .coloring-sheets-print {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30pt;
+    padding: 20pt;
+  }
+  
+  .coloring-sheet {
+    page-break-inside: avoid;
+    border: 2pt solid #000000;
+    border-radius: 15pt;
+    padding: 20pt;
+    text-align: center;
+    background: #FFFFFF;
+  }
+  
+  .coloring-sheet__image {
+    width: 100%;
+    height: 200pt;
+    background: #FFFFFF !important;
+    border: 2pt dashed #000000;
+    border-radius: 10pt;
+    margin-bottom: 20pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48pt;
+    color: #CCCCCC;
+  }
+  
+  .coloring-sheet__word {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 15pt;
+    color: #000000;
+    text-decoration: underline;
+  }
+  
+  .coloring-sheet__instructions {
+    font-size: 14pt;
+    color: #666666;
+    font-style: italic;
+  }
+  
+  /* ===== PROGRESS REPORT PRINT MODE ===== */
+  .progress-print {
+    padding: 20pt;
+  }
+  
+  .progress-print__header {
+    text-align: center;
+    margin-bottom: 30pt;
+    border-bottom: 3pt solid #000000;
+    padding-bottom: 20pt;
+  }
+  
+  .progress-print__title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 15pt;
+    color: #000000;
+  }
+  
+  .progress-print__date {
+    font-size: 14pt;
+    color: #666666;
+  }
+  
+  .progress-print__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20pt;
+    margin-bottom: 30pt;
+  }
+  
+  .progress-print__stat {
+    text-align: center;
+    border: 2pt solid #000000;
+    border-radius: 10pt;
+    padding: 20pt;
+    background: #FFFFFF;
+  }
+  
+  .progress-print__stat-number {
+    font-size: 32pt;
+    font-weight: bold;
+    margin-bottom: 10pt;
+    color: #000000;
+  }
+  
+  .progress-print__stat-label {
+    font-size: 16pt;
+    color: #000000;
+  }
+  
+  .progress-print__achievements {
+    margin-bottom: 30pt;
+  }
+  
+  .progress-print__achievements-title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 20pt;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .progress-print__achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15pt;
+  }
+  
+  .progress-print__achievement {
+    text-align: center;
+    border: 1pt solid #000000;
+    border-radius: 8pt;
+    padding: 15pt;
+    background: #FFFFFF;
+  }
+  
+  .progress-print__achievement-icon {
+    font-size: 24pt;
+    margin-bottom: 10pt;
+    color: #000000;
+  }
+  
+  .progress-print__achievement-title {
+    font-size: 12pt;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  /* ===== VOCABULARY LIST PRINT MODE ===== */
+  .vocab-list-print {
+    padding: 20pt;
+  }
+  
+  .vocab-list-print__header {
+    text-align: center;
+    margin-bottom: 30pt;
+    border-bottom: 3pt solid #000000;
+    padding-bottom: 20pt;
+  }
+  
+  .vocab-list-print__title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 15pt;
+    color: #000000;
+  }
+  
+  .vocab-list-print__category {
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 25pt 0 15pt 0;
+    color: #000000;
+    border-bottom: 2pt solid #000000;
+    padding-bottom: 8pt;
+  }
+  
+  .vocab-list-print__word {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12pt;
+    padding: 10pt;
+    border: 1pt solid #CCCCCC;
+    border-radius: 6pt;
+    background: #FFFFFF;
+  }
+  
+  .vocab-list-print__word-english {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .vocab-list-print__word-translations {
+    font-size: 14pt;
+    color: #666666;
+    text-align: right;
+  }
+  
+  /* ===== RHYME BOOK PRINT MODE ===== */
+  .rhyme-book-print {
+    padding: 20pt;
+  }
+  
+  .rhyme-book-print__header {
+    text-align: center;
+    margin-bottom: 30pt;
+    border-bottom: 3pt solid #000000;
+    padding-bottom: 20pt;
+  }
+  
+  .rhyme-book-print__title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 15pt;
+    color: #000000;
+  }
+  
+  .rhyme-book-print__rhyme {
+    page-break-inside: avoid;
+    margin-bottom: 30pt;
+    border: 2pt solid #000000;
+    border-radius: 15pt;
+    padding: 20pt;
+    background: #FFFFFF;
+  }
+  
+  .rhyme-book-print__rhyme-title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 20pt;
+    color: #000000;
+    text-align: center;
+    border-bottom: 2pt solid #000000;
+    padding-bottom: 10pt;
+  }
+  
+  .rhyme-book-print__lyric-line {
+    font-size: 16pt;
+    line-height: 1.6;
+    margin-bottom: 12pt;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .rhyme-book-print__motions {
+    margin-top: 20pt;
+    padding-top: 15pt;
+    border-top: 1pt solid #CCCCCC;
+  }
+  
+  .rhyme-book-print__motions-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 10pt;
+    color: #000000;
+  }
+  
+  .rhyme-book-print__motion {
+    font-size: 12pt;
+    color: #666666;
+    margin-bottom: 5pt;
+  }
+  
+  /* ===== UTILITY PRINT CLASSES ===== */
+  .print-break-before {
+    page-break-before: always;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+  
+  .print-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  .print-hide {
+    display: none !important;
+  }
+  
+  /* ===== PRINT FOOTER ===== */
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10pt;
+    color: #666666;
+    padding: 10pt;
+    border-top: 1pt solid #CCCCCC;
+    background: #FFFFFF;
+  }
+  
+  /* ===== PRINT HEADER ===== */
+  .print-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12pt;
+    color: #000000;
+    padding: 10pt;
+    border-bottom: 1pt solid #000000;
+    background: #FFFFFF;
+  }
+}

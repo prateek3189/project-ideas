@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - Parent-Kid Learning App</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <header class="header">
+        <div class="header__content">
+            <h1 class="header__title">Parent-Kid Learning</h1>
+            <div class="header__controls">
+                <span class="language-chip">EN</span>
+                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="progress-layout">
+            <div class="progress-layout__header">
+                <h1 class="progress-layout__title">Learning Progress</h1>
+                <p class="progress-layout__description">Celebrate your child's learning journey and achievements</p>
+            </div>
+
+            <div class="progress-layout__stats">
+                <h2>This Week's Progress</h2>
+                <div class="progress-tiles">
+                    <div class="progress-tile">
+                        <div class="progress-tile__number">7</div>
+                        <div class="progress-tile__label">Stories Read</div>
+                    </div>
+                    <div class="progress-tile">
+                        <div class="progress-tile__number">5</div>
+                        <div class="progress-tile__label">Rhymes Tried</div>
+                    </div>
+                    <div class="progress-tile">
+                        <div class="progress-tile__number">18</div>
+                        <div class="progress-tile__label">Words Practiced</div>
+                    </div>
+                    <div class="progress-tile">
+                        <div class="progress-tile__number">3</div>
+                        <div class="progress-tile__label">New Languages</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-layout__achievements">
+                <h2>Sticker Badges</h2>
+                <div class="sticker-grid">
+                    <div class="sticker-badge sticker-badge--unlocked">
+                        <div class="sticker-badge__icon">🎨</div>
+                        <div class="sticker-badge__title">Color Champ</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--unlocked">
+                        <div class="sticker-badge__icon">🐾</div>
+                        <div class="sticker-badge__title">Animal Buddy</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--unlocked">
+                        <div class="sticker-badge__icon">🔤</div>
+                        <div class="sticker-badge__title">ABC Explorer</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--locked">
+                        <div class="sticker-badge__icon">🌟</div>
+                        <div class="sticker-badge__title">Story Master</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--locked">
+                        <div class="sticker-badge__icon">🎵</div>
+                        <div class="sticker-badge__title">Song Star</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--locked">
+                        <div class="sticker-badge__icon">🗣️</div>
+                        <div class="sticker-badge__title">Word Wizard</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--locked">
+                        <div class="sticker-badge__icon">🌍</div>
+                        <div class="sticker-badge__title">Language Learner</div>
+                    </div>
+                    <div class="sticker-badge sticker-badge--locked">
+                        <div class="sticker-badge__icon">🏆</div>
+                        <div class="sticker-badge__title">Super Reader</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="streak-section">
+                <h2>Learning Streak</h2>
+                <div class="streak-dots">
+                    <div class="streak-dot streak-dot--completed">1</div>
+                    <div class="streak-dot streak-dot--completed">2</div>
+                    <div class="streak-dot streak-dot--completed">3</div>
+                    <div class="streak-dot streak-dot--completed">4</div>
+                    <div class="streak-dot streak-dot--completed">5</div>
+                    <div class="streak-dot streak-dot--completed">6</div>
+                    <div class="streak-dot streak-dot--current">7</div>
+                </div>
+                <p class="streak-text">Great job! You've been learning for 7 days in a row!</p>
+            </div>
+
+            <div class="learning-goals">
+                <h2>Learning Goals</h2>
+                <div class="goals-grid">
+                    <div class="goal-card goal-card--completed">
+                        <div class="goal-card__icon">✅</div>
+                        <div class="goal-card__content">
+                            <h3 class="goal-card__title">Read 5 Stories</h3>
+                            <p class="goal-card__description">Completed! Read 7 stories this week</p>
+                        </div>
+                    </div>
+                    <div class="goal-card goal-card--in-progress">
+                        <div class="goal-card__icon">🔄</div>
+                        <div class="goal-card__content">
+                            <h3 class="goal-card__title">Practice 20 Words</h3>
+                            <p class="goal-card__description">18/20 words practiced - Almost there!</p>
+                        </div>
+                    </div>
+                    <div class="goal-card goal-card--locked">
+                        <div class="goal-card__icon">🔒</div>
+                        <div class="goal-card__content">
+                            <h3 class="goal-card__title">Learn 3 New Rhymes</h3>
+                            <p class="goal-card__description">2/3 rhymes learned - Keep going!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-layout__note">
+                <p><strong>Note:</strong> Progress is a feel-good placeholder in V1. In future versions, this will track real learning data and achievements!</p>
+            </div>
+
+            <nav class="quick-nav">
+                <a href="index.html" class="quick-nav__link">🏠 Home</a>
+                <a href="stories.html" class="quick-nav__link">📚 Stories</a>
+                <a href="rhymes.html" class="quick-nav__link">🎵 Rhymes</a>
+                <a href="pronounce.html" class="quick-nav__link">🗣️ Pronounce</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
+        </div>
+    </footer>
+</body>
+</html>
