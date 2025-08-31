@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Food Diary</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </a>
+          <a href="log-meal.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a
+            href="diary.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a href="integrations.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <input type="date" value="2024-01-15" class="form-input" />
+              <button onclick="window.print()" class="btn btn--outline">
+                🖨️ Print
+              </button>
+              <a href="log-meal.html" class="btn btn--primary">+ Log Meal</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="diary">
+            <!-- Diary Header -->
+            <div class="diary__header">
+              <h2 class="diary__date">Monday, January 15, 2024</h2>
+              <div class="flex gap-3">
+                <button class="btn btn--outline btn--small">
+                  ← Previous Day
+                </button>
+                <button class="btn btn--outline btn--small">Next Day →</button>
+              </div>
+            </div>
+
+            <!-- Print Header (hidden by default) -->
+            <div class="print-header" style="display: none">
+              <h1 class="print-header__title">Daily Food Diary</h1>
+              <div class="print-header__date">Monday, January 15, 2024</div>
+            </div>
+
+            <!-- Breakfast Section -->
+            <div class="diary__meal-section">
+              <div class="diary__meal-title">
+                <span class="diary__meal-icon">🌅</span>
+                <h3>Breakfast</h3>
+                <span class="ml-auto text-accent font-semibold">320 kcal</span>
+              </div>
+
+              <div class="diary__meal-entries">
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🍚</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Poha with Peanuts</div>
+                      <div class="meal-card__kcal">180g • 320 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lunch Section -->
+            <div class="diary__meal-section">
+              <div class="diary__meal-title">
+                <span class="diary__meal-icon">☀️</span>
+                <h3>Lunch</h3>
+                <span class="ml-auto text-accent font-semibold">485 kcal</span>
+              </div>
+
+              <div class="diary__meal-entries">
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🍳</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Masala Omelette</div>
+                      <div class="meal-card__kcal">120g • 220 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🥗</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Mixed Salad</div>
+                      <div class="meal-card__kcal">80g • 45 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🍞</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Whole Wheat Toast</div>
+                      <div class="meal-card__kcal">30g • 80 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🥛</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Low-fat Milk</div>
+                      <div class="meal-card__kcal">240ml • 140 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Snacks Section -->
+            <div class="diary__meal-section">
+              <div class="diary__meal-title">
+                <span class="diary__meal-icon">🍎</span>
+                <h3>Snacks</h3>
+                <span class="ml-auto text-accent font-semibold">125 kcal</span>
+              </div>
+
+              <div class="diary__meal-entries">
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🍎</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Apple</div>
+                      <div class="meal-card__kcal">150g • 78 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+
+                <div class="meal-card">
+                  <div class="meal-card__header">
+                    <div class="meal-card__thumbnail">🥜</div>
+                    <div class="meal-card__content">
+                      <div class="meal-card__title">Mixed Nuts</div>
+                      <div class="meal-card__kcal">15g • 47 kcal</div>
+                      <div class="meal-card__macros">
+                        <div class="macro-bar macro-bar--protein"></div>
+                        <div class="macro-bar macro-bar--carbs"></div>
+                        <div class="macro-bar macro-bar--fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dinner Section -->
+            <div class="diary__meal-section">
+              <div class="diary__meal-title">
+                <span class="diary__meal-icon">🌙</span>
+                <h3>Dinner</h3>
+                <span class="ml-auto text-accent font-semibold">0 kcal</span>
+              </div>
+
+              <div class="diary__meal-entries">
+                <div class="text-center text-text-muted py-8">
+                  <div class="text-2xl mb-2">🍽️</div>
+                  <p>No dinner logged yet</p>
+                  <a href="log-meal.html" class="btn btn--outline mt-3"
+                    >+ Log Dinner</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Daily Summary -->
+            <div class="diary__summary">
+              <h3 class="text-center mb-4">Daily Summary</h3>
+
+              <div class="diary__summary-grid">
+                <div class="diary__summary-item">
+                  <div class="diary__summary-value">930</div>
+                  <div class="diary__summary-label">Total Calories</div>
+                </div>
+
+                <div class="diary__summary-item">
+                  <div class="diary__summary-value">1,070</div>
+                  <div class="diary__summary-label">Remaining</div>
+                </div>
+
+                <div class="diary__summary-item">
+                  <div class="diary__summary-value">25g</div>
+                  <div class="diary__summary-label">Protein</div>
+                </div>
+
+                <div class="diary__summary-item">
+                  <div class="diary__summary-value">85g</div>
+                  <div class="diary__summary-label">Carbs</div>
+                </div>
+
+                <div class="diary__summary-item">
+                  <div class="diary__summary-value">22g</div>
+                  <div class="diary__summary-label">Fat</div>
+                </div>
+
+                <div class="diary__summary-item">
+                  <div class="diary__summary-value">8g</div>
+                  <div class="diary__summary-label">Fiber</div>
+                </div>
+              </div>
+
+              <div class="mt-6 text-center">
+                <div class="flex gap-4 justify-center items-center">
+                  <div class="flex items-center gap-2">
+                    <span>💧</span>
+                    <span><strong>1,750 ml</strong> water today</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>👟</span>
+                    <span><strong>8,432</strong> steps</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>💡</span>
+                    <span><strong>3</strong> swaps used</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Print Footer (hidden by default) -->
+            <div class="print-footer" style="display: none">
+              <p>
+                Generated by AI Nutrition Guide • Photos stay on your device
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // Print functionality
+      function printDiary() {
+        // Show print headers and footers
+        document.querySelector(".print-header").style.display = "block";
+        document.querySelector(".print-footer").style.display = "block";
+
+        // Print the page
+        window.print();
+
+        // Hide print elements after printing
+        setTimeout(() => {
+          document.querySelector(".print-header").style.display = "none";
+          document.querySelector(".print-footer").style.display = "none";
+        }, 1000);
+      }
+
+      // Override the print button click
+      document.querySelector('button[onclick="window.print()"]').onclick =
+        printDiary;
+
+      // Navigation functionality
+      const prevBtn = document.querySelector('button:contains("Previous Day")');
+      const nextBtn = document.querySelector('button:contains("Next Day")');
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          // Navigate to previous day
+          alert("Navigate to previous day");
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          // Navigate to next day
+          alert("Navigate to next day");
+        });
+      }
+
+      // Date picker functionality
+      const dateInput = document.querySelector('input[type="date"]');
+      dateInput.addEventListener("change", (e) => {
+        const selectedDate = new Date(e.target.value);
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        const formattedDate = selectedDate.toLocaleDateString("en-US", options);
+
+        // Update the displayed date
+        document.querySelector(".diary__date").textContent = formattedDate;
+
+        // Update print header
+        document.querySelector(".print-header__date").textContent =
+          formattedDate;
+
+        // Here you would typically load the diary data for the selected date
+        console.log("Loading diary for:", selectedDate);
+      });
+
+      // Calculate and update macro bars
+      function updateMacroBars() {
+        const macroBars = document.querySelectorAll(".macro-bar");
+
+        macroBars.forEach((bar, index) => {
+          // Simulate different macro percentages
+          const percentages = [60, 80, 40]; // protein, carbs, fat
+          const percentage = percentages[index % 3];
+          bar.style.width = percentage + "%";
+        });
+      }
+
+      // Initialize macro bars
+      updateMacroBars();
+    </script>
+  </body>
+</html>

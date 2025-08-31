@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Onboarding</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </a>
+          <a href="log-meal.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a href="diary.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a href="integrations.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <span>Welcome! Let's get started</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="onboarding">
+            <!-- Progress Bar -->
+            <div class="onboarding__progress">
+              <div
+                class="onboarding__progress-step onboarding__progress-step--completed"
+              >
+                1. Profile
+              </div>
+              <div
+                class="onboarding__progress-step onboarding__progress-step--active"
+              >
+                2. Preferences
+              </div>
+              <div class="onboarding__progress-step">3. Goals</div>
+              <div class="onboarding__progress-step">4. Review</div>
+            </div>
+
+            <!-- Step 1: Dietary Profile -->
+            <div class="onboarding__step">
+              <h2>What's your dietary approach?</h2>
+              <p>
+                This helps us suggest healthier alternatives that fit your
+                lifestyle.
+              </p>
+
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="diet" value="balanced" checked />
+                  <span
+                    ><strong>Balanced</strong> - I eat a variety of foods in
+                    moderation</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="diet" value="vegetarian" />
+                  <span
+                    ><strong>Vegetarian</strong> - No meat, but I eat dairy and
+                    eggs</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="diet" value="vegan" />
+                  <span
+                    ><strong>Vegan</strong> - Plant-based only, no animal
+                    products</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="diet" value="high-protein" />
+                  <span
+                    ><strong>High-Protein</strong> - I focus on protein-rich
+                    foods</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="diet" value="low-carb" />
+                  <span><strong>Low-Carb</strong> - I limit carbohydrates</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Cuisine Focus -->
+            <div class="onboarding__step">
+              <h2>What cuisines do you enjoy most?</h2>
+              <p>
+                We'll prioritize healthier alternatives from your favorite food
+                cultures.
+              </p>
+
+              <div class="chip-filters">
+                <button class="chip-filter chip-filter--selected">
+                  Indian
+                </button>
+                <button class="chip-filter">Mediterranean</button>
+                <button class="chip-filter">Continental</button>
+                <button class="chip-filter">Asian</button>
+                <button class="chip-filter">Mexican</button>
+                <button class="chip-filter">Italian</button>
+                <button class="chip-filter">Middle Eastern</button>
+                <button class="chip-filter">African</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Allergies & Exclusions -->
+            <div class="onboarding__step">
+              <h2>Any food allergies or exclusions?</h2>
+              <p>We'll avoid suggesting foods that could cause issues.</p>
+
+              <div class="chip-filters">
+                <button class="chip-filter">Nuts</button>
+                <button class="chip-filter">Dairy</button>
+                <button class="chip-filter">Gluten</button>
+                <button class="chip-filter">Eggs</button>
+                <button class="chip-filter">Shellfish</button>
+                <button class="chip-filter">Soy</button>
+                <button class="chip-filter">Wheat</button>
+                <button class="chip-filter">Fish</button>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Other exclusions (optional)</label>
+                <textarea
+                  class="form-textarea"
+                  placeholder="e.g., I avoid spicy foods, I don't like mushrooms..."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Step 4: Health Goals -->
+            <div class="onboarding__step">
+              <h2>What are your primary health goals?</h2>
+              <p>
+                This helps us tailor nutrition guidance and swap suggestions.
+              </p>
+
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="goal" value="maintain" checked />
+                  <span
+                    ><strong>Maintain</strong> - Keep my current weight and
+                    health</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="goal" value="lose" />
+                  <span
+                    ><strong>Lose Weight</strong> - Create a healthy calorie
+                    deficit</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="goal" value="gain" />
+                  <span
+                    ><strong>Gain Weight</strong> - Build muscle and healthy
+                    weight</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="goal" value="energy" />
+                  <span
+                    ><strong>Boost Energy</strong> - Improve daily vitality and
+                    focus</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="goal" value="health" />
+                  <span
+                    ><strong>Better Health</strong> - Improve overall
+                    wellness</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 5: Activity Level -->
+            <div class="onboarding__step">
+              <h2>How active are you on a typical week?</h2>
+              <p>This affects your daily calorie and nutrient needs.</p>
+
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="activity" value="sedentary" />
+                  <span
+                    ><strong>Sedentary</strong> - Little to no exercise, desk
+                    job</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="activity" value="light" checked />
+                  <span
+                    ><strong>Lightly Active</strong> - Light exercise 1-3
+                    days/week</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="activity" value="moderate" />
+                  <span
+                    ><strong>Moderately Active</strong> - Moderate exercise 3-5
+                    days/week</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="activity" value="very" />
+                  <span
+                    ><strong>Very Active</strong> - Hard exercise 6-7
+                    days/week</span
+                  >
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="activity" value="athlete" />
+                  <span
+                    ><strong>Athlete</strong> - Very hard exercise, physical
+                    job</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 6: Privacy & Data -->
+            <div class="onboarding__step">
+              <h2>Privacy & Data Handling</h2>
+              <p>
+                Your privacy is important to us. Here's how we handle your data:
+              </p>
+
+              <div class="nudge-banner">
+                <div class="nudge-banner__content">
+                  <span class="nudge-banner__icon">🔒</span>
+                  <span class="nudge-banner__text">
+                    <strong>Photos stay on your device</strong> - In this
+                    prototype version, all photo recognition is visual only. No
+                    images are uploaded or processed by external services.
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="radio-item">
+                  <input type="radio" name="privacy" value="local" checked />
+                  <span
+                    ><strong>Local Processing Only</strong> - Keep everything on
+                    my device</span
+                  >
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="radio-item">
+                  <input type="checkbox" name="analytics" checked />
+                  <span
+                    >Allow anonymous usage analytics to improve the app (no
+                    personal data)</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="onboarding__actions">
+              <button class="btn btn--outline" onclick="previousStep()">
+                ← Previous
+              </button>
+              <button class="btn btn--primary" onclick="nextStep()">
+                Next →
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // Chip filter functionality
+      const chipFilters = document.querySelectorAll(".chip-filter");
+      chipFilters.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chip.classList.toggle("chip-filter--selected");
+        });
+      });
+
+      // Onboarding step navigation
+      let currentStep = 1;
+      const totalSteps = 6;
+
+      function showStep(step) {
+        const steps = document.querySelectorAll(".onboarding__step");
+        steps.forEach((s, index) => {
+          if (index + 1 === step) {
+            s.style.display = "block";
+          } else {
+            s.style.display = "none";
+          }
+        });
+
+        // Update progress
+        updateProgress(step);
+      }
+
+      function updateProgress(step) {
+        const progressSteps = document.querySelectorAll(
+          ".onboarding__progress-step"
+        );
+        progressSteps.forEach((p, index) => {
+          p.classList.remove(
+            "onboarding__progress-step--active",
+            "onboarding__progress-step--completed"
+          );
+          if (index + 1 < step) {
+            p.classList.add("onboarding__progress-step--completed");
+          } else if (index + 1 === step) {
+            p.classList.add("onboarding__progress-step--active");
+          }
+        });
+      }
+
+      function nextStep() {
+        if (currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+        } else {
+          // Complete onboarding
+          window.location.href = "index.html";
+        }
+      }
+
+      function previousStep() {
+        if (currentStep > 1) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      }
+
+      // Initialize first step
+      showStep(1);
+    </script>
+  </body>
+</html>

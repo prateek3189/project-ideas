@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Integrations</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </a>
+          <a href="log-meal.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a href="diary.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a
+            href="integrations.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <span>Connect your fitness apps</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="integrations">
+            <!-- Integrations Header -->
+            <div class="integrations__header">
+              <h2>Fitness App Integrations</h2>
+              <p>
+                Connect your favorite fitness and health apps to get a complete
+                picture of your wellness journey
+              </p>
+            </div>
+
+            <!-- Apple Health Integration -->
+            <div class="integrations__provider">
+              <div class="integrations__provider-header">
+                <div class="integrations__provider-info">
+                  <div class="integrations__provider-icon">🍎</div>
+                  <div class="integrations__provider-details">
+                    <h3>Apple Health</h3>
+                    <div class="integrations__provider-description">
+                      Sync steps, workouts, weight, and health metrics
+                    </div>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" class="toggle__input" checked />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>🔄 What syncs from Apple Health</h4>
+                <p>
+                  Steps, active calories, workouts, weight, body fat %, heart
+                  rate, sleep data, and mindfulness sessions.
+                </p>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>📱 What syncs to Apple Health</h4>
+                <p>
+                  Nutrition data, water intake, and meal timing (with your
+                  permission).
+                </p>
+              </div>
+
+              <div class="mt-4 text-sm text-text-muted">
+                <strong>Last sync:</strong> 2 minutes ago •
+                <strong>Status:</strong> Connected
+              </div>
+            </div>
+
+            <!-- Google Fit Integration -->
+            <div class="integrations__provider">
+              <div class="integrations__provider-header">
+                <div class="integrations__provider-info">
+                  <div class="integrations__provider-icon">🤖</div>
+                  <div class="integrations__provider-details">
+                    <h3>Google Fit</h3>
+                    <div class="integrations__provider-description">
+                      Track activity, heart points, and workout sessions
+                    </div>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" class="toggle__input" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>🔄 What syncs from Google Fit</h4>
+                <p>
+                  Steps, active minutes, heart points, workouts, weight, and
+                  sleep data.
+                </p>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>📱 What syncs to Google Fit</h4>
+                <p>Nutrition information and hydration tracking (optional).</p>
+              </div>
+
+              <div class="mt-4 text-sm text-text-muted">
+                <strong>Last sync:</strong> Never • <strong>Status:</strong> Not
+                connected
+              </div>
+            </div>
+
+            <!-- Strava Integration -->
+            <div class="integrations__provider">
+              <div class="integrations__provider-header">
+                <div class="integrations__provider-info">
+                  <div class="integrations__provider-icon">🏃</div>
+                  <div class="integrations__provider-details">
+                    <h3>Strava</h3>
+                    <div class="integrations__provider-description">
+                      Import running, cycling, and workout activities
+                    </div>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" class="toggle__input" checked />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>🔄 What syncs from Strava</h4>
+                <p>
+                  Workout details, distance, duration, calories burned, route
+                  maps, and performance metrics.
+                </p>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>📱 What syncs to Strava</h4>
+                <p>Pre and post-workout nutrition notes (optional).</p>
+              </div>
+
+              <div class="mt-4 text-sm text-text-muted">
+                <strong>Last sync:</strong> 1 hour ago •
+                <strong>Status:</strong> Connected
+              </div>
+            </div>
+
+            <!-- MyFitnessPal Integration -->
+            <div class="integrations__provider">
+              <div class="integrations__provider-header">
+                <div class="integrations__provider-info">
+                  <div class="integrations__provider-icon">📊</div>
+                  <div class="integrations__provider-details">
+                    <h3>MyFitnessPal</h3>
+                    <div class="integrations__provider-description">
+                      Import existing food diary and nutrition data
+                    </div>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" class="toggle__input" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>🔄 What syncs from MyFitnessPal</h4>
+                <p>
+                  Food diary entries, nutrition data, weight tracking, and goal
+                  settings.
+                </p>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>📱 What syncs to MyFitnessPal</h4>
+                <p>New meals logged in AI Nutrition Guide (optional).</p>
+              </div>
+
+              <div class="mt-4 text-sm text-text-muted">
+                <strong>Last sync:</strong> Never • <strong>Status:</strong> Not
+                connected
+              </div>
+            </div>
+
+            <!-- Fitbit Integration -->
+            <div class="integrations__provider">
+              <div class="integrations__provider-header">
+                <div class="integrations__provider-info">
+                  <div class="integrations__provider-icon">⌚</div>
+                  <div class="integrations__provider-details">
+                    <h3>Fitbit</h3>
+                    <div class="integrations__provider-description">
+                      Sync activity, sleep, and heart rate data
+                    </div>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" class="toggle__input" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>🔄 What syncs from Fitbit</h4>
+                <p>
+                  Steps, active minutes, workouts, sleep stages, heart rate, and
+                  weight data.
+                </p>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>📱 What syncs to Fitbit</h4>
+                <p>Nutrition information and meal timing (optional).</p>
+              </div>
+
+              <div class="mt-4 text-sm text-text-muted">
+                <strong>Last sync:</strong> Never • <strong>Status:</strong> Not
+                connected
+              </div>
+            </div>
+
+            <!-- Garmin Connect Integration -->
+            <div class="integrations__provider">
+              <div class="integrations__provider-header">
+                <div class="integrations__provider-info">
+                  <div class="integrations__provider-icon">🏃‍♂️</div>
+                  <div class="integrations__provider-details">
+                    <h3>Garmin Connect</h3>
+                    <div class="integrations__provider-description">
+                      Import detailed workout and health metrics
+                    </div>
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" class="toggle__input" />
+                  <span class="toggle__slider"></span>
+                </label>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>🔄 What syncs from Garmin Connect</h4>
+                <p>
+                  Workout details, GPS routes, heart rate zones, training load,
+                  and recovery metrics.
+                </p>
+              </div>
+
+              <div class="integrations__sync-info">
+                <h4>📱 What syncs to Garmin Connect</h4>
+                <p>Pre-workout nutrition and hydration status (optional).</p>
+              </div>
+
+              <div class="mt-4 text-sm text-text-muted">
+                <strong>Last sync:</strong> Never • <strong>Status:</strong> Not
+                connected
+              </div>
+            </div>
+
+            <!-- Integration Benefits -->
+            <div class="insights__section mt-8">
+              <h3 class="insights__section-title">💡 How Integrations Help</h3>
+
+              <div class="grid grid--cols-2 gap-6">
+                <div>
+                  <h4>🎯 Better Goal Setting</h4>
+                  <p>
+                    When connected, your fitness data automatically adjusts your
+                    daily calorie and macro targets based on activity level.
+                  </p>
+
+                  <h4>📊 Comprehensive Insights</h4>
+                  <p>
+                    See how your nutrition choices impact your workouts and
+                    recovery, and vice versa.
+                  </p>
+
+                  <h4>🔄 Automatic Sync</h4>
+                  <p>
+                    No need to manually enter workout data - everything updates
+                    automatically throughout the day.
+                  </p>
+                </div>
+
+                <div>
+                  <h4>🏃‍♀️ Workout Nutrition</h4>
+                  <p>
+                    Get personalized pre and post-workout meal suggestions based
+                    on your actual activity.
+                  </p>
+
+                  <h4>💤 Sleep & Recovery</h4>
+                  <p>
+                    Understand how your eating patterns affect your sleep
+                    quality and recovery.
+                  </p>
+
+                  <h4>📈 Progress Tracking</h4>
+                  <p>
+                    Track your fitness and nutrition progress together for a
+                    complete wellness picture.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Privacy & Security -->
+            <div class="insights__section mt-6">
+              <h3 class="insights__section-title">🔒 Privacy & Security</h3>
+
+              <div class="nudge-banner">
+                <div class="nudge-banner__content">
+                  <span class="nudge-banner__icon">🔒</span>
+                  <span class="nudge-banner__text">
+                    <strong>Your data is secure:</strong> We only access the
+                    specific data you authorize. No medical information is ever
+                    shared. You can disconnect any integration at any time.
+                  </span>
+                </div>
+              </div>
+
+              <div class="grid grid--cols-3 gap-4 mt-4">
+                <div class="text-center p-4">
+                  <div class="text-2xl mb-2">🔐</div>
+                  <h4>Secure Connections</h4>
+                  <p class="text-sm">
+                    All integrations use OAuth 2.0 for secure authentication
+                  </p>
+                </div>
+
+                <div class="text-center p-4">
+                  <div class="text-2xl mb-2">👤</div>
+                  <h4>User Control</h4>
+                  <p class="text-sm">
+                    You decide exactly what data to share and can revoke access
+                    anytime
+                  </p>
+                </div>
+
+                <div class="text-center p-4">
+                  <div class="text-2xl mb-2">🏥</div>
+                  <h4>No Medical Data</h4>
+                  <p class="text-sm">
+                    We never access or store sensitive medical information
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="insights__section mt-6">
+              <h3 class="insights__section-title">🔧 Troubleshooting</h3>
+
+              <details class="mt-4">
+                <summary>Integration not connecting?</summary>
+                <div
+                  class="p-4 bg-surface border border-text-muted rounded-lg mt-2"
+                >
+                  <p>Try these steps:</p>
+                  <ol class="list-decimal list-inside mt-2 space-y-1">
+                    <li>Check your internet connection</li>
+                    <li>Ensure the app is up to date</li>
+                    <li>Try disconnecting and reconnecting</li>
+                    <li>Check your device's privacy settings</li>
+                  </ol>
+                </div>
+              </details>
+
+              <details class="mt-2">
+                <summary>Data not syncing?</summary>
+                <div
+                  class="p-4 bg-surface border border-text-muted rounded-lg mt-2"
+                >
+                  <p>Common solutions:</p>
+                  <ol class="list-decimal list-inside mt-2 space-y-1">
+                    <li>Wait a few minutes for sync to complete</li>
+                    <li>Check if the integration is still connected</li>
+                    <li>Try manually refreshing the data</li>
+                    <li>Contact support if issues persist</li>
+                  </ol>
+                </div>
+              </details>
+
+              <details class="mt-2">
+                <summary>Want to disconnect an integration?</summary>
+                <div
+                  class="p-4 bg-surface border border-text-muted rounded-lg mt-2"
+                >
+                  <p>Simply toggle off the integration above. This will:</p>
+                  <ul class="list-disc list-inside mt-2 space-y-1">
+                    <li>Stop new data from syncing</li>
+                    <li>Remove the app's access to your data</li>
+                    <li>
+                      Keep your existing synced data in AI Nutrition Guide
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // Toggle functionality
+      const toggles = document.querySelectorAll(".toggle__input");
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("change", (e) => {
+          const provider = e.target.closest(".integrations__provider");
+          const providerName = provider.querySelector("h3").textContent;
+          const isConnected = e.target.checked;
+
+          if (isConnected) {
+            // Simulate connection process
+            alert(
+              `Connecting to ${providerName}...\n\nIn the real app, this would open the OAuth flow for secure authentication.`
+            );
+
+            // Update status
+            const statusElement = provider.querySelector(".text-sm");
+            if (statusElement) {
+              statusElement.innerHTML =
+                "<strong>Last sync:</strong> Just now • <strong>Status:</strong> Connecting...";
+            }
+          } else {
+            // Simulate disconnection
+            alert(
+              `Disconnecting from ${providerName}...\n\nThis will stop new data from syncing but keep your existing data.`
+            );
+
+            // Update status
+            const statusElement = provider.querySelector(".text-sm");
+            if (statusElement) {
+              statusElement.innerHTML =
+                "<strong>Last sync:</strong> Never • <strong>Status:</strong> Not connected";
+            }
+          }
+        });
+      });
+
+      // Simulate sync status updates
+      function updateSyncStatus() {
+        const connectedProviders = document.querySelectorAll(
+          ".toggle__input:checked"
+        );
+        connectedProviders.forEach((toggle) => {
+          const provider = toggle.closest(".integrations__provider");
+          const statusElement = provider.querySelector(".text-sm");
+          if (
+            statusElement &&
+            statusElement.textContent.includes("Connecting...")
+          ) {
+            statusElement.innerHTML =
+              "<strong>Last sync:</strong> Just now • <strong>Status:</strong> Connected";
+          }
+        });
+      }
+
+      // Update sync status after 3 seconds
+      setTimeout(updateSyncStatus, 3000);
+    </script>
+  </body>
+</html>

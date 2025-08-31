@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Log Meal</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </a>
+          <a
+            href="log-meal.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a href="diary.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a href="integrations.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <a href="diary.html" class="btn btn--outline">← Back to Diary</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="log-meal">
+            <h2>Log Your Meal</h2>
+            <p>
+              Take a photo or search for foods to log your meal and get
+              healthier alternatives.
+            </p>
+
+            <!-- Photo Upload Section -->
+            <div class="log-meal__section">
+              <h3 class="log-meal__section-title">📸 Take or Upload Photo</h3>
+
+              <div class="upload-area">
+                <div class="upload-area__icon">📷</div>
+                <div class="upload-area__text">
+                  <strong>Drag & drop a photo here</strong><br />
+                  or click to browse files
+                </div>
+                <button class="upload-area__button">Choose Photo</button>
+              </div>
+
+              <div class="nudge-banner">
+                <div class="nudge-banner__content">
+                  <span class="nudge-banner__icon">💡</span>
+                  <span class="nudge-banner__text">
+                    <strong>Tip:</strong> Take photos in good lighting for
+                    better recognition. Include the entire plate for accurate
+                    portion estimation.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recognition Results Section -->
+            <div class="log-meal__section">
+              <h3 class="log-meal__section-title">🔍 Recognition Results</h3>
+              <p>
+                Here's what we found in your photo. Review and adjust portions
+                as needed.
+              </p>
+
+              <table class="food-table">
+                <thead>
+                  <tr>
+                    <th>Food Item</th>
+                    <th>Portion</th>
+                    <th>Calories</th>
+                    <th>Macros</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="food-table__food-name">
+                        Poha (Flattened Rice)
+                      </div>
+                      <div class="food-table__portion">Estimated: 180g</div>
+                    </td>
+                    <td>
+                      <select class="form-select">
+                        <option>180g (1 cup)</option>
+                        <option>90g (1/2 cup)</option>
+                        <option>270g (1.5 cups)</option>
+                      </select>
+                    </td>
+                    <td class="food-table__kcal">320 kcal</td>
+                    <td class="food-table__macros">
+                      P: 6g • C: 55g • F: 7g<br />
+                      Fiber: 3g • Sugar: 2g
+                    </td>
+                    <td>
+                      <button class="food-table__swap-btn">💡 Swaps</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="food-table__food-name">Masala Omelette</div>
+                      <div class="food-table__portion">Estimated: 120g</div>
+                    </td>
+                    <td>
+                      <select class="form-select">
+                        <option>120g (1 medium)</option>
+                        <option>90g (1 small)</option>
+                        <option>150g (1 large)</option>
+                      </select>
+                    </td>
+                    <td class="food-table__kcal">220 kcal</td>
+                    <td class="food-table__macros">
+                      P: 16g • C: 4g • F: 15g<br />
+                      Fiber: 1g • Sugar: 1g
+                    </td>
+                    <td>
+                      <button class="food-table__swap-btn">💡 Swaps</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="food-table__food-name">Mixed Vegetables</div>
+                      <div class="food-table__portion">Estimated: 80g</div>
+                    </td>
+                    <td>
+                      <select class="form-select">
+                        <option>80g (1/2 cup)</option>
+                        <option>40g (1/4 cup)</option>
+                        <option>120g (3/4 cup)</option>
+                      </select>
+                    </td>
+                    <td class="food-table__kcal">45 kcal</td>
+                    <td class="food-table__macros">
+                      P: 3g • C: 8g • F: 0g<br />
+                      Fiber: 4g • Sugar: 3g
+                    </td>
+                    <td>
+                      <button class="food-table__swap-btn">💡 Swaps</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Portion Helper Section -->
+            <div class="log-meal__section">
+              <h3 class="log-meal__section-title">📏 Portion Helper</h3>
+              <p>Use these visual cues to estimate portions accurately:</p>
+
+              <div class="portion-helper">
+                <div class="portion-helper__title">Common Portion Sizes</div>
+                <div class="portion-helper__items">
+                  <div class="portion-helper__item">
+                    <div class="portion-helper__icon">👊</div>
+                    <div class="portion-helper__text">
+                      1 cup ≈ your clenched fist
+                    </div>
+                  </div>
+                  <div class="portion-helper__item">
+                    <div class="portion-helper__icon">👍</div>
+                    <div class="portion-helper__text">1 tbsp ≈ your thumb</div>
+                  </div>
+                  <div class="portion-helper__item">
+                    <div class="portion-helper__icon">🤏</div>
+                    <div class="portion-helper__text">1 tsp ≈ fingertip</div>
+                  </div>
+                  <div class="portion-helper__item">
+                    <div class="portion-helper__icon">🖐️</div>
+                    <div class="portion-helper__text">
+                      3 oz meat ≈ palm size
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Meal Details Section -->
+            <div class="log-meal__section">
+              <h3 class="log-meal__section-title">📝 Meal Details</h3>
+
+              <div class="form-group">
+                <label class="form-label">Meal Type</label>
+                <select class="form-select">
+                  <option>Breakfast</option>
+                  <option selected>Lunch</option>
+                  <option>Dinner</option>
+                  <option>Snack</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Mood & Satiety</label>
+                <div class="flex gap-4">
+                  <label class="radio-item">
+                    <input type="radio" name="mood" value="happy" />
+                    <span>😊 Satisfied</span>
+                  </label>
+                  <label class="radio-item">
+                    <input type="radio" name="mood" value="neutral" checked />
+                    <span>😐 Neutral</span>
+                  </label>
+                  <label class="radio-item">
+                    <input type="radio" name="mood" value="hungry" />
+                    <span>😋 Still hungry</span>
+                  </label>
+                  <label class="radio-item">
+                    <input type="radio" name="mood" value="full" />
+                    <span>😵 Too full</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Notes (optional)</label>
+                <textarea
+                  class="form-textarea"
+                  placeholder="e.g., Post-workout meal, ate with family, felt energized..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Tags</label>
+                <div class="chip-filters">
+                  <button class="chip-filter chip-filter--selected">
+                    Post-workout
+                  </button>
+                  <button class="chip-filter">Family meal</button>
+                  <button class="chip-filter">Quick prep</button>
+                  <button class="chip-filter">Restaurant</button>
+                  <button class="chip-filter">+ Add tag</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="log-meal__actions">
+              <button class="btn btn--outline">Save as Draft</button>
+              <button class="btn btn--primary">Save Meal</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // Chip filter functionality
+      const chipFilters = document.querySelectorAll(".chip-filter");
+      chipFilters.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          if (chip.textContent === "+ Add tag") {
+            const newTag = prompt("Enter new tag:");
+            if (newTag && newTag.trim()) {
+              const newChip = document.createElement("button");
+              newChip.className = "chip-filter";
+              newChip.textContent = newTag.trim();
+              chip.parentNode.insertBefore(newChip, chip);
+
+              // Add event listener to new chip
+              newChip.addEventListener("click", () => {
+                newChip.classList.toggle("chip-filter--selected");
+              });
+            }
+          } else {
+            chip.classList.toggle("chip-filter--selected");
+          }
+        });
+      });
+
+      // Upload area functionality
+      const uploadArea = document.querySelector(".upload-area");
+      const uploadButton = uploadArea.querySelector(".upload-area__button");
+
+      uploadButton.addEventListener("click", () => {
+        // Simulate file selection
+        alert(
+          "Photo upload functionality would be implemented here in the real app."
+        );
+      });
+
+      // Swap button functionality
+      const swapButtons = document.querySelectorAll(".food-table__swap-btn");
+      swapButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const foodName = button
+            .closest("tr")
+            .querySelector(".food-table__food-name").textContent;
+          window.location.href = `food.html?food=${encodeURIComponent(
+            foodName
+          )}`;
+        });
+      });
+
+      // Save meal functionality
+      const saveMealBtn = document.querySelector(".btn--primary");
+      saveMealBtn.addEventListener("click", () => {
+        alert("Meal saved! Redirecting to diary...");
+        window.location.href = "diary.html";
+      });
+    </script>
+  </body>
+</html>

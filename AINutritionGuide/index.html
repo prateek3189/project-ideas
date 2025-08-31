@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Dashboard</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <div class="sidebar__nav-item sidebar__nav-item--active">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </div>
+          <a href="log-meal.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a href="diary.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a href="integrations.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <input type="date" value="2024-01-15" class="form-input" />
+              <button onclick="window.print()" class="btn btn--outline">
+                🖨️ Print
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="dashboard">
+            <!-- Dashboard Header -->
+            <div class="dashboard__header">
+              <h2 class="dashboard__title">Today's Overview</h2>
+              <div class="dashboard__date-picker">
+                <span>Monday, January 15, 2024</span>
+              </div>
+            </div>
+
+            <!-- Dashboard Tiles -->
+            <div class="dashboard__tiles">
+              <div class="tile tile--kcal">
+                <div class="tile__header">
+                  <span class="tile__title">Calories Remaining</span>
+                  <span class="tile__icon">🔥</span>
+                </div>
+                <div class="tile__value">1,280</div>
+                <div class="tile__subtitle">Target: 2,000 kcal</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__header">
+                  <span class="tile__title">Macro Balance</span>
+                  <span class="tile__icon">⚖️</span>
+                </div>
+                <div class="macro-ring">
+                  <svg class="macro-ring__svg" width="120" height="120">
+                    <circle
+                      class="macro-ring__circle macro-ring__circle--bg"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                    ></circle>
+                    <circle
+                      class="macro-ring__circle macro-ring__circle--protein"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                      style="--value: 75"
+                    ></circle>
+                    <circle
+                      class="macro-ring__circle macro-ring__circle--carbs"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                      style="--value: 60"
+                    ></circle>
+                    <circle
+                      class="macro-ring__circle macro-ring__circle--fat"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                      style="--value: 45"
+                    ></circle>
+                  </svg>
+                  <div class="macro-ring__center">
+                    <div class="macro-ring__total">180g</div>
+                    <div class="macro-ring__unit">Total</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tile tile--water">
+                <div class="tile__header">
+                  <span class="tile__title">Hydration</span>
+                  <span class="tile__icon">💧</span>
+                </div>
+                <div class="tile__value">1,750</div>
+                <div class="tile__subtitle">ml / 2,000 ml goal</div>
+              </div>
+
+              <div class="tile tile--steps">
+                <div class="tile__header">
+                  <span class="tile__title">Steps</span>
+                  <span class="tile__icon">👟</span>
+                </div>
+                <div class="tile__value">8,432</div>
+                <div class="tile__subtitle">Goal: 10,000 steps</div>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dashboard__quick-actions">
+              <a href="log-meal.html" class="btn btn--primary btn--large">
+                📸 + Photo
+              </a>
+              <a href="log-meal.html" class="btn btn--secondary btn--large">
+                🔍 + Search
+              </a>
+              <button class="btn btn--outline btn--large">
+                💧 + Water (250ml)
+              </button>
+              <button class="btn btn--outline btn--large">
+                📝 + Quick Note
+              </button>
+            </div>
+
+            <!-- Nudge Banner -->
+            <div class="nudge-banner">
+              <div class="nudge-banner__content">
+                <span class="nudge-banner__icon">💡</span>
+                <span class="nudge-banner__text"
+                  >Low on fiber today—add dal, sprouts, or a fruit.</span
+                >
+              </div>
+            </div>
+
+            <!-- Recent Meals -->
+            <div class="dashboard__recent-meals">
+              <h3>Recent Meals</h3>
+
+              <div class="meal-card">
+                <div class="meal-card__header">
+                  <div class="meal-card__thumbnail">🍳</div>
+                  <div class="meal-card__content">
+                    <div class="meal-card__title">Masala Omelette</div>
+                    <div class="meal-card__kcal">220 kcal</div>
+                    <div class="meal-card__macros">
+                      <div class="macro-bar macro-bar--protein"></div>
+                      <div class="macro-bar macro-bar--carbs"></div>
+                      <div class="macro-bar macro-bar--fat"></div>
+                    </div>
+                  </div>
+                </div>
+                <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+              </div>
+
+              <div class="meal-card">
+                <div class="meal-card__header">
+                  <div class="meal-card__thumbnail">🍚</div>
+                  <div class="meal-card__content">
+                    <div class="meal-card__title">Poha with Peanuts</div>
+                    <div class="meal-card__kcal">320 kcal</div>
+                    <div class="meal-card__macros">
+                      <div class="macro-bar macro-bar--protein"></div>
+                      <div class="macro-bar macro-bar--carbs"></div>
+                      <div class="macro-bar macro-bar--fat"></div>
+                    </div>
+                  </div>
+                </div>
+                <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+              </div>
+
+              <div class="meal-card">
+                <div class="meal-card__header">
+                  <div class="meal-card__thumbnail">🥗</div>
+                  <div class="meal-card__content">
+                    <div class="meal-card__title">Mixed Salad</div>
+                    <div class="meal-card__kcal">85 kcal</div>
+                    <div class="meal-card__macros">
+                      <div class="macro-bar macro-bar--protein"></div>
+                      <div class="macro-bar macro-bar--carbs"></div>
+                      <div class="macro-bar macro-bar--fat"></div>
+                    </div>
+                  </div>
+                </div>
+                <a href="food.html" class="meal-card__swap">💡 See swaps</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // Print functionality
+      function printPage() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,583 @@
+/* Print Styles */
+
+@media print {
+  /* Hide non-printable elements */
+  .no-print,
+  .header,
+  .sidebar,
+  .footer,
+  .btn,
+  .theme-toggle,
+  .theme-switcher {
+    display: none !important;
+  }
+
+  /* Reset margins and padding for print */
+  * {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  /* Body print styles */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black !important;
+    background: white !important;
+  }
+
+  /* Typography for print */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black !important;
+    page-break-after: avoid;
+    margin-bottom: 0.5em !important;
+  }
+
+  h1 {
+    font-size: 18pt;
+  }
+  h2 {
+    font-size: 16pt;
+  }
+  h3 {
+    font-size: 14pt;
+  }
+  h4 {
+    font-size: 13pt;
+  }
+  h5,
+  h6 {
+    font-size: 12pt;
+  }
+
+  p {
+    margin-bottom: 0.5em !important;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Print Header */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 1em !important;
+    padding-bottom: 0.5em !important;
+    border-bottom: 2px solid black !important;
+    page-break-after: avoid;
+  }
+
+  .print-header__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 0.25em !important;
+  }
+
+  .print-header__date {
+    font-size: 12pt;
+    color: #666 !important;
+  }
+
+  /* Print Footer */
+  .print-footer {
+    display: block !important;
+    text-align: center;
+    margin-top: 1em !important;
+    padding-top: 0.5em !important;
+    border-top: 1px solid #ccc !important;
+    font-size: 10pt;
+    color: #666 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Page numbers */
+  .print-footer::after {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+
+  /* Tables for print */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 1em !important;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc !important;
+    padding: 0.25em 0.5em !important;
+    text-align: left !important;
+    vertical-align: top !important;
+  }
+
+  th {
+    background-color: #f0f0f0 !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  /* Food table specific print styles */
+  .food-table th {
+    background-color: #e8f5e8 !important;
+    color: black !important;
+  }
+
+  .food-table td {
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  /* Meal sections for print */
+  .diary__meal-section {
+    page-break-inside: avoid;
+    margin-bottom: 1em !important;
+    padding: 0.5em !important;
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+
+  .diary__meal-title {
+    font-weight: bold !important;
+    font-size: 14pt !important;
+    margin-bottom: 0.5em !important;
+    padding-bottom: 0.25em !important;
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  /* Meal cards for print */
+  .meal-card {
+    border: 1px solid #ccc !important;
+    padding: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    background: white !important;
+    page-break-inside: avoid;
+  }
+
+  .meal-card__header {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.5em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .meal-card__thumbnail {
+    width: 40px !important;
+    height: 40px !important;
+    border: 1px solid #ccc !important;
+    background-color: #f0f0f0 !important;
+    color: #666 !important;
+    font-size: 16pt !important;
+  }
+
+  .meal-card__content {
+    flex: 1 !important;
+  }
+
+  .meal-card__title {
+    font-weight: bold !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .meal-card__kcal {
+    color: #666 !important;
+    font-size: 11pt !important;
+  }
+
+  .meal-card__macros {
+    display: flex !important;
+    gap: 0.25em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .macro-bar {
+    height: 3px !important;
+    border-radius: 2px !important;
+    background-color: #ccc !important;
+    flex: 1 !important;
+  }
+
+  .macro-bar--protein {
+    background-color: #22a06b !important;
+  }
+
+  .macro-bar--carbs {
+    background-color: #2563eb !important;
+  }
+
+  .macro-bar--fat {
+    background-color: #f59e0b !important;
+  }
+
+  /* Summary section for print */
+  .diary__summary {
+    background-color: #f8f9fa !important;
+    border: 2px solid #22a06b !important;
+    padding: 1em !important;
+    margin-top: 1em !important;
+    page-break-inside: avoid;
+  }
+
+  .diary__summary-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1em !important;
+  }
+
+  .diary__summary-item {
+    text-align: center !important;
+  }
+
+  .diary__summary-value {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    color: #22a06b !important;
+  }
+
+  .diary__summary-label {
+    font-size: 10pt !important;
+    color: #666 !important;
+    margin-top: 0.25em !important;
+  }
+
+  /* Insights for print */
+  .insights__section {
+    page-break-inside: avoid;
+    margin-bottom: 1em !important;
+    padding: 0.5em !important;
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+
+  .insights__section-title {
+    color: #22a06b !important;
+    font-weight: bold !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  /* Heatmap for print */
+  .heatmap {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 2px !important;
+    margin: 1em 0 !important;
+  }
+
+  .heatmap__cell {
+    aspect-ratio: 1 !important;
+    border: 1px solid #ccc !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 8pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .heatmap__cell--0 {
+    background-color: #f8f9fa !important;
+  }
+  .heatmap__cell--1 {
+    background-color: #e9ecef !important;
+  }
+  .heatmap__cell--2 {
+    background-color: #dee2e6 !important;
+  }
+  .heatmap__cell--3 {
+    background-color: #adb5bd !important;
+  }
+  .heatmap__cell--4 {
+    background-color: #495057 !important;
+    color: white !important;
+  }
+
+  .heatmap__legend {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1em !important;
+    margin-top: 0.5em !important;
+    font-size: 10pt !important;
+  }
+
+  .heatmap__legend-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25em !important;
+  }
+
+  .heatmap__legend-color {
+    width: 12px !important;
+    height: 12px !important;
+    border: 1px solid #ccc !important;
+  }
+
+  /* Badges for print */
+  .insights__badges {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 0.5em !important;
+  }
+
+  .badge {
+    border: 1px solid #ccc !important;
+    padding: 0.25em 0.5em !important;
+    text-align: center !important;
+    background-color: #f8f9fa !important;
+    color: black !important;
+    font-size: 10pt !important;
+  }
+
+  .badge--unlocked {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+  }
+
+  .badge--locked {
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+  }
+
+  /* Nutrient bars for print */
+  .nutrient-bars {
+    margin: 1em 0 !important;
+  }
+
+  .nutrient-bar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .nutrient-bar__label {
+    width: 60px !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+  }
+
+  .nutrient-bar__bar {
+    flex: 1 !important;
+    height: 6px !important;
+    background-color: #e9ecef !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+  }
+
+  .nutrient-bar__fill {
+    height: 100% !important;
+    background-color: #22a06b !important;
+    border-radius: 3px !important;
+  }
+
+  .nutrient-bar__value {
+    width: 50px !important;
+    text-align: right !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+  }
+
+  /* Swap suggestions for print */
+  .swap-chip {
+    display: inline-block !important;
+    padding: 0.25em 0.5em !important;
+    background-color: #e8f5e8 !important;
+    color: #155724 !important;
+    border: 1px solid #c3e6cb !important;
+    border-radius: 12px !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+    margin: 0.25em 0.25em 0.25em 0 !important;
+  }
+
+  /* Quick actions for print */
+  .dashboard__quick-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .btn {
+    border: 1px solid #ccc !important;
+    padding: 0.5em !important;
+    text-align: center !important;
+    background-color: #f8f9fa !important;
+    color: black !important;
+    text-decoration: none !important;
+    font-size: 11pt !important;
+  }
+
+  /* Tiles for print */
+  .dashboard__tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .tile {
+    border: 1px solid #ccc !important;
+    padding: 0.5em !important;
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .tile--kcal {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+  }
+
+  .tile--water {
+    background-color: #d1ecf1 !important;
+    border-color: #bee5eb !important;
+  }
+
+  .tile--steps {
+    background-color: #d6eaf8 !important;
+    border-color: #b3d9f2 !important;
+  }
+
+  .tile__value {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .tile__title {
+    color: #666 !important;
+    font-size: 10pt !important;
+  }
+
+  /* Macro ring for print */
+  .macro-ring {
+    text-align: center !important;
+    margin: 1em auto !important;
+  }
+
+  .macro-ring__svg {
+    display: none !important;
+  }
+
+  .macro-ring__center {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .macro-ring__total {
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .macro-ring__unit {
+    font-size: 10pt !important;
+    color: #666 !important;
+  }
+
+  /* Nudge banner for print */
+  .nudge-banner {
+    background-color: #d1ecf1 !important;
+    border: 1px solid #bee5eb !important;
+    padding: 0.5em !important;
+    margin-bottom: 1em !important;
+    border-radius: 4px !important;
+  }
+
+  .nudge-banner__text {
+    color: black !important;
+    font-weight: bold !important;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always !important;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid !important;
+  }
+
+  /* Links for print */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666 !important;
+  }
+
+  /* Lists for print */
+  ul,
+  ol {
+    margin-bottom: 0.5em !important;
+    padding-left: 1.5em !important;
+  }
+
+  li {
+    margin-bottom: 0.25em !important;
+  }
+
+  /* Forms for print */
+  input,
+  select,
+  textarea {
+    border: 1px solid #ccc !important;
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* Details and summary for print */
+  details {
+    margin-bottom: 0.5em !important;
+  }
+
+  summary {
+    font-weight: bold !important;
+    cursor: default !important;
+    padding: 0.25em 0 !important;
+    background-color: #f8f9fa !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+  }
+
+  /* Footer links for print */
+  .footer__links {
+    display: none !important;
+  }
+
+  /* Print-specific classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  /* Watermarks or headers for different sections */
+  .section-header {
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    color: #22a06b !important;
+    border-bottom: 2px solid #22a06b !important;
+    padding-bottom: 0.25em !important;
+    margin-bottom: 0.5em !important;
+    page-break-after: avoid !important;
+  }
+}

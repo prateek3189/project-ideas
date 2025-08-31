@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Food Details & Swaps</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </a>
+          <a href="log-meal.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a href="diary.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a href="integrations.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <a href="log-meal.html" class="btn btn--outline"
+                >← Back to Log Meal</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="food-details">
+            <!-- Food Header -->
+            <div class="food-details__header">
+              <h2 class="food-details__title">Poha (Flattened Rice)</h2>
+              <span class="food-details__cuisine">Indian Cuisine</span>
+              <p>
+                Traditional Indian breakfast made from flattened rice, typically
+                cooked with spices, vegetables, and peanuts.
+              </p>
+
+              <div class="flex gap-4 mt-4">
+                <div>
+                  <strong>Common Portions:</strong><br />
+                  90g (1/2 cup) • 180g (1 cup) • 270g (1.5 cups)
+                </div>
+                <div>
+                  <strong>Calories per 100g:</strong><br />
+                  178 kcal
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="food-details__content">
+              <!-- Nutrients Panel -->
+              <div class="food-details__nutrients">
+                <h3>Nutrition Facts (per 180g serving)</h3>
+
+                <div class="nutrient-bars">
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Calories</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 80%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">320</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Protein</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 40%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">6g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Carbs</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 90%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">55g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Fat</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 35%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">7g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Fiber</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 25%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">3g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Sugar</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 15%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">2g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Sodium</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 60%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">480mg</span>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <h4>Micronutrients</h4>
+                  <div class="grid grid--cols-2 gap-3">
+                    <div><strong>Iron:</strong> 2.5mg (14% DV)</div>
+                    <div><strong>Folate:</strong> 45mcg (11% DV)</div>
+                    <div><strong>Thiamin:</strong> 0.2mg (17% DV)</div>
+                    <div><strong>Niacin:</strong> 3.2mg (20% DV)</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Swap Suggestions -->
+              <div class="food-details__swaps">
+                <h3>💡 Healthier Alternatives</h3>
+                <p>
+                  Here are some nutritious swaps that maintain the flavor while
+                  improving nutrition:
+                </p>
+
+                <div class="space-y-4">
+                  <!-- Swap 1 -->
+                  <div class="border border-color-accent-light rounded-lg p-4">
+                    <h4 class="text-accent font-semibold mb-2">
+                      🥗 Veg Poha + Sprouts + Peanuts
+                    </h4>
+                    <div class="text-sm text-text-muted mb-3">
+                      <strong>Benefits:</strong> +2g fiber, +3g protein, -45
+                      kcal
+                    </div>
+                    <details>
+                      <summary>Why this swap?</summary>
+                      <p class="mt-2 text-sm">
+                        Adding sprouts increases fiber and protein content while
+                        reducing overall calories. Peanuts add healthy fats and
+                        make the dish more satiating.
+                      </p>
+                    </details>
+                    <div class="mt-3">
+                      <span class="swap-chip">Try this swap</span>
+                    </div>
+                  </div>
+
+                  <!-- Swap 2 -->
+                  <div class="border border-color-accent-light rounded-lg p-4">
+                    <h4 class="text-accent font-semibold mb-2">
+                      🍚 Half Brown Rice + Half Poha
+                    </h4>
+                    <div class="text-sm text-text-muted mb-3">
+                      <strong>Benefits:</strong> +4g fiber, +1g protein, -20
+                      kcal
+                    </div>
+                    <details>
+                      <summary>Why this swap?</summary>
+                      <p class="mt-2 text-sm">
+                        Brown rice has more fiber and nutrients than white rice.
+                        Mixing it with poha maintains the traditional texture
+                        while boosting nutrition.
+                      </p>
+                    </details>
+                    <div class="mt-3">
+                      <span class="swap-chip">Try this swap</span>
+                    </div>
+                  </div>
+
+                  <!-- Swap 3 -->
+                  <div class="border border-color-accent-light rounded-lg p-4">
+                    <h4 class="text-accent font-semibold mb-2">
+                      🥬 Poha + Leafy Greens
+                    </h4>
+                    <div class="text-sm text-text-muted mb-3">
+                      <strong>Benefits:</strong> +3g fiber, +2g protein,
+                      +vitamins A, C, K
+                    </div>
+                    <details>
+                      <summary>Why this swap?</summary>
+                      <p class="mt-2 text-sm">
+                        Adding spinach, kale, or other leafy greens
+                        significantly increases fiber, vitamins, and minerals
+                        without adding many calories.
+                      </p>
+                    </details>
+                    <div class="mt-3">
+                      <span class="swap-chip">Try this swap</span>
+                    </div>
+                  </div>
+
+                  <!-- Swap 4 -->
+                  <div class="border border-color-accent-light rounded-lg p-4">
+                    <h4 class="text-accent font-semibold mb-2">
+                      🌾 Quinoa Poha Bowl
+                    </h4>
+                    <div class="text-sm text-text-muted mb-3">
+                      <strong>Benefits:</strong> +8g protein, +5g fiber, +iron,
+                      +magnesium
+                    </div>
+                    <details>
+                      <summary>Why this swap?</summary>
+                      <p class="mt-2 text-sm">
+                        Quinoa is a complete protein with all essential amino
+                        acids. It's also gluten-free and rich in minerals like
+                        iron and magnesium.
+                      </p>
+                    </details>
+                    <div class="mt-3">
+                      <span class="swap-chip">Try this swap</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="nudge-banner mt-6">
+                  <div class="nudge-banner__content">
+                    <span class="nudge-banner__icon">💡</span>
+                    <span class="nudge-banner__text">
+                      <strong>Pro tip:</strong> Start with small changes and
+                      gradually incorporate healthier alternatives. Your taste
+                      buds will adapt over time!
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cooking Tips -->
+            <div class="food-details__section mt-6">
+              <h3>👨‍🍳 Cooking Tips for Healthier Poha</h3>
+              <div class="grid grid--cols-2 gap-6">
+                <div>
+                  <h4>Preparation Tips</h4>
+                  <ul>
+                    <li>Rinse poha briefly to remove excess starch</li>
+                    <li>Use minimal oil for cooking</li>
+                    <li>Add vegetables early to retain nutrients</li>
+                    <li>
+                      Use whole spices instead of powdered for better flavor
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Ingredient Swaps</h4>
+                  <ul>
+                    <li>Replace refined oil with coconut oil or ghee</li>
+                    <li>Use sea salt instead of table salt</li>
+                    <li>Add nuts and seeds for crunch and nutrition</li>
+                    <li>Include fresh herbs for antioxidants</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex gap-4 justify-center mt-8">
+              <button class="btn btn--outline">Save to Favorites</button>
+              <button class="btn btn--primary">Use This Swap</button>
+              <button class="btn btn--secondary">Share Recipe</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // URL parameter handling for food selection
+      function getFoodFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("food");
+      }
+
+      // Update page content based on URL parameter
+      function updateFoodContent() {
+        const food = getFoodFromURL();
+        if (food) {
+          // Update page title and content based on selected food
+          document.title = `AI Nutrition Guide - ${food}`;
+          const titleElement = document.querySelector(".food-details__title");
+          if (titleElement) {
+            titleElement.textContent = food;
+          }
+        }
+      }
+
+      // Initialize page
+      updateFoodContent();
+
+      // Swap chip functionality
+      const swapChips = document.querySelectorAll(".swap-chip");
+      swapChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          alert("This swap has been added to your meal plan!");
+        });
+      });
+
+      // Button functionality
+      const saveBtn = document.querySelector(".btn--outline");
+      const useSwapBtn = document.querySelector(".btn--primary");
+      const shareBtn = document.querySelector(".btn--secondary");
+
+      saveBtn.addEventListener("click", () => {
+        alert("Added to favorites!");
+      });
+
+      useSwapBtn.addEventListener("click", () => {
+        alert("Swap applied! Redirecting to meal logging...");
+        window.location.href = "log-meal.html";
+      });
+
+      shareBtn.addEventListener("click", () => {
+        if (navigator.share) {
+          navigator.share({
+            title: "Healthy Poha Recipe",
+            text: "Check out this nutritious poha recipe with healthy alternatives!",
+            url: window.location.href,
+          });
+        } else {
+          alert("Recipe link copied to clipboard!");
+        }
+      });
+    </script>
+  </body>
+</html>

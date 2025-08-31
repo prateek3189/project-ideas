@@ -1,0 +1,558 @@
+/* Layout Styles */
+
+/* App Layout */
+.app {
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.app__sidebar {
+  grid-area: sidebar;
+}
+
+.app__header {
+  grid-area: header;
+}
+
+.app__main {
+  grid-area: main;
+}
+
+.app__footer {
+  grid-area: footer;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.dashboard__title {
+  margin: 0;
+}
+
+.dashboard__date-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.dashboard__tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.dashboard__quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.dashboard__recent-meals {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Onboarding Layout */
+.onboarding {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+}
+
+.onboarding__step {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.onboarding__progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.onboarding__progress-step {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-2);
+  border-bottom: 3px solid var(--color-text-muted);
+  color: var(--color-text-muted);
+}
+
+.onboarding__progress-step--active {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+.onboarding__progress-step--completed {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.onboarding__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-6);
+}
+
+/* Log Meal Layout */
+.log-meal {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.log-meal__section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.log-meal__section-title {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.log-meal__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+}
+
+/* Food Details Layout */
+.food-details {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.food-details__header {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.food-details__title {
+  margin-bottom: var(--space-3);
+}
+
+.food-details__cuisine {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.food-details__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.food-details__nutrients {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+}
+
+.food-details__swaps {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+}
+
+/* Diary Layout */
+.diary {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.diary__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.diary__date {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.diary__meals {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.diary__meal-section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+}
+
+.diary__meal-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-text-muted);
+}
+
+.diary__meal-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent);
+}
+
+.diary__meal-entries {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.diary__summary {
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.diary__summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.diary__summary-item {
+  text-align: center;
+}
+
+.diary__summary-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+}
+
+.diary__summary-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* Insights Layout */
+.insights {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insights__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.insights__period {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.insights__period-btn {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-full);
+  margin: 0 var(--space-1);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.insights__period-btn--active {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+.insights__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.insights__section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+}
+
+.insights__section-title {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.insights__badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+/* Integrations Layout */
+.integrations {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.integrations__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.integrations__provider {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.integrations__provider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.integrations__provider-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.integrations__provider-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: var(--font-size-2xl);
+}
+
+.integrations__provider-details h3 {
+  margin-bottom: var(--space-1);
+}
+
+.integrations__provider-description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.integrations__sync-info {
+  background-color: var(--color-info-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.integrations__sync-info h4 {
+  margin-bottom: var(--space-2);
+  color: var(--color-info);
+}
+
+.integrations__sync-info p {
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* Settings Layout */
+.settings {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.settings__section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.settings__section-title {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-text-muted);
+  padding-bottom: var(--space-3);
+}
+
+.settings__form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+
+.settings__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+}
+
+/* About Layout */
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.about__section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.about__section-title {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.about__disclaimer {
+  background-color: var(--color-warning-light);
+  border: 1px solid var(--color-warning);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+.about__disclaimer h4 {
+  color: var(--color-warning);
+  margin-bottom: var(--space-2);
+}
+
+/* Responsive Layouts */
+@media (max-width: 1024px) {
+  .app {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .app__sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .food-details__content {
+    grid-template-columns: 1fr;
+  }
+
+  .insights__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard__tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .insights__badges {
+    grid-template-columns: 1fr;
+  }
+
+  .settings__form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .log-meal__actions {
+    flex-direction: column;
+  }
+
+  .diary__summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: var(--space-4);
+  }
+
+  .dashboard__header {
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+
+  .onboarding__actions {
+    flex-direction: column;
+  }
+
+  .diary__summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

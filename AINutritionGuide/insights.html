@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nutrition Guide - Insights & Analytics</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="app__sidebar sidebar">
+        <nav class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📊</span>
+            Dashboard
+          </a>
+          <a href="log-meal.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📸</span>
+            Log Meal
+          </a>
+          <a href="diary.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            Diary
+          </a>
+          <a
+            href="insights.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">📈</span>
+            Insights
+          </a>
+          <a href="integrations.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🔗</span>
+            Integrations
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            About
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <div class="theme-switcher">
+          <span class="theme-switcher__label">Theme:</span>
+          <div class="theme-switcher__options">
+            <button
+              class="theme-switcher__option theme-switcher__option--active"
+              data-theme="light"
+            >
+              🌞
+            </button>
+            <button class="theme-switcher__option" data-theme="dark">🌙</button>
+            <button class="theme-switcher__option" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="app__header header">
+        <div class="container">
+          <div class="header__content">
+            <h1 class="header__logo">🍎 AI Nutrition Guide</h1>
+            <div class="header__actions">
+              <button onclick="window.print()" class="btn btn--outline">
+                🖨️ Print
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="app__main main">
+        <div class="container">
+          <div class="insights">
+            <!-- Insights Header -->
+            <div class="insights__header">
+              <h2>Your Nutrition Insights</h2>
+              <p>
+                Track your progress and discover patterns in your eating habits
+              </p>
+            </div>
+
+            <!-- Time Period Selector -->
+            <div class="insights__period">
+              <button class="insights__period-btn">Week</button>
+              <button class="insights__period-btn insights__period-btn--active">
+                Month
+              </button>
+              <button class="insights__period-btn">Quarter</button>
+              <button class="insights__period-btn">Year</button>
+            </div>
+
+            <!-- Insights Grid -->
+            <div class="insights__grid">
+              <!-- Weekly Overview -->
+              <div class="insights__section">
+                <h3 class="insights__section-title">📊 Weekly Overview</h3>
+
+                <div class="grid grid--cols-2 gap-4 mb-4">
+                  <div class="tile">
+                    <div class="tile__header">
+                      <span class="tile__title">Avg Calories</span>
+                      <span class="tile__icon">🔥</span>
+                    </div>
+                    <div class="tile__value">1,850</div>
+                    <div class="tile__subtitle">Target: 2,000 kcal</div>
+                  </div>
+
+                  <div class="tile">
+                    <div class="tile__header">
+                      <span class="tile__title">Protein/Day</span>
+                      <span class="tile__icon">💪</span>
+                    </div>
+                    <div class="tile__value">85g</div>
+                    <div class="tile__subtitle">Target: 80g</div>
+                  </div>
+
+                  <div class="tile">
+                    <div class="tile__header">
+                      <span class="tile__title">Fiber/Day</span>
+                      <span class="tile__icon">🌾</span>
+                    </div>
+                    <div class="tile__value">22g</div>
+                    <div class="tile__subtitle">Target: 25g</div>
+                  </div>
+
+                  <div class="tile">
+                    <div class="tile__header">
+                      <span class="tile__title">Hydration</span>
+                      <span class="tile__icon">💧</span>
+                    </div>
+                    <div class="tile__value">1,650ml</div>
+                    <div class="tile__subtitle">Target: 2,000ml</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Calorie Heatmap -->
+              <div class="insights__section">
+                <h3 class="insights__section-title">📅 Calorie Heatmap</h3>
+                <p>Your daily calorie intake over the past week</p>
+
+                <div class="heatmap">
+                  <div class="heatmap__cell heatmap__cell--1">Mon</div>
+                  <div class="heatmap__cell heatmap__cell--2">Tue</div>
+                  <div class="heatmap__cell heatmap__cell--3">Wed</div>
+                  <div class="heatmap__cell heatmap__cell--4">Thu</div>
+                  <div class="heatmap__cell heatmap__cell--2">Fri</div>
+                  <div class="heatmap__cell heatmap__cell--1">Sat</div>
+                  <div class="heatmap__cell heatmap__cell--0">Sun</div>
+                </div>
+
+                <div class="heatmap__legend">
+                  <div class="heatmap__legend-item">
+                    <div
+                      class="heatmap__legend-color"
+                      style="background-color: var(--heat-0)"
+                    ></div>
+                    <span>Very Low</span>
+                  </div>
+                  <div class="heatmap__legend-item">
+                    <div
+                      class="heatmap__legend-color"
+                      style="background-color: var(--heat-1)"
+                    ></div>
+                    <span>Low</span>
+                  </div>
+                  <div class="heatmap__legend-item">
+                    <div
+                      class="heatmap__legend-color"
+                      style="background-color: var(--heat-2)"
+                    ></div>
+                    <span>Medium</span>
+                  </div>
+                  <div class="heatmap__legend-item">
+                    <div
+                      class="heatmap__legend-color"
+                      style="background-color: var(--heat-3)"
+                    ></div>
+                    <span>High</span>
+                  </div>
+                  <div class="heatmap__legend-item">
+                    <div
+                      class="heatmap__legend-color"
+                      style="background-color: var(--heat-4)"
+                    ></div>
+                    <span>Very High</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Macro Balance -->
+              <div class="insights__section">
+                <h3 class="insights__section-title">⚖️ Macro Balance</h3>
+                <p>Your average daily macronutrient distribution</p>
+
+                <div class="nutrient-bars">
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Protein</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 85%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">85g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Carbs</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 75%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">225g</span>
+                  </div>
+
+                  <div class="nutrient-bar">
+                    <span class="nutrient-bar__label">Fat</span>
+                    <div class="nutrient-bar__bar">
+                      <div class="nutrient-bar__fill" style="width: 60%"></div>
+                    </div>
+                    <span class="nutrient-bar__value">65g</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 p-4 bg-accent-light rounded-lg">
+                  <h4 class="text-accent mb-2">💡 Macro Insight</h4>
+                  <p class="text-sm">
+                    Your protein intake is excellent! Consider adding more
+                    healthy fats (nuts, avocados, olive oil) to improve satiety
+                    and nutrient absorption.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Achievements & Badges -->
+              <div class="insights__section">
+                <h3 class="insights__section-title">
+                  🏆 Achievements & Badges
+                </h3>
+                <p>Celebrate your nutrition milestones</p>
+
+                <div class="insights__badges">
+                  <div class="badge badge--unlocked">
+                    <span class="badge__icon">💧</span>
+                    Hydration Hero (3 days)
+                  </div>
+
+                  <div class="badge badge--unlocked">
+                    <span class="badge__icon">🌾</span>
+                    Fiber Friend (25g avg)
+                  </div>
+
+                  <div class="badge badge--unlocked">
+                    <span class="badge__icon">⚖️</span>
+                    Balanced Plate (5 swaps)
+                  </div>
+
+                  <div class="badge badge--locked">
+                    <span class="badge__icon">🔥</span>
+                    Calorie Master (7 days)
+                  </div>
+
+                  <div class="badge badge--locked">
+                    <span class="badge__icon">💪</span>
+                    Protein Power (100g avg)
+                  </div>
+
+                  <div class="badge badge--locked">
+                    <span class="badge__icon">🥗</span>
+                    Veggie Lover (10 servings)
+                  </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                  <p class="text-sm text-text-muted">
+                    <strong>Next up:</strong> Log 3 more days within your
+                    calorie target to unlock "Calorie Master"
+                  </p>
+                </div>
+              </div>
+
+              <!-- Top Swaps Used -->
+              <div class="insights__section">
+                <h3 class="insights__section-title">💡 Top Swaps Used</h3>
+                <p>Your most successful healthier alternatives</p>
+
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center p-3 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <div>
+                      <strong>White Rice → Brown Rice</strong>
+                      <div class="text-sm text-text-muted">
+                        +3g fiber, +1g protein
+                      </div>
+                    </div>
+                    <span class="text-accent font-semibold">8 times</span>
+                  </div>
+
+                  <div
+                    class="flex justify-between items-center p-3 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <div>
+                      <strong>Fried → Grilled</strong>
+                      <div class="text-sm text-text-muted">
+                        -120 kcal, -8g fat
+                      </div>
+                    </div>
+                    <span class="text-accent font-semibold">6 times</span>
+                  </div>
+
+                  <div
+                    class="flex justify-between items-center p-3 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <div>
+                      <strong>Regular → Greek Yogurt</strong>
+                      <div class="text-sm text-text-muted">
+                        +8g protein, -5g sugar
+                      </div>
+                    </div>
+                    <span class="text-accent font-semibold">5 times</span>
+                  </div>
+
+                  <div
+                    class="flex justify-between items-center p-3 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <div>
+                      <strong>White Bread → Whole Wheat</strong>
+                      <div class="text-sm text-text-muted">
+                        +2g fiber, +1g protein
+                      </div>
+                    </div>
+                    <span class="text-accent font-semibold">4 times</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Trends & Patterns -->
+              <div class="insights__section">
+                <h3 class="insights__section-title">📈 Trends & Patterns</h3>
+                <p>Discover insights about your eating habits</p>
+
+                <div class="grid grid--cols-2 gap-4">
+                  <div
+                    class="p-4 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <h4 class="text-accent mb-2">🕐 Best Meal Time</h4>
+                    <p class="text-sm">
+                      You tend to eat healthiest at <strong>lunch</strong> (avg
+                      485 kcal, balanced macros). Consider applying similar
+                      portion control to other meals.
+                    </p>
+                  </div>
+
+                  <div
+                    class="p-4 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <h4 class="text-accent mb-2">📅 Weekly Pattern</h4>
+                    <p class="text-sm">
+                      <strong>Mondays</strong> are your lowest calorie days.
+                      Plan ahead to maintain consistency throughout the week.
+                    </p>
+                  </div>
+
+                  <div
+                    class="p-4 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <h4 class="text-accent mb-2">🥗 Food Groups</h4>
+                    <p class="text-sm">
+                      You're doing great with <strong>proteins</strong> but
+                      could add more <strong>leafy greens</strong> for better
+                      micronutrient intake.
+                    </p>
+                  </div>
+
+                  <div
+                    class="p-4 bg-surface border border-text-muted rounded-lg"
+                  >
+                    <h4 class="text-accent mb-2">💧 Hydration</h4>
+                    <p class="text-sm">
+                      Your water intake peaks on <strong>weekends</strong>. Try
+                      setting reminders during weekdays to stay consistent.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="insights__section mt-6">
+              <h3 class="insights__section-title">
+                🎯 Personalized Recommendations
+              </h3>
+              <p>
+                Based on your patterns, here are some suggestions to improve
+                your nutrition:
+              </p>
+
+              <div class="grid grid--cols-3 gap-4">
+                <div
+                  class="p-4 bg-accent-light border border-accent rounded-lg"
+                >
+                  <h4 class="text-accent mb-2">🌱 Increase Fiber</h4>
+                  <p class="text-sm">
+                    Add 1-2 servings of legumes, whole grains, or vegetables
+                    daily to reach your 25g fiber goal.
+                  </p>
+                </div>
+
+                <div
+                  class="p-4 bg-secondary-light border border-secondary rounded-lg"
+                >
+                  <h4 class="text-secondary mb-2">💧 Hydration Boost</h4>
+                  <p class="text-sm">
+                    Set hourly water reminders and keep a water bottle visible
+                    to reach your 2L daily goal.
+                  </p>
+                </div>
+
+                <div
+                  class="p-4 bg-warning-light border border-warning rounded-lg"
+                >
+                  <h4 class="text-warning mb-2">⚖️ Portion Control</h4>
+                  <p class="text-sm">
+                    Use smaller plates and measure portions for high-calorie
+                    foods to stay within your targets.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app__footer footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="footer__links">
+              <a href="about.html" class="footer__link">About</a>
+              <a href="settings.html" class="footer__link">Settings</a>
+              <a href="#" class="footer__link">Help</a>
+            </div>
+            <p>AI Nutrition Guide v1.0 • Photos stay on your device</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Persistence Button -->
+    <div class="theme-persistence">
+      <button class="theme-persistence__button" onclick="toggleTheme()">
+        <span class="theme-persistence__icon">🌙</span>
+      </button>
+    </div>
+
+    <script>
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector(".theme-switcher");
+      const themeOptions = themeSwitcher.querySelectorAll(
+        ".theme-switcher__option"
+      );
+      const html = document.documentElement;
+      const themePersistenceBtn = document.querySelector(
+        ".theme-persistence__button"
+      );
+      const themePersistenceIcon = themePersistenceBtn.querySelector(
+        ".theme-persistence__icon"
+      );
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", savedTheme);
+      updateThemeUI(savedTheme);
+
+      // Theme switcher event listeners
+      themeOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          const theme = option.dataset.theme;
+          html.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+          updateThemeUI(theme);
+        });
+      });
+
+      function updateThemeUI(theme) {
+        // Update theme switcher
+        themeOptions.forEach((option) => {
+          option.classList.remove("theme-switcher__option--active");
+          if (option.dataset.theme === theme) {
+            option.classList.add("theme-switcher__option--active");
+          }
+        });
+
+        // Update persistence button
+        if (theme === "dark") {
+          themePersistenceIcon.textContent = "🌞";
+        } else if (theme === "high-contrast") {
+          themePersistenceIcon.textContent = "🔍";
+        } else {
+          themePersistenceIcon.textContent = "🌙";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        let newTheme;
+
+        if (currentTheme === "light") {
+          newTheme = "dark";
+        } else if (currentTheme === "dark") {
+          newTheme = "high-contrast";
+        } else {
+          newTheme = "light";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeUI(newTheme);
+      }
+
+      // Period selector functionality
+      const periodButtons = document.querySelectorAll(".insights__period-btn");
+      periodButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons
+          periodButtons.forEach((btn) =>
+            btn.classList.remove("insights__period-btn--active")
+          );
+          // Add active class to clicked button
+          button.classList.add("insights__period-btn--active");
+
+          // Here you would typically load data for the selected period
+          const period = button.textContent.toLowerCase();
+          console.log("Loading insights for:", period);
+        });
+      });
+
+      // Badge unlock simulation
+      function simulateBadgeUnlock() {
+        const lockedBadges = document.querySelectorAll(".badge--locked");
+        lockedBadges.forEach((badge, index) => {
+          setTimeout(() => {
+            badge.classList.remove("badge--locked");
+            badge.classList.add("badge--unlocked");
+            badge.style.animation = "pulse 0.5s ease-in-out";
+          }, index * 2000);
+        });
+      }
+
+      // Simulate badge unlocks after 5 seconds (for demo purposes)
+      setTimeout(simulateBadgeUnlock, 5000);
+
+      // Add pulse animation
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+        `;
+      document.head.appendChild(style);
+
+      // Heatmap data simulation
+      function updateHeatmap() {
+        const cells = document.querySelectorAll(".heatmap__cell");
+        cells.forEach((cell, index) => {
+          // Simulate different calorie levels
+          const levels = [0, 1, 2, 3, 4, 1, 0]; // Mon-Sun
+          const level = levels[index];
+          cell.className = `heatmap__cell heatmap__cell--${level}`;
+        });
+      }
+
+      // Initialize heatmap
+      updateHeatmap();
+    </script>
+  </body>
+</html>
