@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - TaskAI</title>
+    <meta
+      name="description"
+      content="Customize your TaskAI experience and preferences"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <a href="index.html" class="header__brand">
+            <div class="header__logo" aria-hidden="true">T</div>
+            <span>TaskAI</span>
+          </a>
+
+          <div class="header__actions">
+            <button
+              class="header__voice-btn"
+              type="button"
+              aria-label="Start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div
+              class="header__profile"
+              role="button"
+              tabindex="0"
+              aria-label="User profile"
+            >
+              <span aria-hidden="true">U</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+          <nav class="sidebar__section">
+            <h2 class="sidebar__title">Navigation</h2>
+            <ul class="sidebar__nav">
+              <li>
+                <a href="index.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">📊</span>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="add-task.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">➕</span>
+                  <span>Add Task</span>
+                </a>
+              </li>
+              <li>
+                <a href="reminders.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⏰</span>
+                  <span>Reminders</span>
+                </a>
+              </li>
+              <li>
+                <a href="settings.html" class="nav-item nav-item--active">
+                  <span class="nav-item__icon" aria-hidden="true">⚙️</span>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">ℹ️</span>
+                  <span>About</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__title">Preferences</h2>
+            <div class="sidebar__theme-toggle">
+              <span>Dark Mode</span>
+              <label class="toggle" for="theme-toggle">
+                <input
+                  type="checkbox"
+                  id="theme-toggle"
+                  class="toggle__input"
+                  aria-label="Toggle dark mode"
+                />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content" id="main-content">
+          <header class="content__header">
+            <h1 class="content__title">Settings</h1>
+            <p class="content__subtitle">Customize your TaskAI experience</p>
+          </header>
+
+          <!-- Profile Section -->
+          <section class="mb-8" aria-labelledby="profile-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="profile-title" class="card__title">
+                  Profile Information
+                </h2>
+                <p class="card__subtitle">Manage your account details</p>
+              </div>
+
+              <form class="card__content" action="#" method="post">
+                <div class="grid grid--2">
+                  <div class="form-group">
+                    <label for="first-name" class="form-label"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      id="first-name"
+                      name="firstName"
+                      class="form-input"
+                      value="John"
+                      aria-describedby="first-name-help"
+                    />
+                    <div id="first-name-help" class="text-sm text-muted mt-1">
+                      Used for personalized voice responses
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      name="lastName"
+                      class="form-input"
+                      value="Doe"
+                      aria-describedby="last-name-help"
+                    />
+                    <div id="last-name-help" class="text-sm text-muted mt-1">
+                      Your full name for notifications
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    value="john.doe@example.com"
+                    aria-describedby="email-help"
+                  />
+                  <div id="email-help" class="text-sm text-muted mt-1">
+                    Used for reminder notifications and account recovery
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="timezone" class="form-label">Timezone</label>
+                  <select
+                    id="timezone"
+                    name="timezone"
+                    class="form-input form-select"
+                    aria-describedby="timezone-help"
+                  >
+                    <option value="UTC-8" selected>
+                      Pacific Standard Time (PST)
+                    </option>
+                    <option value="UTC-7">Mountain Standard Time (MST)</option>
+                    <option value="UTC-6">Central Standard Time (CST)</option>
+                    <option value="UTC-5">Eastern Standard Time (EST)</option>
+                    <option value="UTC+0">
+                      Coordinated Universal Time (UTC)
+                    </option>
+                    <option value="UTC+1">Central European Time (CET)</option>
+                  </select>
+                  <div id="timezone-help" class="text-sm text-muted mt-1">
+                    Ensures accurate reminder timing
+                  </div>
+                </div>
+              </form>
+
+              <div class="card__footer">
+                <button type="button" class="btn btn--secondary">Cancel</button>
+                <button type="submit" class="btn btn--primary">
+                  Save Profile
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Device Sync Section -->
+          <section class="mb-8" aria-labelledby="sync-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="sync-title" class="card__title">
+                  Device Synchronization
+                </h2>
+                <p class="card__subtitle">
+                  Keep your tasks in sync across all devices
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="space-y-6">
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">☁️</span>
+                      <div>
+                        <div class="font-medium">Cloud Sync</div>
+                        <div class="text-sm text-secondary">
+                          Sync tasks and reminders across all devices
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="cloud-sync">
+                      <input
+                        type="checkbox"
+                        id="cloud-sync"
+                        class="toggle__input"
+                        checked
+                        aria-label="Toggle cloud sync"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">📱</span>
+                      <div>
+                        <div class="font-medium">Mobile Notifications</div>
+                        <div class="text-sm text-secondary">
+                          Receive notifications on mobile devices
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="mobile-notifications">
+                      <input
+                        type="checkbox"
+                        id="mobile-notifications"
+                        class="toggle__input"
+                        checked
+                        aria-label="Toggle mobile notifications"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">🖥️</span>
+                      <div>
+                        <div class="font-medium">Desktop Notifications</div>
+                        <div class="text-sm text-secondary">
+                          Show desktop notifications for reminders
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="desktop-notifications">
+                      <input
+                        type="checkbox"
+                        id="desktop-notifications"
+                        class="toggle__input"
+                        aria-label="Toggle desktop notifications"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Voice Settings -->
+          <section class="mb-8" aria-labelledby="voice-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="voice-title" class="card__title">Voice Settings</h2>
+                <p class="card__subtitle">
+                  Configure voice input and recognition preferences
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="space-y-6">
+                  <div class="form-group">
+                    <label for="voice-language" class="form-label"
+                      >Voice Recognition Language</label
+                    >
+                    <select
+                      id="voice-language"
+                      name="voiceLanguage"
+                      class="form-input form-select"
+                      aria-describedby="voice-language-help"
+                    >
+                      <option value="en-US" selected>English (US)</option>
+                      <option value="en-UK">English (UK)</option>
+                      <option value="es-ES">Spanish (Spain)</option>
+                      <option value="fr-FR">French (France)</option>
+                      <option value="de-DE">German (Germany)</option>
+                      <option value="it-IT">Italian (Italy)</option>
+                      <option value="pt-BR">Portuguese (Brazil)</option>
+                    </select>
+                    <div
+                      id="voice-language-help"
+                      class="text-sm text-muted mt-1"
+                    >
+                      Language for voice recognition and commands
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">🎤</span>
+                      <div>
+                        <div class="font-medium">Voice Activation</div>
+                        <div class="text-sm text-secondary">
+                          Enable "Hey TaskAI" wake phrase
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="voice-activation">
+                      <input
+                        type="checkbox"
+                        id="voice-activation"
+                        class="toggle__input"
+                        aria-label="Toggle voice activation"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">🔊</span>
+                      <div>
+                        <div class="font-medium">Voice Feedback</div>
+                        <div class="text-sm text-secondary">
+                          Play audio confirmation for voice commands
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="voice-feedback">
+                      <input
+                        type="checkbox"
+                        id="voice-feedback"
+                        class="toggle__input"
+                        checked
+                        aria-label="Toggle voice feedback"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Notification Preferences -->
+          <section class="mb-8" aria-labelledby="notifications-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="notifications-title" class="card__title">
+                  Notification Preferences
+                </h2>
+                <p class="card__subtitle">
+                  Control when and how you receive notifications
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="space-y-6">
+                  <div class="form-group">
+                    <label for="default-reminder" class="form-label"
+                      >Default Reminder Time</label
+                    >
+                    <select
+                      id="default-reminder"
+                      name="defaultReminder"
+                      class="form-input form-select"
+                      aria-describedby="default-reminder-help"
+                    >
+                      <option value="none">No reminder</option>
+                      <option value="5min">5 minutes before</option>
+                      <option value="15min" selected>15 minutes before</option>
+                      <option value="30min">30 minutes before</option>
+                      <option value="1hour">1 hour before</option>
+                      <option value="1day">1 day before</option>
+                    </select>
+                    <div
+                      id="default-reminder-help"
+                      class="text-sm text-muted mt-1"
+                    >
+                      Default reminder time for new tasks
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Quiet Hours</label>
+                    <div class="grid grid--2 gap-3">
+                      <div>
+                        <label for="quiet-start" class="text-sm text-secondary"
+                          >Start Time</label
+                        >
+                        <input
+                          type="time"
+                          id="quiet-start"
+                          name="quietStart"
+                          class="form-input"
+                          value="22:00"
+                          aria-describedby="quiet-hours-help"
+                        />
+                      </div>
+                      <div>
+                        <label for="quiet-end" class="text-sm text-secondary"
+                          >End Time</label
+                        >
+                        <input
+                          type="time"
+                          id="quiet-end"
+                          name="quietEnd"
+                          class="form-input"
+                          value="07:00"
+                        />
+                      </div>
+                    </div>
+                    <div id="quiet-hours-help" class="text-sm text-muted mt-1">
+                      No notifications during these hours
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">📧</span>
+                      <div>
+                        <div class="font-medium">Email Notifications</div>
+                        <div class="text-sm text-secondary">
+                          Send reminder emails for important tasks
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="email-notifications">
+                      <input
+                        type="checkbox"
+                        id="email-notifications"
+                        class="toggle__input"
+                        checked
+                        aria-label="Toggle email notifications"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">🔔</span>
+                      <div>
+                        <div class="font-medium">Sound Notifications</div>
+                        <div class="text-sm text-secondary">
+                          Play sound for reminder notifications
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="sound-notifications">
+                      <input
+                        type="checkbox"
+                        id="sound-notifications"
+                        class="toggle__input"
+                        checked
+                        aria-label="Toggle sound notifications"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Appearance & Theme -->
+          <section class="mb-8" aria-labelledby="appearance-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="appearance-title" class="card__title">
+                  Appearance & Theme
+                </h2>
+                <p class="card__subtitle">
+                  Customize the look and feel of TaskAI
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="space-y-6">
+                  <div class="form-group">
+                    <label class="form-label">Theme Preference</label>
+                    <div class="flex gap-3">
+                      <label
+                        class="flex items-center gap-2 p-3 border rounded cursor-pointer hover:bg-surface"
+                      >
+                        <input
+                          type="radio"
+                          name="theme"
+                          value="light"
+                          checked
+                          class="sr-only"
+                        />
+                        <div
+                          class="w-4 h-4 border-2 border-primary rounded-full flex items-center justify-center"
+                        >
+                          <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        </div>
+                        <span>Light</span>
+                      </label>
+                      <label
+                        class="flex items-center gap-2 p-3 border rounded cursor-pointer hover:bg-surface"
+                      >
+                        <input
+                          type="radio"
+                          name="theme"
+                          value="dark"
+                          class="sr-only"
+                        />
+                        <div
+                          class="w-4 h-4 border-2 border-border rounded-full"
+                        ></div>
+                        <span>Dark</span>
+                      </label>
+                      <label
+                        class="flex items-center gap-2 p-3 border rounded cursor-pointer hover:bg-surface"
+                      >
+                        <input
+                          type="radio"
+                          name="theme"
+                          value="auto"
+                          class="sr-only"
+                        />
+                        <div
+                          class="w-4 h-4 border-2 border-border rounded-full"
+                        ></div>
+                        <span>Auto</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">♿</span>
+                      <div>
+                        <div class="font-medium">High Contrast Mode</div>
+                        <div class="text-sm text-secondary">
+                          Increase contrast for better accessibility
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="high-contrast">
+                      <input
+                        type="checkbox"
+                        id="high-contrast"
+                        class="toggle__input"
+                        aria-label="Toggle high contrast mode"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 bg-surface rounded border"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span aria-hidden="true" class="text-2xl">🏃</span>
+                      <div>
+                        <div class="font-medium">Reduce Motion</div>
+                        <div class="text-sm text-secondary">
+                          Minimize animations and transitions
+                        </div>
+                      </div>
+                    </div>
+                    <label class="toggle" for="reduce-motion">
+                      <input
+                        type="checkbox"
+                        id="reduce-motion"
+                        class="toggle__input"
+                        aria-label="Toggle reduced motion"
+                      />
+                      <span class="toggle__slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Data & Privacy -->
+          <section class="mb-8" aria-labelledby="privacy-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="privacy-title" class="card__title">Data & Privacy</h2>
+                <p class="card__subtitle">
+                  Manage your data and privacy settings
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="space-y-4">
+                  <button class="btn btn--secondary w-full">
+                    <span aria-hidden="true">📥</span>
+                    Export All Data
+                  </button>
+                  <button class="btn btn--secondary w-full">
+                    <span aria-hidden="true">🔄</span>
+                    Reset All Settings
+                  </button>
+                  <button
+                    class="btn btn--secondary w-full"
+                    style="
+                      border-color: var(--color-error);
+                      color: var(--color-error);
+                    "
+                  >
+                    <span aria-hidden="true">🗑️</span>
+                    Delete Account
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__text">
+            TaskAI v1.0 - Voice-Driven Productivity
+          </div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="#" class="footer__link">Help</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Support</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

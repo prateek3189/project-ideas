@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Notes | TreeNotes</title>
+    <meta
+      name="description"
+      content="Search and filter through all your notes and trees"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <header class="page__header">
+        <div class="header">
+          <div class="header__content">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="icon icon--lg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+                <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              TreeNotes
+            </a>
+
+            <div class="header__search">
+              <div class="search-bar">
+                <svg
+                  class="search-bar__icon icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input
+                  type="search"
+                  class="search-bar__input"
+                  placeholder="Search all notes..."
+                  aria-label="Search notes"
+                  value="javascript functions"
+                />
+              </div>
+            </div>
+
+            <div class="header__actions">
+              <button class="theme-toggle" aria-label="Toggle theme">
+                <div class="theme-toggle__switch"></div>
+                <svg
+                  class="theme-toggle__icon theme-toggle__icon--sun icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg
+                  class="theme-toggle__icon theme-toggle__icon--moon icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </button>
+
+              <div class="avatar">
+                <span>JD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="page__body">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+          <div class="sidebar__header">
+            <h2 class="sidebar__title">Navigation</h2>
+          </div>
+
+          <div class="sidebar__content">
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Main</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        />
+                        <polyline points="9,22 9,12 15,12 15,22" />
+                      </svg>
+                      <span class="nav-link__text">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="tree-view.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                        />
+                        <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                      </svg>
+                      <span class="nav-link__text">Tree View</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="search.html" class="nav-link nav-link--active">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                      </svg>
+                      <span class="nav-link__text">Search</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Tools</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="note-editor.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Create Note</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Settings</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                          d="M9,9h0a3,3,0,0,1,5.12,2.12c0,2.23-3.12,2.23-3.12,4.88"
+                        />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                      <span class="nav-link__text">About</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar__section">
+              <a href="note-editor.html" class="btn btn--primary w-full">
+                <svg
+                  class="icon icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                New Note
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+          <div class="main__header">
+            <nav class="breadcrumbs">
+              <div class="breadcrumbs__item">
+                <a href="index.html" class="breadcrumbs__link">Dashboard</a>
+                <span class="breadcrumbs__separator">/</span>
+              </div>
+              <div class="breadcrumbs__item">
+                <span>Search</span>
+              </div>
+            </nav>
+
+            <div class="flex items-center justify-between">
+              <div>
+                <h1 class="main__title">Search Results</h1>
+                <p class="main__subtitle">
+                  Found <strong>12 results</strong> for "javascript functions"
+                  in 3 trees
+                </p>
+              </div>
+
+              <div class="main__actions">
+                <button class="btn btn--secondary">
+                  <svg
+                    class="icon icon--sm"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7,10 12,15 17,10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Export Results
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="main__content">
+            <!-- Search Results -->
+            <div class="section">
+              <div class="space-y-4">
+                <!-- Result 1 -->
+                <article class="card">
+                  <div class="card__body">
+                    <div class="flex items-start justify-between mb-3">
+                      <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-primary mb-1">
+                          <a
+                            href="tree-view.html"
+                            class="hover:text-accent transition-colors"
+                          >
+                            Arrow Functions
+                          </a>
+                        </h3>
+                        <div
+                          class="flex items-center gap-2 text-sm text-muted mb-2"
+                        >
+                          <span>JavaScript Learning Path</span>
+                          <span>→</span>
+                          <span>Functions</span>
+                          <span>→</span>
+                          <span>Arrow Functions</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <span class="badge badge--learning">Learning</span>
+                        <span class="badge badge--warning">Current</span>
+                      </div>
+                    </div>
+
+                    <p class="text-secondary mb-3">
+                      Arrow <mark>functions</mark> are a concise way to write
+                      <mark>function</mark> expressions in
+                      <mark>JavaScript</mark>. They were introduced in ES6 and
+                      provide a shorter syntax compared to traditional
+                      <mark>function</mark> declarations. Arrow
+                      <mark>functions</mark> also have lexical 'this' binding...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-4 text-xs text-muted">
+                        <span>Updated 2 hours ago</span>
+                        <span>•</span>
+                        <span>347 words</span>
+                        <span>•</span>
+                        <div class="flex gap-1">
+                          <span class="badge badge--default">javascript</span>
+                          <span class="badge badge--default">es6</span>
+                          <span class="badge badge--default">functions</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <a
+                          href="note-editor.html"
+                          class="btn btn--ghost btn--sm"
+                          >Edit</a
+                        >
+                        <a
+                          href="tree-view.html"
+                          class="btn btn--secondary btn--sm"
+                          >View in Tree</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Result 2 -->
+                <article class="card">
+                  <div class="card__body">
+                    <div class="flex items-start justify-between mb-3">
+                      <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-primary mb-1">
+                          <a
+                            href="tree-view.html"
+                            class="hover:text-accent transition-colors"
+                          >
+                            Function Declarations
+                          </a>
+                        </h3>
+                        <div
+                          class="flex items-center gap-2 text-sm text-muted mb-2"
+                        >
+                          <span>JavaScript Learning Path</span>
+                          <span>→</span>
+                          <span>Functions</span>
+                          <span>→</span>
+                          <span>Function Declarations</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <span class="badge badge--learning">Learning</span>
+                        <span class="badge badge--default">Complete</span>
+                      </div>
+                    </div>
+
+                    <p class="text-secondary mb-3">
+                      <mark>Function</mark> declarations are one of the
+                      fundamental ways to define <mark>functions</mark> in
+                      <mark>JavaScript</mark>. Unlike
+                      <mark>function</mark> expressions, declarations are
+                      hoisted to the top of their scope, meaning you can call
+                      them before they are defined in the code...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-4 text-xs text-muted">
+                        <span>Updated 3 days ago</span>
+                        <span>•</span>
+                        <span>289 words</span>
+                        <span>•</span>
+                        <div class="flex gap-1">
+                          <span class="badge badge--default">javascript</span>
+                          <span class="badge badge--default">functions</span>
+                          <span class="badge badge--default">fundamentals</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <a
+                          href="note-editor.html"
+                          class="btn btn--ghost btn--sm"
+                          >Edit</a
+                        >
+                        <a
+                          href="tree-view.html"
+                          class="btn btn--secondary btn--sm"
+                          >View in Tree</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Result 3 -->
+                <article class="card">
+                  <div class="card__body">
+                    <div class="flex items-start justify-between mb-3">
+                      <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-primary mb-1">
+                          <a
+                            href="tree-view.html"
+                            class="hover:text-accent transition-colors"
+                          >
+                            Higher-Order Functions
+                          </a>
+                        </h3>
+                        <div
+                          class="flex items-center gap-2 text-sm text-muted mb-2"
+                        >
+                          <span>JavaScript Learning Path</span>
+                          <span>→</span>
+                          <span>Functions</span>
+                          <span>→</span>
+                          <span>Higher-Order Functions</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <span class="badge badge--learning">Learning</span>
+                        <span class="badge badge--default">Planned</span>
+                      </div>
+                    </div>
+
+                    <p class="text-secondary mb-3">
+                      Higher-order <mark>functions</mark> are
+                      <mark>functions</mark> that operate on other
+                      <mark>functions</mark>, either by taking them as arguments
+                      or by returning them. This is a powerful concept in
+                      <mark>JavaScript</mark>
+                      that enables functional programming patterns...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-4 text-xs text-muted">
+                        <span>Created 1 week ago</span>
+                        <span>•</span>
+                        <span>156 words</span>
+                        <span>•</span>
+                        <div class="flex gap-1">
+                          <span class="badge badge--default">javascript</span>
+                          <span class="badge badge--default">functions</span>
+                          <span class="badge badge--default">advanced</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <a
+                          href="note-editor.html"
+                          class="btn btn--ghost btn--sm"
+                          >Edit</a
+                        >
+                        <a
+                          href="tree-view.html"
+                          class="btn btn--secondary btn--sm"
+                          >View in Tree</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Result 4 -->
+                <article class="card">
+                  <div class="card__body">
+                    <div class="flex items-start justify-between mb-3">
+                      <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-primary mb-1">
+                          <a
+                            href="tree-view.html"
+                            class="hover:text-accent transition-colors"
+                          >
+                            Component Functions
+                          </a>
+                        </h3>
+                        <div
+                          class="flex items-center gap-2 text-sm text-muted mb-2"
+                        >
+                          <span>TreeNote App</span>
+                          <span>→</span>
+                          <span>Frontend Development</span>
+                          <span>→</span>
+                          <span>Components</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <span class="badge badge--work">Work</span>
+                        <span class="badge badge--urgent">In Progress</span>
+                      </div>
+                    </div>
+
+                    <p class="text-secondary mb-3">
+                      Utility <mark>functions</mark> for managing component
+                      behavior in the TreeNote app. These
+                      <mark>functions</mark> handle tree expansion, collapse,
+                      and navigation. While not strictly
+                      <mark>JavaScript</mark> since we're using HTML/CSS only,
+                      these represent the <mark>function</mark> patterns we
+                      would implement...
+                    </p>
+
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-4 text-xs text-muted">
+                        <span>Updated 1 day ago</span>
+                        <span>•</span>
+                        <span>203 words</span>
+                        <span>•</span>
+                        <div class="flex gap-1">
+                          <span class="badge badge--default">components</span>
+                          <span class="badge badge--default">utilities</span>
+                          <span class="badge badge--default">functions</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <a
+                          href="note-editor.html"
+                          class="btn btn--ghost btn--sm"
+                          >Edit</a
+                        >
+                        <a
+                          href="tree-view.html"
+                          class="btn btn--secondary btn--sm"
+                          >View in Tree</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Load More -->
+                <div class="text-center py-8">
+                  <button class="btn btn--secondary">
+                    Load More Results
+                    <svg
+                      class="icon icon--sm"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="6,9 12,15 18,9" />
+                    </svg>
+                  </button>
+                  <p class="text-sm text-muted mt-2">Showing 4 of 12 results</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer class="page__footer">
+        <p>
+          &copy; 2024 TreeNotes. Built with HTML & CSS.
+          <a href="about.html">About</a> | <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

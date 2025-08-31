@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task - TaskAI</title>
+    <meta
+      name="description"
+      content="Add new tasks using voice commands or manual input"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <a href="index.html" class="header__brand">
+            <div class="header__logo" aria-hidden="true">T</div>
+            <span>TaskAI</span>
+          </a>
+
+          <div class="header__actions">
+            <button
+              class="header__voice-btn"
+              type="button"
+              aria-label="Start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div
+              class="header__profile"
+              role="button"
+              tabindex="0"
+              aria-label="User profile"
+            >
+              <span aria-hidden="true">U</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+          <nav class="sidebar__section">
+            <h2 class="sidebar__title">Navigation</h2>
+            <ul class="sidebar__nav">
+              <li>
+                <a href="index.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">📊</span>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="add-task.html" class="nav-item nav-item--active">
+                  <span class="nav-item__icon" aria-hidden="true">➕</span>
+                  <span>Add Task</span>
+                </a>
+              </li>
+              <li>
+                <a href="reminders.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⏰</span>
+                  <span>Reminders</span>
+                </a>
+              </li>
+              <li>
+                <a href="settings.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⚙️</span>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">ℹ️</span>
+                  <span>About</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__title">Preferences</h2>
+            <div class="sidebar__theme-toggle">
+              <span>Dark Mode</span>
+              <label class="toggle" for="theme-toggle">
+                <input
+                  type="checkbox"
+                  id="theme-toggle"
+                  class="toggle__input"
+                  aria-label="Toggle dark mode"
+                />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content" id="main-content">
+          <header class="content__header">
+            <h1 class="content__title">Add New Task</h1>
+            <p class="content__subtitle">
+              Create tasks using voice commands or manual input
+            </p>
+          </header>
+
+          <!-- Voice Input Section -->
+          <section
+            class="voice-capture voice-capture--listening"
+            aria-labelledby="voice-section-title"
+          >
+            <h2 id="voice-section-title" class="sr-only">Voice Input</h2>
+            <button
+              class="voice-capture__button"
+              type="button"
+              aria-label="Tap to start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div class="voice-capture__text">Listening...</div>
+            <div class="voice-capture__hint">
+              Say your task after the beep. Example: "Call dentist tomorrow at 3
+              PM high priority"
+            </div>
+          </section>
+
+          <!-- Manual Input Form -->
+          <section aria-labelledby="manual-form-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="manual-form-title" class="card__title">Manual Entry</h2>
+                <p class="card__subtitle">
+                  Fill out the form below to create a task manually
+                </p>
+              </div>
+
+              <form
+                class="card__content"
+                action="#"
+                method="post"
+                aria-label="Add task form"
+              >
+                <div class="form-group">
+                  <label
+                    for="task-title"
+                    class="form-label form-label--required"
+                    >Task Title</label
+                  >
+                  <input
+                    type="text"
+                    id="task-title"
+                    name="title"
+                    class="form-input"
+                    placeholder="Enter your task..."
+                    required
+                    aria-describedby="task-title-help"
+                  />
+                  <div id="task-title-help" class="text-sm text-muted mt-1">
+                    Be specific and actionable (e.g., "Call John about project
+                    meeting")
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="task-description" class="form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    id="task-description"
+                    name="description"
+                    class="form-input form-textarea"
+                    placeholder="Add any additional details..."
+                    aria-describedby="task-description-help"
+                  ></textarea>
+                  <div
+                    id="task-description-help"
+                    class="text-sm text-muted mt-1"
+                  >
+                    Optional: Add context, notes, or instructions
+                  </div>
+                </div>
+
+                <div class="grid grid--2">
+                  <div class="form-group">
+                    <label for="task-due-date" class="form-label"
+                      >Due Date</label
+                    >
+                    <input
+                      type="date"
+                      id="task-due-date"
+                      name="dueDate"
+                      class="form-input"
+                      aria-describedby="task-due-date-help"
+                    />
+                    <div
+                      id="task-due-date-help"
+                      class="text-sm text-muted mt-1"
+                    >
+                      When should this be completed?
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="task-due-time" class="form-label"
+                      >Due Time</label
+                    >
+                    <input
+                      type="time"
+                      id="task-due-time"
+                      name="dueTime"
+                      class="form-input"
+                      aria-describedby="task-due-time-help"
+                    />
+                    <div
+                      id="task-due-time-help"
+                      class="text-sm text-muted mt-1"
+                    >
+                      Specific time (optional)
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="task-priority" class="form-label">Priority</label>
+                  <select
+                    id="task-priority"
+                    name="priority"
+                    class="form-input form-select"
+                    aria-describedby="task-priority-help"
+                  >
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
+                  </select>
+                  <div id="task-priority-help" class="text-sm text-muted mt-1">
+                    How important or urgent is this task?
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="task-tags" class="form-label">Tags</label>
+                  <input
+                    type="text"
+                    id="task-tags"
+                    name="tags"
+                    class="form-input"
+                    placeholder="work, personal, urgent..."
+                    aria-describedby="task-tags-help"
+                  />
+                  <div id="task-tags-help" class="text-sm text-muted mt-1">
+                    Separate multiple tags with commas
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="task-reminder" class="form-label">Reminder</label>
+                  <select
+                    id="task-reminder"
+                    name="reminder"
+                    class="form-input form-select"
+                    aria-describedby="task-reminder-help"
+                  >
+                    <option value="">No reminder</option>
+                    <option value="5min">5 minutes before</option>
+                    <option value="15min">15 minutes before</option>
+                    <option value="30min">30 minutes before</option>
+                    <option value="1hour">1 hour before</option>
+                    <option value="1day">1 day before</option>
+                  </select>
+                  <div id="task-reminder-help" class="text-sm text-muted mt-1">
+                    Get notified before the due time
+                  </div>
+                </div>
+              </form>
+
+              <div class="card__footer">
+                <button type="button" class="btn btn--secondary">
+                  <span aria-hidden="true">❌</span>
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn--primary">
+                  <span aria-hidden="true">💾</span>
+                  Save Task
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Quick Add Examples -->
+          <section class="mt-8" aria-labelledby="examples-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="examples-title" class="card__title">
+                  Voice Command Examples
+                </h2>
+                <p class="card__subtitle">
+                  Try these voice commands for quick task creation
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="grid grid--auto">
+                  <div class="p-4 bg-surface rounded border">
+                    <div class="font-medium mb-2">📞 Calls & Meetings</div>
+                    <ul class="text-sm text-secondary space-y-1">
+                      <li>"Call mom at 6 PM high priority"</li>
+                      <li>"Meeting with team tomorrow 10 AM"</li>
+                      <li>"Schedule dentist appointment next week"</li>
+                    </ul>
+                  </div>
+
+                  <div class="p-4 bg-surface rounded border">
+                    <div class="font-medium mb-2">🛒 Shopping & Errands</div>
+                    <ul class="text-sm text-secondary space-y-1">
+                      <li>"Buy groceries this weekend"</li>
+                      <li>"Pick up dry cleaning Friday"</li>
+                      <li>"Get car serviced next month low priority"</li>
+                    </ul>
+                  </div>
+
+                  <div class="p-4 bg-surface rounded border">
+                    <div class="font-medium mb-2">💼 Work Tasks</div>
+                    <ul class="text-sm text-secondary space-y-1">
+                      <li>"Submit report by Friday urgent work"</li>
+                      <li>"Review contracts tomorrow medium priority"</li>
+                      <li>"Email client about proposal work"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__text">
+            TaskAI v1.0 - Voice-Driven Productivity
+          </div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="#" class="footer__link">Help</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Support</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

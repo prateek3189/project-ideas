@@ -1,0 +1,231 @@
+/* Print Styles */
+
+@media print {
+  /* Reset page margins and remove backgrounds */
+  @page {
+    margin: 1in;
+    size: letter;
+  }
+
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide interactive elements */
+  .header,
+  .sidebar,
+  .footer,
+  .btn,
+  .voice-capture,
+  .filter-tabs,
+  .nav-item,
+  .toggle,
+  .header__actions,
+  .header__voice-btn,
+  .header__profile,
+  .task-card__checkbox {
+    display: none !important;
+  }
+
+  /* Simplify layout */
+  .app {
+    display: block;
+  }
+
+  .main {
+    display: block;
+    max-width: none;
+    margin: 0;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  /* Typography adjustments */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  h1 {
+    font-size: 18pt;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 16pt;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt;
+    page-break-after: avoid;
+  }
+
+  .content__title {
+    font-size: 20pt;
+    margin-bottom: 0.5in;
+    border-bottom: 1pt solid black;
+    padding-bottom: 0.1in;
+  }
+
+  /* Task cards for print */
+  .task-card {
+    border: 1pt solid black;
+    margin-bottom: 0.2in;
+    padding: 0.15in;
+    page-break-inside: avoid;
+    background: white !important;
+  }
+
+  .task-card__header {
+    margin-bottom: 0.1in;
+  }
+
+  .task-card__title {
+    font-weight: bold;
+    font-size: 11pt;
+  }
+
+  .task-card__description {
+    font-size: 10pt;
+    margin-bottom: 0.1in;
+  }
+
+  .task-card__meta {
+    font-size: 9pt;
+  }
+
+  /* Badges in print */
+  .badge {
+    border: 1pt solid black;
+    padding: 2pt 4pt;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-right: 0.1in;
+  }
+
+  .badge--priority-high::before {
+    content: "HIGH: ";
+  }
+
+  .badge--priority-medium::before {
+    content: "MED: ";
+  }
+
+  .badge--priority-low::before {
+    content: "LOW: ";
+  }
+
+  .badge--due-today::before {
+    content: "DUE TODAY: ";
+  }
+
+  .badge--overdue::before {
+    content: "OVERDUE: ";
+  }
+
+  /* Cards for print */
+  .card {
+    border: 1pt solid black;
+    margin-bottom: 0.2in;
+    padding: 0.15in;
+    page-break-inside: avoid;
+  }
+
+  .card__title {
+    font-weight: bold;
+    font-size: 12pt;
+    margin-bottom: 0.1in;
+  }
+
+  /* Form elements for print */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border: 1pt solid black;
+    padding: 0.05in;
+    background: white;
+  }
+
+  .form-label {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  /* Links */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure content doesn't break across pages poorly */
+  .content__header {
+    page-break-after: avoid;
+  }
+
+  /* Grid adjustments */
+  .grid,
+  .grid--2,
+  .grid--3,
+  .grid--auto {
+    display: block;
+  }
+
+  .grid > * {
+    margin-bottom: 0.2in;
+  }
+
+  /* Hide empty elements */
+  *:empty {
+    display: none;
+  }
+
+  /* Print header for identification */
+  .content__title::before {
+    content: "TaskAI - ";
+    font-size: 14pt;
+    font-weight: normal;
+  }
+
+  /* Footer for print */
+  .content::after {
+    content: "Generated from TaskAI - Voice-Driven To-Do List";
+    display: block;
+    margin-top: 0.5in;
+    padding-top: 0.1in;
+    border-top: 1pt solid black;
+    font-size: 9pt;
+    text-align: center;
+  }
+
+  /* Checkbox representation in print */
+  .task-card--completed .task-card__title::before {
+    content: "✓ ";
+    font-weight: bold;
+  }
+
+  .task-card:not(.task-card--completed) .task-card__title::before {
+    content: "☐ ";
+  }
+}

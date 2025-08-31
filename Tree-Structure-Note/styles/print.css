@@ -1,0 +1,316 @@
+/* Print Styles - Clean layout for printing */
+
+@media print {
+  /* Reset margins and colors for print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+  
+  /* Hide non-essential elements */
+  .header,
+  .sidebar,
+  .page__footer,
+  .main__actions,
+  .section__actions,
+  .btn,
+  .search-bar,
+  .theme-toggle,
+  .nav-list,
+  .breadcrumbs,
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+  
+  /* Page layout adjustments */
+  .page {
+    min-height: auto;
+  }
+  
+  .page__body {
+    display: block;
+  }
+  
+  .main {
+    width: 100%;
+    overflow: visible;
+  }
+  
+  .main__header {
+    position: static;
+    padding: 0 0 1cm 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 1cm;
+  }
+  
+  .main__content {
+    padding: 0;
+    max-width: none;
+  }
+  
+  /* Typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+  
+  h1 {
+    font-size: 20pt;
+    page-break-after: avoid;
+  }
+  
+  h2 {
+    font-size: 16pt;
+    page-break-after: avoid;
+    margin-top: 0.5cm;
+  }
+  
+  h3 {
+    font-size: 14pt;
+    page-break-after: avoid;
+    margin-top: 0.4cm;
+  }
+  
+  h4, h5, h6 {
+    font-size: 12pt;
+    page-break-after: avoid;
+    margin-top: 0.3cm;
+  }
+  
+  p {
+    margin-bottom: 0.3cm;
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Tree structure for print */
+  .tree {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tree-item {
+    break-inside: avoid;
+    margin-bottom: 0.2cm;
+  }
+  
+  .tree-item__content {
+    padding: 0.1cm 0;
+    border: none;
+    background: none;
+  }
+  
+  .tree-item__title {
+    font-weight: bold;
+    color: black;
+  }
+  
+  .tree-item__meta {
+    font-size: 10pt;
+    color: #666;
+    margin-left: 0.5cm;
+  }
+  
+  .tree-item__children {
+    margin-left: 1cm;
+    padding-left: 0.5cm;
+    border-left: 1px solid #ccc;
+    margin-top: 0.1cm;
+  }
+  
+  /* Remove tree lines and icons */
+  .tree-item::before,
+  .tree-item::after {
+    display: none;
+  }
+  
+  .tree-item__icon {
+    display: none;
+  }
+  
+  /* Show all collapsed content */
+  details {
+    page-break-inside: avoid;
+  }
+  
+  details[open] summary,
+  details summary {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.2cm;
+  }
+  
+  details[open] > *:not(summary) {
+    display: block !important;
+  }
+  
+  /* Force show all tree items */
+  .tree-item__children {
+    display: block !important;
+  }
+  
+  /* Cards and sections */
+  .card {
+    border: 1px solid #ccc;
+    margin-bottom: 0.5cm;
+    page-break-inside: avoid;
+    background: white;
+  }
+  
+  .card__header {
+    border-bottom: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+  
+  .card__body,
+  .card__footer {
+    background: white;
+  }
+  
+  .section {
+    margin-bottom: 1cm;
+    page-break-inside: avoid;
+  }
+  
+  .section__title {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.1cm;
+    margin-bottom: 0.3cm;
+  }
+  
+  /* Tags and badges */
+  .badge {
+    border: 1px solid #666;
+    color: black !important;
+    background: white !important;
+    padding: 0.05cm 0.2cm;
+    font-size: 10pt;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.5cm;
+    page-break-inside: avoid;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.2cm;
+    text-align: left;
+  }
+  
+  th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  /* Links */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* Forms - show as text */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+    padding: 0.1cm;
+  }
+  
+  /* Grid layouts - convert to linear */
+  .grid-layout,
+  .dashboard__stats,
+  .dashboard__main,
+  .two-column,
+  .three-column,
+  .tree-view {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+  
+  .grid-layout > *,
+  .dashboard__stats > *,
+  .dashboard__main > *,
+  .two-column > *,
+  .three-column > *,
+  .tree-view > * {
+    margin-bottom: 0.5cm;
+    page-break-inside: avoid;
+  }
+  
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+  
+  .page-break-after {
+    page-break-after: always;
+  }
+  
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+  
+  /* Header for each page */
+  .main__title {
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.2cm;
+  }
+  
+  /* Footer on each page */
+  @page {
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 10pt;
+      color: #666;
+    }
+    
+    @bottom-left {
+      content: "Tree Structure Notes";
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+  
+  /* Ensure good contrast for printing */
+  .text-muted,
+  .text-secondary {
+    color: #666 !important;
+  }
+  
+  /* Hide empty states and loading indicators */
+  .empty-state,
+  .spinner,
+  .alert {
+    display: none !important;
+  }
+  
+  /* Special print classes */
+  .print-only {
+    display: block !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}

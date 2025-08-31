@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reminders - TaskAI</title>
+    <meta
+      name="description"
+      content="View and manage your task reminders and notifications"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <a href="index.html" class="header__brand">
+            <div class="header__logo" aria-hidden="true">T</div>
+            <span>TaskAI</span>
+          </a>
+
+          <div class="header__actions">
+            <button
+              class="header__voice-btn"
+              type="button"
+              aria-label="Start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div
+              class="header__profile"
+              role="button"
+              tabindex="0"
+              aria-label="User profile"
+            >
+              <span aria-hidden="true">U</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+          <nav class="sidebar__section">
+            <h2 class="sidebar__title">Navigation</h2>
+            <ul class="sidebar__nav">
+              <li>
+                <a href="index.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">📊</span>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="add-task.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">➕</span>
+                  <span>Add Task</span>
+                </a>
+              </li>
+              <li>
+                <a href="reminders.html" class="nav-item nav-item--active">
+                  <span class="nav-item__icon" aria-hidden="true">⏰</span>
+                  <span>Reminders</span>
+                </a>
+              </li>
+              <li>
+                <a href="settings.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⚙️</span>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">ℹ️</span>
+                  <span>About</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__title">Preferences</h2>
+            <div class="sidebar__theme-toggle">
+              <span>Dark Mode</span>
+              <label class="toggle" for="theme-toggle">
+                <input
+                  type="checkbox"
+                  id="theme-toggle"
+                  class="toggle__input"
+                  aria-label="Toggle dark mode"
+                />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content" id="main-content">
+          <header class="content__header">
+            <h1 class="content__title">Reminders</h1>
+            <p class="content__subtitle">
+              Stay on top of your tasks with smart notifications
+            </p>
+          </header>
+
+          <!-- Sync Status Banner -->
+          <section class="mb-6" aria-labelledby="sync-status-title">
+            <div
+              class="card"
+              style="
+                background: linear-gradient(135deg, var(--color-info), #0ea5e9);
+                color: white;
+                border: none;
+              "
+            >
+              <div class="card__content">
+                <div class="flex items-center gap-3">
+                  <span aria-hidden="true" class="text-2xl">🔄</span>
+                  <div>
+                    <h2 id="sync-status-title" class="font-semibold mb-1">
+                      Cross-Device Sync
+                    </h2>
+                    <p class="text-sm opacity-90">
+                      Your reminders sync across all your devices automatically
+                    </p>
+                  </div>
+                  <div class="ml-auto">
+                    <label class="toggle" for="sync-toggle">
+                      <input
+                        type="checkbox"
+                        id="sync-toggle"
+                        class="toggle__input"
+                        checked
+                        aria-label="Toggle sync across devices"
+                      />
+                      <span
+                        class="toggle__slider"
+                        style="background-color: rgba(255, 255, 255, 0.3)"
+                      ></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Reminder Filters -->
+          <section aria-labelledby="reminder-filters-title">
+            <h2 id="reminder-filters-title" class="sr-only">
+              Reminder Filters
+            </h2>
+            <div
+              class="filter-tabs"
+              role="tablist"
+              aria-label="Reminder filters"
+            >
+              <button
+                class="filter-tab filter-tab--active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="upcoming-reminders"
+              >
+                Upcoming
+              </button>
+              <button
+                class="filter-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="today-reminders"
+              >
+                Today
+              </button>
+              <button
+                class="filter-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="snoozed-reminders"
+              >
+                Snoozed
+              </button>
+              <button
+                class="filter-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="completed-reminders"
+              >
+                Completed
+              </button>
+            </div>
+          </section>
+
+          <!-- Upcoming Reminders -->
+          <section aria-labelledby="upcoming-title">
+            <h2 id="upcoming-title" class="text-lg font-semibold mb-4">
+              Upcoming Reminders
+            </h2>
+            <div
+              class="space-y-3"
+              role="tabpanel"
+              id="upcoming-reminders"
+              aria-labelledby="reminder-filters-title"
+            >
+              <!-- Reminder 1 - Urgent -->
+              <article
+                class="card"
+                style="border-left: 4px solid var(--color-priority-high)"
+              >
+                <div class="card__content">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <h3 class="font-semibold mb-2">Call mom at 6 PM</h3>
+                      <p class="text-sm text-secondary mb-3">
+                        Remember to ask about her doctor's appointment
+                      </p>
+                      <div class="flex items-center gap-2 text-sm">
+                        <span
+                          class="badge badge--priority-high"
+                          aria-label="High priority"
+                          >High Priority</span
+                        >
+                        <span
+                          class="badge badge--status"
+                          aria-label="Reminder status"
+                          >15 mins before</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-semibold text-lg">5:45 PM</div>
+                      <div class="text-sm text-secondary">Today</div>
+                      <div class="text-xs text-muted mt-1">in 2 hours</div>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--small btn--ghost">
+                      <span aria-hidden="true">💤</span>
+                      Snooze
+                    </button>
+                    <button class="btn btn--small btn--secondary">
+                      <span aria-hidden="true">✓</span>
+                      Mark Done
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Reminder 2 - Medium -->
+              <article
+                class="card"
+                style="border-left: 4px solid var(--color-priority-medium)"
+              >
+                <div class="card__content">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <h3 class="font-semibold mb-2">
+                        Doctor appointment tomorrow
+                      </h3>
+                      <p class="text-sm text-secondary mb-3">
+                        Annual checkup with Dr. Smith
+                      </p>
+                      <div class="flex items-center gap-2 text-sm">
+                        <span
+                          class="badge badge--priority-medium"
+                          aria-label="Medium priority"
+                          >Medium Priority</span
+                        >
+                        <span
+                          class="badge badge--status"
+                          aria-label="Reminder status"
+                          >1 hour before</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-semibold text-lg">8:00 AM</div>
+                      <div class="text-sm text-secondary">Tomorrow</div>
+                      <div class="text-xs text-muted mt-1">in 14 hours</div>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--small btn--ghost">
+                      <span aria-hidden="true">💤</span>
+                      Snooze
+                    </button>
+                    <button class="btn btn--small btn--secondary">
+                      <span aria-hidden="true">✓</span>
+                      Mark Done
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Reminder 3 - Weekly -->
+              <article
+                class="card"
+                style="border-left: 4px solid var(--color-priority-low)"
+              >
+                <div class="card__content">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <h3 class="font-semibold mb-2">
+                        Weekly review every Sunday
+                      </h3>
+                      <p class="text-sm text-secondary mb-3">
+                        Review completed tasks and plan for next week
+                      </p>
+                      <div class="flex items-center gap-2 text-sm">
+                        <span
+                          class="badge badge--priority-low"
+                          aria-label="Low priority"
+                          >Low Priority</span
+                        >
+                        <span
+                          class="badge badge--status"
+                          aria-label="Reminder status"
+                          >Recurring</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-semibold text-lg">8:00 PM</div>
+                      <div class="text-sm text-secondary">Sunday</div>
+                      <div class="text-xs text-muted mt-1">in 3 days</div>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--small btn--ghost">
+                      <span aria-hidden="true">💤</span>
+                      Snooze
+                    </button>
+                    <button class="btn btn--small btn--secondary">
+                      <span aria-hidden="true">✓</span>
+                      Mark Done
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Reminder 4 - Project Deadline -->
+              <article
+                class="card"
+                style="border-left: 4px solid var(--color-priority-high)"
+              >
+                <div class="card__content">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <h3 class="font-semibold mb-2">
+                        Submit project report by Friday
+                      </h3>
+                      <p class="text-sm text-secondary mb-3">
+                        Quarterly performance analysis deadline
+                      </p>
+                      <div class="flex items-center gap-2 text-sm">
+                        <span
+                          class="badge badge--priority-high"
+                          aria-label="High priority"
+                          >High Priority</span
+                        >
+                        <span
+                          class="badge badge--status"
+                          aria-label="Reminder status"
+                          >1 day before</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-semibold text-lg">9:00 AM</div>
+                      <div class="text-sm text-secondary">Thursday</div>
+                      <div class="text-xs text-muted mt-1">in 2 days</div>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--small btn--ghost">
+                      <span aria-hidden="true">💤</span>
+                      Snooze
+                    </button>
+                    <button class="btn btn--small btn--secondary">
+                      <span aria-hidden="true">✓</span>
+                      Mark Done
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Reminder Statistics -->
+          <section class="mt-8" aria-labelledby="reminder-stats-title">
+            <h2 id="reminder-stats-title" class="text-lg font-semibold mb-4">
+              Reminder Statistics
+            </h2>
+            <div class="grid grid--3">
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-2" aria-hidden="true">🔔</div>
+                  <div class="text-2xl font-bold text-primary">4</div>
+                  <div class="text-sm text-secondary">Active Reminders</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-2" aria-hidden="true">⏰</div>
+                  <div class="text-2xl font-bold text-primary">2</div>
+                  <div class="text-sm text-secondary">Due Today</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-2" aria-hidden="true">✅</div>
+                  <div class="text-2xl font-bold text-primary">12</div>
+                  <div class="text-sm text-secondary">Completed This Week</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Smart Reminder Features -->
+          <section class="mt-8" aria-labelledby="smart-features-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="smart-features-title" class="card__title">
+                  Smart Reminder Features
+                </h2>
+                <p class="card__subtitle">Coming soon in future updates</p>
+              </div>
+              <div class="card__content">
+                <div class="grid grid--auto">
+                  <div class="p-4 bg-surface rounded border">
+                    <div class="flex items-center gap-3 mb-2">
+                      <span aria-hidden="true" class="text-xl">📍</span>
+                      <div class="font-medium">Location-based Reminders</div>
+                    </div>
+                    <p class="text-sm text-secondary">
+                      Get notified when you arrive at or leave specific
+                      locations
+                    </p>
+                  </div>
+
+                  <div class="p-4 bg-surface rounded border">
+                    <div class="flex items-center gap-3 mb-2">
+                      <span aria-hidden="true" class="text-xl">🤖</span>
+                      <div class="font-medium">AI-Powered Scheduling</div>
+                    </div>
+                    <p class="text-sm text-secondary">
+                      Smart suggestions for optimal reminder timing based on
+                      your habits
+                    </p>
+                  </div>
+
+                  <div class="p-4 bg-surface rounded border">
+                    <div class="flex items-center gap-3 mb-2">
+                      <span aria-hidden="true" class="text-xl">📅</span>
+                      <div class="font-medium">Calendar Integration</div>
+                    </div>
+                    <p class="text-sm text-secondary">
+                      Sync with your calendar for conflict detection and optimal
+                      scheduling
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__text">
+            TaskAI v1.0 - Voice-Driven Productivity
+          </div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="#" class="footer__link">Help</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Support</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

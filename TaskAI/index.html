@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - TaskAI</title>
+    <meta
+      name="description"
+      content="Voice-driven to-do list app for hands-free productivity"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <a href="index.html" class="header__brand">
+            <div class="header__logo" aria-hidden="true">T</div>
+            <span>TaskAI</span>
+          </a>
+
+          <div class="header__actions">
+            <button
+              class="header__voice-btn"
+              type="button"
+              aria-label="Start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div
+              class="header__profile"
+              role="button"
+              tabindex="0"
+              aria-label="User profile"
+            >
+              <span aria-hidden="true">U</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+          <nav class="sidebar__section">
+            <h2 class="sidebar__title">Navigation</h2>
+            <ul class="sidebar__nav">
+              <li>
+                <a href="index.html" class="nav-item nav-item--active">
+                  <span class="nav-item__icon" aria-hidden="true">📊</span>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="add-task.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">➕</span>
+                  <span>Add Task</span>
+                </a>
+              </li>
+              <li>
+                <a href="reminders.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⏰</span>
+                  <span>Reminders</span>
+                </a>
+              </li>
+              <li>
+                <a href="settings.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⚙️</span>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">ℹ️</span>
+                  <span>About</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__title">Preferences</h2>
+            <div class="sidebar__theme-toggle">
+              <span>Dark Mode</span>
+              <label class="toggle" for="theme-toggle">
+                <input
+                  type="checkbox"
+                  id="theme-toggle"
+                  class="toggle__input"
+                  aria-label="Toggle dark mode"
+                />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content" id="main-content">
+          <header class="content__header">
+            <h1 class="content__title">Dashboard</h1>
+            <p class="content__subtitle">
+              Manage your tasks with voice commands
+            </p>
+          </header>
+
+          <!-- Voice Capture Section -->
+          <section class="voice-capture" aria-labelledby="voice-section-title">
+            <h2 id="voice-section-title" class="sr-only">Voice Input</h2>
+            <button
+              class="voice-capture__button"
+              type="button"
+              aria-label="Tap to start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div class="voice-capture__text">Tap to Speak</div>
+            <div class="voice-capture__hint">
+              Say something like "Add task call mom at 6 PM"
+            </div>
+          </section>
+
+          <!-- Task Filters -->
+          <section aria-labelledby="filters-title">
+            <h2 id="filters-title" class="sr-only">Task Filters</h2>
+            <div class="filter-tabs" role="tablist" aria-label="Task filters">
+              <button
+                class="filter-tab filter-tab--active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="all-tasks"
+              >
+                All Tasks
+              </button>
+              <button
+                class="filter-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="today-tasks"
+              >
+                Today
+              </button>
+              <button
+                class="filter-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="week-tasks"
+              >
+                This Week
+              </button>
+              <button
+                class="filter-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="completed-tasks"
+              >
+                Completed
+              </button>
+            </div>
+          </section>
+
+          <!-- Task List -->
+          <section aria-labelledby="tasks-title">
+            <h2 id="tasks-title" class="sr-only">Your Tasks</h2>
+            <div
+              class="task-list"
+              role="tabpanel"
+              id="all-tasks"
+              aria-labelledby="filters-title"
+            >
+              <!-- Task 1 -->
+              <article class="task-card">
+                <div class="task-card__header">
+                  <div
+                    class="task-card__checkbox"
+                    role="checkbox"
+                    aria-checked="false"
+                    tabindex="0"
+                    aria-label="Mark task as complete"
+                  >
+                    <span aria-hidden="true">✓</span>
+                  </div>
+                  <div class="task-card__content">
+                    <h3 class="task-card__title">Call mom at 6 PM</h3>
+                    <p class="task-card__description">
+                      Remember to ask about her doctor's appointment and weekend
+                      plans
+                    </p>
+                    <div class="task-card__meta">
+                      <span
+                        class="badge badge--priority-high"
+                        aria-label="High priority"
+                        >High</span
+                      >
+                      <span
+                        class="badge badge--due-today"
+                        aria-label="Due today"
+                        >Due Today</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: personal"
+                        >#personal</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Task 2 -->
+              <article class="task-card">
+                <div class="task-card__header">
+                  <div
+                    class="task-card__checkbox"
+                    role="checkbox"
+                    aria-checked="false"
+                    tabindex="0"
+                    aria-label="Mark task as complete"
+                  >
+                    <span aria-hidden="true">✓</span>
+                  </div>
+                  <div class="task-card__content">
+                    <h3 class="task-card__title">
+                      Submit project report by Friday
+                    </h3>
+                    <p class="task-card__description">
+                      Quarterly performance analysis for the marketing team
+                    </p>
+                    <div class="task-card__meta">
+                      <span
+                        class="badge badge--priority-medium"
+                        aria-label="Medium priority"
+                        >Medium</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: work"
+                        >#work</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: urgent"
+                        >#urgent</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Task 3 -->
+              <article class="task-card">
+                <div class="task-card__header">
+                  <div
+                    class="task-card__checkbox"
+                    role="checkbox"
+                    aria-checked="false"
+                    tabindex="0"
+                    aria-label="Mark task as complete"
+                  >
+                    <span aria-hidden="true">✓</span>
+                  </div>
+                  <div class="task-card__content">
+                    <h3 class="task-card__title">Buy groceries</h3>
+                    <p class="task-card__description">
+                      Milk, bread, eggs, fruits, and vegetables for the week
+                    </p>
+                    <div class="task-card__meta">
+                      <span
+                        class="badge badge--priority-low"
+                        aria-label="Low priority"
+                        >Low</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: personal"
+                        >#personal</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: shopping"
+                        >#shopping</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Task 4 - Completed -->
+              <article class="task-card task-card--completed">
+                <div class="task-card__header">
+                  <div
+                    class="task-card__checkbox task-card__checkbox--checked"
+                    role="checkbox"
+                    aria-checked="true"
+                    tabindex="0"
+                    aria-label="Mark task as incomplete"
+                  >
+                    <span aria-hidden="true">✓</span>
+                  </div>
+                  <div class="task-card__content">
+                    <h3 class="task-card__title">Review quarterly budget</h3>
+                    <p class="task-card__description">
+                      Analyze spending patterns and adjust budget for next
+                      quarter
+                    </p>
+                    <div class="task-card__meta">
+                      <span
+                        class="badge badge--priority-medium"
+                        aria-label="Medium priority"
+                        >Medium</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: work"
+                        >#work</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: finance"
+                        >#finance</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Task 5 -->
+              <article class="task-card">
+                <div class="task-card__header">
+                  <div
+                    class="task-card__checkbox"
+                    role="checkbox"
+                    aria-checked="false"
+                    tabindex="0"
+                    aria-label="Mark task as complete"
+                  >
+                    <span aria-hidden="true">✓</span>
+                  </div>
+                  <div class="task-card__content">
+                    <h3 class="task-card__title">
+                      Schedule dentist appointment
+                    </h3>
+                    <p class="task-card__description">
+                      Annual cleaning and checkup
+                    </p>
+                    <div class="task-card__meta">
+                      <span
+                        class="badge badge--priority-low"
+                        aria-label="Low priority"
+                        >Low</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: health"
+                        >#health</span
+                      >
+                      <span class="badge badge--tag" aria-label="Tag: personal"
+                        >#personal</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick Stats -->
+          <section class="mt-8" aria-labelledby="stats-title">
+            <h2 id="stats-title" class="text-lg font-semibold mb-4">
+              Quick Stats
+            </h2>
+            <div class="grid grid--3">
+              <div class="card">
+                <div class="card__content">
+                  <div class="text-2xl font-bold text-primary">4</div>
+                  <div class="text-sm text-secondary">Active Tasks</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__content">
+                  <div class="text-2xl font-bold text-primary">1</div>
+                  <div class="text-sm text-secondary">Completed Today</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__content">
+                  <div class="text-2xl font-bold text-primary">2</div>
+                  <div class="text-sm text-secondary">Due This Week</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__text">
+            TaskAI v1.0 - Voice-Driven Productivity
+          </div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="#" class="footer__link">Help</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Support</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

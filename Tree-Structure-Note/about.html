@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About TreeNotes | TreeNotes</title>
+    <meta
+      name="description"
+      content="Learn about TreeNotes - hierarchical note-taking made simple"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <header class="page__header">
+        <div class="header">
+          <div class="header__content">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="icon icon--lg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+                <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              TreeNotes
+            </a>
+
+            <div class="header__search">
+              <div class="search-bar">
+                <svg
+                  class="search-bar__icon icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input
+                  type="search"
+                  class="search-bar__input"
+                  placeholder="Search notes..."
+                  aria-label="Search notes"
+                />
+              </div>
+            </div>
+
+            <div class="header__actions">
+              <button class="theme-toggle" aria-label="Toggle theme">
+                <div class="theme-toggle__switch"></div>
+                <svg
+                  class="theme-toggle__icon theme-toggle__icon--sun icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg
+                  class="theme-toggle__icon theme-toggle__icon--moon icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </button>
+
+              <div class="avatar">
+                <span>JD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="page__body">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+          <div class="sidebar__header">
+            <h2 class="sidebar__title">Navigation</h2>
+          </div>
+
+          <div class="sidebar__content">
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Main</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        />
+                        <polyline points="9,22 9,12 15,12 15,22" />
+                      </svg>
+                      <span class="nav-link__text">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="tree-view.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                        />
+                        <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                      </svg>
+                      <span class="nav-link__text">Tree View</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="search.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                      </svg>
+                      <span class="nav-link__text">Search</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Tools</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="note-editor.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Create Note</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Settings</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="about.html" class="nav-link nav-link--active">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                          d="M9,9h0a3,3,0,0,1,5.12,2.12c0,2.23-3.12,2.23-3.12,4.88"
+                        />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                      <span class="nav-link__text">About</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar__section">
+              <a href="note-editor.html" class="btn btn--primary w-full">
+                <svg
+                  class="icon icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                New Note
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+          <div class="main__header">
+            <nav class="breadcrumbs">
+              <div class="breadcrumbs__item">
+                <a href="index.html" class="breadcrumbs__link">Dashboard</a>
+                <span class="breadcrumbs__separator">/</span>
+              </div>
+              <div class="breadcrumbs__item">
+                <span>About</span>
+              </div>
+            </nav>
+
+            <div class="text-center">
+              <div class="flex justify-center mb-4">
+                <svg
+                  class="icon w-16 h-16 text-accent"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  />
+                  <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h1 class="main__title">TreeNotes</h1>
+              <p class="main__subtitle">Hierarchical note-taking made simple</p>
+              <p class="text-muted text-sm">
+                Version 1.0 - HTML & CSS Prototype
+              </p>
+            </div>
+          </div>
+
+          <div class="main__content max-w-4xl mx-auto">
+            <!-- Vision & Purpose -->
+            <section class="section">
+              <div class="section__header">
+                <h2 class="section__title">Our Vision</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body">
+                  <p class="text-lg text-secondary mb-4">
+                    TreeNotes provides a clean, minimal interface for organizing
+                    thoughts, tasks, courses, and projects in a hierarchical
+                    tree structure. Our goal is to make knowledge organization
+                    intuitive and efficient.
+                  </p>
+
+                  <div class="grid-layout grid-layout--3 gap-4">
+                    <div class="text-center">
+                      <svg
+                        class="icon icon--lg text-accent mx-auto mb-3"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                        />
+                      </svg>
+                      <h3 class="font-semibold mb-2">Organized</h3>
+                      <p class="text-sm text-secondary">
+                        Hierarchical structure for clear organization
+                      </p>
+                    </div>
+
+                    <div class="text-center">
+                      <svg
+                        class="icon icon--lg text-success mx-auto mb-3"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                      </svg>
+                      <h3 class="font-semibold mb-2">Fast</h3>
+                      <p class="text-sm text-secondary">
+                        Lightweight HTML & CSS for optimal performance
+                      </p>
+                    </div>
+
+                    <div class="text-center">
+                      <svg
+                        class="icon icon--lg text-info mx-auto mb-3"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M9 12l2 2 4-4" />
+                        <circle cx="12" cy="12" r="10" />
+                      </svg>
+                      <h3 class="font-semibold mb-2">Accessible</h3>
+                      <p class="text-sm text-secondary">
+                        Built with semantic HTML and ARIA standards
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Use Cases -->
+            <section class="section">
+              <div class="section__header">
+                <h2 class="section__title">Perfect For</h2>
+              </div>
+
+              <div class="grid-layout grid-layout--2 gap-4">
+                <div class="card">
+                  <div class="card__header">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        class="icon text-learning"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                      </svg>
+                      <h3 class="font-semibold">Students</h3>
+                    </div>
+                  </div>
+                  <div class="card__body">
+                    <p class="text-secondary text-sm">
+                      Organize course materials, lectures, and study notes in a
+                      clear hierarchy. Structure learning paths from broad
+                      concepts to specific details.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__header">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        class="icon text-work"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect
+                          x="2"
+                          y="3"
+                          width="20"
+                          height="14"
+                          rx="2"
+                          ry="2"
+                        />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                      </svg>
+                      <h3 class="font-semibold">Developers</h3>
+                    </div>
+                  </div>
+                  <div class="card__body">
+                    <p class="text-secondary text-sm">
+                      Break down projects into features, tasks, and subtasks.
+                      Document API designs, architecture decisions, and
+                      technical specifications.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__header">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        class="icon text-personal"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+                        />
+                      </svg>
+                      <h3 class="font-semibold">Content Creators</h3>
+                    </div>
+                  </div>
+                  <div class="card__body">
+                    <p class="text-secondary text-sm">
+                      Structure content ideas, research topics, and creative
+                      projects. Organize inspiration, references, and draft
+                      outlines.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__header">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        class="icon text-info"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
+                      <h3 class="font-semibold">Knowledge Workers</h3>
+                    </div>
+                  </div>
+                  <div class="card__body">
+                    <p class="text-secondary text-sm">
+                      Build personal knowledge bases, organize research, and
+                      maintain structured documentation for easy reference and
+                      sharing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Features -->
+            <section class="section">
+              <div class="section__header">
+                <h2 class="section__title">Current Features</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body">
+                  <div class="grid-layout grid-layout--2 gap-6">
+                    <div>
+                      <h3 class="font-semibold mb-3">✨ Core Features</h3>
+                      <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Hierarchical tree structure visualization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Collapsible sections with details/summary</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Visual tree connection lines</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Note creation and editing forms</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Tag system for categorization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Search interface with filters</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 class="font-semibold mb-3">🎨 Design & UX</h3>
+                      <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Light and dark theme support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Responsive design for all devices</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Semantic HTML with ARIA attributes</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Keyboard navigation support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>Print-optimized layouts</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                          <span class="text-success">✓</span>
+                          <span>High contrast mode compatibility</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Future Enhancements -->
+            <section class="section">
+              <div class="section__header">
+                <h2 class="section__title">Future Enhancements</h2>
+              </div>
+
+              <div class="grid-layout grid-layout--2 gap-4">
+                <div class="card">
+                  <div class="card__header">
+                    <h3 class="font-semibold text-accent">
+                      🚀 Planned Features
+                    </h3>
+                  </div>
+                  <div class="card__body">
+                    <ul class="space-y-2 text-sm">
+                      <li class="flex items-start gap-2">
+                        <span class="text-warning">◦</span>
+                        <span>Drag-and-drop reordering of notes</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-warning">◦</span>
+                        <span>Real-time sync and collaboration</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-warning">◦</span>
+                        <span>Advanced search with full-text indexing</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-warning">◦</span>
+                        <span>Export to Markdown, PDF, and JSON</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-warning">◦</span>
+                        <span>Keyboard shortcuts and hotkeys</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-warning">◦</span>
+                        <span>Note templates and snippets</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__header">
+                    <h3 class="font-semibold text-info">
+                      🤖 AI-Powered Features
+                    </h3>
+                  </div>
+                  <div class="card__body">
+                    <ul class="space-y-2 text-sm">
+                      <li class="flex items-start gap-2">
+                        <span class="text-info">◦</span>
+                        <span>Auto-tagging of notes based on content</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-info">◦</span>
+                        <span>Smart suggestions for note hierarchy</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-info">◦</span>
+                        <span>Automatic summarization of large trees</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-info">◦</span>
+                        <span>Related note recommendations</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-info">◦</span>
+                        <span>Content analysis and insights</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-info">◦</span>
+                        <span>Natural language search queries</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Technical Details -->
+            <section class="section">
+              <div class="section__header">
+                <h2 class="section__title">Technical Details</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body">
+                  <div class="grid-layout grid-layout--2 gap-6">
+                    <div>
+                      <h3 class="font-semibold mb-3">🛠 Built With</h3>
+                      <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                          <div class="w-4 h-4 bg-warning rounded"></div>
+                          <span class="text-sm">Semantic HTML5</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <div class="w-4 h-4 bg-info rounded"></div>
+                          <span class="text-sm"
+                            >Modern CSS3 with Custom Properties</span
+                          >
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <div class="w-4 h-4 bg-success rounded"></div>
+                          <span class="text-sm">CSS Grid and Flexbox</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                          <div class="w-4 h-4 bg-accent rounded"></div>
+                          <span class="text-sm">SVG Icons</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 class="font-semibold mb-3">📊 Architecture</h3>
+                      <ul class="space-y-2 text-sm text-secondary">
+                        <li>• BEM CSS methodology for maintainable styles</li>
+                        <li>• Component-based design system</li>
+                        <li>• Mobile-first responsive approach</li>
+                        <li>• Accessibility-first development</li>
+                        <li>• Progressive enhancement principles</li>
+                        <li>• Print-optimized layouts</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 p-4 bg-secondary rounded-lg">
+                    <h4 class="font-semibold mb-2">Why HTML & CSS Only?</h4>
+                    <p class="text-sm text-secondary">
+                      This v1 prototype focuses on
+                      <strong>semantic structure and visual design</strong>
+                      to validate the user interface and user experience. The
+                      static HTML approach allows for rapid iteration, easy
+                      testing across devices, and serves as a solid foundation
+                      for future JavaScript enhancements.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Contact & Feedback -->
+            <section class="section">
+              <div class="section__header">
+                <h2 class="section__title">Get Involved</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body text-center">
+                  <h3 class="font-semibold mb-3">We'd Love Your Feedback!</h3>
+                  <p class="text-secondary mb-6">
+                    TreeNotes is in active development. Your input helps us
+                    build a better tool for hierarchical note-taking. Share your
+                    thoughts, feature requests, or report issues.
+                  </p>
+
+                  <div class="flex justify-center gap-4">
+                    <button class="btn btn--primary">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                        />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                      Send Feedback
+                    </button>
+
+                    <button class="btn btn--secondary">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        />
+                      </svg>
+                      Contribute
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer class="page__footer">
+        <p>
+          &copy; 2024 TreeNotes. Built with HTML & CSS.
+          <a href="about.html">About</a> | <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - TaskAI</title>
+    <meta
+      name="description"
+      content="Learn about TaskAI's mission and future AI-powered features"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <a href="index.html" class="header__brand">
+            <div class="header__logo" aria-hidden="true">T</div>
+            <span>TaskAI</span>
+          </a>
+
+          <div class="header__actions">
+            <button
+              class="header__voice-btn"
+              type="button"
+              aria-label="Start voice input"
+            >
+              <span aria-hidden="true">🎤</span>
+            </button>
+            <div
+              class="header__profile"
+              role="button"
+              tabindex="0"
+              aria-label="User profile"
+            >
+              <span aria-hidden="true">U</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+          <nav class="sidebar__section">
+            <h2 class="sidebar__title">Navigation</h2>
+            <ul class="sidebar__nav">
+              <li>
+                <a href="index.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">📊</span>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="add-task.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">➕</span>
+                  <span>Add Task</span>
+                </a>
+              </li>
+              <li>
+                <a href="reminders.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⏰</span>
+                  <span>Reminders</span>
+                </a>
+              </li>
+              <li>
+                <a href="settings.html" class="nav-item">
+                  <span class="nav-item__icon" aria-hidden="true">⚙️</span>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="nav-item nav-item--active">
+                  <span class="nav-item__icon" aria-hidden="true">ℹ️</span>
+                  <span>About</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__title">Preferences</h2>
+            <div class="sidebar__theme-toggle">
+              <span>Dark Mode</span>
+              <label class="toggle" for="theme-toggle">
+                <input
+                  type="checkbox"
+                  id="theme-toggle"
+                  class="toggle__input"
+                  aria-label="Toggle dark mode"
+                />
+                <span class="toggle__slider"></span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content" id="main-content">
+          <header class="content__header">
+            <h1 class="content__title">About TaskAI</h1>
+            <p class="content__subtitle">
+              Hands-free productivity for your busy life
+            </p>
+          </header>
+
+          <!-- Mission Statement -->
+          <section class="mb-8" aria-labelledby="mission-title">
+            <div class="card">
+              <div class="card__content text-center py-8">
+                <div class="text-6xl mb-4" aria-hidden="true">🎯</div>
+                <h2 id="mission-title" class="text-2xl font-bold mb-4">
+                  Our Mission
+                </h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                  TaskAI empowers busy professionals, students, and families to
+                  capture, organize, and complete tasks effortlessly using voice
+                  commands. We believe productivity should adapt to your
+                  lifestyle, not the other way around.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Key Features -->
+          <section class="mb-8" aria-labelledby="features-title">
+            <h2 id="features-title" class="text-xl font-semibold mb-6">
+              Current Features
+            </h2>
+            <div class="grid grid--auto">
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-3" aria-hidden="true">🎤</div>
+                  <h3 class="font-semibold mb-2">Voice Input</h3>
+                  <p class="text-sm text-secondary">
+                    Create tasks naturally using voice commands. Just speak your
+                    task and let TaskAI handle the rest.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-3" aria-hidden="true">📱</div>
+                  <h3 class="font-semibold mb-2">Cross-Device Sync</h3>
+                  <p class="text-sm text-secondary">
+                    Access your tasks from any device. Your productivity travels
+                    with you wherever you go.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-3" aria-hidden="true">⏰</div>
+                  <h3 class="font-semibold mb-2">Smart Reminders</h3>
+                  <p class="text-sm text-secondary">
+                    Never miss important tasks with intelligent reminders that
+                    adapt to your schedule.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-3" aria-hidden="true">🎨</div>
+                  <h3 class="font-semibold mb-2">Beautiful Interface</h3>
+                  <p class="text-sm text-secondary">
+                    Clean, accessible design that works seamlessly across light
+                    and dark themes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-3" aria-hidden="true">🏷️</div>
+                  <h3 class="font-semibold mb-2">Smart Organization</h3>
+                  <p class="text-sm text-secondary">
+                    Organize tasks with priorities, tags, and due dates for
+                    better productivity insights.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__content text-center">
+                  <div class="text-3xl mb-3" aria-hidden="true">♿</div>
+                  <h3 class="font-semibold mb-2">Accessibility First</h3>
+                  <p class="text-sm text-secondary">
+                    Built with accessibility in mind, supporting screen readers
+                    and keyboard navigation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Future Features -->
+          <section class="mb-8" aria-labelledby="future-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="future-title" class="card__title">
+                  Future AI-Powered Features
+                </h2>
+                <p class="card__subtitle">
+                  Coming soon to revolutionize your productivity
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="space-y-6">
+                  <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                      <div
+                        class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl"
+                      >
+                        🤖
+                      </div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold mb-2">Smart AI Suggestions</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        AI will analyze your task patterns and suggest optimal
+                        times for completion, automatic task prioritization, and
+                        intelligent task breakdown.
+                      </p>
+                      <div class="text-xs text-muted">Expected: Q2 2024</div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                      <div
+                        class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl"
+                      >
+                        📍
+                      </div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold mb-2">
+                        Location-Based Automation
+                      </h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Automatically trigger reminders when you arrive at or
+                        leave specific locations. Perfect for location-specific
+                        tasks like "buy groceries" or "call client when at
+                        office."
+                      </p>
+                      <div class="text-xs text-muted">Expected: Q3 2024</div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                      <div
+                        class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl"
+                      >
+                        🔗
+                      </div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold mb-2">Calendar Integration</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Seamlessly integrate with Google Calendar, Outlook, and
+                        Apple Calendar. AI will detect conflicts and suggest
+                        optimal scheduling.
+                      </p>
+                      <div class="text-xs text-muted">Expected: Q3 2024</div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                      <div
+                        class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl"
+                      >
+                        🧠
+                      </div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold mb-2">
+                        Contextual Task Understanding
+                      </h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Advanced natural language processing to understand
+                        complex task descriptions, automatically extract due
+                        dates, priorities, and contexts from speech.
+                      </p>
+                      <div class="text-xs text-muted">Expected: Q4 2024</div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                      <div
+                        class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl"
+                      >
+                        📊
+                      </div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold mb-2">Productivity Analytics</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        AI-powered insights into your productivity patterns,
+                        optimal work times, and personalized recommendations for
+                        improving task completion rates.
+                      </p>
+                      <div class="text-xs text-muted">Expected: Q4 2024</div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                      <div
+                        class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white text-xl"
+                      >
+                        🌐
+                      </div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold mb-2">Offline-First PWA</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Progressive Web App with offline capabilities,
+                        background sync, and native app-like experience across
+                        all platforms.
+                      </p>
+                      <div class="text-xs text-muted">Expected: Q1 2025</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Technology Stack -->
+          <section class="mb-8" aria-labelledby="tech-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="tech-title" class="card__title">
+                  Built With Modern Web Technologies
+                </h2>
+                <p class="card__subtitle">
+                  Current version (v1.0) technical details
+                </p>
+              </div>
+
+              <div class="card__content">
+                <div class="grid grid--2">
+                  <div>
+                    <h3 class="font-semibold mb-3">Frontend</h3>
+                    <ul class="space-y-2 text-sm">
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Semantic HTML5 with accessibility features
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Modern CSS with custom properties
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Responsive design principles
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Print-friendly styles
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 class="font-semibold mb-3">Planned Technologies</h3>
+                    <ul class="space-y-2 text-sm">
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Web Speech API for voice recognition
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        IndexedDB for offline storage
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Service Workers for PWA features
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="w-2 h-2 bg-primary rounded-full"
+                          aria-hidden="true"
+                        ></span>
+                        Cloud sync with real-time updates
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact & Support -->
+          <section class="mb-8" aria-labelledby="contact-title">
+            <div class="card">
+              <div class="card__header">
+                <h2 id="contact-title" class="card__title">Get in Touch</h2>
+                <p class="card__subtitle">We'd love to hear from you</p>
+              </div>
+
+              <div class="card__content">
+                <div class="grid grid--2">
+                  <div class="space-y-4">
+                    <div>
+                      <h3 class="font-semibold mb-2">Feedback & Suggestions</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Help us improve TaskAI by sharing your ideas and
+                        experiences.
+                      </p>
+                      <a
+                        href="mailto:feedback@taskai.app"
+                        class="text-primary text-sm"
+                      >
+                        feedback@taskai.app
+                      </a>
+                    </div>
+
+                    <div>
+                      <h3 class="font-semibold mb-2">Technical Support</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Need help? Our support team is here to assist you.
+                      </p>
+                      <a
+                        href="mailto:support@taskai.app"
+                        class="text-primary text-sm"
+                      >
+                        support@taskai.app
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div>
+                      <h3 class="font-semibold mb-2">Business Inquiries</h3>
+                      <p class="text-sm text-secondary mb-2">
+                        Interested in enterprise features or partnerships?
+                      </p>
+                      <a
+                        href="mailto:business@taskai.app"
+                        class="text-primary text-sm"
+                      >
+                        business@taskai.app
+                      </a>
+                    </div>
+
+                    <div>
+                      <h3 class="font-semibold mb-2">Connect With Us</h3>
+                      <div class="flex gap-3">
+                        <a href="#" class="text-primary text-sm">Twitter</a>
+                        <a href="#" class="text-primary text-sm">LinkedIn</a>
+                        <a href="#" class="text-primary text-sm">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Version Information -->
+          <section aria-labelledby="version-title">
+            <div class="card">
+              <div class="card__content text-center">
+                <h2 id="version-title" class="font-semibold mb-2">
+                  TaskAI Version 1.0
+                </h2>
+                <p class="text-sm text-secondary mb-4">
+                  Released December 2024 • Static HTML & CSS Prototype
+                </p>
+                <div class="text-xs text-muted">
+                  This is a proof-of-concept version focusing on UI scaffolding
+                  and design patterns. Voice recognition, syncing, and
+                  notifications are placeholders for future implementation.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__text">
+            TaskAI v1.0 - Voice-Driven Productivity
+          </div>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="#" class="footer__link">Help</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Support</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

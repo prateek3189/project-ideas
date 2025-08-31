@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | TreeNotes</title>
+    <meta
+      name="description"
+      content="Configure your TreeNotes preferences and settings"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <header class="page__header">
+        <div class="header">
+          <div class="header__content">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="icon icon--lg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                />
+                <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              TreeNotes
+            </a>
+
+            <div class="header__search">
+              <div class="search-bar">
+                <svg
+                  class="search-bar__icon icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input
+                  type="search"
+                  class="search-bar__input"
+                  placeholder="Search notes..."
+                  aria-label="Search notes"
+                />
+              </div>
+            </div>
+
+            <div class="header__actions">
+              <button class="theme-toggle" aria-label="Toggle theme">
+                <div class="theme-toggle__switch"></div>
+                <svg
+                  class="theme-toggle__icon theme-toggle__icon--sun icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg
+                  class="theme-toggle__icon theme-toggle__icon--moon icon--sm"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </button>
+
+              <div class="avatar">
+                <span>JD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="page__body">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar__header">
+            <h2 class="sidebar__title">Navigation</h2>
+          </div>
+
+          <div class="sidebar__content">
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Main</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        />
+                        <polyline points="9,22 9,12 15,12 15,22" />
+                      </svg>
+                      <span class="nav-link__text">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="tree-view.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                        />
+                        <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                      </svg>
+                      <span class="nav-link__text">Tree View</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="search.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                      </svg>
+                      <span class="nav-link__text">Search</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Tools</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="note-editor.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Create Note</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="settings.html" class="nav-link nav-link--active">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Settings</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                          d="M9,9h0a3,3,0,0,1,5.12,2.12c0,2.23-3.12,2.23-3.12,4.88"
+                        />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                      <span class="nav-link__text">About</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar__section">
+              <h3 class="sidebar__section-title">Settings Sections</h3>
+              <nav>
+                <ul class="nav-list">
+                  <li class="nav-item">
+                    <a href="#appearance" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Appearance</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#trees" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Tree View</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#editor" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+                        />
+                      </svg>
+                      <span class="nav-link__text">Editor</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#data" class="nav-link">
+                      <svg
+                        class="nav-link__icon icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7,10 12,15 17,10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                      <span class="nav-link__text">Import/Export</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+          <div class="main__header">
+            <nav class="breadcrumbs">
+              <div class="breadcrumbs__item">
+                <a href="index.html" class="breadcrumbs__link">Dashboard</a>
+                <span class="breadcrumbs__separator">/</span>
+              </div>
+              <div class="breadcrumbs__item">
+                <span>Settings</span>
+              </div>
+            </nav>
+
+            <h1 class="main__title">Settings</h1>
+            <p class="main__subtitle">Configure your TreeNotes preferences</p>
+          </div>
+
+          <div class="main__content">
+            <!-- Appearance Settings -->
+            <section id="appearance" class="section">
+              <div class="section__header">
+                <h2 class="section__title">Appearance</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body space-y-6">
+                  <!-- Theme Selection -->
+                  <div class="form-group">
+                    <label class="form-label">Theme</label>
+                    <div class="space-y-3">
+                      <label class="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="theme"
+                          value="light"
+                          checked
+                          class="form-radio"
+                        />
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-6 h-6 rounded border-2 border-gray-300 bg-white"
+                          ></div>
+                          <div>
+                            <div class="font-medium">Light</div>
+                            <div class="text-sm text-muted">
+                              Clean, bright interface
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label class="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="theme"
+                          value="dark"
+                          class="form-radio"
+                        />
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-6 h-6 rounded border-2 border-gray-600 bg-gray-900"
+                          ></div>
+                          <div>
+                            <div class="font-medium">Dark</div>
+                            <div class="text-sm text-muted">
+                              Easy on the eyes
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+
+                      <label class="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="theme"
+                          value="auto"
+                          class="form-radio"
+                        />
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-6 h-6 rounded border-2 border-gray-400 bg-gradient-to-r from-white to-gray-900"
+                          ></div>
+                          <div>
+                            <div class="font-medium">Auto</div>
+                            <div class="text-sm text-muted">
+                              Match system preference
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Font Size -->
+                  <div class="form-group">
+                    <label for="font-size" class="form-label">Font Size</label>
+                    <select id="font-size" class="form-select">
+                      <option value="small">Small (14px)</option>
+                      <option value="medium" selected>Medium (16px)</option>
+                      <option value="large">Large (18px)</option>
+                      <option value="extra-large">Extra Large (20px)</option>
+                    </select>
+                  </div>
+
+                  <!-- Sidebar Width -->
+                  <div class="form-group">
+                    <label for="sidebar-width" class="form-label"
+                      >Sidebar Width</label
+                    >
+                    <select id="sidebar-width" class="form-select">
+                      <option value="narrow">Narrow (240px)</option>
+                      <option value="medium" selected>Medium (280px)</option>
+                      <option value="wide">Wide (320px)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Tree View Settings -->
+            <section id="trees" class="section">
+              <div class="section__header">
+                <h2 class="section__title">Tree View</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body space-y-6">
+                  <!-- Default Tree State -->
+                  <div class="form-group">
+                    <label class="form-label">Default Tree State</label>
+                    <div class="space-y-2">
+                      <label class="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="tree-state"
+                          value="expanded"
+                          checked
+                        />
+                        <span>Expanded (show all notes)</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="tree-state"
+                          value="collapsed"
+                        />
+                        <span>Collapsed (show only root level)</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="tree-state"
+                          value="remember"
+                        />
+                        <span>Remember last state</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Tree Lines -->
+                  <div class="form-group">
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" checked />
+                      <span>Show tree connection lines</span>
+                    </label>
+                    <p class="text-sm text-muted mt-1">
+                      Visual lines connecting parent and child notes
+                    </p>
+                  </div>
+
+                  <!-- Note Count -->
+                  <div class="form-group">
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" checked />
+                      <span>Show note count in navigation</span>
+                    </label>
+                    <p class="text-sm text-muted mt-1">
+                      Display number of notes next to tree names
+                    </p>
+                  </div>
+
+                  <!-- Auto-save -->
+                  <div class="form-group">
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" checked />
+                      <span>Auto-expand path to current note</span>
+                    </label>
+                    <p class="text-sm text-muted mt-1">
+                      Automatically expand tree to show the current note
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Editor Settings -->
+            <section id="editor" class="section">
+              <div class="section__header">
+                <h2 class="section__title">Editor</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body space-y-6">
+                  <!-- Auto-save -->
+                  <div class="form-group">
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" checked />
+                      <span>Auto-save drafts</span>
+                    </label>
+                    <p class="text-sm text-muted mt-1">
+                      Automatically save your work as you type
+                    </p>
+                  </div>
+
+                  <!-- Default Tags -->
+                  <div class="form-group">
+                    <label for="default-tags" class="form-label"
+                      >Default Tags</label
+                    >
+                    <input
+                      type="text"
+                      id="default-tags"
+                      class="form-input"
+                      placeholder="learning, personal"
+                      value="learning"
+                    />
+                    <p class="text-sm text-muted mt-1">
+                      Tags automatically added to new notes
+                    </p>
+                  </div>
+
+                  <!-- Template -->
+                  <div class="form-group">
+                    <label for="default-template" class="form-label"
+                      >Default Template</label
+                    >
+                    <select id="default-template" class="form-select">
+                      <option value="blank">Blank Note</option>
+                      <option value="basic" selected>Basic Note</option>
+                      <option value="learning">Learning Note</option>
+                      <option value="project">Project Note</option>
+                      <option value="task">Task List</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Import/Export Settings -->
+            <section id="data" class="section">
+              <div class="section__header">
+                <h2 class="section__title">Import & Export</h2>
+              </div>
+
+              <div class="grid-layout grid-layout--2 gap-4">
+                <!-- Export -->
+                <div class="card">
+                  <div class="card__header">
+                    <h3 class="font-semibold">Export Data</h3>
+                  </div>
+                  <div class="card__body space-y-3">
+                    <p class="text-sm text-secondary">
+                      Download your notes in various formats
+                    </p>
+
+                    <button class="btn btn--secondary w-full">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7,10 12,15 17,10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                      Export as JSON
+                    </button>
+
+                    <button class="btn btn--secondary w-full">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                        />
+                        <polyline points="14,2 14,8 20,8" />
+                      </svg>
+                      Export as Markdown
+                    </button>
+
+                    <button class="btn btn--secondary w-full">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                      Export as PDF
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Import -->
+                <div class="card">
+                  <div class="card__header">
+                    <h3 class="font-semibold">Import Data</h3>
+                  </div>
+                  <div class="card__body space-y-3">
+                    <p class="text-sm text-secondary">
+                      Import notes from other applications
+                    </p>
+
+                    <button class="btn btn--secondary w-full">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17,8 12,3 7,8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                      </svg>
+                      Import JSON
+                    </button>
+
+                    <button class="btn btn--secondary w-full">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                        />
+                        <polyline points="14,2 14,8 20,8" />
+                      </svg>
+                      Import Markdown
+                    </button>
+
+                    <button class="btn btn--secondary w-full">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect
+                          x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="2"
+                          ry="2"
+                        />
+                        <rect x="7" y="7" width="10" height="6" />
+                        <line x1="7" y1="17" x2="17" y2="17" />
+                      </svg>
+                      Import from CSV
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+              <div class="section__header">
+                <h2 class="section__title">About TreeNotes</h2>
+              </div>
+
+              <div class="card">
+                <div class="card__body space-y-4">
+                  <div class="flex items-center gap-4">
+                    <svg
+                      class="icon icon--lg text-accent"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                      />
+                      <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                      <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                    <div>
+                      <h3 class="text-lg font-semibold">TreeNotes v1.0</h3>
+                      <p class="text-sm text-muted">
+                        Hierarchical note-taking made simple
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-secondary">
+                    TreeNotes is a clean, minimal interface for organizing your
+                    thoughts, tasks, and projects in a hierarchical tree
+                    structure. Built with pure HTML and CSS for maximum
+                    compatibility and performance.
+                  </p>
+
+                  <div class="flex gap-4">
+                    <a href="about.html" class="btn btn--secondary">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                          d="M9,9h0a3,3,0,0,1,5.12,2.12c0,2.23-3.12,2.23-3.12,4.88"
+                        />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                      Learn More
+                    </a>
+
+                    <button class="btn btn--ghost">
+                      <svg
+                        class="icon icon--sm"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16,6 12,2 8,6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                      Check for Updates
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Save Settings -->
+            <div class="section">
+              <div class="card">
+                <div class="card__footer">
+                  <div class="flex justify-between items-center">
+                    <p class="text-sm text-muted">
+                      Settings are saved automatically
+                    </p>
+                    <div class="flex gap-2">
+                      <button class="btn btn--ghost">Reset to Defaults</button>
+                      <button class="btn btn--primary">Save Changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- Footer -->
+      <footer class="page__footer">
+        <p>
+          &copy; 2024 TreeNotes. Built with HTML & CSS.
+          <a href="about.html">About</a> | <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
