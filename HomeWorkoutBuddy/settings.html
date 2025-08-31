@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">Settings</h2>
+
+          <!-- Reminders -->
+          <div class="section">
+            <h3 class="section-title">Reminders</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <div class="checkbox-item" style="margin-bottom: 16px">
+                    <input
+                      type="checkbox"
+                      id="reminder-winddown"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="reminder-winddown" style="font-weight: 500"
+                      >Begin wind-down routine</label
+                    >
+                  </div>
+                  <div style="margin-left: 24px; margin-bottom: 16px">
+                    <label for="winddown-time" class="form-label">Time</label>
+                    <input
+                      type="time"
+                      id="winddown-time"
+                      class="form-input"
+                      value="21:15"
+                      style="width: 120px"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item" style="margin-bottom: 16px">
+                    <input
+                      type="checkbox"
+                      id="reminder-lightsout"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="reminder-lightsout" style="font-weight: 500"
+                      >Lights out</label
+                    >
+                  </div>
+                  <div style="margin-left: 24px; margin-bottom: 16px">
+                    <label for="lightsout-time" class="form-label">Time</label>
+                    <input
+                      type="time"
+                      id="lightsout-time"
+                      class="form-input"
+                      value="23:00"
+                      style="width: 120px"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item" style="margin-bottom: 16px">
+                    <input
+                      type="checkbox"
+                      id="reminder-morning"
+                      class="form-input"
+                    />
+                    <label for="reminder-morning" style="font-weight: 500"
+                      >Morning light exposure</label
+                    >
+                  </div>
+                  <div style="margin-left: 24px">
+                    <label for="morning-time" class="form-label">Time</label>
+                    <input
+                      type="time"
+                      id="morning-time"
+                      class="form-input"
+                      value="06:30"
+                      style="width: 120px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme Settings -->
+          <div class="section">
+            <h3 class="section-title">Theme & Appearance</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <label class="form-label">Theme</label>
+                  <div style="display: flex; gap: 12px; margin-top: 8px">
+                    <button class="time-option time-option--active">
+                      Light
+                    </button>
+                    <button class="time-option">Dark</button>
+                    <button class="time-option">High Contrast</button>
+                    <button class="time-option">Auto</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="reduced-motion"
+                      class="form-input"
+                    />
+                    <label for="reduced-motion">Reduced Motion</label>
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Disable animations and transitions for accessibility
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Color Saturation</label>
+                  <div style="display: flex; gap: 12px; margin-top: 8px">
+                    <button class="time-option">Low</button>
+                    <button class="time-option time-option--active">
+                      Medium
+                    </button>
+                    <button class="time-option">High</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessibility -->
+          <div class="section">
+            <h3 class="section-title">Accessibility</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <label class="form-label">Text Size</label>
+                  <div style="display: flex; gap: 12px; margin-top: 8px">
+                    <button class="time-option">Small</button>
+                    <button class="time-option time-option--active">
+                      Medium
+                    </button>
+                    <button class="time-option">Large</button>
+                    <button class="time-option">Extra Large</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="dyslexia-friendly"
+                      class="form-input"
+                    />
+                    <label for="dyslexia-friendly"
+                      >Dyslexia-friendly Font</label
+                    >
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Use OpenDyslexic font for better readability
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="high-contrast-focus"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="high-contrast-focus"
+                      >High Contrast Focus Indicators</label
+                    >
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Enhanced focus rings for keyboard navigation
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="screen-reader"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="screen-reader">Screen Reader Optimized</label>
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Enhanced ARIA labels and semantic structure
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy & Data -->
+          <div class="section">
+            <h3 class="section-title">Privacy & Data</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <label class="form-label">Data Storage</label>
+                  <div style="display: flex; gap: 12px; margin-top: 8px">
+                    <button class="time-option time-option--active">
+                      Local Only
+                    </button>
+                    <button class="time-option">Cloud Sync</button>
+                  </div>
+                  <p style="margin: 8px 0 0 0; font-size: 14px; color: #666">
+                    Local only: Data stays on your device. Cloud sync: Data
+                    backed up to secure servers.
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="analytics" class="form-input" />
+                    <label for="analytics">Anonymous Usage Analytics</label>
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Help improve Sleep Coach with anonymous usage data (no
+                    personal information)
+                  </p>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="backup"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="backup">Automatic Backups</label>
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Create daily backups of your sleep data
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export & Import -->
+          <div class="section">
+            <h3 class="section-title">Export & Import</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <label class="form-label">Export Format</label>
+                  <div style="display: flex; gap: 12px; margin-top: 8px">
+                    <button class="time-option time-option--active">CSV</button>
+                    <button class="time-option">JSON</button>
+                    <button class="time-option">PDF</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Export Range</label>
+                  <div style="display: flex; gap: 12px; margin-top: 8px">
+                    <button class="time-option">Last Week</button>
+                    <button class="time-option time-option--active">
+                      Last Month
+                    </button>
+                    <button class="time-option">Last 3 Months</button>
+                    <button class="time-option">All Time</button>
+                  </div>
+                </div>
+
+                <div
+                  class="form-actions"
+                  style="border-top: none; margin-top: 16px; padding-top: 0"
+                >
+                  <button class="btn btn--outline">Import Data</button>
+                  <button class="btn btn--primary">Export Data</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="section">
+            <h3 class="section-title">Notifications</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="notif-reminders"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="notif-reminders">Sleep Reminders</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="notif-insights"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="notif-insights">Weekly Insights</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="notif-streaks"
+                      class="form-input"
+                    />
+                    <label for="notif-streaks">Achievement Badges</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="notif-updates"
+                      class="form-input"
+                    />
+                    <label for="notif-updates">App Updates</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Settings -->
+          <div class="section">
+            <h3 class="section-title">Advanced Settings</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="form-group">
+                  <label for="sleep-target" class="form-label"
+                    >Sleep Target (hours)</label
+                  >
+                  <input
+                    type="number"
+                    id="sleep-target"
+                    class="form-input"
+                    value="7.5"
+                    min="6"
+                    max="10"
+                    step="0.5"
+                    style="width: 120px"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="bedtime-target" class="form-label"
+                    >Target Bedtime</label
+                  >
+                  <input
+                    type="time"
+                    id="bedtime-target"
+                    class="form-input"
+                    value="23:00"
+                    style="width: 120px"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="waketime-target" class="form-label"
+                    >Target Wake Time</label
+                  >
+                  <input
+                    type="time"
+                    id="waketime-target"
+                    class="form-input"
+                    value="06:30"
+                    style="width: 120px"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="auto-theme"
+                      class="form-input"
+                      checked
+                    />
+                    <label for="auto-theme"
+                      >Auto-switch theme based on time</label
+                    >
+                  </div>
+                  <p style="margin: 8px 0 0 24px; font-size: 14px; color: #666">
+                    Switch to dark theme automatically in the evening
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset & Reset -->
+          <div class="section">
+            <h3 class="section-title">Reset & Reset</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px; color: #666">
+                  These actions cannot be undone. Please be careful.
+                </p>
+                <div
+                  class="form-actions"
+                  style="border-top: none; margin-top: 16px; padding-top: 0"
+                >
+                  <button
+                    class="btn btn--outline"
+                    style="color: #ef4444; border-color: #ef4444"
+                  >
+                    Reset All Settings
+                  </button>
+                  <button
+                    class="btn btn--outline"
+                    style="color: #ef4444; border-color: #ef4444"
+                  >
+                    Clear All Data
+                  </button>
+                  <button class="btn btn--outline">Restore Defaults</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Save Settings -->
+          <div class="section">
+            <div class="card">
+              <div class="card__content">
+                <div
+                  class="form-actions"
+                  style="border-top: none; margin-top: 0; padding-top: 0"
+                >
+                  <button class="btn btn--outline">Cancel</button>
+                  <button class="btn btn--primary">Save All Settings</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

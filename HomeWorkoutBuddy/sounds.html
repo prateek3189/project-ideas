@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — Sounds & Noise</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">Sounds & Noise</h2>
+
+          <!-- Tabs -->
+          <div class="tabs">
+            <ul class="tab-list">
+              <li class="tab-item">
+                <button class="tab-button tab-button--active">
+                  Calming Music
+                </button>
+              </li>
+              <li class="tab-item">
+                <button class="tab-button">White/Brown/Pink Noise</button>
+              </li>
+              <li class="tab-item">
+                <button class="tab-button">Nature</button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Calming Music Tab Content -->
+          <div class="tab-content tab-content--active">
+            <div class="sound-cards">
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Piano Calm</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">60m</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Rain</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Night Strings</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">90m</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Brown Noise</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Ambient Pad</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">120m</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Ocean</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Gentle Guitar</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">60m</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Forest</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Chill Beats</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">90m</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Fan</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Lullaby Melody</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">60m</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Rain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Noise Tab Content -->
+          <div class="tab-content">
+            <div class="sound-cards">
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">White Noise</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: Piano</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Brown Noise</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: Strings</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Pink Noise</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: Ambient</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Delta Waves</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: Nature</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Theta Waves</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: Music</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Binaural Beats</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: All</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nature Tab Content -->
+          <div class="tab-content">
+            <div class="sound-cards">
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Rain</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Piano</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Ocean Waves</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Ambient</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Forest Night</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Guitar</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Fan</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Continuous</span>
+                    <span class="tag">Mix with: Beats</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Crickets</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Strings</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Thunder</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">∞</span>
+                  </div>
+                  <div class="sound-card__features">
+                    <span class="tag">Loop</span>
+                    <span class="tag">Mix with: Rain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sound Tips -->
+          <div class="section">
+            <h3 class="section-title">Sound Tips</h3>
+            <div class="card">
+              <div class="card__content">
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    <strong>Brown noise</strong> reduces harsh highs; many find
+                    it gentler than white noise
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Start at a low volume and gradually increase if needed
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Mix different sounds for a personalized experience
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Use a timer to automatically stop sounds after you fall
+                    asleep
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Experiment with different combinations to find what works
+                    best
+                  </li>
+                  <li style="margin-bottom: 0">
+                    Consider using headphones for better sound isolation
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volume Control Demo -->
+          <div class="section">
+            <h3 class="section-title">Volume Control</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px">
+                  Adjust the volume to a level that's just audible enough to
+                  mask background noise without being distracting.
+                </p>
+                <div style="display: flex; align-items: center; gap: 16px">
+                  <span style="font-size: 14px; color: #666">🔇</span>
+                  <div
+                    style="
+                      flex: 1;
+                      height: 6px;
+                      background: #e2e8f0;
+                      border-radius: 3px;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        width: 60%;
+                        height: 100%;
+                        background: #5b7bd5;
+                        border-radius: 3px;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        left: 60%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 16px;
+                        height: 16px;
+                        background: #5b7bd5;
+                        border-radius: 50%;
+                        cursor: pointer;
+                      "
+                    ></div>
+                  </div>
+                  <span style="font-size: 14px; color: #666">🔊</span>
+                </div>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  Current volume: 60%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

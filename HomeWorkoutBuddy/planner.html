@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — Wind-down Planner</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">Wind-down Planner</h2>
+
+          <!-- Bedtime Target Selector -->
+          <div class="section">
+            <h3 class="section-title">Target Bedtime</h3>
+            <div class="time-selector">
+              <button class="time-option time-option--active">10:00 PM</button>
+              <button class="time-option">10:30 PM</button>
+              <button class="time-option">11:00 PM</button>
+              <button class="time-option">11:30 PM</button>
+            </div>
+          </div>
+
+          <!-- Routine Presets -->
+          <div class="section">
+            <h3 class="section-title">Routine Presets</h3>
+            <div class="preset-grid">
+              <div class="preset-card preset-card--active">
+                <h4 class="preset-card__title">Classic Calm</h4>
+                <p class="preset-card__description">
+                  45-minute routine with gentle activities and breathing
+                  exercises.
+                </p>
+              </div>
+
+              <div class="preset-card">
+                <h4 class="preset-card__title">Phone-Free</h4>
+                <p class="preset-card__description">
+                  30-minute digital detox with reading and stretching.
+                </p>
+              </div>
+
+              <div class="preset-card">
+                <h4 class="preset-card__title">Traveler</h4>
+                <p class="preset-card__description">
+                  20-minute compact routine for hotel rooms and unfamiliar
+                  places.
+                </p>
+              </div>
+
+              <div class="preset-card">
+                <h4 class="preset-card__title">New Parent (Short)</h4>
+                <p class="preset-card__description">
+                  15-minute flexible routine for unpredictable schedules.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Routine Builder -->
+          <div class="section">
+            <h3 class="section-title">Custom Routine Builder</h3>
+            <div class="routine-steps">
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">Devices off & lights dim</h4>
+                  <span class="routine-step__duration">15m</span>
+                  <p class="routine-step__description">
+                    Put phone away and reduce blue light exposure.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="custom-step1" checked />
+                  <label for="custom-step1" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">
+                    Warm shower & light stretch
+                  </h4>
+                  <span class="routine-step__duration">10m</span>
+                  <p class="routine-step__description">
+                    Gentle movement to relax muscles and lower body temperature.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="custom-step2" checked />
+                  <label for="custom-step2" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">4-7-8 breathing</h4>
+                  <span class="routine-step__duration">5m</span>
+                  <p class="routine-step__description">
+                    Inhale 4, hold 7, exhale 8. Repeat 4 times.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="custom-step3" checked />
+                  <label for="custom-step3" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">Read (paper book)</h4>
+                  <span class="routine-step__duration">15m</span>
+                  <p class="routine-step__description">
+                    Choose something light and engaging, avoid screens.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="custom-step4" checked />
+                  <label for="custom-step4" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">Gratitude journal</h4>
+                  <span class="routine-step__duration">5m</span>
+                  <p class="routine-step__description">
+                    Write down 3 things you're grateful for today.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="custom-step5" />
+                  <label for="custom-step5" class="toggle-label"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Routine Summary -->
+          <div class="section">
+            <div class="card">
+              <div class="card__header">
+                <h3 class="card__title">Routine Summary</h3>
+                <p class="card__subtitle">Total time: 45 minutes</p>
+              </div>
+              <div class="card__content">
+                <p>
+                  Your wind-down routine will begin at
+                  <strong>9:15 PM</strong> to reach your target bedtime of
+                  <strong>10:00 PM</strong>.
+                </p>
+                <p>
+                  This gives you enough time to complete all steps and naturally
+                  fall asleep.
+                </p>
+              </div>
+              <div class="card__footer">
+                <button class="btn btn--primary">Save Routine</button>
+                <button class="btn btn--outline">Reset to Default</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tips Section -->
+          <div class="section">
+            <h3 class="section-title">Wind-down Tips</h3>
+            <div class="card">
+              <div class="card__content">
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    Start your routine at the same time each night for
+                    consistency
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Keep your bedroom cool (65-68°F / 18-20°C)
+                  </li>
+                  <li style="margin-bottom: 8px">Avoid caffeine after 4 PM</li>
+                  <li style="margin-bottom: 8px">
+                    Use warm, dim lighting instead of bright overhead lights
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Consider a white noise machine or calming sounds
+                  </li>
+                  <li style="margin-bottom: 0">
+                    If you can't fall asleep after 20 minutes, get up and do
+                    something quiet until sleepy
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — Tonight</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">Tonight's Sleep Plan</h2>
+
+          <!-- Suggested Bedtime -->
+          <div class="bedtime-section">
+            <h3 class="section-title">Suggested Bedtime</h3>
+            <div class="bedtime-pill">
+              <span class="bedtime-pill__time">10:45 PM</span>
+              <details class="bedtime-pill__details">
+                <summary class="bedtime-pill__summary">Why this time?</summary>
+                <p class="bedtime-pill__explanation">
+                  Target aligns with your recent average wake time and desired
+                  7h 30m.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Wind-down Plan -->
+          <div class="routine-section">
+            <h3 class="section-title">Wind-down Plan (45 min)</h3>
+            <div class="routine-steps">
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">Lights dim & devices off</h4>
+                  <span class="routine-step__duration">15m</span>
+                  <p class="routine-step__description">
+                    Dim lights and put phone away 45 minutes before bed.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="step1" checked />
+                  <label for="step1" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">
+                    Warm shower & light stretch
+                  </h4>
+                  <span class="routine-step__duration">10m</span>
+                  <p class="routine-step__description">
+                    Gentle movement to relax muscles and lower body temperature.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="step2" checked />
+                  <label for="step2" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">Breathing 4-7-8</h4>
+                  <span class="routine-step__duration">5m</span>
+                  <p class="routine-step__description">
+                    Inhale 4, hold 7, exhale 8. Repeat 4 times.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="step3" checked />
+                  <label for="step3" class="toggle-label"></label>
+                </div>
+              </div>
+
+              <div class="routine-step">
+                <div class="routine-step__content">
+                  <h4 class="routine-step__title">Read (paper)</h4>
+                  <span class="routine-step__duration">10-15m</span>
+                  <p class="routine-step__description">
+                    Choose something light and engaging, avoid screens.
+                  </p>
+                </div>
+                <div class="routine-step__toggle">
+                  <input type="checkbox" id="step4" checked />
+                  <label for="step4" class="toggle-label"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Sounds -->
+          <div class="sounds-section">
+            <h3 class="section-title">Quick Sounds</h3>
+            <div class="sound-cards">
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Rain</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">60m</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Brown Noise</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">60m</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sound-card">
+                <div class="sound-card__content">
+                  <h4 class="sound-card__title">Piano Calm</h4>
+                  <div class="sound-card__controls">
+                    <button class="sound-card__play">▶️</button>
+                    <span class="sound-card__duration">60m</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nudge Banner -->
+          <div class="nudge-banner nudge-banner--warning">
+            <span class="nudge-banner__icon">⚠️</span>
+            <p class="nudge-banner__text">
+              Caffeine after 4 PM can delay sleep.
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — About</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">About Sleep Coach</h2>
+
+          <!-- Mission Statement -->
+          <div class="section">
+            <div class="card">
+              <div class="card__header">
+                <h3 class="card__title">Our Mission</h3>
+                <p class="card__subtitle">
+                  Helping you build better sleep habits
+                </p>
+              </div>
+              <div class="card__content">
+                <p>
+                  Sleep Coach is designed to reduce bedtime friction with simple
+                  wind-down plans and soothing soundscapes. We show your sleep
+                  patterns in a friendly, non-judgmental way, keeping the
+                  interface accessible, responsive, and easy to enhance later.
+                </p>
+                <p>
+                  This is a static HTML + CSS prototype (v0.1) that demonstrates
+                  the core functionality and user experience. All analytics,
+                  timers, sensors, and audio logic are placeholders that can be
+                  wired up later with JavaScript.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- How It Works -->
+          <div class="section">
+            <h3 class="section-title">How Sleep Coach Works</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 16px 0; font-size: 18px">
+                  The Science Behind Our Suggestions
+                </h4>
+                <p style="margin-bottom: 16px">
+                  Sleep Coach analyzes your sleep patterns using established
+                  sleep science principles:
+                </p>
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    <strong>Circadian Rhythm:</strong> Your body's natural
+                    24-hour sleep-wake cycle
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Sleep Debt:</strong> Accumulated sleep loss that
+                    affects performance and health
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Sleep Architecture:</strong> The structure and
+                    quality of your sleep stages
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Chronotype:</strong> Your natural preference for
+                    sleep and wake times
+                  </li>
+                  <li style="margin-bottom: 0">
+                    <strong>Sleep Hygiene:</strong> Behaviors and environment
+                    that promote good sleep
+                  </li>
+                </ul>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  <em
+                    >Note: In this prototype, all analysis is based on sample
+                    data. Real implementations would use actual sleep tracking
+                    and machine learning algorithms.</em
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sleep Hygiene Guide -->
+          <div class="section">
+            <h3 class="section-title">Sleep Hygiene Mini-Guide</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 16px 0; font-size: 18px">
+                  Essential Practices for Better Sleep
+                </h4>
+
+                <div style="margin-bottom: 24px">
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #5b7bd5"
+                  >
+                    🌅 Morning Routine
+                  </h5>
+                  <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                    <li>
+                      Get exposure to natural light within 30 minutes of waking
+                    </li>
+                    <li>Maintain consistent wake times, even on weekends</li>
+                    <li>Avoid hitting snooze - it disrupts your sleep cycle</li>
+                  </ul>
+                </div>
+
+                <div style="margin-bottom: 24px">
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #7ac3b2"
+                  >
+                    ☕ Daytime Habits
+                  </h5>
+                  <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                    <li>
+                      Limit caffeine to before 2 PM (effects last 6-8 hours)
+                    </li>
+                    <li>
+                      Exercise regularly, but avoid intense workouts 3 hours
+                      before bed
+                    </li>
+                    <li>Get natural light exposure throughout the day</li>
+                  </ul>
+                </div>
+
+                <div style="margin-bottom: 24px">
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #f59e0b"
+                  >
+                    🌙 Evening Wind-Down
+                  </h5>
+                  <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                    <li>
+                      Dim lights and reduce blue light exposure 2-3 hours before
+                      bed
+                    </li>
+                    <li>Create a consistent 30-60 minute bedtime routine</li>
+                    <li>Keep your bedroom cool (65-68°F / 18-20°C)</li>
+                    <li>Use your bed only for sleep and intimacy</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #38bdf8"
+                  >
+                    🛏️ Sleep Environment
+                  </h5>
+                  <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                    <li>Keep your bedroom dark, quiet, and cool</li>
+                    <li>Invest in a comfortable mattress and pillows</li>
+                    <li>Consider white noise or earplugs if needed</li>
+                    <li>Remove electronic devices from the bedroom</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Common Sleep Myths -->
+          <div class="section">
+            <h3 class="section-title">Common Sleep Myths Debunked</h3>
+            <div class="card">
+              <div class="card__content">
+                <div style="margin-bottom: 20px">
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #ef4444"
+                  >
+                    ❌ "You can catch up on sleep during the weekend"
+                  </h5>
+                  <p style="margin: 0; font-size: 14px; color: #666">
+                    <strong>Fact:</strong> While you can partially recover from
+                    sleep debt, irregular sleep schedules disrupt your circadian
+                    rhythm and make it harder to fall asleep on Sunday night.
+                  </p>
+                </div>
+
+                <div style="margin-bottom: 20px">
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #ef4444"
+                  >
+                    ❌ "Alcohol helps you sleep better"
+                  </h5>
+                  <p style="margin: 0; font-size: 14px; color: #666">
+                    <strong>Fact:</strong> Alcohol may help you fall asleep
+                    faster, but it significantly reduces sleep quality and REM
+                    sleep, leading to less restorative rest.
+                  </p>
+                </div>
+
+                <div style="margin-bottom: 20px">
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #ef4444"
+                  >
+                    ❌ "Watching TV in bed helps you relax"
+                  </h5>
+                  <p style="margin: 0; font-size: 14px; color: #666">
+                    <strong>Fact:</strong> The blue light from screens
+                    suppresses melatonin production, and engaging content can
+                    actually stimulate your brain instead of relaxing it.
+                  </p>
+                </div>
+
+                <div>
+                  <h5
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #ef4444"
+                  >
+                    ❌ "Everyone needs exactly 8 hours of sleep"
+                  </h5>
+                  <p style="margin: 0; font-size: 14px; color: #666">
+                    <strong>Fact:</strong> Sleep needs vary by individual and
+                    age. Most adults need 7-9 hours, but some may function well
+                    on 6 hours while others need 10.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- When to Seek Help -->
+          <div class="section">
+            <h3 class="section-title">When to Seek Professional Help</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px">
+                  While Sleep Coach can help with general sleep improvement,
+                  certain conditions require medical attention:
+                </p>
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    Chronic insomnia lasting more than 3 months
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Loud snoring, gasping, or breathing pauses during sleep
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Excessive daytime sleepiness despite adequate sleep
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Unusual behaviors during sleep (sleepwalking, night terrors)
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Persistent difficulty falling or staying asleep
+                  </li>
+                  <li style="margin-bottom: 0">
+                    Sleep problems affecting work, relationships, or daily
+                    functioning
+                  </li>
+                </ul>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  Consult with a healthcare provider or sleep specialist if you
+                  experience any of these symptoms.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Information -->
+          <div class="section">
+            <h3 class="section-title">Technical Information</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 16px 0; font-size: 18px">
+                  About This Prototype
+                </h4>
+                <p style="margin-bottom: 16px">
+                  Sleep Coach v0.1 is built with:
+                </p>
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    <strong>HTML5:</strong> Semantic markup with accessibility
+                    features
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>CSS3:</strong> Modern layout with CSS Grid, Flexbox,
+                    and custom properties
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Design System:</strong> Consistent spacing,
+                    typography, and color tokens
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Responsive Design:</strong> Mobile-first approach
+                    with breakpoint optimization
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Print Styles:</strong> Optimized for printing weekly
+                    sleep reports
+                  </li>
+                  <li style="margin-bottom: 0">
+                    <strong>Accessibility:</strong> WCAG 2.1 AA compliance with
+                    focus management and screen reader support
+                  </li>
+                </ul>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  <em
+                    >Future versions will include JavaScript for real-time
+                    functionality, data persistence, and advanced analytics.</em
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy & Security -->
+          <div class="section">
+            <h3 class="section-title">Privacy & Security</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 16px 0; font-size: 18px">
+                  Your Data, Your Control
+                </h4>
+                <p style="margin-bottom: 16px">
+                  In this prototype version, all data is stored locally on your
+                  device. No information is transmitted to external servers.
+                </p>
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    <strong>Local Storage:</strong> Sleep data stays on your
+                    device
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>No Tracking:</strong> We don't collect personal
+                    information
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    <strong>Export Control:</strong> You can export your data in
+                    multiple formats
+                  </li>
+                  <li style="margin-bottom: 0">
+                    <strong>Data Ownership:</strong> You own and control all
+                    your sleep data
+                  </li>
+                </ul>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  Future versions may offer optional cloud backup with
+                  end-to-end encryption and strict privacy controls.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disclaimers -->
+          <div class="section">
+            <h3 class="section-title">Important Disclaimers</h3>
+            <div class="card">
+              <div class="card__content">
+                <div
+                  style="
+                    background: #fef3c7;
+                    border: 1px solid #f59e0b;
+                    border-radius: 8px;
+                    padding: 16px;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h4
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #92400e"
+                  >
+                    ⚠️ Medical Disclaimer
+                  </h4>
+                  <p style="margin: 0; font-size: 14px; color: #92400e">
+                    Sleep Coach is not a medical device and does not provide
+                    medical advice, diagnosis, or treatment. Always consult with
+                    qualified healthcare professionals for medical concerns.
+                  </p>
+                </div>
+
+                <div
+                  style="
+                    background: #dbeafe;
+                    border: 1px solid #3b82f6;
+                    border-radius: 8px;
+                    padding: 16px;
+                    margin-bottom: 16px;
+                  "
+                >
+                  <h4
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #1e40af"
+                  >
+                    ℹ️ Educational Purpose
+                  </h4>
+                  <p style="margin: 0; font-size: 14px; color: #1e40af">
+                    This application is designed for educational and
+                    self-improvement purposes. Individual results may vary based
+                    on personal circumstances and adherence to recommendations.
+                  </p>
+                </div>
+
+                <div
+                  style="
+                    background: #d1fae5;
+                    border: 1px solid #10b981;
+                    border-radius: 8px;
+                    padding: 16px;
+                  "
+                >
+                  <h4
+                    style="margin: 0 0 8px 0; font-size: 16px; color: #065f46"
+                  >
+                    ✅ Safe Use
+                  </h4>
+                  <p style="margin: 0; font-size: 14px; color: #065f46">
+                    Sleep Coach is safe for general use. If you experience any
+                    adverse effects or have concerns about your sleep,
+                    discontinue use and consult a healthcare provider.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Support -->
+          <div class="section">
+            <h3 class="section-title">Contact & Support</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 16px 0; font-size: 18px">
+                  Get in Touch
+                </h4>
+                <p style="margin-bottom: 16px">
+                  Have questions, suggestions, or need support?
+                </p>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 16px;
+                  "
+                >
+                  <div>
+                    <h5 style="margin: 0 0 8px 0; font-size: 16px">
+                      📧 General Inquiries
+                    </h5>
+                    <p style="margin: 0; font-size: 14px; color: #666">
+                      hello@sleepcoach.app
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="margin: 0 0 8px 0; font-size: 16px">
+                      🐛 Bug Reports
+                    </h5>
+                    <p style="margin: 0; font-size: 14px; color: #666">
+                      bugs@sleepcoach.app
+                    </p>
+                  </div>
+                </div>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  <em
+                    >Note: This is a prototype. Email addresses are placeholders
+                    for demonstration purposes.</em
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Version Info -->
+          <div class="section">
+            <div class="card">
+              <div class="card__content" style="text-align: center">
+                <h4 style="margin: 0 0 8px 0; font-size: 18px">
+                  Sleep Coach v0.1
+                </h4>
+                <p style="margin: 0; font-size: 14px; color: #666">
+                  Static HTML + CSS Prototype<br />
+                  Built with modern web standards and accessibility in mind<br />
+                  Last updated: January 2024
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

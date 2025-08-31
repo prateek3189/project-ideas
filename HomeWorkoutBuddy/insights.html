@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — Insights</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">Sleep Insights</h2>
+
+          <!-- Key Metrics Tiles -->
+          <div class="section">
+            <h3 class="section-title">This Week's Overview</h3>
+            <div class="grid-4">
+              <div class="tile">
+                <div class="tile__value">7h 12m</div>
+                <div class="tile__label">Average Duration</div>
+                <div class="tile__subtitle">Target: 7h 30m</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__value">43%</div>
+                <div class="tile__label">Bedtime Consistency</div>
+                <div class="tile__subtitle">3/7 nights on target</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__value">92%</div>
+                <div class="tile__label">Wake Consistency</div>
+                <div class="tile__subtitle">±15 min variance</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__value">2h 06m</div>
+                <div class="tile__label">Sleep Debt</div>
+                <div class="tile__subtitle">Weekly accumulation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sleep Duration Trend -->
+          <div class="section">
+            <h3 class="section-title">Sleep Duration Trend</h3>
+            <div class="trend">
+              <div class="trend__bars">
+                <div
+                  class="trend__bar trend__bar--day-1"
+                  title="Monday: 7h 25m"
+                ></div>
+                <div
+                  class="trend__bar trend__bar--day-2"
+                  title="Tuesday: 6h 40m"
+                ></div>
+                <div
+                  class="trend__bar trend__bar--day-3"
+                  title="Wednesday: 7h 35m"
+                ></div>
+                <div
+                  class="trend__bar trend__bar--day-4"
+                  title="Thursday: 6h 40m"
+                ></div>
+                <div
+                  class="trend__bar trend__bar--day-5"
+                  title="Friday: 7h 10m"
+                ></div>
+                <div
+                  class="trend__bar trend__bar--day-6"
+                  title="Saturday: 7h 30m"
+                ></div>
+                <div
+                  class="trend__bar trend__bar--day-7"
+                  title="Sunday: 7h 30m"
+                ></div>
+              </div>
+              <div class="trend__labels">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bedtime Consistency -->
+          <div class="section">
+            <h3 class="section-title">Bedtime Consistency</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="consistency">
+                  <div class="consistency__dots">
+                    <div
+                      class="consistency__dot consistency__dot--ontarget"
+                      title="Monday: 23:15 (Target: 23:00)"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                      title="Tuesday: 00:05 (Target: 23:00)"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--ontarget"
+                      title="Wednesday: 22:55 (Target: 23:00)"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                      title="Thursday: 23:40 (Target: 23:00)"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                      title="Friday: 00:20 (Target: 23:00)"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                      title="Saturday: 23:30 (Target: 23:00)"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--ontarget"
+                      title="Sunday: 22:45 (Target: 23:00)"
+                    ></div>
+                  </div>
+                  <span class="consistency__label"
+                    >3/7 nights within ±30 min of target</span
+                  >
+                </div>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  <strong>Green dots:</strong> On target (±30 min) •
+                  <strong>Yellow dots:</strong> Off target
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chronotype Analysis -->
+          <div class="section">
+            <h3 class="section-title">Chronotype Analysis</h3>
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Early-Intermediate</h4>
+                <p class="card__subtitle">Based on your sleep patterns</p>
+              </div>
+              <div class="card__content">
+                <p>
+                  You trend toward an
+                  <strong>early-intermediate</strong> chronotype, meaning you
+                  naturally prefer to sleep and wake earlier than average.
+                </p>
+                <p style="margin: 16px 0 0 0">
+                  <strong>Your natural rhythm:</strong><br />
+                  • Optimal bedtime: 22:30 - 23:00<br />
+                  • Optimal wake time: 06:00 - 06:30<br />
+                  • Peak alertness: 08:00 - 12:00<br />
+                  • Energy dip: 14:00 - 16:00
+                </p>
+              </div>
+              <div class="card__footer">
+                <span class="badge badge--chronotype">Early-Intermediate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sleep Quality Analysis -->
+          <div class="section">
+            <h3 class="section-title">Sleep Quality Factors</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 12px 0; font-size: 16px">
+                  Factors affecting your sleep quality:
+                </h4>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 16px;
+                  "
+                >
+                  <div>
+                    <h5
+                      style="margin: 0 0 8px 0; font-size: 14px; color: #f59e0b"
+                    >
+                      ⚠️ Negative Factors
+                    </h5>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                      <li>Late caffeine (Thu)</li>
+                      <li>Screen time before bed (Tue)</li>
+                      <li>Irregular bedtime (Fri)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5
+                      style="margin: 0 0 8px 0; font-size: 14px; color: #10b981"
+                    >
+                      ✅ Positive Factors
+                    </h5>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                      <li>Evening workouts (Mon, Sat)</li>
+                      <li>Consistent wake time</li>
+                      <li>Good wind-down routine (Wed, Sun)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personalized Suggestions -->
+          <div class="section">
+            <h3 class="section-title">Personalized Suggestions</h3>
+            <div class="card">
+              <div class="card__content">
+                <h4 style="margin: 0 0 16px 0; font-size: 16px">
+                  Based on your patterns, we recommend:
+                </h4>
+                <ol style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 12px">
+                    <strong
+                      >Shift bedtime by 15 minutes earlier for 3 nights</strong
+                    ><br />
+                    <span style="font-size: 14px; color: #666"
+                      >Your current average is 23:47, target is 23:00</span
+                    >
+                  </li>
+                  <li style="margin-bottom: 12px">
+                    <strong>Keep phone outside bedroom</strong><br />
+                    <span style="font-size: 14px; color: #666"
+                      >Tuesday's late screen time likely contributed to poor
+                      sleep</span
+                    >
+                  </li>
+                  <li style="margin-bottom: 12px">
+                    <strong
+                      >Try brown noise instead of white if highs feel
+                      harsh</strong
+                    ><br />
+                    <span style="font-size: 14px; color: #666"
+                      >Many find brown noise gentler for sleep</span
+                    >
+                  </li>
+                  <li style="margin-bottom: 12px">
+                    <strong>Maintain evening workout routine</strong><br />
+                    <span style="font-size: 14px; color: #666"
+                      >Your best sleep nights follow evening exercise</span
+                    >
+                  </li>
+                  <li style="margin-bottom: 0">
+                    <strong>Set caffeine cutoff at 4 PM</strong><br />
+                    <span style="font-size: 14px; color: #666"
+                      >Thursday's late coffee likely affected sleep
+                      quality</span
+                    >
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sleep Debt Recovery -->
+          <div class="section">
+            <h3 class="section-title">Sleep Debt Recovery Plan</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px">
+                  <strong>Current sleep debt:</strong> 2h 06m<br />
+                  <strong>Weekly target:</strong> 52h 30m<br />
+                  <strong>Actual sleep:</strong> 50h 24m
+                </p>
+                <h4 style="margin: 16px 0 8px 0; font-size: 16px">
+                  Recovery strategies:
+                </h4>
+                <ul style="margin: 0; padding-left: 20px">
+                  <li style="margin-bottom: 8px">
+                    Add 15-30 minutes to sleep time over the next 3-4 nights
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Take a short nap (20-30 min) during your energy dip (2-4 PM)
+                  </li>
+                  <li style="margin-bottom: 8px">
+                    Go to bed 15 minutes earlier each night until caught up
+                  </li>
+                  <li style="margin-bottom: 0">
+                    Maintain consistent wake time to avoid disrupting your
+                    rhythm
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Tracking -->
+          <div class="section">
+            <h3 class="section-title">Progress Tracking</h3>
+            <div class="card">
+              <div class="card__content">
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 24px;
+                  "
+                >
+                  <div>
+                    <h4 style="margin: 0 0 12px 0; font-size: 16px">
+                      This Week vs. Last Week
+                    </h4>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      <span>Sleep Duration</span>
+                      <span style="color: #10b981">+12m</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      <span>Bedtime Consistency</span>
+                      <span style="color: #f59e0b">-7%</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      <span>Sleep Quality</span>
+                      <span style="color: #10b981">+0.2</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Sleep Debt</span>
+                      <span style="color: #f59e0b">+1h 30m</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 style="margin: 0 0 12px 0; font-size: 16px">
+                      Streak Badges
+                    </h4>
+                    <div
+                      style="display: flex; flex-direction: column; gap: 8px"
+                    >
+                      <span class="badge badge--streak"
+                        >🔥 3 nights in a row</span
+                      >
+                      <span class="badge badge--streak"
+                        >📱 5 days phone-free</span
+                      >
+                      <span class="badge badge--streak">💪 2 workout days</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export and Share -->
+          <div class="section">
+            <h3 class="section-title">Export & Share Insights</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px">
+                  Share your sleep insights with healthcare providers or use
+                  them for personal tracking.
+                </p>
+                <div
+                  class="form-actions"
+                  style="border-top: none; margin-top: 0; padding-top: 0"
+                >
+                  <button class="btn btn--outline">Export as PDF</button>
+                  <button class="btn btn--outline">Share with Doctor</button>
+                  <button class="btn btn--primary">Print Full Report</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

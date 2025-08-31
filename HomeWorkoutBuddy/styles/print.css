@@ -1,0 +1,734 @@
+/* Print Styles for Sleep Coach */
+
+@media print {
+  /* ===== GENERAL PRINT RESET ===== */
+  
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  
+  /* ===== HIDE NON-PRINTABLE ELEMENTS ===== */
+  
+  .header,
+  .sidebar,
+  .footer,
+  .theme-toggle,
+  .nav-list,
+  .print-link,
+  .date-picker,
+  .nudge-banner,
+  .sound-card__play,
+  .routine-step__toggle,
+  .btn,
+  .form-actions {
+    display: none !important;
+  }
+  
+  /* ===== PRINT LAYOUT ===== */
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .app {
+    display: block;
+    min-height: auto;
+  }
+  
+  .main {
+    margin: 0;
+    padding: 0;
+    background: white;
+    min-height: auto;
+  }
+  
+  .main__content {
+    max-width: none;
+    margin: 0;
+  }
+  
+  /* ===== PRINT HEADER ===== */
+  
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 2pt solid black;
+  }
+  
+  .print-header__title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0 0 5pt 0;
+  }
+  
+  .print-header__subtitle {
+    font-size: 14pt;
+    margin: 0;
+    color: #333;
+  }
+  
+  .print-header__date {
+    font-size: 12pt;
+    margin: 5pt 0 0 0;
+    color: #666;
+  }
+  
+  /* ===== PAGE TITLES ===== */
+  
+  .page-title {
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 20pt 0 15pt 0;
+    color: black;
+  }
+  
+  .section-title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 15pt 0 10pt 0;
+    color: black;
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 5pt;
+  }
+  
+  /* ===== BEDTIME PILL PRINT ===== */
+  
+  .bedtime-pill {
+    background: white !important;
+    color: black !important;
+    border: 2pt solid black;
+    padding: 8pt 12pt;
+    border-radius: 20pt;
+    display: inline-block;
+    margin: 10pt 0;
+  }
+  
+  .bedtime-pill__time {
+    font-family: monospace;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  
+  .bedtime-pill__details {
+    display: none;
+  }
+  
+  /* ===== ROUTINE STEPS PRINT ===== */
+  
+  .routine-steps {
+    margin: 15pt 0;
+  }
+  
+  .routine-step {
+    background: white !important;
+    border: 1pt solid #ccc !important;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    border-radius: 8pt;
+    page-break-inside: avoid;
+  }
+  
+  .routine-step__title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 5pt 0;
+    color: black;
+  }
+  
+  .routine-step__duration {
+    background: #f0f0f0 !important;
+    color: black !important;
+    padding: 2pt 6pt;
+    border-radius: 10pt;
+    font-size: 10pt;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 0 5pt 0;
+  }
+  
+  .routine-step__description {
+    font-size: 10pt;
+    margin: 0;
+    color: #333;
+  }
+  
+  /* ===== SOUND CARDS PRINT ===== */
+  
+  .sound-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10pt;
+    margin: 15pt 0;
+  }
+  
+  .sound-card {
+    background: white !important;
+    border: 1pt solid #ccc !important;
+    padding: 8pt;
+    border-radius: 8pt;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  
+  .sound-card__title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 5pt 0;
+    color: black;
+  }
+  
+  .sound-card__duration {
+    background: #f0f0f0 !important;
+    color: black !important;
+    padding: 2pt 6pt;
+    border-radius: 10pt;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+  
+  /* ===== TILES PRINT ===== */
+  
+  .tile {
+    background: white !important;
+    border: 1pt solid #ccc !important;
+    padding: 12pt;
+    border-radius: 8pt;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  
+  .tile__value {
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0 0 5pt 0;
+    color: black;
+    font-family: monospace;
+  }
+  
+  .tile__label {
+    font-size: 12pt;
+    margin: 0;
+    color: #333;
+  }
+  
+  .tile__subtitle {
+    font-size: 10pt;
+    margin: 5pt 0 0 0;
+    color: #666;
+  }
+  
+  /* ===== TREND CHARTS PRINT ===== */
+  
+  .trend {
+    background: white !important;
+    border: 1pt solid #ccc !important;
+    padding: 12pt;
+    border-radius: 8pt;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+  }
+  
+  .trend__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    color: black;
+  }
+  
+  .trend__bars {
+    height: 80pt;
+    margin-bottom: 10pt;
+  }
+  
+  .trend__bar {
+    background: #333 !important;
+    border-radius: 2pt;
+    min-height: 10pt;
+  }
+  
+  .trend__labels {
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* ===== CONSISTENCY DOTS PRINT ===== */
+  
+  .consistency {
+    margin: 10pt 0;
+  }
+  
+  .consistency__dots {
+    gap: 3pt;
+  }
+  
+  .consistency__dot {
+    width: 8pt;
+    height: 8pt;
+  }
+  
+  .consistency__dot--ontarget {
+    background: #333 !important;
+  }
+  
+  .consistency__dot--offtarget {
+    background: #999 !important;
+  }
+  
+  .consistency__label {
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* ===== TAGS PRINT ===== */
+  
+  .tag {
+    background: #f0f0f0 !important;
+    color: black !important;
+    padding: 2pt 6pt;
+    border-radius: 10pt;
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 2pt 4pt 2pt 0;
+    display: inline-block;
+  }
+  
+  .tag--caffeine {
+    background: #fff3cd !important;
+    color: #856404 !important;
+  }
+  
+  .tag--workout {
+    background: #d1ecf1 !important;
+    color: #0c5460 !important;
+  }
+  
+  .tag--screens {
+    background: #d1ecf1 !important;
+    color: #0c5460 !important;
+  }
+  
+  .tag--late-caffeine {
+    background: #f8d7da !important;
+    color: #721c24 !important;
+  }
+  
+  /* ===== BADGES PRINT ===== */
+  
+  .badge {
+    background: #333 !important;
+    color: white !important;
+    padding: 3pt 8pt;
+    border-radius: 10pt;
+    font-size: 10pt;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5pt 5pt 5pt 0;
+  }
+  
+  .badge--streak {
+    background: #28a745 !important;
+  }
+  
+  .badge--chronotype {
+    background: #17a2b8 !important;
+  }
+  
+  /* ===== TABLES PRINT ===== */
+  
+  .table-container {
+    background: white !important;
+    border: 1pt solid #ccc !important;
+    border-radius: 8pt;
+    overflow: visible;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+  }
+  
+  .table-header {
+    background: #f8f9fa !important;
+    padding: 8pt;
+    border-bottom: 1pt solid #ccc;
+  }
+  
+  .table-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th {
+    background: #f8f9fa !important;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    padding: 6pt 8pt;
+    border-bottom: 1pt solid #ccc;
+    font-size: 11pt;
+  }
+  
+  .table td {
+    padding: 6pt 8pt;
+    border-bottom: 1pt solid #eee;
+    color: black;
+    font-size: 10pt;
+  }
+  
+  .table tr:hover {
+    background: transparent !important;
+  }
+  
+  /* ===== FORMS PRINT ===== */
+  
+  .form-group {
+    margin-bottom: 12pt;
+  }
+  
+  .form-label {
+    font-size: 11pt;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 4pt;
+    display: block;
+  }
+  
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border: 1pt solid #ccc !important;
+    border-radius: 4pt;
+    padding: 4pt 6pt;
+    font-size: 10pt;
+    background: white !important;
+    color: black !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .checkbox-group {
+    gap: 8pt;
+    margin-top: 4pt;
+  }
+  
+  .checkbox-item {
+    gap: 4pt;
+  }
+  
+  .checkbox-item input[type="checkbox"] {
+    width: 12pt;
+    height: 12pt;
+    margin: 0;
+  }
+  
+  .checkbox-item label {
+    font-size: 10pt;
+    color: #333;
+  }
+  
+  /* ===== CARDS PRINT ===== */
+  
+  .card {
+    background: white !important;
+    border: 1pt solid #ccc !important;
+    border-radius: 8pt;
+    padding: 12pt;
+    margin: 10pt 0;
+    page-break-inside: avoid;
+  }
+  
+  .card__header {
+    margin-bottom: 8pt;
+  }
+  
+  .card__title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+  }
+  
+  .card__subtitle {
+    font-size: 10pt;
+    color: #666;
+    margin: 2pt 0 0 0;
+  }
+  
+  .card__content {
+    color: black;
+    font-size: 10pt;
+  }
+  
+  .card__footer {
+    margin-top: 8pt;
+    padding-top: 8pt;
+    border-top: 1pt solid #eee;
+  }
+  
+  /* ===== PRESET CARDS PRINT ===== */
+  
+  .preset-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+    margin-bottom: 12pt;
+  }
+  
+  .preset-card {
+    background: white !important;
+    border: 2pt solid #ccc !important;
+    border-radius: 8pt;
+    padding: 8pt;
+    page-break-inside: avoid;
+  }
+  
+  .preset-card--active {
+    border-color: #333 !important;
+    background: #f8f9fa !important;
+  }
+  
+  .preset-card__title {
+    font-size: 12pt;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 4pt 0;
+  }
+  
+  .preset-card__description {
+    font-size: 9pt;
+    color: #666;
+    margin: 0;
+  }
+  
+  /* ===== TIME SELECTOR PRINT ===== */
+  
+  .time-selector {
+    gap: 4pt;
+    margin-bottom: 12pt;
+  }
+  
+  .time-option {
+    background: white !important;
+    border: 2pt solid #ccc !important;
+    border-radius: 20pt;
+    padding: 4pt 8pt;
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .time-option--active {
+    background: #333 !important;
+    color: white !important;
+    border-color: #333 !important;
+  }
+  
+  /* ===== TABS PRINT ===== */
+  
+  .tabs {
+    border-bottom: 1pt solid #ccc;
+    margin-bottom: 12pt;
+  }
+  
+  .tab-list {
+    gap: 0;
+  }
+  
+  .tab-item {
+    margin-right: 0;
+  }
+  
+  .tab-button {
+    padding: 6pt 8pt;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 2pt solid transparent;
+  }
+  
+  .tab-button--active {
+    color: black;
+    border-bottom-color: #333;
+  }
+  
+  .tab-content {
+    display: block !important;
+  }
+  
+  /* ===== GRID LAYOUTS PRINT ===== */
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+  }
+  
+  .grid-auto-fit,
+  .grid-auto-fill {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+  }
+  
+  /* ===== PAGE BREAKS ===== */
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+  
+  /* ===== PRINT FOOTER ===== */
+  
+  .print-footer {
+    display: block !important;
+    text-align: center;
+    margin-top: 20pt;
+    padding-top: 10pt;
+    border-top: 1pt solid #ccc;
+    font-size: 9pt;
+    color: #666;
+  }
+  
+  .print-footer__text {
+    margin: 0;
+  }
+  
+  .print-footer__page {
+    margin: 5pt 0 0 0;
+  }
+  
+  /* ===== WEEKLY REPORT SPECIFIC ===== */
+  
+  .weekly-report {
+    max-width: none;
+    margin: 0;
+  }
+  
+  .weekly-report__header {
+    text-align: center;
+    margin-bottom: 20pt;
+  }
+  
+  .weekly-report__title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0 0 5pt 0;
+  }
+  
+  .weekly-report__date-range {
+    font-size: 14pt;
+    margin: 0;
+    color: #333;
+  }
+  
+  .weekly-report__summary {
+    background: #f8f9fa !important;
+    border: 1pt solid #ccc;
+    border-radius: 8pt;
+    padding: 12pt;
+    margin: 15pt 0;
+  }
+  
+  .weekly-report__summary-title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    color: black;
+  }
+  
+  .weekly-report__summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10pt;
+  }
+  
+  .weekly-report__suggestions {
+    margin: 20pt 0;
+  }
+  
+  .weekly-report__suggestions-title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    color: black;
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 5pt;
+  }
+  
+  .weekly-report__suggestions-list {
+    list-style: disc;
+    margin: 10pt 0;
+    padding-left: 20pt;
+  }
+  
+  .weekly-report__suggestions-item {
+    font-size: 11pt;
+    margin-bottom: 5pt;
+    color: black;
+  }
+  
+  /* ===== UTILITIES PRINT ===== */
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .mt-0 { margin-top: 0; }
+  .mt-1 { margin-top: 4pt; }
+  .mt-2 { margin-top: 8pt; }
+  .mt-3 { margin-top: 12pt; }
+  .mt-4 { margin-top: 16pt; }
+  .mt-5 { margin-top: 20pt; }
+  .mt-6 { margin-top: 24pt; }
+  .mt-8 { margin-top: 32pt; }
+  
+  .mb-0 { margin-bottom: 0; }
+  .mb-1 { margin-bottom: 4pt; }
+  .mb-2 { margin-bottom: 8pt; }
+  .mb-3 { margin-bottom: 12pt; }
+  .mb-4 { margin-bottom: 16pt; }
+  .mb-5 { margin-bottom: 20pt; }
+  .mb-6 { margin-bottom: 24pt; }
+  .mb-8 { margin-bottom: 32pt; }
+  
+  .p-0 { padding: 0; }
+  .p-1 { padding: 4pt; }
+  .p-2 { padding: 8pt; }
+  .p-3 { padding: 12pt; }
+  .p-4 { padding: 16pt; }
+  .p-5 { padding: 20pt; }
+  .p-6 { padding: 24pt; }
+  .p-8 { padding: 32pt; }
+}

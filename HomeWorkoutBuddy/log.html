@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach — Sleep Log</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Sleep Coach</h1>
+          <div class="header__actions">
+            <input type="date" class="date-picker" value="2024-01-15" />
+            <button class="print-link" onclick="window.print()">
+              Print Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__content">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">
+                <span class="nav-link__icon">🌙</span>
+                Tonight
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="planner.html" class="nav-link">
+                <span class="nav-link__icon">📋</span>
+                Wind-down Planner
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="sounds.html" class="nav-link">
+                <span class="nav-link__icon">🎵</span>
+                Sounds & Noise
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="log.html" class="nav-link nav-link--active">
+                <span class="nav-link__icon">📝</span>
+                Sleep Log
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="insights.html" class="nav-link">
+                <span class="nav-link__icon">📊</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">
+                <span class="nav-link__icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">
+                <span class="nav-link__icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="theme-toggle">
+            <button class="theme-toggle__btn" data-theme="light">☀️</button>
+            <button class="theme-toggle__btn" data-theme="dark">🌙</button>
+            <button class="theme-toggle__btn" data-theme="high-contrast">
+              🔍
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <h2 class="page-title">Sleep Log</h2>
+
+          <!-- Entry Form -->
+          <div class="section">
+            <h3 class="section-title">Log Tonight's Sleep</h3>
+            <div class="card">
+              <form class="form-layout">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="bedtime" class="form-label">Bedtime</label>
+                    <input
+                      type="time"
+                      id="bedtime"
+                      class="form-input"
+                      value="23:15"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="waketime" class="form-label">Wake time</label>
+                    <input
+                      type="time"
+                      id="waketime"
+                      class="form-input"
+                      value="06:40"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="awakenings" class="form-label"
+                      >Number of awakenings</label
+                    >
+                    <select id="awakenings" class="form-input form-select">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4+</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="quality" class="form-label"
+                      >Sleep quality (1-5)</label
+                    >
+                    <select id="quality" class="form-input form-select">
+                      <option value="1">1 - Very poor</option>
+                      <option value="2">2 - Poor</option>
+                      <option value="3">3 - Fair</option>
+                      <option value="4" selected>4 - Good</option>
+                      <option value="5">5 - Excellent</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Tags</label>
+                  <div class="checkbox-group">
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="tag-caffeine"
+                        class="form-input"
+                      />
+                      <label for="tag-caffeine">Late caffeine</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="tag-dinner"
+                        class="form-input"
+                      />
+                      <label for="tag-dinner">Heavy dinner</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="tag-workout"
+                        class="form-input"
+                        checked
+                      />
+                      <label for="tag-workout">Workout</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="tag-screens"
+                        class="form-input"
+                      />
+                      <label for="tag-screens">Screens in bed</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="tag-stress"
+                        class="form-input"
+                      />
+                      <label for="tag-stress">High stress</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="notes" class="form-label">Notes</label>
+                  <textarea
+                    id="notes"
+                    class="form-input form-textarea"
+                    placeholder="Any additional observations about your sleep..."
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="btn btn--outline">Cancel</button>
+                  <button type="submit" class="btn btn--primary">
+                    Save Entry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Weekly Diary Table -->
+          <div class="section">
+            <h3 class="section-title">Weekly Sleep Diary</h3>
+            <div class="table-container">
+              <div class="table-header">
+                <h4 class="table-title">January 8-14, 2024</h4>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Bedtime</th>
+                    <th>Wake Time</th>
+                    <th>In Bed</th>
+                    <th>Sleep Est.</th>
+                    <th>Quality</th>
+                    <th>Tags</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mon 8</td>
+                    <td>23:15</td>
+                    <td>06:40</td>
+                    <td>7h 25m</td>
+                    <td>7h 15m</td>
+                    <td>4</td>
+                    <td><span class="tag tag--workout">workout</span></td>
+                    <td>Felt well-rested</td>
+                  </tr>
+                  <tr>
+                    <td>Tue 9</td>
+                    <td>00:05</td>
+                    <td>06:45</td>
+                    <td>6h 40m</td>
+                    <td>6h 30m</td>
+                    <td>3</td>
+                    <td><span class="tag tag--screens">screens</span></td>
+                    <td>Late night work</td>
+                  </tr>
+                  <tr>
+                    <td>Wed 10</td>
+                    <td>22:55</td>
+                    <td>06:30</td>
+                    <td>7h 35m</td>
+                    <td>7h 25m</td>
+                    <td>4</td>
+                    <td>-</td>
+                    <td>Good routine</td>
+                  </tr>
+                  <tr>
+                    <td>Thu 11</td>
+                    <td>23:40</td>
+                    <td>06:20</td>
+                    <td>6h 40m</td>
+                    <td>6h 30m</td>
+                    <td>3</td>
+                    <td>
+                      <span class="tag tag--late-caffeine">late caffeine</span>
+                    </td>
+                    <td>Coffee at 5pm</td>
+                  </tr>
+                  <tr>
+                    <td>Fri 12</td>
+                    <td>00:20</td>
+                    <td>07:30</td>
+                    <td>7h 10m</td>
+                    <td>7h 00m</td>
+                    <td>4</td>
+                    <td>-</td>
+                    <td>Weekend sleep-in</td>
+                  </tr>
+                  <tr>
+                    <td>Sat 13</td>
+                    <td>23:30</td>
+                    <td>07:00</td>
+                    <td>7h 30m</td>
+                    <td>7h 20m</td>
+                    <td>4</td>
+                    <td><span class="tag tag--workout">workout</span></td>
+                    <td>Evening exercise</td>
+                  </tr>
+                  <tr>
+                    <td>Sun 14</td>
+                    <td>22:45</td>
+                    <td>06:15</td>
+                    <td>7h 30m</td>
+                    <td>7h 20m</td>
+                    <td>5</td>
+                    <td>-</td>
+                    <td>Perfect sleep!</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Weekly Totals -->
+          <div class="section">
+            <h3 class="section-title">Weekly Summary</h3>
+            <div class="grid-4">
+              <div class="tile">
+                <div class="tile__value">7h 12m</div>
+                <div class="tile__label">Average Sleep</div>
+                <div class="tile__subtitle">Target: 7h 30m</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__value">23:47</div>
+                <div class="tile__label">Avg Bedtime</div>
+                <div class="tile__subtitle">Target: 23:00</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__value">06:42</div>
+                <div class="tile__label">Avg Wake Time</div>
+                <div class="tile__subtitle">Target: 06:30</div>
+              </div>
+
+              <div class="tile">
+                <div class="tile__value">3.9</div>
+                <div class="tile__label">Avg Quality</div>
+                <div class="tile__subtitle">Scale: 1-5</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consistency Analysis -->
+          <div class="section">
+            <h3 class="section-title">Bedtime Consistency</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="consistency">
+                  <div class="consistency__dots">
+                    <div
+                      class="consistency__dot consistency__dot--ontarget"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--ontarget"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--offtarget"
+                    ></div>
+                    <div
+                      class="consistency__dot consistency__dot--ontarget"
+                    ></div>
+                  </div>
+                  <span class="consistency__label"
+                    >3/7 nights on target (±30 min)</span
+                  >
+                </div>
+                <p style="margin: 16px 0 0 0; font-size: 14px; color: #666">
+                  Consistency beats perfection—aim to be within 30 minutes of
+                  your target bedtime most nights.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sleep Debt Calculator -->
+          <div class="section">
+            <h3 class="section-title">Sleep Debt Calculator</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px">
+                  <strong>Target sleep:</strong> 7h 30m per night<br />
+                  <strong>Weekly target:</strong> 52h 30m<br />
+                  <strong>Actual sleep:</strong> 50h 24m<br />
+                  <strong>Sleep debt:</strong>
+                  <span style="color: #f59e0b; font-weight: bold">2h 06m</span>
+                </p>
+                <p style="margin: 0; font-size: 14px; color: #666">
+                  To catch up: Add 15-30 minutes to your sleep time over the
+                  next few nights, or take a short nap (20-30 min) during the
+                  day.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export Options -->
+          <div class="section">
+            <h3 class="section-title">Export Data</h3>
+            <div class="card">
+              <div class="card__content">
+                <p style="margin-bottom: 16px">
+                  Download your sleep data for personal records or to share with
+                  healthcare providers.
+                </p>
+                <div
+                  class="form-actions"
+                  style="border-top: none; margin-top: 0; padding-top: 0"
+                >
+                  <button class="btn btn--outline">Export as CSV</button>
+                  <button class="btn btn--outline">Export as JSON</button>
+                  <button class="btn btn--primary">Print Weekly Report</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Sleep Coach v0.1 • Not medical advice</p>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">Help</a>
+            <a href="about.html" class="footer__link">About</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
