@@ -1,0 +1,98 @@
+/* Design Tokens */
+
+:root {
+  /* Colors - Light Theme */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #2563eb;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* Heatmap Colors */
+  --heat-0: #f1f5f9;
+  --heat-1: #bfdbfe;
+  --heat-2: #60a5fa;
+  --heat-3: #3b82f6;
+  --heat-4: #1d4ed8;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --line-height: 1.5;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Layout */
+  --sidebar-width: 280px;
+  --header-height: 64px;
+  --max-content-width: 1200px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #0b1220;
+  --bg-secondary: #111827;
+  --text-primary: #e5e7eb;
+  --text-secondary: #d1d5db;
+  --text-muted: #6b7280;
+  --border: #374151;
+  --border-hover: #4b5563;
+
+  /* Adjust heatmap for dark theme */
+  --heat-0: #1f2937;
+  --heat-1: #1e3a8a;
+  --heat-2: #1d4ed8;
+  --heat-3: #3b82f6;
+  --heat-4: #60a5fa;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --accent: #0000ff;
+  --success: #008000;
+  --warning: #ff8c00;
+  --danger: #ff0000;
+  --border: #000000;
+}

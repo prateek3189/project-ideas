@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goal Tracker - Dashboard</title>
+    <meta
+      name="description"
+      content="Track your micro-habits with streaks, gamification, and AI nudges"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body class="theme-transition">
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <a href="index.html" class="sidebar__logo">
+            <div class="sidebar__logo-icon">🎯</div>
+            Goal Tracker
+          </a>
+        </div>
+
+        <nav class="sidebar__nav">
+          <h3 class="sidebar__nav-title">Navigation</h3>
+          <ul class="sidebar__nav-list">
+            <li class="sidebar__nav-item">
+              <a
+                href="index.html"
+                class="sidebar__nav-link sidebar__nav-link--active"
+              >
+                <span class="sidebar__nav-icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="planner.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📅</span>
+                Planner
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="insights.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="settings.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="about.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__profile">
+          <div class="sidebar__profile-info">
+            <div class="sidebar__avatar">JS</div>
+            <div>
+              <div class="sidebar__profile-name">John Smith</div>
+              <div class="sidebar__profile-level">Level 7 • Achiever</div>
+            </div>
+          </div>
+          <select class="sidebar__theme-toggle" aria-label="Choose theme">
+            <option value="light">🌞 Light Theme</option>
+            <option value="dark">🌙 Dark Theme</option>
+            <option value="high-contrast">🔍 High Contrast</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <h1 class="header__title">Dashboard</h1>
+          <span class="header__date">Monday, December 16, 2024</span>
+        </div>
+        <div class="header__right">
+          <div class="header__xp">
+            <span>685 XP</span>
+            <div class="header__level-badge">Level 7</div>
+          </div>
+          <div class="header__actions">
+            <a
+              href="#"
+              class="header__action"
+              title="Print weekly report"
+              aria-label="Print weekly report"
+              >🖨️</a
+            >
+            <a
+              href="#"
+              class="header__action"
+              title="Notifications"
+              aria-label="Notifications"
+              >🔔</a
+            >
+            <a href="#" class="header__action" title="Help" aria-label="Help"
+              >❓</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main" data-print-date="December 16, 2024">
+        <div class="main__content">
+          <!-- Today Panel -->
+          <section class="section">
+            <div class="section__header">
+              <h2 class="section__title">Today's Progress</h2>
+              <a href="#" class="section__action">View all habits</a>
+            </div>
+
+            <!-- XP Progress Bar -->
+            <div class="xp-bar mb-6">
+              <div class="xp-bar__info">
+                <div class="xp-bar__label">Experience Points</div>
+                <div class="xp-bar__progress">
+                  <div class="xp-bar__fill" style="width: 85%"></div>
+                </div>
+                <div class="xp-bar__text">685 / 800 XP to Level 8</div>
+              </div>
+              <div class="xp-bar__level">Level 7</div>
+            </div>
+
+            <!-- Filter Pills -->
+            <div class="filter-pills">
+              <a href="#" class="filter-pill filter-pill--active">All Habits</a>
+              <a href="#" class="filter-pill">Today</a>
+              <a href="#" class="filter-pill">Missed</a>
+              <a href="#" class="filter-pill">Streaking</a>
+              <a href="#" class="filter-pill">Wellness</a>
+              <a href="#" class="filter-pill">Learning</a>
+            </div>
+
+            <!-- Habit Cards Grid -->
+            <div class="grid-layout grid-layout--2-col">
+              <!-- Water Habit -->
+              <article class="habit-card">
+                <header class="habit-card__header">
+                  <h3 class="habit-card__title">Water (250ml)</h3>
+                  <span class="habit-card__category">Wellness</span>
+                </header>
+
+                <div class="habit-card__frequency">3× per day</div>
+
+                <div
+                  class="habit-card__reps"
+                  role="group"
+                  aria-label="Daily repetitions"
+                >
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    aria-label="Repetition 1 completed"
+                  ></div>
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    aria-label="Repetition 2 completed"
+                  ></div>
+                  <div
+                    class="habit-card__rep"
+                    aria-label="Repetition 3 pending"
+                  ></div>
+                </div>
+
+                <div class="habit-card__progress">
+                  <div class="habit-card__progress-label">
+                    <span>Progress</span>
+                    <span>67%</span>
+                  </div>
+                  <div class="habit-card__progress-bar">
+                    <div
+                      class="habit-card__progress-fill"
+                      style="width: 67%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="habit-card__streak">
+                  <span class="habit-card__streak-icon">🔥</span>
+                  <span class="habit-card__streak-text">7-day streak</span>
+                </div>
+
+                <div class="habit-card__nudge">
+                  💡 You're 1 glass away from completing today's goal!
+                </div>
+              </article>
+
+              <!-- Stretch Habit -->
+              <article class="habit-card">
+                <header class="habit-card__header">
+                  <h3 class="habit-card__title">Stretch (2 min)</h3>
+                  <span class="habit-card__category">Fitness</span>
+                </header>
+
+                <div class="habit-card__frequency">2× per day</div>
+
+                <div
+                  class="habit-card__reps"
+                  role="group"
+                  aria-label="Daily repetitions"
+                >
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    aria-label="Repetition 1 completed"
+                  ></div>
+                  <div
+                    class="habit-card__rep"
+                    aria-label="Repetition 2 pending"
+                  ></div>
+                </div>
+
+                <div class="habit-card__progress">
+                  <div class="habit-card__progress-label">
+                    <span>Progress</span>
+                    <span>50%</span>
+                  </div>
+                  <div class="habit-card__progress-bar">
+                    <div
+                      class="habit-card__progress-fill"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="habit-card__streak">
+                  <span class="habit-card__streak-icon">🔥</span>
+                  <span class="habit-card__streak-text">3-day streak</span>
+                </div>
+
+                <div class="habit-card__nudge">
+                  ⏰ Perfect time for an afternoon stretch break!
+                </div>
+              </article>
+
+              <!-- Reading Habit -->
+              <article class="habit-card">
+                <header class="habit-card__header">
+                  <h3 class="habit-card__title">Read (5 pages)</h3>
+                  <span class="habit-card__category">Learning</span>
+                </header>
+
+                <div class="habit-card__frequency">1× per day</div>
+
+                <div
+                  class="habit-card__reps"
+                  role="group"
+                  aria-label="Daily repetitions"
+                >
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    aria-label="Reading completed"
+                  ></div>
+                </div>
+
+                <div class="habit-card__progress">
+                  <div class="habit-card__progress-label">
+                    <span>Progress</span>
+                    <span>100%</span>
+                  </div>
+                  <div class="habit-card__progress-bar">
+                    <div
+                      class="habit-card__progress-fill"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="habit-card__streak">
+                  <span class="habit-card__streak-icon">🔥</span>
+                  <span class="habit-card__streak-text">12-day streak</span>
+                </div>
+
+                <div class="habit-card__nudge">
+                  🏆 Amazing! You're just 2 days away from the "Ember" badge!
+                </div>
+              </article>
+
+              <!-- Code Kata Habit -->
+              <article class="habit-card">
+                <header class="habit-card__header">
+                  <h3 class="habit-card__title">Code Kata (10 min)</h3>
+                  <span class="habit-card__category">Learning</span>
+                </header>
+
+                <div class="habit-card__frequency">Weekdays only</div>
+
+                <div
+                  class="habit-card__reps"
+                  role="group"
+                  aria-label="Daily repetitions"
+                >
+                  <div
+                    class="habit-card__rep"
+                    aria-label="Coding practice pending"
+                  ></div>
+                </div>
+
+                <div class="habit-card__progress">
+                  <div class="habit-card__progress-label">
+                    <span>Progress</span>
+                    <span>0%</span>
+                  </div>
+                  <div class="habit-card__progress-bar">
+                    <div
+                      class="habit-card__progress-fill"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="habit-card__streak">
+                  <span class="habit-card__streak-icon">🔥</span>
+                  <span class="habit-card__streak-text">2-day streak</span>
+                </div>
+
+                <div class="habit-card__nudge">
+                  💻 Short on time? Try just 1 coding problem today!
+                </div>
+              </article>
+
+              <!-- Journal Habit -->
+              <article class="habit-card">
+                <header class="habit-card__header">
+                  <h3 class="habit-card__title">Journal (1 line)</h3>
+                  <span class="habit-card__category">Wellness</span>
+                </header>
+
+                <div class="habit-card__frequency">Daily</div>
+
+                <div
+                  class="habit-card__reps"
+                  role="group"
+                  aria-label="Daily repetitions"
+                >
+                  <div
+                    class="habit-card__rep"
+                    aria-label="Journaling pending"
+                  ></div>
+                </div>
+
+                <div class="habit-card__progress">
+                  <div class="habit-card__progress-label">
+                    <span>Progress</span>
+                    <span>0%</span>
+                  </div>
+                  <div class="habit-card__progress-bar">
+                    <div
+                      class="habit-card__progress-fill"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="habit-card__streak">
+                  <span class="habit-card__streak-icon">💔</span>
+                  <span class="habit-card__streak-text"
+                    >0-day streak (new!)</span
+                  >
+                </div>
+
+                <div class="habit-card__nudge">
+                  ✨ New habit! Start with just one sentence about your day.
+                </div>
+              </article>
+
+              <!-- Morning Walk Habit -->
+              <article class="habit-card">
+                <header class="habit-card__header">
+                  <h3 class="habit-card__title">Morning Walk (5 min)</h3>
+                  <span class="habit-card__category">Fitness</span>
+                </header>
+
+                <div class="habit-card__frequency">Daily</div>
+
+                <div
+                  class="habit-card__reps"
+                  role="group"
+                  aria-label="Daily repetitions"
+                >
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    aria-label="Morning walk completed"
+                  ></div>
+                </div>
+
+                <div class="habit-card__progress">
+                  <div class="habit-card__progress-label">
+                    <span>Progress</span>
+                    <span>100%</span>
+                  </div>
+                  <div class="habit-card__progress-bar">
+                    <div
+                      class="habit-card__progress-fill"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="habit-card__streak">
+                  <span class="habit-card__streak-icon">🔥</span>
+                  <span class="habit-card__streak-text">5-day streak</span>
+                </div>
+
+                <div class="habit-card__nudge">
+                  🌅 Great start to the day! Your consistency is building
+                  momentum.
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Quick Stats Section -->
+          <section class="section">
+            <div class="section__header">
+              <h2 class="section__title">Today's Stats</h2>
+              <a href="insights.html" class="section__action"
+                >View detailed insights</a
+              >
+            </div>
+
+            <div class="grid-layout grid-layout--4-col">
+              <div class="stat-tile">
+                <div class="stat-tile__value">4</div>
+                <div class="stat-tile__label">Habits Completed</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  +1 from yesterday
+                </div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">67%</div>
+                <div class="stat-tile__label">Daily Progress</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  +15% from yesterday
+                </div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">3</div>
+                <div class="stat-tile__label">Active Streaks</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  +1 new streak
+                </div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">45</div>
+                <div class="stat-tile__label">XP Earned Today</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  115 XP to next level
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Badges Preview -->
+          <section class="section">
+            <div class="section__header">
+              <h2 class="section__title">Badge Progress</h2>
+              <a href="habit.html" class="section__action">View all badges</a>
+            </div>
+
+            <div class="flex gap-4 flex-wrap">
+              <div class="badge badge--unlocked">
+                <span class="badge__icon">🔥</span>
+                5-Day Spark
+              </div>
+              <div class="badge badge--next">
+                <span class="badge__icon">💪</span>
+                14-Day Ember (2 days away)
+              </div>
+              <div class="badge badge--locked">
+                <span class="badge__icon">🏆</span>
+                30-Day Blaze
+              </div>
+              <div class="badge badge--locked">
+                <span class="badge__icon">⚡</span>
+                90-Day Inferno
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Hidden elements for screen readers -->
+    <div class="sr-only">
+      <h2>Accessibility Information</h2>
+      <p>
+        This dashboard shows your daily habit progress. Use the navigation
+        sidebar to access different sections of the app. Each habit card shows
+        completion status, streaks, and AI-powered nudges to help you stay
+        consistent.
+      </p>
+    </div>
+  </body>
+</html>

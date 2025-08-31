@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water (250ml) - Habit Detail | Goal Tracker</title>
+    <meta
+      name="description"
+      content="Detailed view of your water drinking habit with progress tracking and badges"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+  </head>
+  <body class="theme-transition">
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <a href="index.html" class="sidebar__logo">
+            <div class="sidebar__logo-icon">🎯</div>
+            Goal Tracker
+          </a>
+        </div>
+
+        <nav class="sidebar__nav">
+          <h3 class="sidebar__nav-title">Navigation</h3>
+          <ul class="sidebar__nav-list">
+            <li class="sidebar__nav-item">
+              <a href="index.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="planner.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📅</span>
+                Planner
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="insights.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="settings.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="about.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__profile">
+          <div class="sidebar__profile-info">
+            <div class="sidebar__avatar">JS</div>
+            <div>
+              <div class="sidebar__profile-name">John Smith</div>
+              <div class="sidebar__profile-level">Level 7 • Achiever</div>
+            </div>
+          </div>
+          <select class="sidebar__theme-toggle" aria-label="Choose theme">
+            <option value="light">🌞 Light Theme</option>
+            <option value="dark">🌙 Dark Theme</option>
+            <option value="high-contrast">🔍 High Contrast</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <h1 class="header__title">Habit Detail</h1>
+          <span class="header__date">Monday, December 16, 2024</span>
+        </div>
+        <div class="header__right">
+          <div class="header__xp">
+            <span>685 XP</span>
+            <div class="header__level-badge">Level 7</div>
+          </div>
+          <div class="header__actions">
+            <a
+              href="#"
+              class="header__action"
+              title="Edit habit"
+              aria-label="Edit habit"
+              >✏️</a
+            >
+            <a
+              href="#"
+              class="header__action"
+              title="Share progress"
+              aria-label="Share progress"
+              >📤</a
+            >
+            <a
+              href="#"
+              class="header__action"
+              title="Print report"
+              aria-label="Print report"
+              >🖨️</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main" data-print-date="December 16, 2024">
+        <div class="main__content">
+          <!-- Habit Header -->
+          <section class="section">
+            <div class="habit-card" style="margin-bottom: var(--space-8)">
+              <header class="habit-card__header">
+                <h2
+                  class="habit-card__title"
+                  style="font-size: var(--font-size-2xl)"
+                >
+                  💧 Water (250ml)
+                </h2>
+                <span class="habit-card__category">Wellness</span>
+              </header>
+
+              <div class="habit-card__frequency">3× per day</div>
+
+              <div
+                class="habit-card__reps"
+                role="group"
+                aria-label="Today's water intake"
+              >
+                <div
+                  class="habit-card__rep habit-card__rep--completed"
+                  aria-label="Glass 1 completed"
+                ></div>
+                <div
+                  class="habit-card__rep habit-card__rep--completed"
+                  aria-label="Glass 2 completed"
+                ></div>
+                <div class="habit-card__rep" aria-label="Glass 3 pending"></div>
+              </div>
+
+              <div class="habit-card__nudge">
+                💡 You're 1 glass away from completing today's goal! Perfect
+                time for a hydration break.
+              </div>
+            </div>
+          </section>
+
+          <!-- Metrics Row -->
+          <section class="section">
+            <h3 class="section__title">Statistics</h3>
+            <div class="grid-layout grid-layout--4-col">
+              <div class="stat-tile">
+                <div class="stat-tile__value">🔥 7</div>
+                <div class="stat-tile__label">Current Streak</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  Best this month!
+                </div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">21</div>
+                <div class="stat-tile__label">Total Days</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  Since Nov 25, 2024
+                </div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">89%</div>
+                <div class="stat-tile__label">Completion Rate</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  Above average!
+                </div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">12</div>
+                <div class="stat-tile__label">Longest Streak</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  5 days to beat record
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Calendar Heatmap -->
+          <section class="section">
+            <h3 class="section__title">Activity Calendar (Last 5 Weeks)</h3>
+            <div
+              class="heatmap"
+              role="img"
+              aria-label="35-day activity heatmap showing completion intensity"
+            >
+              <!-- Week 1 (Nov 11-17) -->
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 11: No activity"
+                tabindex="0"
+              >
+                11
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 12: No activity"
+                tabindex="0"
+              >
+                12
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 13: No activity"
+                tabindex="0"
+              >
+                13
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 14: No activity"
+                tabindex="0"
+              >
+                14
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 15: No activity"
+                tabindex="0"
+              >
+                15
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 16: No activity"
+                tabindex="0"
+              >
+                16
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 17: No activity"
+                tabindex="0"
+              >
+                17
+              </div>
+
+              <!-- Week 2 (Nov 18-24) -->
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 18: No activity"
+                tabindex="0"
+              >
+                18
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 19: No activity"
+                tabindex="0"
+              >
+                19
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 20: No activity"
+                tabindex="0"
+              >
+                20
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 21: No activity"
+                tabindex="0"
+              >
+                21
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 22: No activity"
+                tabindex="0"
+              >
+                22
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 23: No activity"
+                tabindex="0"
+              >
+                23
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Nov 24: No activity"
+                tabindex="0"
+              >
+                24
+              </div>
+
+              <!-- Week 3 (Nov 25-Dec 1) - Habit started -->
+              <div
+                class="heatmap__cell heatmap__cell--intensity-2"
+                aria-label="Nov 25: 2 of 3 glasses"
+                tabindex="0"
+              >
+                25
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Nov 26: All 3 glasses completed"
+                tabindex="0"
+              >
+                26
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Nov 27: All 3 glasses completed"
+                tabindex="0"
+              >
+                27
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-3"
+                aria-label="Nov 28: 2 of 3 glasses"
+                tabindex="0"
+              >
+                28
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Nov 29: All 3 glasses completed"
+                tabindex="0"
+              >
+                29
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Nov 30: All 3 glasses completed"
+                tabindex="0"
+              >
+                30
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 1: All 3 glasses completed"
+                tabindex="0"
+              >
+                1
+              </div>
+
+              <!-- Week 4 (Dec 2-8) -->
+              <div
+                class="heatmap__cell heatmap__cell--intensity-1"
+                aria-label="Dec 2: 1 of 3 glasses"
+                tabindex="0"
+              >
+                2
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-0"
+                aria-label="Dec 3: Missed day"
+                tabindex="0"
+              >
+                3
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 4: All 3 glasses completed"
+                tabindex="0"
+              >
+                4
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 5: All 3 glasses completed"
+                tabindex="0"
+              >
+                5
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-3"
+                aria-label="Dec 6: 2 of 3 glasses"
+                tabindex="0"
+              >
+                6
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 7: All 3 glasses completed"
+                tabindex="0"
+              >
+                7
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 8: All 3 glasses completed"
+                tabindex="0"
+              >
+                8
+              </div>
+
+              <!-- Week 5 (Dec 9-15) -->
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 9: All 3 glasses completed"
+                tabindex="0"
+              >
+                9
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 10: All 3 glasses completed"
+                tabindex="0"
+              >
+                10
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 11: All 3 glasses completed"
+                tabindex="0"
+              >
+                11
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 12: All 3 glasses completed"
+                tabindex="0"
+              >
+                12
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 13: All 3 glasses completed"
+                tabindex="0"
+              >
+                13
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 14: All 3 glasses completed"
+                tabindex="0"
+              >
+                14
+              </div>
+              <div
+                class="heatmap__cell heatmap__cell--intensity-4"
+                aria-label="Dec 15: All 3 glasses completed"
+                tabindex="0"
+              >
+                15
+              </div>
+
+              <!-- Week 6 (Dec 16) - Today -->
+              <div
+                class="heatmap__cell heatmap__cell--intensity-2"
+                aria-label="Dec 16: 2 of 3 glasses (today)"
+                tabindex="0"
+                style="border: 2px solid var(--accent)"
+              >
+                16
+              </div>
+            </div>
+
+            <div class="heatmap__legend">
+              <span>Less</span>
+              <div class="heatmap__legend-item">
+                <div
+                  class="heatmap__legend-swatch heatmap__cell--intensity-0"
+                ></div>
+                <span>0</span>
+              </div>
+              <div class="heatmap__legend-item">
+                <div
+                  class="heatmap__legend-swatch heatmap__cell--intensity-1"
+                ></div>
+                <span>1</span>
+              </div>
+              <div class="heatmap__legend-item">
+                <div
+                  class="heatmap__legend-swatch heatmap__cell--intensity-2"
+                ></div>
+                <span>2</span>
+              </div>
+              <div class="heatmap__legend-item">
+                <div
+                  class="heatmap__legend-swatch heatmap__cell--intensity-3"
+                ></div>
+                <span>3</span>
+              </div>
+              <div class="heatmap__legend-item">
+                <div
+                  class="heatmap__legend-swatch heatmap__cell--intensity-4"
+                ></div>
+                <span>3+</span>
+              </div>
+              <span>More</span>
+            </div>
+          </section>
+
+          <!-- Badge Ladder -->
+          <section class="section">
+            <h3 class="section__title">Badge Progress</h3>
+            <div class="grid-layout grid-layout--4-col">
+              <div
+                class="stat-tile"
+                style="padding: var(--space-4); text-align: left"
+              >
+                <div class="badge badge--unlocked mb-3">
+                  <span class="badge__icon">🔥</span>
+                  5-Day Spark
+                </div>
+                <div class="stat-tile__label">Earned Dec 8, 2024</div>
+                <div class="stat-tile__change stat-tile__change--positive">
+                  +50 XP
+                </div>
+              </div>
+
+              <div
+                class="stat-tile"
+                style="padding: var(--space-4); text-align: left"
+              >
+                <div class="badge badge--next mb-3">
+                  <span class="badge__icon">💪</span>
+                  14-Day Ember
+                </div>
+                <div class="stat-tile__label">2 days to unlock</div>
+                <div class="stat-tile__change">+100 XP reward</div>
+              </div>
+
+              <div
+                class="stat-tile"
+                style="padding: var(--space-4); text-align: left"
+              >
+                <div class="badge badge--locked mb-3">
+                  <span class="badge__icon">🏆</span>
+                  30-Day Blaze
+                </div>
+                <div class="stat-tile__label">16 days to unlock</div>
+                <div class="stat-tile__change">+200 XP reward</div>
+              </div>
+
+              <div
+                class="stat-tile"
+                style="padding: var(--space-4); text-align: left"
+              >
+                <div class="badge badge--locked mb-3">
+                  <span class="badge__icon">⚡</span>
+                  90-Day Inferno
+                </div>
+                <div class="stat-tile__label">76 days to unlock</div>
+                <div class="stat-tile__change">+500 XP reward</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Today's Repetitions -->
+          <section class="section">
+            <h3 class="section__title">Today's Progress</h3>
+            <div class="habit-card">
+              <div class="flex justify-between items-center mb-4">
+                <h4 class="text-lg font-semibold">Repetitions</h4>
+                <span class="text-muted">2 of 3 completed</span>
+              </div>
+
+              <div
+                class="grid gap-4"
+                style="grid-template-columns: repeat(3, 1fr)"
+              >
+                <div
+                  class="flex flex-col items-center gap-2 p-4 border rounded-md"
+                >
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    style="
+                      width: 48px;
+                      height: 48px;
+                      font-size: var(--font-size-lg);
+                    "
+                  ></div>
+                  <span class="text-sm text-muted">Morning (9:30 AM)</span>
+                  <span class="text-xs text-success">+5 XP</span>
+                </div>
+
+                <div
+                  class="flex flex-col items-center gap-2 p-4 border rounded-md"
+                >
+                  <div
+                    class="habit-card__rep habit-card__rep--completed"
+                    style="
+                      width: 48px;
+                      height: 48px;
+                      font-size: var(--font-size-lg);
+                    "
+                  ></div>
+                  <span class="text-sm text-muted">Lunch (1:15 PM)</span>
+                  <span class="text-xs text-success">+5 XP</span>
+                </div>
+
+                <div
+                  class="flex flex-col items-center gap-2 p-4 border rounded-md border-accent"
+                >
+                  <div
+                    class="habit-card__rep"
+                    style="
+                      width: 48px;
+                      height: 48px;
+                      font-size: var(--font-size-lg);
+                    "
+                  ></div>
+                  <span class="text-sm text-muted">Evening (pending)</span>
+                  <span class="text-xs text-accent">+5 XP available</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Notes Section -->
+          <section class="section">
+            <h3 class="section__title">Notes & Reflections</h3>
+            <div class="habit-card">
+              <label for="habit-notes" class="sr-only">Habit notes</label>
+              <textarea
+                id="habit-notes"
+                rows="4"
+                placeholder="Add notes about your progress, challenges, or insights..."
+                style="resize: vertical; min-height: 120px"
+              >
+Noticed I drink more water when I keep a bottle visible on my desk. The afternoon reminder has been really helpful - I often forget after lunch. Feeling more energized since starting this habit!</textarea
+              >
+
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-sm text-muted"
+                  >Last updated: Today at 1:20 PM</span
+                >
+                <button type="button" class="text-sm">Save Notes</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Micro Version Helper -->
+          <section class="section no-page-break">
+            <h3 class="section__title">Tiny Version</h3>
+            <div class="habit-card">
+              <div class="flex items-start gap-4">
+                <div class="text-2xl">💧</div>
+                <div>
+                  <h4 class="font-semibold mb-2">Just 1 Sip Counts!</h4>
+                  <p class="text-secondary mb-3">
+                    Having trouble completing your full goal? Remember, even one
+                    sip of water is better than none. Start tiny and build
+                    momentum.
+                  </p>
+                  <div class="flex gap-2">
+                    <button
+                      type="button"
+                      class="text-sm bg-warning text-white px-3 py-1 rounded-full"
+                    >
+                      Mark "Micro Version" Complete
+                    </button>
+                    <button
+                      type="button"
+                      class="text-sm border border-border px-3 py-1 rounded-full"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Hidden elements for screen readers -->
+    <div class="sr-only">
+      <h2>Accessibility Information</h2>
+      <p>
+        This page shows detailed information about your water drinking habit,
+        including a 35-day activity heatmap, completion statistics, badge
+        progress, and daily repetition tracking. Use the tab key to navigate
+        through the heatmap cells to hear specific completion data for each day.
+      </p>
+    </div>
+  </body>
+</html>

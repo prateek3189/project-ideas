@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | Goal Tracker</title>
+    <meta
+      name="description"
+      content="Customize your Goal Tracker experience with themes, notifications, and preferences"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>"
+    />
+
+    <style>
+      /* Settings-specific styles */
+      .settings-section {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-6);
+        margin-bottom: var(--space-6);
+      }
+
+      .settings-section__header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        margin-bottom: var(--space-6);
+      }
+
+      .settings-section__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-md);
+        background: var(--heat-0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-size-lg);
+      }
+
+      .settings-section__title {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-semibold);
+        color: var(--text-primary);
+        margin: 0;
+      }
+
+      .settings-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .settings-row:last-child {
+        border-bottom: none;
+      }
+
+      .settings-row__info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .settings-row__title {
+        font-weight: var(--font-weight-medium);
+        color: var(--text-primary);
+        margin-bottom: var(--space-1);
+      }
+
+      .settings-row__description {
+        font-size: var(--font-size-sm);
+        color: var(--text-secondary);
+        line-height: 1.4;
+      }
+
+      .settings-row__control {
+        flex-shrink: 0;
+        margin-left: var(--space-4);
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 24px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--heat-0);
+        border: 1px solid var(--border);
+        transition: 0.3s;
+        border-radius: 24px;
+      }
+
+      .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        border-radius: 50%;
+        transition: 0.3s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .toggle-switch input:checked + .toggle-slider {
+        background-color: var(--success);
+        border-color: var(--success);
+      }
+
+      .toggle-switch input:checked + .toggle-slider:before {
+        transform: translateX(24px);
+      }
+
+      .toggle-switch input:focus + .toggle-slider {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .profile-avatar-large {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--radius-lg);
+        background: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-bold);
+        margin-right: var(--space-4);
+      }
+
+      .danger-zone {
+        border: 1px solid var(--danger);
+        background: rgba(220, 38, 38, 0.05);
+      }
+
+      .danger-zone .settings-section__icon {
+        background: rgba(220, 38, 38, 0.1);
+        color: var(--danger);
+      }
+
+      .button-danger {
+        background: var(--danger);
+        color: white;
+        border: 1px solid var(--danger);
+      }
+
+      .button-danger:hover {
+        background: #b91c1c;
+        border-color: #b91c1c;
+      }
+
+      .export-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-4);
+        margin-top: var(--space-4);
+      }
+
+      .export-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        text-align: center;
+        transition: all 0.2s ease;
+      }
+
+      .export-card:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .export-card__icon {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--space-2);
+      }
+
+      .export-card__title {
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-1);
+      }
+
+      .export-card__description {
+        font-size: var(--font-size-sm);
+        color: var(--text-secondary);
+        margin-bottom: var(--space-3);
+      }
+    </style>
+  </head>
+  <body class="theme-transition">
+    <div class="app">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <a href="index.html" class="sidebar__logo">
+            <div class="sidebar__logo-icon">🎯</div>
+            Goal Tracker
+          </a>
+        </div>
+
+        <nav class="sidebar__nav">
+          <h3 class="sidebar__nav-title">Navigation</h3>
+          <ul class="sidebar__nav-list">
+            <li class="sidebar__nav-item">
+              <a href="index.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="planner.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📅</span>
+                Planner
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="insights.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a
+                href="settings.html"
+                class="sidebar__nav-link sidebar__nav-link--active"
+              >
+                <span class="sidebar__nav-icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="sidebar__nav-item">
+              <a href="about.html" class="sidebar__nav-link">
+                <span class="sidebar__nav-icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__profile">
+          <div class="sidebar__profile-info">
+            <div class="sidebar__avatar">JS</div>
+            <div>
+              <div class="sidebar__profile-name">John Smith</div>
+              <div class="sidebar__profile-level">Level 7 • Achiever</div>
+            </div>
+          </div>
+          <select class="sidebar__theme-toggle" aria-label="Choose theme">
+            <option value="light">🌞 Light Theme</option>
+            <option value="dark">🌙 Dark Theme</option>
+            <option value="high-contrast">🔍 High Contrast</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <h1 class="header__title">Settings</h1>
+          <span class="header__date">Customize your experience</span>
+        </div>
+        <div class="header__right">
+          <div class="header__xp">
+            <span>685 XP</span>
+            <div class="header__level-badge">Level 7</div>
+          </div>
+          <div class="header__actions">
+            <a
+              href="#"
+              class="header__action"
+              title="Reset to defaults"
+              aria-label="Reset to defaults"
+              >🔄</a
+            >
+            <a href="#" class="header__action" title="Help" aria-label="Help"
+              >❓</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <!-- Profile Settings -->
+          <section class="settings-section">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">👤</div>
+              <h2 class="settings-section__title">Profile</h2>
+            </div>
+
+            <div class="flex items-center mb-6">
+              <div class="profile-avatar-large">JS</div>
+              <div class="flex-1">
+                <label for="display-name">Display Name</label>
+                <input
+                  type="text"
+                  id="display-name"
+                  value="John Smith"
+                  class="mb-3"
+                />
+                <label for="bio">Bio (Optional)</label>
+                <textarea
+                  id="bio"
+                  rows="2"
+                  placeholder="Share a bit about yourself..."
+                >
+Aspiring developer learning to build better habits one day at a time. Currently working on consistency and self-improvement.</textarea
+                >
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Email</div>
+                <div class="settings-row__description">
+                  john.smith@example.com
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <button
+                  type="button"
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                >
+                  Change
+                </button>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Timezone</div>
+                <div class="settings-row__description">Eastern Time (ET)</div>
+              </div>
+              <div class="settings-row__control">
+                <select
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                  style="width: auto"
+                >
+                  <option>Eastern Time (ET)</option>
+                  <option>Central Time (CT)</option>
+                  <option>Mountain Time (MT)</option>
+                  <option>Pacific Time (PT)</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Appearance Settings -->
+          <section class="settings-section">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">🎨</div>
+              <h2 class="settings-section__title">Appearance</h2>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Theme</div>
+                <div class="settings-row__description">
+                  Choose your preferred color scheme
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <select
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                  style="width: auto"
+                >
+                  <option value="light">🌞 Light Theme</option>
+                  <option value="dark">🌙 Dark Theme</option>
+                  <option value="high-contrast">🔍 High Contrast</option>
+                  <option value="auto">🔄 Auto (System)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Large Text</div>
+                <div class="settings-row__description">
+                  Increase font size for better readability
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input type="checkbox" aria-label="Enable large text" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Reduce Motion</div>
+                <div class="settings-row__description">
+                  Minimize animations and transitions
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input type="checkbox" aria-label="Reduce motion" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Show Animations</div>
+                <div class="settings-row__description">
+                  Display celebratory animations for completed habits
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input type="checkbox" checked aria-label="Show animations" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Notifications -->
+          <section class="settings-section">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">🔔</div>
+              <h2 class="settings-section__title">Notifications</h2>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Daily Reminders</div>
+                <div class="settings-row__description">
+                  Get reminded to complete your habits
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable daily reminders"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Streak Warnings</div>
+                <div class="settings-row__description">
+                  Alert when you're about to break a streak
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable streak warnings"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Weekly Review</div>
+                <div class="settings-row__description">
+                  Sunday summary of your weekly progress
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable weekly review"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Achievement Celebrations</div>
+                <div class="settings-row__description">
+                  Notify when you earn badges or level up
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable achievement celebrations"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Quiet Hours</div>
+                <div class="settings-row__description">9:00 PM - 7:00 AM</div>
+              </div>
+              <div class="settings-row__control">
+                <button
+                  type="button"
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                >
+                  Change
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- AI Nudges -->
+          <section class="settings-section">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">🤖</div>
+              <h2 class="settings-section__title">AI Nudges</h2>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Enable AI Nudges</div>
+                <div class="settings-row__description">
+                  Get personalized suggestions to stay on track
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable AI nudges"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Nudge Style</div>
+                <div class="settings-row__description">
+                  How would you like AI to communicate with you?
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <select
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                  style="width: auto"
+                >
+                  <option>💡 Gentle & Supportive</option>
+                  <option>💪 Firm & Motivating</option>
+                  <option>🎉 Fun & Encouraging</option>
+                  <option>📊 Data-Driven</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Smart Scheduling</div>
+                <div class="settings-row__description">
+                  Let AI suggest optimal times for your habits
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable smart scheduling"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Context Awareness</div>
+                <div class="settings-row__description">
+                  Consider weather, calendar, and location for suggestions
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    aria-label="Enable context awareness"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Data & Privacy -->
+          <section class="settings-section">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">🔒</div>
+              <h2 class="settings-section__title">Data & Privacy</h2>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Data Collection</div>
+                <div class="settings-row__description">
+                  Allow anonymous usage analytics to improve the app
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Allow data collection"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Cloud Sync</div>
+                <div class="settings-row__description">
+                  Synchronize your data across devices
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    checked
+                    aria-label="Enable cloud sync"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Export Data</div>
+                <div class="settings-row__description">
+                  Download your habit data in various formats
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <button
+                  type="button"
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                >
+                  Export
+                </button>
+              </div>
+            </div>
+
+            <!-- Export Options (hidden by default) -->
+            <div
+              class="export-options"
+              style="display: none"
+              id="export-options"
+            >
+              <div class="export-card">
+                <div class="export-card__icon">📊</div>
+                <div class="export-card__title">CSV Data</div>
+                <div class="export-card__description">
+                  Raw habit data for spreadsheet analysis
+                </div>
+                <button
+                  type="button"
+                  class="text-sm bg-accent text-white px-3 py-1 rounded-md"
+                >
+                  Download
+                </button>
+              </div>
+
+              <div class="export-card">
+                <div class="export-card__icon">📄</div>
+                <div class="export-card__title">PDF Report</div>
+                <div class="export-card__description">
+                  Formatted summary with charts and insights
+                </div>
+                <button
+                  type="button"
+                  class="text-sm bg-accent text-white px-3 py-1 rounded-md"
+                >
+                  Generate
+                </button>
+              </div>
+
+              <div class="export-card">
+                <div class="export-card__icon">📝</div>
+                <div class="export-card__title">Markdown</div>
+                <div class="export-card__description">
+                  Text-based format for developers
+                </div>
+                <button
+                  type="button"
+                  class="text-sm bg-accent text-white px-3 py-1 rounded-md"
+                >
+                  Export
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Advanced -->
+          <section class="settings-section">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">⚡</div>
+              <h2 class="settings-section__title">Advanced</h2>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Week Start</div>
+                <div class="settings-row__description">
+                  First day of the week in calendar views
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <select
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                  style="width: auto"
+                >
+                  <option>Sunday</option>
+                  <option>Monday</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Default Habit Frequency</div>
+                <div class="settings-row__description">
+                  Pre-select frequency when creating new habits
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <select
+                  class="text-sm border border-border px-3 py-1 rounded-md"
+                  style="width: auto"
+                >
+                  <option>Daily</option>
+                  <option>Weekdays</option>
+                  <option>Weekends</option>
+                  <option>Custom</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">
+                  Auto-Archive Inactive Habits
+                </div>
+                <div class="settings-row__description">
+                  Hide habits with no activity for 30+ days
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    aria-label="Auto-archive inactive habits"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Developer Mode</div>
+                <div class="settings-row__description">
+                  Show additional debugging information
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <label class="toggle-switch">
+                  <input type="checkbox" aria-label="Enable developer mode" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Danger Zone -->
+          <section class="settings-section danger-zone">
+            <div class="settings-section__header">
+              <div class="settings-section__icon">⚠️</div>
+              <h2 class="settings-section__title">Danger Zone</h2>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Reset All Data</div>
+                <div class="settings-row__description">
+                  Delete all habits, streaks, and progress. This cannot be
+                  undone.
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <button
+                  type="button"
+                  class="button-danger text-sm px-3 py-1 rounded-md"
+                >
+                  Reset All
+                </button>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-row__info">
+                <div class="settings-row__title">Delete Account</div>
+                <div class="settings-row__description">
+                  Permanently delete your account and all associated data.
+                </div>
+              </div>
+              <div class="settings-row__control">
+                <button
+                  type="button"
+                  class="button-danger text-sm px-3 py-1 rounded-md"
+                >
+                  Delete Account
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Save Button -->
+          <div class="flex gap-4 mt-8">
+            <button
+              type="button"
+              class="bg-accent text-white px-6 py-3 rounded-md font-medium"
+            >
+              Save Changes
+            </button>
+            <button
+              type="button"
+              class="border border-border px-6 py-3 rounded-md font-medium"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Hidden elements for screen readers -->
+    <div class="sr-only">
+      <h2>Accessibility Information</h2>
+      <p>
+        This settings page allows you to customize your Goal Tracker experience.
+        Use the toggle switches to enable or disable features, and use the
+        dropdown menus to select preferences. All settings are organized into
+        logical sections for easy navigation.
+      </p>
+    </div>
+  </body>
+</html>

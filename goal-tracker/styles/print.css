@@ -1,0 +1,332 @@
+/* Print Styles */
+
+@media print {
+  @page {
+    margin: 1in;
+    size: letter;
+  }
+
+  /* Hide interactive elements */
+  .sidebar,
+  .header__actions,
+  .header__xp,
+  .sidebar__theme-toggle,
+  .filter-pills,
+  .habit-card__nudge,
+  button,
+  .header__action {
+    display: none !important;
+  }
+
+  /* Adjust layout for print */
+  .app {
+    display: block !important;
+    grid-template: none !important;
+  }
+
+  .header {
+    position: static !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 0.5in 0 !important;
+    margin-bottom: 0.25in !important;
+    background: transparent !important;
+  }
+
+  .main {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Typography adjustments */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  h1 {
+    font-size: 20pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  .main__title {
+    font-size: 18pt !important;
+    border-bottom: 1pt solid #000000 !important;
+    padding-bottom: 6pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  .section__title {
+    font-size: 14pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  /* Card layouts for print */
+  .habit-card {
+    border: 1pt solid #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-bottom: 12pt !important;
+    padding: 8pt !important;
+    page-break-inside: avoid;
+  }
+
+  .habit-card__title {
+    font-size: 13pt !important;
+    font-weight: bold !important;
+    margin-bottom: 4pt !important;
+  }
+
+  .habit-card__frequency {
+    background: transparent !important;
+    color: #000000 !important;
+    border: 1pt solid #000000 !important;
+    padding: 2pt 4pt !important;
+    font-size: 10pt !important;
+  }
+
+  .habit-card__streak {
+    font-size: 11pt !important;
+  }
+
+  .habit-card__streak-icon {
+    font-size: 12pt !important;
+  }
+
+  /* Repetition checkboxes for print */
+  .habit-card__reps {
+    margin: 6pt 0 !important;
+  }
+
+  .habit-card__rep {
+    width: 16pt !important;
+    height: 16pt !important;
+    border: 1pt solid #000000 !important;
+    background: transparent !important;
+    position: relative !important;
+  }
+
+  .habit-card__rep--completed {
+    background: transparent !important;
+    border: 2pt solid #000000 !important;
+  }
+
+  .habit-card__rep--completed::after {
+    content: "✓" !important;
+    color: #000000 !important;
+    font-size: 12pt !important;
+    font-weight: bold !important;
+  }
+
+  /* Progress bars to text */
+  .habit-card__progress-bar {
+    display: none !important;
+  }
+
+  .habit-card__progress-label {
+    font-size: 10pt !important;
+    margin-bottom: 4pt !important;
+  }
+
+  .habit-card__progress-label::after {
+    content: " (Progress bar shown in app)" !important;
+    font-style: italic !important;
+  }
+
+  /* XP Bar for print */
+  .xp-bar {
+    border: 1pt solid #000000 !important;
+    background: transparent !important;
+    margin-bottom: 12pt !important;
+    padding: 6pt !important;
+  }
+
+  .xp-bar__progress {
+    display: none !important;
+  }
+
+  .xp-bar__level {
+    background: transparent !important;
+    color: #000000 !important;
+    border: 1pt solid #000000 !important;
+  }
+
+  /* Stats layout */
+  .stat-tile {
+    border: 1pt solid #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-bottom: 8pt !important;
+    padding: 6pt !important;
+    display: inline-block !important;
+    width: 2in !important;
+    margin-right: 12pt !important;
+  }
+
+  .stat-tile__value {
+    font-size: 16pt !important;
+    color: #000000 !important;
+  }
+
+  .stat-tile__label {
+    font-size: 10pt !important;
+  }
+
+  /* Heatmap for print */
+  .heatmap {
+    margin-bottom: 12pt !important;
+  }
+
+  .heatmap__cell {
+    border: 0.5pt solid #000000 !important;
+    background: transparent !important;
+    font-size: 8pt !important;
+  }
+
+  .heatmap__cell--intensity-0::before {
+    content: "○" !important;
+    color: #cccccc !important;
+  }
+
+  .heatmap__cell--intensity-1::before {
+    content: "◔" !important;
+    color: #000000 !important;
+  }
+
+  .heatmap__cell--intensity-2::before {
+    content: "◑" !important;
+    color: #000000 !important;
+  }
+
+  .heatmap__cell--intensity-3::before {
+    content: "◕" !important;
+    color: #000000 !important;
+  }
+
+  .heatmap__cell--intensity-4::before {
+    content: "●" !important;
+    color: #000000 !important;
+  }
+
+  /* Badges for print */
+  .badge {
+    border: 1pt solid #000000 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    font-size: 10pt !important;
+    margin: 2pt !important;
+    padding: 2pt 4pt !important;
+  }
+
+  .badge--unlocked {
+    border: 2pt solid #000000 !important;
+    font-weight: bold !important;
+  }
+
+  .badge--locked {
+    border: 1pt dashed #666666 !important;
+    color: #666666 !important;
+  }
+
+  .badge--locked::before {
+    content: "🔒 " !important;
+  }
+
+  .badge--unlocked::before {
+    content: "🏆 " !important;
+  }
+
+  /* Grid layouts for print */
+  .grid-layout {
+    display: block !important;
+  }
+
+  .grid-layout > * {
+    margin-bottom: 12pt !important;
+    page-break-inside: avoid;
+  }
+
+  /* Section breaks */
+  .section {
+    margin-bottom: 18pt !important;
+    page-break-inside: avoid;
+  }
+
+  .section__header {
+    border-bottom: 0.5pt solid #000000 !important;
+    padding-bottom: 3pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  /* Footer for print */
+  .main::after {
+    content: "Printed on " attr(data-print-date) " | Goal Tracker App" !important;
+    display: block !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+    color: #666666 !important;
+    border-top: 0.5pt solid #cccccc !important;
+    padding-top: 6pt !important;
+    margin-top: 18pt !important;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always !important;
+  }
+
+  .no-page-break {
+    page-break-inside: avoid !important;
+  }
+
+  /* Hide elements that don't make sense in print */
+  .transition,
+  .transition-colors,
+  .hover\:*,
+  [class*="hover:"] {
+    transition: none !important;
+  }
+
+  /* Weekly planner table for print */
+  .planner-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 12pt !important;
+  }
+
+  .planner-table th,
+  .planner-table td {
+    border: 1pt solid #000000 !important;
+    padding: 4pt !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+  }
+
+  .planner-table th {
+    background: #f0f0f0 !important;
+    font-weight: bold !important;
+  }
+
+  /* Insights charts to text */
+  .chart,
+  .progress-ring {
+    display: none !important;
+  }
+
+  .chart::after {
+    content: " (Chart shown in app)" !important;
+    font-style: italic !important;
+    font-size: 10pt !important;
+  }
+}
