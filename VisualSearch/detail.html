@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - Visual Search</title>
+    <meta name="description" content="Detailed view of search result item" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="container">
+          <div class="header">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="header__brand-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Visual Search
+            </a>
+
+            <nav class="header__nav">
+              <a href="results.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  ></path>
+                  <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                </svg>
+                Back to Results
+              </a>
+
+              <button
+                class="theme-toggle"
+                onclick="toggleTheme()"
+                aria-label="Toggle theme"
+              >
+                <svg
+                  class="theme-toggle__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                Light
+              </button>
+
+              <a href="collections.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"
+                  ></path>
+                </svg>
+                Collections
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="shell__main">
+        <div class="container">
+          <!-- Detail Layout -->
+          <div class="detail-layout">
+            <!-- Hero Image -->
+            <div class="detail-hero">
+              <img
+                src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%23f0f0f0'/><text x='200' y='150' text-anchor='middle' dy='.3em' font-size='24' fill='%23666'>Product Image</text></svg>"
+                alt="Runner Flex 2.0 — Black/White"
+                class="detail-hero__image"
+              />
+
+              <!-- Detection Boxes -->
+              <div class="detail-hero__boxes">
+                <div
+                  class="detection-box"
+                  style="left: 15%; top: 20%; width: 35%; height: 25%"
+                >
+                  <div class="detection-box__label">toe (94%)</div>
+                </div>
+                <div
+                  class="detection-box"
+                  style="left: 20%; top: 60%; width: 30%; height: 20%"
+                >
+                  <div class="detection-box__label">sole (89%)</div>
+                </div>
+                <div
+                  class="detection-box"
+                  style="left: 50%; top: 15%; width: 25%; height: 30%"
+                >
+                  <div class="detection-box__label">upper (92%)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="detail-sidebar">
+              <!-- Product Info -->
+              <div class="detail-sidebar__section">
+                <h1 class="detail-sidebar__title">
+                  Runner Flex 2.0 — Black/White
+                </h1>
+                <div class="detail-sidebar__price">₹3,499</div>
+
+                <div class="detail-sidebar__badges">
+                  <span class="chip chip--badge">In Stock</span>
+                  <span class="chip chip--badge">Free Returns</span>
+                  <span class="chip chip--badge">Bestseller</span>
+                </div>
+
+                <div class="detail-sidebar__actions">
+                  <button
+                    class="btn btn--primary btn--lg"
+                    onclick="addToCart()"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="9" cy="21" r="1"></circle>
+                      <circle cx="20" cy="21" r="1"></circle>
+                      <path
+                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                      ></path>
+                    </svg>
+                    Add to Cart
+                  </button>
+
+                  <button
+                    class="btn btn--secondary btn--lg"
+                    onclick="goToStore()"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      ></path>
+                      <polyline points="15,3 21,3 21,9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Go to Store
+                  </button>
+
+                  <button class="btn btn--ghost" onclick="addToCollection()">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"
+                      ></path>
+                    </svg>
+                    Save to Collection
+                  </button>
+                </div>
+              </div>
+
+              <!-- Visual Similarity -->
+              <div class="detail-sidebar__section">
+                <h3 class="detail-sidebar__title">Visual Similarity</h3>
+                <div class="similarity-meter">
+                  <div class="similarity-meter__bar">
+                    <div
+                      class="similarity-meter__fill"
+                      style="width: 91%"
+                    ></div>
+                  </div>
+                  <span class="similarity-meter__value">91%</span>
+                </div>
+                <p class="text-sm text-muted mt-2">
+                  High confidence match based on shape, color, and texture
+                  analysis.
+                </p>
+              </div>
+
+              <!-- Why This Match -->
+              <div class="detail-sidebar__section">
+                <details class="why-match">
+                  <summary class="why-match__title">Why this match?</summary>
+                  <div class="why-match__text">
+                    <p>
+                      <strong>Shape Analysis:</strong> Toe box curvature matches
+                      94% similarity
+                    </p>
+                    <p>
+                      <strong>Color Palette:</strong> Black/white contrast ratio
+                      identical
+                    </p>
+                    <p>
+                      <strong>Texture Pattern:</strong> Mesh upper pattern 89%
+                      match
+                    </p>
+                    <p>
+                      <strong>Sole Design:</strong> Tread pattern 87% similarity
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attributes Table -->
+          <div class="card mt-8">
+            <div class="card__header">
+              <h2>Product Details</h2>
+            </div>
+            <div class="card__body">
+              <table class="attributes-table">
+                <tr>
+                  <th>Brand</th>
+                  <td>MockMart Athletic</td>
+                </tr>
+                <tr>
+                  <th>Model</th>
+                  <td>Runner Flex 2.0</td>
+                </tr>
+                <tr>
+                  <th>Category</th>
+                  <td>Running Shoes</td>
+                </tr>
+                <tr>
+                  <th>Color</th>
+                  <td>Black/White</td>
+                </tr>
+                <tr>
+                  <th>Material</th>
+                  <td>Mesh upper, Rubber sole</td>
+                </tr>
+                <tr>
+                  <th>Size Options</th>
+                  <td>6, 7, 8, 9, 10, 11, 12</td>
+                </tr>
+                <tr>
+                  <th>Weight</th>
+                  <td>280g (Size 9)</td>
+                </tr>
+                <tr>
+                  <th>Rating</th>
+                  <td>
+                    <div class="flex items-center gap-2">
+                      <div class="flex">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <polygon
+                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                          ></polygon>
+                        </svg>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <polygon
+                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                          ></polygon>
+                        </svg>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <polygon
+                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                          ></polygon>
+                        </svg>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <polygon
+                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                          ></polygon>
+                        </svg>
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <polygon
+                            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                          ></polygon>
+                        </svg>
+                      </div>
+                      <span class="text-sm">4.2 (127 reviews)</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Availability</th>
+                  <td>In Stock - Ships in 1-2 days</td>
+                </tr>
+                <tr>
+                  <th>Store</th>
+                  <td>MockMart</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Related Items -->
+          <section class="related-section">
+            <h2 class="related-section__title">Related Items</h2>
+            <div class="related-grid">
+              <div class="result-card" onclick="openDetail('product2')">
+                <div class="result-card__image">
+                  <img
+                    src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23e0e0e0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 2</text></svg>"
+                    alt="Street Sprint Low"
+                  />
+                  <div class="result-card__overlay">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >87%</span
+                    >
+                  </div>
+                </div>
+                <div class="result-card__content">
+                  <h3 class="result-card__title">Street Sprint Low — Mono</h3>
+                  <p class="result-card__subtitle">₹3,199</p>
+                </div>
+              </div>
+
+              <div class="result-card" onclick="openDetail('product3')">
+                <div class="result-card__image">
+                  <img
+                    src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23d0d0d0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 3</text></svg>"
+                    alt="Aero Knit Sneaker"
+                  />
+                  <div class="result-card__overlay">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >84%</span
+                    >
+                  </div>
+                </div>
+                <div class="result-card__content">
+                  <h3 class="result-card__title">
+                    Aero Knit Sneaker — Graphite
+                  </h3>
+                  <p class="result-card__subtitle">₹3,899</p>
+                </div>
+              </div>
+
+              <div class="result-card" onclick="openDetail('product4')">
+                <div class="result-card__image">
+                  <img
+                    src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23c0c0c0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 4</text></svg>"
+                    alt="Urban Walker"
+                  />
+                  <div class="result-card__overlay">
+                    <span class="chip chip--confidence chip--confidence--medium"
+                      >78%</span
+                    >
+                  </div>
+                </div>
+                <div class="result-card__content">
+                  <h3 class="result-card__title">Urban Walker — Charcoal</h3>
+                  <p class="result-card__subtitle">₹2,799</p>
+                </div>
+              </div>
+
+              <div class="result-card" onclick="openDetail('product5')">
+                <div class="result-card__image">
+                  <img
+                    src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23b0b0b0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 5</text></svg>"
+                    alt="Sport Max"
+                  />
+                  <div class="result-card__overlay">
+                    <span class="chip chip--confidence chip--confidence--medium"
+                      >76%</span
+                    >
+                  </div>
+                </div>
+                <div class="result-card__content">
+                  <h3 class="result-card__title">Sport Max — Navy/White</h3>
+                  <p class="result-card__subtitle">₹4,299</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Disclaimer -->
+          <div class="alert alert--info mt-8">
+            <strong>Note:</strong> Price & availability are placeholders in this
+            prototype. This is a demonstration of visual search capabilities.
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <div class="flex flex--between items-center">
+            <div class="text-sm text-muted">
+              Visual Search v0.1 • <a href="about.html">About</a> •
+              <a href="about.html#privacy">Privacy</a>
+            </div>
+            <div class="text-sm text-muted">
+              <a href="#" onclick="window.print()" class="header__print-link"
+                >Print Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      function addToCart() {
+        alert(
+          "Add to cart functionality will be implemented in the next version!"
+        );
+      }
+
+      function goToStore() {
+        alert("Store redirect will be implemented in the next version!");
+      }
+
+      function addToCollection() {
+        alert(
+          "Collection save functionality will be implemented in the next version!"
+        );
+      }
+
+      function openDetail(id) {
+        window.location.href = `detail.html?id=${id}`;
+      }
+
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme") || "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        body.setAttribute("data-theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = newTheme === "dark" ? "Dark" : "Light";
+
+        // Store preference
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.body.setAttribute("data-theme", savedTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = savedTheme === "dark" ? "Dark" : "Light";
+      });
+    </script>
+  </body>
+</html>

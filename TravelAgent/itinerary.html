@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singapore Itinerary - AI Travel Agent</title>
+    <meta
+      name="description"
+      content="Your personalized 4-day Singapore itinerary with day-by-day activities, transport, and cost estimates."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">✈</div>
+          <h1 class="header__title">AI Travel Agent</h1>
+        </a>
+        <div class="header__actions">
+          <select class="form-input" style="width: auto; min-width: 80px">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+          <button class="btn btn--primary" onclick="window.print()">
+            🖨️ Print Itinerary
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              Plan Trip
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="itinerary.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">📅</span>
+              Itinerary
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="bookings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              Bookings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="budget.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💰</span>
+              Budget
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="collections.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📍</span>
+              Collections
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="print-header">
+          <h1 class="print-header__title">Singapore Itinerary</h1>
+          <p class="print-header__subtitle">
+            Nov 15-19, 2024 • 2 Adults • ₹85,000 Budget
+          </p>
+        </div>
+
+        <div class="itinerary">
+          <!-- Main Itinerary -->
+          <div class="itinerary__main">
+            <!-- Day Tabs -->
+            <div class="day-tabs">
+              <a href="#day1" class="day-tab day-tab--active" data-day="1"
+                >Day 1 - Arrival</a
+              >
+              <a href="#day2" class="day-tab" data-day="2">Day 2 - City Tour</a>
+              <a href="#day3" class="day-tab" data-day="3"
+                >Day 3 - Nature & Culture</a
+              >
+              <a href="#day4" class="day-tab" data-day="4">Day 4 - Departure</a>
+            </div>
+
+            <!-- Day 1 Content -->
+            <div id="day1" class="day-content">
+              <h2 class="mb-4">Day 1 - Arrival & Marina Bay</h2>
+
+              <div class="timeline">
+                <div class="timeline__block">
+                  <div class="timeline__time">09:25 - 17:40</div>
+                  <h3 class="timeline__title">Flight Arrival</h3>
+                  <p class="timeline__description">
+                    6E 151 from Mumbai (1 stop) • Check-in at Hotel 81 Bugis
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--flights">✈️ Flight</span>
+                    <span class="chip chip--ride">🚗 Airport Transfer</span>
+                    <span class="text-sm text-muted">Est. ₹2,500</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this flight?</summary>
+                    <p>
+                      Good timing for arrival, allows rest before evening
+                      activities. One stop keeps costs reasonable while
+                      maintaining comfort.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">19:00 - 20:30</div>
+                  <h3 class="timeline__title">
+                    Marina Bay Sands & Spectra Show
+                  </h3>
+                  <p class="timeline__description">
+                    Free light and water show at Marina Bay • Perfect
+                    introduction to Singapore's skyline
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--metro">🚇 MRT</span>
+                    <span class="chip chip--walk">🚶 Walk</span>
+                    <span class="text-sm text-muted">Est. ₹0</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this activity?</summary>
+                    <p>
+                      Free activity that saves budget, spectacular views, and
+                      perfect for evening entertainment. No booking required.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">21:00 - 22:30</div>
+                  <h3 class="timeline__title">Lau Pa Sat Hawker Centre</h3>
+                  <p class="timeline__description">
+                    Authentic Singaporean dinner • Try satay, chicken rice, and
+                    local desserts
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--metro">🚇 MRT</span>
+                    <span class="chip chip--food">🍜 Food</span>
+                    <span class="text-sm text-muted">Est. ₹1,200</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this place?</summary>
+                    <p>
+                      Historic hawker center with great variety, fits your food
+                      interest, and budget-friendly. Easy to reach from Marina
+                      Bay.
+                    </p>
+                  </details>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 Content -->
+            <div id="day2" class="day-content" style="display: none">
+              <h2 class="mb-4">Day 2 - Chinatown & Gardens by the Bay</h2>
+
+              <div class="timeline">
+                <div class="timeline__block">
+                  <div class="timeline__time">08:00 - 10:00</div>
+                  <h3 class="timeline__title">Chinatown Heritage Walk</h3>
+                  <p class="timeline__description">
+                    Explore historic Chinatown • Visit Buddha Tooth Relic Temple
+                    • Early morning to avoid heat
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--walk">🚶 Walk</span>
+                    <span class="chip chip--sights">🏛️ Culture</span>
+                    <span class="text-sm text-muted">Est. ₹0</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this timing?</summary>
+                    <p>
+                      Close to hotel, low heat early morning, and fits your
+                      cultural interest. Free walking route saves budget.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">10:30 - 12:00</div>
+                  <h3 class="timeline__title">Maxwell Food Centre</h3>
+                  <p class="timeline__description">
+                    Famous chicken rice • Local breakfast • Tian Tian Hainanese
+                    Chicken Rice
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--walk">🚶 Walk</span>
+                    <span class="chip chip--food">🍜 Food</span>
+                    <span class="text-sm text-muted">Est. ₹600</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this place?</summary>
+                    <p>
+                      Michelin-recommended chicken rice, authentic local
+                      experience, and perfect timing after temple visit.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">14:00 - 17:00</div>
+                  <h3 class="timeline__title">Gardens by the Bay</h3>
+                  <p class="timeline__description">
+                    Flower Dome & Cloud Forest • Supertree Grove • Your must-see
+                    destination
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--metro">🚇 MRT</span>
+                    <span class="chip chip--sights">🌿 Nature</span>
+                    <span class="text-sm text-muted">Est. ₹2,400</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this timing?</summary>
+                    <p>
+                      Indoor activities during afternoon heat, your requested
+                      must-see, and perfect for family photos.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">18:00 - 20:00</div>
+                  <h3 class="timeline__title">Singapore River Cruise</h3>
+                  <p class="timeline__description">
+                    Scenic boat ride • Historical commentary • Beautiful sunset
+                    views
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--walk">🚶 Walk</span>
+                    <span class="chip chip--sights">🌊 Water</span>
+                    <span class="text-sm text-muted">Est. ₹1,500</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this activity?</summary>
+                    <p>
+                      Relaxing after walking, great views of city skyline, and
+                      fits your family-friendly preference.
+                    </p>
+                  </details>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 3 Content -->
+            <div id="day3" class="day-content" style="display: none">
+              <h2 class="mb-4">Day 3 - Sentosa & Night Safari</h2>
+
+              <div class="timeline">
+                <div class="timeline__block">
+                  <div class="timeline__time">09:00 - 12:00</div>
+                  <h3 class="timeline__title">Sentosa Island</h3>
+                  <p class="timeline__description">
+                    Universal Studios or S.E.A. Aquarium • Beach time • Cable
+                    car ride
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--metro">🚇 MRT</span>
+                    <span class="chip chip--sights">🎢 Entertainment</span>
+                    <span class="text-sm text-muted">Est. ₹4,000</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why Sentosa?</summary>
+                    <p>
+                      Family-friendly activities, variety of options, and
+                      perfect for your outdoor interest. Choose based on
+                      weather.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">13:00 - 14:30</div>
+                  <h3 class="timeline__title">VivoCity Lunch</h3>
+                  <p class="timeline__description">
+                    Shopping mall food court • Variety of cuisines •
+                    Air-conditioned break
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--walk">🚶 Walk</span>
+                    <span class="chip chip--food">🍜 Food</span>
+                    <span class="text-sm text-muted">Est. ₹800</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this place?</summary>
+                    <p>
+                      Convenient location, air-conditioned comfort, and variety
+                      for different tastes. Good break from outdoor activities.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">19:30 - 22:00</div>
+                  <h3 class="timeline__title">Night Safari</h3>
+                  <p class="timeline__description">
+                    World's first nocturnal zoo • Tram ride • Fire show • Your
+                    highlight activity
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--ride">🚗 Taxi</span>
+                    <span class="chip chip--sights">🌙 Unique</span>
+                    <span class="text-sm text-muted">Est. ₹3,200</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why Night Safari?</summary>
+                    <p>
+                      Unique experience, perfect for families, and fits your
+                      evening activity preference. Tram ride is comfortable.
+                    </p>
+                  </details>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 4 Content -->
+            <div id="day4" class="day-content" style="display: none">
+              <h2 class="mb-4">Day 4 - Departure</h2>
+
+              <div class="timeline">
+                <div class="timeline__block">
+                  <div class="timeline__time">08:00 - 10:00</div>
+                  <h3 class="timeline__title">Bugis Street Market</h3>
+                  <p class="timeline__description">
+                    Last-minute shopping • Souvenirs • Local snacks • Near hotel
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--walk">🚶 Walk</span>
+                    <span class="chip chip--sights">🛍️ Shopping</span>
+                    <span class="text-sm text-muted">Est. ₹1,000</span>
+                  </div>
+                  <details class="mt-3">
+                    <summary>Why this timing?</summary>
+                    <p>
+                      Close to hotel for easy return, morning hours avoid
+                      crowds, and perfect for last-minute souvenirs.
+                    </p>
+                  </details>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">11:00 - 12:00</div>
+                  <h3 class="timeline__title">Hotel Check-out</h3>
+                  <p class="timeline__description">
+                    Pack and check-out • Store luggage if needed • Airport
+                    transfer
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--ride">🚗 Airport Transfer</span>
+                    <span class="text-sm text-muted">Est. ₹2,500</span>
+                  </div>
+                </div>
+
+                <div class="timeline__block">
+                  <div class="timeline__time">15:40 - 23:55</div>
+                  <h3 class="timeline__title">Flight Departure</h3>
+                  <p class="timeline__description">
+                    6E 152 to Mumbai (1 stop) • Arrive home with amazing
+                    memories
+                  </p>
+                  <div class="timeline__meta">
+                    <span class="chip chip--flights">✈️ Flight</span>
+                    <span class="text-sm text-muted">Est. ₹24,500</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map Box Placeholder -->
+            <div class="map-box">
+              <div>
+                <h3>Interactive Map</h3>
+                <p>📍 Pin locations for all activities</p>
+                <p>🗺️ Route optimization</p>
+                <p>🚇 MRT connections</p>
+              </div>
+            </div>
+
+            <!-- Food Nearby -->
+            <div class="mb-6">
+              <h3 class="mb-3">🍜 Food Nearby</h3>
+              <div class="flex flex--wrap gap-2">
+                <span class="chip chip--food">Maxwell Food Centre</span>
+                <span class="chip chip--food">Lau Pa Sat</span>
+                <span class="chip chip--food">Chinatown Complex</span>
+                <span class="chip chip--food">VivoCity Food Court</span>
+                <span class="chip chip--food">Bugis Street Food</span>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="nudge nudge--info">
+              <span>ℹ️</span>
+              <div>
+                <strong>Travel Tips:</strong> Watch out for unofficial taxis at
+                arrival; use the airport desk or app cabs. Pack light rain
+                jacket for monsoon season. Most attractions accept contactless
+                payments.
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="itinerary__sidebar">
+            <!-- Quick Stats -->
+            <div class="card">
+              <div class="card__header">
+                <h3>Trip Summary</h3>
+              </div>
+              <div class="card__body">
+                <div class="grid grid--2 gap-3 mb-4">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-accent">4</div>
+                    <div class="text-sm text-muted">Days</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-accent">12</div>
+                    <div class="text-sm text-muted">Activities</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-success">₹79,800</div>
+                    <div class="text-sm text-muted">Est. Cost</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-info">94%</div>
+                    <div class="text-sm text-muted">Budget Used</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transport Guide -->
+            <div class="card">
+              <div class="card__header">
+                <h3>🚇 Transport Guide</h3>
+              </div>
+              <div class="card__body">
+                <div class="mb-3"><strong>MRT Day Pass:</strong> ₹200/day</div>
+                <div class="mb-3">
+                  <strong>EZ-Link Card:</strong> ₹50 + top-up
+                </div>
+                <div class="mb-3"><strong>Grab/Taxi:</strong> ₹15-20/km</div>
+                <div class="text-sm text-muted">
+                  Most activities within 30min by MRT
+                </div>
+              </div>
+            </div>
+
+            <!-- Weather -->
+            <div class="card">
+              <div class="card__header">
+                <h3>🌤️ Weather</h3>
+              </div>
+              <div class="card__body">
+                <div class="mb-2"><strong>Nov 15-19:</strong> 28-32°C</div>
+                <div class="mb-2"><strong>Humidity:</strong> 80-90%</div>
+                <div class="mb-2"><strong>Rain:</strong> 40% chance</div>
+                <div class="text-sm text-muted">
+                  Pack light rain jacket, stay hydrated
+                </div>
+              </div>
+            </div>
+
+            <!-- Emergency Contacts -->
+            <div class="card">
+              <div class="card__header">
+                <h3>🚨 Emergency</h3>
+              </div>
+              <div class="card__body">
+                <div class="mb-2"><strong>Police:</strong> 999</div>
+                <div class="mb-2"><strong>Ambulance:</strong> 995</div>
+                <div class="mb-2"><strong>Fire:</strong> 995</div>
+                <div class="text-sm text-muted">Hotel: +65 1234 5678</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          AI Travel Agent v0.1 • <a href="about.html">About</a> •
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+
+      // Day tab functionality
+      document.querySelectorAll(".day-tab").forEach((tab) => {
+        tab.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Remove active class from all tabs
+          document
+            .querySelectorAll(".day-tab")
+            .forEach((t) => t.classList.remove("day-tab--active"));
+
+          // Add active class to clicked tab
+          this.classList.add("day-tab--active");
+
+          // Hide all day content
+          document.querySelectorAll(".day-content").forEach((content) => {
+            content.style.display = "none";
+          });
+
+          // Show selected day content
+          const dayNumber = this.getAttribute("data-day");
+          document.getElementById(`day${dayNumber}`).style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>

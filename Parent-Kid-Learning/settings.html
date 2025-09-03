@@ -1,287 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings - Parent-Kid Learning App</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layouts.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="stylesheet" href="styles/print.css">
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
     <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Parent-Kid Learning</h1>
-            <div class="header__controls">
-                <span class="language-chip">EN</span>
-                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
-            </div>
+      <div class="header__content">
+        <h1 class="header__title">Parent-Kid Learning</h1>
+        <div class="header__controls">
+          <span class="language-chip">EN</span>
+          <div class="profile-avatar">👨‍👩‍👧‍👦</div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <div class="settings-layout">
-            <div class="settings-layout__header">
-                <h1 class="settings-layout__title">Settings</h1>
-                <p class="settings-layout__description">Customize your learning experience and preferences</p>
-            </div>
-
-            <div class="settings-layout__section">
-                <h2 class="settings-layout__section-title">Theme & Appearance</h2>
-                
-                <div class="form-group">
-                    <label class="form-group__label">Theme</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="theme-light" name="theme" value="light" class="radio-option__input" checked>
-                            <label for="theme-light" class="radio-option__label">Light</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="theme-dark" name="theme" value="dark" class="radio-option__input">
-                            <label for="theme-dark" class="radio-option__label">Dark</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="theme-high-contrast" name="theme" value="high-contrast" class="radio-option__input">
-                            <label for="theme-high-contrast" class="radio-option__label">High Contrast</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="theme-auto" name="theme" value="auto" class="radio-option__input">
-                            <label for="theme-auto" class="radio-option__label">Auto (follows system)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Quiet Mode</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="quiet-off" name="quiet-mode" value="off" class="radio-option__input" checked>
-                            <label for="quiet-off" class="radio-option__label">Off</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="quiet-on" name="quiet-mode" value="on" class="radio-option__input">
-                            <label for="quiet-on" class="radio-option__label">On (bedtime-friendly)</label>
-                        </div>
-                    </div>
-                    <p class="form-help">Quiet mode uses softer colors and reduced animations</p>
-                </div>
-            </div>
-
-            <div class="settings-layout__section">
-                <h2 class="settings-layout__section-title">Accessibility</h2>
-                
-                <div class="form-group">
-                    <label class="form-group__label">Text Size</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="size-normal" name="text-size" value="normal" class="radio-option__input" checked>
-                            <label for="size-normal" class="radio-option__label">Normal</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="size-large" name="text-size" value="large" class="radio-option__input">
-                            <label for="size-large" class="radio-option__label">Large</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="size-extra" name="text-size" value="extra" class="radio-option__input">
-                            <label for="size-extra" class="radio-option__label">Extra Large</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Font Style</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="font-standard" name="font-style" value="standard" class="radio-option__input" checked>
-                            <label for="font-standard" class="radio-option__label">Standard</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="font-dyslexia" name="font-style" value="dyslexia" class="radio-option__input">
-                            <label for="font-dyslexia" class="radio-option__label">Dyslexia-friendly</label>
-                        </div>
-                    </div>
-                    <p class="form-help">Dyslexia-friendly fonts have better letter spacing and shapes</p>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Motion Preferences</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="motion-full" name="motion" value="full" class="radio-option__input" checked>
-                            <label for="motion-full" class="radio-option__label">Full animations</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="motion-reduced" name="motion" value="reduced" class="radio-option__input">
-                            <label for="motion-reduced" class="radio-option__label">Reduced motion</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="motion-none" name="motion" value="none" class="radio-option__input">
-                            <label for="motion-none" class="radio-option__label">No animations</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="settings-layout__section">
-                <h2 class="settings-layout__section-title">Language & Content</h2>
-                
-                <div class="form-group">
-                    <label class="form-group__label">Primary Language</label>
-                    <select class="form-group__input">
-                        <option value="en">English</option>
-                        <option value="hi">Hindi</option>
-                        <option value="mr">Marathi</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Additional Languages</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="lang-hi" name="additional-languages" value="hi" class="checkbox-option__input" checked>
-                            <label for="lang-hi" class="checkbox-option__label">Hindi</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="lang-mr" name="additional-languages" value="mr" class="checkbox-option__input">
-                            <label for="lang-mr" class="checkbox-option__label">Marathi</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Content Age Range</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="age-2" name="age-range" value="2" class="radio-option__input">
-                            <label for="age-2" class="radio-option__label">2+ years</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="age-3" name="age-range" value="3" class="radio-option__input" checked>
-                            <label for="age-3" class="radio-option__label">3+ years</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="age-4" name="age-range" value="4" class="radio-option__input">
-                            <label for="age-4" class="radio-option__label">4+ years</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="settings-layout__section">
-                <h2 class="settings-layout__section-title">Audio & Playback</h2>
-                
-                <div class="form-group">
-                    <label class="form-group__label">Audio Preferences</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="audio-once" name="audio" value="once" class="radio-option__input" checked>
-                            <label for="audio-once" class="radio-option__label">Play once</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="audio-loop" name="audio" value="loop" class="radio-option__input">
-                            <label for="audio-loop" class="radio-option__label">Loop</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="audio-off" name="audio" value="off" class="radio-option__input">
-                            <label for="audio-off" class="radio-option__label">Off (visual only)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Playback Speed</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="speed-slow" name="playback-speed" value="slow" class="radio-option__input">
-                            <label for="speed-slow" class="radio-option__label">Slow (0.75x)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="speed-normal" name="playback-speed" value="normal" class="radio-option__input" checked>
-                            <label for="speed-normal" class="radio-option__label">Normal (1x)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="speed-fast" name="playback-speed" value="fast" class="radio-option__input">
-                            <label for="speed-fast" class="radio-option__label">Fast (1.25x)</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="settings-layout__section">
-                <h2 class="settings-layout__section-title">Data & Privacy</h2>
-                
-                <div class="privacy-info">
-                    <div class="privacy-item">
-                        <div class="privacy-item__icon">🔒</div>
-                        <div class="privacy-item__content">
-                            <h3>Local Storage Only</h3>
-                            <p>All data is stored locally on your device. No information is sent to external servers.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="privacy-item">
-                        <div class="privacy-item__icon">👨‍👩‍👧‍👦</div>
-                        <div class="privacy-item__content">
-                            <h3>Family Privacy</h3>
-                            <p>Your child's learning progress and preferences stay private within your family.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="privacy-item">
-                        <div class="privacy-item__icon">📱</div>
-                        <div class="privacy-item__content">
-                            <h3>Offline First</h3>
-                            <p>The app works completely offline. Internet is only needed for initial downloads.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-group__label">Data Management</label>
-                    <div class="button-group">
-                        <button class="btn btn--secondary">Export Data</button>
-                        <button class="btn btn--secondary">Clear All Data</button>
-                        <button class="btn btn--secondary">Reset Settings</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="settings-layout__section">
-                <h2 class="settings-layout__section-title">About & Support</h2>
-                
-                <div class="about-info">
-                    <div class="about-item">
-                        <h3>Version</h3>
-                        <p>Parent-Kid Learning App v0.1</p>
-                    </div>
-                    
-                    <div class="about-item">
-                        <h3>Last Updated</h3>
-                        <p>December 2024</p>
-                    </div>
-                    
-                    <div class="about-item">
-                        <h3>Support</h3>
-                        <p>For questions or feedback, please visit our support page</p>
-                        <a href="#" class="btn btn--small">Support Page</a>
-                    </div>
-                </div>
-            </div>
-
-            <nav class="quick-nav">
-                <a href="index.html" class="quick-nav__link">🏠 Home</a>
-                <a href="parent.html" class="quick-nav__link">👨‍👩‍👧‍👦 Parent Mode</a>
-                <a href="about.html" class="quick-nav__link">ℹ️ About</a>
-            </nav>
+      <div class="settings-layout">
+        <div class="settings-layout__header">
+          <h1 class="settings-layout__title">Settings</h1>
+          <p class="settings-layout__description">
+            Customize your learning experience and preferences
+          </p>
         </div>
+
+        <div class="settings-layout__section">
+          <h2 class="settings-layout__section-title">Theme & Appearance</h2>
+
+          <div class="form-group">
+            <label class="form-group__label">Theme</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="theme-light"
+                  name="theme"
+                  value="light"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="theme-light" class="radio-option__label"
+                  >Light</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="theme-dark"
+                  name="theme"
+                  value="dark"
+                  class="radio-option__input"
+                />
+                <label for="theme-dark" class="radio-option__label">Dark</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="theme-high-contrast"
+                  name="theme"
+                  value="high-contrast"
+                  class="radio-option__input"
+                />
+                <label for="theme-high-contrast" class="radio-option__label"
+                  >High Contrast</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="theme-auto"
+                  name="theme"
+                  value="auto"
+                  class="radio-option__input"
+                />
+                <label for="theme-auto" class="radio-option__label"
+                  >Auto (follows system)</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Quiet Mode</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="quiet-off"
+                  name="quiet-mode"
+                  value="off"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="quiet-off" class="radio-option__label">Off</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="quiet-on"
+                  name="quiet-mode"
+                  value="on"
+                  class="radio-option__input"
+                />
+                <label for="quiet-on" class="radio-option__label"
+                  >On (bedtime-friendly)</label
+                >
+              </div>
+            </div>
+            <p class="form-help">
+              Quiet mode uses softer colors and reduced animations
+            </p>
+          </div>
+        </div>
+
+        <div class="settings-layout__section">
+          <h2 class="settings-layout__section-title">Accessibility</h2>
+
+          <div class="form-group">
+            <label class="form-group__label">Text Size</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="size-normal"
+                  name="text-size"
+                  value="normal"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="size-normal" class="radio-option__label"
+                  >Normal</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="size-large"
+                  name="text-size"
+                  value="large"
+                  class="radio-option__input"
+                />
+                <label for="size-large" class="radio-option__label"
+                  >Large</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="size-extra"
+                  name="text-size"
+                  value="extra"
+                  class="radio-option__input"
+                />
+                <label for="size-extra" class="radio-option__label"
+                  >Extra Large</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Font Style</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="font-standard"
+                  name="font-style"
+                  value="standard"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="font-standard" class="radio-option__label"
+                  >Standard</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="font-dyslexia"
+                  name="font-style"
+                  value="dyslexia"
+                  class="radio-option__input"
+                />
+                <label for="font-dyslexia" class="radio-option__label"
+                  >Dyslexia-friendly</label
+                >
+              </div>
+            </div>
+            <p class="form-help">
+              Dyslexia-friendly fonts have better letter spacing and shapes
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Motion Preferences</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="motion-full"
+                  name="motion"
+                  value="full"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="motion-full" class="radio-option__label"
+                  >Full animations</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="motion-reduced"
+                  name="motion"
+                  value="reduced"
+                  class="radio-option__input"
+                />
+                <label for="motion-reduced" class="radio-option__label"
+                  >Reduced motion</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="motion-none"
+                  name="motion"
+                  value="none"
+                  class="radio-option__input"
+                />
+                <label for="motion-none" class="radio-option__label"
+                  >No animations</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-layout__section">
+          <h2 class="settings-layout__section-title">Language & Content</h2>
+
+          <div class="form-group">
+            <label class="form-group__label">Primary Language</label>
+            <select class="form-group__input">
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+              <option value="mr">Marathi</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Additional Languages</label>
+            <div class="checkbox-group">
+              <div class="checkbox-option">
+                <input
+                  type="checkbox"
+                  id="lang-hi"
+                  name="additional-languages"
+                  value="hi"
+                  class="checkbox-option__input"
+                  checked
+                />
+                <label for="lang-hi" class="checkbox-option__label"
+                  >Hindi</label
+                >
+              </div>
+              <div class="checkbox-option">
+                <input
+                  type="checkbox"
+                  id="lang-mr"
+                  name="additional-languages"
+                  value="mr"
+                  class="checkbox-option__input"
+                />
+                <label for="lang-mr" class="checkbox-option__label"
+                  >Marathi</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Content Age Range</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="age-2"
+                  name="age-range"
+                  value="2"
+                  class="radio-option__input"
+                />
+                <label for="age-2" class="radio-option__label">2+ years</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="age-3"
+                  name="age-range"
+                  value="3"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="age-3" class="radio-option__label">3+ years</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="age-4"
+                  name="age-range"
+                  value="4"
+                  class="radio-option__input"
+                />
+                <label for="age-4" class="radio-option__label">4+ years</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-layout__section">
+          <h2 class="settings-layout__section-title">Audio & Playback</h2>
+
+          <div class="form-group">
+            <label class="form-group__label">Audio Preferences</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="audio-once"
+                  name="audio"
+                  value="once"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="audio-once" class="radio-option__label"
+                  >Play once</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="audio-loop"
+                  name="audio"
+                  value="loop"
+                  class="radio-option__input"
+                />
+                <label for="audio-loop" class="radio-option__label">Loop</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="audio-off"
+                  name="audio"
+                  value="off"
+                  class="radio-option__input"
+                />
+                <label for="audio-off" class="radio-option__label"
+                  >Off (visual only)</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Playback Speed</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="speed-slow"
+                  name="playback-speed"
+                  value="slow"
+                  class="radio-option__input"
+                />
+                <label for="speed-slow" class="radio-option__label"
+                  >Slow (0.75x)</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="speed-normal"
+                  name="playback-speed"
+                  value="normal"
+                  class="radio-option__input"
+                  checked
+                />
+                <label for="speed-normal" class="radio-option__label"
+                  >Normal (1x)</label
+                >
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="speed-fast"
+                  name="playback-speed"
+                  value="fast"
+                  class="radio-option__input"
+                />
+                <label for="speed-fast" class="radio-option__label"
+                  >Fast (1.25x)</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-layout__section">
+          <h2 class="settings-layout__section-title">Data & Privacy</h2>
+
+          <div class="privacy-info">
+            <div class="privacy-item">
+              <div class="privacy-item__icon">🔒</div>
+              <div class="privacy-item__content">
+                <h3>Local Storage Only</h3>
+                <p>
+                  All data is stored locally on your device. No information is
+                  sent to external servers.
+                </p>
+              </div>
+            </div>
+
+            <div class="privacy-item">
+              <div class="privacy-item__icon">👨‍👩‍👧‍👦</div>
+              <div class="privacy-item__content">
+                <h3>Family Privacy</h3>
+                <p>
+                  Your child's learning progress and preferences stay private
+                  within your family.
+                </p>
+              </div>
+            </div>
+
+            <div class="privacy-item">
+              <div class="privacy-item__icon">📱</div>
+              <div class="privacy-item__content">
+                <h3>Offline First</h3>
+                <p>
+                  The app works completely offline. Internet is only needed for
+                  initial downloads.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-group__label">Data Management</label>
+            <div class="button-group">
+              <button class="btn btn--secondary">Export Data</button>
+              <button class="btn btn--secondary">Clear All Data</button>
+              <button class="btn btn--secondary">Reset Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-layout__section">
+          <h2 class="settings-layout__section-title">About & Support</h2>
+
+          <div class="about-info">
+            <div class="about-item">
+              <h3>Version</h3>
+              <p>Parent-Kid Learning App v0.1</p>
+            </div>
+
+            <div class="about-item">
+              <h3>Last Updated</h3>
+              <p>December 2024</p>
+            </div>
+
+            <div class="about-item">
+              <h3>Support</h3>
+              <p>For questions or feedback, please visit our support page</p>
+              <a href="#" class="btn btn--small">Support Page</a>
+            </div>
+          </div>
+        </div>
+
+        <nav class="quick-nav">
+          <a href="index.html" class="quick-nav__link">🏠 Home</a>
+          <a href="parent.html" class="quick-nav__link">👨‍👩‍👧‍👦 Parent Mode</a>
+          <a href="about.html" class="quick-nav__link">ℹ️ About</a>
+        </nav>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
-        </div>
+      <div class="footer__content">
+        <p class="footer__text">
+          For families • v0.1 • <a href="#" class="footer__link">Print</a>
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

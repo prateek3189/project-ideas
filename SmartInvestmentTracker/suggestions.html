@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Investment Tracker - AI Suggestions</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <header class="header">
+        <div class="header__content">
+            <h1 class="header__title">Smart Investment Tracker</h1>
+            <div class="header__actions">
+                <div class="date-range">
+                    <span class="date-range__label">As of:</span>
+                    <span class="date-range__value">Dec 15, 2024</span>
+                </div>
+                <a href="#" class="btn btn--secondary" onclick="window.print()">Print Report</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <ul class="nav">
+            <li class="nav__item">
+                <a href="index.html" class="nav__link">Dashboard</a>
+            </li>
+            <li class="nav__item">
+                <a href="portfolio.html" class="nav__link">Portfolio</a>
+            </li>
+            <li class="nav__item">
+                <a href="suggestions.html" class="nav__link nav__link--active">Suggestions</a>
+            </li>
+            <li class="nav__item">
+                <a href="markets.html" class="nav__link">Markets & Trends</a>
+            </li>
+            <li class="nav__item">
+                <a href="transactions.html" class="nav__link">Transactions</a>
+            </li>
+            <li class="nav__item">
+                <a href="goals.html" class="nav__link">Goals & Risk</a>
+            </li>
+            <li class="nav__item">
+                <a href="insights.html" class="nav__link">Insights</a>
+            </li>
+            <li class="nav__item">
+                <a href="settings.html" class="nav__link">Settings</a>
+            </li>
+            <li class="nav__item">
+                <a href="about.html" class="nav__link">About</a>
+            </li>
+        </ul>
+        
+        <div class="theme-toggle">
+            <button class="theme-toggle__btn" aria-label="Toggle theme">
+                <span class="theme-toggle__icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="page-header">
+            <h2 class="page-title">AI Rebalancing Suggestions</h2>
+            <p class="page-subtitle">Personalized recommendations to optimize your portfolio allocation</p>
+        </div>
+
+        <!-- Disclaimer Banner -->
+        <section class="disclaimer-section">
+            <div class="alert alert--info">
+                <h4>📋 Educational Use Only</h4>
+                <p>These suggestions are for educational purposes only and are not investment advice. Always consult with a qualified financial advisor before making investment decisions. Past performance does not guarantee future results.</p>
+            </div>
+        </section>
+
+        <!-- Priority Suggestions -->
+        <section class="priority-suggestions">
+            <h3 class="section-title">High Priority Actions</h3>
+            <div class="suggestions-grid">
+                <div class="suggestion-card suggestion-card--danger">
+                    <div class="suggestion-card__header">
+                        <h4 class="suggestion-card__title">Reduce Concentration Risk</h4>
+                        <span class="badge badge--danger">High Priority</span>
+                    </div>
+                    <div class="suggestion-card__content">
+                        <p class="suggestion-card__description">
+                            <strong>Goal:</strong> Reduce single-stock concentration & volatility while keeping expected return similar.
+                        </p>
+                        <p class="suggestion-card__rationale">
+                            <strong>Rationale:</strong> ABC Corporation represents 14% of your portfolio, creating significant single-name risk. This exceeds recommended diversification limits and increases portfolio volatility.
+                        </p>
+                        <div class="suggestion-card__action">
+                            <span class="action-step">1. Trim ABC Corporation: -5% (₹62,250)</span>
+                            <span class="action-step">2. Add VTI (Total Market): +3% (₹37,350)</span>
+                            <span class="action-step">3. Add BND (Bonds): +2% (₹24,900)</span>
+                        </div>
+                        <div class="suggestion-card__impacts">
+                            <div class="impact-row">
+                                <span class="impact-item impact-item--risk-down">📉 Risk: -15%</span>
+                                <span class="impact-item impact-item--fee-neutral">💰 Fees: —</span>
+                                <span class="impact-item impact-item--yield-up">📈 Yield: +0.2%</span>
+                            </div>
+                        </div>
+                        <details class="suggestion-card__risks">
+                            <summary class="suggestion-card__risk-summary">Risks & Tradeoffs</summary>
+                            <div class="suggestion-card__risk-content">
+                                <p><strong>Tracking Error:</strong> Moving from individual stock to index may increase tracking error vs benchmark.</p>
+                                <p><strong>Tax Implications:</strong> Selling ABC may trigger capital gains. Consider tax-lot harvesting strategies.</p>
+                                <p><strong>Opportunity Cost:</strong> May miss future ABC outperformance, but reduces downside risk.</p>
+                            </div>
+                        </details>
+                        <div class="suggestion-card__tax-note">
+                            <strong>Tax Note:</strong> Rebalancing may trigger capital gains. Consider tax-lot harvesting and timing with tax-loss opportunities.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suggestion-card suggestion-card--warning">
+                    <div class="suggestion-card__header">
+                        <h4 class="suggestion-card__title">Rebalance Asset Allocation</h4>
+                        <span class="badge badge--warning">Medium Priority</span>
+                    </div>
+                    <div class="suggestion-card__content">
+                        <p class="suggestion-card__description">
+                            <strong>Goal:</strong> Align current allocation with target allocation to maintain risk profile.
+                        </p>
+                        <p class="suggestion-card__rationale">
+                            <strong>Rationale:</strong> Your equity allocation is 8% above target (68% vs 60%), while bonds are 3% below target (22% vs 25%). This drift increases risk beyond your comfort zone.
+                        </p>
+                        <div class="suggestion-card__action">
+                            <span class="action-step">1. Reduce Equity: -8% (₹99,600)</span>
+                            <span class="action-step">2. Increase Bonds: +5% (₹62,250)</span>
+                            <span class="action-step">3. Increase Cash: +3% (₹37,350)</span>
+                        </div>
+                        <div class="suggestion-card__impacts">
+                            <div class="impact-row">
+                                <span class="impact-item impact-item--risk-down">📉 Risk: -20%</span>
+                                <span class="impact-item impact-item--fee-down">💰 Fees: -0.01%</span>
+                                <span class="impact-item impact-item--yield-up">📈 Yield: +0.5%</span>
+                            </div>
+                        </div>
+                        <details class="suggestion-card__risks">
+                            <summary class="suggestion-card__risk-summary">Risks & Tradeoffs</summary>
+                            <div class="suggestion-card__risk-content">
+                                <p><strong>Return Impact:</strong> May reduce expected returns in bull markets but provides downside protection.</p>
+                                <p><strong>Market Timing:</strong> Avoids trying to time markets by maintaining consistent allocation.</p>
+                                <p><strong>Rebalancing Frequency:</strong> Consider quarterly or semi-annual rebalancing to minimize costs.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="suggestion-card suggestion-card--info">
+                    <div class="suggestion-card__header">
+                        <h4 class="suggestion-card__title">Optimize Duration Risk</h4>
+                        <span class="badge badge--info">Low Priority</span>
+                    </div>
+                    <div class="suggestion-card__content">
+                        <p class="suggestion-card__description">
+                            <strong>Goal:</strong> Reduce interest rate sensitivity while maintaining bond allocation.
+                        </p>
+                        <p class="suggestion-card__rationale">
+                            <strong>Rationale:</strong> Current bond allocation has high duration risk. Adding short-term bonds can reduce sensitivity to interest rate changes.
+                        </p>
+                        <div class="suggestion-card__action">
+                            <span class="action-step">1. Add SHY (Short Treasury): +2% (₹24,900)</span>
+                            <span class="action-step">2. Reduce BND allocation: -2% (₹24,900)</span>
+                        </div>
+                        <div class="suggestion-card__impacts">
+                            <div class="impact-row">
+                                <span class="impact-item impact-item--risk-down">📉 Risk: -10%</span>
+                                <span class="impact-item impact-item--fee-neutral">💰 Fees: —</span>
+                                <span class="impact-item impact-item--yield-down">📈 Yield: -0.1%</span>
+                        </div>
+                        <details class="suggestion-card__risks">
+                            <summary class="suggestion-card__risk-summary">Risks & Tradeoffs</summary>
+                            <div class="suggestion-card__risk-content">
+                                <p><strong>Yield Tradeoff:</strong> Lower yield but reduced interest rate risk.</p>
+                                <p><strong>Inflation Risk:</strong> Short-term bonds may not keep pace with inflation.</p>
+                                <p><strong>Liquidity:</strong> Improved liquidity for emergency needs.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Suggestions -->
+        <section class="additional-suggestions">
+            <h3 class="section-title">Additional Optimizations</h3>
+            <div class="suggestions-grid">
+                <div class="suggestion-card">
+                    <div class="suggestion-card__header">
+                        <h4 class="suggestion-card__title">Add Value Factor Exposure</h4>
+                        <span class="badge badge--info">Enhancement</span>
+                    </div>
+                    <div class="suggestion-card__content">
+                        <p class="suggestion-card__description">
+                            <strong>Goal:</strong> Improve long-term returns through value factor exposure.
+                        </p>
+                        <p class="suggestion-card__rationale">
+                            <strong>Rationale:</strong> Current portfolio is growth-heavy. Adding value exposure can improve diversification and long-term returns.
+                        </p>
+                        <div class="suggestion-card__action">
+                            <span class="action-step">1. Add VTV (Value ETF): +2% (₹24,900)</span>
+                            <span class="action-step">2. Reduce VTI: -2% (₹24,900)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-card__header">
+                        <h4 class="suggestion-card__title">Increase International Exposure</h4>
+                        <span class="badge badge--info">Diversification</span>
+                    </div>
+                    <div class="suggestion-card__content">
+                        <p class="suggestion-card__description">
+                            <strong>Goal:</strong> Improve geographic diversification and reduce home bias.
+                        </p>
+                        <p class="suggestion-card__rationale">
+                            <strong>Rationale:</strong> International allocation is below target. Increasing exposure can improve diversification and capture global growth.
+                        </p>
+                        <div class="suggestion-card__action">
+                            <span class="action-step">1. Add VXUS: +3% (₹37,350)</span>
+                            <span class="action-step">2. Reduce VTI: -3% (₹37,350)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suggestion-card">
+                    <div class="suggestion-card__header">
+                        <h4 class="suggestion-card__title">Consolidate Cash Holdings</h4>
+                        <span class="badge badge--info">Efficiency</span>
+                    </div>
+                    <div class="suggestion-card__content">
+                        <p class="suggestion-card__description">
+                            <strong>Goal:</strong> Optimize cash management and improve yield.
+                        </p>
+                        <p class="suggestion-card__rationale">
+                            <strong>Rationale:</strong> Multiple cash accounts can be consolidated for better management and potentially higher yields.
+                        </p>
+                        <div class="suggestion-card__action">
+                            <span class="action-step">1. Consolidate to high-yield savings</span>
+                            <span class="action-step">2. Consider money market funds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rebalance Summary -->
+        <section class="rebalance-summary">
+            <h3 class="section-title">Proposed Rebalance Summary</h3>
+            <div class="tile">
+                <div class="tile__content">
+                    <div class="two-column">
+                        <div>
+                            <h4>Before Rebalancing</h4>
+                            <div class="bar-chart">
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Equity</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 68%; background-color: var(--color-equity);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">68%</span>
+                                </div>
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Bonds</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 22%; background-color: var(--color-bonds);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">22%</span>
+                                </div>
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Cash</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 8%; background-color: var(--color-cash);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">8%</span>
+                                </div>
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Alt</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 2%; background-color: var(--color-alt);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>After Rebalancing</h4>
+                            <div class="bar-chart">
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Equity</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 60%; background-color: var(--color-equity);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">60%</span>
+                                </div>
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Bonds</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 25%; background-color: var(--color-bonds);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">25%</span>
+                                </div>
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Cash</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 11%; background-color: var(--color-cash);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">11%</span>
+                                </div>
+                                <div class="bar-chart__item">
+                                    <span class="bar-chart__label">Alt</span>
+                                    <div class="bar-chart__track">
+                                        <div class="bar-chart__fill" style="width: 4%; background-color: var(--color-alt);"></div>
+                                    </div>
+                                    <span class="bar-chart__value">4%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert--warning mt-6">
+                        <h4>⚠️ Important Considerations</h4>
+                        <ul>
+                            <li><strong>Tax Implications:</strong> Rebalancing may trigger capital gains taxes. Consider tax-lot harvesting strategies.</li>
+                            <li><strong>Transaction Costs:</strong> Factor in brokerage fees and bid-ask spreads.</li>
+                            <li><strong>Market Conditions:</strong> Consider current market volatility and liquidity.</li>
+                            <li><strong>Personal Circumstances:</strong> Review your financial goals and risk tolerance before implementing changes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="action-buttons">
+            <div class="flex gap-4 justify-center">
+                <button class="btn btn--primary">Approve Rebalance Plan</button>
+                <button class="btn btn--secondary">Save for Later</button>
+                <button class="btn btn--ghost">Export Plan</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__text">Smart Investment Tracker v0.1 — Educational Use Only</p>
+            <p class="footer__disclaimer">Not investment advice. See <a href="about.html">About</a> for disclaimers.</p>
+        </div>
+    </footer>
+</body>
+</html>

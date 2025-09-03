@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Visual Search</title>
+    <meta
+      name="description"
+      content="Learn about Visual Search app and how it works"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="container">
+          <div class="header">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="header__brand-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Visual Search
+            </a>
+
+            <nav class="header__nav">
+              <a href="index.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  ></path>
+                  <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                </svg>
+                Home
+              </a>
+
+              <button
+                class="theme-toggle"
+                onclick="toggleTheme()"
+                aria-label="Toggle theme"
+              >
+                <svg
+                  class="theme-toggle__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                Light
+              </button>
+
+              <a href="settings.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"
+                  ></path>
+                </svg>
+                Settings
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="shell__main">
+        <div class="container">
+          <!-- Hero Section -->
+          <section class="text-center mb-8">
+            <h1 class="text-display font-bold mb-4">About Visual Search</h1>
+            <p class="text-lg text-muted mb-6">
+              Find similar items from photos using advanced visual recognition
+              technology
+            </p>
+          </section>
+
+          <!-- How It Works -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">How It Works</h2>
+            <div class="grid grid--3 gap-6">
+              <div class="card text-center">
+                <div class="card__body">
+                  <div
+                    class="mb-4"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(45deg, #2563eb, #3b82f6);
+                      border-radius: 50%;
+                      margin: 0 auto;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                      ></path>
+                      <polyline points="7,10 12,15 17,10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold mb-2">
+                    1. Upload or Capture
+                  </h3>
+                  <p class="text-muted">
+                    Take a photo or upload an image of the item you want to find
+                    similar products for.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card text-center">
+                <div class="card__body">
+                  <div
+                    class="mb-4"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(45deg, #10b981, #34d399);
+                      border-radius: 50%;
+                      margin: 0 auto;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold mb-2">2. AI Analysis</h3>
+                  <p class="text-muted">
+                    Our visual recognition system analyzes the image to identify
+                    objects, colors, shapes, and patterns.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card text-center">
+                <div class="card__body">
+                  <div
+                    class="mb-4"
+                    style="
+                      width: 80px;
+                      height: 80px;
+                      background: linear-gradient(45deg, #8b5cf6, #a78bfa);
+                      border-radius: 50%;
+                      margin: 0 auto;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <svg
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                    >
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold mb-2">3. Find Matches</h3>
+                  <p class="text-muted">
+                    Get a curated list of similar items with confidence scores
+                    and detailed explanations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Features -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Features</h2>
+            <div class="grid grid--2 gap-6">
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="text-lg font-semibold mb-3">🛍️ Shop Mode</h3>
+                  <p class="text-muted mb-3">
+                    Find similar products for purchase with price comparisons,
+                    availability, and store information.
+                  </p>
+                  <ul class="text-sm text-muted">
+                    <li>• Product recommendations</li>
+                    <li>• Price range filtering</li>
+                    <li>• Brand and style filters</li>
+                    <li>• Store availability</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="text-lg font-semibold mb-3">📚 Learn Mode</h3>
+                  <p class="text-muted mb-3">
+                    Identify objects, plants, landmarks, and artworks with
+                    educational information and care tips.
+                  </p>
+                  <ul class="text-sm text-muted">
+                    <li>• Object identification</li>
+                    <li>• Educational content</li>
+                    <li>• Care instructions</li>
+                    <li>• Historical context</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="text-lg font-semibold mb-3">🎯 Smart Detection</h3>
+                  <p class="text-muted mb-3">
+                    Advanced object detection with bounding boxes and confidence
+                    scores for precise matching.
+                  </p>
+                  <ul class="text-sm text-muted">
+                    <li>• Multi-object detection</li>
+                    <li>• Confidence scoring</li>
+                    <li>• Visual similarity analysis</li>
+                    <li>• Crop and focus tools</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="text-lg font-semibold mb-3">📱 Collections</h3>
+                  <p class="text-muted mb-3">
+                    Save and organize your favorite finds with custom folders
+                    and notes for future reference.
+                  </p>
+                  <ul class="text-sm text-muted">
+                    <li>• Save favorite items</li>
+                    <li>• Organize in folders</li>
+                    <li>• Add personal notes</li>
+                    <li>• Print collections</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Technology -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Technology</h2>
+            <div class="card">
+              <div class="card__body">
+                <div class="grid grid--2 gap-6">
+                  <div>
+                    <h3 class="text-lg font-semibold mb-3">Computer Vision</h3>
+                    <p class="text-muted mb-4">
+                      Our system uses state-of-the-art computer vision models to
+                      analyze images and extract visual features including:
+                    </p>
+                    <ul class="text-sm text-muted mb-4">
+                      <li>• Object detection and classification</li>
+                      <li>• Color palette extraction</li>
+                      <li>• Shape and texture analysis</li>
+                      <li>• Pattern recognition</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 class="text-lg font-semibold mb-3">
+                      Similarity Matching
+                    </h3>
+                    <p class="text-muted mb-4">
+                      Advanced algorithms compare visual features to find the
+                      most similar items using:
+                    </p>
+                    <ul class="text-sm text-muted mb-4">
+                      <li>• Deep learning embeddings</li>
+                      <li>• Multi-dimensional similarity</li>
+                      <li>• Weighted feature matching</li>
+                      <li>• Confidence scoring</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="alert alert--info">
+                  <strong>Note:</strong> This is a prototype demonstration. In a
+                  production version, the system would use real computer vision
+                  models and live product databases.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Privacy Section -->
+          <section class="mb-8" id="privacy">
+            <h2 class="text-2xl font-semibold mb-6">Privacy & Security</h2>
+            <div class="card">
+              <div class="card__body">
+                <h3 class="text-lg font-semibold mb-3">Your Privacy Matters</h3>
+                <p class="text-muted mb-4">
+                  We are committed to protecting your privacy and ensuring your
+                  data security:
+                </p>
+
+                <div class="grid grid--2 gap-6">
+                  <div>
+                    <h4 class="font-semibold mb-2">Data Protection</h4>
+                    <ul class="text-sm text-muted">
+                      <li>• Images are processed locally when possible</li>
+                      <li>• No personal data is stored without consent</li>
+                      <li>• Encrypted data transmission</li>
+                      <li>• Regular security audits</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold mb-2">User Control</h4>
+                    <ul class="text-sm text-muted">
+                      <li>• Choose what data to share</li>
+                      <li>• Delete your data anytime</li>
+                      <li>• Export your collections</li>
+                      <li>• Privacy settings control</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="alert alert--privacy mt-4">
+                  <strong>Prototype Notice:</strong> In this demonstration
+                  version, no images are actually uploaded or stored. All
+                  processing is simulated for demonstration purposes.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Accessibility -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Accessibility</h2>
+            <div class="card">
+              <div class="card__body">
+                <p class="text-muted mb-4">
+                  Visual Search is designed to be accessible to all users:
+                </p>
+
+                <div class="grid grid--3 gap-4">
+                  <div>
+                    <h4 class="font-semibold mb-2">Visual Accessibility</h4>
+                    <ul class="text-sm text-muted">
+                      <li>• High contrast themes</li>
+                      <li>• Large, clear fonts</li>
+                      <li>• Color-blind friendly palettes</li>
+                      <li>• Reduced motion options</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold mb-2">Motor Accessibility</h4>
+                    <ul class="text-sm text-muted">
+                      <li>• Keyboard navigation</li>
+                      <li>• Large click targets</li>
+                      <li>• Voice control support</li>
+                      <li>• Touch-friendly interface</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold mb-2">Cognitive Accessibility</h4>
+                    <ul class="text-sm text-muted">
+                      <li>• Clear, simple language</li>
+                      <li>• Consistent navigation</li>
+                      <li>• Progress indicators</li>
+                      <li>• Helpful error messages</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Version Info -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Version Information</h2>
+            <div class="card">
+              <div class="card__body">
+                <div class="grid grid--2 gap-6">
+                  <div>
+                    <h3 class="text-lg font-semibold mb-3">Current Version</h3>
+                    <p class="text-muted mb-2">
+                      <strong>Version:</strong> 0.1.0 (Prototype)
+                    </p>
+                    <p class="text-muted mb-2">
+                      <strong>Release Date:</strong> December 2024
+                    </p>
+                    <p class="text-muted mb-2">
+                      <strong>Build:</strong> Static HTML/CSS
+                    </p>
+                    <p class="text-muted">
+                      <strong>Status:</strong> Demonstration
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 class="text-lg font-semibold mb-3">What's Next</h3>
+                    <ul class="text-sm text-muted">
+                      <li>• Real camera integration</li>
+                      <li>• Image upload functionality</li>
+                      <li>• Live product databases</li>
+                      <li>• Advanced AI models</li>
+                      <li>• Mobile app version</li>
+                      <li>• Offline capabilities</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact -->
+          <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Contact & Support</h2>
+            <div class="card">
+              <div class="card__body">
+                <p class="text-muted mb-4">
+                  Have questions or feedback? We'd love to hear from you:
+                </p>
+
+                <div class="grid grid--2 gap-6">
+                  <div>
+                    <h4 class="font-semibold mb-2">Support</h4>
+                    <p class="text-sm text-muted mb-2">
+                      For technical support and bug reports:
+                    </p>
+                    <p class="text-sm">
+                      <a href="mailto:support@visualsearch.app"
+                        >support@visualsearch.app</a
+                      >
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold mb-2">Feedback</h4>
+                    <p class="text-sm text-muted mb-2">
+                      For feature requests and suggestions:
+                    </p>
+                    <p class="text-sm">
+                      <a href="mailto:feedback@visualsearch.app"
+                        >feedback@visualsearch.app</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div class="alert alert--info mt-4">
+                  <strong>Note:</strong> This is a prototype demonstration.
+                  Contact information is for demonstration purposes only.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <div class="flex flex--between items-center">
+            <div class="text-sm text-muted">
+              Visual Search v0.1 • <a href="about.html">About</a> •
+              <a href="about.html#privacy">Privacy</a>
+            </div>
+            <div class="text-sm text-muted">
+              <a href="#" onclick="window.print()" class="header__print-link"
+                >Print</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme") || "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        body.setAttribute("data-theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = newTheme === "dark" ? "Dark" : "Light";
+
+        // Store preference
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.body.setAttribute("data-theme", savedTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = savedTheme === "dark" ? "Dark" : "Light";
+      });
+    </script>
+  </body>
+</html>

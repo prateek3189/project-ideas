@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pronunciation Lab - Language Learning Buddy</title>
+    <meta
+      name="description"
+      content="Analyze your pronunciation with detailed feedback, IPA breakdowns, and improvement tips"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search phrases, sounds..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a href="topics.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a
+              href="pronun-lab.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a href="lessons.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a href="review.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a href="progress.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Recent Phrases</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">☕</span>
+              "Me gustaría un café"
+              <span class="cefr-badge cefr-badge--a1">A1</span>
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              "¿Podrías ayudarme?"
+              <span class="cefr-badge cefr-badge--a2">A2</span>
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              "Necesito estudiar más"
+              <span class="cefr-badge cefr-badge--b1">B1</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Pronunciation Lab</h1>
+          <p class="main__subtitle">
+            Analyze your pronunciation with detailed feedback and improvement
+            tips
+          </p>
+        </div>
+
+        <div class="main__content">
+          <!-- Selected Phrase Analysis -->
+          <div class="phrase-block">
+            <div class="phrase-block__native">
+              Me gustaría un cappuccino, por favor.
+            </div>
+            <div class="phrase-block__transliteration">
+              Meh goos-tah-ree-ah oon kah-poo-chee-noh, pohr fah-vor.
+            </div>
+            <div class="phrase-block__translation">
+              I would like a cappuccino, please.
+            </div>
+          </div>
+
+          <!-- Overall Score -->
+          <div class="mt-6">
+            <h3>Overall Pronunciation Score</h3>
+            <div class="score-bar">
+              <div class="score-bar__label">
+                <span>Overall Score</span>
+                <span>78/100</span>
+              </div>
+              <div
+                class="score-bar__fill score-bar__fill--medium"
+                style="width: 78%"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Detailed Scores -->
+          <div class="mt-6">
+            <h3>Detailed Breakdown</h3>
+            <div class="d-grid grid-cols-2 gap-6">
+              <div>
+                <div class="score-bar">
+                  <div class="score-bar__label">
+                    <span>Stress & Rhythm</span>
+                    <span>85/100</span>
+                  </div>
+                  <div
+                    class="score-bar__fill score-bar__fill--high"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="score-bar">
+                  <div class="score-bar__label">
+                    <span>Intonation</span>
+                    <span>72/100</span>
+                  </div>
+                  <div
+                    class="score-bar__fill score-bar__fill--medium"
+                    style="width: 72%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="score-bar">
+                  <div class="score-bar__label">
+                    <span>Phoneme Accuracy</span>
+                    <span>75/100</span>
+                  </div>
+                  <div
+                    class="score-bar__fill score-bar__fill--medium"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="score-bar">
+                  <div class="score-bar__label">
+                    <span>Fluency</span>
+                    <span>80/100</span>
+                  </div>
+                  <div
+                    class="score-bar__fill score-bar__fill--high"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IPA Analysis -->
+          <div class="mt-8">
+            <h3>Phoneme Analysis (IPA)</h3>
+            <div class="ipa-line">
+              <span class="ipa__seg ipa__seg--high">me</span>
+              <span class="ipa__seg ipa__seg--medium">ɡus</span>
+              <span class="ipa__seg ipa__seg--high">ta</span>
+              <span class="ipa__seg ipa__seg--low">ˈri</span>
+              <span class="ipa__seg ipa__seg--high">a</span>
+              <span class="ipa__seg ipa__seg--high">un</span>
+              <span class="ipa__seg ipa__seg--medium">ˌkapu</span>
+              <span class="ipa__seg ipa__seg--low">ˈtʃi</span>
+              <span class="ipa__seg ipa__seg--high">no</span>
+              <span class="ipa__seg ipa__seg--high">por</span>
+              <span class="ipa__seg ipa__seg--medium">fa</span>
+              <span class="ipa__seg ipa__seg--high">ˈvor</span>
+            </div>
+
+            <div class="mt-4">
+              <h4>Phoneme Breakdown</h4>
+              <div class="d-grid grid-cols-3 gap-4">
+                <div>
+                  <h5 class="text-success">High Accuracy (85-100%)</h5>
+                  <ul>
+                    <li><strong>/me/</strong> - "me" - Perfect</li>
+                    <li><strong>/ta/</strong> - "ta" - Clear</li>
+                    <li><strong>/a/</strong> - "a" - Natural</li>
+                    <li><strong>/un/</strong> - "un" - Good</li>
+                    <li><strong>/no/</strong> - "no" - Clear</li>
+                    <li><strong>/vor/</strong> - "vor" - Strong</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 class="text-warning">Medium Accuracy (70-84%)</h5>
+                  <ul>
+                    <li><strong>/ɡus/</strong> - "gus" - Slightly soft</li>
+                    <li><strong>/kapu/</strong> - "kapu" - Good rhythm</li>
+                    <li><strong>/fa/</strong> - "fa" - Could be clearer</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 class="text-danger">Low Accuracy (Below 70%)</h5>
+                  <ul>
+                    <li><strong>/ˈri/</strong> - "ri" - Stress unclear</li>
+                    <li>
+                      <strong>/ˈtʃi/</strong> - "tʃi" - "ch" sound needs work
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Playback Controls -->
+          <div class="mt-8">
+            <h3>Practice Tools</h3>
+            <div class="d-flex gap-4 items-center">
+              <button class="btn btn--primary btn--lg">🐌 Slow Playback</button>
+              <button class="btn btn--secondary btn--lg">
+                ▶️ Normal Speed
+              </button>
+              <button class="btn btn--outline btn--lg">🎭 Shadow Mode</button>
+            </div>
+          </div>
+
+          <!-- Common Mistakes -->
+          <div class="mt-8">
+            <h3>Common Mistakes & Tips</h3>
+            <div class="d-grid grid-cols-2 gap-6">
+              <div class="alert alert--warning">
+                <h4>Stress on "gustaría"</h4>
+                <p>
+                  The stress should be on the second-to-last syllable:
+                  <strong>gus-ta-rí-a</strong>. Practice saying it slowly to
+                  feel the rhythm.
+                </p>
+              </div>
+
+              <div class="alert alert--danger">
+                <h4>"cc" in "cappuccino"</h4>
+                <p>
+                  The "cc" makes a "ch" sound like in "church". Say
+                  "cap-pu-chi-no" instead of "cap-pu-ki-no".
+                </p>
+              </div>
+
+              <div class="alert alert--info">
+                <h4>Rolled "r" in "por favor"</h4>
+                <p>
+                  Practice the rolled "r" by saying "butter" quickly in English,
+                  or try saying "rrrr" like a cat purring.
+                </p>
+              </div>
+
+              <div class="alert alert--success">
+                <h4>Great job on "Me gustaría"</h4>
+                <p>
+                  Your pronunciation of "Me gustaría" is excellent! The "g"
+                  sound and rhythm are perfect.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mouth Shape Tips -->
+          <div class="mt-8">
+            <h3>Mouth Shape & Articulation</h3>
+            <div class="d-grid grid-cols-3 gap-6">
+              <div class="phrase-block">
+                <h4>For "cappuccino" /k/</h4>
+                <p>
+                  Place the back of your tongue against the soft palate (like
+                  saying "k" in "key")
+                </p>
+                <p>
+                  <strong>Practice:</strong> Say "key" → "kee" → "kappuccino"
+                </p>
+              </div>
+
+              <div class="phrase-block">
+                <h4>For "por favor" /r/</h4>
+                <p>
+                  Lightly tap the tip of your tongue against the roof of your
+                  mouth, just behind your teeth
+                </p>
+                <p>
+                  <strong>Practice:</strong> Say "butter" quickly, or "rrrr"
+                  like a cat
+                </p>
+              </div>
+
+              <div class="phrase-block">
+                <h4>For "gustaría" /ɡ/</h4>
+                <p>
+                  Make a soft "g" sound like in "go" but gentler, almost like
+                  "h" + "g"
+                </p>
+                <p>
+                  <strong>Practice:</strong> Say "huh" → "huh-guh" → "gustaría"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Phrases -->
+          <div class="mt-8">
+            <h3>Practice Similar Phrases</h3>
+            <div class="d-grid grid-cols-2 gap-6">
+              <div class="phrase-block">
+                <div class="phrase-block__native">
+                  Me gustaría un café americano.
+                </div>
+                <div class="phrase-block__transliteration">
+                  Meh goos-tah-ree-ah oon kah-feh ah-meh-ree-kah-noh.
+                </div>
+                <div class="phrase-block__translation">
+                  I would like an American coffee.
+                </div>
+              </div>
+
+              <div class="phrase-block">
+                <div class="phrase-block__native">
+                  ¿Podrías traerme la cuenta?
+                </div>
+                <div class="phrase-block__transliteration">
+                  ¿Poh-dree-ahs trah-ehr-meh lah kwen-tah?
+                </div>
+                <div class="phrase-block__translation">
+                  Could you bring me the bill?
+                </div>
+              </div>
+
+              <div class="phrase-block">
+                <div class="phrase-block__native">
+                  ¿Tienes algo sin cafeína?
+                </div>
+                <div class="phrase-block__transliteration">
+                  ¿Tee-eh-nehs ahl-goh seen kah-feh-ee-nah?
+                </div>
+                <div class="phrase-block__translation">
+                  Do you have anything without caffeine?
+                </div>
+              </div>
+
+              <div class="phrase-block">
+                <div class="phrase-block__native">
+                  ¿Cuánto cuesta el cappuccino?
+                </div>
+                <div class="phrase-block__transliteration">
+                  ¿Kwan-toh kwehs-tah ehl kah-poo-chee-noh?
+                </div>
+                <div class="phrase-block__translation">
+                  How much does the cappuccino cost?
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Tracking -->
+          <div class="mt-8">
+            <h3>Your Progress</h3>
+            <div class="d-grid grid-cols-4 gap-4">
+              <div class="progress-tile">
+                <div class="progress-tile__number">78</div>
+                <div class="progress-tile__label">Current Score</div>
+              </div>
+              <div class="progress-tile">
+                <div class="progress-tile__number">+5</div>
+                <div class="progress-tile__label">Improvement</div>
+              </div>
+              <div class="progress-tile">
+                <div class="progress-tile__number">12</div>
+                <div class="progress-tile__label">Phrases Practiced</div>
+              </div>
+              <div class="progress-tile">
+                <div class="progress-tile__number">3</div>
+                <div class="progress-tile__label">Sessions Today</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

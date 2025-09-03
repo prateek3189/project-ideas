@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Campaign - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print campaign brief"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="campaigns.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="wizard">
+          <div class="wizard__header">
+            <h2 class="wizard__title">Create New Campaign</h2>
+            <p class="wizard__subtitle">
+              Build and launch your marketing campaign in 5 simple steps
+            </p>
+          </div>
+
+          <!-- Progress Steps -->
+          <div class="steps">
+            <div class="step step--active">
+              <div class="step__number">1</div>
+              <div class="step__label">Brief</div>
+            </div>
+            <div class="step">
+              <div class="step__number">2</div>
+              <div class="step__label">Audience</div>
+            </div>
+            <div class="step">
+              <div class="step__number">3</div>
+              <div class="step__label">Content</div>
+            </div>
+            <div class="step">
+              <div class="step__number">4</div>
+              <div class="step__label">Schedule</div>
+            </div>
+            <div class="step">
+              <div class="step__number">5</div>
+              <div class="step__label">Review</div>
+            </div>
+          </div>
+
+          <div class="wizard__content">
+            <!-- Step 1: Brief -->
+            <div class="tabs">
+              <ul class="tabs__list">
+                <li class="tabs__item">
+                  <a href="#brief" class="tabs__link tabs__link--active"
+                    >Campaign Brief</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs__content">
+              <form class="campaign-form">
+                <div class="form-group">
+                  <label for="campaign-name" class="form-label"
+                    >Campaign Name</label
+                  >
+                  <input
+                    type="text"
+                    id="campaign-name"
+                    class="form-input"
+                    placeholder="e.g., Spring Sale 2024"
+                    required
+                  />
+                  <div class="form-help">
+                    Choose a descriptive name for your campaign
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="campaign-objective" class="form-label"
+                    >Campaign Objective</label
+                  >
+                  <select id="campaign-objective" class="form-select" required>
+                    <option value="">Select objective</option>
+                    <option value="awareness">Brand Awareness</option>
+                    <option value="engagement">Engagement</option>
+                    <option value="conversion">Conversion</option>
+                    <option value="retention">Customer Retention</option>
+                    <option value="reactivation">Reactivation</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Channel</label>
+                  <div class="flex gap-4">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        name="channel"
+                        value="email"
+                        checked
+                      />
+                      <span class="badge badge--email">Email</span>
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" name="channel" value="sms" />
+                      <span class="badge badge--sms">SMS</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="campaign-tags" class="form-label">Tags</label>
+                  <input
+                    type="text"
+                    id="campaign-tags"
+                    class="form-input"
+                    placeholder="e.g., spring, sale, product-launch"
+                  />
+                  <div class="form-help">
+                    Separate tags with commas for better organization
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="campaign-owner" class="form-label"
+                    >Campaign Owner</label
+                  >
+                  <input
+                    type="text"
+                    id="campaign-owner"
+                    class="form-input"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="campaign-budget" class="form-label"
+                    >Budget Note</label
+                  >
+                  <textarea
+                    id="campaign-budget"
+                    class="form-textarea"
+                    placeholder="Optional budget information or constraints..."
+                  ></textarea>
+                </div>
+
+                <details class="form-group">
+                  <summary class="form-label">Success Metrics</summary>
+                  <div class="mt-4">
+                    <div class="flex gap-4">
+                      <label class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="metrics"
+                          value="open-rate"
+                        />
+                        <span>Open Rate</span>
+                      </label>
+                      <label class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="metrics"
+                          value="click-rate"
+                        />
+                        <span>Click Rate</span>
+                      </label>
+                      <label class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="metrics"
+                          value="reply-rate"
+                        />
+                        <span>Reply Rate</span>
+                      </label>
+                      <label class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="metrics"
+                          value="conversion"
+                        />
+                        <span>Conversion</span>
+                      </label>
+                    </div>
+                    <div class="form-help">
+                      Select the metrics you'll use to measure campaign success
+                    </div>
+                  </div>
+                </details>
+              </form>
+            </div>
+          </div>
+
+          <!-- Step 2: Audience -->
+          <div class="wizard__content">
+            <div class="tabs">
+              <ul class="tabs__list">
+                <li class="tabs__item">
+                  <a href="#audience" class="tabs__link tabs__link--active"
+                    >Audience Selection</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs__content">
+              <div class="form-group">
+                <label class="form-label">Audience Segments</label>
+                <div class="flex flex-wrap gap-3 mb-4">
+                  <label class="chip chip--selected">
+                    <input type="radio" name="segment" value="all" checked />
+                    All Subscribers
+                    <span class="chip__count">(45,120)</span>
+                  </label>
+                  <label class="chip">
+                    <input type="radio" name="segment" value="new" />
+                    New Signups < 30d
+                    <span class="chip__count">(3,240)</span>
+                  </label>
+                  <label class="chip">
+                    <input type="radio" name="segment" value="lapsed" />
+                    Lapsed 90d
+                    <span class="chip__count">(8,920)</span>
+                  </label>
+                  <label class="chip">
+                    <input type="radio" name="segment" value="high-value" />
+                    High Value
+                    <span class="chip__count">(1,580)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Additional Filters</label>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label for="filter-country" class="form-label"
+                          >Country</label
+                        >
+                        <select id="filter-country" class="form-select">
+                          <option value="">All Countries</option>
+                          <option value="US">United States</option>
+                          <option value="CA">Canada</option>
+                          <option value="UK">United Kingdom</option>
+                          <option value="AU">Australia</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="filter-device" class="form-label"
+                          >Device</label
+                        >
+                        <select id="filter-device" class="form-select">
+                          <option value="">All Devices</option>
+                          <option value="mobile">Mobile</option>
+                          <option value="desktop">Desktop</option>
+                          <option value="tablet">Tablet</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="filter-last-seen" class="form-label"
+                          >Last Seen</label
+                        >
+                        <select id="filter-last-seen" class="form-select">
+                          <option value="">Any Time</option>
+                          <option value="7d">Last 7 days</option>
+                          <option value="30d">Last 30 days</option>
+                          <option value="90d">Last 90 days</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="filter-purchases" class="form-label"
+                          >Purchase Count</label
+                        >
+                        <select id="filter-purchases" class="form-select">
+                          <option value="">Any</option>
+                          <option value="0">0 purchases</option>
+                          <option value="1-5">1-5 purchases</option>
+                          <option value="5+">5+ purchases</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Suppression Lists</label>
+                <div class="flex flex-wrap gap-3">
+                  <label class="chip chip--suppressed">
+                    <input
+                      type="checkbox"
+                      name="suppression"
+                      value="unsubscribed"
+                      checked
+                    />
+                    Unsubscribed
+                    <span class="chip__count">(2,340)</span>
+                  </label>
+                  <label class="chip chip--suppressed">
+                    <input
+                      type="checkbox"
+                      name="suppression"
+                      value="bounced"
+                      checked
+                    />
+                    Bounced
+                    <span class="chip__count">(890)</span>
+                  </label>
+                  <label class="chip chip--suppressed">
+                    <input
+                      type="checkbox"
+                      name="suppression"
+                      value="do-not-contact"
+                      checked
+                    />
+                    Do Not Contact
+                    <span class="chip__count">(156)</span>
+                  </label>
+                </div>
+                <div class="form-help">
+                  Suppressed contacts will be automatically excluded
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="card">
+                  <div class="card__header">
+                    <h4 class="card__title">Audience Size Estimate</h4>
+                  </div>
+                  <div class="card__content">
+                    <div class="meter">
+                      <div class="meter__label">
+                        <span>Estimated Reach</span>
+                        <span class="meter__value">42,734 contacts</span>
+                      </div>
+                      <div class="meter__fill" style="width: 85%"></div>
+                    </div>
+                    <div class="form-help">
+                      Based on selected segments and filters
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Content -->
+          <div class="wizard__content">
+            <div class="tabs">
+              <ul class="tabs__list">
+                <li class="tabs__item">
+                  <a href="#content" class="tabs__link tabs__link--active"
+                    >Content Creation</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs__content">
+              <!-- Email Content -->
+              <div class="form-group">
+                <h4 class="form-label">Email Content</h4>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="form-group">
+                      <label for="email-subject" class="form-label"
+                        >Subject Line</label
+                      >
+                      <input
+                        type="text"
+                        id="email-subject"
+                        class="form-input"
+                        placeholder="Don't miss our biggest sale of the year!"
+                        required
+                      />
+                      <div class="form-help">
+                        Keep it under 50 characters for best results
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email-preheader" class="form-label"
+                        >Preheader Text</label
+                      >
+                      <input
+                        type="text"
+                        id="email-preheader"
+                        class="form-input"
+                        placeholder="Up to 50% off everything in store"
+                      />
+                      <div class="form-help">
+                        Preview text shown in email clients
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group">
+                        <label for="email-from-name" class="form-label"
+                          >From Name</label
+                        >
+                        <input
+                          type="text"
+                          id="email-from-name"
+                          class="form-input"
+                          placeholder="Your Company"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="email-from-email" class="form-label"
+                          >From Email</label
+                        >
+                        <input
+                          type="email"
+                          id="email-from-email"
+                          class="form-input"
+                          placeholder="noreply@yourcompany.com"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Email Builder</label>
+                      <div class="email-builder">
+                        <div class="builder__block builder__block--hero">
+                          <div class="builder__block-header">
+                            <span class="builder__block-type"
+                              >Hero Section</span
+                            >
+                            <button
+                              type="button"
+                              class="btn btn--ghost btn--small"
+                            >
+                              Edit
+                            </button>
+                          </div>
+                          <div class="builder__block-content">
+                            <h2>Spring Sale - Up to 50% Off!</h2>
+                            <p>
+                              Don't miss our biggest sale of the year. Shop now
+                              and save on your favorite items.
+                            </p>
+                            <button class="btn btn--primary">Shop Now</button>
+                          </div>
+                        </div>
+
+                        <div class="builder__block builder__block--text">
+                          <div class="builder__block-header">
+                            <span class="builder__block-type">Text Block</span>
+                            <button
+                              type="button"
+                              class="btn btn--ghost btn--small"
+                            >
+                              Edit
+                            </button>
+                          </div>
+                          <div class="builder__block-content">
+                            <p>
+                              This sale won't last long! Browse our curated
+                              collection of spring essentials and find the
+                              perfect pieces for your wardrobe.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div
+                          class="builder__block builder__block--product-grid"
+                        >
+                          <div class="builder__block-header">
+                            <span class="builder__block-type"
+                              >Product Grid</span
+                            >
+                            <button
+                              type="button"
+                              class="btn btn--ghost btn--small"
+                            >
+                              Edit
+                            </button>
+                          </div>
+                          <div class="builder__block-content">
+                            <div class="product-grid">
+                              <div class="product-item">Product 1</div>
+                              <div class="product-item">Product 2</div>
+                              <div class="product-item">Product 3</div>
+                              <div class="product-item">Product 4</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Footer</label>
+                      <div class="card">
+                        <div class="card__content">
+                          <p>
+                            <strong>Your Company Name</strong><br />
+                            123 Business Street<br />
+                            City, State 12345<br />
+                            United States
+                          </p>
+                          <p>
+                            <a href="#">Unsubscribe</a> |
+                            <a href="#">Update Preferences</a>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="form-help">
+                        Physical address required for compliance
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SMS Content -->
+              <div class="form-group">
+                <h4 class="form-label">SMS Content</h4>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="form-group">
+                      <label for="sms-sender-id" class="form-label"
+                        >Sender ID</label
+                      >
+                      <input
+                        type="text"
+                        id="sms-sender-id"
+                        class="form-input"
+                        placeholder="YourBrand"
+                        maxlength="11"
+                      />
+                      <div class="form-help">
+                        Alphanumeric sender ID (max 11 characters)
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="sms-message" class="form-label"
+                        >Message</label
+                      >
+                      <textarea
+                        id="sms-message"
+                        class="form-textarea"
+                        placeholder="Hi {{first_name}}! Spring sale is here - up to 50% off everything! Shop now: {{link}} Reply STOP to opt out."
+                        rows="4"
+                      ></textarea>
+                      <div class="sms-counter">
+                        <span class="sms-counter__length">0</span> / 160
+                        characters
+                      </div>
+                      <div class="form-help">
+                        Use {{first_name}} and {{link}} for personalization
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="sms-shorten-links"
+                          checked
+                        />
+                        <span>Shorten links automatically</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- UTM Builder -->
+              <div class="form-group">
+                <h4 class="form-label">UTM Tracking</h4>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="form-group">
+                        <label for="utm-source" class="form-label"
+                          >Source</label
+                        >
+                        <input
+                          type="text"
+                          id="utm-source"
+                          class="form-input"
+                          placeholder="email"
+                          value="email"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="utm-medium" class="form-label"
+                          >Medium</label
+                        >
+                        <input
+                          type="text"
+                          id="utm-medium"
+                          class="form-input"
+                          placeholder="newsletter"
+                          value="newsletter"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="utm-campaign" class="form-label"
+                          >Campaign</label
+                        >
+                        <input
+                          type="text"
+                          id="utm-campaign"
+                          class="form-input"
+                          placeholder="spring-sale-2024"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="utm-content" class="form-label"
+                          >Content</label
+                        >
+                        <input
+                          type="text"
+                          id="utm-content"
+                          class="form-input"
+                          placeholder="hero-cta"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Preview URL</label>
+                      <div class="card">
+                        <div class="card__content">
+                          <code
+                            >https://yourstore.com/sale?utm_source=email&utm_medium=newsletter&utm_campaign=spring-sale-2024&utm_content=hero-cta</code
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Spam/Policy Checks -->
+              <div class="form-group">
+                <h4 class="form-label">Content Review</h4>
+                <div class="alert alert--info">
+                  <span class="icon icon--info" aria-hidden="true"></span>
+                  <div class="alert__content">
+                    <strong>Spam Check</strong>
+                    <p>
+                      Keep a healthy text-to-image ratio and avoid all-caps
+                      subjects for better deliverability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Schedule -->
+          <div class="wizard__content">
+            <div class="tabs">
+              <ul class="tabs__list">
+                <li class="tabs__item">
+                  <a href="#schedule" class="tabs__link tabs__link--active"
+                    >Schedule & Send</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs__content">
+              <div class="form-group">
+                <label class="form-label">Send Time</label>
+                <div class="flex gap-4 mb-4">
+                  <label class="radio">
+                    <input type="radio" name="send-time" value="now" checked />
+                    <span>Send Now</span>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="send-time" value="schedule" />
+                    <span>Schedule Later</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label for="schedule-date" class="form-label">Date</label>
+                    <input type="date" id="schedule-date" class="form-input" />
+                  </div>
+                  <div>
+                    <label for="schedule-time" class="form-label">Time</label>
+                    <input type="time" id="schedule-time" class="form-input" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="timezone" class="form-label">Timezone</label>
+                <select id="timezone" class="form-select">
+                  <option value="UTC">UTC</option>
+                  <option value="America/New_York" selected>
+                    Eastern Time (ET)
+                  </option>
+                  <option value="America/Chicago">Central Time (CT)</option>
+                  <option value="America/Denver">Mountain Time (MT)</option>
+                  <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Smart Send Options</label>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="flex gap-4 mb-4">
+                      <label class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="smart-send"
+                          value="local-time"
+                          checked
+                        />
+                        <span>Send at local morning hours (8-10 AM)</span>
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label for="throttle-rate" class="form-label"
+                        >Throttle Rate</label
+                      >
+                      <div class="slider">
+                        <div class="slider__track" style="width: 60%">
+                          <div class="slider__thumb"></div>
+                        </div>
+                      </div>
+                      <div class="form-help">
+                        Send 1,000 emails per minute (recommended for large
+                        lists)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <h4 class="form-label">Compliance Gates</h4>
+                <div class="checklist">
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--ok">✓</div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">Quiet Hours</div>
+                      <div class="checklist__description">
+                        SMS will not be sent between 9 PM - 8 AM local time
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--ok">✓</div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">Consent Check</div>
+                      <div class="checklist__description">
+                        All recipients have opted in to receive marketing
+                        messages
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--warning">
+                      !
+                    </div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">Mandatory Footer</div>
+                      <div class="checklist__description">
+                        Email includes unsubscribe link and physical address
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Review -->
+          <div class="wizard__content">
+            <div class="tabs">
+              <ul class="tabs__list">
+                <li class="tabs__item">
+                  <a href="#review" class="tabs__link tabs__link--active"
+                    >Review & Launch</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs__content">
+              <div class="form-group">
+                <h4 class="form-label">Campaign Summary</h4>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="grid grid-cols-2 gap-6">
+                      <div>
+                        <h5>Campaign Details</h5>
+                        <p><strong>Name:</strong> Spring Sale 2024</p>
+                        <p><strong>Objective:</strong> Conversion</p>
+                        <p><strong>Channels:</strong> Email, SMS</p>
+                        <p><strong>Owner:</strong> Marketing Team</p>
+                      </div>
+                      <div>
+                        <h5>Audience</h5>
+                        <p><strong>Segment:</strong> All Subscribers</p>
+                        <p><strong>Estimated Reach:</strong> 42,734 contacts</p>
+                        <p><strong>Suppressions:</strong> 3,386 excluded</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <h4 class="form-label">Pre-Launch Checklist</h4>
+                <div class="checklist">
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--ok">✓</div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">
+                        From Domain Authenticated
+                      </div>
+                      <div class="checklist__description">
+                        SPF, DKIM, and DMARC records are configured
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--ok">✓</div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">Unsubscribe Present</div>
+                      <div class="checklist__description">
+                        Email includes working unsubscribe link
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--ok">✓</div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">Segment Size Verified</div>
+                      <div class="checklist__description">
+                        42,734 contacts ready to receive
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--ok">✓</div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">Links Tagged</div>
+                      <div class="checklist__description">
+                        UTM parameters configured for tracking
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checklist__item">
+                    <div class="checklist__icon checklist__icon--warning">
+                      !
+                    </div>
+                    <div class="checklist__content">
+                      <div class="checklist__title">A/B Test Disabled</div>
+                      <div class="checklist__description">
+                        No A/B testing configured for this campaign
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <h4 class="form-label">Approval</h4>
+                <div class="card">
+                  <div class="card__content">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="checkbox">
+                          <input
+                            type="checkbox"
+                            name="approval-marketing"
+                            required
+                          />
+                          <span><strong>Marketing Approval</strong></span>
+                        </label>
+                        <div class="form-help">
+                          Content and targeting approved by marketing team
+                        </div>
+                      </div>
+                      <div>
+                        <label class="checkbox">
+                          <input
+                            type="checkbox"
+                            name="approval-compliance"
+                            required
+                          />
+                          <span><strong>Compliance Approval</strong></span>
+                        </label>
+                        <div class="form-help">
+                          Content meets legal and compliance requirements
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wizard__footer">
+            <div class="wizard__actions">
+              <button type="button" class="btn btn--secondary">
+                Save Draft
+              </button>
+              <button type="button" class="btn btn--ghost">Cancel</button>
+            </div>
+            <div class="wizard__actions">
+              <button type="button" class="btn btn--secondary">Previous</button>
+              <button type="button" class="btn btn--primary">
+                Start Campaign
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

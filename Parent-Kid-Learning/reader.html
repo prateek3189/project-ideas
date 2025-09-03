@@ -1,167 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Story Reader - Parent-Kid Learning App</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layouts.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="stylesheet" href="styles/print.css">
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
     <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Parent-Kid Learning</h1>
-            <div class="header__controls">
-                <span class="language-chip">EN</span>
-                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
-            </div>
+      <div class="header__content">
+        <h1 class="header__title">Parent-Kid Learning</h1>
+        <div class="header__controls">
+          <span class="language-chip">EN</span>
+          <div class="profile-avatar">👨‍👩‍👧‍👦</div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <div class="story-reader-layout">
-            <div class="story-reader__header">
-                <h1 class="story-reader__title">The Red Ball</h1>
-                <p class="story-reader__progress">Page 4 of 8</p>
-                <div class="story-reader__controls">
-                    <a href="stories.html" class="btn btn--secondary">← Back to Library</a>
-                    <a href="#" class="btn btn--accent">Print Story</a>
-                </div>
-            </div>
-
-            <!-- Page 1 -->
-            <div class="story-page">
-                <div class="story-page__image">🔴</div>
-                <p class="story-page__text">Once upon a time, there was a little <span class="story-page__keyword">bunny</span> named Juju.</p>
-                <p class="story-page__parent-tip">Ask: "What color is the bunny? What do you think Juju will do next?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">bunny / खरगोश / ससा</span>
-                    <span class="word-chip">little / छोटा / लहान</span>
-                    <span class="word-chip">named / नाम / नाव</span>
-                </div>
-            </div>
-
-            <!-- Page 2 -->
-            <div class="story-page">
-                <div class="story-page__image">🏃</div>
-                <p class="story-page__text">Juju loved to <span class="story-page__keyword">hop</span> and play in the garden.</p>
-                <p class="story-page__parent-tip">Ask: "Can you hop like Juju? What do you see in the garden?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">loved / प्यार / आवड</span>
-                    <span class="word-chip">hop / कूदना / उडी</span>
-                    <span class="word-chip">garden / बगीचा / बाग</span>
-                </div>
-            </div>
-
-            <!-- Page 3 -->
-            <div class="story-page">
-                <div class="story-page__image">🔍</div>
-                <p class="story-page__text">One day, Juju found a <span class="story-page__keyword">red ball</span> under a tree.</p>
-                <p class="story-page__parent-tip">Ask: "What color is the ball? Where did Juju find it?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">found / मिला / सापडला</span>
-                    <span class="word-chip">red / लाल / लाल</span>
-                    <span class="story-page__keyword">ball / गेंद / चेंडू</span>
-                </div>
-            </div>
-
-            <!-- Page 4 (Current Page) -->
-            <div class="story-page">
-                <div class="story-page__image">🎾</div>
-                <p class="story-page__text">The ball was <span class="story-page__keyword">bouncy</span> and fun to play with!</p>
-                <p class="story-page__parent-tip">Ask: "Is the ball bouncy? Can you bounce like the ball?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">bouncy / उछलने वाला / उड्या मारणारा</span>
-                    <span class="word-chip">fun / मज़ेदार / मजेदार</span>
-                    <span class="word-chip">play / खेलना / खेळणे</span>
-                </div>
-            </div>
-
-            <!-- Page 5 -->
-            <div class="story-page">
-                <div class="story-page__image">🐰</div>
-                <p class="story-page__text">Juju <span class="story-page__keyword">bounced</span> the ball up and down.</p>
-                <p class="story-page__parent-tip">Ask: "Can you count the bounces? Up and down, up and down!"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">bounced / उछाला / उडी मारली</span>
-                    <span class="word-chip">up / ऊपर / वर</span>
-                    <span class="word-chip">down / नीचे / खाली</span>
-                </div>
-            </div>
-
-            <!-- Page 6 -->
-            <div class="story-page">
-                <div class="story-page__image">👥</div>
-                <p class="story-page__text">Soon, other animals wanted to <span class="story-page__keyword">share</span> the ball too.</p>
-                <p class="story-page__parent-tip">Ask: "What animals do you see? Is sharing good?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">other / दूसरे / इतर</span>
-                    <span class="word-chip">animals / जानवर / प्राणी</span>
-                    <span class="story-page__keyword">share / बांटना / वाटून घेणे</span>
-                </div>
-            </div>
-
-            <!-- Page 7 -->
-            <div class="story-page">
-                <div class="story-page__image">🤝</div>
-                <p class="story-page__text">Juju learned that <span class="story-page__keyword">sharing</span> makes everyone happy.</p>
-                <p class="story-page__parent-tip">Ask: "How does Juju feel now? What did Juju learn?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">learned / सीखा / शिकला</span>
-                    <span class="story-page__keyword">sharing / बांटना / वाटून घेणे</span>
-                    <span class="word-chip">happy / खुश / आनंदी</span>
-                </div>
-            </div>
-
-            <!-- Page 8 (End Page) -->
-            <div class="story-page">
-                <div class="story-page__image">🎉</div>
-                <p class="story-page__text">Now Juju and friends play together with the <span class="story-page__keyword">red ball</span> every day!</p>
-                <p class="story-page__parent-tip">Ask: "What color is the ball? Who plays with Juju now?"</p>
-                <div class="story-page__vocab">
-                    <span class="word-chip">friends / दोस्त / मित्र</span>
-                    <span class="word-chip">together / साथ / एकत्र</span>
-                    <span class="word-chip">every day / हर दिन / दररोज</span>
-                </div>
-                
-                <div class="story-page__end">
-                    <h3>We learned:</h3>
-                    <div class="story-page__end-tags">
-                        <span class="word-chip">Colors</span>
-                        <span class="word-chip">Sharing</span>
-                        <span class="word-chip">Friendship</span>
-                    </div>
-                    
-                    <h3>Say it with me:</h3>
-                    <div class="story-page__end-words">
-                        <p><strong>Red</strong> - लाल - लाल</p>
-                        <p><strong>Ball</strong> - गेंद - चेंडू</p>
-                        <p><strong>Share</strong> - बांटना - वाटून घेणे</p>
-                        <p><strong>Happy</strong> - खुश - आनंदी</p>
-                    </div>
-                    
-                    <div class="story-page__end-actions">
-                        <a href="#" class="btn btn--large">Print This Story</a>
-                        <a href="stories.html" class="btn btn--secondary">Read Another Story</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="story-page__pager">
-                <a href="#" class="story-page__nav-btn">← Previous</a>
-                <span class="story-page__progress">Page 4 of 8</span>
-                <a href="#" class="story-page__nav-btn">Next →</a>
-            </div>
+      <div class="story-reader-layout">
+        <div class="story-reader__header">
+          <h1 class="story-reader__title">The Red Ball</h1>
+          <p class="story-reader__progress">Page 4 of 8</p>
+          <div class="story-reader__controls">
+            <a href="stories.html" class="btn btn--secondary"
+              >← Back to Library</a
+            >
+            <a href="#" class="btn btn--accent">Print Story</a>
+          </div>
         </div>
+
+        <!-- Page 1 -->
+        <div class="story-page">
+          <div class="story-page__image">🔴</div>
+          <p class="story-page__text">
+            Once upon a time, there was a little
+            <span class="story-page__keyword">bunny</span> named Juju.
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "What color is the bunny? What do you think Juju will do next?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">bunny / खरगोश / ससा</span>
+            <span class="word-chip">little / छोटा / लहान</span>
+            <span class="word-chip">named / नाम / नाव</span>
+          </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="story-page">
+          <div class="story-page__image">🏃</div>
+          <p class="story-page__text">
+            Juju loved to <span class="story-page__keyword">hop</span> and play
+            in the garden.
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "Can you hop like Juju? What do you see in the garden?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">loved / प्यार / आवड</span>
+            <span class="word-chip">hop / कूदना / उडी</span>
+            <span class="word-chip">garden / बगीचा / बाग</span>
+          </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="story-page">
+          <div class="story-page__image">🔍</div>
+          <p class="story-page__text">
+            One day, Juju found a
+            <span class="story-page__keyword">red ball</span> under a tree.
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "What color is the ball? Where did Juju find it?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">found / मिला / सापडला</span>
+            <span class="word-chip">red / लाल / लाल</span>
+            <span class="story-page__keyword">ball / गेंद / चेंडू</span>
+          </div>
+        </div>
+
+        <!-- Page 4 (Current Page) -->
+        <div class="story-page">
+          <div class="story-page__image">🎾</div>
+          <p class="story-page__text">
+            The ball was <span class="story-page__keyword">bouncy</span> and fun
+            to play with!
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "Is the ball bouncy? Can you bounce like the ball?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">bouncy / उछलने वाला / उड्या मारणारा</span>
+            <span class="word-chip">fun / मज़ेदार / मजेदार</span>
+            <span class="word-chip">play / खेलना / खेळणे</span>
+          </div>
+        </div>
+
+        <!-- Page 5 -->
+        <div class="story-page">
+          <div class="story-page__image">🐰</div>
+          <p class="story-page__text">
+            Juju <span class="story-page__keyword">bounced</span> the ball up
+            and down.
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "Can you count the bounces? Up and down, up and down!"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">bounced / उछाला / उडी मारली</span>
+            <span class="word-chip">up / ऊपर / वर</span>
+            <span class="word-chip">down / नीचे / खाली</span>
+          </div>
+        </div>
+
+        <!-- Page 6 -->
+        <div class="story-page">
+          <div class="story-page__image">👥</div>
+          <p class="story-page__text">
+            Soon, other animals wanted to
+            <span class="story-page__keyword">share</span> the ball too.
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "What animals do you see? Is sharing good?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">other / दूसरे / इतर</span>
+            <span class="word-chip">animals / जानवर / प्राणी</span>
+            <span class="story-page__keyword">share / बांटना / वाटून घेणे</span>
+          </div>
+        </div>
+
+        <!-- Page 7 -->
+        <div class="story-page">
+          <div class="story-page__image">🤝</div>
+          <p class="story-page__text">
+            Juju learned that
+            <span class="story-page__keyword">sharing</span> makes everyone
+            happy.
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "How does Juju feel now? What did Juju learn?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">learned / सीखा / शिकला</span>
+            <span class="story-page__keyword"
+              >sharing / बांटना / वाटून घेणे</span
+            >
+            <span class="word-chip">happy / खुश / आनंदी</span>
+          </div>
+        </div>
+
+        <!-- Page 8 (End Page) -->
+        <div class="story-page">
+          <div class="story-page__image">🎉</div>
+          <p class="story-page__text">
+            Now Juju and friends play together with the
+            <span class="story-page__keyword">red ball</span> every day!
+          </p>
+          <p class="story-page__parent-tip">
+            Ask: "What color is the ball? Who plays with Juju now?"
+          </p>
+          <div class="story-page__vocab">
+            <span class="word-chip">friends / दोस्त / मित्र</span>
+            <span class="word-chip">together / साथ / एकत्र</span>
+            <span class="word-chip">every day / हर दिन / दररोज</span>
+          </div>
+
+          <div class="story-page__end">
+            <h3>We learned:</h3>
+            <div class="story-page__end-tags">
+              <span class="word-chip">Colors</span>
+              <span class="word-chip">Sharing</span>
+              <span class="word-chip">Friendship</span>
+            </div>
+
+            <h3>Say it with me:</h3>
+            <div class="story-page__end-words">
+              <p><strong>Red</strong> - लाल - लाल</p>
+              <p><strong>Ball</strong> - गेंद - चेंडू</p>
+              <p><strong>Share</strong> - बांटना - वाटून घेणे</p>
+              <p><strong>Happy</strong> - खुश - आनंदी</p>
+            </div>
+
+            <div class="story-page__end-actions">
+              <a href="#" class="btn btn--large">Print This Story</a>
+              <a href="stories.html" class="btn btn--secondary"
+                >Read Another Story</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="story-page__pager">
+          <a href="#" class="story-page__nav-btn">← Previous</a>
+          <span class="story-page__progress">Page 4 of 8</span>
+          <a href="#" class="story-page__nav-btn">Next →</a>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
-        </div>
+      <div class="footer__content">
+        <p class="footer__text">
+          For families • v0.1 • <a href="#" class="footer__link">Print</a>
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

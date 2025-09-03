@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language Learning Buddy - Chat</title>
+    <meta
+      name="description"
+      content="Practice conversations in your target language with AI-powered feedback and pronunciation tips"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search conversations, phrases..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a
+              href="index.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a href="topics.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a href="pronun-lab.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a href="lessons.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a href="review.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a href="progress.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Current Session</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">☕</span>
+              Café Order
+              <span class="cefr-badge cefr-badge--a1">A1</span>
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⏱️</span>
+              12 minutes
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔥</span>
+              <span class="streak-flame">🔥 5 day streak</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="chat-layout">
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="chat-header__left">
+              <h2 class="chat-header__topic">Café Order</h2>
+              <span class="chat-header__cefr">
+                <span class="cefr-badge cefr-badge--a1">A1</span>
+              </span>
+            </div>
+            <div class="chat-header__right">
+              <button class="btn btn--outline btn--sm">End Session</button>
+              <button class="btn btn--secondary btn--sm">View Phrases</button>
+            </div>
+          </div>
+
+          <!-- Chat Conversation -->
+          <div class="chat-conversation">
+            <!-- Buddy Message 1 -->
+            <div class="chat-bubble chat-bubble--buddy slide-in">
+              <div class="chat-bubble__avatar">B</div>
+              <div class="chat-bubble__content">
+                <p>¡Hola! Bienvenido al café. ¿En qué puedo ayudarte hoy?</p>
+                <p>
+                  <em>Hello! Welcome to the café. How can I help you today?</em>
+                </p>
+              </div>
+              <div class="chat-bubble__tip">
+                <strong>Pronunciation tip:</strong> The "ñ" in "cañón" is like
+                "ny" in "canyon"
+              </div>
+            </div>
+
+            <!-- User Message 1 -->
+            <div class="chat-bubble chat-bubble--user slide-in">
+              <div class="chat-bubble__content">
+                <p>Hola, me gustaría un café por favor.</p>
+                <p><em>Hello, I would like a coffee please.</em></p>
+              </div>
+              <div class="feedback-chip">
+                <span class="feedback-chip__score">Overall 78/100</span>
+                <span class="feedback-chip__hint"
+                  >— Great rhythm! Work on /r/ in "por" (retroflex).</span
+                >
+              </div>
+            </div>
+
+            <!-- Buddy Message 2 -->
+            <div class="chat-bubble chat-bubble--buddy slide-in">
+              <div class="chat-bubble__avatar">B</div>
+              <div class="chat-bubble__content">
+                <p>
+                  ¡Por supuesto! ¿Qué tipo de café prefieres? Tenemos espresso,
+                  americano, cappuccino...
+                </p>
+                <p>
+                  <em
+                    >Of course! What type of coffee do you prefer? We have
+                    espresso, americano, cappuccino...</em
+                  >
+                </p>
+              </div>
+              <div class="chat-bubble__tip">
+                <strong>Grammar tip:</strong> Use "¿Qué tipo de...?" to ask
+                "What type of...?"
+              </div>
+            </div>
+
+            <!-- User Message 2 -->
+            <div class="chat-bubble chat-bubble--user slide-in">
+              <div class="chat-bubble__content">
+                <p>Me gustaría un cappuccino, por favor.</p>
+                <p><em>I would like a cappuccino, please.</em></p>
+              </div>
+              <div class="feedback-chip">
+                <span class="feedback-chip__score">Overall 85/100</span>
+                <span class="feedback-chip__hint"
+                  >— Excellent! The "cc" in "cappuccino" is like "ch" in
+                  "church".</span
+                >
+              </div>
+            </div>
+
+            <!-- Buddy Message 3 -->
+            <div class="chat-bubble chat-bubble--buddy slide-in">
+              <div class="chat-bubble__avatar">B</div>
+              <div class="chat-bubble__content">
+                <p>
+                  Perfecto. ¿Te gustaría algo más? Tenemos pasteles deliciosos.
+                </p>
+                <p>
+                  <em
+                    >Perfect. Would you like anything else? We have delicious
+                    pastries.</em
+                  >
+                </p>
+              </div>
+              <div class="chat-bubble__tip">
+                <strong>Cultural note:</strong> In Spanish-speaking cafés, it's
+                common to offer additional items after the main order.
+              </div>
+            </div>
+
+            <!-- User Message 3 -->
+            <div class="chat-bubble chat-bubble--user slide-in">
+              <div class="chat-bubble__content">
+                <p>Sí, me gustaría un pastel de chocolate.</p>
+                <p><em>Yes, I would like a chocolate cake.</em></p>
+              </div>
+              <div class="feedback-chip">
+                <span class="feedback-chip__score">Overall 82/100</span>
+                <span class="feedback-chip__hint"
+                  >— Good! Remember to roll the "r" in "chocolate"
+                  slightly.</span
+                >
+              </div>
+            </div>
+
+            <!-- Buddy Message 4 -->
+            <div class="chat-bubble chat-bubble--buddy slide-in">
+              <div class="chat-bubble__avatar">B</div>
+              <div class="chat-bubble__content">
+                <p>
+                  Excelente elección. Tu cappuccino y pastel de chocolate
+                  estarán listos en unos minutos. ¿Algo más?
+                </p>
+                <p>
+                  <em
+                    >Excellent choice. Your cappuccino and chocolate cake will
+                    be ready in a few minutes. Anything else?</em
+                  >
+                </p>
+              </div>
+              <div class="chat-bubble__tip">
+                <strong>Vocabulary:</strong> "Estarán listos" means "will be
+                ready" - future tense of "estar"
+              </div>
+            </div>
+
+            <!-- User Message 4 -->
+            <div class="chat-bubble chat-bubble--user slide-in">
+              <div class="chat-bubble__content">
+                <p>No, eso es todo. Gracias.</p>
+                <p><em>No, that's all. Thank you.</em></p>
+              </div>
+              <div class="feedback-chip">
+                <span class="feedback-chip__score">Overall 88/100</span>
+                <span class="feedback-chip__hint"
+                  >— Perfect! Natural intonation and clear pronunciation.</span
+                >
+              </div>
+            </div>
+
+            <!-- Buddy Message 5 -->
+            <div class="chat-bubble chat-bubble--buddy slide-in">
+              <div class="chat-bubble__avatar">B</div>
+              <div class="chat-bubble__content">
+                <p>¡De nada! Que disfrutes tu café y pastel. ¡Hasta luego!</p>
+                <p>
+                  <em
+                    >You're welcome! Enjoy your coffee and cake. See you
+                    later!</em
+                  >
+                </p>
+              </div>
+              <div class="chat-bubble__tip">
+                <strong>Expression:</strong> "Que disfrutes" is a polite way to
+                say "enjoy" - subjunctive mood
+              </div>
+            </div>
+          </div>
+
+          <!-- Composer Bar -->
+          <div class="chat-composer">
+            <div class="composer-bar">
+              <textarea
+                class="composer-bar__input input"
+                placeholder="Type your message here..."
+                rows="2"
+              ></textarea>
+              <div class="composer-bar__actions">
+                <button class="mic-button" aria-label="Start speaking">
+                  <span class="mic-button__icon">🎤</span>
+                </button>
+                <button class="btn btn--primary btn--sm">Send</button>
+              </div>
+            </div>
+
+            <!-- Assist Strip -->
+            <div class="assist-strip">
+              <div class="assist-strip__section">
+                <h4 class="assist-strip__title">Phrase Help</h4>
+                <div class="phrase-block">
+                  <div class="phrase-block__native">
+                    ¿Podrías hablar más despacio, por favor?
+                  </div>
+                  <div class="phrase-block__transliteration">
+                    ¿Poh-dree-ahs ah-blahr mahs dehs-pah-see-oh, pohr fah-vor?
+                  </div>
+                  <div class="phrase-block__translation">
+                    Could you speak more slowly, please?
+                  </div>
+                </div>
+              </div>
+
+              <div class="assist-strip__section">
+                <h4 class="assist-strip__title">Grammar Hint</h4>
+                <details>
+                  <summary>Using "¿Podrías...?" for polite requests</summary>
+                  <p>
+                    "¿Podrías...?" is the conditional form of "poder" (to be
+                    able to) and is used for polite requests. It's more formal
+                    than "¿Puedes...?"
+                  </p>
+                  <p><strong>Examples:</strong></p>
+                  <ul>
+                    <li>¿Podrías ayudarme? (Could you help me?)</li>
+                    <li>¿Podrías repetir eso? (Could you repeat that?)</li>
+                    <li>¿Podrías explicar más? (Could you explain more?)</li>
+                  </ul>
+                </details>
+              </div>
+
+              <div class="assist-strip__section">
+                <h4 class="assist-strip__title">Cultural Note</h4>
+                <p>
+                  In Spanish-speaking countries, adding "por favor" (please) and
+                  using polite forms like "¿Podrías...?" shows respect and good
+                  manners. It's especially important in service situations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle (No JavaScript in V1, but structure ready) -->
+    <script>
+      // Simple theme toggle for demonstration
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,529 @@
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  /* Hide non-essential elements */
+  .header,
+  .sidebar,
+  .footer,
+  .chat-composer,
+  .assist-strip,
+  .btn,
+  .theme-toggle,
+  .language-switch,
+  .profile-chip,
+  .print-btn {
+    display: none !important;
+  }
+
+  /* Reset layout for print */
+  .app {
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-height: auto;
+  }
+
+  .main {
+    padding: 0;
+    overflow: visible;
+  }
+
+  .chat-conversation {
+    height: auto;
+    overflow: visible;
+    padding: 0;
+  }
+
+  /* Typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Chat bubbles for print */
+  .chat-bubble {
+    max-width: 100%;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .chat-bubble--user {
+    background: #f0f0f0;
+    border-color: #cccccc;
+    color: #000000;
+  }
+
+  .chat-bubble--buddy {
+    background: #ffffff;
+    border-color: #cccccc;
+    color: #000000;
+  }
+
+  /* Phrase blocks for print */
+  .phrase-block {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .phrase-block__native {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .phrase-block__transliteration {
+    font-size: 12pt;
+    color: #666666;
+    font-style: italic;
+  }
+
+  .phrase-block__translation {
+    font-size: 12pt;
+    color: #000000;
+  }
+
+  /* IPA line for print */
+  .ipa-line {
+    background: #f8f8f8;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 1em;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .ipa__seg {
+    padding: 2px 4px;
+    margin: 0 1px;
+    border-radius: 2px;
+  }
+
+  .ipa__seg--low {
+    background: #ffcccc;
+    color: #000000;
+  }
+
+  .ipa__seg--medium {
+    background: #ffffcc;
+    color: #000000;
+  }
+
+  .ipa__seg--high {
+    background: #ccffcc;
+    color: #000000;
+  }
+
+  /* Score bars for print */
+  .score-bar {
+    background: #f0f0f0;
+    border: 1px solid #cccccc;
+    height: 12px;
+    margin: 0.5em 0;
+  }
+
+  .score-bar__fill {
+    height: 100%;
+  }
+
+  .score-bar__fill--low {
+    background: #ffcccc;
+  }
+
+  .score-bar__fill--medium {
+    background: #ffffcc;
+  }
+
+  .score-bar__fill--high {
+    background: #ccffcc;
+  }
+
+  /* Topic cards for print */
+  .topic-card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 1em;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .topic-card__title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .topic-card__description {
+    color: #666666;
+  }
+
+  /* Lesson cards for print */
+  .lesson-card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 1em;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .lesson-card__title {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .lesson-card__type {
+    background: #f0f0f0;
+    color: #666666;
+  }
+
+  /* SRS cards for print */
+  .srs-card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 1em;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .srs-card__phrase {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .srs-card__translation {
+    font-size: 12pt;
+    color: #000000;
+  }
+
+  /* Progress tiles for print */
+  .progress-tile {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 1em;
+    text-align: center;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .progress-tile__number {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .progress-tile__label {
+    color: #666666;
+    text-transform: uppercase;
+  }
+
+  /* CEFR badges for print */
+  .cefr-badge {
+    background: #000000;
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+
+  /* Tag chips for print */
+  .tag-chip {
+    background: #f0f0f0;
+    color: #666666;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10pt;
+    margin: 2px 4px 2px 0;
+  }
+
+  /* Feedback chips for print */
+  .feedback-chip {
+    background: #f8f8f8;
+    border: 1px solid #cccccc;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border-radius: 4px;
+  }
+
+  .feedback-chip__score {
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .feedback-chip__hint {
+    color: #666666;
+  }
+
+  /* Role cards for print */
+  .role-card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 0.5em 0;
+    padding: 1em;
+    text-align: center;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .role-card__title {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .role-card__description {
+    color: #666666;
+  }
+
+  /* Heatmap for print */
+  .heatmap {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin: 1em 0;
+  }
+
+  .heatmap__cell {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+  }
+
+  .heatmap__cell--heat-1 {
+    background: #e6e6e6;
+  }
+
+  .heatmap__cell--heat-2 {
+    background: #cccccc;
+  }
+
+  .heatmap__cell--heat-3 {
+    background: #999999;
+  }
+
+  .heatmap__cell--heat-4 {
+    background: #666666;
+  }
+
+  /* Deck tabs for print */
+  .deck-tabs {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #cccccc;
+  }
+
+  .deck-tab {
+    padding: 0.5em 1em;
+    color: #000000;
+    border-bottom: 2px solid transparent;
+  }
+
+  .deck-tab--active {
+    color: #000000;
+    border-bottom-color: #000000;
+  }
+
+  .deck-tab__count {
+    background: #f0f0f0;
+    color: #666666;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 0.5em;
+  }
+
+  /* Progress bar for print */
+  .progress-bar {
+    background: #f0f0f0;
+    border: 1px solid #cccccc;
+    height: 12px;
+    margin: 0.5em 0;
+  }
+
+  .progress-bar__fill {
+    background: #000000;
+  }
+
+  /* Settings sections for print */
+  .settings-section {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 1em;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .settings-section__title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000000;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .settings-row {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .settings-row__label {
+    font-weight: bold;
+    color: #000000;
+  }
+
+  /* Print-specific headers */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #000000;
+  }
+
+  .print-header__title {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0.5em;
+  }
+
+  .print-header__meta {
+    font-size: 12pt;
+    color: #666666;
+  }
+
+  /* Print-specific footers */
+  .print-footer {
+    display: block !important;
+    text-align: center;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #cccccc;
+    font-size: 10pt;
+    color: #666666;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Links for print */
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666666;
+  }
+
+  /* Lists for print */
+  ul,
+  ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Tables for print */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  th,
+  td {
+    padding: 0.5em;
+    border: 1px solid #cccccc;
+    text-align: left;
+  }
+
+  th {
+    background: #f0f0f0;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  /* Alerts for print */
+  .alert {
+    background: #f8f8f8;
+    border: 1px solid #cccccc;
+    border-left: 4px solid #000000;
+    padding: 1em;
+    margin: 1em 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .alert--info {
+    border-left-color: #000000;
+  }
+
+  .alert--success {
+    border-left-color: #000000;
+  }
+
+  .alert--warning {
+    border-left-color: #000000;
+  }
+
+  .alert--danger {
+    border-left-color: #000000;
+  }
+
+  /* Hide decorative elements */
+  .streak-flame,
+  .waveform,
+  .mic-button {
+    display: none !important;
+  }
+
+  /* Ensure good contrast for print */
+  * {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

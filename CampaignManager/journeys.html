@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journeys - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button class="btn btn--primary" type="button">
+              <span class="icon icon--plus" aria-hidden="true"></span>
+              Create Journey
+            </button>
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print journeys"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="journeys.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Journeys</h2>
+          <p class="page-subtitle">Create automated email and SMS sequences</p>
+        </div>
+
+        <!-- Journey Canvas -->
+        <div class="journey-canvas">
+          <div class="journey-canvas__controls">
+            <button class="btn btn--secondary btn--small" type="button">
+              Add Trigger
+            </button>
+            <button class="btn btn--secondary btn--small" type="button">
+              Add Email
+            </button>
+            <button class="btn btn--secondary btn--small" type="button">
+              Add SMS
+            </button>
+            <button class="btn btn--secondary btn--small" type="button">
+              Add Delay
+            </button>
+            <button class="btn btn--secondary btn--small" type="button">
+              Add Branch
+            </button>
+            <button class="btn btn--secondary btn--small" type="button">
+              Add Exit
+            </button>
+          </div>
+
+          <div class="journey-canvas__content">
+            <!-- Trigger Node -->
+            <div class="journey-node journey-node--trigger">
+              <div class="journey-node__header">
+                <span class="journey-node__type">Trigger</span>
+              </div>
+              <div class="journey-node__title">New Signup</div>
+              <div class="journey-node__content">
+                User completes registration form
+              </div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Trigger Event</label>
+                  <select class="form-select">
+                    <option>User Registration</option>
+                    <option>Email Signup</option>
+                    <option>Purchase</option>
+                  </select>
+                </div>
+              </details>
+            </div>
+
+            <div class="journey-connector"></div>
+
+            <!-- Delay Node -->
+            <div class="journey-node journey-node--delay">
+              <div class="journey-node__header">
+                <span class="journey-node__type">Delay</span>
+              </div>
+              <div class="journey-node__title">Wait 1 Day</div>
+              <div class="journey-node__content">
+                Allow time for user to explore
+              </div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Delay Duration</label>
+                  <select class="form-select">
+                    <option>1 hour</option>
+                    <option selected>1 day</option>
+                    <option>3 days</option>
+                    <option>1 week</option>
+                  </select>
+                </div>
+              </details>
+            </div>
+
+            <div class="journey-connector"></div>
+
+            <!-- Email Node -->
+            <div class="journey-node journey-node--email">
+              <div class="journey-node__header">
+                <span class="journey-node__type">Email</span>
+              </div>
+              <div class="journey-node__title">Welcome Email</div>
+              <div class="journey-node__content">
+                Introduce your brand and value proposition
+              </div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Email Template</label>
+                  <select class="form-select">
+                    <option selected>Welcome Series - Email 1</option>
+                    <option>Welcome Series - Email 2</option>
+                    <option>Custom Template</option>
+                  </select>
+                  <label class="form-label mt-2">Subject Line</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="Welcome to YourBrand! Here's what's next..."
+                  />
+                </div>
+              </details>
+            </div>
+
+            <div class="journey-connector"></div>
+
+            <!-- Delay Node -->
+            <div class="journey-node journey-node--delay">
+              <div class="journey-node__header">
+                <span class="journey-node__type">Delay</span>
+              </div>
+              <div class="journey-node__title">Wait 2 Days</div>
+              <div class="journey-node__content">
+                Give time to engage with first email
+              </div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Delay Duration</label>
+                  <select class="form-select">
+                    <option>1 day</option>
+                    <option selected>2 days</option>
+                    <option>3 days</option>
+                    <option>1 week</option>
+                  </select>
+                </div>
+              </details>
+            </div>
+
+            <div class="journey-connector"></div>
+
+            <!-- Branch Node -->
+            <div class="journey-node journey-node--branch">
+              <div class="journey-node__header">
+                <span class="journey-node__type">Branch</span>
+              </div>
+              <div class="journey-node__title">Check Engagement</div>
+              <div class="journey-node__content">If no open after 48 hours</div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Condition</label>
+                  <select class="form-select">
+                    <option selected>Email not opened</option>
+                    <option>Email not clicked</option>
+                    <option>No purchase</option>
+                  </select>
+                  <label class="form-label mt-2">Time Window</label>
+                  <select class="form-select">
+                    <option>24 hours</option>
+                    <option selected>48 hours</option>
+                    <option>72 hours</option>
+                  </select>
+                </div>
+              </details>
+            </div>
+
+            <div class="journey-connector"></div>
+
+            <!-- SMS Node -->
+            <div class="journey-node journey-node--sms">
+              <div class="journey-node__header">
+                <span class="journey-node__type">SMS</span>
+              </div>
+              <div class="journey-node__title">SMS Nudge</div>
+              <div class="journey-node__content">
+                Gentle reminder to check email
+              </div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-textarea" rows="3">
+Hi {{first_name}}! We sent you a special welcome message. Check your email for exclusive offers! Reply STOP to opt out.</textarea
+                  >
+                  <label class="form-label mt-2">Sender ID</label>
+                  <input type="text" class="form-input" value="YourBrand" />
+                </div>
+              </details>
+            </div>
+
+            <div class="journey-connector"></div>
+
+            <!-- Exit Node -->
+            <div class="journey-node journey-node--exit">
+              <div class="journey-node__header">
+                <span class="journey-node__type">Exit</span>
+              </div>
+              <div class="journey-node__title">Journey Complete</div>
+              <div class="journey-node__content">
+                User exits the welcome sequence
+              </div>
+              <details class="mt-2">
+                <summary class="text-sm text-muted">Configure</summary>
+                <div class="mt-2">
+                  <label class="form-label">Exit Conditions</label>
+                  <div class="flex flex-col gap-2">
+                    <label class="checkbox">
+                      <input type="checkbox" checked />
+                      <span>User makes a purchase</span>
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" checked />
+                      <span>User unsubscribes</span>
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" />
+                      <span>Maximum sequence length reached</span>
+                    </label>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- Journey Settings -->
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="card">
+            <div class="card__header">
+              <h4 class="card__title">Journey Settings</h4>
+            </div>
+            <div class="card__content">
+              <div class="form-group">
+                <label for="journey-name" class="form-label"
+                  >Journey Name</label
+                >
+                <input
+                  type="text"
+                  id="journey-name"
+                  class="form-input"
+                  value="Welcome Series"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="journey-description" class="form-label"
+                  >Description</label
+                >
+                <textarea
+                  id="journey-description"
+                  class="form-textarea"
+                  rows="3"
+                >
+Automated welcome sequence for new subscribers</textarea
+                >
+              </div>
+              <div class="form-group">
+                <label class="checkbox">
+                  <input type="checkbox" checked />
+                  <span>Active</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <h4 class="card__title">Journey Stats</h4>
+            </div>
+            <div class="card__content">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <div class="text-numeric text-2xl font-bold">1,247</div>
+                  <div class="text-muted text-sm">Active Users</div>
+                </div>
+                <div>
+                  <div class="text-numeric text-2xl font-bold">89.2%</div>
+                  <div class="text-muted text-sm">Completion Rate</div>
+                </div>
+                <div>
+                  <div class="text-numeric text-2xl font-bold">42.1%</div>
+                  <div class="text-muted text-sm">Open Rate</div>
+                </div>
+                <div>
+                  <div class="text-numeric text-2xl font-bold">8.7%</div>
+                  <div class="text-muted text-sm">Click Rate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Journey Actions -->
+        <div class="flex justify-between items-center mt-6">
+          <div class="flex gap-3">
+            <button class="btn btn--secondary" type="button">Save Draft</button>
+            <button class="btn btn--ghost" type="button">Test Journey</button>
+          </div>
+          <div class="flex gap-3">
+            <button class="btn btn--ghost" type="button">Cancel</button>
+            <button class="btn btn--primary" type="button">
+              Publish Journey
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

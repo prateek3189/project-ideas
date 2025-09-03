@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Coach - Tracks</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">AI Personal Coach</h1>
+                <div class="header-actions">
+                    <div class="date-pill">
+                        <time datetime="2024-01-15">Mon, Jan 15</time>
+                    </div>
+                    <a href="#print" class="print-link" aria-label="Print weekly plan">Print</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Today</a></li>
+                <li><a href="tracks.html" class="nav-link nav-link--active" aria-current="page">Tracks</a></li>
+                <li><a href="plans.html" class="nav-link">Plans</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="library.html" class="nav-link">Library</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-toggle__button" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h2 class="page-title">Your Tracks</h2>
+                <p class="text-muted">Focus areas for your personal development</p>
+            </div>
+
+            <div class="tracks-container">
+                <!-- Fitness Track -->
+                <section class="track-section">
+                    <div class="track-section__header">
+                        <div class="track-section__icon track-section__icon--fitness">💪</div>
+                        <h3 class="track-section__title">Fitness</h3>
+                    </div>
+                    <div class="track-section__content">
+                        <div class="goals-grid">
+                            <div class="goal-item">
+                                <div class="goal-item__label">Weekly Workouts</div>
+                                <div class="goal-item__value">3/3</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Daily Steps</div>
+                                <div class="goal-item__value">8,000</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Protein (g/day)</div>
+                                <div class="goal-item__value">120</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Sleep Target</div>
+                                <div class="goal-item__value">7.5h</div>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-blocks">
+                            <h4 class="text-lg font-semibold mb-4">Weekly Plan</h4>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Monday</div>
+                                <ul class="plan-block__activities">
+                                    <li>30-min zone-2 walk</li>
+                                    <li>Mobility-8 routine</li>
+                                </ul>
+                            </div>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Wednesday</div>
+                                <ul class="plan-block__activities">
+                                    <li>Strength training (45 min)</li>
+                                    <li>Post-workout protein</li>
+                                </ul>
+                            </div>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Friday</div>
+                                <ul class="plan-block__activities">
+                                    <li>HIIT session (20 min)</li>
+                                    <li>Recovery walk</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Productivity Track -->
+                <section class="track-section">
+                    <div class="track-section__header">
+                        <div class="track-section__icon track-section__icon--productivity">⚡</div>
+                        <h3 class="track-section__title">Productivity</h3>
+                    </div>
+                    <div class="track-section__content">
+                        <div class="goals-grid">
+                            <div class="goal-item">
+                                <div class="goal-item__label">Focus Hours</div>
+                                <div class="goal-item__value">8.2/8</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Deep Work Blocks</div>
+                                <div class="goal-item__value">3</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Inbox Zero</div>
+                                <div class="goal-item__value">Daily</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Meeting Diet</div>
+                                <div class="goal-item__value">≤4h</div>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-blocks">
+                            <h4 class="text-lg font-semibold mb-4">Focus Schedule</h4>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Morning Block</div>
+                                <ul class="plan-block__activities">
+                                    <li>10:00-11:30 - Deep work</li>
+                                    <li>Top-1 outcome focus</li>
+                                </ul>
+                            </div>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Afternoon Block</div>
+                                <ul class="plan-block__activities">
+                                    <li>14:00-15:30 - Creative work</li>
+                                    <li>No meetings zone</li>
+                                </ul>
+                            </div>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Daily Habits</div>
+                                <ul class="plan-block__activities">
+                                    <li>Inbox sweep (15 min)</li>
+                                    <li>Next day prep (10 min)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leadership Track -->
+                <section class="track-section">
+                    <div class="track-section__header">
+                        <div class="track-section__icon track-section__icon--leadership">👥</div>
+                        <h3 class="track-section__title">Leadership</h3>
+                    </div>
+                    <div class="track-section__content">
+                        <div class="goals-grid">
+                            <div class="goal-item">
+                                <div class="goal-item__label">1:1s This Week</div>
+                                <div class="goal-item__value">2/2</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Feedback Notes</div>
+                                <div class="goal-item__value">2/2</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Team Pulse</div>
+                                <div class="goal-item__value">Weekly</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-item__label">Decision Log</div>
+                                <div class="goal-item__value">3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-blocks">
+                            <h4 class="text-lg font-semibold mb-4">Leadership Activities</h4>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Tuesday</div>
+                                <ul class="plan-block__activities">
+                                    <li>1:1 with Sarah (30 min)</li>
+                                    <li>Agenda: wins → blocks → asks</li>
+                                </ul>
+                            </div>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Thursday</div>
+                                <ul class="plan-block__activities">
+                                    <li>1:1 with Mike (30 min)</li>
+                                    <li>Career development focus</li>
+                                </ul>
+                            </div>
+                            <div class="plan-block">
+                                <div class="plan-block__day">Friday</div>
+                                <ul class="plan-block__activities">
+                                    <li>Team retro (1 hour)</li>
+                                    <li>Send SBI feedback</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p class="footer-text">AI Personal Coach — v0.1</p>
+            <a href="about.html" class="footer-link">About</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+/* Print Styles - Client Feedback Hub */
+
+@media print {
+  /* Reset all colors and backgrounds */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .header,
+  .sidebar,
+  .header__actions,
+  .page-actions,
+  .btn,
+  .theme-toggle,
+  .filter-bar,
+  .kanban__item:hover,
+  .feedback-card:hover {
+    display: none !important;
+  }
+
+  /* Typography */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 18pt;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  h2 {
+    font-size: 16pt;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  /* Links */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Page headers and footers */
+  .print-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid black;
+  }
+
+  .print-header__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .print-header__subtitle {
+    font-size: 12pt;
+    color: #666;
+  }
+
+  .print-footer {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid black;
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Report sections */
+  .report-section {
+    margin-bottom: 2em;
+    page-break-inside: avoid;
+  }
+
+  .report-section__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  /* KPI tiles */
+  .kpi-tile {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .kpi-tile__value {
+    font-size: 24pt;
+    font-weight: bold;
+    color: black;
+  }
+
+  .kpi-tile__label {
+    font-size: 10pt;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 0.5em;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #f0f0f0 !important;
+    font-weight: bold;
+  }
+
+  /* Feedback cards */
+  .feedback-card {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .feedback-card__meta {
+    margin-bottom: 0.5em;
+    font-size: 10pt;
+  }
+
+  .feedback-card__excerpt {
+    font-size: 12pt;
+    line-height: 1.4;
+    margin-bottom: 0.5em;
+  }
+
+  .feedback-card__tags {
+    font-size: 10pt;
+  }
+
+  /* Badges and chips */
+  .badge,
+  .chip {
+    border: 1px solid black;
+    padding: 0.25em 0.5em;
+    margin-right: 0.25em;
+    margin-bottom: 0.25em;
+    display: inline-block;
+    font-size: 10pt;
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* Charts - convert to simple tables */
+  .chart {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .chart__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .chart__content {
+    display: none;
+  }
+
+  .chart__data-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .chart__data-table th,
+  .chart__data-table td {
+    border: 1px solid black;
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  /* Kanban boards */
+  .kanban {
+    display: block;
+  }
+
+  .kanban__column {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .kanban__header {
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .kanban__title {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .kanban__item {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: white !important;
+  }
+
+  /* Impact-effort matrix */
+  .matrix {
+    display: block;
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  .matrix__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  .matrix__legend {
+    margin-bottom: 1em;
+  }
+
+  .matrix__items {
+    display: block;
+  }
+
+  .matrix__item {
+    margin-bottom: 0.5em;
+    padding: 0.25em;
+    border: 1px solid #ccc;
+  }
+
+  /* Quote blocks */
+  .quote-block {
+    border-left: 4px solid black;
+    padding: 1em;
+    margin: 1em 0;
+    background-color: #f9f9f9 !important;
+  }
+
+  .quote-block__text {
+    font-style: italic;
+    margin-bottom: 0.5em;
+  }
+
+  .quote-block__attribution {
+    text-align: right;
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Report specific styles */
+  .report-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+
+  .report-highlights {
+    margin-bottom: 2em;
+  }
+
+  .report-highlights__item {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  .report-actions {
+    margin-bottom: 2em;
+  }
+
+  .report-actions__item {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+
+  /* Executive summary */
+  .executive-summary {
+    border: 2px solid black;
+    padding: 2em;
+    margin-bottom: 2em;
+    background-color: #f9f9f9 !important;
+  }
+
+  .executive-summary__title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  .executive-summary__content {
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  /* Launch readout specific */
+  .launch-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+
+  .launch-metrics__before,
+  .launch-metrics__after {
+    border: 1px solid black;
+    padding: 1em;
+  }
+
+  .launch-metrics__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  /* Footer for all pages */
+  .print-page-footer {
+    position: fixed;
+    bottom: 0.5in;
+    left: 1in;
+    right: 1in;
+    text-align: center;
+    font-size: 10pt;
+    color: #666;
+    border-top: 1px solid #ccc;
+    padding-top: 0.25em;
+  }
+
+  /* Page numbers */
+  .print-page-number:after {
+    content: "Page " counter(page);
+  }
+}

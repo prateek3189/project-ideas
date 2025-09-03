@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaign Reports - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print report"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="reports.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="report">
+          <div class="report__header">
+            <div>
+              <h2 class="report__title">
+                Spring Sale Teaser - Performance Report
+              </h2>
+              <div class="report__meta">
+                <span>Campaign ID: #CS-2024-001</span>
+                <span>Sent: March 15, 2024 at 9:00 AM ET</span>
+                <span>Duration: 7 days</span>
+              </div>
+            </div>
+            <div class="report__actions">
+              <button class="btn btn--secondary btn--small" type="button">
+                Export CSV
+              </button>
+              <button class="btn btn--secondary btn--small" type="button">
+                Export PNG
+              </button>
+              <button class="btn btn--primary btn--small" type="button">
+                Print Report
+              </button>
+            </div>
+          </div>
+
+          <!-- Overview KPIs -->
+          <section class="report__section">
+            <h3 class="report__section-title">Performance Overview</h3>
+            <div class="kpi-grid">
+              <div class="kpi-tile">
+                <div class="kpi-tile__header">
+                  <span class="kpi-tile__label">Delivered</span>
+                  <span class="icon icon--delivery" aria-hidden="true"></span>
+                </div>
+                <div class="kpi-tile__value">97.6%</div>
+                <div class="kpi-tile__change kpi-tile__change--positive">
+                  +0.8%
+                </div>
+              </div>
+
+              <div class="kpi-tile">
+                <div class="kpi-tile__header">
+                  <span class="kpi-tile__label">Open Rate</span>
+                  <span class="icon icon--open" aria-hidden="true"></span>
+                </div>
+                <div class="kpi-tile__value">36.9%</div>
+                <div class="kpi-tile__change kpi-tile__change--negative">
+                  -2.1%
+                </div>
+              </div>
+
+              <div class="kpi-tile">
+                <div class="kpi-tile__header">
+                  <span class="kpi-tile__label">Click Rate</span>
+                  <span class="icon icon--click" aria-hidden="true"></span>
+                </div>
+                <div class="kpi-tile__value">7.4%</div>
+                <div class="kpi-tile__change kpi-tile__change--positive">
+                  +0.5%
+                </div>
+              </div>
+
+              <div class="kpi-tile">
+                <div class="kpi-tile__header">
+                  <span class="kpi-tile__label">Unsubscribe Rate</span>
+                  <span class="icon icon--unsub" aria-hidden="true"></span>
+                </div>
+                <div class="kpi-tile__value">0.19%</div>
+                <div class="kpi-tile__change kpi-tile__change--positive">
+                  -0.03%
+                </div>
+              </div>
+
+              <div class="kpi-tile">
+                <div class="kpi-tile__header">
+                  <span class="kpi-tile__label">Bounce Rate</span>
+                  <span class="icon icon--bounce" aria-hidden="true"></span>
+                </div>
+                <div class="kpi-tile__value">2.1%</div>
+                <div class="kpi-tile__change kpi-tile__change--negative">
+                  +0.2%
+                </div>
+              </div>
+
+              <div class="kpi-tile">
+                <div class="kpi-tile__header">
+                  <span class="kpi-tile__label">Revenue</span>
+                  <span class="icon icon--revenue" aria-hidden="true"></span>
+                </div>
+                <div class="kpi-tile__value">$12,450</div>
+                <div class="kpi-tile__change kpi-tile__change--positive">
+                  +15.3%
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Performance Trends -->
+          <section class="report__section">
+            <h3 class="report__section-title">Performance Trends</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="trend-chart">
+                  <div class="trend-chart__header">
+                    <h4>Engagement Over Time</h4>
+                    <div class="trend-chart__legend">
+                      <div class="legend-item">
+                        <span
+                          class="legend-color"
+                          style="background-color: var(--color-primary)"
+                        ></span>
+                        <span>Opens</span>
+                      </div>
+                      <div class="legend-item">
+                        <span
+                          class="legend-color"
+                          style="background-color: var(--color-success)"
+                        ></span>
+                        <span>Clicks</span>
+                      </div>
+                      <div class="legend-item">
+                        <span
+                          class="legend-color"
+                          style="background-color: var(--color-warning)"
+                        ></span>
+                        <span>Unsubscribes</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="trend-chart__content">
+                    <div class="trend-bars">
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 1</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 45%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 12%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 2%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 2</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 38%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 8%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 1%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 3</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 32%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 6%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 1%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 4</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 28%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 5%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 1%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 5</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 25%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 4%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 1%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 6</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 22%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 3%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 1%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="trend-bar">
+                        <div class="trend-bar__label">Day 7</div>
+                        <div class="trend-bar__data">
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 20%;
+                              background-color: var(--color-primary);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 3%;
+                              background-color: var(--color-success);
+                            "
+                          ></div>
+                          <div
+                            class="trend-bar__segment"
+                            style="
+                              width: 1%;
+                              background-color: var(--color-warning);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Link Performance -->
+          <section class="report__section">
+            <h3 class="report__section-title">Link Performance</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="link-share">
+                  <div class="link-share__url">https://yourstore.com/sale</div>
+                  <div class="link-share__bar">
+                    <div class="link-share__fill" style="width: 46%"></div>
+                  </div>
+                  <div class="link-share__percentage">46%</div>
+                </div>
+                <div class="link-share">
+                  <div class="link-share__url">
+                    https://yourstore.com/new-arrivals
+                  </div>
+                  <div class="link-share__bar">
+                    <div class="link-share__fill" style="width: 28%"></div>
+                  </div>
+                  <div class="link-share__percentage">28%</div>
+                </div>
+                <div class="link-share">
+                  <div class="link-share__url">https://yourstore.com/faq</div>
+                  <div class="link-share__bar">
+                    <div class="link-share__fill" style="width: 12%"></div>
+                  </div>
+                  <div class="link-share__percentage">12%</div>
+                </div>
+                <div class="link-share">
+                  <div class="link-share__url">Other links</div>
+                  <div class="link-share__bar">
+                    <div class="link-share__fill" style="width: 14%"></div>
+                  </div>
+                  <div class="link-share__percentage">14%</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- A/B Test Results -->
+          <section class="report__section">
+            <h3 class="report__section-title">A/B Test Results</h3>
+            <div class="card">
+              <div class="card__content">
+                <div class="table-container">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Variant</th>
+                        <th>Sample Size</th>
+                        <th>Open Rate</th>
+                        <th>Click Rate</th>
+                        <th>Winner</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <strong>Subject A</strong><br />
+                          <span class="text-muted">"Don't miss 20% off"</span>
+                        </td>
+                        <td class="text-numeric">4,512</td>
+                        <td class="text-numeric">35.2%</td>
+                        <td class="text-numeric">7.9%</td>
+                        <td>
+                          <span class="badge badge--success">Winner</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Subject B</strong><br />
+                          <span class="text-muted"
+                            >"A small thank-you: 20% inside"</span
+                          >
+                        </td>
+                        <td class="text-numeric">4,512</td>
+                        <td class="text-numeric">31.4%</td>
+                        <td class="text-numeric">8.1%</td>
+                        <td>
+                          <span class="badge badge--default">Runner-up</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert alert--info mt-4">
+                  <span class="icon icon--info" aria-hidden="true"></span>
+                  <div class="alert__content">
+                    <strong>A/B Test Summary</strong>
+                    <p>
+                      Subject A won with 3.8% higher open rate. Winner was
+                      selected after 4 hours based on open rate performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Device & Client Breakdown -->
+          <section class="report__section">
+            <h3 class="report__section-title">Device & Client Breakdown</h3>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="card">
+                <div class="card__header">
+                  <h4 class="card__title">Top Devices</h4>
+                </div>
+                <div class="card__content">
+                  <div class="table-container">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Device</th>
+                          <th>Opens</th>
+                          <th>Share</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>iPhone</td>
+                          <td class="text-numeric">8,420</td>
+                          <td class="text-numeric">48.2%</td>
+                        </tr>
+                        <tr>
+                          <td>Android</td>
+                          <td class="text-numeric">4,890</td>
+                          <td class="text-numeric">28.0%</td>
+                        </tr>
+                        <tr>
+                          <td>Desktop</td>
+                          <td class="text-numeric">2,340</td>
+                          <td class="text-numeric">13.4%</td>
+                        </tr>
+                        <tr>
+                          <td>iPad</td>
+                          <td class="text-numeric">1,850</td>
+                          <td class="text-numeric">10.4%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <h4 class="card__title">Top Email Clients</h4>
+                </div>
+                <div class="card__content">
+                  <div class="table-container">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Client</th>
+                          <th>Opens</th>
+                          <th>Share</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Gmail</td>
+                          <td class="text-numeric">7,890</td>
+                          <td class="text-numeric">45.2%</td>
+                        </tr>
+                        <tr>
+                          <td>Apple Mail</td>
+                          <td class="text-numeric">4,230</td>
+                          <td class="text-numeric">24.2%</td>
+                        </tr>
+                        <tr>
+                          <td>Outlook</td>
+                          <td class="text-numeric">2,890</td>
+                          <td class="text-numeric">16.5%</td>
+                        </tr>
+                        <tr>
+                          <td>Yahoo Mail</td>
+                          <td class="text-numeric">1,490</td>
+                          <td class="text-numeric">8.5%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Audience Breakdown -->
+          <section class="report__section">
+            <h3 class="report__section-title">Audience Breakdown</h3>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="card">
+                <div class="card__header">
+                  <h4 class="card__title">Geographic Distribution</h4>
+                </div>
+                <div class="card__content">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="badge badge--default"
+                      >United States (68%)</span
+                    >
+                    <span class="badge badge--default">Canada (15%)</span>
+                    <span class="badge badge--default"
+                      >United Kingdom (8%)</span
+                    >
+                    <span class="badge badge--default">Australia (5%)</span>
+                    <span class="badge badge--default">Other (4%)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <h4 class="card__title">Segment Performance</h4>
+                </div>
+                <div class="card__content">
+                  <div class="table-container">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Segment</th>
+                          <th>Sent</th>
+                          <th>Open Rate</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>All Subscribers</td>
+                          <td class="text-numeric">45,120</td>
+                          <td class="text-numeric">36.9%</td>
+                        </tr>
+                        <tr>
+                          <td>High Value</td>
+                          <td class="text-numeric">1,580</td>
+                          <td class="text-numeric">42.1%</td>
+                        </tr>
+                        <tr>
+                          <td>New Signups</td>
+                          <td class="text-numeric">3,240</td>
+                          <td class="text-numeric">38.5%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Deliverability Notes -->
+          <section class="report__section">
+            <h3 class="report__section-title">Deliverability Notes</h3>
+            <div class="alert alert--info">
+              <span class="icon icon--info" aria-hidden="true"></span>
+              <div class="alert__content">
+                <strong>Deliverability Summary</strong>
+                <p>
+                  Campaign performed well with 97.6% deliverability rate. Bounce
+                  rate of 2.1% is slightly above industry average (2%). Consider
+                  cleaning your list and implementing better list hygiene
+                  practices for future campaigns.
+                </p>
+              </div>
+            </div>
+
+            <div class="alert alert--warning">
+              <span class="icon icon--warning" aria-hidden="true"></span>
+              <div class="alert__content">
+                <strong>Recommendations</strong>
+                <p>
+                  Clicks concentrated on top CTA—consider single-focus layouts
+                  for better conversion. Open rate declined over time as
+                  expected—consider follow-up campaigns for non-openers.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

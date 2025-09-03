@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indie Night @ Blue Door - Event Buddy</title>
+    <meta
+      name="description"
+      content="Join us for an amazing indie music night at Blue Door Cafe. Live performances, great food, and an unforgettable evening."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="event-detail">
+          <!-- Main Content -->
+          <div class="event-detail__main">
+            <!-- Hero Section -->
+            <div class="event-detail__hero">
+              <div class="event-detail__cover">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+
+              <div class="event-detail__meta">
+                <span class="date-pill date-pill--upcoming">
+                  <span>📅</span>
+                  <span>Friday, December 15, 2023</span>
+                </span>
+                <span class="date-pill">
+                  <span>🕐</span>
+                  <span>8:00 PM - 11:00 PM</span>
+                </span>
+                <span class="tag-chip tag-chip--family">Family-friendly</span>
+                <span class="tag-chip">Live Music</span>
+              </div>
+            </div>
+
+            <!-- Event Title -->
+            <h1 class="text-3xl font-bold mb-4">Indie Night @ Blue Door</h1>
+
+            <!-- About Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">About This Event</h2>
+              <p>
+                Join us for an unforgettable evening of indie music at the
+                iconic Blue Door Cafe. This intimate venue will host some of
+                Mumbai's most talented indie artists, creating an atmosphere
+                that's both cozy and electrifying.
+              </p>
+
+              <p>
+                Whether you're a long-time indie music fan or just discovering
+                the scene, this event promises to deliver an authentic
+                experience with great music, delicious food, and a community of
+                music lovers.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">What to Expect:</h3>
+              <ul>
+                <li>Live performances from 3 talented indie artists</li>
+                <li>Acoustic and electric sets</li>
+                <li>Delicious food and drinks available</li>
+                <li>Intimate venue with great acoustics</li>
+                <li>Meet and greet with artists after the show</li>
+              </ul>
+            </section>
+
+            <!-- Schedule Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">Schedule</h2>
+              <div class="space-y-4">
+                <div
+                  class="flex justify-between items-center p-4 bg-surface rounded-lg border"
+                >
+                  <div>
+                    <div class="font-semibold">Doors Open</div>
+                    <div class="text-sm text-muted">
+                      Arrive early for best seats
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-semibold">7:30 PM</div>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-center p-4 bg-surface rounded-lg border"
+                >
+                  <div>
+                    <div class="font-semibold">Opening Act - The Wanderers</div>
+                    <div class="text-sm text-muted">Acoustic indie folk</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-semibold">8:00 PM</div>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-center p-4 bg-surface rounded-lg border"
+                >
+                  <div>
+                    <div class="font-semibold">Main Act - Electric Dreams</div>
+                    <div class="text-sm text-muted">
+                      Indie rock with electronic elements
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-semibold">9:00 PM</div>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-center p-4 bg-surface rounded-lg border"
+                >
+                  <div>
+                    <div class="font-semibold">
+                      Headliner - Midnight Stories
+                    </div>
+                    <div class="text-sm text-muted">
+                      Alternative indie with soulful vocals
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-semibold">10:00 PM</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Line-up Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">Line-up & Speakers</h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="organizer-card">
+                  <div class="organizer-card__avatar">TW</div>
+                  <div class="organizer-card__info">
+                    <div class="organizer-card__name">The Wanderers</div>
+                    <p class="text-sm text-muted">
+                      Acoustic indie folk duo known for their soulful harmonies
+                      and storytelling lyrics.
+                    </p>
+                    <div class="organizer-card__badges">
+                      <span class="organizer-card__badge">Folk</span>
+                      <span class="organizer-card__badge">Acoustic</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="organizer-card">
+                  <div class="organizer-card__avatar">ED</div>
+                  <div class="organizer-card__info">
+                    <div class="organizer-card__name">Electric Dreams</div>
+                    <p class="text-sm text-muted">
+                      Indie rock band blending traditional instruments with
+                      electronic soundscapes.
+                    </p>
+                    <div class="organizer-card__badges">
+                      <span class="organizer-card__badge">Rock</span>
+                      <span class="organizer-card__badge">Electronic</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="organizer-card">
+                  <div class="organizer-card__avatar">MS</div>
+                  <div class="organizer-card__info">
+                    <div class="organizer-card__name">Midnight Stories</div>
+                    <p class="text-sm text-muted">
+                      Alternative indie with powerful vocals and introspective
+                      lyrics that resonate with the soul.
+                    </p>
+                    <div class="organizer-card__badges">
+                      <span class="organizer-card__badge">Alternative</span>
+                      <span class="organizer-card__badge">Soul</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Venue Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">Venue</h2>
+              <div class="venue-box">
+                <h3 class="venue-box__name">Blue Door Cafe</h3>
+                <div class="venue-box__address">
+                  123 Linking Road, Bandra West, Mumbai 400050
+                </div>
+                <div class="map-placeholder">
+                  <span class="visually-hidden"
+                    >Map showing venue location</span
+                  >
+                </div>
+                <div class="mt-4 text-sm text-muted">
+                  <p>
+                    <strong>Parking:</strong> Limited street parking available.
+                    Public transport recommended.
+                  </p>
+                  <p>
+                    <strong>Accessibility:</strong> Wheelchair accessible
+                    entrance and seating available.
+                  </p>
+                  <p><strong>Capacity:</strong> 80 people (intimate setting)</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Host Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">Hosted By</h2>
+              <div class="organizer-card">
+                <div class="organizer-card__avatar">BD</div>
+                <div class="organizer-card__info">
+                  <div class="organizer-card__name">Blue Door Events</div>
+                  <p class="text-sm text-muted">
+                    We're passionate about bringing the best indie music to
+                    Mumbai. With over 5 years of experience, we've hosted
+                    hundreds of successful events and built a community of music
+                    lovers.
+                  </p>
+                  <div class="organizer-card__badges">
+                    <span class="organizer-card__badge">Verified</span>
+                    <span class="organizer-card__badge">5+ Years</span>
+                    <span class="organizer-card__badge">200+ Events</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Policies Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">Policies</h2>
+              <details>
+                <summary>Refund Policy</summary>
+                <p>
+                  Full refund up to 24 hours before the event start time. No
+                  refunds for no-shows or cancellations within 24 hours of the
+                  event.
+                </p>
+              </details>
+
+              <details>
+                <summary>Entry Requirements</summary>
+                <p>
+                  Valid ID required for entry. This is an all-ages event, but
+                  alcohol will be served to those 21+ with valid ID.
+                </p>
+              </details>
+
+              <details>
+                <summary>Safety Guidelines</summary>
+                <p>
+                  Please follow venue safety guidelines. No outside food or
+                  drinks allowed. Smoking only in designated areas.
+                </p>
+              </details>
+            </section>
+
+            <!-- Share Section -->
+            <section class="event-detail__section">
+              <h2 class="event-detail__section-title">Share This Event</h2>
+              <div class="flex gap-4">
+                <button class="btn-secondary">📱 Share Link</button>
+                <button class="btn-secondary">📧 Email</button>
+                <button class="btn-secondary">📅 Add to Calendar</button>
+              </div>
+            </section>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="event-detail__sidebar">
+            <!-- Ticketing Panel -->
+            <div class="cart-summary">
+              <h2 class="cart-summary__title">Get Your Tickets</h2>
+
+              <!-- Capacity Meter -->
+              <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm font-medium">Capacity</span>
+                  <span class="text-sm text-muted">65/80 sold</span>
+                </div>
+                <div class="capacity-meter">
+                  <div class="capacity-meter__fill" style="width: 81%"></div>
+                </div>
+                <div class="capacity-meter__text">
+                  <span>Limited seats left</span>
+                  <span>81% full</span>
+                </div>
+              </div>
+
+              <!-- Ticket Tiers -->
+              <div class="space-y-3 mb-6">
+                <div class="tier-row">
+                  <div class="tier-row__name">Early Bird</div>
+                  <div class="tier-row__price">₹299</div>
+                  <div class="tier-row__qty">
+                    <div class="qty-selector">
+                      <button type="button">-</button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="2"
+                        aria-label="Early Bird quantity"
+                      />
+                      <button type="button">+</button>
+                    </div>
+                  </div>
+                  <div class="tier-row__availability">
+                    <div class="availability-bar">
+                      <div
+                        class="availability-bar__fill availability-bar__fill--low"
+                      ></div>
+                    </div>
+                    <div class="availability-text availability-text--low">
+                      Low stock
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tier-row">
+                  <div class="tier-row__name">General</div>
+                  <div class="tier-row__price">₹399</div>
+                  <div class="tier-row__qty">
+                    <div class="qty-selector">
+                      <button type="button">-</button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="4"
+                        aria-label="General quantity"
+                      />
+                      <button type="button">+</button>
+                    </div>
+                  </div>
+                  <div class="tier-row__availability">
+                    <div class="availability-bar">
+                      <div
+                        class="availability-bar__fill availability-bar__fill--in-stock"
+                      ></div>
+                    </div>
+                    <div class="availability-text availability-text--in-stock">
+                      In stock
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tier-row tier-row--sold-out">
+                  <div class="tier-row__name">VIP</div>
+                  <div class="tier-row__price">₹899</div>
+                  <div class="tier-row__qty">
+                    <div class="qty-selector">
+                      <button type="button" disabled>-</button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="0"
+                        disabled
+                        aria-label="VIP quantity"
+                      />
+                      <button type="button" disabled>+</button>
+                    </div>
+                  </div>
+                  <div class="tier-row__availability">
+                    <div class="availability-bar">
+                      <div
+                        class="availability-bar__fill availability-bar__fill--sold-out"
+                      ></div>
+                    </div>
+                    <div class="availability-text availability-text--sold-out">
+                      Sold out
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Waitlist -->
+              <div class="alert-banner alert-banner--warning mb-4">
+                <span class="alert-banner__icon">⏳</span>
+                <div class="alert-banner__content">
+                  <div class="alert-banner__title">VIP Sold Out</div>
+                  <div class="alert-banner__message">
+                    Join the waitlist to be notified if tickets become available
+                  </div>
+                </div>
+              </div>
+
+              <button class="waitlist-badge mb-4">Join VIP Waitlist</button>
+
+              <!-- Cart Summary -->
+              <div class="border-t pt-4 mb-4">
+                <div class="cart-item">
+                  <span class="cart-item__name">Early Bird (2x)</span>
+                  <span class="cart-item__price">₹598</span>
+                </div>
+                <div class="cart-item">
+                  <span class="cart-item__name">General (1x)</span>
+                  <span class="cart-item__price">₹399</span>
+                </div>
+                <div class="cart-item">
+                  <span class="cart-item__name">Service Fee</span>
+                  <span class="cart-item__price">₹50</span>
+                </div>
+                <div class="cart-summary__total">
+                  <span>Total</span>
+                  <span>₹1,047</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="space-y-3">
+                <a href="rsvp.html" class="btn-primary w-full text-center"
+                  >Continue to Checkout</a
+                >
+                <button class="btn-secondary w-full">Save for Later</button>
+              </div>
+
+              <!-- Fee Note -->
+              <p class="text-xs text-muted mt-4">
+                Service fees and taxes shown at checkout (placeholder)
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Transfer Hub</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item nav-item--active">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Transfer Hub</h2>
+          <p class="page-subtitle">
+            Transfer points between programs and track transfer bonuses
+          </p>
+        </div>
+
+        <!-- Quick Transfer -->
+        <section class="quick-transfer-section">
+          <div class="search-form">
+            <h3 class="search-form__title">Quick Transfer</h3>
+            <form class="search-form__content">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="from-program" class="search-form__label"
+                    >From Program</label
+                  >
+                  <select id="from-program" class="search-form__select">
+                    <option value="">Select source program</option>
+                    <option value="amex-mr">Amex Membership Rewards</option>
+                    <option value="chase-ur">Chase Ultimate Rewards</option>
+                    <option value="citi-ty">Citi ThankYou Rewards</option>
+                    <option value="capital-one">Capital One Miles</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="to-program" class="search-form__label"
+                    >To Program</label
+                  >
+                  <select id="to-program" class="search-form__select">
+                    <option value="">Select destination program</option>
+                    <option value="krisflyer">
+                      KrisFlyer (Singapore Airlines)
+                    </option>
+                    <option value="avios">Avios (British Airways)</option>
+                    <option value="mileageplus">MileagePlus (United)</option>
+                    <option value="flying-blue">
+                      Flying Blue (Air France/KLM)
+                    </option>
+                    <option value="marriott">Marriott Bonvoy</option>
+                    <option value="hyatt">World of Hyatt</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="transfer-amount" class="search-form__label"
+                    >Amount</label
+                  >
+                  <input
+                    type="number"
+                    id="transfer-amount"
+                    class="search-form__input"
+                    placeholder="Points to transfer"
+                    aria-label="Transfer amount"
+                  />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn--primary">
+                  <span class="icon">🔄</span>
+                  Calculate Transfer
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Transfer Partners -->
+        <section class="transfer-partners-section">
+          <h3 class="section-title">Transfer Partners</h3>
+          <div class="transfer-tabs">
+            <ul class="tabs__list">
+              <li class="tabs__tab tabs__tab--active">Credit Cards</li>
+              <li class="tabs__tab">Airlines</li>
+              <li class="tabs__tab">Hotels</li>
+            </ul>
+          </div>
+
+          <!-- Credit Card Partners -->
+          <div class="transfer-partners-grid">
+            <!-- Amex MR -->
+            <div class="transfer-program-card">
+              <div class="transfer-program-header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Amex Membership Rewards</h4>
+                  <span class="program-balance">62,500 points</span>
+                </div>
+              </div>
+              <div class="transfer-partners-list">
+                <div class="transfer-tile">
+                  <div class="transfer-tile__logos">
+                    <span class="transfer-logo">🛩️</span>
+                    <span class="transfer-arrow">→</span>
+                    <span class="transfer-logo">🛩️</span>
+                  </div>
+                  <div class="transfer-tile__ratio">1:1</div>
+                  <div class="transfer-tile__time">Instant</div>
+                  <div class="transfer-tile__bonus">No Bonus</div>
+                </div>
+                <div class="transfer-tile">
+                  <div class="transfer-tile__logos">
+                    <span class="transfer-logo">💳</span>
+                    <span class="transfer-arrow">→</span>
+                    <span class="transfer-logo">✈️</span>
+                  </div>
+                  <div class="transfer-tile__ratio">1:1</div>
+                  <div class="transfer-tile__time">Instant</div>
+                  <div class="transfer-tile__bonus">No Bonus</div>
+                </div>
+                <div class="transfer-tile">
+                  <div class="transfer-tile__logos">
+                    <span class="transfer-logo">💳</span>
+                    <span class="transfer-arrow">→</span>
+                    <span class="transfer-logo">🏨</span>
+                  </div>
+                  <div class="transfer-tile__ratio">1:1</div>
+                  <div class="transfer-tile__time">1-2 days</div>
+                  <div class="transfer-tile__bonus">No Bonus</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chase UR -->
+            <div class="transfer-program-card">
+              <div class="transfer-program-header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Chase Ultimate Rewards</h4>
+                  <span class="program-balance">48,000 points</span>
+                </div>
+              </div>
+              <div class="transfer-partners-list">
+                <div class="transfer-tile">
+                  <div class="transfer-tile__logos">
+                    <span class="transfer-logo">💳</span>
+                    <span class="transfer-arrow">→</span>
+                    <span class="transfer-logo">✈️</span>
+                  </div>
+                  <div class="transfer-tile__ratio">1:1</div>
+                  <div class="transfer-tile__time">Instant</div>
+                  <div class="transfer-tile__bonus">No Bonus</div>
+                </div>
+                <div class="transfer-tile">
+                  <div class="transfer-tile__logos">
+                    <span class="transfer-logo">💳</span>
+                    <span class="transfer-arrow">→</span>
+                    <span class="transfer-logo">🏨</span>
+                  </div>
+                  <div class="transfer-tile__ratio">1:1</div>
+                  <div class="transfer-tile__time">Instant</div>
+                  <div class="transfer-tile__bonus">No Bonus</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Citi ThankYou -->
+            <div class="transfer-program-card">
+              <div class="transfer-program-header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Citi ThankYou Rewards</h4>
+                  <span class="program-balance">32,000 points</span>
+                </div>
+              </div>
+              <div class="transfer-partners-list">
+                <div class="transfer-tile">
+                  <div class="transfer-tile__logos">
+                    <span class="transfer-logo">💳</span>
+                    <span class="transfer-arrow">→</span>
+                    <span class="transfer-logo">✈️</span>
+                  </div>
+                  <div class="transfer-tile__ratio">1:1</div>
+                  <div class="transfer-tile__time">1-2 days</div>
+                  <div class="transfer-tile__bonus">No Bonus</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transfer Bonuses -->
+        <section class="transfer-bonuses-section">
+          <h3 class="section-title">Current Transfer Bonuses</h3>
+          <div class="bonuses-grid">
+            <div class="bonus-card">
+              <div class="bonus-card__header">
+                <h4 class="bonus-card__title">Amex → Marriott</h4>
+                <span class="bonus-badge bonus-badge--active">Active</span>
+              </div>
+              <div class="bonus-card__details">
+                <div class="bonus-ratio">1:1 + 20% Bonus</div>
+                <div class="bonus-validity">Valid until: March 31, 2025</div>
+                <div class="bonus-description">
+                  Transfer 1,000 MR points and get 1,200 Marriott points
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--primary btn--sm">Transfer Now</button>
+              </div>
+            </div>
+
+            <div class="bonus-card">
+              <div class="bonus-card__header">
+                <h4 class="bonus-card__title">Chase → Hyatt</h4>
+                <span class="bonus-badge bonus-badge--active">Active</span>
+              </div>
+              <div class="bonus-card__details">
+                <div class="bonus-ratio">1:1 + 15% Bonus</div>
+                <div class="bonus-validity">Valid until: February 28, 2025</div>
+                <div class="bonus-description">
+                  Transfer 1,000 UR points and get 1,150 Hyatt points
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--primary btn--sm">Transfer Now</button>
+              </div>
+            </div>
+
+            <div class="bonus-card">
+              <div class="bonus-card__header">
+                <h4 class="bonus-card__title">Citi → Avianca</h4>
+                <span class="bonus-badge bonus-badge--expired">Expired</span>
+              </div>
+              <div class="bonus-card__details">
+                <div class="bonus-ratio">1:1 + 25% Bonus</div>
+                <div class="bonus-validity">Expired: January 15, 2025</div>
+                <div class="bonus-description">
+                  Transfer 1,000 TY points and get 1,250 Avianca miles
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--secondary btn--sm" disabled>
+                  Expired
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transfer History -->
+        <section class="transfer-history-section">
+          <h3 class="section-title">Recent Transfers</h3>
+          <div class="transfer-history-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Amount</th>
+                  <th>Ratio</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jan 15, 2025</td>
+                  <td>Amex MR</td>
+                  <td>KrisFlyer</td>
+                  <td>15,000</td>
+                  <td>1:1</td>
+                  <td>
+                    <span class="status-badge status-badge--completed"
+                      >Completed</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jan 10, 2025</td>
+                  <td>Chase UR</td>
+                  <td>Hyatt</td>
+                  <td>25,000</td>
+                  <td>1:1 + 15%</td>
+                  <td>
+                    <span class="status-badge status-badge--completed"
+                      >Completed</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jan 5, 2025</td>
+                  <td>Citi TY</td>
+                  <td>Avios</td>
+                  <td>10,000</td>
+                  <td>1:1</td>
+                  <td>
+                    <span class="status-badge status-badge--completed"
+                      >Completed</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dec 28, 2024</td>
+                  <td>Amex MR</td>
+                  <td>Marriott</td>
+                  <td>20,000</td>
+                  <td>1:1 + 20%</td>
+                  <td>
+                    <span class="status-badge status-badge--completed"
+                      >Completed</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Transfer Tips -->
+        <section class="transfer-tips-section">
+          <h3 class="section-title">Transfer Tips</h3>
+          <div class="tips-grid">
+            <div class="tip-card">
+              <h4 class="tip-card__title">Transfer Timing</h4>
+              <p class="tip-card__content">
+                Transfer points only when you're ready to book. Most transfers
+                are irreversible, so avoid transferring speculatively.
+              </p>
+            </div>
+
+            <div class="tip-card">
+              <h4 class="tip-card__title">Bonus Opportunities</h4>
+              <p class="tip-card__content">
+                Watch for transfer bonuses that can increase your point value by
+                15-30%. These are often limited-time offers.
+              </p>
+            </div>
+
+            <div class="tip-card">
+              <h4 class="tip-card__title">Transfer Times</h4>
+              <p class="tip-card__content">
+                Most transfers are instant, but some can take 1-2 days. Plan
+                accordingly if you need points for a time-sensitive booking.
+              </p>
+            </div>
+
+            <div class="tip-card">
+              <h4 class="tip-card__title">Minimum Transfers</h4>
+              <p class="tip-card__content">
+                Most programs require minimum transfer amounts (usually
+                1,000-5,000 points). Check requirements before initiating
+                transfers.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results - Visual Search</title>
+    <meta
+      name="description"
+      content="Visual search results for similar items"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="container">
+          <div class="header">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="header__brand-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Visual Search
+            </a>
+
+            <nav class="header__nav">
+              <button
+                class="theme-toggle"
+                onclick="toggleTheme()"
+                aria-label="Toggle theme"
+              >
+                <svg
+                  class="theme-toggle__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                Light
+              </button>
+
+              <a href="collections.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"
+                  ></path>
+                </svg>
+                Collections
+              </a>
+
+              <a href="settings.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"
+                  ></path>
+                </svg>
+                Settings
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="shell__main">
+        <div class="container">
+          <!-- Results Header -->
+          <div class="results-header">
+            <div class="results-header__image">
+              <img
+                src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f0f0f0'/><text x='50' y='50' text-anchor='middle' dy='.3em' font-size='12' fill='%23666'>Sneaker</text></svg>"
+                alt="Search image"
+              />
+              <div
+                class="detection-box"
+                style="left: 12%; top: 18%; width: 56%; height: 28%"
+              >
+                <div class="detection-box__label">sneaker (92%)</div>
+              </div>
+            </div>
+
+            <div class="results-header__info">
+              <h1 class="results-header__title">Running Sneakers Search</h1>
+              <p class="results-header__subtitle">
+                Found 24 similar items •
+                <span id="current-mode">Shop</span> mode
+              </p>
+
+              <div class="results-header__tags">
+                <span class="chip chip--confidence chip--confidence--high"
+                  >sneaker</span
+                >
+                <span class="chip">athletic</span>
+                <span class="chip">black</span>
+                <span class="chip">white</span>
+              </div>
+            </div>
+
+            <div class="results-header__controls">
+              <button
+                class="btn btn--ghost btn--sm results-header__crop-btn"
+                onclick="toggleCrop()"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 2v4a2 2 0 0 0 2 2h4"></path>
+                  <path d="M18 22v-4a2 2 0 0 0-2-2h-4"></path>
+                  <path d="M22 6h-4a2 2 0 0 0-2 2v4"></path>
+                  <path d="M2 18h4a2 2 0 0 0 2-2v-4"></path>
+                </svg>
+                Edit crop
+              </button>
+
+              <div class="results-header__similarity">
+                <div class="similarity-slider">
+                  <label for="similarity" class="text-sm font-medium"
+                    >Visual Similarity</label
+                  >
+                  <input
+                    type="range"
+                    id="similarity"
+                    class="similarity-slider__input"
+                    min="0"
+                    max="100"
+                    value="75"
+                    oninput="updateSimilarity(this.value)"
+                  />
+                  <span class="similarity-slider__value">75%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nudge -->
+          <div class="nudge">
+            <svg
+              class="nudge__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Crop closer to remove background clutter for better matches.
+          </div>
+
+          <!-- Results Layout -->
+          <div class="results-layout">
+            <!-- Filters Sidebar -->
+            <aside class="results-layout__filters">
+              <div class="filter-panel">
+                <div class="filter-group">
+                  <div class="filter-group__label">Mode</div>
+                  <div class="mode-switch">
+                    <button
+                      class="mode-chip mode-chip--active mode-chip--shop"
+                      onclick="setMode('shop')"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path
+                          d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                        ></path>
+                      </svg>
+                      Shop
+                    </button>
+                    <button
+                      class="mode-chip mode-chip--learn"
+                      onclick="setMode('learn')"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                        ></path>
+                        <path
+                          d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        ></path>
+                      </svg>
+                      Learn
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Shop Filters -->
+                <div id="shop-filters">
+                  <div class="filter-group">
+                    <div class="filter-group__label">Category</div>
+                    <div class="filter-chips">
+                      <button
+                        class="filter-chip filter-chip--active"
+                        onclick="toggleFilter(this)"
+                      >
+                        Shoes
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Clothing
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Accessories
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="filter-group">
+                    <div class="filter-group__label">Price Range</div>
+                    <div class="price-range">
+                      <input
+                        type="number"
+                        class="price-range__input"
+                        placeholder="Min"
+                        value="1000"
+                      />
+                      <span class="price-range__separator">-</span>
+                      <input
+                        type="number"
+                        class="price-range__input"
+                        placeholder="Max"
+                        value="5000"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="filter-group">
+                    <div class="filter-group__label">Color</div>
+                    <div class="filter-chips">
+                      <button
+                        class="filter-chip filter-chip--active"
+                        onclick="toggleFilter(this)"
+                      >
+                        Black
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        White
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Gray
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Blue
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="filter-group">
+                    <div class="filter-group__label">Brand</div>
+                    <div class="filter-chips">
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Nike
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Adidas
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Puma
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Generic
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="filter-group">
+                    <div class="filter-group__label">Style</div>
+                    <div class="filter-chips">
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Athletic
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Casual
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Running
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Learn Filters -->
+                <div id="learn-filters" style="display: none">
+                  <div class="filter-group">
+                    <div class="filter-group__label">Category</div>
+                    <div class="filter-chips">
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Plant
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Landmark
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Art
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Object
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="filter-group">
+                    <div class="filter-group__label">Confidence</div>
+                    <div class="filter-chips">
+                      <button
+                        class="filter-chip filter-chip--active"
+                        onclick="toggleFilter(this)"
+                      >
+                        High
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Medium
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Low
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="filter-group">
+                    <div class="filter-group__label">Region</div>
+                    <div class="filter-chips">
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Global
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        India
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Europe
+                      </button>
+                      <button class="filter-chip" onclick="toggleFilter(this)">
+                        Americas
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Results Content -->
+            <div class="results-layout__content">
+              <!-- Results Grid -->
+              <div class="results-grid" id="results-grid">
+                <!-- Shop Results -->
+                <div class="result-card" onclick="openDetail('product1')">
+                  <div class="result-card__image">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23f0f0f0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 1</text></svg>"
+                      alt="Runner Flex 2.0"
+                    />
+                    <div class="result-card__overlay">
+                      <span class="chip chip--confidence chip--confidence--high"
+                        >91%</span
+                      >
+                    </div>
+                  </div>
+                  <div class="result-card__content">
+                    <h3 class="result-card__title">
+                      Runner Flex 2.0 — Black/White
+                    </h3>
+                    <p class="result-card__subtitle">
+                      Athletic sneaker with breathable mesh upper
+                    </p>
+                    <div class="result-card__meta">
+                      <span class="result-card__price">₹3,499</span>
+                      <span class="result-card__store">MockMart</span>
+                    </div>
+                    <div class="why-match">
+                      <div class="why-match__title">Why this match:</div>
+                      <div class="why-match__text">
+                        High overlap in <strong>toe shape</strong>,
+                        <strong>sole pattern</strong>, and
+                        <strong>color tone</strong>.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('product2')">
+                  <div class="result-card__image">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23e0e0e0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 2</text></svg>"
+                      alt="Street Sprint Low"
+                    />
+                    <div class="result-card__overlay">
+                      <span class="chip chip--confidence chip--confidence--high"
+                        >87%</span
+                      >
+                    </div>
+                  </div>
+                  <div class="result-card__content">
+                    <h3 class="result-card__title">Street Sprint Low — Mono</h3>
+                    <p class="result-card__subtitle">
+                      Casual sneaker with minimalist design
+                    </p>
+                    <div class="result-card__meta">
+                      <span class="result-card__price">₹3,199</span>
+                      <span class="result-card__store">ShoeHub</span>
+                    </div>
+                    <div class="why-match">
+                      <div class="why-match__title">Why this match:</div>
+                      <div class="why-match__text">
+                        Similar <strong>silhouette</strong> and
+                        <strong>color scheme</strong> with matching
+                        <strong>sole design</strong>.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('product3')">
+                  <div class="result-card__image">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23d0d0d0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 3</text></svg>"
+                      alt="Aero Knit Sneaker"
+                    />
+                    <div class="result-card__overlay">
+                      <span class="chip chip--confidence chip--confidence--high"
+                        >84%</span
+                      >
+                    </div>
+                  </div>
+                  <div class="result-card__content">
+                    <h3 class="result-card__title">
+                      Aero Knit Sneaker — Graphite
+                    </h3>
+                    <p class="result-card__subtitle">
+                      Lightweight running shoe with knit upper
+                    </p>
+                    <div class="result-card__meta">
+                      <span class="result-card__price">₹3,899</span>
+                      <span class="result-card__store">SneakPeek</span>
+                    </div>
+                    <div class="why-match">
+                      <div class="why-match__title">Why this match:</div>
+                      <div class="why-match__text">
+                        Matching <strong>athletic style</strong> and
+                        <strong>color palette</strong> with similar
+                        <strong>sole texture</strong>.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('product4')">
+                  <div class="result-card__image">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23c0c0c0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 4</text></svg>"
+                      alt="Urban Walker"
+                    />
+                    <div class="result-card__overlay">
+                      <span
+                        class="chip chip--confidence chip--confidence--medium"
+                        >78%</span
+                      >
+                    </div>
+                  </div>
+                  <div class="result-card__content">
+                    <h3 class="result-card__title">Urban Walker — Charcoal</h3>
+                    <p class="result-card__subtitle">
+                      Comfortable walking shoe for daily wear
+                    </p>
+                    <div class="result-card__meta">
+                      <span class="result-card__price">₹2,799</span>
+                      <span class="result-card__store">WalkWise</span>
+                    </div>
+                    <div class="why-match">
+                      <div class="why-match__title">Why this match:</div>
+                      <div class="why-match__text">
+                        Similar <strong>color tone</strong> and
+                        <strong>general shape</strong> with comfortable design.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('product5')">
+                  <div class="result-card__image">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23b0b0b0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 5</text></svg>"
+                      alt="Sport Max"
+                    />
+                    <div class="result-card__overlay">
+                      <span
+                        class="chip chip--confidence chip--confidence--medium"
+                        >76%</span
+                      >
+                    </div>
+                  </div>
+                  <div class="result-card__content">
+                    <h3 class="result-card__title">Sport Max — Navy/White</h3>
+                    <p class="result-card__subtitle">
+                      High-performance athletic sneaker
+                    </p>
+                    <div class="result-card__meta">
+                      <span class="result-card__price">₹4,299</span>
+                      <span class="result-card__store">SportZone</span>
+                    </div>
+                    <div class="why-match">
+                      <div class="why-match__title">Why this match:</div>
+                      <div class="why-match__text">
+                        Matching <strong>athletic category</strong> and
+                        <strong>color contrast</strong> pattern.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('product6')">
+                  <div class="result-card__image">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23a0a0a0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 6</text></svg>"
+                      alt="Classic Runner"
+                    />
+                    <div class="result-card__overlay">
+                      <span
+                        class="chip chip--confidence chip--confidence--medium"
+                        >73%</span
+                      >
+                    </div>
+                  </div>
+                  <div class="result-card__content">
+                    <h3 class="result-card__title">
+                      Classic Runner — Gray/Black
+                    </h3>
+                    <p class="result-card__subtitle">
+                      Timeless running shoe design
+                    </p>
+                    <div class="result-card__meta">
+                      <span class="result-card__price">₹3,599</span>
+                      <span class="result-card__store">RunRight</span>
+                    </div>
+                    <div class="why-match">
+                      <div class="why-match__title">Why this match:</div>
+                      <div class="why-match__text">
+                        Similar <strong>running shoe</strong> category with
+                        <strong>neutral color</strong> scheme.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Load More Button -->
+              <div class="text-center mb-8">
+                <button class="btn btn--secondary" onclick="loadMore()">
+                  Load More Results
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <div class="flex flex--between items-center">
+            <div class="text-sm text-muted">
+              Visual Search v0.1 • <a href="about.html">About</a> •
+              <a href="about.html#privacy">Privacy</a>
+            </div>
+            <div class="text-sm text-muted">
+              <a href="#" onclick="window.print()" class="header__print-link"
+                >Print Results</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      let currentMode = "shop";
+      let cropVisible = false;
+
+      function setMode(mode) {
+        currentMode = mode;
+
+        // Update mode chips
+        document.querySelectorAll(".mode-chip").forEach((chip) => {
+          chip.classList.remove("mode-chip--active");
+        });
+
+        document
+          .querySelector(`.mode-chip--${mode}`)
+          .classList.add("mode-chip--active");
+
+        // Update mode display
+        document.getElementById("current-mode").textContent =
+          mode.charAt(0).toUpperCase() + mode.slice(1);
+
+        // Show/hide appropriate filters
+        const shopFilters = document.getElementById("shop-filters");
+        const learnFilters = document.getElementById("learn-filters");
+
+        if (mode === "shop") {
+          shopFilters.style.display = "block";
+          learnFilters.style.display = "none";
+          loadShopResults();
+        } else {
+          shopFilters.style.display = "none";
+          learnFilters.style.display = "block";
+          loadLearnResults();
+        }
+      }
+
+      function toggleFilter(element) {
+        element.classList.toggle("filter-chip--active");
+      }
+
+      function updateSimilarity(value) {
+        document.querySelector(".similarity-slider__value").textContent =
+          value + "%";
+        // In a real app, this would filter results
+      }
+
+      function toggleCrop() {
+        cropVisible = !cropVisible;
+        const detectionBox = document.querySelector(".detection-box");
+        if (cropVisible) {
+          detectionBox.style.display = "block";
+        } else {
+          detectionBox.style.display = "none";
+        }
+      }
+
+      function openDetail(id) {
+        window.location.href = `detail.html?id=${id}&mode=${currentMode}`;
+      }
+
+      function loadMore() {
+        // In a real app, this would load more results
+        alert(
+          "Loading more results... (This would fetch additional items in a real implementation)"
+        );
+      }
+
+      function loadShopResults() {
+        // Shop results are already loaded in HTML
+      }
+
+      function loadLearnResults() {
+        const resultsGrid = document.getElementById("results-grid");
+        resultsGrid.innerHTML = `
+                <div class="result-card" onclick="openDetail('plant1')">
+                    <div class="result-card__image">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23228B22'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Plant 1</text></svg>" alt="Ficus elastica">
+                        <div class="result-card__overlay">
+                            <span class="chip chip--confidence chip--confidence--high">89%</span>
+                        </div>
+                    </div>
+                    <div class="result-card__content">
+                        <h3 class="result-card__title">Ficus elastica (Rubber Plant)</h3>
+                        <p class="result-card__subtitle">Popular houseplant with glossy leaves</p>
+                        <div class="result-card__meta">
+                            <span class="result-card__store">Plant Care: Bright indirect light, moderate water</span>
+                        </div>
+                        <div class="why-match">
+                            <div class="why-match__title">Why this match:</div>
+                            <div class="why-match__text">Leaf <strong>venation</strong> and <strong>gloss</strong> match top-3 candidates.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('landmark1')">
+                    <div class="result-card__image">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23DAA520'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Landmark</text></svg>" alt="India Gate">
+                        <div class="result-card__overlay">
+                            <span class="chip chip--confidence chip--confidence--high">94%</span>
+                        </div>
+                    </div>
+                    <div class="result-card__content">
+                        <h3 class="result-card__title">India Gate, New Delhi</h3>
+                        <p class="result-card__subtitle">War memorial arch built in 1931</p>
+                        <div class="result-card__meta">
+                            <span class="result-card__store">Architect: Edwin Lutyens • Style: Indo-Saracenic</span>
+                        </div>
+                        <div class="why-match">
+                            <div class="why-match__title">Why this match:</div>
+                            <div class="why-match__text">Distinctive <strong>arch shape</strong> and <strong>architectural style</strong> clearly identified.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card" onclick="openDetail('art1')">
+                    <div class="result-card__image">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%238B5CF6'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Art</text></svg>" alt="Impressionist Painting">
+                        <div class="result-card__overlay">
+                            <span class="chip chip--confidence chip--confidence--medium">73%</span>
+                        </div>
+                    </div>
+                    <div class="result-card__content">
+                        <h3 class="result-card__title">Impressionist Oil Painting (style)</h3>
+                        <p class="result-card__subtitle">Late 19th century artistic movement</p>
+                        <div class="result-card__meta">
+                            <span class="result-card__store">Era: 1870s-1880s • Technique: Visible brushstrokes</span>
+                        </div>
+                        <div class="why-match">
+                            <div class="why-match__title">Why this match:</div>
+                            <div class="why-match__text">Matching <strong>brushstroke style</strong> and <strong>color palette</strong> of impressionist works.</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+      }
+
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme") || "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        body.setAttribute("data-theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = newTheme === "dark" ? "Dark" : "Light";
+
+        // Store preference
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme and initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.body.setAttribute("data-theme", savedTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = savedTheme === "dark" ? "Dark" : "Light";
+
+        // Initialize with shop mode
+        setMode("shop");
+      });
+    </script>
+  </body>
+</html>

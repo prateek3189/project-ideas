@@ -1,0 +1,483 @@
+/* Print Styles - Smart Investment Tracker */
+
+@media print {
+  /* Reset and base print styles */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide non-essential elements */
+  .sidebar,
+  .theme-toggle,
+  .btn,
+  .nav__link,
+  .header__actions,
+  .nudge__details,
+  .suggestion-card__action,
+  .heat-grid,
+  .bar-chart__track,
+  .range-bar__track,
+  .drift-indicator__bar,
+  .score-meter__bar {
+    display: none !important;
+  }
+
+  /* Header adjustments */
+  .header {
+    position: static;
+    box-shadow: none;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1rem;
+    page-break-after: avoid;
+  }
+
+  .header__content {
+    padding: 0.5rem 0;
+    max-width: none;
+    margin: 0;
+  }
+
+  .header__title {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+  }
+
+  /* Main content */
+  .main {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  /* Page headers */
+  .page-header {
+    margin-bottom: 1rem;
+    page-break-after: avoid;
+  }
+
+  .page-title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.25rem;
+  }
+
+  .page-subtitle {
+    font-size: 12pt;
+    color: #333;
+    margin: 0;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+  }
+
+  /* Tiles and cards */
+  .tile,
+  .suggestion-card,
+  .nudge {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0.5rem;
+    page-break-inside: avoid;
+    padding: 0.5rem;
+  }
+
+  .tile__title,
+  .suggestion-card__title,
+  .nudge__title {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.25rem;
+  }
+
+  .tile__content,
+  .suggestion-card__content,
+  .nudge__message {
+    font-size: 10pt;
+    color: #333;
+    margin: 0;
+  }
+
+  /* Value displays */
+  .value-display__amount {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000;
+    font-family: monospace;
+  }
+
+  .value-display__change {
+    font-size: 10pt;
+    color: #333;
+  }
+
+  /* Delta chips */
+  .delta-chip {
+    background: #f0f0f0;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 0;
+    padding: 0.125rem 0.25rem;
+    font-size: 9pt;
+    font-family: monospace;
+  }
+
+  .delta-chip--positive {
+    background: #e6ffe6;
+  }
+
+  .delta-chip--negative {
+    background: #ffe6e6;
+  }
+
+  .delta-chip--over {
+    background: #fff0e6;
+  }
+
+  .delta-chip--under {
+    background: #e6f0ff;
+  }
+
+  /* Badges */
+  .badge {
+    background: #f0f0f0;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 0;
+    padding: 0.125rem 0.25rem;
+    font-size: 8pt;
+    text-transform: uppercase;
+  }
+
+  .badge--info {
+    background: #e6f0ff;
+  }
+
+  .badge--warning {
+    background: #fff0e6;
+  }
+
+  .badge--danger {
+    background: #ffe6e6;
+  }
+
+  .badge--success {
+    background: #e6ffe6;
+  }
+
+  /* Tables */
+  .table-container {
+    border: 1px solid #000;
+    border-radius: 0;
+    background: #fff;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+  }
+
+  .table th {
+    background: #f0f0f0;
+    font-weight: bold;
+    color: #000;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #000;
+    font-size: 10pt;
+  }
+
+  .table td {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #000;
+    color: #333;
+    font-size: 9pt;
+  }
+
+  .table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+  /* Donut chart - simplified for print */
+  .donut {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .donut::before {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border: 1px solid #000;
+  }
+
+  .donut__label {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* Allocation legend */
+  .allocation-legend {
+    margin-top: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .legend-item__color {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    border-radius: 0;
+  }
+
+  .legend-item__color--equity {
+    background: #3b82f6;
+  }
+
+  .legend-item__color--bonds {
+    background: #10b981;
+  }
+
+  .legend-item__color--cash {
+    background: #f59e0b;
+  }
+
+  .legend-item__color--alt {
+    background: #8b5cf6;
+  }
+
+  .legend-item__label {
+    font-size: 10pt;
+    color: #333;
+  }
+
+  /* Bar charts - simplified for print */
+  .bar-chart__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .bar-chart__label {
+    min-width: 80px;
+    font-size: 9pt;
+    color: #333;
+    text-align: right;
+  }
+
+  .bar-chart__value {
+    min-width: 50px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #000;
+    text-align: right;
+    font-family: monospace;
+  }
+
+  /* Grid layouts */
+  .dashboard-grid,
+  .suggestions-grid,
+  .card-grid {
+    display: block;
+  }
+
+  .two-column,
+  .three-column {
+    display: block;
+  }
+
+  /* Footer */
+  .footer {
+    margin: 0;
+    border-top: 1px solid #000;
+    padding: 0.5rem 0;
+    background: #fff;
+    page-break-before: avoid;
+  }
+
+  .footer__content {
+    max-width: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  .footer__text {
+    font-size: 9pt;
+    color: #333;
+    margin-bottom: 0.125rem;
+  }
+
+  .footer__disclaimer {
+    font-size: 8pt;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Links */
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Forms - hide in print */
+  .form-group,
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .radio-group,
+  .radio-item {
+    display: none;
+  }
+
+  /* Alerts */
+  .alert {
+    background: #f0f0f0;
+    border: 1px solid #000;
+    border-radius: 0;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    page-break-inside: avoid;
+  }
+
+  .alert--info {
+    background: #e6f0ff;
+  }
+
+  .alert--warning {
+    background: #fff0e6;
+  }
+
+  .alert--danger {
+    background: #ffe6e6;
+  }
+
+  .alert--success {
+    background: #e6ffe6;
+  }
+
+  /* Print-specific classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Portfolio Review specific styles */
+  .portfolio-review {
+    font-family: Arial, sans-serif;
+  }
+
+  .portfolio-review .page-title {
+    text-align: center;
+    font-size: 18pt;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-review .section-title {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-review .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-review .summary-stat {
+    text-align: center;
+    border: 1px solid #000;
+    padding: 0.5rem;
+  }
+
+  .portfolio-review .summary-stat__label {
+    font-size: 8pt;
+    color: #666;
+    margin-bottom: 0.125rem;
+  }
+
+  .portfolio-review .summary-stat__value {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #000;
+    font-family: monospace;
+  }
+}

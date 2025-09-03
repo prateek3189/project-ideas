@@ -1,0 +1,192 @@
+/* Themes - Split & Pay */
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-owe: #dc2626;
+  --color-owe-bg: #fef2f2;
+  --color-owed: #16a34a;
+  --color-owed-bg: #f0fdf4;
+  --color-info: #3b82f6;
+  --color-info-bg: #eff6ff;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fffbeb;
+  --color-border: #e2e8f0;
+  --color-border-focus: #2563eb;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg: #0b1220;
+  --color-surface: #111827;
+  --color-text: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-owe: #f87171;
+  --color-owe-bg: #7f1d1d;
+  --color-owed: #34d399;
+  --color-owed-bg: #064e3b;
+  --color-info: #60a5fa;
+  --color-info-bg: #1e3a8a;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #78350f;
+  --color-border: #374151;
+  --color-border-focus: #3b82f6;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-accent: #0000ff;
+  --color-accent-hover: #0000cc;
+  --color-owe: #cc0000;
+  --color-owe-bg: #ffe6e6;
+  --color-owed: #006600;
+  --color-owed-bg: #e6ffe6;
+  --color-info: #0000ff;
+  --color-info-bg: #e6f3ff;
+  --color-warning: #ff6600;
+  --color-warning-bg: #fff0e6;
+  --color-border: #000000;
+  --color-border-focus: #0000ff;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-bg);
+}
+
+.theme-toggle__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle__label {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Theme-specific adjustments */
+[data-theme="dark"] .card {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+[data-theme="dark"] .group-card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] .expense-row:hover {
+  background-color: var(--color-bg);
+}
+
+[data-theme="dark"] .receipts__item:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+/* High contrast theme adjustments */
+[data-theme="high-contrast"] .card,
+[data-theme="high-contrast"] .group-card,
+[data-theme="high-contrast"] .expense-row,
+[data-theme="high-contrast"] .receipts__item {
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .btn {
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .form-input,
+[data-theme="high-contrast"] .form-select,
+[data-theme="high-contrast"] .form-textarea {
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .btn:focus,
+[data-theme="high-contrast"] .form-input:focus,
+[data-theme="high-contrast"] .form-select:focus,
+[data-theme="high-contrast"] .form-textarea:focus {
+  outline-width: 3px;
+  outline-offset: 2px;
+}
+
+/* Reduced motion theme */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="light"],
+  [data-theme="dark"],
+  [data-theme="high-contrast"] {
+    --transition-fast: 0ms;
+    --transition-normal: 0ms;
+  }
+
+  .card:hover,
+  .group-card:hover,
+  .expense-row:hover,
+  .receipts__item:hover {
+    transform: none;
+  }
+
+  .settle-card__button:hover {
+    transform: none;
+  }
+}
+
+/* Print theme */
+@media print {
+  [data-theme="light"],
+  [data-theme="dark"],
+  [data-theme="high-contrast"] {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-border: #000000;
+    --color-accent: #000000;
+    --color-owe: #000000;
+    --color-owed: #000000;
+    --color-info: #000000;
+    --color-warning: #000000;
+  }
+
+  .card,
+  .group-card,
+  .expense-row,
+  .receipts__item {
+    box-shadow: none;
+    border: 1px solid #000000;
+  }
+
+  .btn {
+    border: 1px solid #000000;
+    background-color: transparent;
+    color: #000000;
+  }
+}

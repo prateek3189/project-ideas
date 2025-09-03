@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split & Pay - Dashboard</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="index.html" class="btn btn--secondary btn--small">Print</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="dashboard">
+            <!-- Dashboard Header -->
+            <div class="dashboard__header">
+              <h1 class="dashboard__title">Split & Pay</h1>
+              <p class="dashboard__subtitle">
+                Track expenses, split bills, settle up with friends
+              </p>
+            </div>
+
+            <!-- Nudge Banner -->
+            <div class="nudge nudge--warning">
+              <strong>You have ₹3,420 unsettled across 2 groups.</strong>
+              <a href="group.html">View details</a>
+            </div>
+
+            <!-- Dashboard Tiles -->
+            <div class="dashboard__tiles">
+              <div class="stat-tile">
+                <div class="stat-tile__value tabular-nums">4</div>
+                <div class="stat-tile__label">Active Groups</div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value tabular-nums text-owe">₹3,420</div>
+                <div class="stat-tile__label">Unsettled Amount</div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value tabular-nums">₹12,850</div>
+                <div class="stat-tile__label">This Month Added</div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value tabular-nums text-owe">₹1,050</div>
+                <div class="stat-tile__label">You Owe</div>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="flex gap-4 mb-8">
+              <a href="add-expense.html" class="btn btn--primary">
+                <span>+</span>
+                <span>Add Expense</span>
+              </a>
+              <a href="group.html" class="btn btn--secondary">
+                <span>👥</span>
+                <span>New Group</span>
+              </a>
+            </div>
+
+            <!-- Group Cards -->
+            <div class="dashboard__groups">
+              <!-- Goa Trip Group -->
+              <div class="group-card">
+                <h3 class="group-card__title">Goa Trip</h3>
+                <div class="group-card__meta">
+                  <span>4 members</span>
+                  <span>₹ (INR)</span>
+                </div>
+                <div
+                  class="group-card__balance group-card__balance--owe tabular-nums"
+                >
+                  You owe ₹1,050
+                </div>
+                <div class="group-card__meta">
+                  <span>Last activity: 2 days ago</span>
+                  <a href="group.html" class="btn btn--primary btn--small"
+                    >Open</a
+                  >
+                </div>
+              </div>
+
+              <!-- Roommates Group -->
+              <div class="group-card">
+                <h3 class="group-card__title">Flat 3B Roommates</h3>
+                <div class="group-card__meta">
+                  <span>3 members</span>
+                  <span>₹ (INR)</span>
+                </div>
+                <div
+                  class="group-card__balance group-card__balance--owed tabular-nums"
+                >
+                  You're owed ₹620
+                </div>
+                <div class="group-card__meta">
+                  <span>Last activity: 1 week ago</span>
+                  <a href="group.html" class="btn btn--primary btn--small"
+                    >Open</a
+                  >
+                </div>
+              </div>
+
+              <!-- Office Team Group -->
+              <div class="group-card">
+                <h3 class="group-card__title">Office Team Lunch</h3>
+                <div class="group-card__meta">
+                  <span>6 members</span>
+                  <span>₹ (INR)</span>
+                </div>
+                <div
+                  class="group-card__balance group-card__balance--neutral tabular-nums"
+                >
+                  All settled
+                </div>
+                <div class="group-card__meta">
+                  <span>Last activity: 3 days ago</span>
+                  <a href="group.html" class="btn btn--primary btn--small"
+                    >Open</a
+                  >
+                </div>
+              </div>
+
+              <!-- Weekend Trip Group -->
+              <div class="group-card">
+                <h3 class="group-card__title">Weekend Trip</h3>
+                <div class="group-card__meta">
+                  <span>5 members</span>
+                  <span>₹ (INR)</span>
+                </div>
+                <div
+                  class="group-card__balance group-card__balance--owe tabular-nums"
+                >
+                  You owe ₹2,370
+                </div>
+                <div class="group-card__meta">
+                  <span>Last activity: 5 days ago</span>
+                  <a href="group.html" class="btn btn--primary btn--small"
+                    >Open</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle (minimal JS for demo)
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+    </script>
+  </body>
+</html>

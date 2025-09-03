@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Templates - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button class="btn btn--primary" type="button">
+              <span class="icon icon--plus" aria-hidden="true"></span>
+              Create Template
+            </button>
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print templates"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="templates.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Templates</h2>
+          <p class="page-subtitle">Create and manage email and SMS templates</p>
+        </div>
+
+        <!-- Template Categories -->
+        <div class="tabs mb-6">
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <a href="#email-templates" class="tabs__link tabs__link--active"
+                >Email Templates</a
+              >
+            </li>
+            <li class="tabs__item">
+              <a href="#sms-templates" class="tabs__link">SMS Templates</a>
+            </li>
+            <li class="tabs__item">
+              <a href="#blocks" class="tabs__link">Email Blocks</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Email Templates -->
+        <div class="tabs__content">
+          <div class="templates-grid">
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Welcome Series - Email 1</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="template-preview">
+                  <div class="template-preview__header">
+                    <strong>Subject:</strong> Welcome to YourBrand! Here's
+                    what's next...
+                  </div>
+                  <div class="template-preview__content">
+                    <p>Hi {{first_name}},</p>
+                    <p>
+                      Welcome to YourBrand! We're excited to have you on board.
+                    </p>
+                    <p>Here's what you can expect from us:</p>
+                    <ul>
+                      <li>Weekly product updates</li>
+                      <li>Exclusive member discounts</li>
+                      <li>Early access to new features</li>
+                    </ul>
+                    <p>Get started by exploring our latest collection!</p>
+                    <button class="btn btn--primary">Shop Now</button>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Newsletter Template</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="template-preview">
+                  <div class="template-preview__header">
+                    <strong>Subject:</strong> This Week's Highlights - {{date}}
+                  </div>
+                  <div class="template-preview__content">
+                    <h2>Weekly Newsletter</h2>
+                    <p>Here's what's happening this week:</p>
+                    <div class="newsletter-section">
+                      <h3>Featured Product</h3>
+                      <p>Check out our latest addition to the collection.</p>
+                    </div>
+                    <div class="newsletter-section">
+                      <h3>Customer Spotlight</h3>
+                      <p>
+                        See how Sarah uses our products in her daily routine.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Sale Announcement</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="template-preview">
+                  <div class="template-preview__header">
+                    <strong>Subject:</strong> 🎉 Flash Sale: Up to 50% Off
+                    Everything!
+                  </div>
+                  <div class="template-preview__content">
+                    <h2>Flash Sale Alert!</h2>
+                    <p>Don't miss out on our biggest sale of the year!</p>
+                    <div class="sale-highlight">
+                      <h3>Up to 50% Off</h3>
+                      <p>Limited time offer - ends soon!</p>
+                    </div>
+                    <button class="btn btn--primary">Shop Sale</button>
+                    <p><small>Sale ends {{sale_end_date}}</small></p>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Product Launch</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="template-preview">
+                  <div class="template-preview__header">
+                    <strong>Subject:</strong> Introducing: The New
+                    {{product_name}}
+                  </div>
+                  <div class="template-preview__content">
+                    <h2>Something New is Here!</h2>
+                    <p>We're excited to introduce our latest product:</p>
+                    <div class="product-showcase">
+                      <h3>{{product_name}}</h3>
+                      <p>{{product_description}}</p>
+                      <p><strong>Price: {{product_price}}</strong></p>
+                    </div>
+                    <button class="btn btn--primary">Learn More</button>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Abandoned Cart</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="template-preview">
+                  <div class="template-preview__header">
+                    <strong>Subject:</strong> You left something in your cart,
+                    {{first_name}}
+                  </div>
+                  <div class="template-preview__content">
+                    <p>Hi {{first_name}},</p>
+                    <p>We noticed you left some items in your cart:</p>
+                    <div class="cart-items">
+                      <p>• {{item_1_name}} - {{item_1_price}}</p>
+                      <p>• {{item_2_name}} - {{item_2_price}}</p>
+                    </div>
+                    <p>Complete your purchase now and save 10%!</p>
+                    <button class="btn btn--primary">Complete Purchase</button>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Birthday Special</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="template-preview">
+                  <div class="template-preview__header">
+                    <strong>Subject:</strong> Happy Birthday, {{first_name}}! 🎂
+                  </div>
+                  <div class="template-preview__content">
+                    <h2>Happy Birthday!</h2>
+                    <p>Wishing you a wonderful birthday, {{first_name}}!</p>
+                    <p>As a special gift, enjoy 20% off your next purchase:</p>
+                    <div class="birthday-offer">
+                      <h3>Birthday Discount</h3>
+                      <p>Use code: <strong>BIRTHDAY20</strong></p>
+                    </div>
+                    <button class="btn btn--primary">Claim Offer</button>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SMS Templates -->
+        <div class="tabs__content" style="display: none">
+          <div class="templates-grid">
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Welcome SMS</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="sms-preview">
+                  <div class="sms-preview__header">
+                    <strong>From:</strong> YourBrand
+                  </div>
+                  <div class="sms-preview__content">
+                    Hi {{first_name}}! Welcome to YourBrand. Get 10% off your
+                    first order with code WELCOME10. Shop now: {{link}} Reply
+                    STOP to opt out.
+                  </div>
+                  <div class="sms-preview__footer">
+                    <span class="text-muted">160 characters</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Sale Alert SMS</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="sms-preview">
+                  <div class="sms-preview__header">
+                    <strong>From:</strong> YourBrand
+                  </div>
+                  <div class="sms-preview__content">
+                    🎉 Flash Sale! Up to 50% off everything. Limited time only.
+                    Shop now: {{link}} Reply STOP to opt out.
+                  </div>
+                  <div class="sms-preview__footer">
+                    <span class="text-muted">142 characters</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Cart Reminder SMS</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="sms-preview">
+                  <div class="sms-preview__header">
+                    <strong>From:</strong> YourBrand
+                  </div>
+                  <div class="sms-preview__content">
+                    Hi {{first_name}}, you left items in your cart. Complete
+                    your purchase and save 10%: {{link}} Reply STOP to opt out.
+                  </div>
+                  <div class="sms-preview__footer">
+                    <span class="text-muted">156 characters</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Order Confirmation SMS</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="sms-preview">
+                  <div class="sms-preview__header">
+                    <strong>From:</strong> YourBrand
+                  </div>
+                  <div class="sms-preview__content">
+                    Thanks for your order #{{order_number}}! We'll send tracking
+                    info soon. Track: {{link}} Reply STOP to opt out.
+                  </div>
+                  <div class="sms-preview__footer">
+                    <span class="text-muted">148 characters</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Shipping Update SMS</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="sms-preview">
+                  <div class="sms-preview__header">
+                    <strong>From:</strong> YourBrand
+                  </div>
+                  <div class="sms-preview__content">
+                    Your order #{{order_number}} has shipped! Track:
+                    {{tracking_link}} Expected delivery: {{delivery_date}} Reply
+                    STOP to opt out.
+                  </div>
+                  <div class="sms-preview__footer">
+                    <span class="text-muted">158 characters</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Birthday SMS</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="sms-preview">
+                  <div class="sms-preview__header">
+                    <strong>From:</strong> YourBrand
+                  </div>
+                  <div class="sms-preview__content">
+                    🎂 Happy Birthday {{first_name}}! Enjoy 20% off with code
+                    BIRTHDAY20. Shop now: {{link}} Reply STOP to opt out.
+                  </div>
+                  <div class="sms-preview__footer">
+                    <span class="text-muted">152 characters</span>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Duplicate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Blocks -->
+        <div class="tabs__content" style="display: none">
+          <div class="templates-grid">
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Hero Section</h4>
+                <span class="badge badge--primary">Block</span>
+              </div>
+              <div class="card__content">
+                <div class="block-preview">
+                  <div class="block-preview__content">
+                    <h2>Main Headline</h2>
+                    <p>Supporting text that explains the value proposition</p>
+                    <button class="btn btn--primary">Call to Action</button>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Text Block</h4>
+                <span class="badge badge--primary">Block</span>
+              </div>
+              <div class="card__content">
+                <div class="block-preview">
+                  <div class="block-preview__content">
+                    <p>
+                      This is a simple text block that can be used for any
+                      content. You can add multiple paragraphs, lists, and
+                      formatting.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Product Grid</h4>
+                <span class="badge badge--primary">Block</span>
+              </div>
+              <div class="card__content">
+                <div class="block-preview">
+                  <div class="block-preview__content">
+                    <div class="product-grid">
+                      <div class="product-item">Product 1</div>
+                      <div class="product-item">Product 2</div>
+                      <div class="product-item">Product 3</div>
+                      <div class="product-item">Product 4</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Image Block</h4>
+                <span class="badge badge--primary">Block</span>
+              </div>
+              <div class="card__content">
+                <div class="block-preview">
+                  <div class="block-preview__content">
+                    <div class="image-placeholder">
+                      <span>Image Placeholder</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Button Block</h4>
+                <span class="badge badge--primary">Block</span>
+              </div>
+              <div class="card__content">
+                <div class="block-preview">
+                  <div class="block-preview__content">
+                    <div class="text-center">
+                      <button class="btn btn--primary">Primary Button</button>
+                      <button class="btn btn--secondary">
+                        Secondary Button
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Footer Block</h4>
+                <span class="badge badge--primary">Block</span>
+              </div>
+              <div class="card__content">
+                <div class="block-preview">
+                  <div class="block-preview__content">
+                    <div class="footer-content">
+                      <p><strong>Your Company Name</strong></p>
+                      <p>123 Business Street<br />City, State 12345</p>
+                      <p>
+                        <a href="#">Unsubscribe</a> |
+                        <a href="#">Update Preferences</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Guidelines -->
+        <section class="mt-8">
+          <div class="card">
+            <div class="card__header">
+              <h4 class="card__title">Content Guidelines</h4>
+            </div>
+            <div class="card__content">
+              <div class="alert alert--info">
+                <span class="icon icon--info" aria-hidden="true"></span>
+                <div class="alert__content">
+                  <strong>Best Practices</strong>
+                  <p>
+                    Follow these guidelines for better deliverability and
+                    engagement:
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-6 mt-4">
+                <div>
+                  <h5 class="font-semibold mb-3">Email Guidelines</h5>
+                  <ul class="space-y-2 text-sm">
+                    <li>• Keep subject lines under 50 characters</li>
+                    <li>• Maintain healthy text-to-image ratio</li>
+                    <li>• Include alt text for all images</li>
+                    <li>• Always include unsubscribe link</li>
+                    <li>• Add physical mailing address</li>
+                    <li>• Test across different email clients</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 class="font-semibold mb-3">SMS Guidelines</h5>
+                  <ul class="space-y-2 text-sm">
+                    <li>• Keep messages under 160 characters</li>
+                    <li>• Include opt-out keyword (STOP)</li>
+                    <li>• Avoid excessive emoji usage</li>
+                    <li>• Use clear, concise language</li>
+                    <li>• Include sender identification</li>
+                    <li>• Respect quiet hours (9 PM - 8 AM)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

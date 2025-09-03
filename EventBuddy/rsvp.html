@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Indie Night @ Blue Door - Event Buddy</title>
+    <meta
+      name="description"
+      content="Complete your ticket purchase for Indie Night @ Blue Door. Secure checkout with multiple payment options."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="form-layout">
+          <!-- Progress Indicator -->
+          <div class="mb-8">
+            <div class="flex items-center justify-center space-x-4">
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                >
+                  1
+                </div>
+                <span class="ml-2 text-sm font-medium">Event Details</span>
+              </div>
+              <div class="w-16 h-1 bg-accent"></div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                >
+                  2
+                </div>
+                <span class="ml-2 text-sm font-medium">Checkout</span>
+              </div>
+              <div class="w-16 h-1 bg-border"></div>
+              <div class="flex items-center">
+                <div
+                  class="w-8 h-8 bg-border text-muted rounded-full flex items-center justify-center text-sm font-semibold"
+                >
+                  3
+                </div>
+                <span class="ml-2 text-sm text-muted">Confirmation</span>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="text-3xl font-bold mb-2">Complete Your Purchase</h1>
+          <p class="text-muted mb-8">
+            Indie Night @ Blue Door - Friday, December 15, 2023
+          </p>
+
+          <div class="two-column">
+            <!-- Main Form -->
+            <div class="two-column__main">
+              <!-- Buyer Information -->
+              <div class="form-section">
+                <h2 class="form-section__title">Buyer Information</h2>
+
+                <div class="form-row">
+                  <div>
+                    <label for="firstName" class="required">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="lastName" class="required">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div>
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" required />
+                    <p class="text-xs text-muted mt-1">
+                      We'll send your tickets here
+                    </p>
+                  </div>
+                  <div>
+                    <label for="phone" class="required">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attendee Details -->
+              <div class="form-section">
+                <h2 class="form-section__title">Attendee Details</h2>
+                <p class="text-sm text-muted mb-4">
+                  Enter details for each ticket holder
+                </p>
+
+                <!-- Early Bird Tickets -->
+                <div class="mb-6">
+                  <h3 class="text-lg font-semibold mb-3">
+                    Early Bird Tickets (2)
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="p-4 border rounded-lg">
+                      <h4 class="font-medium mb-3">Ticket 1</h4>
+                      <div class="form-row">
+                        <div>
+                          <label for="attendee1FirstName" class="required"
+                            >First Name</label
+                          >
+                          <input
+                            type="text"
+                            id="attendee1FirstName"
+                            name="attendee1FirstName"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label for="attendee1LastName" class="required"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            id="attendee1LastName"
+                            name="attendee1LastName"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div>
+                          <label for="attendee1Email" class="required"
+                            >Email</label
+                          >
+                          <input
+                            type="email"
+                            id="attendee1Email"
+                            name="attendee1Email"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label for="attendee1Phone">Phone (Optional)</label>
+                          <input
+                            type="tel"
+                            id="attendee1Phone"
+                            name="attendee1Phone"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="p-4 border rounded-lg">
+                      <h4 class="font-medium mb-3">Ticket 2</h4>
+                      <div class="form-row">
+                        <div>
+                          <label for="attendee2FirstName" class="required"
+                            >First Name</label
+                          >
+                          <input
+                            type="text"
+                            id="attendee2FirstName"
+                            name="attendee2FirstName"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label for="attendee2LastName" class="required"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            id="attendee2LastName"
+                            name="attendee2LastName"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div>
+                          <label for="attendee2Email" class="required"
+                            >Email</label
+                          >
+                          <input
+                            type="email"
+                            id="attendee2Email"
+                            name="attendee2Email"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label for="attendee2Phone">Phone (Optional)</label>
+                          <input
+                            type="tel"
+                            id="attendee2Phone"
+                            name="attendee2Phone"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- General Tickets -->
+                <div class="mb-6">
+                  <h3 class="text-lg font-semibold mb-3">
+                    General Tickets (1)
+                  </h3>
+                  <div class="p-4 border rounded-lg">
+                    <h4 class="font-medium mb-3">Ticket 3</h4>
+                    <div class="form-row">
+                      <div>
+                        <label for="attendee3FirstName" class="required"
+                          >First Name</label
+                        >
+                        <input
+                          type="text"
+                          id="attendee3FirstName"
+                          name="attendee3FirstName"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label for="attendee3LastName" class="required"
+                          >Last Name</label
+                        >
+                        <input
+                          type="text"
+                          id="attendee3LastName"
+                          name="attendee3LastName"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div>
+                        <label for="attendee3Email" class="required"
+                          >Email</label
+                        >
+                        <input
+                          type="email"
+                          id="attendee3Email"
+                          name="attendee3Email"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label for="attendee3Phone">Phone (Optional)</label>
+                        <input
+                          type="tel"
+                          id="attendee3Phone"
+                          name="attendee3Phone"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="form-section">
+                <h2 class="form-section__title">Payment Method</h2>
+
+                <div class="space-y-3">
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="upi"
+                      class="mr-3"
+                      checked
+                    />
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">📱</span>
+                      <div>
+                        <div class="font-medium">UPI Payment</div>
+                        <div class="text-sm text-muted">
+                          Pay using UPI apps like PhonePe, Google Pay, Paytm
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="card"
+                      class="mr-3"
+                    />
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">💳</span>
+                      <div>
+                        <div class="font-medium">Credit/Debit Card</div>
+                        <div class="text-sm text-muted">
+                          Visa, Mastercard, RuPay accepted
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="netbanking"
+                      class="mr-3"
+                    />
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">🏦</span>
+                      <div>
+                        <div class="font-medium">Net Banking</div>
+                        <div class="text-sm text-muted">
+                          Direct bank transfer
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="wallet"
+                      class="mr-3"
+                    />
+                    <div class="flex items-center">
+                      <span class="text-2xl mr-3">💰</span>
+                      <div>
+                        <div class="font-medium">Digital Wallet</div>
+                        <div class="text-sm text-muted">
+                          Paytm, Mobikwik, Freecharge
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Promo Code -->
+              <div class="form-section">
+                <h2 class="form-section__title">Promo Code (Optional)</h2>
+                <div class="form-row">
+                  <div>
+                    <label for="promoCode">Promo Code</label>
+                    <input
+                      type="text"
+                      id="promoCode"
+                      name="promoCode"
+                      placeholder="Enter promo code"
+                    />
+                  </div>
+                  <div class="flex items-end">
+                    <button type="button" class="btn-secondary">Apply</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Terms and Conditions -->
+              <div class="form-section">
+                <label class="flex items-start">
+                  <input
+                    type="checkbox"
+                    name="terms"
+                    class="mt-1 mr-3"
+                    required
+                  />
+                  <span class="text-sm">
+                    I agree to the
+                    <a href="#" class="text-accent">Terms of Service</a> and
+                    <a href="#" class="text-accent">Privacy Policy</a>. I
+                    understand that tickets are non-transferable and refunds are
+                    available up to 24 hours before the event.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Form Actions -->
+              <div class="form-actions">
+                <a href="event.html" class="btn-secondary">Back to Event</a>
+                <a href="confirm.html" class="btn-primary">Complete Purchase</a>
+              </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="two-column__sidebar">
+              <div class="cart-summary">
+                <h2 class="cart-summary__title">Order Summary</h2>
+
+                <!-- Event Info -->
+                <div class="mb-4 p-4 bg-border-light rounded-lg">
+                  <h3 class="font-semibold mb-2">Indie Night @ Blue Door</h3>
+                  <div class="text-sm text-muted">
+                    <div>📅 Friday, December 15, 2023</div>
+                    <div>🕐 8:00 PM - 11:00 PM</div>
+                    <div>📍 Blue Door Cafe, Bandra West</div>
+                  </div>
+                </div>
+
+                <!-- Ticket Breakdown -->
+                <div class="space-y-3 mb-4">
+                  <div class="cart-item">
+                    <span class="cart-item__name">Early Bird (2x)</span>
+                    <span class="cart-item__price">₹598</span>
+                  </div>
+                  <div class="cart-item">
+                    <span class="cart-item__name">General (1x)</span>
+                    <span class="cart-item__price">₹399</span>
+                  </div>
+                  <div class="cart-item">
+                    <span class="cart-item__name">Subtotal</span>
+                    <span class="cart-item__price">₹997</span>
+                  </div>
+                  <div class="cart-item">
+                    <span class="cart-item__name">Service Fee</span>
+                    <span class="cart-item__price">₹50</span>
+                  </div>
+                  <div class="cart-item">
+                    <span class="cart-item__name">GST (18%)</span>
+                    <span class="cart-item__price">₹188</span>
+                  </div>
+                </div>
+
+                <div class="cart-summary__total">
+                  <span>Total</span>
+                  <span>₹1,235</span>
+                </div>
+
+                <!-- Security Notice -->
+                <div
+                  class="mt-4 p-3 bg-success-light border border-success rounded-lg"
+                >
+                  <div class="flex items-center text-sm text-success">
+                    <span class="mr-2">🔒</span>
+                    <span>Secure 256-bit SSL encryption</span>
+                  </div>
+                </div>
+
+                <!-- Payment Info -->
+                <div class="mt-4 text-xs text-muted">
+                  <p>• All payments are processed securely</p>
+                  <p>• You'll receive confirmation email immediately</p>
+                  <p>• Tickets will be available in your profile</p>
+                  <p>• Full refund available up to 24h before event</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

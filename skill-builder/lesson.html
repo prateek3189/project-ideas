@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Builder - Union Types & Type Guards</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Skill Builder</h1>
+          <div class="header__actions">
+            <button class="search-btn" aria-label="Search courses">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+            <div class="profile-chip">
+              <img
+                src="assets/avatar-placeholder.svg"
+                alt="Profile"
+                class="profile-chip__avatar"
+              />
+              <span class="profile-chip__name">Alex</span>
+            </div>
+            <a href="#" class="print-link" aria-label="Print view">📄</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+            <li><a href="progress.html" class="nav-link">Progress</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__categories">
+          <h3 class="sidebar__heading">Categories</h3>
+          <ul class="category-list">
+            <li><a href="#" class="category-link">Web Development</a></li>
+            <li><a href="#" class="category-link">Data Science</a></li>
+            <li><a href="#" class="category-link">Design</a></li>
+            <li><a href="#" class="category-link">Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="lesson-player">
+          <!-- Lesson Header -->
+          <header class="lesson-header">
+            <div class="lesson-header__content">
+              <div class="lesson-header__meta">
+                <a href="course.html" class="lesson-header__course-link"
+                  >← TypeScript Primitives</a
+                >
+                <h2 class="lesson-header__title">Union Types & Type Guards</h2>
+                <div class="lesson-header__stats">
+                  <span class="lesson-header__duration">~2 min</span>
+                  <span class="lesson-header__progress">Lesson 3 of 4</span>
+                </div>
+              </div>
+
+              <div class="lesson-header__progress">
+                <div class="progress-bar progress-bar--thin">
+                  <div class="progress-bar__fill" style="width: 75%"></div>
+                  <span class="progress-bar__label">75% Complete</span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <!-- Lesson Content -->
+          <div class="lesson-content">
+            <!-- Table of Contents -->
+            <nav class="lesson-toc">
+              <h3 class="lesson-toc__title">Lesson Outline</h3>
+              <ul class="lesson-toc__list">
+                <li>
+                  <a
+                    href="#concept"
+                    class="lesson-toc__link lesson-toc__link--active"
+                    >Concept</a
+                  >
+                </li>
+                <li><a href="#example" class="lesson-toc__link">Example</a></li>
+                <li>
+                  <a href="#quick-check" class="lesson-toc__link"
+                    >Quick Check</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Content Sections -->
+            <div class="lesson-sections">
+              <!-- Concept Section -->
+              <section id="concept" class="lesson-section">
+                <h3 class="lesson-section__title">What are Union Types?</h3>
+                <p class="lesson-section__text">
+                  Union types allow a variable to hold values of multiple types.
+                  They're perfect for scenarios where a value could be one of
+                  several types.
+                </p>
+
+                <div class="concept-box">
+                  <h4 class="concept-box__title">Key Points:</h4>
+                  <ul class="concept-box__list">
+                    <li>Use the <code>|</code> operator to combine types</li>
+                    <li>
+                      TypeScript will enforce that values match one of the union
+                      types
+                    </li>
+                    <li>Common use case: handling different data formats</li>
+                  </ul>
+                </div>
+
+                <details class="glossary-term">
+                  <summary class="glossary-term__summary">
+                    <strong>Union Type:</strong> A type that can be one of
+                    several types
+                  </summary>
+                  <div class="glossary-term__definition">
+                    <p>
+                      Union types are a fundamental TypeScript feature that
+                      allows variables, parameters, and return types to accept
+                      multiple types. They're written using the pipe operator
+                      (<code>|</code>).
+                    </p>
+                    <p>
+                      <strong>Example:</strong>
+                      <code>string | number</code> means a value can be either a
+                      string or a number.
+                    </p>
+                  </div>
+                </details>
+              </section>
+
+              <!-- Example Section -->
+              <section id="example" class="lesson-section">
+                <h3 class="lesson-section__title">Real-World Example</h3>
+                <p class="lesson-section__text">
+                  Let's see how union types work in practice with a common
+                  scenario: handling user input that could be a string or
+                  number.
+                </p>
+
+                <div class="code-example">
+                  <h4 class="code-example__title">Type Definition</h4>
+                  <pre
+                    class="code-example__code"
+                  ><code>type UserInput = string | number;
+
+function processInput(input: UserInput): string {
+    if (typeof input === 'string') {
+        return input.toUpperCase();
+    } else {
+        return input.toString();
+    }
+}</code></pre>
+                  <div class="code-example__explanation">
+                    <p><strong>What's happening:</strong></p>
+                    <ul>
+                      <li>
+                        We define <code>UserInput</code> as a union of string
+                        and number
+                      </li>
+                      <li>The function accepts either type safely</li>
+                      <li>
+                        Type guards (<code>typeof</code>) help narrow the type
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="practice-tip">
+                  <h4 class="practice-tip__title">💡 Practice Tip</h4>
+                  <p>
+                    Try changing the input type to see how TypeScript catches
+                    type mismatches. Union types make your code more flexible
+                    while maintaining type safety.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Quick Check Section -->
+              <section id="quick-check" class="lesson-section">
+                <h3 class="lesson-section__title">Quick Check</h3>
+                <p class="lesson-section__text">
+                  Test your understanding with this quick question:
+                </p>
+
+                <div class="mini-quiz">
+                  <div class="mini-quiz__question">
+                    <h4 class="mini-quiz__title">
+                      What's the correct way to define a union type for a
+                      variable that can be either a boolean or undefined?
+                    </h4>
+
+                    <fieldset class="mini-quiz__options">
+                      <legend class="visually-hidden">
+                        Select the correct answer:
+                      </legend>
+                      <label class="mini-quiz__option">
+                        <input
+                          type="radio"
+                          name="union-question"
+                          value="a"
+                          class="mini-quiz__input"
+                        />
+                        <span class="mini-quiz__option-text"
+                          >A) <code>boolean undefined</code></span
+                        >
+                      </label>
+
+                      <label class="mini-quiz__option">
+                        <input
+                          type="radio"
+                          name="union-question"
+                          value="b"
+                          class="mini-quiz__input"
+                        />
+                        <span class="mini-quiz__option-text"
+                          >B) <code>boolean | undefined</code></span
+                        >
+                      </label>
+
+                      <label class="mini-quiz__option">
+                        <input
+                          type="radio"
+                          name="union-question"
+                          value="c"
+                          class="mini-quiz__input"
+                        />
+                        <span class="mini-quiz__option-text"
+                          >C) <code>boolean & undefined</code></span
+                        >
+                      </label>
+                    </fieldset>
+                  </div>
+
+                  <div class="mini-quiz__feedback">
+                    <p class="mini-quiz__answer">
+                      Your answer:
+                      <span class="mini-quiz__selected"
+                        >B) <code>boolean | undefined</code></span
+                      >
+                    </p>
+                    <div class="mini-quiz__explanation">
+                      <p>
+                        <strong>Correct!</strong> The pipe operator
+                        (<code>|</code>) creates a union type, allowing the
+                        variable to be either a boolean or undefined.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Key Takeaways -->
+            <aside class="lesson-takeaways">
+              <h3 class="lesson-takeaways__title">Key Takeaways</h3>
+              <ul class="lesson-takeaways__list">
+                <li>
+                  Union types use the <code>|</code> operator to combine
+                  multiple types
+                </li>
+                <li>Type guards help narrow union types for safe operations</li>
+                <li>
+                  Union types make your code more flexible while maintaining
+                  type safety
+                </li>
+                <li>
+                  Common use cases include handling different data formats and
+                  optional values
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- Lesson Navigation -->
+          <nav class="lesson-navigation">
+            <a href="#" class="lesson-nav-btn lesson-nav-btn--prev">
+              <span class="lesson-nav-btn__arrow">←</span>
+              <span class="lesson-nav-btn__text"
+                >Previous: Primitive Types Deep Dive</span
+              >
+            </a>
+
+            <a href="quiz.html" class="lesson-nav-btn lesson-nav-btn--next">
+              <span class="lesson-nav-btn__text">Next: Practice & Quiz</span>
+              <span class="lesson-nav-btn__arrow">→</span>
+            </a>
+          </nav>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__version">Skill Builder v1.0</p>
+          <p class="footer__help">
+            Need help? <a href="about.html">Learn more</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Buddy - Discover Local Events</title>
+    <meta
+      name="description"
+      content="Discover, join, and organize local events with Event Buddy. Find amazing events near you and connect with your community."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a
+              href="index.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__header">
+          <h1 class="main__title">Discover Events</h1>
+          <p class="main__subtitle">
+            Weekend filling up fast—12 events near you
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <h2 class="filter-bar__title">Filter Events</h2>
+
+          <div class="filter-group">
+            <label class="filter-group__label">Date</label>
+            <div class="filter-chips">
+              <button class="filter-chip filter-chip--active">Today</button>
+              <button class="filter-chip">This Weekend</button>
+              <button class="filter-chip">Next Week</button>
+              <button class="filter-chip">Custom</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-group__label">Category</label>
+            <div class="filter-chips">
+              <button class="filter-chip">All</button>
+              <button class="filter-chip filter-chip--active">Music</button>
+              <button class="filter-chip">Tech</button>
+              <button class="filter-chip">Sports</button>
+              <button class="filter-chip">Family</button>
+              <button class="filter-chip">Arts</button>
+              <button class="filter-chip">Food</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-group__label">Price</label>
+            <div class="filter-chips">
+              <button class="filter-chip">All</button>
+              <button class="filter-chip">Free</button>
+              <button class="filter-chip">₹</button>
+              <button class="filter-chip">₹₹</button>
+              <button class="filter-chip">₹₹₹</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-group__label">Distance</label>
+            <div class="filter-chips">
+              <button class="filter-chip filter-chip--active">
+                Within 5km
+              </button>
+              <button class="filter-chip">Within 10km</button>
+              <button class="filter-chip">Within 25km</button>
+              <button class="filter-chip">Any Distance</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Events -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-6">Featured Events</h2>
+          <div class="events-grid">
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Indie Night @ Blue Door</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Fri, Dec 15</span>
+                  <span class="event-card__time">8:00 PM</span>
+                </div>
+                <div class="event-card__venue">Blue Door Cafe, Bandra West</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip tag-chip--family">Family-friendly</span>
+                  <span class="tag-chip">Live Music</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--paid">₹399</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Dev Meetup: Web Performance</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sat, Dec 16</span>
+                  <span class="event-card__time">10:30 AM</span>
+                </div>
+                <div class="event-card__venue">Tech Hub Mumbai, Powai</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip">Tech</span>
+                  <span class="tag-chip">Networking</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--free">Free</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Sunrise Yoga in the Park</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sun, Dec 17</span>
+                  <span class="event-card__time">6:30 AM</span>
+                </div>
+                <div class="event-card__venue">Juhu Beach, Juhu</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip tag-chip--outdoor">Outdoor</span>
+                  <span class="tag-chip">Wellness</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--paid">₹199</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Nearby Events -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-6">Nearby Events</h2>
+          <div class="events-grid">
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Kids Science Hour</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sat, Dec 16</span>
+                  <span class="event-card__time">4:00 PM</span>
+                </div>
+                <div class="event-card__venue">Science Center, Worli</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip tag-chip--family">Family-friendly</span>
+                  <span class="tag-chip">Educational</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--free">Free</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Food Truck Festival</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sun, Dec 17</span>
+                  <span class="event-card__time">12:00 PM</span>
+                </div>
+                <div class="event-card__venue">Gateway of India, Colaba</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip tag-chip--outdoor">Outdoor</span>
+                  <span class="tag-chip">Food</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--paid">₹299</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Art Gallery Opening</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Fri, Dec 15</span>
+                  <span class="event-card__time">7:00 PM</span>
+                </div>
+                <div class="event-card__venue">Jehangir Art Gallery, Fort</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip">Art</span>
+                  <span class="tag-chip">Culture</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--free">Free</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Cricket Match Viewing</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sat, Dec 16</span>
+                  <span class="event-card__time">2:00 PM</span>
+                </div>
+                <div class="event-card__venue">Sports Bar, Andheri</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip">Sports</span>
+                  <span class="tag-chip">Social</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--paid">₹499</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Virtual Book Club</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sun, Dec 17</span>
+                  <span class="event-card__time">3:00 PM</span>
+                </div>
+                <div class="event-card__venue">Online Event</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip tag-chip--virtual">Virtual</span>
+                  <span class="tag-chip">Books</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--free">Free</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-card__image">
+                <span class="visually-hidden">Event cover image</span>
+              </div>
+              <div class="event-card__content">
+                <h3 class="event-card__title">Dance Workshop</h3>
+                <div class="event-card__meta">
+                  <span class="event-card__date">Sat, Dec 16</span>
+                  <span class="event-card__time">6:00 PM</span>
+                </div>
+                <div class="event-card__venue">Dance Studio, Goregaon</div>
+                <div class="event-card__tags">
+                  <span class="tag-chip">Dance</span>
+                  <span class="tag-chip">Fitness</span>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                  <span class="price-chip price-chip--paid">₹599</span>
+                  <a href="event.html" class="btn-primary btn-sm"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-semibold mb-6">Events on Map</h2>
+          <div class="map-placeholder">
+            <span class="visually-hidden"
+              >Interactive map showing event locations</span
+            >
+            <div class="text-center">
+              <div class="text-lg font-medium mb-2">🗺️ Interactive Map</div>
+              <div class="text-sm text-muted">
+                Click on pins to view event details
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

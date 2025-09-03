@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Builder - Course Catalog</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Skill Builder</h1>
+          <div class="header__actions">
+            <button class="search-btn" aria-label="Search courses">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+            <div class="profile-chip">
+              <img
+                src="assets/avatar-placeholder.svg"
+                alt="Profile"
+                class="profile-chip__avatar"
+              />
+              <span class="profile-chip__name">Alex</span>
+            </div>
+            <a href="#" class="print-link" aria-label="Print view">📄</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li>
+              <a href="catalog.html" class="nav-link nav-link--active"
+                >Catalog</a
+              >
+            </li>
+            <li><a href="progress.html" class="nav-link">Progress</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__categories">
+          <h3 class="sidebar__heading">Categories</h3>
+          <ul class="category-list">
+            <li><a href="#" class="category-link">Web Development</a></li>
+            <li><a href="#" class="category-link">Data Science</a></li>
+            <li><a href="#" class="category-link">Design</a></li>
+            <li><a href="#" class="category-link">Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="catalog">
+          <!-- Page Header -->
+          <header class="page-header">
+            <h2 class="page-title">Course Catalog</h2>
+            <p class="page-subtitle">Browse our collection of micro-courses</p>
+          </header>
+
+          <!-- Filters -->
+          <section class="filters">
+            <div class="filter-bar">
+              <div class="filter-group">
+                <label for="level-filter" class="filter-label">Level:</label>
+                <select id="level-filter" class="filter-select">
+                  <option value="">All Levels</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="duration-filter" class="filter-label"
+                  >Duration:</label
+                >
+                <select id="duration-filter" class="filter-select">
+                  <option value="">Any Duration</option>
+                  <option value="5">≤5 min</option>
+                  <option value="10">≤10 min</option>
+                  <option value="15">≤15 min</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="tag-filter" class="filter-label">Tags:</label>
+                <select id="tag-filter" class="filter-select">
+                  <option value="">All Tags</option>
+                  <option value="web">Web</option>
+                  <option value="css">CSS</option>
+                  <option value="tools">Tools</option>
+                  <option value="ui">UI</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="sort-controls">
+              <span class="sort-label">Sort by:</span>
+              <div class="sort-buttons">
+                <button class="sort-btn sort-btn--active">Popular</button>
+                <button class="sort-btn">New</button>
+                <button class="sort-btn">Shortest</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Course Grid -->
+          <section class="course-grid-section">
+            <div class="course-grid">
+              <!-- Course 1 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">HTML Essentials</h3>
+                  <p class="course-card__subtitle">Build semantic web pages</p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--beginner"
+                      >Beginner</span
+                    >
+                    <span class="course-card__duration">10 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Web</span>
+                    <span class="tag">Beginner</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 20%"></div>
+                    <span class="progress-bar__label">20% Complete</span>
+                  </div>
+                  <a href="course.html" class="btn btn--primary">Continue</a>
+                </div>
+              </div>
+
+              <!-- Course 2 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">CSS Layout Quickstart</h3>
+                  <p class="course-card__subtitle">Master Flexbox and Grid</p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--beginner"
+                      >Beginner</span
+                    >
+                    <span class="course-card__duration">8 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Web</span>
+                    <span class="tag">CSS</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 0%"></div>
+                    <span class="progress-bar__label">Not Started</span>
+                  </div>
+                  <a href="course.html" class="btn btn--secondary"
+                    >Start Course</a
+                  >
+                </div>
+              </div>
+
+              <!-- Course 3 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">TypeScript Primitives</h3>
+                  <p class="course-card__subtitle">
+                    Master the basics of TypeScript types
+                  </p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--intermediate"
+                      >Intermediate</span
+                    >
+                    <span class="course-card__duration">9 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Web</span>
+                    <span class="tag">TypeScript</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 60%"></div>
+                    <span class="progress-bar__label">60% Complete</span>
+                  </div>
+                  <a href="course.html" class="btn btn--primary">Continue</a>
+                </div>
+              </div>
+
+              <!-- Course 4 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">Git in a Hurry</h3>
+                  <p class="course-card__subtitle">Essential Git commands</p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--beginner"
+                      >Beginner</span
+                    >
+                    <span class="course-card__duration">7 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Tools</span>
+                    <span class="tag">Version Control</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 0%"></div>
+                    <span class="progress-bar__label">Not Started</span>
+                  </div>
+                  <a href="course.html" class="btn btn--secondary"
+                    >Start Course</a
+                  >
+                </div>
+              </div>
+
+              <!-- Course 5 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">Design Tokens Basics</h3>
+                  <p class="course-card__subtitle">
+                    Create consistent design systems
+                  </p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--beginner"
+                      >Beginner</span
+                    >
+                    <span class="course-card__duration">6 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">UI</span>
+                    <span class="tag">Design</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 100%"></div>
+                    <span class="progress-bar__label">Complete!</span>
+                  </div>
+                  <a href="course.html" class="btn btn--success">Review</a>
+                </div>
+              </div>
+
+              <!-- Course 6 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">React Hooks Deep Dive</h3>
+                  <p class="course-card__subtitle">Advanced React patterns</p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--advanced"
+                      >Advanced</span
+                    >
+                    <span class="course-card__duration">12 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Web</span>
+                    <span class="tag">React</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 0%"></div>
+                    <span class="progress-bar__label">Not Started</span>
+                  </div>
+                  <a href="course.html" class="btn btn--secondary"
+                    >Start Course</a
+                  >
+                </div>
+              </div>
+
+              <!-- Course 7 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">Python Data Types</h3>
+                  <p class="course-card__subtitle">
+                    Essential Python fundamentals
+                  </p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--beginner"
+                      >Beginner</span
+                    >
+                    <span class="course-card__duration">8 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Data</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 0%"></div>
+                    <span class="progress-bar__label">Not Started</span>
+                  </div>
+                  <a href="course.html" class="btn btn--secondary"
+                    >Start Course</a
+                  >
+                </div>
+              </div>
+
+              <!-- Course 8 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">SQL Joins Explained</h3>
+                  <p class="course-card__subtitle">
+                    Database relationships made simple
+                  </p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--intermediate"
+                      >Intermediate</span
+                    >
+                    <span class="course-card__duration">11 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Database</span>
+                    <span class="tag">SQL</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 0%"></div>
+                    <span class="progress-bar__label">Not Started</span>
+                  </div>
+                  <a href="course.html" class="btn btn--secondary"
+                    >Start Course</a
+                  >
+                </div>
+              </div>
+
+              <!-- Course 9 -->
+              <div class="course-card">
+                <div class="course-card__content">
+                  <h3 class="course-card__title">Accessibility Basics</h3>
+                  <p class="course-card__subtitle">
+                    Build inclusive web experiences
+                  </p>
+                  <div class="course-card__meta">
+                    <span
+                      class="course-card__level course-card__level--beginner"
+                      >Beginner</span
+                    >
+                    <span class="course-card__duration">9 min</span>
+                  </div>
+                  <div class="course-card__tags">
+                    <span class="tag">Web</span>
+                    <span class="tag">Accessibility</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 0%"></div>
+                    <span class="progress-bar__label">Not Started</span>
+                  </div>
+                  <a href="course.html" class="btn btn--secondary"
+                    >Start Course</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__version">Skill Builder v1.0</p>
+          <p class="footer__help">
+            Need help? <a href="about.html">Learn more</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

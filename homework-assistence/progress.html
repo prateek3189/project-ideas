@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - AI Homework Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="theme-light">
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">AI Homework Assistant</h1>
+                <div class="header__search">
+                    <input type="search" placeholder="Search subjects, topics..." class="search-input" disabled>
+                    <button class="search-button" disabled>🔍</button>
+                </div>
+                <div class="header__actions">
+                    <button class="profile-chip">
+                        <span class="profile-chip__avatar">👤</span>
+                        <span class="profile-chip__name">Student</span>
+                    </button>
+                    <button class="print-link" onclick="window.print()">🖨️ Print</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="index.html" class="nav-link">📊 Dashboard</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="subjects.html" class="nav-link">📚 Subjects</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+                    </li>
+                    <li class="nav-list__item nav-list__item--active">
+                        <a href="progress.html" class="nav-link">📈 Progress</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="settings.html" class="nav-link">⚙️ Settings</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="about.html" class="nav-link">ℹ️ About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__subjects">
+                <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+                <div class="subject-chips">
+                    <span class="subject-chip">Math</span>
+                    <span class="subject-chip">Science</span>
+                    <span class="subject-chip">Literature</span>
+                    <span class="subject-chip">History</span>
+                    <span class="subject-chip">CS</span>
+                </div>
+            </div>
+
+            <div class="sidebar__theme">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="progress-page">
+                <!-- Page Header -->
+                <header class="page-header">
+                    <h1 class="page-header__title">Your Learning Progress</h1>
+                    <p class="page-header__subtitle">Track your mastery and identify areas for improvement</p>
+                </header>
+
+                <!-- Progress Overview -->
+                <section class="progress-overview">
+                    <h2 class="section-title">Progress Overview</h2>
+                    <div class="progress-stats">
+                        <div class="progress-stat">
+                            <div class="progress-stat__icon">⏱️</div>
+                            <div class="progress-stat__content">
+                                <div class="progress-stat__value">127</div>
+                                <div class="progress-stat__label">Minutes Practiced</div>
+                            </div>
+                        </div>
+                        <div class="progress-stat">
+                            <div class="progress-stat__icon">📝</div>
+                            <div class="progress-stat__content">
+                                <div class="progress-stat__value">23</div>
+                                <div class="progress-stat__label">Problems Attempted</div>
+                            </div>
+                        </div>
+                        <div class="progress-stat">
+                            <div class="progress-stat__icon">📚</div>
+                            <div class="progress-stat__content">
+                                <div class="progress-stat__value">8</div>
+                                <div class="progress-stat__label">Topics Touched</div>
+                            </div>
+                        </div>
+                        <div class="progress-stat">
+                            <div class="progress-stat__icon">🎯</div>
+                            <div class="progress-stat__content">
+                                <div class="progress-stat__value">67%</div>
+                                <div class="progress-stat__label">Average Mastery</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mastery by Topic -->
+                <section class="mastery-section">
+                    <h2 class="section-title">Mastery by Topic</h2>
+                    <div class="mastery-bars">
+                        <div class="mastery-bar">
+                            <div class="mastery-bar__header">
+                                <span class="mastery-bar__topic">Linear Equations</span>
+                                <span class="mastery-bar__percentage">85%</span>
+                            </div>
+                            <div class="mastery-bar__container">
+                                <div class="mastery-bar__fill" style="width: 85%"></div>
+                            </div>
+                            <div class="mastery-bar__meta">
+                                <span>12 problems • 45 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="mastery-bar">
+                            <div class="mastery-bar__header">
+                                <span class="mastery-bar__topic">Factoring Quadratics</span>
+                                <span class="mastery-bar__percentage">35%</span>
+                            </div>
+                            <div class="mastery-bar__container">
+                                <div class="mastery-bar__fill" style="width: 35%"></div>
+                            </div>
+                            <div class="mastery-bar__meta">
+                                <span>8 problems • 32 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="mastery-bar">
+                            <div class="mastery-bar__header">
+                                <span class="mastery-bar__topic">Kinematics</span>
+                                <span class="mastery-bar__percentage">55%</span>
+                            </div>
+                            <div class="mastery-bar__container">
+                                <div class="mastery-bar__fill" style="width: 55%"></div>
+                            </div>
+                            <div class="mastery-bar__meta">
+                                <span>6 problems • 28 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="mastery-bar">
+                            <div class="mastery-bar__header">
+                                <span class="mastery-bar__topic">Thesis Statements</span>
+                                <span class="mastery-bar__percentage">40%</span>
+                            </div>
+                            <div class="mastery-bar__container">
+                                <div class="mastery-bar__fill" style="width: 40%"></div>
+                            </div>
+                            <div class="mastery-bar__meta">
+                                <span>5 problems • 22 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="mastery-bar">
+                            <div class="mastery-bar__header">
+                                <span class="mastery-bar__topic">Systems of Equations</span>
+                                <span class="mastery-bar__percentage">25%</span>
+                            </div>
+                            <div class="mastery-bar__container">
+                                <div class="mastery-bar__fill" style="width: 25%"></div>
+                            </div>
+                            <div class="mastery-bar__meta">
+                                <span>3 problems • 18 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Practice Heatmap -->
+                <section class="heatmap-section">
+                    <h2 class="section-title">Practice Activity</h2>
+                    <div class="heatmap-container">
+                        <div class="heatmap-header">
+                            <h3 class="heatmap-title">Last 5 Weeks</h3>
+                            <div class="heatmap-legend">
+                                <span class="heatmap-legend__item">
+                                    <span class="heatmap-legend__dot heatmap-legend__dot--0"></span>
+                                    <span>0 min</span>
+                                </span>
+                                <span class="heatmap-legend__item">
+                                    <span class="heatmap-legend__dot heatmap-legend__dot--1"></span>
+                                    <span>1-15 min</span>
+                                </span>
+                                <span class="heatmap-legend__item">
+                                    <span class="heatmap-legend__dot heatmap-legend__dot--2"></span>
+                                    <span>16-30 min</span>
+                                </span>
+                                <span class="heatmap-legend__item">
+                                    <span class="heatmap-legend__dot heatmap-legend__dot--3"></span>
+                                    <span>31-45 min</span>
+                                </span>
+                                <span class="heatmap-legend__item">
+                                    <span class="heatmap-legend__dot heatmap-legend__dot--4"></span>
+                                    <span>45+ min</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="heatmap-grid">
+                            <!-- Week 1 -->
+                            <div class="heatmap-week">
+                                <div class="heatmap-week__label">Week 1</div>
+                                <div class="heatmap-week__days">
+                                    <div class="heatmap-day heatmap-day--intensity-2">M</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-1">W</div>
+                                    <div class="heatmap-day heatmap-day--intensity-4">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">F</div>
+                                    <div class="heatmap-day heatmap-day--intensity-0">S</div>
+                                    <div class="heatmap-day heatmap-day--intensity-1">S</div>
+                                </div>
+                            </div>
+                            <!-- Week 2 -->
+                            <div class="heatmap-week">
+                                <div class="heatmap-week__label">Week 2</div>
+                                <div class="heatmap-week__days">
+                                    <div class="heatmap-day heatmap-day--intensity-3">M</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-4">W</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-1">F</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">S</div>
+                                    <div class="heatmap-day heatmap-day--intensity-0">S</div>
+                                </div>
+                            </div>
+                            <!-- Week 3 -->
+                            <div class="heatmap-week">
+                                <div class="heatmap-week__label">Week 3</div>
+                                <div class="heatmap-week__days">
+                                    <div class="heatmap-day heatmap-day--intensity-1">M</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">W</div>
+                                    <div class="heatmap-day heatmap-day--intensity-4">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">F</div>
+                                    <div class="heatmap-day heatmap-day--intensity-1">S</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">S</div>
+                                </div>
+                            </div>
+                            <!-- Week 4 -->
+                            <div class="heatmap-week">
+                                <div class="heatmap-week__label">Week 4</div>
+                                <div class="heatmap-week__days">
+                                    <div class="heatmap-day heatmap-day--intensity-2">M</div>
+                                    <div class="heatmap-day heatmap-day--intensity-4">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">W</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-1">F</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">S</div>
+                                    <div class="heatmap-day heatmap-day--intensity-0">S</div>
+                                </div>
+                            </div>
+                            <!-- Week 5 (Current) -->
+                            <div class="heatmap-week">
+                                <div class="heatmap-week__label">Week 5</div>
+                                <div class="heatmap-week__days">
+                                    <div class="heatmap-day heatmap-day--intensity-3">M</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-4">W</div>
+                                    <div class="heatmap-day heatmap-day--intensity-3">T</div>
+                                    <div class="heatmap-day heatmap-day--intensity-2">F</div>
+                                    <div class="heatmap-day heatmap-day--intensity-1">S</div>
+                                    <div class="heatmap-day heatmap-day--intensity-0">S</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Achievements -->
+                <section class="achievements-section">
+                    <h2 class="section-title">Achievements & Badges</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-badge achievement-badge--unlocked">
+                            <div class="achievement-badge__icon">🎯</div>
+                            <div class="achievement-badge__content">
+                                <h3 class="achievement-badge__title">Hint Disciplined</h3>
+                                <p class="achievement-badge__description">Used hints in order without jumping ahead</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge achievement-badge--unlocked">
+                            <div class="achievement-badge__icon">📝</div>
+                            <div class="achievement-badge__content">
+                                <h3 class="achievement-badge__title">Step Finisher</h3>
+                                <p class="achievement-badge__description">Completed all steps in a problem</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge achievement-badge--unlocked">
+                            <div class="achievement-badge__icon">🔥</div>
+                            <div class="achievement-badge__content">
+                                <h3 class="achievement-badge__title">Consistency 7-Day</h3>
+                                <p class="achievement-badge__description">Practiced for 7 consecutive days</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge achievement-badge--locked">
+                            <div class="achievement-badge__icon">🧠</div>
+                            <div class="achievement-badge__content">
+                                <h3 class="achievement-badge__title">Concept Mastery</h3>
+                                <p class="achievement-badge__description">Achieve 90% mastery in any topic</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge achievement-badge--locked">
+                            <div class="achievement-badge__icon">⚡</div>
+                            <div class="achievement-badge__content">
+                                <h3 class="achievement-badge__title">Speed Learner</h3>
+                                <p class="achievement-badge__description">Complete 5 problems in under 30 minutes</p>
+                            </div>
+                        </div>
+                        <div class="achievement-badge achievement-badge--locked">
+                            <div class="achievement-badge__icon">🌟</div>
+                            <div class="achievement-badge__content">
+                                <h3 class="achievement-badge__title">Perfect Score</h3>
+                                <p class="achievement-badge__description">Get 100% on a problem's rubric</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recommended Next -->
+                <section class="recommended-section">
+                    <h2 class="section-title">Recommended Next</h2>
+                    <div class="recommended-list">
+                        <div class="recommended-item">
+                            <div class="recommended-item__priority">High Priority</div>
+                            <div class="recommended-item__content">
+                                <h3 class="recommended-item__title">Practice Factoring Quadratics</h3>
+                                <p class="recommended-item__description">Your mastery is at 35%. Focus on this topic to improve your algebra skills.</p>
+                                <a href="workspace.html" class="recommended-item__button">Start Practice</a>
+                            </div>
+                        </div>
+                        <div class="recommended-item">
+                            <div class="recommended-item__priority">Medium Priority</div>
+                            <div class="recommended-item__content">
+                                <h3 class="recommended-item__title">Continue Thesis Statements</h3>
+                                <p class="recommended-item__description">Build on your 40% mastery with more writing practice.</p>
+                                <a href="workspace.html" class="recommended-item__button">Start Practice</a>
+                            </div>
+                        </div>
+                        <div class="recommended-item">
+                            <div class="recommended-item__priority">Medium Priority</div>
+                            <div class="recommended-item__content">
+                                <h3 class="recommended-item__title">Advance in Kinematics</h3>
+                                <p class="recommended-item__description">You're at 55% mastery. Ready for more challenging physics problems.</p>
+                                <a href="workspace.html" class="recommended-item__button">Start Practice</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Study Insights -->
+                <section class="insights-section">
+                    <h2 class="section-title">Study Insights</h2>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <h3 class="insight-card__title">Best Study Time</h3>
+                            <div class="insight-card__content">
+                                <p>You're most productive on <strong>Tuesdays and Thursdays</strong> between 3-5 PM.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card">
+                            <h3 class="insight-card__title">Learning Pattern</h3>
+                            <div class="insight-card__content">
+                                <p>You tend to spend <strong>15-20 minutes</strong> per problem, which is optimal for deep learning.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card">
+                            <h3 class="insight-card__title">Strength Area</h3>
+                            <div class="insight-card__content">
+                                <p><strong>Linear Equations</strong> is your strongest topic at 85% mastery.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card">
+                            <h3 class="insight-card__title">Growth Opportunity</h3>
+                            <div class="insight-card__content">
+                                <p><strong>Systems of Equations</strong> shows the most room for improvement at 25% mastery.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2024 AI Homework Assistant. Built for learning, not cheating.</p>
+                <p>Version 1.0 • <a href="about.html">About</a> • <a href="settings.html">Help</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

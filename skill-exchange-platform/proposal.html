@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trade Proposal - SkillSwap</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <div class="header__brand">
+            <h1 class="header__logo">SkillSwap</h1>
+            <p class="header__tagline">Trade time, not money</p>
+          </div>
+
+          <div class="header__search">
+            <form class="search-form" role="search">
+              <label for="search-input" class="visually-hidden"
+                >Search skills</label
+              >
+              <input
+                type="search"
+                id="search-input"
+                class="search-form__input"
+                placeholder="Search skills"
+                autocomplete="off"
+              />
+              <button
+                type="submit"
+                class="search-form__button"
+                aria-label="Search"
+              >
+                <svg
+                  class="icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="header__location">
+            <span class="chip chip--location">
+              <svg
+                class="icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Within 5km
+            </span>
+          </div>
+
+          <div class="header__profile">
+            <a href="profile.html" class="profile-link">
+              <span class="profile-link__avatar">A</span>
+              <span class="profile-link__name">Alex</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a href="index.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg>
+              Explore
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="offers.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              Offers
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="requests.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              Requests
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="matches.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 12l2 2 4-4"></path>
+                <circle cx="21" cy="12" r="1"></circle>
+                <circle cx="3" cy="12" r="1"></circle>
+              </svg>
+              Matches
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="sessions.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Sessions
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="messages.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              Messages
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="circles.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+              </svg>
+              Circles
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              class="icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <a href="settings.html" class="nav-link">
+            <svg
+              class="icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+              ></path>
+            </svg>
+            Settings
+          </a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="page-header">
+          <h1 class="page-title">Trade Proposal</h1>
+          <p class="page-subtitle">
+            Deal Canvas - Craft your trade terms and schedule. Cashless
+            exchange. Be kind, be clear, be safe.
+          </p>
+        </div>
+
+        <!-- Participants -->
+        <div class="proposal-section">
+          <h2 class="proposal-section__title">Participants</h2>
+          <div class="participants">
+            <div class="participant-card">
+              <span class="participant-card__avatar">A</span>
+              <div class="participant-card__info">
+                <h3 class="participant-card__name">Alex (You)</h3>
+                <p class="participant-card__location">San Francisco, CA</p>
+                <div class="participant-card__badges">
+                  <span class="badge badge--verified">Verified</span>
+                  <span class="badge badge--reliable">Reliable</span>
+                </div>
+              </div>
+            </div>
+
+            <svg
+              class="icon participants-arrow"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+            </svg>
+
+            <div class="participant-card">
+              <span class="participant-card__avatar">M</span>
+              <div class="participant-card__info">
+                <h3 class="participant-card__name">Maria</h3>
+                <p class="participant-card__location">San Francisco, CA</p>
+                <div class="participant-card__badges">
+                  <span class="badge badge--verified">Verified</span>
+                  <span class="badge badge--reliable">Reliable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trade Terms -->
+        <div class="proposal-section">
+          <h2 class="proposal-section__title">Trade Terms</h2>
+          <table class="proposal-table">
+            <thead>
+              <tr>
+                <th>You Provide</th>
+                <th>They Provide</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Guitar Basics</strong><br />
+                  <span class="text-muted">1 hour per session</span><br />
+                  <span class="text-muted">4 sessions total</span><br />
+                  <span class="text-muted"
+                    >Materials: Bring your own guitar</span
+                  >
+                </td>
+                <td>
+                  <strong>English Practice</strong><br />
+                  <span class="text-muted">1 hour per session</span><br />
+                  <span class="text-muted">4 sessions total</span><br />
+                  <span class="text-muted"
+                    >Materials: Conversation topics provided</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="exchange-ratio">
+            <span class="exchange-ratio__label">Exchange Ratio:</span>
+            <span class="exchange-ratio__value">1 hour ↔ 1 hour</span>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="proposal-section">
+          <h2 class="proposal-section__title">Schedule</h2>
+          <div class="schedule-chips">
+            <span class="schedule-chip schedule-chip--selected">
+              <svg
+                class="icon"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12,6 12,12 16,14"></polyline>
+              </svg>
+              Tuesday 7:00 PM
+            </span>
+            <span class="schedule-chip">
+              <svg
+                class="icon"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12,6 12,12 16,14"></polyline>
+              </svg>
+              Thursday 7:00 PM
+            </span>
+            <span class="schedule-chip">
+              <svg
+                class="icon"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12,6 12,12 16,14"></polyline>
+              </svg>
+              Saturday 2:00 PM
+            </span>
+          </div>
+          <p class="text-muted">Timezone: Pacific Standard Time (PST)</p>
+        </div>
+
+        <!-- Location -->
+        <div class="proposal-section">
+          <h2 class="proposal-section__title">Location</h2>
+          <div class="location-details">
+            <div class="location-mode">
+              <span class="chip chip--availability">Online</span>
+            </div>
+            <div class="location-info">
+              <p><strong>Platform:</strong> Zoom / Google Meet</p>
+              <p>
+                <strong>Meeting Link:</strong> Will be shared before each
+                session
+              </p>
+              <p><strong>Backup:</strong> Phone call if technical issues</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expectations -->
+        <div class="proposal-section">
+          <h2 class="proposal-section__title">Expectations</h2>
+          <details class="expectations-details">
+            <summary>Learning Goals & Preparation</summary>
+            <div class="expectations-content">
+              <h4>Guitar Learning Goals:</h4>
+              <ul>
+                <li>Learn basic chords (C, G, D, Em)</li>
+                <li>Master simple strumming patterns</li>
+                <li>Play 3 beginner songs by end of sessions</li>
+              </ul>
+
+              <h4>English Practice Goals:</h4>
+              <ul>
+                <li>Improve conversational fluency</li>
+                <li>Practice business English vocabulary</li>
+                <li>Build confidence in speaking</li>
+              </ul>
+
+              <h4>Preparation Required:</h4>
+              <ul>
+                <li>Bring your own guitar (tuned)</li>
+                <li>Download chord charts (provided)</li>
+                <li>Prepare conversation topics in advance</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- Cancellation Policy -->
+        <div class="proposal-section">
+          <h2 class="proposal-section__title">Cancellation Policy</h2>
+          <details class="cancellation-details">
+            <summary>Reschedule & Cancellation Terms</summary>
+            <div class="cancellation-content">
+              <h4>Notice Period:</h4>
+              <ul>
+                <li>24-hour notice recommended for rescheduling</li>
+                <li>Emergency cancellations accepted with explanation</li>
+              </ul>
+
+              <h4>Reschedule Allowance:</h4>
+              <ul>
+                <li>Up to 2 reschedules per person</li>
+                <li>Must reschedule within 1 week of original time</li>
+              </ul>
+
+              <h4>No-Show Policy:</h4>
+              <ul>
+                <li>First no-show: Warning and reschedule</li>
+                <li>Second no-show: Trade may be cancelled</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- Agreement Banner -->
+        <div class="agreement-banner">
+          <svg
+            class="icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 12l2 2 4-4"></path>
+            <circle cx="21" cy="12" r="1"></circle>
+            <circle cx="3" cy="12" r="1"></circle>
+          </svg>
+          No money. Community guidelines apply. This is a time-for-time
+          exchange.
+        </div>
+
+        <!-- Actions -->
+        <div class="proposal-actions">
+          <button class="btn btn--primary btn--large">Send Proposal</button>
+          <button class="btn btn--secondary">Save as Draft</button>
+          <button class="btn btn--ghost">Cancel</button>
+          <a
+            href="proposal.html"
+            class="btn btn--secondary"
+            onclick="window.print()"
+            >Print Trade Agreement</a
+          >
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>SkillSwap</h3>
+            <p>Building community through skill exchange</p>
+          </div>
+          <div class="footer__section">
+            <h4>Help</h4>
+            <ul>
+              <li><a href="about.html">How it works</a></li>
+              <li><a href="about.html#safety">Safety guidelines</a></li>
+              <li><a href="about.html#disputes">Dispute resolution</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="circles.html">Skill circles</a></li>
+              <li><a href="about.html#principles">Our principles</a></li>
+              <li><a href="about.html#prohibited">Prohibited services</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Version</h4>
+            <p>Skill-Exchange v0.1</p>
+            <p>Static prototype</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

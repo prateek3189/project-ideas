@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">About BookingHub</h1>
+          <p class="page-subtitle">
+            Comprehensive booking and subscription management system
+          </p>
+        </div>
+
+        <!-- System Overview -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">System Overview</h3>
+          </div>
+          <div class="card__content">
+            <div class="two-column">
+              <div>
+                <h4 class="font-semibold mb-4">What is BookingHub?</h4>
+                <p class="mb-4">
+                  BookingHub is a comprehensive booking and subscription
+                  management system designed for multi-service businesses
+                  including gyms, salons, co-working spaces, and wellness
+                  centers. It provides a unified platform to manage
+                  appointments, memberships, payments, and customer
+                  relationships.
+                </p>
+
+                <h4 class="font-semibold mb-4">Key Features</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="icon">📅</span>
+                    <span
+                      >Advanced calendar management with staff and resource
+                      scheduling</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">👥</span>
+                    <span
+                      >Comprehensive member profiles with plan and usage
+                      tracking</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">💳</span>
+                    <span
+                      >Flexible membership plans and class pack management</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">💰</span>
+                    <span>Integrated billing and payment processing</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">📊</span>
+                    <span>Detailed analytics and business insights</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🖨️</span>
+                    <span>Print-ready invoices, rosters, and schedules</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-4">System Information</h4>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span class="text-muted">Version:</span>
+                    <span class="font-mono">v1.0.0</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Build Date:</span>
+                    <span>January 15, 2025</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Environment:</span>
+                    <span>Development</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Database:</span>
+                    <span>Static HTML/CSS</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Framework:</span>
+                    <span>Vanilla HTML/CSS</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Browser Support:</span>
+                    <span>Modern browsers</span>
+                  </div>
+                </div>
+
+                <h4 class="font-semibold mb-4 mt-6">
+                  Technical Specifications
+                </h4>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span class="text-muted">Responsive Design:</span>
+                    <span class="badge badge--confirmed">Yes</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Accessibility:</span>
+                    <span class="badge badge--confirmed">WCAG 2.1 AA</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Print Support:</span>
+                    <span class="badge badge--confirmed">Yes</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Dark Mode:</span>
+                    <span class="badge badge--confirmed">Yes</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Multi-language:</span>
+                    <span class="badge badge--waitlist">Planned</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Breakdown -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Feature Breakdown</h3>
+          </div>
+          <div class="card__content">
+            <div class="three-column">
+              <div>
+                <h4 class="font-semibold mb-3">📊 Dashboard</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• KPI tiles with key metrics</li>
+                  <li>• Resource utilization bars</li>
+                  <li>• Upcoming bookings list</li>
+                  <li>• Alert notifications</li>
+                  <li>• Quick action buttons</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">📅 Calendar</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Day/Week/Month views</li>
+                  <li>• Staff and resource lanes</li>
+                  <li>• Booking slot management</li>
+                  <li>• Conflict detection</li>
+                  <li>• Quick booking creation</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">📝 Bookings</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Comprehensive booking forms</li>
+                  <li>• Recurring booking support</li>
+                  <li>• Payment integration</li>
+                  <li>• Confirmation workflows</li>
+                  <li>• Waitlist management</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">👥 Members</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Detailed member profiles</li>
+                  <li>• Plan and usage tracking</li>
+                  <li>• Activity history</li>
+                  <li>• Contact management</li>
+                  <li>• Usage ring indicators</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">💳 Plans & Products</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Membership plan management</li>
+                  <li>• Class pack creation</li>
+                  <li>• Add-on services</li>
+                  <li>• Coupon system</li>
+                  <li>• Tax configuration</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">💰 Billing</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Invoice generation</li>
+                  <li>• Payment tracking</li>
+                  <li>• Failed payment handling</li>
+                  <li>• Payout management</li>
+                  <li>• Financial reporting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design System -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Design System</h3>
+          </div>
+          <div class="card__content">
+            <div class="two-column">
+              <div>
+                <h4 class="font-semibold mb-4">Color Palette</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-primary rounded"></div>
+                    <div>
+                      <div class="font-medium">Primary Blue</div>
+                      <div class="text-sm text-muted">#2563EB</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-success rounded"></div>
+                    <div>
+                      <div class="font-medium">Success Green</div>
+                      <div class="text-sm text-muted">#16A34A</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-warning rounded"></div>
+                    <div>
+                      <div class="font-medium">Warning Orange</div>
+                      <div class="text-sm text-muted">#F59E0B</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-danger rounded"></div>
+                    <div>
+                      <div class="font-medium">Danger Red</div>
+                      <div class="text-sm text-muted">#DC2626</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-4">Typography</h4>
+                <div class="space-y-3">
+                  <div>
+                    <div class="text-2xl font-bold">Display Heading</div>
+                    <div class="text-sm text-muted">28px, Bold</div>
+                  </div>
+                  <div>
+                    <div class="text-xl font-semibold">Section Heading</div>
+                    <div class="text-sm text-muted">20px, Semibold</div>
+                  </div>
+                  <div>
+                    <div class="text-base font-medium">Body Text</div>
+                    <div class="text-sm text-muted">16px, Medium</div>
+                  </div>
+                  <div>
+                    <div class="text-sm font-mono">Code/Monospace</div>
+                    <div class="text-sm text-muted">13px, Monospace</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessibility -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Accessibility Features</h3>
+          </div>
+          <div class="card__content">
+            <div class="two-column">
+              <div>
+                <h4 class="font-semibold mb-4">WCAG 2.1 AA Compliance</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="icon">♿</span>
+                    <span>Keyboard navigation support</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🎯</span>
+                    <span>Visible focus indicators</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🔍</span>
+                    <span>High contrast mode support</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">📱</span>
+                    <span>Screen reader compatibility</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">⚡</span>
+                    <span>Reduced motion preferences</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-4">Semantic HTML</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🏷️</span>
+                    <span>Proper heading hierarchy</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">📝</span>
+                    <span>Form labels and descriptions</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🔗</span>
+                    <span>Descriptive link text</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🖼️</span>
+                    <span>Alt text for images</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="icon">🏗️</span>
+                    <span>Landmark navigation</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Browser Support -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Browser Support</h3>
+          </div>
+          <div class="card__content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Browser</th>
+                    <th>Version</th>
+                    <th>Support</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Chrome</td>
+                    <td>90+</td>
+                    <td><span class="badge badge--confirmed">Full</span></td>
+                    <td>Recommended browser</td>
+                  </tr>
+                  <tr>
+                    <td>Firefox</td>
+                    <td>88+</td>
+                    <td><span class="badge badge--confirmed">Full</span></td>
+                    <td>Full feature support</td>
+                  </tr>
+                  <tr>
+                    <td>Safari</td>
+                    <td>14+</td>
+                    <td><span class="badge badge--confirmed">Full</span></td>
+                    <td>macOS and iOS</td>
+                  </tr>
+                  <tr>
+                    <td>Edge</td>
+                    <td>90+</td>
+                    <td><span class="badge badge--confirmed">Full</span></td>
+                    <td>Chromium-based</td>
+                  </tr>
+                  <tr>
+                    <td>Internet Explorer</td>
+                    <td>11</td>
+                    <td>
+                      <span class="badge badge--cancelled">Not Supported</span>
+                    </td>
+                    <td>Legacy browser</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact & Support -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Contact & Support</h3>
+          </div>
+          <div class="card__content">
+            <div class="two-column">
+              <div>
+                <h4 class="font-semibold mb-4">Technical Support</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <span class="icon">📧</span>
+                    <div>
+                      <div class="font-medium">Email Support</div>
+                      <div class="text-sm text-muted">
+                        support@bookinghub.com
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="icon">📱</span>
+                    <div>
+                      <div class="font-medium">Phone Support</div>
+                      <div class="text-sm text-muted">+91 22 2640 1234</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="icon">💬</span>
+                    <div>
+                      <div class="font-medium">Live Chat</div>
+                      <div class="text-sm text-muted">
+                        Available 9 AM - 6 PM IST
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-4">Documentation</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <span class="icon">📚</span>
+                    <div>
+                      <div class="font-medium">User Guide</div>
+                      <div class="text-sm text-muted">
+                        Complete system documentation
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="icon">🎥</span>
+                    <div>
+                      <div class="font-medium">Video Tutorials</div>
+                      <div class="text-sm text-muted">
+                        Step-by-step walkthroughs
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="icon">❓</span>
+                    <div>
+                      <div class="font-medium">FAQ</div>
+                      <div class="text-sm text-muted">
+                        Frequently asked questions
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

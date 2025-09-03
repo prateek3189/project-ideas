@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print settings"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="settings.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Settings</h2>
+          <p class="page-subtitle">
+            Configure your campaign management preferences
+          </p>
+        </div>
+
+        <div class="settings">
+          <!-- Email Channel Settings -->
+          <div class="settings__section">
+            <h3 class="settings__section-title">Email Channel</h3>
+
+            <div class="settings__group">
+              <label for="from-domain" class="settings__label"
+                >From Domain</label
+              >
+              <input
+                type="text"
+                id="from-domain"
+                class="form-input"
+                value="yourcompany.com"
+                required
+              />
+              <div class="settings__description">
+                Domain used for sending emails
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">Domain Authentication</label>
+              <div class="auth-status">
+                <div class="auth-item">
+                  <span class="badge badge--success">✓ SPF</span>
+                  <span class="text-muted"
+                    >v=spf1 include:_spf.yourcompany.com ~all</span
+                  >
+                </div>
+                <div class="auth-item">
+                  <span class="badge badge--success">✓ DKIM</span>
+                  <span class="text-muted"
+                    >k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC...</span
+                  >
+                </div>
+                <div class="auth-item">
+                  <span class="badge badge--warning">⚠ DMARC</span>
+                  <span class="text-muted"
+                    >v=DMARC1; p=quarantine;
+                    rua=mailto:dmarc@yourcompany.com</span
+                  >
+                </div>
+              </div>
+              <div class="settings__description">
+                Configure SPF, DKIM, and DMARC records for better deliverability
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label for="default-from-name" class="settings__label"
+                >Default From Name</label
+              >
+              <input
+                type="text"
+                id="default-from-name"
+                class="form-input"
+                value="Your Company"
+                required
+              />
+            </div>
+
+            <div class="settings__group">
+              <label for="default-from-email" class="settings__label"
+                >Default From Email</label
+              >
+              <input
+                type="email"
+                id="default-from-email"
+                class="form-input"
+                value="noreply@yourcompany.com"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- SMS Channel Settings -->
+          <div class="settings__section">
+            <h3 class="settings__section-title">SMS Channel</h3>
+
+            <div class="settings__group">
+              <label for="default-sender-id" class="settings__label"
+                >Default Sender ID</label
+              >
+              <input
+                type="text"
+                id="default-sender-id"
+                class="form-input"
+                value="YourBrand"
+                maxlength="11"
+              />
+              <div class="settings__description">
+                Alphanumeric sender ID (max 11 characters)
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">Sender ID Types</label>
+              <div class="sender-types">
+                <div class="sender-type">
+                  <span class="badge badge--info">Short Code</span>
+                  <span class="text-muted">5-6 digit number (US/CA)</span>
+                </div>
+                <div class="sender-type">
+                  <span class="badge badge--info">Long Code</span>
+                  <span class="text-muted">10-digit phone number</span>
+                </div>
+                <div class="sender-type">
+                  <span class="badge badge--info">Alpha Sender</span>
+                  <span class="text-muted">Brand name (max 11 chars)</span>
+                </div>
+              </div>
+              <div class="settings__description">
+                Sender ID requirements vary by region and carrier
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">Regional Compliance</label>
+              <div class="compliance-notes">
+                <div class="compliance-item">
+                  <strong>US/Canada:</strong> 10DLC registration required for
+                  long codes
+                </div>
+                <div class="compliance-item">
+                  <strong>Europe:</strong> GDPR compliance required
+                </div>
+                <div class="compliance-item">
+                  <strong>Australia:</strong> ACMA registration required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Provider Settings -->
+          <div class="settings__section">
+            <h3 class="settings__section-title">Providers</h3>
+
+            <div class="settings__group">
+              <label class="settings__label">Email Provider</label>
+              <div class="provider-card">
+                <div class="provider-info">
+                  <h4>SendGrid</h4>
+                  <span class="badge badge--success">Connected</span>
+                </div>
+                <div class="provider-details">
+                  <p>API Key: sg_***...***</p>
+                  <p>Plan: Pro (100k emails/month)</p>
+                </div>
+                <button class="btn btn--secondary btn--small" type="button">
+                  Configure
+                </button>
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">SMS Provider</label>
+              <div class="provider-card">
+                <div class="provider-info">
+                  <h4>Twilio</h4>
+                  <span class="badge badge--success">Connected</span>
+                </div>
+                <div class="provider-details">
+                  <p>Account SID: AC***...***</p>
+                  <p>Phone Number: +1 (555) 123-4567</p>
+                </div>
+                <button class="btn btn--secondary btn--small" type="button">
+                  Configure
+                </button>
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">Analytics Provider</label>
+              <div class="provider-card">
+                <div class="provider-info">
+                  <h4>Google Analytics</h4>
+                  <span class="badge badge--warning">Not Connected</span>
+                </div>
+                <div class="provider-details">
+                  <p>Connect to track campaign performance</p>
+                </div>
+                <button class="btn btn--primary btn--small" type="button">
+                  Connect
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tracking Settings -->
+          <div class="settings__section">
+            <h3 class="settings__section-title">Tracking</h3>
+
+            <div class="settings__group">
+              <label class="checkbox">
+                <input type="checkbox" name="link-tracking" checked />
+                <span>Enable Link Tracking</span>
+              </label>
+              <div class="settings__description">
+                Track clicks on links in emails and SMS
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label for="tracking-domain" class="settings__label"
+                >Custom Tracking Domain</label
+              >
+              <input
+                type="text"
+                id="tracking-domain"
+                class="form-input"
+                placeholder="track.yourcompany.com"
+              />
+              <div class="settings__description">
+                Use a custom domain for tracked links (optional)
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">UTM Defaults</label>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="utm-source" class="form-label">Source</label>
+                  <input
+                    type="text"
+                    id="utm-source"
+                    class="form-input"
+                    value="email"
+                  />
+                </div>
+                <div>
+                  <label for="utm-medium" class="form-label">Medium</label>
+                  <input
+                    type="text"
+                    id="utm-medium"
+                    class="form-input"
+                    value="newsletter"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compliance Settings -->
+          <div class="settings__section">
+            <h3 class="settings__section-title">Compliance</h3>
+
+            <div class="settings__group">
+              <label for="default-footer" class="settings__label"
+                >Default Email Footer</label
+              >
+              <textarea id="default-footer" class="form-textarea" rows="4">
+Your Company Name
+123 Business Street
+City, State 12345
+United States
+
+Unsubscribe | Update Preferences</textarea
+              >
+              <div class="settings__description">
+                Physical address required for compliance
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label for="unsubscribe-keywords" class="settings__label"
+                >SMS Unsubscribe Keywords</label
+              >
+              <input
+                type="text"
+                id="unsubscribe-keywords"
+                class="form-input"
+                value="STOP, UNSUBSCRIBE, QUIT, END"
+              />
+              <div class="settings__description">
+                Comma-separated list of opt-out keywords
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">Quiet Hours</label>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="quiet-start" class="form-label">Start Time</label>
+                  <input
+                    type="time"
+                    id="quiet-start"
+                    class="form-input"
+                    value="21:00"
+                  />
+                </div>
+                <div>
+                  <label for="quiet-end" class="form-label">End Time</label>
+                  <input
+                    type="time"
+                    id="quiet-end"
+                    class="form-input"
+                    value="08:00"
+                  />
+                </div>
+              </div>
+              <div class="settings__description">
+                SMS will not be sent during these hours
+              </div>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">Data Retention</label>
+              <select class="form-select">
+                <option value="30">30 days</option>
+                <option value="90" selected>90 days</option>
+                <option value="365">1 year</option>
+                <option value="0">Indefinitely</option>
+              </select>
+              <div class="settings__description">
+                How long to keep campaign data
+              </div>
+            </div>
+          </div>
+
+          <!-- Team & Roles -->
+          <div class="settings__section">
+            <h3 class="settings__section-title">Team & Roles</h3>
+
+            <div class="settings__group">
+              <label class="settings__label">Approvers</label>
+              <div class="approvers-list">
+                <div class="approver-item">
+                  <div class="approver-info">
+                    <strong>Marketing Team</strong>
+                    <span class="text-muted">marketing@yourcompany.com</span>
+                  </div>
+                  <span class="badge badge--success">Active</span>
+                </div>
+                <div class="approver-item">
+                  <div class="approver-info">
+                    <strong>Compliance Team</strong>
+                    <span class="text-muted">compliance@yourcompany.com</span>
+                  </div>
+                  <span class="badge badge--success">Active</span>
+                </div>
+              </div>
+              <button class="btn btn--secondary btn--small mt-2" type="button">
+                Add Approver
+              </button>
+            </div>
+
+            <div class="settings__group">
+              <label class="settings__label">User Roles</label>
+              <div class="roles-list">
+                <div class="role-item">
+                  <div class="role-info">
+                    <strong>Admin</strong>
+                    <span class="text-muted">Full access to all features</span>
+                  </div>
+                  <span class="badge badge--primary">2 users</span>
+                </div>
+                <div class="role-item">
+                  <div class="role-info">
+                    <strong>Marketer</strong>
+                    <span class="text-muted">Create and manage campaigns</span>
+                  </div>
+                  <span class="badge badge--info">5 users</span>
+                </div>
+                <div class="role-item">
+                  <div class="role-info">
+                    <strong>Viewer</strong>
+                    <span class="text-muted">View reports and analytics</span>
+                  </div>
+                  <span class="badge badge--default">3 users</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="settings__actions">
+            <button class="btn btn--secondary" type="button">
+              Reset to Defaults
+            </button>
+            <button class="btn btn--primary" type="button">
+              Save Settings
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

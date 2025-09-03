@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lessons - Language Learning Buddy</title>
+    <meta
+      name="description"
+      content="Learn grammar, usage patterns, and cultural context through bite-sized lesson cards"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search lessons, grammar..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a href="topics.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a href="pronun-lab.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a
+              href="lessons.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a href="review.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a href="progress.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Filter Lessons</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              All Categories
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📝</span>
+              Grammar
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Usage Patterns
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🌍</span>
+              Cultural Notes
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎭</span>
+              Register (Formal/Informal)
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Language Lessons</h1>
+          <p class="main__subtitle">
+            Master grammar, usage patterns, and cultural context through
+            bite-sized lessons
+          </p>
+        </div>
+
+        <div class="main__content">
+          <!-- Grammar Lessons -->
+          <div class="mt-8">
+            <h2>Grammar Fundamentals</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Grammar</div>
+                <h3 class="lesson-card__title">Present Tense -AR Verbs</h3>
+                <div class="lesson-card__content">
+                  Learn the basic conjugation pattern for regular -AR verbs in
+                  Spanish.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Conjugation Pattern:</h4>
+                    <ul>
+                      <li>Yo: -o (hablo, trabajo)</li>
+                      <li>Tú: -as (hablas, trabajas)</li>
+                      <li>Él/Ella: -a (habla, trabaja)</li>
+                      <li>Nosotros: -amos (hablamos, trabajamos)</li>
+                      <li>Vosotros: -áis (habláis, trabajáis)</li>
+                      <li>Ellos: -an (hablan, trabajan)</li>
+                    </ul>
+                    <h4>Practice:</h4>
+                    <p>Conjugate "estudiar" (to study) in all persons.</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Grammar</div>
+                <h3 class="lesson-card__title">Gustar - Expressing Likes</h3>
+                <div class="lesson-card__content">
+                  Master the unique structure of "gustar" and similar verbs in
+                  Spanish.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Structure:</h4>
+                    <p><strong>Me gusta(n)</strong> + noun/infinitive</p>
+                    <ul>
+                      <li>Me gusta el café (I like coffee)</li>
+                      <li>Me gustan los libros (I like books)</li>
+                      <li>Me gusta estudiar (I like studying)</li>
+                    </ul>
+                    <h4>Other Forms:</h4>
+                    <p>Te gusta, le gusta, nos gusta, os gusta, les gusta</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Grammar</div>
+                <h3 class="lesson-card__title">Question Words</h3>
+                <div class="lesson-card__content">
+                  Learn essential question words and how to form questions in
+                  Spanish.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Basic Question Words:</h4>
+                    <ul>
+                      <li>¿Qué? - What?</li>
+                      <li>¿Quién? - Who?</li>
+                      <li>¿Dónde? - Where?</li>
+                      <li>¿Cuándo? - When?</li>
+                      <li>¿Por qué? - Why?</li>
+                      <li>¿Cómo? - How?</li>
+                      <li>¿Cuánto? - How much/many?</li>
+                    </ul>
+                    <h4>Examples:</h4>
+                    <p>¿Qué te gusta hacer? (What do you like to do?)</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Grammar</div>
+                <h3 class="lesson-card__title">
+                  Definite & Indefinite Articles
+                </h3>
+                <div class="lesson-card__content">
+                  Understand when and how to use articles in Spanish.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Definite Articles:</h4>
+                    <ul>
+                      <li>El (masculine singular)</li>
+                      <li>La (feminine singular)</li>
+                      <li>Los (masculine plural)</li>
+                      <li>Las (feminine plural)</li>
+                    </ul>
+                    <h4>Indefinite Articles:</h4>
+                    <ul>
+                      <li>Un (masculine singular)</li>
+                      <li>Una (feminine singular)</li>
+                      <li>Unos (masculine plural)</li>
+                      <li>Unas (feminine plural)</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Usage Patterns -->
+          <div class="mt-8">
+            <h2>Usage Patterns & Expressions</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Usage Patterns</div>
+                <h3 class="lesson-card__title">Making Polite Requests</h3>
+                <div class="lesson-card__content">
+                  Learn different ways to make polite requests in Spanish.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Formal Requests:</h4>
+                    <ul>
+                      <li>¿Podrías...? (Could you...?)</li>
+                      <li>¿Te importaría...? (Would you mind...?)</li>
+                      <li>
+                        ¿Serías tan amable de...? (Would you be so kind as
+                        to...?)
+                      </li>
+                    </ul>
+                    <h4>Informal Requests:</h4>
+                    <ul>
+                      <li>¿Puedes...? (Can you...?)</li>
+                      <li>¿Me ayudas...? (Will you help me...?)</li>
+                    </ul>
+                    <h4>Examples:</h4>
+                    <p>
+                      ¿Podrías ayudarme con esto? (Could you help me with this?)
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Usage Patterns</div>
+                <h3 class="lesson-card__title">Expressing Preferences</h3>
+                <div class="lesson-card__content">
+                  Master various ways to express likes, dislikes, and
+                  preferences.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Positive Preferences:</h4>
+                    <ul>
+                      <li>Me gusta... (I like...)</li>
+                      <li>Me encanta... (I love...)</li>
+                      <li>Prefiero... (I prefer...)</li>
+                      <li>Me fascina... (I'm fascinated by...)</li>
+                    </ul>
+                    <h4>Negative Preferences:</h4>
+                    <ul>
+                      <li>No me gusta... (I don't like...)</li>
+                      <li>Detesto... (I hate...)</li>
+                      <li>No soporto... (I can't stand...)</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Usage Patterns</div>
+                <h3 class="lesson-card__title">Time Expressions</h3>
+                <div class="lesson-card__content">
+                  Learn common time expressions and how to use them in context.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Time Words:</h4>
+                    <ul>
+                      <li>Ahora - Now</li>
+                      <li>Hoy - Today</li>
+                      <li>Mañana - Tomorrow</li>
+                      <li>Ayer - Yesterday</li>
+                      <li>Esta semana - This week</li>
+                      <li>El próximo mes - Next month</li>
+                    </ul>
+                    <h4>Frequency:</h4>
+                    <ul>
+                      <li>Siempre - Always</li>
+                      <li>Nunca - Never</li>
+                      <li>A veces - Sometimes</li>
+                      <li>Frecuentemente - Frequently</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Usage Patterns</div>
+                <h3 class="lesson-card__title">Giving Directions</h3>
+                <div class="lesson-card__content">
+                  Master essential phrases for giving and asking for directions.
+                </div>
+                <details>
+                  <summary>View Examples & Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Asking for Directions:</h4>
+                    <ul>
+                      <li>¿Dónde está...? (Where is...?)</li>
+                      <li>¿Cómo llego a...? (How do I get to...?)</li>
+                      <li>¿Puede indicarme...? (Can you show me...?)</li>
+                    </ul>
+                    <h4>Giving Directions:</h4>
+                    <ul>
+                      <li>Ve derecho - Go straight</li>
+                      <li>Gira a la derecha - Turn right</li>
+                      <li>Gira a la izquierda - Turn left</li>
+                      <li>Está a la vuelta - It's around the corner</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cultural Notes -->
+          <div class="mt-8">
+            <h2>Cultural Context & Notes</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Cultural</div>
+                <h3 class="lesson-card__title">Greetings & Social Customs</h3>
+                <div class="lesson-card__content">
+                  Understand Spanish-speaking cultural norms for greetings and
+                  social interactions.
+                </div>
+                <details>
+                  <summary>View Cultural Insights</summary>
+                  <div class="mt-3">
+                    <h4>Greeting Customs:</h4>
+                    <ul>
+                      <li>
+                        Kissing on both cheeks is common in many countries
+                      </li>
+                      <li>Handshakes are appropriate in formal situations</li>
+                      <li>
+                        Use "usted" with older people or in formal settings
+                      </li>
+                      <li>Always greet people when entering a room</li>
+                    </ul>
+                    <h4>Common Greetings:</h4>
+                    <ul>
+                      <li>¡Hola! - Hello!</li>
+                      <li>Buenos días - Good morning</li>
+                      <li>Buenas tardes - Good afternoon</li>
+                      <li>Buenas noches - Good evening/night</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Cultural</div>
+                <h3 class="lesson-card__title">Dining Etiquette</h3>
+                <div class="lesson-card__content">
+                  Learn about dining customs and etiquette in Spanish-speaking
+                  cultures.
+                </div>
+                <details>
+                  <summary>View Cultural Insights</summary>
+                  <div class="mt-3">
+                    <h4>Dining Customs:</h4>
+                    <ul>
+                      <li>Wait for the host to begin eating</li>
+                      <li>Keep your hands visible on the table</li>
+                      <li>It's polite to try everything offered</li>
+                      <li>Compliment the food - "¡Está delicioso!"</li>
+                    </ul>
+                    <h4>Useful Phrases:</h4>
+                    <ul>
+                      <li>¡Buen provecho! - Enjoy your meal!</li>
+                      <li>¿Me pasa la sal? - Can you pass me the salt?</li>
+                      <li>La cuenta, por favor - The bill, please</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Cultural</div>
+                <h3 class="lesson-card__title">Business Culture</h3>
+                <div class="lesson-card__content">
+                  Understand business etiquette and communication styles in
+                  Spanish-speaking countries.
+                </div>
+                <details>
+                  <summary>View Cultural Insights</summary>
+                  <div class="mt-3">
+                    <h4>Business Etiquette:</h4>
+                    <ul>
+                      <li>Personal relationships are important</li>
+                      <li>Meetings may start late - "hora española"</li>
+                      <li>Use formal language initially</li>
+                      <li>Dress conservatively for meetings</li>
+                    </ul>
+                    <h4>Communication Style:</h4>
+                    <ul>
+                      <li>Indirect communication is common</li>
+                      <li>Build rapport before business</li>
+                      <li>Respect hierarchy and titles</li>
+                      <li>Follow up with written confirmation</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Cultural</div>
+                <h3 class="lesson-card__title">Regional Variations</h3>
+                <div class="lesson-card__content">
+                  Explore how Spanish varies across different countries and
+                  regions.
+                </div>
+                <details>
+                  <summary>View Cultural Insights</summary>
+                  <div class="mt-3">
+                    <h4>Vocabulary Differences:</h4>
+                    <ul>
+                      <li>Spain: "coche" vs Latin America: "carro"</li>
+                      <li>
+                        Spain: "ordenador" vs Latin America: "computadora"
+                      </li>
+                      <li>Spain: "vosotros" vs Latin America: "ustedes"</li>
+                    </ul>
+                    <h4>Pronunciation Variations:</h4>
+                    <ul>
+                      <li>Spain: "th" sound for "c" and "z"</li>
+                      <li>Argentina: "sh" sound for "ll" and "y"</li>
+                      <li>Caribbean: "r" becomes "l" in some words</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Register & Formality -->
+          <div class="mt-8">
+            <h2>Register & Formality</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Register</div>
+                <h3 class="lesson-card__title">Tú vs Usted</h3>
+                <div class="lesson-card__content">
+                  Master the distinction between informal and formal address in
+                  Spanish.
+                </div>
+                <details>
+                  <summary>View Usage Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Use "Tú" (Informal):</h4>
+                    <ul>
+                      <li>With friends and family</li>
+                      <li>With children and teenagers</li>
+                      <li>In casual social situations</li>
+                      <li>With colleagues you know well</li>
+                    </ul>
+                    <h4>Use "Usted" (Formal):</h4>
+                    <ul>
+                      <li>With older people</li>
+                      <li>In business settings</li>
+                      <li>With strangers</li>
+                      <li>In official situations</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Register</div>
+                <h3 class="lesson-card__title">Formal vs Informal Greetings</h3>
+                <div class="lesson-card__content">
+                  Learn appropriate greetings for different levels of formality.
+                </div>
+                <details>
+                  <summary>View Usage Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Informal Greetings:</h4>
+                    <ul>
+                      <li>¡Hola! ¿Qué tal?</li>
+                      <li>¿Cómo estás?</li>
+                      <li>¿Qué hay de nuevo?</li>
+                      <li>¡Qué onda!</li>
+                    </ul>
+                    <h4>Formal Greetings:</h4>
+                    <ul>
+                      <li>Buenos días, ¿cómo está usted?</li>
+                      <li>Es un placer conocerle</li>
+                      <li>Encantado/a de conocerle</li>
+                      <li>¿Cómo le va?</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Register</div>
+                <h3 class="lesson-card__title">Polite Expressions</h3>
+                <div class="lesson-card__content">
+                  Master polite expressions that work in both formal and
+                  informal contexts.
+                </div>
+                <details>
+                  <summary>View Usage Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Universal Polite Words:</h4>
+                    <ul>
+                      <li>Por favor - Please</li>
+                      <li>Gracias - Thank you</li>
+                      <li>De nada - You're welcome</li>
+                      <li>Perdón - Excuse me</li>
+                      <li>Con permiso - Excuse me (passing through)</li>
+                    </ul>
+                    <h4>Formal Additions:</h4>
+                    <ul>
+                      <li>Si fuera tan amable - If you would be so kind</li>
+                      <li>Le agradezco - I thank you</li>
+                      <li>Disculpe - Excuse me (formal)</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Register</div>
+                <h3 class="lesson-card__title">
+                  Email & Written Communication
+                </h3>
+                <div class="lesson-card__content">
+                  Learn appropriate language for emails and written
+                  communication.
+                </div>
+                <details>
+                  <summary>View Usage Patterns</summary>
+                  <div class="mt-3">
+                    <h4>Email Openings:</h4>
+                    <ul>
+                      <li>Estimado/a Sr./Sra. - Dear Mr./Ms.</li>
+                      <li>Querido/a - Dear (informal)</li>
+                      <li>A quien corresponda - To whom it may concern</li>
+                    </ul>
+                    <h4>Email Closings:</h4>
+                    <ul>
+                      <li>Atentamente - Sincerely</li>
+                      <li>Saludos cordiales - Best regards</li>
+                      <li>Un abrazo - Hugs (informal)</li>
+                      <li>Saludos - Greetings</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

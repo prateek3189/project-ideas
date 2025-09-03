@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Hyperlocal Community</title>
+    <meta
+      name="description"
+      content="Manage your profile, trust badges, and community activity."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="events.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a href="items.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a href="carpool.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a href="groups.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a href="messages.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a
+            href="profile.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">My Profile</h1>
+          <p class="page-subtitle">
+            Manage your profile, trust badges, and community activity
+          </p>
+        </div>
+
+        <!-- Profile Header -->
+        <div class="detail-card mb-6">
+          <div class="flex items-center gap-6">
+            <div
+              class="profile-chip__avatar"
+              style="width: 80px; height: 80px; font-size: 2rem"
+            >
+              JD
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-bold mb-2">John Doe</h2>
+              <p class="text-muted mb-3">Block A, Unit 205 • Joined Dec 2022</p>
+              <div class="flex gap-2 flex-wrap">
+                <span class="badge badge--verified">✓ Verified</span>
+                <span class="badge badge--helper">Helper</span>
+                <span class="badge badge--phone">Phone ✓</span>
+                <span class="badge badge--residence">Residence ✓</span>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="text-sm text-muted">Community Score</p>
+              <p class="text-2xl font-bold text-trust">4.8/5</p>
+              <p class="text-sm text-muted">12 references</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-layout">
+          <nav class="tab-nav">
+            <a href="#about" class="tab-nav__item tab-nav__item--active"
+              >About</a
+            >
+            <a href="#listings" class="tab-nav__item">Listings</a>
+            <a href="#references" class="tab-nav__item">References</a>
+            <a href="#badges" class="tab-nav__item">Badges</a>
+          </nav>
+
+          <div class="tab-content">
+            <!-- About Tab -->
+            <div id="about" class="tab-content__panel">
+              <div class="detail-layout">
+                <div class="detail-main">
+                  <div class="detail-card">
+                    <h3 class="detail-card__title">About Me</h3>
+                    <p>
+                      Hi! I'm John, a software engineer who loves being part of
+                      this amazing community. I enjoy organizing events, helping
+                      neighbors, and making new friends. Always happy to lend a
+                      hand or share resources!
+                    </p>
+
+                    <h4 class="mt-4 mb-2">Interests</h4>
+                    <div class="tag-pills">
+                      <span class="tag-pill">Technology</span>
+                      <span class="tag-pill">Fitness</span>
+                      <span class="tag-pill">Cooking</span>
+                      <span class="tag-pill">Gardening</span>
+                      <span class="tag-pill">Reading</span>
+                    </div>
+
+                    <h4 class="mt-4 mb-2">Contact Preferences</h4>
+                    <ul>
+                      <li>✅ Messages through platform</li>
+                      <li>✅ Phone calls for urgent matters</li>
+                      <li>❌ Email (not preferred)</li>
+                    </ul>
+                  </div>
+
+                  <div class="detail-card">
+                    <h3 class="detail-card__title">Community Activity</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="text-center p-4 bg-bg rounded">
+                        <p class="text-2xl font-bold text-accent">24</p>
+                        <p class="text-sm text-muted">Events Attended</p>
+                      </div>
+                      <div class="text-center p-4 bg-bg rounded">
+                        <p class="text-2xl font-bold text-trust">8</p>
+                        <p class="text-sm text-muted">Items Shared</p>
+                      </div>
+                      <div class="text-center p-4 bg-bg rounded">
+                        <p class="text-2xl font-bold text-info">15</p>
+                        <p class="text-sm text-muted">Rides Given</p>
+                      </div>
+                      <div class="text-center p-4 bg-bg rounded">
+                        <p class="text-2xl font-bold text-warning">3</p>
+                        <p class="text-sm text-muted">Groups Joined</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-sidebar">
+                  <div class="detail-card">
+                    <h3 class="detail-card__title">Trust & Safety</h3>
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-between">
+                        <span>Phone Verified</span>
+                        <span class="badge badge--verified">✓</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span>Residence Verified</span>
+                        <span class="badge badge--verified">✓</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span>Community Helper</span>
+                        <span class="badge badge--helper">✓</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span>Safe Driver</span>
+                        <span class="badge badge--driver">✓</span>
+                      </div>
+                    </div>
+
+                    <div class="mt-4">
+                      <a href="settings.html" class="btn btn--sm btn--secondary"
+                        >Update Verification</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="detail-card">
+                    <h3 class="detail-card__title">Quick Actions</h3>
+                    <div class="space-y-2">
+                      <a
+                        href="events.html"
+                        class="btn btn--sm btn--full btn--primary"
+                        >Create Event</a
+                      >
+                      <a
+                        href="items.html"
+                        class="btn btn--sm btn--full btn--secondary"
+                        >Post Item</a
+                      >
+                      <a
+                        href="carpool.html"
+                        class="btn btn--sm btn--full btn--secondary"
+                        >Offer Ride</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Listings Tab -->
+            <div id="listings" class="tab-content__panel" style="display: none">
+              <div class="detail-card">
+                <h3 class="detail-card__title">My Listings</h3>
+
+                <div class="list-layout">
+                  <div class="list-item">
+                    <div class="list-item__header">
+                      <h4 class="list-item__title">Weekend Park Clean-up</h4>
+                      <span class="chip chip--default">Event</span>
+                    </div>
+                    <div class="list-item__content">
+                      Community clean-up event at Central Park. 12 people going,
+                      8 interested.
+                    </div>
+                    <div class="list-item__actions">
+                      <span class="chip chip--time">Dec 16, 7:30 AM</span>
+                      <a href="events.html" class="btn btn--sm btn--ghost"
+                        >View</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="list-item">
+                    <div class="list-item__header">
+                      <h4 class="list-item__title">Office Chair</h4>
+                      <span class="chip chip--info">For Sale</span>
+                    </div>
+                    <div class="list-item__content">
+                      Ergonomic office chair in good condition. ₹1,800.
+                    </div>
+                    <div class="list-item__actions">
+                      <span class="chip chip--time">Posted 2 days ago</span>
+                      <a href="item-detail.html" class="btn btn--sm btn--ghost"
+                        >View</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="list-item">
+                    <div class="list-item__header">
+                      <h4 class="list-item__title">Maple Apts → Tech Park</h4>
+                      <span class="chip chip--default">Ride Offer</span>
+                    </div>
+                    <div class="list-item__content">
+                      Daily commute to Tech Park. 2 seats available, share fuel
+                      costs.
+                    </div>
+                    <div class="list-item__actions">
+                      <span class="chip chip--time">8:30 AM daily</span>
+                      <a href="carpool.html" class="btn btn--sm btn--ghost"
+                        >View</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- References Tab -->
+            <div
+              id="references"
+              class="tab-content__panel"
+              style="display: none"
+            >
+              <div class="detail-card">
+                <h3 class="detail-card__title">References</h3>
+
+                <div class="space-y-4">
+                  <div class="reference-quote">
+                    <div class="reference-quote__text">
+                      "John is an amazing neighbor! He helped me move furniture
+                      and was always available when I needed assistance. Highly
+                      recommended!"
+                    </div>
+                    <div class="reference-quote__author">
+                      — Sarah M., Dec 2023
+                    </div>
+                  </div>
+
+                  <div class="reference-quote">
+                    <div class="reference-quote__text">
+                      "Great carpool partner! Always on time and very
+                      considerate. The ride to work is much more enjoyable with
+                      John."
+                    </div>
+                    <div class="reference-quote__author">
+                      — Amit P., Nov 2023
+                    </div>
+                  </div>
+
+                  <div class="reference-quote">
+                    <div class="reference-quote__text">
+                      "John organized an excellent community event. Very
+                      professional and friendly. The park clean-up was a huge
+                      success!"
+                    </div>
+                    <div class="reference-quote__author">
+                      — Maria G., Oct 2023
+                    </div>
+                  </div>
+
+                  <div class="reference-quote">
+                    <div class="reference-quote__text">
+                      "Reliable and trustworthy. I borrowed his drill machine
+                      and he was very helpful with instructions. Item was in
+                      perfect condition."
+                    </div>
+                    <div class="reference-quote__author">
+                      — Vikram S., Sep 2023
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Badges Tab -->
+            <div id="badges" class="tab-content__panel" style="display: none">
+              <div class="detail-card">
+                <h3 class="detail-card__title">Badges & Achievements</h3>
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="text-center p-4 border rounded">
+                    <div class="text-3xl mb-2">✓</div>
+                    <h4 class="font-semibold">Phone Verified</h4>
+                    <p class="text-sm text-muted">Verified phone number</p>
+                    <span class="chip chip--trust mt-2">Earned</span>
+                  </div>
+
+                  <div class="text-center p-4 border rounded">
+                    <div class="text-3xl mb-2">🏠</div>
+                    <h4 class="font-semibold">Residence Verified</h4>
+                    <p class="text-sm text-muted">Verified address</p>
+                    <span class="chip chip--trust mt-2">Earned</span>
+                  </div>
+
+                  <div class="text-center p-4 border rounded">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <h4 class="font-semibold">Community Helper</h4>
+                    <p class="text-sm text-muted">Helped 10+ neighbors</p>
+                    <span class="chip chip--trust mt-2">Earned</span>
+                  </div>
+
+                  <div class="text-center p-4 border rounded">
+                    <div class="text-3xl mb-2">🚗</div>
+                    <h4 class="font-semibold">Safe Driver</h4>
+                    <p class="text-sm text-muted">5+ successful rides</p>
+                    <span class="chip chip--trust mt-2">Earned</span>
+                  </div>
+
+                  <div class="text-center p-4 border rounded opacity-50">
+                    <div class="text-3xl mb-2">⭐</div>
+                    <h4 class="font-semibold">Super Helper</h4>
+                    <p class="text-sm text-muted">Help 50+ neighbors</p>
+                    <span class="chip chip--default mt-2">Locked</span>
+                  </div>
+
+                  <div class="text-center p-4 border rounded opacity-50">
+                    <div class="text-3xl mb-2">🎉</div>
+                    <h4 class="font-semibold">Event Organizer</h4>
+                    <p class="text-sm text-muted">Organize 5+ events</p>
+                    <span class="chip chip--default mt-2">Locked</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      });
+
+      // Simple tab switching
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabItems = document.querySelectorAll(".tab-nav__item");
+        const tabPanels = document.querySelectorAll(".tab-content__panel");
+
+        tabItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all tabs
+            tabItems.forEach((tab) =>
+              tab.classList.remove("tab-nav__item--active")
+            );
+            tabPanels.forEach((panel) => (panel.style.display = "none"));
+
+            // Add active class to clicked tab
+            this.classList.add("tab-nav__item--active");
+
+            // Show corresponding panel
+            const targetId = this.getAttribute("href").substring(1);
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+              targetPanel.style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

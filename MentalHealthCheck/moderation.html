@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderation Dashboard - Mental Health Chat</title>
+    <meta
+      name="description"
+      content="Moderation dashboard for managing reports, safety concerns, and maintaining a safe environment."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="header">
+          <a href="index.html" class="header__brand">
+            <span>💬</span>
+            <span>Mental Health Chat</span>
+          </a>
+
+          <div class="header__actions">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+              <span class="theme-toggle__icon theme-toggle__icon--moon"
+                >🌙</span
+              >
+              <span class="theme-toggle__icon theme-toggle__icon--contrast"
+                >🔆</span
+              >
+              <span class="theme-toggle__label">Theme</span>
+            </button>
+
+            <a href="index.html" class="btn btn--secondary"> ← Back to Home </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="shell__main">
+        <div class="shell__content">
+          <div class="container">
+            <!-- Page Header -->
+            <div class="page__header">
+              <h1 class="page__title">Moderation Dashboard</h1>
+              <p class="page__subtitle">
+                Monitor reports, manage safety concerns, and maintain a safe
+                environment for all users.
+              </p>
+            </div>
+
+            <!-- Crisis Alert -->
+            <div class="alert alert--crisis mb-6">
+              <strong>🚨 Active Crisis Session:</strong> Session #MH-2024-003
+              requires immediate attention. User expressing self-harm thoughts.
+            </div>
+
+            <!-- Stats Overview -->
+            <section class="grid-4 mb-8">
+              <div class="card text-center">
+                <div class="card__body">
+                  <div class="text-2xl font-bold text-danger">3</div>
+                  <div class="text-sm text-muted">Crisis Reports</div>
+                </div>
+              </div>
+              <div class="card text-center">
+                <div class="card__body">
+                  <div class="text-2xl font-bold text-warning">12</div>
+                  <div class="text-sm text-muted">Pending Reports</div>
+                </div>
+              </div>
+              <div class="card text-center">
+                <div class="card__body">
+                  <div class="text-2xl font-bold text-info">45</div>
+                  <div class="text-sm text-muted">Active Sessions</div>
+                </div>
+              </div>
+              <div class="card text-center">
+                <div class="card__body">
+                  <div class="text-2xl font-bold text-success">8</div>
+                  <div class="text-sm text-muted">Available Listeners</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Triage Board -->
+            <section class="card mb-8">
+              <div class="card__header">
+                <h2>Reports Triage Board</h2>
+              </div>
+              <div class="card__body">
+                <div class="grid-3">
+                  <!-- Crisis Column -->
+                  <div class="triage__col--crisis">
+                    <h3 class="font-semibold mb-3 text-danger">🚨 Crisis</h3>
+                    <div class="space-y-3">
+                      <div class="card card--crisis">
+                        <div class="card__body">
+                          <div class="flex items-center justify-between mb-2">
+                            <span class="chip chip--status chip--status-crisis"
+                              >Crisis</span
+                            >
+                            <span class="text-xs text-muted">2 min ago</span>
+                          </div>
+                          <p class="text-sm mb-2">
+                            <strong>Session:</strong> #MH-2024-003
+                          </p>
+                          <p class="text-sm mb-2">
+                            <strong>Reason:</strong> Self-harm threats
+                          </p>
+                          <p class="text-sm mb-3">
+                            User expressing suicidal ideation and self-harm
+                            plans.
+                          </p>
+                          <div class="flex gap-2">
+                            <button class="btn btn--danger btn--sm">
+                              Escalate
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card card--crisis">
+                        <div class="card__body">
+                          <div class="flex items-center justify-between mb-2">
+                            <span class="chip chip--status chip--status-crisis"
+                              >Crisis</span
+                            >
+                            <span class="text-xs text-muted">15 min ago</span>
+                          </div>
+                          <p class="text-sm mb-2">
+                            <strong>Session:</strong> #MH-2024-007
+                          </p>
+                          <p class="text-sm mb-2">
+                            <strong>Reason:</strong> Crisis concern
+                          </p>
+                          <p class="text-sm mb-3">
+                            Listener concerned about user's safety and
+                            wellbeing.
+                          </p>
+                          <div class="flex gap-2">
+                            <button class="btn btn--danger btn--sm">
+                              Escalate
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- High Priority Column -->
+                  <div class="triage__col--high">
+                    <h3 class="font-semibold mb-3 text-warning">
+                      ⚠️ High Priority
+                    </h3>
+                    <div class="space-y-3">
+                      <div class="card">
+                        <div class="card__body">
+                          <div class="flex items-center justify-between mb-2">
+                            <span class="chip chip--status chip--status-busy"
+                              >Harassment</span
+                            >
+                            <span class="text-xs text-muted">30 min ago</span>
+                          </div>
+                          <p class="text-sm mb-2">
+                            <strong>Session:</strong> #MH-2024-012
+                          </p>
+                          <p class="text-sm mb-2">
+                            <strong>Reason:</strong> Inappropriate behavior
+                          </p>
+                          <p class="text-sm mb-3">
+                            User making inappropriate sexual comments to
+                            listener.
+                          </p>
+                          <div class="flex gap-2">
+                            <button class="btn btn--warning btn--sm">
+                              Warn
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card__body">
+                          <div class="flex items-center justify-between mb-2">
+                            <span class="chip chip--status chip--status-busy"
+                              >Medical</span
+                            >
+                            <span class="text-xs text-muted">45 min ago</span>
+                          </div>
+                          <p class="text-sm mb-2">
+                            <strong>Session:</strong> #MH-2024-008
+                          </p>
+                          <p class="text-sm mb-2">
+                            <strong>Reason:</strong> Medical advice
+                          </p>
+                          <p class="text-sm mb-3">
+                            Listener providing medical advice beyond scope.
+                          </p>
+                          <div class="flex gap-2">
+                            <button class="btn btn--warning btn--sm">
+                              Warn
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Normal Priority Column -->
+                  <div class="triage__col--normal">
+                    <h3 class="font-semibold mb-3 text-info">📋 Normal</h3>
+                    <div class="space-y-3">
+                      <div class="card">
+                        <div class="card__body">
+                          <div class="flex items-center justify-between mb-2">
+                            <span
+                              class="chip chip--status chip--status-available"
+                              >Spam</span
+                            >
+                            <span class="text-xs text-muted">1 hour ago</span>
+                          </div>
+                          <p class="text-sm mb-2">
+                            <strong>Session:</strong> #MH-2024-015
+                          </p>
+                          <p class="text-sm mb-2">
+                            <strong>Reason:</strong> Spam/Advertising
+                          </p>
+                          <p class="text-sm mb-3">
+                            User promoting external services.
+                          </p>
+                          <div class="flex gap-2">
+                            <button class="btn btn--secondary btn--sm">
+                              Review
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card__body">
+                          <div class="flex items-center justify-between mb-2">
+                            <span
+                              class="chip chip--status chip--status-available"
+                              >Boundary</span
+                            >
+                            <span class="text-xs text-muted">2 hours ago</span>
+                          </div>
+                          <p class="text-sm mb-2">
+                            <strong>Session:</strong> #MH-2024-009
+                          </p>
+                          <p class="text-sm mb-2">
+                            <strong>Reason:</strong> Boundary violation
+                          </p>
+                          <p class="text-sm mb-3">
+                            User asking for personal contact information.
+                          </p>
+                          <div class="flex gap-2">
+                            <button class="btn btn--secondary btn--sm">
+                              Review
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              View
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Active Sessions Monitor -->
+            <section class="card mb-8">
+              <div class="card__header">
+                <h2>Active Sessions Monitor</h2>
+              </div>
+              <div class="card__body">
+                <div class="list-layout">
+                  <div class="list-layout__item">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <div class="status">
+                          <span
+                            class="status__dot status__dot--available"
+                          ></span>
+                          <span class="text-sm">#MH-2024-001</span>
+                        </div>
+                        <div>
+                          <p class="text-sm font-medium">
+                            Seeker-River ↔ Listener-Willow
+                          </p>
+                          <p class="text-xs text-muted">
+                            Active for 25 minutes
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <button class="btn btn--secondary btn--sm">
+                          Monitor
+                        </button>
+                        <button class="btn btn--secondary btn--sm">End</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-layout__item">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <div class="status">
+                          <span class="status__dot status__dot--busy"></span>
+                          <span class="text-sm">#MH-2024-002</span>
+                        </div>
+                        <div>
+                          <p class="text-sm font-medium">
+                            Seeker-Star ↔ Listener-Ocean
+                          </p>
+                          <p class="text-xs text-muted">
+                            Active for 18 minutes
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <button class="btn btn--secondary btn--sm">
+                          Monitor
+                        </button>
+                        <button class="btn btn--secondary btn--sm">End</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list-layout__item">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <div class="status">
+                          <span class="status__dot status__dot--crisis"></span>
+                          <span class="text-sm">#MH-2024-003</span>
+                        </div>
+                        <div>
+                          <p class="text-sm font-medium">
+                            Seeker-Forest ↔ Listener-Mountain
+                          </p>
+                          <p class="text-xs text-muted">
+                            Crisis flagged - 12 minutes
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex gap-2">
+                        <button class="btn btn--danger btn--sm">
+                          Intervene
+                        </button>
+                        <button class="btn btn--secondary btn--sm">
+                          Monitor
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Listener Management -->
+            <section class="card mb-8">
+              <div class="card__header">
+                <h2>Listener Management</h2>
+              </div>
+              <div class="card__body">
+                <div class="grid-2">
+                  <div>
+                    <h3 class="font-semibold mb-3">Available Listeners</h3>
+                    <div class="list-layout">
+                      <div class="list-layout__item">
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-3">
+                            <div class="status">
+                              <span
+                                class="status__dot status__dot--available"
+                              ></span>
+                              <span class="text-sm">Listener-Willow</span>
+                            </div>
+                          </div>
+                          <div class="flex gap-2">
+                            <button class="btn btn--secondary btn--sm">
+                              Message
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              Profile
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="list-layout__item">
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-3">
+                            <div class="status">
+                              <span
+                                class="status__dot status__dot--available"
+                              ></span>
+                              <span class="text-sm">Listener-Ocean</span>
+                            </div>
+                          </div>
+                          <div class="flex gap-2">
+                            <button class="btn btn--secondary btn--sm">
+                              Message
+                            </button>
+                            <button class="btn btn--secondary btn--sm">
+                              Profile
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 class="font-semibold mb-3">Listener Actions</h3>
+                    <div class="space-y-3">
+                      <button class="btn btn--secondary btn--full">
+                        📊 View Performance Reports
+                      </button>
+                      <button class="btn btn--secondary btn--full">
+                        🎓 Schedule Training Session
+                      </button>
+                      <button class="btn btn--secondary btn--full">
+                        💬 Send Announcement
+                      </button>
+                      <button class="btn btn--secondary btn--full">
+                        📋 Review Feedback
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Safety Policies -->
+            <section class="card mb-8">
+              <div class="card__header">
+                <h2>Safety Policies & Guidelines</h2>
+              </div>
+              <div class="card__body">
+                <div class="grid-2">
+                  <div>
+                    <h3 class="font-semibold mb-3">Crisis Response Protocol</h3>
+                    <ol class="list">
+                      <li>1. Immediate escalation to crisis team</li>
+                      <li>2. Contact emergency services if needed</li>
+                      <li>3. Provide crisis resources and hotlines</li>
+                      <li>4. Document incident for follow-up</li>
+                      <li>5. Debrief with listener and support team</li>
+                    </ol>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-3">Moderation Actions</h3>
+                    <ul class="list">
+                      <li>
+                        • <strong>Warn:</strong> First offense, educational
+                        response
+                      </li>
+                      <li>
+                        • <strong>Restrict:</strong> Temporary limitations on
+                        access
+                      </li>
+                      <li>
+                        • <strong>Suspend:</strong> Temporary ban with review
+                        process
+                      </li>
+                      <li>
+                        • <strong>Ban:</strong> Permanent removal for severe
+                        violations
+                      </li>
+                      <li>
+                        • <strong>Escalate:</strong> Report to authorities if
+                        necessary
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Audit Log -->
+            <section class="card mb-8">
+              <div class="card__header">
+                <h2>Audit Log</h2>
+              </div>
+              <div class="card__body">
+                <div class="list-layout">
+                  <div class="list-layout__item">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-sm font-medium">
+                          Crisis escalation - Session #MH-2024-003
+                        </p>
+                        <p class="text-xs text-muted">
+                          Mod-Harbor • 2 minutes ago
+                        </p>
+                      </div>
+                      <span class="chip chip--status chip--status-crisis"
+                        >Crisis</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="list-layout__item">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-sm font-medium">
+                          Warning issued - Listener-Ocean
+                        </p>
+                        <p class="text-xs text-muted">
+                          Mod-Harbor • 45 minutes ago
+                        </p>
+                      </div>
+                      <span class="chip chip--status chip--status-busy"
+                        >Warning</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="list-layout__item">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-sm font-medium">
+                          Session ended - #MH-2024-001
+                        </p>
+                        <p class="text-xs text-muted">System • 1 hour ago</p>
+                      </div>
+                      <span class="chip chip--status chip--status-available"
+                        >Normal</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <p class="text-xs text-muted">
+            This service provides peer support only. Not a substitute for
+            professional mental health care.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const html = document.documentElement;
+          const currentTheme = html.getAttribute("data-theme") || "light";
+          const themes = ["light", "dark", "high-contrast", "reduced-motion"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+          html.setAttribute("data-theme", nextTheme);
+
+          const label = this.querySelector(".theme-toggle__label");
+          const themeNames = {
+            light: "Light",
+            dark: "Dark",
+            "high-contrast": "High Contrast",
+            "reduced-motion": "Reduced Motion",
+          };
+          label.textContent = themeNames[nextTheme];
+        });
+    </script>
+  </body>
+</html>

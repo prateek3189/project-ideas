@@ -1,0 +1,292 @@
+/* Themes - AI Travel Agent */
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-surface);
+}
+
+.theme-toggle__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-info: #3b82f6;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg: #0b1220;
+  --color-surface: #111827;
+  --color-text: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-accent: #3b82f6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #06b6d4;
+
+  /* Dark theme specific adjustments */
+  .card {
+    border: 1px solid #374151;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: var(--color-text);
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--color-accent);
+  }
+
+  .btn--secondary {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: var(--color-text);
+  }
+
+  .btn--secondary:hover {
+    background-color: #374151;
+  }
+
+  .chip {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  .meter {
+    background-color: #1f2937;
+  }
+
+  .budget-bar__bar {
+    background-color: #1f2937;
+  }
+
+  .slider {
+    background-color: #1f2937;
+  }
+
+  .nudge--info {
+    background-color: #1e3a8a;
+    border-color: #3b82f6;
+    color: #93c5fd;
+  }
+
+  .nudge--warning {
+    background-color: #92400e;
+    border-color: #f59e0b;
+    color: #fcd34d;
+  }
+
+  .nudge--success {
+    background-color: #064e3b;
+    border-color: #10b981;
+    color: #6ee7b7;
+  }
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-accent: #0000ff;
+  --color-success: #008000;
+  --color-warning: #ff8c00;
+  --color-danger: #ff0000;
+  --color-info: #0000ff;
+
+  /* High contrast specific adjustments */
+  .card {
+    border: 2px solid #000000;
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    border: 2px solid #000000;
+  }
+
+  .chip {
+    border: 2px solid currentColor;
+  }
+
+  .day-tab {
+    border: 2px solid #000000;
+  }
+
+  .booking-card {
+    border: 2px solid #000000;
+  }
+
+  .timeline__block {
+    border: 2px solid #000000;
+  }
+
+  /* Ensure all interactive elements have high contrast focus */
+  *:focus {
+    outline: 3px solid #0000ff !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* Reduced Motion Theme */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .theme-toggle {
+    transition: none;
+  }
+
+  .btn {
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+
+  .chip {
+    transition: none;
+  }
+
+  .meter__fill {
+    transition: none;
+  }
+
+  .budget-bar__fill {
+    transition: none;
+  }
+
+  .timeline__block::before {
+    transition: none;
+  }
+
+  details summary::before {
+    transition: none;
+  }
+}
+
+/* Print Theme */
+@media print {
+  [data-theme] {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-accent: #000000;
+    --color-success: #000000;
+    --color-warning: #000000;
+    --color-danger: #000000;
+    --color-info: #000000;
+  }
+
+  .theme-toggle,
+  .sidebar,
+  .header__actions {
+    display: none !important;
+  }
+
+  .shell {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .card,
+  .booking-card,
+  .timeline__block {
+    box-shadow: none;
+    border: 1px solid #000000;
+    break-inside: avoid;
+  }
+
+  .btn {
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .chip {
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+  }
+}
+
+/* Theme Transition */
+* {
+  transition: background-color var(--transition-normal),
+    border-color var(--transition-normal), color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+/* Theme-specific component adjustments */
+[data-theme="dark"] .header {
+  border-bottom-color: #374151;
+}
+
+[data-theme="dark"] .sidebar {
+  border-right-color: #374151;
+}
+
+[data-theme="dark"] .footer {
+  border-top-color: #374151;
+}
+
+[data-theme="high-contrast"] .header {
+  border-bottom: 3px solid #000000;
+}
+
+[data-theme="high-contrast"] .sidebar {
+  border-right: 3px solid #000000;
+}
+
+[data-theme="high-contrast"] .footer {
+  border-top: 3px solid #000000;
+}

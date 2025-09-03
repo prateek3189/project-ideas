@@ -1,251 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Parent-Kid Learning App</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layouts.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="stylesheet" href="styles/print.css">
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
     <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Parent-Kid Learning</h1>
-            <div class="header__controls">
-                <span class="language-chip">EN</span>
-                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
-            </div>
+      <div class="header__content">
+        <h1 class="header__title">Parent-Kid Learning</h1>
+        <div class="header__controls">
+          <span class="language-chip">EN</span>
+          <div class="profile-avatar">👨‍👩‍👧‍👦</div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <div class="about-layout">
-            <div class="about-layout__header">
-                <h1 class="about-layout__title">About Our Learning Approach</h1>
-                <p class="about-layout__description">Discover how we make learning fun, engaging, and meaningful for families</p>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Our Learning Philosophy</h2>
-                <div class="about-layout__content">
-                    <p>At Parent-Kid Learning, we believe that the best learning happens when families learn together. Our approach is built on three simple principles:</p>
-                    
-                    <h3>Read → Repeat → Play</h3>
-                    <ul>
-                        <li><strong>Read:</strong> Start by reading stories and rhymes together</li>
-                        <li><strong>Repeat:</strong> Practice key words and phrases multiple times</li>
-                        <li><strong>Play:</strong> Make learning fun with interactive activities and games</li>
-                    </ul>
-                    
-                    <p>This approach helps children develop language skills, build vocabulary, and create lasting memories with their families.</p>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Screen Time Guidelines</h2>
-                <div class="about-layout__content">
-                    <p>We understand that screen time is a concern for many families. Here's how we approach it:</p>
-                    
-                    <h3>Quality Over Quantity</h3>
-                    <ul>
-                        <li><strong>Interactive:</strong> Every session involves parent-child interaction</li>
-                        <li><strong>Educational:</strong> All content has clear learning objectives</li>
-                        <li><strong>Time-Limited:</strong> Built-in session timers prevent overuse</li>
-                        <li><strong>Offline-Friendly:</strong> Printables work without screens</li>
-                    </ul>
-                    
-                    <h3>Recommended Usage</h3>
-                    <ul>
-                        <li><strong>Ages 2-3:</strong> 10-15 minutes per session, 1-2 times daily</li>
-                        <li><strong>Ages 3-4:</strong> 15-20 minutes per session, 1-2 times daily</li>
-                        <li><strong>Always:</strong> Use together with your child, not as a babysitter</li>
-                    </ul>
-                    
-                    <p>Remember: The best learning happens when you're actively involved with your child!</p>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Privacy & Safety Promise</h2>
-                <div class="about-layout__content">
-                    <p>Your family's privacy and safety are our top priorities:</p>
-                    
-                    <h3>What We Do</h3>
-                    <ul>
-                        <li><strong>Local Storage:</strong> All data stays on your device</li>
-                        <li><strong>No Tracking:</strong> We don't collect personal information</li>
-                        <li><strong>No Ads:</strong> Zero advertising or commercial content</li>
-                        <li><strong>Age-Appropriate:</strong> All content is carefully curated</li>
-                    </ul>
-                    
-                    <h3>What We Don't Do</h3>
-                    <ul>
-                        <li><strong>No External Links:</strong> Everything stays within the app</li>
-                        <li><strong>No Social Features:</strong> No sharing or social media integration</li>
-                        <li><strong>No Data Collection:</strong> We don't analyze usage patterns</li>
-                        <li><strong>No Third-Party Services:</strong> No external analytics or tracking</li>
-                    </ul>
-                    
-                    <p>Your child's learning journey is private and secure.</p>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Content & Languages</h2>
-                <div class="about-layout__content">
-                    <p>Our content is designed to be inclusive, educational, and culturally relevant:</p>
-                    
-                    <h3>Current Languages</h3>
-                    <ul>
-                        <li><strong>English:</strong> Primary language with clear pronunciation</li>
-                        <li><strong>Hindi:</strong> Indian language with cultural context</li>
-                        <li><strong>Marathi:</strong> Regional language support</li>
-                    </ul>
-                    
-                    <h3>Content Categories</h3>
-                    <ul>
-                        <li><strong>Stories:</strong> Age-appropriate narratives with learning themes</li>
-                        <li><strong>Rhymes:</strong> Traditional and original songs with actions</li>
-                        <li><strong>Vocabulary:</strong> Common words with pronunciation guides</li>
-                        <li><strong>Printables:</strong> Offline activities and learning materials</li>
-                    </ul>
-                    
-                    <p>All content is reviewed by educators and parents to ensure quality and appropriateness.</p>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Accessibility Features</h2>
-                <div class="about-layout__content">
-                    <p>We believe learning should be accessible to every child:</p>
-                    
-                    <h3>Visual Accessibility</h3>
-                    <ul>
-                        <li><strong>High Contrast:</strong> Special theme for visual impairments</li>
-                        <li><strong>Large Text:</strong> Multiple text size options</li>
-                        <li><strong>Color Blind Friendly:</strong> Icons and text, not just colors</li>
-                        <li><strong>Reduced Motion:</strong> Options for motion sensitivity</li>
-                    </ul>
-                    
-                    <h3>Learning Support</h3>
-                    <ul>
-                        <li><strong>Dyslexia-Friendly Fonts:</strong> Alternative font options</li>
-                        <li><strong>Clear Navigation:</strong> Simple, consistent interface</li>
-                        <li><strong>Touch-Friendly:</strong> Large buttons and clear targets</li>
-                        <li><strong>Audio Support:</strong> Visual and audio learning options</li>
-                    </ul>
-                    
-                    <p>We're committed to making learning accessible for children with different needs and abilities.</p>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Future Roadmap</h2>
-                <div class="about-layout__content">
-                    <p>This is just the beginning! Here's what we're planning for future versions:</p>
-                    
-                    <h3>Phase 2: Interactive Features</h3>
-                    <ul>
-                        <li><strong>Speech Recognition:</strong> Record and practice pronunciation</li>
-                        <li><strong>Text-to-Speech:</strong> Audio narration with word highlighting</li>
-                        <li><strong>Progress Tracking:</strong> Real learning data and achievements</li>
-                        <li><strong>Custom Playlists:</strong> Create your own learning sequences</li>
-                    </ul>
-                    
-                    <h3>Phase 3: Advanced Learning</h3>
-                    <ul>
-                        <li><strong>AI Feedback:</strong> Personalized pronunciation guidance</li>
-                        <li><strong>Adaptive Content:</strong> Content that adjusts to your child's level</li>
-                        <li><strong>Multi-Device Sync:</strong> Progress across all your devices</li>
-                        <li><strong>Parent Dashboard:</strong> Detailed learning insights and tips</li>
-                    </ul>
-                    
-                    <h3>Phase 4: Community & Expansion</h3>
-                    <ul>
-                        <li><strong>More Languages:</strong> Support for additional Indian languages</li>
-                        <li><strong>User Content:</strong> Parents can add their own words and stories</li>
-                        <li><strong>Teacher Tools:</strong> Special features for educators</li>
-                        <li><strong>Offline Packs:</strong> Downloadable content for travel</li>
-                    </ul>
-                    
-                    <p>We're building this app with families like yours in mind. Your feedback will help shape our future development!</p>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Get Involved</h2>
-                <div class="about-layout__content">
-                    <p>We'd love to hear from you and involve you in our development process:</p>
-                    
-                    <h3>Share Your Feedback</h3>
-                    <ul>
-                        <li><strong>Content Ideas:</strong> Suggest new stories, rhymes, or words</li>
-                        <li><strong>Feature Requests:</strong> Tell us what would make the app better</li>
-                        <li><strong>Bug Reports:</strong> Help us improve by reporting issues</li>
-                        <li><strong>Success Stories:</strong> Share how your family uses the app</li>
-                    </ul>
-                    
-                    <h3>Stay Updated</h3>
-                    <ul>
-                        <li><strong>Newsletter:</strong> Get updates on new features and content</li>
-                        <li><strong>Beta Testing:</strong> Try new features before they're released</li>
-                        <li><strong>Community:</strong> Connect with other families using the app</li>
-                    </ul>
-                    
-                    <div class="contact-buttons">
-                        <a href="#" class="btn btn--primary">Send Feedback</a>
-                        <a href="#" class="btn btn--secondary">Join Newsletter</a>
-                        <a href="#" class="btn btn--secondary">Report Issue</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-layout__section">
-                <h2 class="about-layout__section-title">Technical Information</h2>
-                <div class="about-layout__content">
-                    <p>For developers and technically curious parents:</p>
-                    
-                    <h3>Current Version (V1)</h3>
-                    <ul>
-                        <li><strong>Technology:</strong> Pure HTML, CSS, and semantic markup</li>
-                        <li><strong>Compatibility:</strong> Works on all modern browsers and devices</li>
-                        <li><strong>Performance:</strong> Fast loading, minimal resource usage</li>
-                        <li><strong>Accessibility:</strong> WCAG 2.1 AA compliant</li>
-                    </ul>
-                    
-                    <h3>Browser Support</h3>
-                    <ul>
-                        <li><strong>Chrome:</strong> Version 80+ (recommended)</li>
-                        <li><strong>Firefox:</strong> Version 75+</li>
-                        <li><strong>Safari:</strong> Version 13+</li>
-                        <li><strong>Edge:</strong> Version 80+</li>
-                    </ul>
-                    
-                    <h3>Device Support</h3>
-                    <ul>
-                        <li><strong>Desktop:</strong> Windows, macOS, Linux</li>
-                        <li><strong>Tablets:</strong> iPad, Android tablets</li>
-                        <li><strong>Mobile:</strong> iPhone, Android phones</li>
-                        <li><strong>Print:</strong> Optimized for A4 printing</li>
-                    </ul>
-                </div>
-            </div>
-
-            <nav class="quick-nav">
-                <a href="index.html" class="quick-nav__link">🏠 Home</a>
-                <a href="parent.html" class="quick-nav__link">👨‍👩‍👧‍👦 Parent Mode</a>
-                <a href="settings.html" class="quick-nav__link">⚙️ Settings</a>
-            </nav>
+      <div class="about-layout">
+        <div class="about-layout__header">
+          <h1 class="about-layout__title">About Our Learning Approach</h1>
+          <p class="about-layout__description">
+            Discover how we make learning fun, engaging, and meaningful for
+            families
+          </p>
         </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Our Learning Philosophy</h2>
+          <div class="about-layout__content">
+            <p>
+              At Parent-Kid Learning, we believe that the best learning happens
+              when families learn together. Our approach is built on three
+              simple principles:
+            </p>
+
+            <h3>Read → Repeat → Play</h3>
+            <ul>
+              <li>
+                <strong>Read:</strong> Start by reading stories and rhymes
+                together
+              </li>
+              <li>
+                <strong>Repeat:</strong> Practice key words and phrases multiple
+                times
+              </li>
+              <li>
+                <strong>Play:</strong> Make learning fun with interactive
+                activities and games
+              </li>
+            </ul>
+
+            <p>
+              This approach helps children develop language skills, build
+              vocabulary, and create lasting memories with their families.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Screen Time Guidelines</h2>
+          <div class="about-layout__content">
+            <p>
+              We understand that screen time is a concern for many families.
+              Here's how we approach it:
+            </p>
+
+            <h3>Quality Over Quantity</h3>
+            <ul>
+              <li>
+                <strong>Interactive:</strong> Every session involves
+                parent-child interaction
+              </li>
+              <li>
+                <strong>Educational:</strong> All content has clear learning
+                objectives
+              </li>
+              <li>
+                <strong>Time-Limited:</strong> Built-in session timers prevent
+                overuse
+              </li>
+              <li>
+                <strong>Offline-Friendly:</strong> Printables work without
+                screens
+              </li>
+            </ul>
+
+            <h3>Recommended Usage</h3>
+            <ul>
+              <li>
+                <strong>Ages 2-3:</strong> 10-15 minutes per session, 1-2 times
+                daily
+              </li>
+              <li>
+                <strong>Ages 3-4:</strong> 15-20 minutes per session, 1-2 times
+                daily
+              </li>
+              <li>
+                <strong>Always:</strong> Use together with your child, not as a
+                babysitter
+              </li>
+            </ul>
+
+            <p>
+              Remember: The best learning happens when you're actively involved
+              with your child!
+            </p>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Privacy & Safety Promise</h2>
+          <div class="about-layout__content">
+            <p>Your family's privacy and safety are our top priorities:</p>
+
+            <h3>What We Do</h3>
+            <ul>
+              <li>
+                <strong>Local Storage:</strong> All data stays on your device
+              </li>
+              <li>
+                <strong>No Tracking:</strong> We don't collect personal
+                information
+              </li>
+              <li>
+                <strong>No Ads:</strong> Zero advertising or commercial content
+              </li>
+              <li>
+                <strong>Age-Appropriate:</strong> All content is carefully
+                curated
+              </li>
+            </ul>
+
+            <h3>What We Don't Do</h3>
+            <ul>
+              <li>
+                <strong>No External Links:</strong> Everything stays within the
+                app
+              </li>
+              <li>
+                <strong>No Social Features:</strong> No sharing or social media
+                integration
+              </li>
+              <li>
+                <strong>No Data Collection:</strong> We don't analyze usage
+                patterns
+              </li>
+              <li>
+                <strong>No Third-Party Services:</strong> No external analytics
+                or tracking
+              </li>
+            </ul>
+
+            <p>Your child's learning journey is private and secure.</p>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Content & Languages</h2>
+          <div class="about-layout__content">
+            <p>
+              Our content is designed to be inclusive, educational, and
+              culturally relevant:
+            </p>
+
+            <h3>Current Languages</h3>
+            <ul>
+              <li>
+                <strong>English:</strong> Primary language with clear
+                pronunciation
+              </li>
+              <li>
+                <strong>Hindi:</strong> Indian language with cultural context
+              </li>
+              <li><strong>Marathi:</strong> Regional language support</li>
+            </ul>
+
+            <h3>Content Categories</h3>
+            <ul>
+              <li>
+                <strong>Stories:</strong> Age-appropriate narratives with
+                learning themes
+              </li>
+              <li>
+                <strong>Rhymes:</strong> Traditional and original songs with
+                actions
+              </li>
+              <li>
+                <strong>Vocabulary:</strong> Common words with pronunciation
+                guides
+              </li>
+              <li>
+                <strong>Printables:</strong> Offline activities and learning
+                materials
+              </li>
+            </ul>
+
+            <p>
+              All content is reviewed by educators and parents to ensure quality
+              and appropriateness.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Accessibility Features</h2>
+          <div class="about-layout__content">
+            <p>We believe learning should be accessible to every child:</p>
+
+            <h3>Visual Accessibility</h3>
+            <ul>
+              <li>
+                <strong>High Contrast:</strong> Special theme for visual
+                impairments
+              </li>
+              <li><strong>Large Text:</strong> Multiple text size options</li>
+              <li>
+                <strong>Color Blind Friendly:</strong> Icons and text, not just
+                colors
+              </li>
+              <li>
+                <strong>Reduced Motion:</strong> Options for motion sensitivity
+              </li>
+            </ul>
+
+            <h3>Learning Support</h3>
+            <ul>
+              <li>
+                <strong>Dyslexia-Friendly Fonts:</strong> Alternative font
+                options
+              </li>
+              <li>
+                <strong>Clear Navigation:</strong> Simple, consistent interface
+              </li>
+              <li>
+                <strong>Touch-Friendly:</strong> Large buttons and clear targets
+              </li>
+              <li>
+                <strong>Audio Support:</strong> Visual and audio learning
+                options
+              </li>
+            </ul>
+
+            <p>
+              We're committed to making learning accessible for children with
+              different needs and abilities.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Future Roadmap</h2>
+          <div class="about-layout__content">
+            <p>
+              This is just the beginning! Here's what we're planning for future
+              versions:
+            </p>
+
+            <h3>Phase 2: Interactive Features</h3>
+            <ul>
+              <li>
+                <strong>Speech Recognition:</strong> Record and practice
+                pronunciation
+              </li>
+              <li>
+                <strong>Text-to-Speech:</strong> Audio narration with word
+                highlighting
+              </li>
+              <li>
+                <strong>Progress Tracking:</strong> Real learning data and
+                achievements
+              </li>
+              <li>
+                <strong>Custom Playlists:</strong> Create your own learning
+                sequences
+              </li>
+            </ul>
+
+            <h3>Phase 3: Advanced Learning</h3>
+            <ul>
+              <li>
+                <strong>AI Feedback:</strong> Personalized pronunciation
+                guidance
+              </li>
+              <li>
+                <strong>Adaptive Content:</strong> Content that adjusts to your
+                child's level
+              </li>
+              <li>
+                <strong>Multi-Device Sync:</strong> Progress across all your
+                devices
+              </li>
+              <li>
+                <strong>Parent Dashboard:</strong> Detailed learning insights
+                and tips
+              </li>
+            </ul>
+
+            <h3>Phase 4: Community & Expansion</h3>
+            <ul>
+              <li>
+                <strong>More Languages:</strong> Support for additional Indian
+                languages
+              </li>
+              <li>
+                <strong>User Content:</strong> Parents can add their own words
+                and stories
+              </li>
+              <li>
+                <strong>Teacher Tools:</strong> Special features for educators
+              </li>
+              <li>
+                <strong>Offline Packs:</strong> Downloadable content for travel
+              </li>
+            </ul>
+
+            <p>
+              We're building this app with families like yours in mind. Your
+              feedback will help shape our future development!
+            </p>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Get Involved</h2>
+          <div class="about-layout__content">
+            <p>
+              We'd love to hear from you and involve you in our development
+              process:
+            </p>
+
+            <h3>Share Your Feedback</h3>
+            <ul>
+              <li>
+                <strong>Content Ideas:</strong> Suggest new stories, rhymes, or
+                words
+              </li>
+              <li>
+                <strong>Feature Requests:</strong> Tell us what would make the
+                app better
+              </li>
+              <li>
+                <strong>Bug Reports:</strong> Help us improve by reporting
+                issues
+              </li>
+              <li>
+                <strong>Success Stories:</strong> Share how your family uses the
+                app
+              </li>
+            </ul>
+
+            <h3>Stay Updated</h3>
+            <ul>
+              <li>
+                <strong>Newsletter:</strong> Get updates on new features and
+                content
+              </li>
+              <li>
+                <strong>Beta Testing:</strong> Try new features before they're
+                released
+              </li>
+              <li>
+                <strong>Community:</strong> Connect with other families using
+                the app
+              </li>
+            </ul>
+
+            <div class="contact-buttons">
+              <a href="#" class="btn btn--primary">Send Feedback</a>
+              <a href="#" class="btn btn--secondary">Join Newsletter</a>
+              <a href="#" class="btn btn--secondary">Report Issue</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-layout__section">
+          <h2 class="about-layout__section-title">Technical Information</h2>
+          <div class="about-layout__content">
+            <p>For developers and technically curious parents:</p>
+
+            <h3>Current Version (V1)</h3>
+            <ul>
+              <li>
+                <strong>Technology:</strong> Pure HTML, CSS, and semantic markup
+              </li>
+              <li>
+                <strong>Compatibility:</strong> Works on all modern browsers and
+                devices
+              </li>
+              <li>
+                <strong>Performance:</strong> Fast loading, minimal resource
+                usage
+              </li>
+              <li><strong>Accessibility:</strong> WCAG 2.1 AA compliant</li>
+            </ul>
+
+            <h3>Browser Support</h3>
+            <ul>
+              <li><strong>Chrome:</strong> Version 80+ (recommended)</li>
+              <li><strong>Firefox:</strong> Version 75+</li>
+              <li><strong>Safari:</strong> Version 13+</li>
+              <li><strong>Edge:</strong> Version 80+</li>
+            </ul>
+
+            <h3>Device Support</h3>
+            <ul>
+              <li><strong>Desktop:</strong> Windows, macOS, Linux</li>
+              <li><strong>Tablets:</strong> iPad, Android tablets</li>
+              <li><strong>Mobile:</strong> iPhone, Android phones</li>
+              <li><strong>Print:</strong> Optimized for A4 printing</li>
+            </ul>
+          </div>
+        </div>
+
+        <nav class="quick-nav">
+          <a href="index.html" class="quick-nav__link">🏠 Home</a>
+          <a href="parent.html" class="quick-nav__link">👨‍👩‍👧‍👦 Parent Mode</a>
+          <a href="settings.html" class="quick-nav__link">⚙️ Settings</a>
+        </nav>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
-        </div>
+      <div class="footer__content">
+        <p class="footer__text">
+          For families • v0.1 • <a href="#" class="footer__link">Print</a>
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

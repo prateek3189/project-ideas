@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Dashboard</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link nav__link--active">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Dashboard</h2>
+        <p class="page-subtitle">Portfolio overview and quick insights</p>
+      </div>
+
+      <!-- Key Metrics Tiles -->
+      <section class="dashboard-grid">
+        <div class="tile tile--value">
+          <div class="tile__header">
+            <h3 class="tile__title">Portfolio Value</h3>
+          </div>
+          <div class="tile__content">
+            <div class="value-display">
+              <span class="value-display__amount">₹12,45,000</span>
+              <div class="value-display__change">
+                <span class="delta-chip delta-chip--positive">+8.2%</span>
+                <span class="value-display__period">1Y</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile tile--range">
+          <div class="tile__header">
+            <h3 class="tile__title">1Y Range</h3>
+          </div>
+          <div class="tile__content">
+            <div class="range-bar">
+              <div class="range-bar__track">
+                <div class="range-bar__fill" style="width: 75%"></div>
+              </div>
+              <div class="range-bar__labels">
+                <span class="range-bar__min">₹9.8L</span>
+                <span class="range-bar__max">₹13.2L</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile tile--drift">
+          <div class="tile__header">
+            <h3 class="tile__title">Drift from Target</h3>
+          </div>
+          <div class="tile__content">
+            <div class="drift-indicator">
+              <span class="drift-indicator__value">+3.2%</span>
+              <div class="drift-indicator__bar">
+                <div
+                  class="drift-indicator__fill drift-indicator__fill--over"
+                ></div>
+              </div>
+              <span class="drift-indicator__label">Overweight Equity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile tile--score">
+          <div class="tile__header">
+            <h3 class="tile__title">Diversification Score</h3>
+          </div>
+          <div class="tile__content">
+            <div class="score-meter">
+              <div class="score-meter__value">7.2/10</div>
+              <div class="score-meter__bar">
+                <div class="score-meter__fill" style="width: 72%"></div>
+              </div>
+              <span class="score-meter__label">Good</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Allocation Overview -->
+      <section class="allocation-section">
+        <h3 class="section-title">Current Allocation</h3>
+        <div class="allocation-donut">
+          <div class="donut">
+            <div
+              class="donut__slice donut__slice--equity"
+              style="--percentage: 68%"
+            ></div>
+            <div
+              class="donut__slice donut__slice--bonds"
+              style="--percentage: 22%"
+            ></div>
+            <div
+              class="donut__slice donut__slice--cash"
+              style="--percentage: 8%"
+            ></div>
+            <div
+              class="donut__slice donut__slice--alt"
+              style="--percentage: 2%"
+            ></div>
+            <div class="donut__center">
+              <span class="donut__label">Total</span>
+            </div>
+          </div>
+          <div class="allocation-legend">
+            <div class="legend-item">
+              <span
+                class="legend-item__color legend-item__color--equity"
+              ></span>
+              <span class="legend-item__label">Equity 68%</span>
+              <span class="delta-chip delta-chip--over">+3%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-item__color legend-item__color--bonds"></span>
+              <span class="legend-item__label">Bonds 22%</span>
+              <span class="delta-chip delta-chip--under">-3%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-item__color legend-item__color--cash"></span>
+              <span class="legend-item__label">Cash 8%</span>
+              <span class="delta-chip delta-chip--over">+3%</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-item__color legend-item__color--alt"></span>
+              <span class="legend-item__label">Alt 2%</span>
+              <span class="delta-chip delta-chip--under">-3%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Suggestions -->
+      <section class="suggestions-section">
+        <h3 class="section-title">Quick Suggestions</h3>
+        <div class="suggestions-grid">
+          <div class="suggestion-card suggestion-card--trim">
+            <div class="suggestion-card__header">
+              <h4 class="suggestion-card__title">Trim: Overweight Tech</h4>
+              <span class="badge badge--warning">+6% vs target</span>
+            </div>
+            <div class="suggestion-card__content">
+              <p class="suggestion-card__description">
+                Reduce single-stock concentration in ABC Corp to improve
+                diversification.
+              </p>
+              <div class="suggestion-card__action">
+                <span class="action-step">Trim ABC -5%</span>
+                <span class="action-step">Add VTI +3%</span>
+                <span class="action-step">Add BND +2%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="suggestion-card suggestion-card--add">
+            <div class="suggestion-card__header">
+              <h4 class="suggestion-card__title">Add: Short-Term Bonds</h4>
+              <span class="badge badge--info">Duration Risk</span>
+            </div>
+            <div class="suggestion-card__content">
+              <p class="suggestion-card__description">
+                Increase bond allocation to meet target and reduce duration
+                risk.
+              </p>
+              <div class="suggestion-card__action">
+                <span class="action-step">Add SHY +3%</span>
+                <span class="action-step">Rebalance from Cash</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="suggestion-card suggestion-card--rebalance">
+            <div class="suggestion-card__header">
+              <h4 class="suggestion-card__title">Rebalance: Single Stock</h4>
+              <span class="badge badge--danger">High Concentration</span>
+            </div>
+            <div class="suggestion-card__content">
+              <p class="suggestion-card__description">
+                Move 3% from single stock to total market ETF for better
+                diversification.
+              </p>
+              <div class="suggestion-card__action">
+                <span class="action-step">Sell ABC -3%</span>
+                <span class="action-step">Buy VTI +3%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nudge Banner -->
+      <section class="nudge-section">
+        <div class="nudge nudge--info">
+          <div class="nudge__content">
+            <h4 class="nudge__title">Portfolio Drift Alert</h4>
+            <p class="nudge__message">
+              Your equity allocation is <strong>+8%</strong> over target.
+              Consider a light rebalance to maintain your risk profile.
+            </p>
+          </div>
+          <details class="nudge__details">
+            <summary class="nudge__summary">Why this matters</summary>
+            <div class="nudge__explanation">
+              <p>
+                Portfolio drift occurs when market movements change your asset
+                allocation over time. Rebalancing helps maintain your target
+                risk level and can improve long-term returns by selling high and
+                buying low.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Alerts & Deals</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item nav-item--active">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Alerts & Deals</h2>
+          <p class="page-subtitle">
+            Stay updated on expirations, bonuses, and exclusive offers
+          </p>
+        </div>
+
+        <!-- Alert Summary -->
+        <section class="alert-summary-section">
+          <div class="alert-summary-grid">
+            <div class="alert-summary-card alert-summary-card--urgent">
+              <div class="alert-summary-icon">🚨</div>
+              <div class="alert-summary-content">
+                <h3 class="alert-summary-title">Urgent Alerts</h3>
+                <div class="alert-summary-count">3</div>
+                <div class="alert-summary-description">
+                  Points expiring soon
+                </div>
+              </div>
+            </div>
+
+            <div class="alert-summary-card alert-summary-card--bonus">
+              <div class="alert-summary-icon">🎁</div>
+              <div class="alert-summary-content">
+                <h3 class="alert-summary-title">Active Bonuses</h3>
+                <div class="alert-summary-count">5</div>
+                <div class="alert-summary-description">
+                  Transfer bonuses available
+                </div>
+              </div>
+            </div>
+
+            <div class="alert-summary-card alert-summary-card--deal">
+              <div class="alert-summary-icon">💎</div>
+              <div class="alert-summary-content">
+                <h3 class="alert-summary-title">Exclusive Deals</h3>
+                <div class="alert-summary-count">2</div>
+                <div class="alert-summary-description">Limited-time offers</div>
+              </div>
+            </div>
+
+            <div class="alert-summary-card alert-summary-card--info">
+              <div class="alert-summary-icon">📢</div>
+              <div class="alert-summary-content">
+                <h3 class="alert-summary-title">Program Updates</h3>
+                <div class="alert-summary-count">4</div>
+                <div class="alert-summary-description">Policy changes</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Expiration Alerts -->
+        <section class="expiration-alerts-section">
+          <h3 class="section-title">Expiration Alerts</h3>
+          <div class="alerts-list">
+            <div class="alert-banner alert-banner--expiry">
+              <div class="alert-banner__header">
+                <span class="alert-banner__icon">⏰</span>
+                <h4 class="alert-banner__title">KrisFlyer Points Expiring</h4>
+              </div>
+              <div class="alert-banner__message">
+                2,000 KrisFlyer points will expire in 28 days. Any earning or
+                redemption activity will reset the expiration clock.
+              </div>
+              <div class="alert-banner__actions">
+                <button class="btn btn--primary btn--sm">Keep Alive</button>
+                <button class="btn btn--secondary btn--sm">View Options</button>
+              </div>
+              <div class="alert-banner__valid-until">
+                Expires: February 15, 2025
+              </div>
+            </div>
+
+            <div class="alert-banner alert-banner--expiry">
+              <div class="alert-banner__header">
+                <span class="alert-banner__icon">⏰</span>
+                <h4 class="alert-banner__title">
+                  Marriott Bonvoy Points Expiring
+                </h4>
+              </div>
+              <div class="alert-banner__message">
+                1,500 Marriott Bonvoy points will expire in 45 days. Consider a
+                small redemption or partner transfer.
+              </div>
+              <div class="alert-banner__actions">
+                <button class="btn btn--primary btn--sm">Keep Alive</button>
+                <button class="btn btn--secondary btn--sm">View Options</button>
+              </div>
+              <div class="alert-banner__valid-until">
+                Expires: March 2, 2025
+              </div>
+            </div>
+
+            <div class="alert-banner alert-banner--expiry">
+              <div class="alert-banner__header">
+                <span class="alert-banner__icon">⏰</span>
+                <h4 class="alert-banner__title">Avios Points Expiring</h4>
+              </div>
+              <div class="alert-banner__message">
+                1,000 Avios points will expire in 67 days. Book a short flight
+                or transfer from Amex MR.
+              </div>
+              <div class="alert-banner__actions">
+                <button class="btn btn--primary btn--sm">Keep Alive</button>
+                <button class="btn btn--secondary btn--sm">View Options</button>
+              </div>
+              <div class="alert-banner__valid-until">
+                Expires: March 25, 2025
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transfer Bonuses -->
+        <section class="transfer-bonuses-section">
+          <h3 class="section-title">Transfer Bonuses</h3>
+          <div class="bonuses-grid">
+            <div class="bonus-card bonus-card--active">
+              <div class="bonus-card__header">
+                <div class="bonus-card__programs">
+                  <span class="program-logo">💳</span>
+                  <span class="transfer-arrow">→</span>
+                  <span class="program-logo">🏨</span>
+                </div>
+                <span class="bonus-badge bonus-badge--active">Active</span>
+              </div>
+              <div class="bonus-card__content">
+                <h4 class="bonus-card__title">Amex → Marriott</h4>
+                <div class="bonus-card__details">
+                  <div class="bonus-ratio">1:1 + 20% Bonus</div>
+                  <div class="bonus-description">
+                    Transfer 1,000 MR points and get 1,200 Marriott points
+                  </div>
+                  <div class="bonus-validity">Valid until: March 31, 2025</div>
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--primary btn--sm">Transfer Now</button>
+                <button class="btn btn--secondary btn--sm">Learn More</button>
+              </div>
+            </div>
+
+            <div class="bonus-card bonus-card--active">
+              <div class="bonus-card__header">
+                <div class="bonus-card__programs">
+                  <span class="program-logo">💳</span>
+                  <span class="transfer-arrow">→</span>
+                  <span class="program-logo">🏨</span>
+                </div>
+                <span class="bonus-badge bonus-badge--active">Active</span>
+              </div>
+              <div class="bonus-card__content">
+                <h4 class="bonus-card__title">Chase → Hyatt</h4>
+                <div class="bonus-card__details">
+                  <div class="bonus-ratio">1:1 + 15% Bonus</div>
+                  <div class="bonus-description">
+                    Transfer 1,000 UR points and get 1,150 Hyatt points
+                  </div>
+                  <div class="bonus-validity">
+                    Valid until: February 28, 2025
+                  </div>
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--primary btn--sm">Transfer Now</button>
+                <button class="btn btn--secondary btn--sm">Learn More</button>
+              </div>
+            </div>
+
+            <div class="bonus-card bonus-card--expiring">
+              <div class="bonus-card__header">
+                <div class="bonus-card__programs">
+                  <span class="program-logo">💳</span>
+                  <span class="transfer-arrow">→</span>
+                  <span class="program-logo">✈️</span>
+                </div>
+                <span class="bonus-badge bonus-badge--expiring"
+                  >Expiring Soon</span
+                >
+              </div>
+              <div class="bonus-card__content">
+                <h4 class="bonus-card__title">Citi → Avianca</h4>
+                <div class="bonus-card__details">
+                  <div class="bonus-ratio">1:1 + 25% Bonus</div>
+                  <div class="bonus-description">
+                    Transfer 1,000 TY points and get 1,250 Avianca miles
+                  </div>
+                  <div class="bonus-validity">Expires: February 15, 2025</div>
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--warning btn--sm">Transfer Now</button>
+                <button class="btn btn--secondary btn--sm">Learn More</button>
+              </div>
+            </div>
+
+            <div class="bonus-card bonus-card--upcoming">
+              <div class="bonus-card__header">
+                <div class="bonus-card__programs">
+                  <span class="program-logo">💳</span>
+                  <span class="transfer-arrow">→</span>
+                  <span class="program-logo">✈️</span>
+                </div>
+                <span class="bonus-badge bonus-badge--upcoming">Upcoming</span>
+              </div>
+              <div class="bonus-card__content">
+                <h4 class="bonus-card__title">Amex → KrisFlyer</h4>
+                <div class="bonus-card__details">
+                  <div class="bonus-ratio">1:1 + 30% Bonus</div>
+                  <div class="bonus-description">
+                    Transfer 1,000 MR points and get 1,300 KrisFlyer miles
+                  </div>
+                  <div class="bonus-validity">Starts: March 1, 2025</div>
+                </div>
+              </div>
+              <div class="bonus-card__actions">
+                <button class="btn btn--secondary btn--sm" disabled>
+                  Set Reminder
+                </button>
+                <button class="btn btn--secondary btn--sm">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Exclusive Deals -->
+        <section class="exclusive-deals-section">
+          <h3 class="section-title">Exclusive Deals</h3>
+          <div class="deals-grid">
+            <div class="deal-card deal-card--featured">
+              <div class="deal-card__header">
+                <div class="deal-card__badge">Featured</div>
+                <h4 class="deal-card__title">
+                  Singapore Airlines Business Class Sale
+                </h4>
+              </div>
+              <div class="deal-card__content">
+                <div class="deal-card__description">
+                  Book business class flights to Asia with 25% fewer miles.
+                  Valid for travel through June 2025.
+                </div>
+                <div class="deal-card__details">
+                  <div class="deal-detail">
+                    <span class="deal-label">Discount:</span>
+                    <span class="deal-value">25% off miles</span>
+                  </div>
+                  <div class="deal-detail">
+                    <span class="deal-label">Valid Until:</span>
+                    <span class="deal-value">February 28, 2025</span>
+                  </div>
+                  <div class="deal-detail">
+                    <span class="deal-label">Travel Period:</span>
+                    <span class="deal-value">Through June 2025</span>
+                  </div>
+                </div>
+              </div>
+              <div class="deal-card__actions">
+                <button class="btn btn--primary btn--sm">Book Now</button>
+                <button class="btn btn--secondary btn--sm">View Details</button>
+              </div>
+            </div>
+
+            <div class="deal-card">
+              <div class="deal-card__header">
+                <h4 class="deal-card__title">
+                  Marriott Bonvoy Elite Status Challenge
+                </h4>
+              </div>
+              <div class="deal-card__content">
+                <div class="deal-card__description">
+                  Fast-track to Platinum status with just 8 nights instead of
+                  50. Complete by March 31, 2025.
+                </div>
+                <div class="deal-card__details">
+                  <div class="deal-detail">
+                    <span class="deal-label">Status:</span>
+                    <span class="deal-value">Platinum Elite</span>
+                  </div>
+                  <div class="deal-detail">
+                    <span class="deal-label">Nights Required:</span>
+                    <span class="deal-value">8 nights</span>
+                  </div>
+                  <div class="deal-detail">
+                    <span class="deal-label">Valid Until:</span>
+                    <span class="deal-value">March 31, 2025</span>
+                  </div>
+                </div>
+              </div>
+              <div class="deal-card__actions">
+                <button class="btn btn--primary btn--sm">Enroll Now</button>
+                <button class="btn btn--secondary btn--sm">View Details</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Program Updates -->
+        <section class="program-updates-section">
+          <h3 class="section-title">Program Updates</h3>
+          <div class="updates-list">
+            <div class="update-item">
+              <div class="update-header">
+                <span class="update-icon">📢</span>
+                <div class="update-info">
+                  <h4 class="update-title">United MileagePlus Changes</h4>
+                  <span class="update-date">January 20, 2025</span>
+                </div>
+                <span class="update-badge update-badge--important"
+                  >Important</span
+                >
+              </div>
+              <div class="update-content">
+                <p>
+                  United has announced changes to their award chart effective
+                  March 1, 2025. Some routes will see increased mileage
+                  requirements, while others will decrease.
+                </p>
+              </div>
+              <div class="update-actions">
+                <button class="btn btn--secondary btn--sm">Read More</button>
+              </div>
+            </div>
+
+            <div class="update-item">
+              <div class="update-header">
+                <span class="update-icon">📢</span>
+                <div class="update-info">
+                  <h4 class="update-title">Amex Platinum Benefits Update</h4>
+                  <span class="update-date">January 18, 2025</span>
+                </div>
+                <span class="update-badge update-badge--info">Info</span>
+              </div>
+              <div class="update-content">
+                <p>
+                  New Centurion Lounge locations opening in Denver and Seattle.
+                  Additional dining credits now available at select restaurants.
+                </p>
+              </div>
+              <div class="update-actions">
+                <button class="btn btn--secondary btn--sm">Read More</button>
+              </div>
+            </div>
+
+            <div class="update-item">
+              <div class="update-header">
+                <span class="update-icon">📢</span>
+                <div class="update-info">
+                  <h4 class="update-title">Hyatt Category Changes</h4>
+                  <span class="update-date">January 15, 2025</span>
+                </div>
+                <span class="update-badge update-badge--warning">Warning</span>
+              </div>
+              <div class="update-content">
+                <p>
+                  Several Hyatt properties are moving to higher categories,
+                  requiring more points for redemption. Changes effective April
+                  1, 2025.
+                </p>
+              </div>
+              <div class="update-actions">
+                <button class="btn btn--secondary btn--sm">Read More</button>
+              </div>
+            </div>
+
+            <div class="update-item">
+              <div class="update-header">
+                <span class="update-icon">📢</span>
+                <div class="update-info">
+                  <h4 class="update-title">
+                    Chase Sapphire Benefits Enhancement
+                  </h4>
+                  <span class="update-date">January 12, 2025</span>
+                </div>
+                <span class="update-badge update-badge--positive"
+                  >Positive</span
+                >
+              </div>
+              <div class="update-content">
+                <p>
+                  Chase Sapphire Reserve now offers 3x points on dining and
+                  travel purchases, up from 2x. Annual travel credit increased
+                  to $300.
+                </p>
+              </div>
+              <div class="update-actions">
+                <button class="btn btn--secondary btn--sm">Read More</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Alert Settings -->
+        <section class="alert-settings-section">
+          <h3 class="section-title">Alert Settings</h3>
+          <div class="settings-form">
+            <div class="settings-group">
+              <h4 class="settings-group__title">Notification Preferences</h4>
+              <div class="settings-options">
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Point Expiration Alerts (7 days before)</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Transfer Bonus Notifications</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">Exclusive Deal Alerts</span>
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label">Program Policy Changes</span>
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">Weekly Summary Email</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Alert Methods</h4>
+              <div class="settings-options">
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">In-App Notifications</span>
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">Email Notifications</span>
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label">SMS Alerts (Urgent Only)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-actions">
+              <button class="btn btn--primary">Save Settings</button>
+              <button class="btn btn--secondary">Reset to Defaults</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <div class="page-header">
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">
+            Configure platform settings and integrations
+          </p>
+        </div>
+
+        <!-- Settings Grid -->
+        <div class="settings-grid">
+          <!-- Tenants & Environments -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Tenants & Environments</h2>
+            <p class="settings-section__description">
+              Manage tenant configurations and environment settings across the
+              platform.
+            </p>
+
+            <div class="env-cards">
+              <div class="env-card">
+                <div class="env-card__header">
+                  <h3 class="env-card__title">Development</h3>
+                  <span class="status-badge status-badge--success">Active</span>
+                </div>
+                <p class="env-card__url">https://dev-dashboard.company.com</p>
+                <div class="flex gap-2 mt-3">
+                  <button class="button button--ghost">Configure</button>
+                  <button class="button button--primary">Promote</button>
+                </div>
+              </div>
+
+              <div class="env-card">
+                <div class="env-card__header">
+                  <h3 class="env-card__title">Staging</h3>
+                  <span class="status-badge status-badge--warning"
+                    >Degraded</span
+                  >
+                </div>
+                <p class="env-card__url">
+                  https://staging-dashboard.company.com
+                </p>
+                <div class="flex gap-2 mt-3">
+                  <button class="button button--ghost">Configure</button>
+                  <button class="button button--primary">Promote</button>
+                </div>
+              </div>
+
+              <div class="env-card">
+                <div class="env-card__header">
+                  <h3 class="env-card__title">Production</h3>
+                  <span class="status-badge status-badge--success">Active</span>
+                </div>
+                <p class="env-card__url">https://dashboard.company.com</p>
+                <div class="flex gap-2 mt-3">
+                  <button class="button button--ghost">Configure</button>
+                  <button class="button button--ghost" disabled>Promote</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SSO Configuration -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Single Sign-On (SSO)</h2>
+            <p class="settings-section__description">
+              Configure authentication providers and user management settings.
+            </p>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">SAML 2.0</h3>
+                  <p class="text-sm text-muted">
+                    Active Directory / Azure AD integration
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success">Active</span>
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">OpenID Connect</h3>
+                  <p class="text-sm text-muted">
+                    Google Workspace / Okta integration
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--warning"
+                    >Inactive</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">LDAP</h3>
+                  <p class="text-sm text-muted">
+                    Legacy directory service integration
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--danger"
+                    >Disabled</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <button class="button button--primary">Test Login</button>
+              <button class="button button--ghost">View Logs</button>
+            </div>
+          </div>
+
+          <!-- Design Tokens -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Design Tokens</h2>
+            <p class="settings-section__description">
+              Manage CSS design tokens and brand customization across all
+              widgets.
+            </p>
+
+            <div class="theme-preview">
+              <h3 class="font-semibold mb-4">Brand Colors</h3>
+              <div class="theme-preview__colors">
+                <div
+                  class="theme-preview__color"
+                  style="background-color: #2563eb"
+                  title="Primary"
+                ></div>
+                <div
+                  class="theme-preview__color"
+                  style="background-color: #16a34a"
+                  title="Success"
+                ></div>
+                <div
+                  class="theme-preview__color"
+                  style="background-color: #f59e0b"
+                  title="Warning"
+                ></div>
+                <div
+                  class="theme-preview__color"
+                  style="background-color: #dc2626"
+                  title="Danger"
+                ></div>
+                <div
+                  class="theme-preview__color"
+                  style="background-color: #3b82f6"
+                  title="Info"
+                ></div>
+              </div>
+
+              <h3 class="font-semibold mb-4 mt-6">Typography Scale</h3>
+              <div class="theme-preview__typography">
+                <div
+                  class="theme-preview__text"
+                  style="font-size: 24px; font-weight: bold"
+                >
+                  Display Text
+                </div>
+                <div
+                  class="theme-preview__text"
+                  style="font-size: 20px; font-weight: 600"
+                >
+                  Heading 1
+                </div>
+                <div
+                  class="theme-preview__text"
+                  style="font-size: 18px; font-weight: 600"
+                >
+                  Heading 2
+                </div>
+                <div class="theme-preview__text" style="font-size: 16px">
+                  Body Text
+                </div>
+                <div
+                  class="theme-preview__text"
+                  style="font-size: 14px; font-family: var(--font-family-mono)"
+                >
+                  Monospace Text
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <button class="button button--primary">Edit Tokens</button>
+              <button class="button button--ghost">Export Theme</button>
+              <button class="button button--ghost">Import Theme</button>
+            </div>
+          </div>
+
+          <!-- Integrations -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Integrations</h2>
+            <p class="settings-section__description">
+              Connect external services and tools to enhance platform
+              functionality.
+            </p>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Git Provider</h3>
+                  <p class="text-sm text-muted">
+                    GitHub Enterprise integration for widget source control
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Connected</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">CI/CD Pipeline</h3>
+                  <p class="text-sm text-muted">
+                    Jenkins integration for automated deployments
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Connected</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Observability</h3>
+                  <p class="text-sm text-muted">
+                    DataDog integration for monitoring and alerting
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--warning"
+                    >Partial</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Notification Service</h3>
+                  <p class="text-sm text-muted">
+                    Slack integration for release notifications
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Connected</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Analytics</h3>
+                  <p class="text-sm text-muted">
+                    Google Analytics integration for usage tracking
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--danger"
+                    >Disconnected</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance Settings -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Performance Settings</h2>
+            <p class="settings-section__description">
+              Configure performance budgets and optimization settings for
+              widgets.
+            </p>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Widget Load Time Budget</label
+                >
+                <select class="w-full">
+                  <option>500ms (Strict)</option>
+                  <option selected>1s (Recommended)</option>
+                  <option>2s (Relaxed)</option>
+                  <option>5s (Development)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Bundle Size Limit</label
+                >
+                <select class="w-full">
+                  <option>100KB (Strict)</option>
+                  <option selected>250KB (Recommended)</option>
+                  <option>500KB (Relaxed)</option>
+                  <option>1MB (Development)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2"
+                  >Memory Usage Limit</label
+                >
+                <select class="w-full">
+                  <option>10MB (Strict)</option>
+                  <option selected>25MB (Recommended)</option>
+                  <option>50MB (Relaxed)</option>
+                  <option>100MB (Development)</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" checked />
+                  <span class="text-sm">Enable lazy loading for widgets</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" checked />
+                  <span class="text-sm">Compress widget assets</span>
+                </label>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" />
+                  <span class="text-sm">Enable service worker caching</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backup & Recovery -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Backup & Recovery</h2>
+            <p class="settings-section__description">
+              Manage data backups and disaster recovery procedures.
+            </p>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Automated Backups</h3>
+                  <p class="text-sm text-muted">
+                    Daily backups of all spaces and configurations
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Enabled</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Point-in-Time Recovery</h3>
+                  <p class="text-sm text-muted">
+                    Restore to any point within the last 30 days
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Available</span
+                  >
+                  <button class="button button--ghost">View Snapshots</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Cross-Region Replication</h3>
+                  <p class="text-sm text-muted">
+                    Replicate data to secondary region for disaster recovery
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--warning"
+                    >Partial</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <button class="button button--primary">Create Backup</button>
+              <button class="button button--ghost">Restore from Backup</button>
+              <button class="button button--ghost">Export Data</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Information -->
+        <section class="section">
+          <h2 class="section-title">System Information</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div>
+                <h3 class="font-semibold mb-3">Platform Details</h3>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-muted">Version:</span>
+                    <span>v0.1.0</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Build:</span>
+                    <span>2024.01.15-abc123</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Environment:</span>
+                    <span>Production</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Uptime:</span>
+                    <span>15 days, 3 hours</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-3">Resource Usage</h3>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-muted">CPU Usage:</span>
+                    <span>23%</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Memory Usage:</span>
+                    <span>1.2GB / 4GB</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Disk Usage:</span>
+                    <span>45GB / 100GB</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Active Users:</span>
+                    <span>47</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Staff Management</h1>
+          <p class="page-subtitle">
+            Manage staff schedules, services, and performance
+          </p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="flex gap-4 mb-6">
+          <button class="btn btn--primary">
+            <span class="icon">➕</span>
+            Add Staff Member
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">📅</span>
+            Weekly Roster
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">📊</span>
+            Performance Report
+          </button>
+        </div>
+
+        <!-- Staff Overview -->
+        <div class="kpi-grid mb-6">
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <h3 class="kpi-tile__title">Total Staff</h3>
+              <span class="kpi-tile__icon">👥</span>
+            </div>
+            <div class="kpi-tile__value">12</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +2 this month
+            </div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <h3 class="kpi-tile__title">Active Today</h3>
+              <span class="kpi-tile__icon">✅</span>
+            </div>
+            <div class="kpi-tile__value">8</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              67% of total
+            </div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <h3 class="kpi-tile__title">Avg Utilization</h3>
+              <span class="kpi-tile__icon">📊</span>
+            </div>
+            <div class="kpi-tile__value">75%</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +5% vs last week
+            </div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <h3 class="kpi-tile__title">Avg Rating</h3>
+              <span class="kpi-tile__icon">⭐</span>
+            </div>
+            <div class="kpi-tile__value">4.7</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +0.2 vs last month
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff List -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Staff Members</h3>
+          </div>
+          <div class="card__content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Staff Member</th>
+                    <th>Department</th>
+                    <th>Services</th>
+                    <th>Status</th>
+                    <th>Utilization</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="skeleton-avatar bg-primary-light text-primary flex items-center justify-center"
+                        >
+                          AP
+                        </div>
+                        <div>
+                          <div class="font-medium">Arjun Patel</div>
+                          <div class="text-sm text-muted">Senior Stylist</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Hair Salon</td>
+                    <td>Haircut, Color, Styling</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">85%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 85%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-1">
+                        <span class="text-sm">4.8</span>
+                        <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">View</button>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="skeleton-avatar bg-success-light text-success flex items-center justify-center"
+                        >
+                          NS
+                        </div>
+                        <div>
+                          <div class="font-medium">Neha Singh</div>
+                          <div class="text-sm text-muted">Fitness Trainer</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Fitness</td>
+                    <td>PT, Group Classes, HIIT</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">72%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 72%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-1">
+                        <span class="text-sm">4.6</span>
+                        <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">View</button>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="skeleton-avatar bg-warning-light text-warning flex items-center justify-center"
+                        >
+                          KS
+                        </div>
+                        <div>
+                          <div class="font-medium">Kabir Sharma</div>
+                          <div class="text-sm text-muted">Yoga Instructor</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Yoga</td>
+                    <td>Hatha, Vinyasa, Meditation</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">68%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 68%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-1">
+                        <span class="text-sm">4.9</span>
+                        <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">View</button>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="skeleton-avatar bg-info-light text-info flex items-center justify-center"
+                        >
+                          PR
+                        </div>
+                        <div>
+                          <div class="font-medium">Priya Reddy</div>
+                          <div class="text-sm text-muted">
+                            Wellness Therapist
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Wellness</td>
+                    <td>Massage, Aromatherapy</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">56%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 56%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-1">
+                        <span class="text-sm">4.7</span>
+                        <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">View</button>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="skeleton-avatar bg-surface-secondary text-muted flex items-center justify-center"
+                        >
+                          VK
+                        </div>
+                        <div>
+                          <div class="font-medium">Vikram Kumar</div>
+                          <div class="text-sm text-muted">Receptionist</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Front Desk</td>
+                    <td>Check-in, Payments</td>
+                    <td><span class="badge badge--waitlist">On Leave</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">0%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 0%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-1">
+                        <span class="text-sm">4.5</span>
+                        <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">View</button>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff Detail View -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Staff Profile - Arjun Patel</h3>
+          </div>
+          <div class="card__content">
+            <div class="two-column">
+              <!-- Personal Information -->
+              <div>
+                <h4 class="font-semibold mb-4">Personal Information</h4>
+
+                <div class="space-y-4">
+                  <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" value="Arjun Patel" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-input"
+                      value="arjun.patel@bookinghub.com"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input
+                      type="tel"
+                      class="form-input"
+                      value="+91 98765 43210"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Department</label>
+                    <select class="form-select">
+                      <option>Hair Salon</option>
+                      <option>Fitness</option>
+                      <option>Yoga</option>
+                      <option>Wellness</option>
+                      <option>Front Desk</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Position</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="Senior Stylist"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Hire Date</label>
+                    <input type="date" class="form-input" value="2023-03-15" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Employee ID</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="EMP-001"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Work Schedule & Performance -->
+              <div>
+                <h4 class="font-semibold mb-4">Work Schedule</h4>
+
+                <div class="space-y-4">
+                  <div class="form-group">
+                    <label class="form-label">Weekly Schedule</label>
+                    <div class="space-y-2">
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Monday:</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="09:00"
+                          style="width: auto"
+                        />
+                        <span>to</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="18:00"
+                          style="width: auto"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Tuesday:</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="09:00"
+                          style="width: auto"
+                        />
+                        <span>to</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="18:00"
+                          style="width: auto"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Wednesday:</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="09:00"
+                          style="width: auto"
+                        />
+                        <span>to</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="18:00"
+                          style="width: auto"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Thursday:</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="09:00"
+                          style="width: auto"
+                        />
+                        <span>to</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="18:00"
+                          style="width: auto"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Friday:</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="09:00"
+                          style="width: auto"
+                        />
+                        <span>to</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="18:00"
+                          style="width: auto"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Saturday:</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="10:00"
+                          style="width: auto"
+                        />
+                        <span>to</span>
+                        <input
+                          type="time"
+                          class="form-input"
+                          value="16:00"
+                          style="width: auto"
+                        />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-16">Sunday:</span>
+                        <span class="text-muted">Off</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Services Offered</label>
+                    <div class="space-y-2">
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" checked />
+                        <span>Haircut & Styling (30 min) - ₹500</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" checked />
+                        <span>Hair Color (60 min) - ₹1,200</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" checked />
+                        <span>Beard Trim (15 min) - ₹200</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="checkbox" />
+                        <span>Facial Treatment (45 min) - ₹800</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Commission Rate</label>
+                    <input
+                      type="number"
+                      class="form-input"
+                      value="15"
+                      placeholder="Percentage"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Target Bookings/Week</label>
+                    <input
+                      type="number"
+                      class="form-input"
+                      value="25"
+                      placeholder="Number"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="mt-6">
+              <h4 class="font-semibold mb-4">Performance Metrics</h4>
+              <div class="three-column">
+                <div class="card">
+                  <div class="card__content">
+                    <div class="text-center">
+                      <div class="text-2xl font-bold text-primary mb-2">
+                        85%
+                      </div>
+                      <div class="text-sm text-muted">Utilization Rate</div>
+                      <div class="text-xs text-muted mt-1">This month</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__content">
+                    <div class="text-center">
+                      <div class="text-2xl font-bold text-success mb-2">
+                        4.8
+                      </div>
+                      <div class="text-sm text-muted">Average Rating</div>
+                      <div class="text-xs text-muted mt-1">
+                        Based on 156 reviews
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__content">
+                    <div class="text-center">
+                      <div class="text-2xl font-bold text-warning mb-2">28</div>
+                      <div class="text-sm text-muted">Bookings This Week</div>
+                      <div class="text-xs text-muted mt-1">Target: 25</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="btn btn--secondary">Cancel</button>
+              <button class="btn btn--primary">Save Changes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Roster -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Weekly Roster - January 13-19, 2025</h3>
+          </div>
+          <div class="card__content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Staff Member</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium">Arjun Patel</td>
+                    <td><span class="badge badge--confirmed">9-18</span></td>
+                    <td><span class="badge badge--confirmed">9-18</span></td>
+                    <td><span class="badge badge--confirmed">9-18</span></td>
+                    <td><span class="badge badge--confirmed">9-18</span></td>
+                    <td><span class="badge badge--confirmed">9-18</span></td>
+                    <td><span class="badge badge--confirmed">10-16</span></td>
+                    <td><span class="badge badge--cancelled">Off</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Neha Singh</td>
+                    <td><span class="badge badge--confirmed">8-17</span></td>
+                    <td><span class="badge badge--confirmed">8-17</span></td>
+                    <td><span class="badge badge--confirmed">8-17</span></td>
+                    <td><span class="badge badge--confirmed">8-17</span></td>
+                    <td><span class="badge badge--confirmed">8-17</span></td>
+                    <td><span class="badge badge--confirmed">9-15</span></td>
+                    <td><span class="badge badge--cancelled">Off</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Kabir Sharma</td>
+                    <td><span class="badge badge--confirmed">7-19</span></td>
+                    <td><span class="badge badge--confirmed">7-19</span></td>
+                    <td><span class="badge badge--confirmed">7-19</span></td>
+                    <td><span class="badge badge--confirmed">7-19</span></td>
+                    <td><span class="badge badge--confirmed">7-19</span></td>
+                    <td><span class="badge badge--confirmed">8-16</span></td>
+                    <td><span class="badge badge--confirmed">9-15</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Priya Reddy</td>
+                    <td><span class="badge badge--confirmed">10-18</span></td>
+                    <td><span class="badge badge--confirmed">10-18</span></td>
+                    <td><span class="badge badge--waitlist">PTO</span></td>
+                    <td><span class="badge badge--confirmed">10-18</span></td>
+                    <td><span class="badge badge--confirmed">10-18</span></td>
+                    <td><span class="badge badge--confirmed">11-17</span></td>
+                    <td><span class="badge badge--cancelled">Off</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Vikram Kumar</td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                    <td><span class="badge badge--waitlist">Leave</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

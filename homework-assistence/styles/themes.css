@@ -1,0 +1,602 @@
+/* Theme Styles for AI Homework Assistant */
+
+/* Light Theme (Default) */
+.theme-light {
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F1F5F9;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --color-text-inverse: #FFFFFF;
+  
+  --color-accent-primary: #2563EB;
+  --color-accent-secondary: #3B82F6;
+  --color-accent-tertiary: #60A5FA;
+  
+  --color-success: #16A34A;
+  --color-success-light: #22C55E;
+  --color-success-dark: #15803D;
+  
+  --color-warning: #F59E0B;
+  --color-warning-light: #FBBF24;
+  --color-warning-dark: #D97706;
+  
+  --color-error: #DC2626;
+  --color-error-light: #EF4444;
+  --color-error-dark: #B91C1C;
+  
+  --color-info: #0EA5E9;
+  --color-info-light: #38BDF8;
+  --color-info-dark: #0284C7;
+  
+  --color-heatmap-0: #F1F5F9;
+  --color-heatmap-1: #DBEAFE;
+  --color-heatmap-2: #BFDBFE;
+  --color-heatmap-3: #93C5FD;
+  --color-heatmap-4: #3B82F6;
+  
+  --color-border-light: #E2E8F0;
+  --color-border-medium: #CBD5E1;
+  --color-border-dark: #94A3B8;
+  
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+  --color-shadow-medium: rgba(0, 0, 0, 0.1);
+  --color-shadow-dark: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Theme */
+.theme-dark {
+  --color-background: #0B1220;
+  --color-surface: #111827;
+  --color-surface-secondary: #1F2937;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #D1D5DB;
+  --color-text-muted: #9CA3AF;
+  --color-text-inverse: #111827;
+  
+  --color-accent-primary: #3B82F6;
+  --color-accent-secondary: #60A5FA;
+  --color-accent-tertiary: #93C5FD;
+  
+  --color-success: #22C55E;
+  --color-success-light: #4ADE80;
+  --color-success-dark: #16A34A;
+  
+  --color-warning: #FBBF24;
+  --color-warning-light: #FCD34D;
+  --color-warning-dark: #F59E0B;
+  
+  --color-error: #EF4444;
+  --color-error-light: #F87171;
+  --color-error-dark: #DC2626;
+  
+  --color-info: #38BDF8;
+  --color-info-light: #7DD3FC;
+  --color-info-dark: #0EA5E9;
+  
+  --color-heatmap-0: #1F2937;
+  --color-heatmap-1: #1E3A8A;
+  --color-heatmap-2: #1E40AF;
+  --color-heatmap-3: #2563EB;
+  --color-heatmap-4: #3B82F6;
+  
+  --color-border-light: #374151;
+  --color-border-medium: #4B5563;
+  --color-border-dark: #6B7280;
+  
+  --color-shadow-light: rgba(0, 0, 0, 0.3);
+  --color-shadow-medium: rgba(0, 0, 0, 0.4);
+  --color-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* High Contrast Theme */
+.theme-high-contrast {
+  --color-background: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F0F0F0;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-text-inverse: #FFFFFF;
+  
+  --color-accent-primary: #0000FF;
+  --color-accent-secondary: #0000CC;
+  --color-accent-tertiary: #000099;
+  
+  --color-success: #008000;
+  --color-success-light: #00A000;
+  --color-success-dark: #006000;
+  
+  --color-warning: #FF8000;
+  --color-warning-light: #FFA000;
+  --color-warning-dark: #FF6000;
+  
+  --color-error: #FF0000;
+  --color-error-light: #FF4000;
+  --color-error-dark: #CC0000;
+  
+  --color-info: #0000FF;
+  --color-info-light: #4040FF;
+  --color-info-dark: #0000CC;
+  
+  --color-heatmap-0: #F0F0F0;
+  --color-heatmap-1: #E0E0FF;
+  --color-heatmap-2: #C0C0FF;
+  --color-heatmap-3: #8080FF;
+  --color-heatmap-4: #0000FF;
+  
+  --color-border-light: #000000;
+  --color-border-medium: #000000;
+  --color-border-dark: #000000;
+  
+  --color-shadow-light: rgba(0, 0, 0, 0.8);
+  --color-shadow-medium: rgba(0, 0, 0, 0.9);
+  --color-shadow-dark: rgba(0, 0, 0, 1);
+}
+
+/* Theme Toggle Button States */
+.theme-toggle[data-theme="light"] .theme-toggle__icon {
+  content: "☀️";
+}
+
+.theme-toggle[data-theme="dark"] .theme-toggle__icon {
+  content: "🌙";
+}
+
+.theme-toggle[data-theme="high-contrast"] .theme-toggle__icon {
+  content: "🎨";
+}
+
+/* Theme Transition */
+* {
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal),
+              border-color var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+/* Theme-Specific Component Adjustments */
+
+/* Dark Theme Adjustments */
+.theme-dark .card {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .subject-card:hover {
+  border-color: var(--color-accent-secondary);
+}
+
+.theme-dark .continue-card {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .weak-area-tile {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .progress-stat {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .mastery-bar {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .heatmap-container {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .achievement-badge {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .recommended-item {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .insight-card {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .problem-card {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .instruction-item {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .philosophy-principle {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .integrity-guidelines {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .process-step {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .roadmap-phase {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .version-details {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .step-block {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .hint {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .check-item {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .solution-panel {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .rubric-table {
+  border-color: var(--color-border-medium);
+}
+
+.theme-dark .reflection-prompt {
+  border-color: var(--color-border-medium);
+}
+
+/* High Contrast Theme Adjustments */
+.theme-high-contrast .card {
+  border-width: 2px;
+}
+
+.theme-high-contrast .subject-card {
+  border-width: 2px;
+}
+
+.theme-high-contrast .continue-card {
+  border-width: 2px;
+}
+
+.theme-high-contrast .weak-area-tile {
+  border-width: 2px;
+}
+
+.theme-high-contrast .progress-stat {
+  border-width: 2px;
+}
+
+.theme-high-contrast .mastery-bar {
+  border-width: 2px;
+}
+
+.theme-high-contrast .heatmap-container {
+  border-width: 2px;
+}
+
+.theme-high-contrast .achievement-badge {
+  border-width: 2px;
+}
+
+.theme-high-contrast .recommended-item {
+  border-width: 2px;
+}
+
+.theme-high-contrast .insight-card {
+  border-width: 2px;
+}
+
+.theme-high-contrast .problem-card {
+  border-width: 2px;
+}
+
+.theme-high-contrast .instruction-item {
+  border-width: 2px;
+}
+
+.theme-high-contrast .philosophy-principle {
+  border-width: 2px;
+}
+
+.theme-high-contrast .integrity-guidelines {
+  border-width: 2px;
+}
+
+.theme-high-contrast .process-step {
+  border-width: 2px;
+}
+
+.theme-high-contrast .roadmap-phase {
+  border-width: 2px;
+}
+
+.theme-high-contrast .version-details {
+  border-width: 2px;
+}
+
+.theme-high-contrast .step-block {
+  border-width: 2px;
+}
+
+.theme-high-contrast .hint {
+  border-width: 2px;
+}
+
+.theme-high-contrast .check-item {
+  border-width: 2px;
+}
+
+.theme-high-contrast .solution-panel {
+  border-width: 2px;
+}
+
+.theme-high-contrast .rubric-table {
+  border-width: 2px;
+}
+
+.theme-high-contrast .reflection-prompt {
+  border-width: 2px;
+}
+
+.theme-high-contrast input,
+.theme-high-contrast textarea,
+.theme-high-contrast select {
+  border-width: 2px;
+}
+
+/* Theme-Specific Focus States */
+.theme-light :focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.theme-dark :focus-visible {
+  outline: 2px solid var(--color-accent-secondary);
+  outline-offset: 2px;
+}
+
+.theme-high-contrast :focus-visible {
+  outline: 3px solid var(--color-accent-primary);
+  outline-offset: 3px;
+}
+
+/* Theme-Specific Hover Effects */
+.theme-light .card:hover,
+.theme-light .subject-card:hover,
+.theme-light .continue-card:hover,
+.theme-light .weak-area-tile:hover,
+.theme-light .progress-stat:hover,
+.theme-light .mastery-bar:hover,
+.theme-light .achievement-badge:hover,
+.theme-light .recommended-item:hover,
+.theme-light .insight-card:hover,
+.theme-light .problem-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.theme-dark .card:hover,
+.theme-dark .subject-card:hover,
+.theme-dark .continue-card:hover,
+.theme-dark .weak-area-tile:hover,
+.theme-dark .progress-stat:hover,
+.theme-dark .mastery-bar:hover,
+.theme-dark .achievement-badge:hover,
+.theme-dark .recommended-item:hover,
+.theme-dark .insight-card:hover,
+.theme-dark .problem-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.theme-high-contrast .card:hover,
+.theme-high-contrast .subject-card:hover,
+.theme-high-contrast .continue-card:hover,
+.theme-high-contrast .weak-area-tile:hover,
+.theme-high-contrast .progress-stat:hover,
+.theme-high-contrast .mastery-bar:hover,
+.theme-high-contrast .achievement-badge:hover,
+.theme-high-contrast .recommended-item:hover,
+.theme-high-contrast .insight-card:hover,
+.theme-high-contrast .problem-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Theme-Specific Button Styles */
+.theme-light .btn--primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+.theme-dark .btn--primary {
+  background-color: var(--color-accent-secondary);
+  color: var(--color-text-inverse);
+}
+
+.theme-high-contrast .btn--primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-accent-primary);
+}
+
+/* Theme-Specific Link Colors */
+.theme-light a {
+  color: var(--color-accent-primary);
+}
+
+.theme-dark a {
+  color: var(--color-accent-secondary);
+}
+
+.theme-high-contrast a {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+}
+
+/* Theme-Specific Form Elements */
+.theme-light input:focus,
+.theme-light textarea:focus,
+.theme-light select:focus {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.theme-dark input:focus,
+.theme-dark textarea:focus,
+.theme-dark select:focus {
+  border-color: var(--color-accent-secondary);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.theme-high-contrast input:focus,
+.theme-high-contrast textarea:focus,
+.theme-high-contrast select:focus {
+  border-color: var(--color-accent-primary);
+  border-width: 3px;
+  box-shadow: none;
+}
+
+/* Theme-Specific Progress Bars */
+.theme-light .progress-bar__fill {
+  background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+}
+
+.theme-dark .progress-bar__fill {
+  background: linear-gradient(90deg, var(--color-accent-secondary), var(--color-accent-tertiary));
+}
+
+.theme-high-contrast .progress-bar__fill {
+  background: var(--color-accent-primary);
+}
+
+/* Theme-Specific Heatmap Colors */
+.theme-light .heatmap-day--intensity-0 { background-color: var(--color-heatmap-0); }
+.theme-light .heatmap-day--intensity-1 { background-color: var(--color-heatmap-1); }
+.theme-light .heatmap-day--intensity-2 { background-color: var(--color-heatmap-2); }
+.theme-light .heatmap-day--intensity-3 { background-color: var(--color-heatmap-3); }
+.theme-light .heatmap-day--intensity-4 { background-color: var(--color-heatmap-4); }
+
+.theme-dark .heatmap-day--intensity-0 { background-color: var(--color-heatmap-0); }
+.theme-dark .heatmap-day--intensity-1 { background-color: var(--color-heatmap-1); }
+.theme-dark .heatmap-day--intensity-2 { background-color: var(--color-heatmap-2); }
+.theme-dark .heatmap-day--intensity-3 { background-color: var(--color-heatmap-3); }
+.theme-dark .heatmap-day--intensity-4 { background-color: var(--color-heatmap-4); }
+
+.theme-high-contrast .heatmap-day--intensity-0 { background-color: var(--color-heatmap-0); }
+.theme-high-contrast .heatmap-day--intensity-1 { background-color: var(--color-heatmap-1); }
+.theme-high-contrast .heatmap-day--intensity-2 { background-color: var(--color-heatmap-2); }
+.theme-high-contrast .heatmap-day--intensity-3 { background-color: var(--color-heatmap-3); }
+.theme-high-contrast .heatmap-day--intensity-4 { background-color: var(--color-heatmap-4); }
+
+/* Theme-Specific Mastery Bar Colors */
+.theme-light .mastery-bar__fill {
+  background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+}
+
+.theme-dark .mastery-bar__fill {
+  background: linear-gradient(90deg, var(--color-accent-secondary), var(--color-accent-tertiary));
+}
+
+.theme-high-contrast .mastery-bar__fill {
+  background: var(--color-accent-primary);
+}
+
+/* Theme-Specific Weak Area Bar Colors */
+.theme-light .weak-area-tile__bar-fill {
+  background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+}
+
+.theme-dark .weak-area-tile__bar-fill {
+  background: linear-gradient(90deg, var(--color-accent-secondary), var(--color-accent-tertiary));
+}
+
+.theme-high-contrast .weak-area-tile__bar-fill {
+  background: var(--color-accent-primary);
+}
+
+/* Theme-Specific Continue Card Progress Bar */
+.theme-light .continue-card .progress-bar__fill {
+  background: var(--color-accent-primary);
+}
+
+.theme-dark .continue-card .progress-bar__fill {
+  background: var(--color-accent-secondary);
+}
+
+.theme-high-contrast .continue-card .progress-bar__fill {
+  background: var(--color-accent-primary);
+}
+
+/* Theme-Specific Print Styles */
+@media print {
+  .theme-light,
+  .theme-dark,
+  .theme-high-contrast {
+    --color-background: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-border-light: #000000;
+    --color-border-medium: #000000;
+    --color-border-dark: #000000;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+  }
+}
+
+/* Theme Transition Classes */
+.theme-transitioning {
+  transition: all var(--transition-slow);
+}
+
+/* Theme-Specific Accessibility Enhancements */
+.theme-high-contrast .nav-link:hover {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+.theme-high-contrast .filter-chip:hover {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+.theme-high-contrast .topic-tab:hover {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+.theme-high-contrast .setting-option:hover {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+/* Theme-Specific Focus Indicators */
+.theme-light .nav-link:focus,
+.theme-light .filter-chip:focus,
+.theme-light .topic-tab:focus,
+.theme-light .setting-option:focus {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.theme-dark .nav-link:focus,
+.theme-dark .filter-chip:focus,
+.theme-dark .topic-tab:focus,
+.theme-dark .setting-option:focus {
+  outline: 2px solid var(--color-accent-secondary);
+  outline-offset: 2px;
+}
+
+.theme-high-contrast .nav-link:focus,
+.theme-high-contrast .filter-chip:focus,
+.theme-high-contrast .topic-tab:focus,
+.theme-high-contrast .setting-option:focus {
+  outline: 3px solid var(--color-accent-primary);
+  outline-offset: 3px;
+}

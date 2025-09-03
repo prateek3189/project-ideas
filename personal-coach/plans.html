@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Coach - Weekly Plans</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">AI Personal Coach</h1>
+                <div class="header-actions">
+                    <div class="date-pill">
+                        <time datetime="2024-01-15">Mon, Jan 15</time>
+                    </div>
+                    <a href="#print" class="print-link" aria-label="Print weekly plan">Print</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Today</a></li>
+                <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+                <li><a href="plans.html" class="nav-link nav-link--active" aria-current="page">Plans</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="library.html" class="nav-link">Library</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-toggle__button" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h2 class="page-title">Weekly Planner</h2>
+                <div class="flex items-center gap-4">
+                    <span class="track-chip track-chip--fitness">Auto-balance</span>
+                    <a href="#print-weekly" class="btn btn--primary btn--small">Print Weekly Plan</a>
+                </div>
+            </div>
+
+            <div class="weekly-grid">
+                <!-- Monday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Mon</div>
+                        <div class="weekly-day__date">15</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">08:00-08:30</div>
+                            <div class="plan-card__title">Morning Stretch</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">10:00-11:30</div>
+                            <div class="plan-card__title">Deep Work Block</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">16:00-16:30</div>
+                            <div class="plan-card__title">Zone-2 Walk</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuesday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Tue</div>
+                        <div class="weekly-day__date">16</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">09:00-09:30</div>
+                            <div class="plan-card__title">1:1 with Sarah</div>
+                            <span class="plan-card__track plan-card__track--leadership">Leadership</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">14:00-15:30</div>
+                            <div class="plan-card__title">Creative Work</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">17:00-17:45</div>
+                            <div class="plan-card__title">Strength Training</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Wed</div>
+                        <div class="weekly-day__date">17</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">10:00-11:30</div>
+                            <div class="plan-card__title">Deep Work Block</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">15:00-15:15</div>
+                            <div class="plan-card__title">Inbox Sweep</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">18:00-18:20</div>
+                            <div class="plan-card__title">HIIT Session</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thursday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Thu</div>
+                        <div class="weekly-day__date">18</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">09:30-10:00</div>
+                            <div class="plan-card__title">1:1 with Mike</div>
+                            <span class="plan-card__track plan-card__track--leadership">Leadership</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">14:00-15:30</div>
+                            <div class="plan-card__title">Creative Work</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">16:00-16:30</div>
+                            <div class="plan-card__title">Recovery Walk</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Fri</div>
+                        <div class="weekly-day__date">19</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">10:00-11:00</div>
+                            <div class="plan-card__title">Team Retro</div>
+                            <span class="plan-card__track plan-card__track--leadership">Leadership</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">14:00-15:30</div>
+                            <div class="plan-card__title">Deep Work Block</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">17:00-17:15</div>
+                            <div class="plan-card__title">SBI Feedback</div>
+                            <span class="plan-card__track plan-card__track--leadership">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saturday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Sat</div>
+                        <div class="weekly-day__date">20</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">09:00-09:30</div>
+                            <div class="plan-card__title">Mobility-8</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">10:00-11:00</div>
+                            <div class="plan-card__title">Week Planning</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sunday -->
+                <div class="weekly-day">
+                    <div class="weekly-day__header">
+                        <div class="weekly-day__name">Sun</div>
+                        <div class="weekly-day__date">21</div>
+                    </div>
+                    <div class="weekly-day__plans">
+                        <div class="plan-card">
+                            <div class="plan-card__time">10:00-10:30</div>
+                            <div class="plan-card__title">Gentle Walk</div>
+                            <span class="plan-card__track plan-card__track--fitness">Fitness</span>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-card__time">15:00-15:30</div>
+                            <div class="plan-card__title">Reflection</div>
+                            <span class="plan-card__track plan-card__track--productivity">Productivity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nudge-banner nudge-banner--info">
+                <p class="nudge-banner__text">
+                    <strong>Plans are guides, not rules.</strong> Adjust without guilt.
+                </p>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p class="footer-text">AI Personal Coach — v0.1</p>
+            <a href="about.html" class="footer-link">About</a>
+        </footer>
+    </div>
+</body>
+</html>

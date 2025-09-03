@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Library</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__link">
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a href="meditate.html" class="sidebar__link">
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a href="breathe.html" class="sidebar__link">
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a href="checkin.html" class="sidebar__link">
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a href="insights.html" class="sidebar__link">
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a
+            href="library.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a href="settings.html" class="sidebar__link">
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Mindfulness Library</h2>
+            <p class="welcome__subtitle">
+              Explore scripts, sounds, and resources
+            </p>
+          </section>
+
+          <section class="favorites">
+            <h3 class="section-title">Your Favorites</h3>
+            <div class="favorites-grid">
+              <div class="favorite-item">
+                <div class="favorite-item__icon">⭐</div>
+                <div class="favorite-item__content">
+                  <h4>Body Scan Meditation</h4>
+                  <p>Your most practiced session</p>
+                </div>
+              </div>
+
+              <div class="favorite-item">
+                <div class="favorite-item__icon">⭐</div>
+                <div class="favorite-item__content">
+                  <h4>Box Breathing</h4>
+                  <p>Your go-to breathing pattern</p>
+                </div>
+              </div>
+
+              <div class="favorite-item">
+                <div class="favorite-item__icon">⭐</div>
+                <div class="favorite-item__content">
+                  <h4>Rain Soundscape</h4>
+                  <p>Perfect for sleep and relaxation</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="meditation-scripts">
+            <h3 class="section-title">Meditation Scripts</h3>
+            <div class="scripts-grid">
+              <div class="script-card">
+                <div class="script-card__header">
+                  <h4>Body Scan Script</h4>
+                  <div class="script-card__meta">
+                    <span class="script-card__duration">10 min</span>
+                    <span class="script-card__category">Relaxation</span>
+                  </div>
+                </div>
+                <p class="script-card__description">
+                  A complete body scan meditation script for deep relaxation and
+                  body awareness.
+                </p>
+                <details class="script-card__content">
+                  <summary>View Full Script</summary>
+                  <div class="script-content">
+                    <h5>Introduction</h5>
+                    <p>
+                      Find a comfortable position, either sitting or lying down.
+                      Close your eyes gently and take three deep breaths,
+                      feeling your body settle into the surface beneath you.
+                    </p>
+
+                    <h5>Starting with the Feet</h5>
+                    <p>
+                      Bring your attention to your feet. Notice any sensations -
+                      warmth, coolness, pressure, or perhaps no particular
+                      sensation at all. Simply observe without trying to change
+                      anything.
+                    </p>
+
+                    <h5>Moving Up the Legs</h5>
+                    <p>
+                      Slowly move your attention up through your legs - calves,
+                      knees, thighs. At each area, pause briefly to notice
+                      what's present.
+                    </p>
+
+                    <h5>Hips and Lower Back</h5>
+                    <p>
+                      Continue upward to your hips and lower back. These areas
+                      often hold tension. See if you can allow any tightness to
+                      soften.
+                    </p>
+
+                    <h5>Abdomen and Chest</h5>
+                    <p>
+                      Move to your abdomen and chest. Notice the gentle rise and
+                      fall of your breath. Feel the rhythm of your breathing.
+                    </p>
+
+                    <h5>Shoulders and Arms</h5>
+                    <p>
+                      Bring awareness to your shoulders and arms. Many people
+                      carry tension here. See if you can release any unnecessary
+                      holding.
+                    </p>
+
+                    <h5>Neck and Head</h5>
+                    <p>
+                      Finally, move to your neck and head. Notice your jaw, your
+                      forehead, the area around your eyes. Allow any tension to
+                      dissolve.
+                    </p>
+
+                    <h5>Complete Awareness</h5>
+                    <p>
+                      Now bring your attention to your entire body as a whole.
+                      Feel the sense of completeness and wholeness.
+                    </p>
+
+                    <h5>Closing</h5>
+                    <p>
+                      Take three more deep breaths, and when you're ready,
+                      gently open your eyes.
+                    </p>
+                  </div>
+                </details>
+                <div class="script-card__actions">
+                  <button class="script-card__favorite">
+                    ⭐ Add to Favorites
+                  </button>
+                  <button class="script-card__print">🖨️ Print Script</button>
+                </div>
+              </div>
+
+              <div class="script-card">
+                <div class="script-card__header">
+                  <h4>Loving-Kindness Script</h4>
+                  <div class="script-card__meta">
+                    <span class="script-card__duration">7 min</span>
+                    <span class="script-card__category">Compassion</span>
+                  </div>
+                </div>
+                <p class="script-card__description">
+                  A heart-opening practice to cultivate compassion for yourself
+                  and others.
+                </p>
+                <details class="script-card__content">
+                  <summary>View Full Script</summary>
+                  <div class="script-content">
+                    <h5>Setting Intention</h5>
+                    <p>
+                      Begin by finding a comfortable seated position. Place your
+                      hands gently on your heart or lap. Take a few deep breaths
+                      to center yourself.
+                    </p>
+
+                    <h5>For Yourself</h5>
+                    <p>
+                      Start by directing loving-kindness toward yourself.
+                      Silently repeat: "May I be happy. May I be healthy. May I
+                      be at peace. May I be free from suffering."
+                    </p>
+
+                    <h5>For Someone You Love</h5>
+                    <p>
+                      Now bring to mind someone you care about deeply. Picture
+                      them clearly and repeat: "May you be happy. May you be
+                      healthy. May you be at peace. May you be free from
+                      suffering."
+                    </p>
+
+                    <h5>For a Neutral Person</h5>
+                    <p>
+                      Think of someone you neither like nor dislike - perhaps a
+                      neighbor or colleague. Wish them well: "May you be happy.
+                      May you be healthy. May you be at peace. May you be free
+                      from suffering."
+                    </p>
+
+                    <h5>For Someone Difficult</h5>
+                    <p>
+                      Now bring to mind someone you find challenging. This is
+                      the heart of the practice. Wish them: "May you be happy.
+                      May you be healthy. May you be at peace. May you be free
+                      from suffering."
+                    </p>
+
+                    <h5>For All Beings</h5>
+                    <p>
+                      Finally, extend this wish to all beings everywhere: "May
+                      all beings be happy. May all beings be healthy. May all
+                      beings be at peace. May all beings be free from
+                      suffering."
+                    </p>
+
+                    <h5>Closing</h5>
+                    <p>
+                      Take a moment to feel the warmth of these wishes in your
+                      heart before gently opening your eyes.
+                    </p>
+                  </div>
+                </details>
+                <div class="script-card__actions">
+                  <button class="script-card__favorite">
+                    ⭐ Add to Favorites
+                  </button>
+                  <button class="script-card__print">🖨️ Print Script</button>
+                </div>
+              </div>
+
+              <div class="script-card">
+                <div class="script-card__header">
+                  <h4>Focus & Concentration</h4>
+                  <div class="script-card__meta">
+                    <span class="script-card__duration">5 min</span>
+                    <span class="script-card__category">Focus</span>
+                  </div>
+                </div>
+                <p class="script-card__description">
+                  A short practice to sharpen concentration and improve mental
+                  clarity.
+                </p>
+                <details class="script-card__content">
+                  <summary>View Full Script</summary>
+                  <div class="script-content">
+                    <h5>Preparation</h5>
+                    <p>
+                      Sit comfortably with your back straight but not rigid.
+                      Rest your hands gently in your lap. Close your eyes or
+                      soften your gaze.
+                    </p>
+
+                    <h5>Breath Focus</h5>
+                    <p>
+                      Bring your attention to your breath. Notice the natural
+                      rhythm of inhaling and exhaling. Don't try to change it,
+                      just observe.
+                    </p>
+
+                    <h5>Counting Breaths</h5>
+                    <p>
+                      Begin counting your breaths. Inhale, count "one." Exhale,
+                      count "two." Continue up to ten, then start over.
+                    </p>
+
+                    <h5>When Mind Wanders</h5>
+                    <p>
+                      When your mind wanders (and it will), gently return to
+                      counting. Don't judge yourself - this is normal. Each
+                      return is a moment of mindfulness.
+                    </p>
+
+                    <h5>Deepening Focus</h5>
+                    <p>
+                      As you continue, try to maintain focus on the counting.
+                      Feel the rhythm becoming more steady and your mind
+                      becoming more clear.
+                    </p>
+
+                    <h5>Closing</h5>
+                    <p>
+                      When you're ready to finish, take three deep breaths and
+                      gently open your eyes.
+                    </p>
+                  </div>
+                </details>
+                <div class="script-card__actions">
+                  <button class="script-card__favorite">
+                    ⭐ Add to Favorites
+                  </button>
+                  <button class="script-card__print">🖨️ Print Script</button>
+                </div>
+              </div>
+
+              <div class="script-card">
+                <div class="script-card__header">
+                  <h4>Sleep Preparation</h4>
+                  <div class="script-card__meta">
+                    <span class="script-card__duration">12 min</span>
+                    <span class="script-card__category">Sleep</span>
+                  </div>
+                </div>
+                <p class="script-card__description">
+                  A gentle wind-down practice to prepare your mind and body for
+                  restful sleep.
+                </p>
+                <details class="script-card__content">
+                  <summary>View Full Script</summary>
+                  <div class="script-content">
+                    <h5>Getting Comfortable</h5>
+                    <p>
+                      Lie down in your bed in your usual sleeping position. Make
+                      sure you're comfortable and won't be disturbed.
+                    </p>
+
+                    <h5>Body Relaxation</h5>
+                    <p>
+                      Starting from your toes, consciously relax each part of
+                      your body. Feel the tension melting away as you move
+                      upward.
+                    </p>
+
+                    <h5>Breath Awareness</h5>
+                    <p>
+                      Focus on your breath, making it slower and deeper. Imagine
+                      each breath carrying away the day's stresses.
+                    </p>
+
+                    <h5>Mental Wind-down</h5>
+                    <p>
+                      Let go of any thoughts about tomorrow or today. Imagine
+                      your mind as a lake, with thoughts as ripples that
+                      gradually settle.
+                    </p>
+
+                    <h5>Visualization</h5>
+                    <p>
+                      Picture yourself in a peaceful place - perhaps a garden or
+                      by the ocean. Feel the calm and safety of this space.
+                    </p>
+
+                    <h5>Drifting Off</h5>
+                    <p>
+                      Allow yourself to drift naturally into sleep. Don't worry
+                      about staying awake - just let go.
+                    </p>
+                  </div>
+                </details>
+                <div class="script-card__actions">
+                  <button class="script-card__favorite">
+                    ⭐ Add to Favorites
+                  </button>
+                  <button class="script-card__print">🖨️ Print Script</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="soundscapes">
+            <h3 class="section-title">Soundscapes & Music</h3>
+            <div class="soundscapes-grid">
+              <div class="soundscape-card">
+                <div class="soundscape-card__icon">🌧️</div>
+                <div class="soundscape-card__content">
+                  <h4>Rain Sounds</h4>
+                  <p>
+                    Gentle rainfall with distant thunder. Perfect for sleep and
+                    deep relaxation.
+                  </p>
+                  <div class="soundscape-card__controls">
+                    <button class="soundscape-card__play">▶️ Play</button>
+                    <button class="soundscape-card__favorite">⭐</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="soundscape-card">
+                <div class="soundscape-card__icon">🌊</div>
+                <div class="soundscape-card__content">
+                  <h4>Ocean Waves</h4>
+                  <p>
+                    Rhythmic ocean waves with seagulls. Ideal for meditation and
+                    stress relief.
+                  </p>
+                  <div class="soundscape-card__controls">
+                    <button class="soundscape-card__play">▶️ Play</button>
+                    <button class="soundscape-card__favorite">⭐</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="soundscape-card">
+                <div class="soundscape-card__icon">🌲</div>
+                <div class="soundscape-card__content">
+                  <h4>Forest Ambience</h4>
+                  <p>
+                    Birdsong, rustling leaves, and gentle wind. Great for focus
+                    and creativity.
+                  </p>
+                  <div class="soundscape-card__controls">
+                    <button class="soundscape-card__play">▶️ Play</button>
+                    <button class="soundscape-card__favorite">⭐</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="soundscape-card">
+                <div class="soundscape-card__icon">🔇</div>
+                <div class="soundscape-card__content">
+                  <h4>White Noise</h4>
+                  <p>
+                    Consistent ambient sound. Excellent for blocking
+                    distractions and improving concentration.
+                  </p>
+                  <div class="soundscape-card__controls">
+                    <button class="soundscape-card__play">▶️ Play</button>
+                    <button class="soundscape-card__favorite">⭐</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="soundscape-card">
+                <div class="soundscape-card__icon">🎵</div>
+                <div class="soundscape-card__content">
+                  <h4>Meditation Music</h4>
+                  <p>
+                    Soft instrumental music with nature sounds. Perfect for
+                    guided practices.
+                  </p>
+                  <div class="soundscape-card__controls">
+                    <button class="soundscape-card__play">▶️ Play</button>
+                    <button class="soundscape-card__favorite">⭐</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="soundscape-card">
+                <div class="soundscape-card__icon">🕰️</div>
+                <div class="soundscape-card__content">
+                  <h4>Singing Bowls</h4>
+                  <p>
+                    Resonating Tibetan singing bowls. Deep, grounding tones for
+                    spiritual practice.
+                  </p>
+                  <div class="soundscape-card__controls">
+                    <button class="soundscape-card__play">▶️ Play</button>
+                    <button class="soundscape-card__favorite">⭐</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="resources">
+            <h3 class="section-title">Additional Resources</h3>
+            <div class="resources-grid">
+              <div class="resource-card">
+                <h4>Breathing Guide</h4>
+                <p>
+                  Learn about different breathing techniques and their benefits
+                  for various situations.
+                </p>
+                <a href="breathe.html" class="resource-card__link"
+                  >Explore Breathing</a
+                >
+              </div>
+
+              <div class="resource-card">
+                <h4>Practice Tips</h4>
+                <p>
+                  Get practical advice on building a consistent mindfulness
+                  practice that fits your life.
+                </p>
+                <a href="#" class="resource-card__link">Read Tips</a>
+              </div>
+
+              <div class="resource-card">
+                <h4>Scientific Research</h4>
+                <p>
+                  Explore the evidence behind mindfulness practices and their
+                  impact on mental health.
+                </p>
+                <a href="#" class="resource-card__link">View Research</a>
+              </div>
+
+              <div class="resource-card">
+                <h4>Community Stories</h4>
+                <p>
+                  Read about how others have integrated mindfulness into their
+                  daily lives.
+                </p>
+                <a href="#" class="resource-card__link">Read Stories</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="library-tips">
+            <h3 class="section-title">Making the Most of Your Library</h3>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <h4>Start with What Resonates</h4>
+                <p>
+                  Choose scripts and sounds that feel right for you. There's no
+                  one-size-fits-all approach to mindfulness.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Experiment and Adapt</h4>
+                <p>
+                  Feel free to modify scripts to better suit your needs. Make
+                  them your own.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Build Your Collection</h4>
+                <p>
+                  Save your favorites and create a personal library that grows
+                  with your practice.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Print for Offline Use</h4>
+                <p>
+                  Download or print scripts for times when you want to practice
+                  without screens.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

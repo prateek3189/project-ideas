@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carpool - Hyperlocal Community</title>
+    <meta
+      name="description"
+      content="Find or offer rides with your neighbors for daily commutes and trips."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search rides..."
+              aria-label="Search rides"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="events.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a href="items.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a
+            href="carpool.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a href="groups.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a href="messages.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a href="profile.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">Carpool</h1>
+          <p class="page-subtitle">
+            Find or offer rides with your neighbors for daily commutes and trips
+          </p>
+        </div>
+
+        <!-- Carpool Safety Alert -->
+        <div class="alert alert--safety">
+          <div class="alert__title">Carpool Safety</div>
+          <div class="alert__content">
+            Post pickup time window and seat count. Share ride details with
+            family. Meet in public places and verify driver identity.
+          </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-layout">
+          <nav class="tab-nav">
+            <a href="#offers" class="tab-nav__item tab-nav__item--active"
+              >Ride Offers</a
+            >
+            <a href="#requests" class="tab-nav__item">Ride Requests</a>
+          </nav>
+
+          <div class="tab-content">
+            <!-- Ride Offers -->
+            <div id="offers" class="tab-content__panel">
+              <!-- Ride Filters -->
+              <div class="feed-filters">
+                <div class="feed-filters__left">
+                  <div class="filter-pills">
+                    <a href="#" class="filter-pill filter-pill--active"
+                      >All Routes</a
+                    >
+                    <a href="#" class="filter-pill">To Office</a>
+                    <a href="#" class="filter-pill">To School</a>
+                    <a href="#" class="filter-pill">To Mall</a>
+                    <a href="#" class="filter-pill">To Airport</a>
+                  </div>
+                </div>
+
+                <div class="feed-filters__right">
+                  <div class="feed-sort">
+                    <label class="feed-sort__label" for="sort-select"
+                      >Sort by:</label
+                    >
+                    <select id="sort-select" class="feed-sort__select">
+                      <option value="time">Departure Time</option>
+                      <option value="near">Nearest</option>
+                      <option value="seats">Available Seats</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rides Grid -->
+              <div class="feed-grid">
+                <!-- Ride 1 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚗</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Maple Apts → Tech Park</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">8:30 AM</span>
+                      <span class="chip chip--distance">2.1 km</span>
+                      <span class="chip chip--default">2 seats</span>
+                      <span class="chip chip--default">Share fuel</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Daily commute to Tech Park. Pickup from Maple Apts lobby.
+                      Mask required, no pets.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">AP</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Amit P.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--driver">Safe Driver</span>
+                            <span class="badge badge--verified"
+                              >✓ Verified</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Join Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Ride 2 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚙</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Block A → City Mall</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">2:00 PM</span>
+                      <span class="chip chip--distance">3.5 km</span>
+                      <span class="chip chip--default">3 seats</span>
+                      <span class="chip chip--default">Free ride</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Weekend shopping trip to City Mall. Pickup at Block A
+                      entrance. Child-friendly car.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">SM</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Sarah M.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--verified"
+                              >✓ Verified</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Join Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Ride 3 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚐</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Gate 2 → Airport</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">6:00 AM</span>
+                      <span class="chip chip--distance">12.3 km</span>
+                      <span class="chip chip--default">4 seats</span>
+                      <span class="chip chip--price">₹200/person</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Early morning airport drop. Pickup at Gate 2. Large
+                      luggage space available.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">VS</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Vikram S.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--driver">Safe Driver</span>
+                            <span class="badge badge--verified"
+                              >✓ Verified</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Join Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Ride 4 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚗</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">
+                      Community Center → Hospital
+                    </h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">10:30 AM</span>
+                      <span class="chip chip--distance">4.2 km</span>
+                      <span class="chip chip--default">2 seats</span>
+                      <span class="chip chip--default">Free ride</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Medical appointment ride. Pickup at Community Center.
+                      Wheelchair accessible vehicle.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">MG</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Maria G.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--helper">Helper</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Join Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Ride 5 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚙</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Block C → School District</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">7:45 AM</span>
+                      <span class="chip chip--distance">1.8 km</span>
+                      <span class="chip chip--default">1 seat</span>
+                      <span class="chip chip--default">Child seat</span>
+                    </div>
+                    <p class="feed-card__description">
+                      School drop-off route. Pickup at Block C. Child safety
+                      seat available. Regular route.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">PN</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Priya N.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--phone">Phone ✓</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Join Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Ride 6 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚗</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Gate 1 → Railway Station</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">5:30 PM</span>
+                      <span class="chip chip--distance">6.7 km</span>
+                      <span class="chip chip--default">3 seats</span>
+                      <span class="chip chip--price">₹150/person</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Evening pickup from railway station. Pickup at Gate 1. AC
+                      car, comfortable ride.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">AS</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Anita S.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--verified"
+                              >✓ Verified</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Join Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Ride Requests -->
+            <div id="requests" class="tab-content__panel" style="display: none">
+              <!-- Request Filters -->
+              <div class="feed-filters">
+                <div class="feed-filters__left">
+                  <div class="filter-pills">
+                    <a href="#" class="filter-pill filter-pill--active"
+                      >All Requests</a
+                    >
+                    <a href="#" class="filter-pill">To Office</a>
+                    <a href="#" class="filter-pill">To School</a>
+                    <a href="#" class="filter-pill">To Mall</a>
+                    <a href="#" class="filter-pill">To Airport</a>
+                  </div>
+                </div>
+
+                <div class="feed-filters__right">
+                  <div class="feed-sort">
+                    <label class="feed-sort__label" for="sort-select-2"
+                      >Sort by:</label
+                    >
+                    <select id="sort-select-2" class="feed-sort__select">
+                      <option value="time">Request Time</option>
+                      <option value="near">Nearest</option>
+                      <option value="urgent">Most Urgent</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Requests Grid -->
+              <div class="feed-grid">
+                <!-- Request 1 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚌</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">School Drop Request</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">7:45 AM</span>
+                      <span class="chip chip--distance">1.5 km</span>
+                      <span class="chip chip--default">1 seat</span>
+                      <span class="chip chip--default">Child seat</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Need ride to Sunshine High School. Child seat available?
+                      Willing to share fuel costs.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">PN</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Priya N.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--phone">Phone ✓</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Offer Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Request 2 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚗</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Airport Pickup Request</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">3:00 PM</span>
+                      <span class="chip chip--distance">12.3 km</span>
+                      <span class="chip chip--default">2 seats</span>
+                      <span class="chip chip--price">₹300/person</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Need pickup from airport. Flight arrives at 2:45 PM.
+                      Willing to pay extra for waiting time.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">RK</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Ravi K.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--verified"
+                              >✓ Verified</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Offer Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Request 3 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚙</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Medical Appointment</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">11:00 AM</span>
+                      <span class="chip chip--distance">4.2 km</span>
+                      <span class="chip chip--default">1 seat</span>
+                      <span class="chip chip--default">Wheelchair access</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Need ride to hospital for medical appointment. Wheelchair
+                      accessible vehicle required.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">GT</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Gita T.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--helper">Helper</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Offer Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Request 4 -->
+                <article class="feed-card feed-card--ride">
+                  <div class="feed-card__image">🚗</div>
+                  <div class="feed-card__content">
+                    <h3 class="feed-card__title">Office Commute</h3>
+                    <div class="feed-card__meta">
+                      <span class="chip chip--time tabular-nums">9:00 AM</span>
+                      <span class="chip chip--distance">2.1 km</span>
+                      <span class="chip chip--default">1 seat</span>
+                      <span class="chip chip--default">Share fuel</span>
+                    </div>
+                    <p class="feed-card__description">
+                      Daily commute to Tech Park. Flexible pickup time. Can
+                      share fuel costs.
+                    </p>
+                    <div class="feed-card__footer">
+                      <div class="profile-chip">
+                        <div class="profile-chip__avatar">NM</div>
+                        <div class="profile-chip__info">
+                          <div class="profile-chip__name">Neha M.</div>
+                          <div class="profile-chip__badges">
+                            <span class="badge badge--verified"
+                              >✓ Verified</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#ride-detail" class="btn btn--sm btn--primary"
+                        >Offer Ride</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ride Detail Modal (Visual Placeholder) -->
+        <details class="detail-layout no-print" style="margin-top: 2rem">
+          <summary
+            style="
+              font-size: 1.2rem;
+              font-weight: 600;
+              margin-bottom: 1rem;
+              cursor: pointer;
+            "
+          >
+            View Ride Detail Example
+          </summary>
+
+          <div class="detail-main">
+            <div class="detail-card">
+              <h2 class="detail-card__title">Maple Apts → Tech Park</h2>
+
+              <div class="map-box">
+                <span class="map-box__pin">📍</span>
+              </div>
+
+              <div class="mt-4">
+                <h3>Ride Details</h3>
+                <p><strong>Departure:</strong> 8:30 AM</p>
+                <p><strong>Route:</strong> Maple Apts → Tech Park</p>
+                <p><strong>Distance:</strong> 2.1 km</p>
+                <p><strong>Available Seats:</strong> 2</p>
+                <p><strong>Cost:</strong> Share fuel costs</p>
+                <p><strong>Pickup Point:</strong> Maple Apts lobby</p>
+              </div>
+
+              <div class="mt-4">
+                <h3>Driver Rules</h3>
+                <ul>
+                  <li>Mask required</li>
+                  <li>No pets allowed</li>
+                  <li>No smoking</li>
+                  <li>Be on time for pickup</li>
+                </ul>
+              </div>
+
+              <div class="mt-4">
+                <h3>Safety Information</h3>
+                <div class="alert alert--safety">
+                  <div class="alert__title">Safety Tips</div>
+                  <div class="alert__content">
+                    <ul>
+                      <li>Share trip details with family</li>
+                      <li>Meet in public places</li>
+                      <li>Verify driver identity</li>
+                      <li>Trust your instincts</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <a href="messages.html" class="message-btn"
+                  >💬 Message Driver</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-sidebar">
+            <div class="detail-card">
+              <h3 class="detail-card__title">Driver Profile</h3>
+              <div class="profile-chip">
+                <div class="profile-chip__avatar">AP</div>
+                <div class="profile-chip__info">
+                  <div class="profile-chip__name">Amit P.</div>
+                  <div class="profile-chip__badges">
+                    <span class="badge badge--driver">Safe Driver</span>
+                    <span class="badge badge--verified">✓ Verified</span>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3">
+                Experienced driver with 5+ years of carpooling. 50+ successful
+                rides completed.
+              </p>
+              <a href="profile.html" class="btn btn--sm btn--secondary mt-3"
+                >View Profile</a
+              >
+            </div>
+
+            <div class="detail-card">
+              <h3 class="detail-card__title">Carpool Safety</h3>
+              <div class="alert alert--safety">
+                <div class="alert__title">Safety Guidelines</div>
+                <div class="alert__content">
+                  <ul>
+                    <li>Share trip with family</li>
+                    <li>Meet in public places</li>
+                    <li>ID check (visual badge)</li>
+                    <li>Cashless payment preferred</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      });
+
+      // Simple tab switching
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabItems = document.querySelectorAll(".tab-nav__item");
+        const tabPanels = document.querySelectorAll(".tab-content__panel");
+
+        tabItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all tabs
+            tabItems.forEach((tab) =>
+              tab.classList.remove("tab-nav__item--active")
+            );
+            tabPanels.forEach((panel) => (panel.style.display = "none"));
+
+            // Add active class to clicked tab
+            this.classList.add("tab-nav__item--active");
+
+            // Show corresponding panel
+            const targetId = this.getAttribute("href").substring(1);
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+              targetPanel.style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

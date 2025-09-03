@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects - AI Homework Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="theme-light">
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">AI Homework Assistant</h1>
+                <div class="header__search">
+                    <input type="search" placeholder="Search subjects, topics..." class="search-input" disabled>
+                    <button class="search-button" disabled>🔍</button>
+                </div>
+                <div class="header__actions">
+                    <button class="profile-chip">
+                        <span class="profile-chip__avatar">👤</span>
+                        <span class="profile-chip__name">Student</span>
+                    </button>
+                    <button class="print-link" onclick="window.print()">🖨️ Print</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="index.html" class="nav-link">📊 Dashboard</a>
+                    </li>
+                    <li class="nav-list__item nav-list__item--active">
+                        <a href="subjects.html" class="nav-link">📚 Subjects</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="progress.html" class="nav-link">📈 Progress</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="settings.html" class="nav-link">⚙️ Settings</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="about.html" class="nav-link">ℹ️ About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__subjects">
+                <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+                <div class="subject-chips">
+                    <span class="subject-chip">Math</span>
+                    <span class="subject-chip">Science</span>
+                    <span class="subject-chip">Literature</span>
+                    <span class="subject-chip">History</span>
+                    <span class="subject-chip">CS</span>
+                </div>
+            </div>
+
+            <div class="sidebar__theme">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="subjects-page">
+                <!-- Page Header -->
+                <header class="page-header">
+                    <h1 class="page-header__title">Choose Your Subject</h1>
+                    <p class="page-header__subtitle">Select a subject to start practicing with guided learning</p>
+                </header>
+
+                <!-- Filter Section -->
+                <section class="filter-section">
+                    <h2 class="section-title">Filter by Grade & Topic</h2>
+                    <div class="filter-chips">
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Grade Level</h3>
+                            <div class="filter-chips__row">
+                                <button class="filter-chip filter-chip--active">6-8</button>
+                                <button class="filter-chip">9-10</button>
+                                <button class="filter-chip">11-12</button>
+                                <button class="filter-chip">College</button>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Topic Tags</h3>
+                            <div class="filter-chips__row">
+                                <button class="filter-chip">Algebra</button>
+                                <button class="filter-chip">Geometry</button>
+                                <button class="filter-chip">Calculus</button>
+                                <button class="filter-chip">Physics</button>
+                                <button class="filter-chip">Chemistry</button>
+                                <button class="filter-chip">Biology</button>
+                                <button class="filter-chip">Writing</button>
+                                <button class="filter-chip">Analysis</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mathematics Section -->
+                <section id="math" class="subject-section">
+                    <h2 class="subject-section__title">Mathematics</h2>
+                    <div class="subject-cards">
+                        <div class="subject-card subject-card--math">
+                            <div class="subject-card__icon">🔢</div>
+                            <h3 class="subject-card__title">Algebra</h3>
+                            <p class="subject-card__description">Linear equations, quadratics, functions, and more</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Linear Equations & Inequalities</li>
+                                <li>Quadratic Functions</li>
+                                <li>Systems of Equations</li>
+                                <li>Polynomials & Factoring</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 2-3 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--math">
+                            <div class="subject-card__icon">📐</div>
+                            <h3 class="subject-card__title">Geometry</h3>
+                            <p class="subject-card__description">Shapes, angles, proofs, and spatial reasoning</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Angles & Lines</li>
+                                <li>Triangles & Polygons</li>
+                                <li>Circles & Area</li>
+                                <li>Coordinate Geometry</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 2-4 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--math">
+                            <div class="subject-card__icon">📊</div>
+                            <h3 class="subject-card__title">Calculus</h3>
+                            <p class="subject-card__description">Limits, derivatives, integrals, and applications</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Limits & Continuity</li>
+                                <li>Derivatives & Applications</li>
+                                <li>Integrals & Area</li>
+                                <li>Series & Sequences</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 4-6 hours</span>
+                                <span class="subject-card__difficulty">Advanced</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Science Section -->
+                <section id="science" class="subject-section">
+                    <h2 class="subject-section__title">Science</h2>
+                    <div class="subject-cards">
+                        <div class="subject-card subject-card--science">
+                            <div class="subject-card__icon">⚗️</div>
+                            <h3 class="subject-card__title">Physics</h3>
+                            <p class="subject-card__description">Motion, forces, energy, and the physical world</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Kinematics & Motion</li>
+                                <li>Forces & Newton's Laws</li>
+                                <li>Energy & Work</li>
+                                <li>Waves & Sound</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 3-4 hours</span>
+                                <span class="subject-card__difficulty">Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--science">
+                            <div class="subject-card__icon">🧪</div>
+                            <h3 class="subject-card__title">Chemistry</h3>
+                            <p class="subject-card__description">Atoms, molecules, reactions, and chemical bonding</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Atomic Structure</li>
+                                <li>Chemical Bonding</li>
+                                <li>Reactions & Equations</li>
+                                <li>Stoichiometry</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 3-5 hours</span>
+                                <span class="subject-card__difficulty">Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--science">
+                            <div class="subject-card__icon">🧬</div>
+                            <h3 class="subject-card__title">Biology</h3>
+                            <p class="subject-card__description">Cells, genetics, evolution, and living systems</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Cell Biology</li>
+                                <li>Genetics & Heredity</li>
+                                <li>Evolution & Diversity</li>
+                                <li>Ecology & Systems</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 2-4 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Literature Section -->
+                <section id="literature" class="subject-section">
+                    <h2 class="subject-section__title">Literature & Writing</h2>
+                    <div class="subject-cards">
+                        <div class="subject-card subject-card--literature">
+                            <div class="subject-card__icon">📖</div>
+                            <h3 class="subject-card__title">Literary Analysis</h3>
+                            <p class="subject-card__description">Understanding themes, characters, and literary devices</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Theme & Symbolism</li>
+                                <li>Character Development</li>
+                                <li>Plot & Structure</li>
+                                <li>Literary Devices</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 2-3 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--literature">
+                            <div class="subject-card__icon">✍️</div>
+                            <h3 class="subject-card__title">Essay Writing</h3>
+                            <p class="subject-card__description">Structure, thesis statements, and argument development</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Thesis Statements</li>
+                                <li>Essay Structure</li>
+                                <li>Evidence & Analysis</li>
+                                <li>Revision & Editing</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 3-4 hours</span>
+                                <span class="subject-card__difficulty">Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--literature">
+                            <div class="subject-card__icon">📝</div>
+                            <h3 class="subject-card__title">Grammar & Style</h3>
+                            <p class="subject-card__description">Language rules, sentence structure, and writing clarity</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Parts of Speech</li>
+                                <li>Sentence Structure</li>
+                                <li>Punctuation Rules</li>
+                                <li>Writing Style</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 2-3 hours</span>
+                                <span class="subject-card__difficulty">Beginner</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- History Section -->
+                <section id="history" class="subject-section">
+                    <h2 class="subject-section__title">History & Social Studies</h2>
+                    <div class="subject-cards">
+                        <div class="subject-card subject-card--history">
+                            <div class="subject-card__icon">🏛️</div>
+                            <h3 class="subject-card__title">World History</h3>
+                            <p class="subject-card__description">Major events, civilizations, and historical patterns</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Ancient Civilizations</li>
+                                <li>Medieval Period</li>
+                                <li>Age of Exploration</li>
+                                <li>Modern Era</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 3-5 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--history">
+                            <div class="subject-card__icon">🇺🇸</div>
+                            <h3 class="subject-card__title">U.S. History</h3>
+                            <p class="subject-card__description">American development, government, and key events</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Colonial Period</li>
+                                <li>Revolution & Constitution</li>
+                                <li>Civil War & Reconstruction</li>
+                                <li>20th Century Events</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 3-4 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--history">
+                            <div class="subject-card__icon">🌍</div>
+                            <h3 class="subject-card__title">Geography</h3>
+                            <p class="subject-card__description">Physical features, human geography, and global systems</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Physical Geography</li>
+                                <li>Human Geography</li>
+                                <li>Political Geography</li>
+                                <li>Environmental Issues</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 2-3 hours</span>
+                                <span class="subject-card__difficulty">Beginner</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Computer Science Section -->
+                <section id="cs" class="subject-section">
+                    <h2 class="subject-section__title">Computer Science</h2>
+                    <div class="subject-cards">
+                        <div class="subject-card subject-card--cs">
+                            <div class="subject-card__icon">💻</div>
+                            <h3 class="subject-card__title">Programming Fundamentals</h3>
+                            <p class="subject-card__description">Basic programming concepts and problem solving</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Variables & Data Types</li>
+                                <li>Control Structures</li>
+                                <li>Functions & Methods</li>
+                                <li>Basic Algorithms</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 4-6 hours</span>
+                                <span class="subject-card__difficulty">Beginner to Intermediate</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--cs">
+                            <div class="subject-card__icon">🔍</div>
+                            <h3 class="subject-card__title">Data Structures</h3>
+                            <p class="subject-card__description">Organizing and managing data efficiently</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Arrays & Lists</li>
+                                <li>Stacks & Queues</li>
+                                <li>Trees & Graphs</li>
+                                <li>Hash Tables</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 5-7 hours</span>
+                                <span class="subject-card__difficulty">Intermediate to Advanced</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+
+                        <div class="subject-card subject-card--cs">
+                            <div class="subject-card__icon">🧮</div>
+                            <h3 class="subject-card__title">Algorithms</h3>
+                            <p class="subject-card__description">Problem-solving strategies and computational thinking</p>
+                            <ul class="subject-card__syllabus">
+                                <li>Search & Sort</li>
+                                <li>Recursion</li>
+                                <li>Dynamic Programming</li>
+                                <li>Complexity Analysis</li>
+                            </ul>
+                            <div class="subject-card__meta">
+                                <span class="subject-card__time">Est. 6-8 hours</span>
+                                <span class="subject-card__difficulty">Advanced</span>
+                            </div>
+                            <a href="workspace.html" class="subject-card__button">Start Practice</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2024 AI Homework Assistant. Built for learning, not cheating.</p>
+                <p>Version 1.0 • <a href="about.html">About</a> • <a href="settings.html">Help</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Builder - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <!-- Page Builder Layout -->
+        <div class="builder">
+          <!-- Catalog Header -->
+          <div class="builder__catalog-header">
+            <h3 class="font-semibold">Widget Catalog</h3>
+            <div class="catalog-search">
+              <input
+                type="search"
+                placeholder="Search widgets..."
+                class="catalog-search__input"
+              />
+            </div>
+          </div>
+
+          <!-- Canvas Header -->
+          <div class="builder__canvas-header">
+            <div class="flex items-center gap-4">
+              <h3 class="font-semibold">Main Dashboard</h3>
+              <div class="breakpoint-selector">
+                <button class="breakpoint-option breakpoint-option--active">
+                  Desktop
+                </button>
+                <button class="breakpoint-option">Tablet</button>
+                <button class="breakpoint-option">Mobile</button>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="button button--ghost">Preview</button>
+              <button class="button button--primary">Publish</button>
+            </div>
+          </div>
+
+          <!-- Properties Header -->
+          <div class="builder__props-header">
+            <h3 class="font-semibold">Properties</h3>
+            <span class="text-sm text-muted">No widget selected</span>
+          </div>
+
+          <!-- Catalog Panel -->
+          <div class="builder__catalog">
+            <div class="catalog-list">
+              <!-- Alerts Table Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Alerts Table</h4>
+                    <p class="widget-card__id">alerts-table@3.2</p>
+                  </div>
+                  <span class="badge badge--approved">Approved</span>
+                </div>
+                <p class="widget-card__description">
+                  Displays active alerts and incidents in a sortable table
+                  format with filtering capabilities.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">SRE</span>
+                  <span class="widget-card__kind">Web Component</span>
+                  <span class="chip">ops</span>
+                  <span class="chip">incidents</span>
+                </div>
+              </div>
+
+              <!-- Revenue Trend Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Revenue Trend</h4>
+                    <p class="widget-card__id">revenue-trend@2.5</p>
+                  </div>
+                  <span class="badge badge--approved">Approved</span>
+                </div>
+                <p class="widget-card__description">
+                  Interactive chart showing revenue trends over time with
+                  drill-down capabilities.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">Finance</span>
+                  <span class="widget-card__kind">Module Federation</span>
+                  <span class="chip">charts</span>
+                  <span class="chip">finance</span>
+                </div>
+              </div>
+
+              <!-- Deploy Panel Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Deploy Panel</h4>
+                    <p class="widget-card__id">deploy-panel@1.8</p>
+                  </div>
+                  <span class="badge badge--deprecated">Deprecated</span>
+                </div>
+                <p class="widget-card__description">
+                  Shows deployment status and recent releases. Will be removed
+                  in v2.0.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">DevEx</span>
+                  <span class="widget-card__kind">iframe</span>
+                  <span class="chip">ci/cd</span>
+                  <span class="chip">deployments</span>
+                </div>
+              </div>
+
+              <!-- Tickets Queue Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Tickets Queue</h4>
+                    <p class="widget-card__id">tickets-queue@1.4</p>
+                  </div>
+                  <span class="badge badge--approved">Approved</span>
+                </div>
+                <p class="widget-card__description">
+                  Real-time ticket queue with priority sorting and assignment
+                  capabilities.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">Support</span>
+                  <span class="widget-card__kind">Web Component</span>
+                  <span class="chip">support</span>
+                  <span class="chip">tickets</span>
+                </div>
+              </div>
+
+              <!-- Feature Flags Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Feature Flags</h4>
+                    <p class="widget-card__id">feature-flags@0.9</p>
+                  </div>
+                  <span class="badge badge--draft">Draft</span>
+                </div>
+                <p class="widget-card__description">
+                  Manage and monitor feature flags across environments with
+                  toggle controls.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">Platform</span>
+                  <span class="widget-card__kind">Module Federation</span>
+                  <span class="chip">feature-flags</span>
+                  <span class="chip">config</span>
+                </div>
+              </div>
+
+              <!-- Latency Spark Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Latency Spark</h4>
+                    <p class="widget-card__id">latency-spark@1.1</p>
+                  </div>
+                  <span class="badge badge--approved">Approved</span>
+                </div>
+                <p class="widget-card__description">
+                  Compact latency visualization with sparkline charts and
+                  threshold indicators.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">SRE</span>
+                  <span class="widget-card__kind">Web Component</span>
+                  <span class="chip">monitoring</span>
+                  <span class="chip">latency</span>
+                </div>
+              </div>
+
+              <!-- Uptime Gauge Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">Uptime Gauge</h4>
+                    <p class="widget-card__id">uptime-gauge@2.0</p>
+                  </div>
+                  <span class="badge badge--approved">Approved</span>
+                </div>
+                <p class="widget-card__description">
+                  Circular gauge showing system uptime percentage with
+                  color-coded status indicators.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">SRE</span>
+                  <span class="widget-card__kind">Web Component</span>
+                  <span class="chip">monitoring</span>
+                  <span class="chip">uptime</span>
+                </div>
+              </div>
+
+              <!-- On-Call Rota Widget -->
+              <div class="widget-card">
+                <div class="widget-card__header">
+                  <div>
+                    <h4 class="widget-card__title">On-Call Rota</h4>
+                    <p class="widget-card__id">oncall-rota@1.3</p>
+                  </div>
+                  <span class="badge badge--approved">Approved</span>
+                </div>
+                <p class="widget-card__description">
+                  Current and upcoming on-call schedule with contact information
+                  and escalation paths.
+                </p>
+                <div class="widget-card__meta">
+                  <span class="chip chip--owner">SRE</span>
+                  <span class="widget-card__kind">Web Component</span>
+                  <span class="chip">oncall</span>
+                  <span class="chip">schedule</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Panel -->
+          <div class="builder__canvas">
+            <div class="canvas canvas--active">
+              <!-- Alerts Table Tile -->
+              <div
+                class="tile tile--selected"
+                style="top: 20px; left: 20px; width: 400px; height: 300px"
+              >
+                <div class="tile__handle"></div>
+                <div class="tile__header">
+                  <h4 class="tile__title">Alerts Table</h4>
+                  <span class="badge badge--version">v3.2</span>
+                </div>
+                <div class="tile__content">
+                  <div class="text-sm text-muted">
+                    Active alerts and incidents
+                  </div>
+                  <div class="mt-2">
+                    <div class="flex justify-between text-xs">
+                      <span>Critical: 2</span>
+                      <span>Warning: 5</span>
+                      <span>Info: 12</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="tile__resize-handle"></div>
+              </div>
+
+              <!-- Incidents Map Tile -->
+              <div
+                class="tile"
+                style="top: 20px; left: 440px; width: 400px; height: 300px"
+              >
+                <div class="tile__handle"></div>
+                <div class="tile__header">
+                  <h4 class="tile__title">Incidents Map</h4>
+                  <span class="badge badge--version">v2.1</span>
+                </div>
+                <div class="tile__content">
+                  <div class="text-sm text-muted">
+                    Geographic incident distribution
+                  </div>
+                  <div class="mt-2 text-xs">
+                    <div>US-East: 3 incidents</div>
+                    <div>EU-West: 1 incident</div>
+                    <div>AP-South: 0 incidents</div>
+                  </div>
+                </div>
+                <div class="tile__resize-handle"></div>
+              </div>
+
+              <!-- Latency Spark Tile -->
+              <div
+                class="tile"
+                style="top: 340px; left: 20px; width: 200px; height: 150px"
+              >
+                <div class="tile__handle"></div>
+                <div class="tile__header">
+                  <h4 class="tile__title">Latency Spark</h4>
+                  <span class="badge badge--version">v1.1</span>
+                </div>
+                <div class="tile__content">
+                  <div class="text-sm text-muted">API Response Time</div>
+                  <div class="mt-1 text-lg font-semibold text-success">
+                    132ms
+                  </div>
+                </div>
+                <div class="tile__resize-handle"></div>
+              </div>
+
+              <!-- Uptime Gauge Tile -->
+              <div
+                class="tile"
+                style="top: 340px; left: 240px; width: 200px; height: 150px"
+              >
+                <div class="tile__handle"></div>
+                <div class="tile__header">
+                  <h4 class="tile__title">Uptime Gauge</h4>
+                  <span class="badge badge--version">v2.0</span>
+                </div>
+                <div class="tile__content">
+                  <div class="text-sm text-muted">System Uptime</div>
+                  <div class="mt-1 text-lg font-semibold text-success">
+                    99.9%
+                  </div>
+                </div>
+                <div class="tile__resize-handle"></div>
+              </div>
+
+              <!-- On-Call Rota Tile -->
+              <div
+                class="tile"
+                style="top: 340px; left: 460px; width: 380px; height: 150px"
+              >
+                <div class="tile__handle"></div>
+                <div class="tile__header">
+                  <h4 class="tile__title">On-Call Rota</h4>
+                  <span class="badge badge--version">v1.3</span>
+                </div>
+                <div class="tile__content">
+                  <div class="text-sm text-muted">
+                    Current on-call: Sarah Chen
+                  </div>
+                  <div class="mt-1 text-xs">
+                    <div>Next: Alex Thompson (in 2h)</div>
+                    <div>Escalation: Mike Rodriguez</div>
+                  </div>
+                </div>
+                <div class="tile__resize-handle"></div>
+              </div>
+
+              <!-- Empty State Hint -->
+              <div
+                class="absolute bottom-4 right-4 text-sm text-muted bg-surface p-3 rounded-lg border"
+              >
+                💡 Drag widgets from the <strong>Catalog</strong> to start. Use
+                handles to <strong>resize</strong> and <strong>snap</strong> to
+                the grid.
+              </div>
+            </div>
+          </div>
+
+          <!-- Properties Panel -->
+          <div class="builder__props">
+            <div class="props-panel">
+              <div class="props-panel__header">
+                <h4 class="props-panel__title">Widget Configuration</h4>
+              </div>
+              <div class="props-panel__content">
+                <div class="props-section">
+                  <h5 class="props-section__title">Basic Settings</h5>
+                  <div class="space-y-3">
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Title</label
+                      >
+                      <input type="text" value="Alerts Table" class="w-full" />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Data Source</label
+                      >
+                      <select class="w-full">
+                        <option>alerts-api</option>
+                        <option>incidents-api</option>
+                        <option>monitoring-api</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Refresh Interval</label
+                      >
+                      <select class="w-full">
+                        <option>30 seconds</option>
+                        <option>1 minute</option>
+                        <option>5 minutes</option>
+                        <option>15 minutes</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="props-section">
+                  <h5 class="props-section__title">Props</h5>
+                  <table class="props-table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>maxAlerts</td>
+                        <td>50</td>
+                      </tr>
+                      <tr>
+                        <td>showCritical</td>
+                        <td>true</td>
+                      </tr>
+                      <tr>
+                        <td>autoRefresh</td>
+                        <td>true</td>
+                      </tr>
+                      <tr>
+                        <td>sortBy</td>
+                        <td>timestamp</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="props-section">
+                  <h5 class="props-section__title">Data Bindings</h5>
+                  <ul class="bindings-list">
+                    <li class="bindings-item">
+                      <span class="bindings-item__from">incidents-map</span>
+                      <span class="bindings-item__arrow">→</span>
+                      <span class="bindings-item__to">selectedIncident</span>
+                    </li>
+                    <li class="bindings-item">
+                      <span class="bindings-item__from">latency-spark</span>
+                      <span class="bindings-item__arrow">→</span>
+                      <span class="bindings-item__to">threshold</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="props-section">
+                  <h5 class="props-section__title">Visibility Rules</h5>
+                  <div class="rules-list">
+                    <span class="rules-chip">Role: Admin</span>
+                    <span class="rules-chip">Role: SRE</span>
+                    <span class="rules-chip">Environment: Production</span>
+                  </div>
+                </div>
+
+                <div class="props-section">
+                  <h5 class="props-section__title">Feature Flags</h5>
+                  <div class="space-y-2">
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" checked />
+                      <span class="text-sm">Enable real-time updates</span>
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" />
+                      <span class="text-sm">Show historical data</span>
+                    </label>
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" checked />
+                      <span class="text-sm">Auto-expand critical alerts</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

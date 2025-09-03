@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Coding Agent - About</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__title">
+          <span class="shell__icon">🤖</span>
+          Smart Coding Agent
+        </h1>
+        <div class="shell__controls">
+          <div class="repo-selector">
+            <span class="repo-selector__name">my-project</span>
+            <span class="badge badge--branch">main</span>
+          </div>
+          <button class="btn btn--ghost" aria-label="Print about page">
+            <span class="btn__icon">🖨️</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="nav__icon">💻</span>
+              Workspace
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="diff.html" class="nav__link">
+              <span class="nav__icon">📊</span>
+              Diff Review
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="tests.html" class="nav__link">
+              <span class="nav__icon">🧪</span>
+              Tests
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="perf.html" class="nav__link">
+              <span class="nav__icon">⚡</span>
+              Performance
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="playbooks.html" class="nav__link">
+              <span class="nav__icon">📚</span>
+              Playbooks
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="nav__icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="about.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="nav__icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+
+        <div class="project-tree">
+          <h3 class="project-tree__title">About Sections</h3>
+          <ul class="project-tree__list">
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🎯</span>
+              Capabilities
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">⚠️</span>
+              Limitations
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🔒</span>
+              Privacy
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📋</span>
+              Disclaimers
+            </li>
+          </ul>
+        </div>
+
+        <div class="theme-toggle">
+          <button class="btn btn--ghost" aria-label="Toggle theme">
+            <span class="btn__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main id="main-content" class="shell__main">
+        <!-- About Page -->
+        <div class="about-page">
+          <!-- Header -->
+          <div class="about-page__header">
+            <div class="about-page__title">
+              <h1>About Smart Coding Agent</h1>
+              <div class="about-page__meta">
+                <span class="badge badge--info">v1.0.0</span>
+                <span class="badge badge--success">Static Prototype</span>
+                <span class="badge badge--secondary">HTML + CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Introduction -->
+          <div class="about-section">
+            <h2>What is Smart Coding Agent?</h2>
+            <p>
+              Smart Coding Agent is a developer assistant prototype designed to
+              help debug, write, and optimize code live. This v1 prototype is
+              built with <strong>static HTML and CSS only</strong> - no
+              JavaScript, no real execution, no language servers, or repository
+              access. All "AI" functionality is represented through visual
+              placeholders that can be wired up later in Cursor or other
+              development environments.
+            </p>
+            <p>
+              The goal is to provide a <strong>single workspace</strong> that
+              blends code view, chat, actions (fix/optimize/test), and diff
+              review, making suggestions traceable with clear reasoning, risk
+              assessment, and implementation details.
+            </p>
+          </div>
+
+          <!-- Capabilities -->
+          <div class="about-section">
+            <h2>Capabilities</h2>
+            <div class="capabilities-grid">
+              <div class="capability-card">
+                <div class="capability-card__icon">🐛</div>
+                <h3>Debug Assistance</h3>
+                <ul>
+                  <li>Stack trace analysis and root cause identification</li>
+                  <li>Minimal reproduction case generation</li>
+                  <li>Defensive programming suggestions</li>
+                  <li>Memory leak detection patterns</li>
+                </ul>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-card__icon">⚡</div>
+                <h3>Performance Optimization</h3>
+                <ul>
+                  <li>Hotspot identification and analysis</li>
+                  <li>Performance budget monitoring</li>
+                  <li>Algorithmic optimization suggestions</li>
+                  <li>Before/after performance comparisons</li>
+                </ul>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-card__icon">🧪</div>
+                <h3>Test Generation</h3>
+                <ul>
+                  <li>Comprehensive test case suggestions</li>
+                  <li>Coverage analysis and reporting</li>
+                  <li>Test scaffold templates</li>
+                  <li>Flaky test detection heuristics</li>
+                </ul>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-card__icon">📊</div>
+                <h3>Code Review</h3>
+                <ul>
+                  <li>Unified and split diff views</li>
+                  <li>Risk assessment and impact analysis</li>
+                  <li>Change summary and statistics</li>
+                  <li>Print-friendly patch reports</li>
+                </ul>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-card__icon">📚</div>
+                <h3>Development Playbooks</h3>
+                <ul>
+                  <li>Systematic debugging workflows</li>
+                  <li>Optimization methodologies</li>
+                  <li>Testing best practices</li>
+                  <li>Safe deployment strategies</li>
+                </ul>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-card__icon">🎨</div>
+                <h3>Accessibility & UX</h3>
+                <ul>
+                  <li>Light/dark/high-contrast themes</li>
+                  <li>Keyboard navigation support</li>
+                  <li>Screen reader compatibility</li>
+                  <li>Print-friendly layouts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Limitations -->
+          <div class="about-section">
+            <h2>Current Limitations (V1 Prototype)</h2>
+            <div class="limitations-list">
+              <div class="limitation-item">
+                <div class="limitation-item__icon">🚫</div>
+                <div class="limitation-item__content">
+                  <h3>No JavaScript Execution</h3>
+                  <p>
+                    This is a static prototype. No real code execution, builds,
+                    terminals, or language servers are integrated.
+                  </p>
+                </div>
+              </div>
+
+              <div class="limitation-item">
+                <div class="limitation-item__icon">🚫</div>
+                <div class="limitation-item__content">
+                  <h3>No Repository Access</h3>
+                  <p>
+                    Cannot read from or write to actual code repositories. All
+                    file trees and content are static examples.
+                  </p>
+                </div>
+              </div>
+
+              <div class="limitation-item">
+                <div class="limitation-item__icon">🚫</div>
+                <div class="limitation-item__content">
+                  <h3>No Real AI Integration</h3>
+                  <p>
+                    All AI responses, suggestions, and analysis are static
+                    placeholders. No actual LLM integration.
+                  </p>
+                </div>
+              </div>
+
+              <div class="limitation-item">
+                <div class="limitation-item__icon">🚫</div>
+                <div class="limitation-item__content">
+                  <h3>No Live Data</h3>
+                  <p>
+                    Performance metrics, test results, and coverage data are all
+                    static examples for demonstration purposes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="limitation-item">
+                <div class="limitation-item__icon">🚫</div>
+                <div class="limitation-item__content">
+                  <h3>No Interactive Features</h3>
+                  <p>
+                    Buttons, forms, and interactive elements are visual only. No
+                    actual functionality is implemented.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy & Security -->
+          <div class="about-section">
+            <h2>Privacy & Security</h2>
+            <div class="privacy-grid">
+              <div class="privacy-card">
+                <h3>🔒 Data Handling</h3>
+                <p>
+                  This prototype processes no real data. All examples are static
+                  and fictional. In a real implementation, you would control
+                  where your code and data is processed.
+                </p>
+              </div>
+
+              <div class="privacy-card">
+                <h3>🏠 Local Processing</h3>
+                <p>
+                  The design emphasizes local processing capabilities where
+                  possible, with clear options for users to choose their
+                  preferred data handling approach.
+                </p>
+              </div>
+
+              <div class="privacy-card">
+                <h3>🔍 Transparency</h3>
+                <p>
+                  All AI suggestions include reasoning, risk assessment, and
+                  impact analysis to help you make informed decisions about code
+                  changes.
+                </p>
+              </div>
+
+              <div class="privacy-card">
+                <h3>⚙️ User Control</h3>
+                <p>
+                  Comprehensive settings allow you to configure privacy
+                  preferences, data handling, and which features to enable or
+                  disable.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disclaimers -->
+          <div class="about-section">
+            <h2>Important Disclaimers</h2>
+            <div class="disclaimers">
+              <div class="disclaimer-item">
+                <h3>⚠️ Prototype Only</h3>
+                <p>
+                  This is a <strong>static HTML/CSS prototype</strong> for
+                  demonstration purposes only. It does not provide actual AI
+                  assistance, code analysis, or development tools.
+                </p>
+              </div>
+
+              <div class="disclaimer-item">
+                <h3>🚫 No Warranty</h3>
+                <p>
+                  This prototype is provided "as is" without any warranty. It is
+                  intended for design exploration and should not be used for
+                  actual development work.
+                </p>
+              </div>
+
+              <div class="disclaimer-item">
+                <h3>🔮 Future Implementation</h3>
+                <p>
+                  This prototype serves as a blueprint for potential future
+                  implementations. Actual functionality would require
+                  significant additional development including AI integration,
+                  repository access, and real-time code analysis.
+                </p>
+              </div>
+
+              <div class="disclaimer-item">
+                <h3>📋 Use at Your Own Risk</h3>
+                <p>
+                  Any code suggestions, optimizations, or changes shown in this
+                  prototype are fictional examples and should not be applied to
+                  real projects without proper review and testing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Details -->
+          <div class="about-section">
+            <h2>Technical Implementation</h2>
+            <div class="tech-details">
+              <div class="tech-section">
+                <h3>Architecture</h3>
+                <ul>
+                  <li>
+                    <strong>Frontend:</strong> Pure HTML5 + CSS3 (no JavaScript)
+                  </li>
+                  <li>
+                    <strong>Styling:</strong> Custom CSS with design tokens and
+                    BEM methodology
+                  </li>
+                  <li>
+                    <strong>Layout:</strong> CSS Grid and Flexbox for responsive
+                    design
+                  </li>
+                  <li>
+                    <strong>Themes:</strong> CSS custom properties for
+                    light/dark/high-contrast modes
+                  </li>
+                  <li>
+                    <strong>Accessibility:</strong> Semantic HTML, ARIA labels,
+                    keyboard navigation
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tech-section">
+                <h3>Design System</h3>
+                <ul>
+                  <li>
+                    <strong>Colors:</strong> Semantic color tokens with theme
+                    variants
+                  </li>
+                  <li>
+                    <strong>Typography:</strong> System font stack with
+                    monospace for code
+                  </li>
+                  <li>
+                    <strong>Spacing:</strong> Consistent 4px-based spacing scale
+                  </li>
+                  <li>
+                    <strong>Components:</strong> Reusable UI components with
+                    consistent styling
+                  </li>
+                  <li>
+                    <strong>Print:</strong> Optimized print styles for reports
+                    and diffs
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tech-section">
+                <h3>Browser Support</h3>
+                <ul>
+                  <li>
+                    <strong>Modern Browsers:</strong> Chrome 90+, Firefox 88+,
+                    Safari 14+, Edge 90+
+                  </li>
+                  <li>
+                    <strong>Features Used:</strong> CSS Grid, Flexbox, Custom
+                    Properties, CSS Transitions
+                  </li>
+                  <li>
+                    <strong>Fallbacks:</strong> Graceful degradation for older
+                    browsers
+                  </li>
+                  <li>
+                    <strong>Mobile:</strong> Responsive design for tablets and
+                    mobile devices
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="about-footer">
+            <p>
+              <strong>Smart Coding Agent v1.0.0</strong> - A static HTML/CSS
+              prototype for developer assistance tools.
+            </p>
+            <p>
+              Built with ❤️ for the developer community. This prototype
+              demonstrates the potential for AI-assisted development workflows
+              while maintaining user control and transparency.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="shell__footer">
+      <div class="status-bar">
+        <div class="status-bar__left">
+          <span class="status-bar__model">GPT-4</span>
+          <span class="status-bar__tokens">~0.8k tokens</span>
+        </div>
+        <div class="status-bar__right">
+          <span class="status-bar__latency">—</span>
+          <span class="status-bar__git">main*</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

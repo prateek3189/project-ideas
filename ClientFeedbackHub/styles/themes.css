@@ -1,0 +1,261 @@
+/* Themes - Client Feedback Hub */
+
+/* Theme Toggle */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-surface);
+  border-radius: 50%;
+  transition: transform var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background-color: var(--color-primary);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(28px);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .header {
+  background-color: var(--color-surface);
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: var(--color-surface);
+  border-right-color: var(--color-border);
+}
+
+[data-theme="dark"] .footer {
+  background-color: var(--color-surface);
+  border-top-color: var(--color-border);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .feedback-card,
+[data-theme="dark"] .kpi-tile {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .kanban__column {
+  background-color: var(--color-neutral-light);
+}
+
+[data-theme="dark"] .kanban__item {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .matrix {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .matrix__cell {
+  background-color: var(--color-neutral-light);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .filter-bar {
+  background-color: var(--color-neutral-light);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .header__search-input {
+  background-color: var(--color-neutral-light);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .header__search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  color-scheme: light;
+}
+
+[data-theme="high-contrast"] .btn--primary {
+  background-color: #0000ff;
+  border-color: #0000ff;
+  color: #ffffff;
+}
+
+[data-theme="high-contrast"] .btn--primary:hover:not(:disabled) {
+  background-color: #000080;
+  border-color: #000080;
+}
+
+[data-theme="high-contrast"] .btn--secondary {
+  background-color: #ffffff;
+  border-color: #000000;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .btn--secondary:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+[data-theme="high-contrast"] .badge--sentiment-pos {
+  background-color: #ffffff;
+  color: #008000;
+  border: 2px solid #008000;
+}
+
+[data-theme="high-contrast"] .badge--sentiment-neg {
+  background-color: #ffffff;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+}
+
+[data-theme="high-contrast"] .badge--priority-0 {
+  background-color: #ffffff;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+}
+
+[data-theme="high-contrast"] .badge--priority-1 {
+  background-color: #ffffff;
+  color: #ff8c00;
+  border: 2px solid #ff8c00;
+}
+
+[data-theme="high-contrast"] .card,
+[data-theme="high-contrast"] .feedback-card,
+[data-theme="high-contrast"] .kpi-tile {
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .sidebar__link--active {
+  background-color: #0000ff;
+  color: #ffffff;
+  border-right-color: #0000ff;
+}
+
+[data-theme="high-contrast"] .chip--tag {
+  background-color: #ffffff;
+  color: #0000ff;
+  border: 2px solid #0000ff;
+}
+
+[data-theme="high-contrast"] .chip--theme {
+  background-color: #ffffff;
+  color: #0000ff;
+  border: 2px solid #0000ff;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle::before {
+    transition: none;
+  }
+
+  .card:hover,
+  .feedback-card:hover,
+  .kpi-tile:hover {
+    transform: none;
+  }
+
+  .kanban__item:hover {
+    transform: none;
+  }
+
+  .matrix__dot:hover {
+    transform: none;
+  }
+}
+
+/* Focus Styles for All Themes */
+.btn:focus-visible,
+.chip:focus-visible,
+.feedback-card:focus-visible,
+.kanban__item:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+[data-theme="high-contrast"] .btn:focus-visible,
+[data-theme="high-contrast"] .chip:focus-visible,
+[data-theme="high-contrast"] .feedback-card:focus-visible,
+[data-theme="high-contrast"] .kanban__item:focus-visible {
+  outline: 3px solid #0000ff;
+  outline-offset: 2px;
+}
+
+/* Theme Transition */
+* {
+  transition: background-color var(--transition-fast),
+    border-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Skip theme transition for performance-critical elements */
+.theme-toggle,
+.theme-toggle::before,
+.chart__bar,
+.meter__fill {
+  transition: none;
+}
+
+/* Theme-specific chart colors */
+[data-theme="dark"] .chart__bar {
+  background-color: var(--color-primary);
+}
+
+[data-theme="dark"] .chart__bar--positive {
+  background-color: var(--color-positive);
+}
+
+[data-theme="dark"] .chart__bar--negative {
+  background-color: var(--color-negative);
+}
+
+[data-theme="dark"] .chart__bar--neutral {
+  background-color: var(--color-neutral);
+}
+
+[data-theme="high-contrast"] .chart__bar {
+  background-color: #0000ff;
+}
+
+[data-theme="high-contrast"] .chart__bar--positive {
+  background-color: #008000;
+}
+
+[data-theme="high-contrast"] .chart__bar--negative {
+  background-color: #ff0000;
+}
+
+[data-theme="high-contrast"] .chart__bar--neutral {
+  background-color: #000000;
+}

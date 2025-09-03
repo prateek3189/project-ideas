@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insights - Client Feedback Hub</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">CF</div>
+          <h1 class="header__title">Client Feedback Hub</h1>
+          <span class="header__environment">v0.1</span>
+        </div>
+        <div class="header__actions">
+          <div class="header__search">
+            <svg
+              class="header__search-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search feedback, tags, themes..."
+              aria-label="Search"
+            />
+          </div>
+          <a href="#" class="header__print" onclick="window.print()">Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__item">
+            <a href="index.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="inbox.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Inbox
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="explorer.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Explorer
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="themes.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                ></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              Themes & Tags
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="insights.html" class="sidebar__link sidebar__link--active">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              Insights
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="surveys.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4m0-7v7m0-7h10a2 2 0 0 1 2 2v3c0 1.1-.9 2-2 2H9m0-7V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"
+                ></path>
+              </svg>
+              Surveys
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="roadmap.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 3v18h18"></path>
+                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+              </svg>
+              Roadmap
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="reports.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10,9 9,9 8,9"></polyline>
+              </svg>
+              Reports
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="settings.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div
+          class="sidebar__theme-toggle"
+          onclick="toggleTheme()"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="20"
+            height="20"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Insights</h1>
+            <p class="text-muted">
+              Analytics, trends, and data-driven insights from feedback
+            </p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--secondary">Export Data</button>
+            <button class="btn btn--primary">Generate Report</button>
+          </div>
+        </div>
+
+        <!-- Helper Text -->
+        <div class="alert alert--info">
+          <strong
+            >Priority uses RICE (copy): Reach × Impact × Confidence ÷
+            Effort.</strong
+          >
+          Use the impact-effort matrix below to visualize feature priorities.
+        </div>
+
+        <!-- KPI Tiles -->
+        <div class="dashboard-grid">
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">+15%</div>
+            <div class="kpi-tile__label">Volume Δ</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              vs last month
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">+41</div>
+            <div class="kpi-tile__label">NPS</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +2 vs last month
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">0.62</div>
+            <div class="kpi-tile__label">Neg:Pos Ratio</div>
+            <div class="kpi-tile__change kpi-tile__change--negative">
+              +0.05 vs last month
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">78%</div>
+            <div class="kpi-tile__label">Coverage</div>
+            <div class="kpi-tile__change kpi-tile__change--negative">
+              -3% vs last week
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">23</div>
+            <div class="kpi-tile__label">Duplicates Merged</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              This week
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Analytics</h2>
+          <div class="grid grid--2">
+            <div class="chart">
+              <div class="chart__header">
+                <h3 class="chart__title">Volume by Product Area</h3>
+                <p class="chart__subtitle">Last 30 days</p>
+              </div>
+              <div class="chart__content">
+                <div
+                  class="chart__bar"
+                  style="height: 60%"
+                  title="Checkout: 45"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 80%"
+                  title="Analytics: 62"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 40%"
+                  title="UI: 28"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 70%"
+                  title="Performance: 52"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 55%"
+                  title="Mobile: 38"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 35%"
+                  title="Integrations: 24"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 90%"
+                  title="Onboarding: 68"
+                ></div>
+              </div>
+            </div>
+            <div class="chart">
+              <div class="chart__header">
+                <h3 class="chart__title">Sentiment Bands</h3>
+                <p class="chart__subtitle">Weekly sentiment distribution</p>
+              </div>
+              <div class="chart__content">
+                <div
+                  class="chart__bar chart__bar--positive"
+                  style="height: 45%"
+                  title="Positive: 45%"
+                ></div>
+                <div
+                  class="chart__bar chart__bar--neutral"
+                  style="height: 30%"
+                  title="Neutral: 30%"
+                ></div>
+                <div
+                  class="chart__bar chart__bar--negative"
+                  style="height: 25%"
+                  title="Negative: 25%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact-Effort Matrix -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Impact vs Effort Matrix</h2>
+          <div class="card">
+            <div class="card__body">
+              <div class="matrix">
+                <!-- Matrix Labels -->
+                <div class="matrix__cell" style="grid-column: 1; grid-row: 1">
+                  <div class="text-xs text-center">
+                    <div class="font-medium">High Impact</div>
+                    <div class="text-muted">Low Effort</div>
+                  </div>
+                </div>
+                <div class="matrix__cell" style="grid-column: 2; grid-row: 1">
+                  <div class="text-xs text-center">
+                    <div class="font-medium">High Impact</div>
+                    <div class="text-muted">High Effort</div>
+                  </div>
+                </div>
+                <div class="matrix__cell" style="grid-column: 3; grid-row: 1">
+                  <div class="text-xs text-center">
+                    <div class="font-medium">Low Impact</div>
+                    <div class="text-muted">High Effort</div>
+                  </div>
+                </div>
+                <div class="matrix__cell" style="grid-column: 4; grid-row: 1">
+                  <div class="text-xs text-center">
+                    <div class="font-medium">Low Impact</div>
+                    <div class="text-muted">Low Effort</div>
+                  </div>
+                </div>
+
+                <!-- Matrix Dots -->
+                <div
+                  class="matrix__dot matrix__dot--high-impact"
+                  style="grid-column: 1; grid-row: 2"
+                  title="Dark Mode - High Impact, Low Effort"
+                ></div>
+                <div
+                  class="matrix__dot matrix__dot--high-impact"
+                  style="grid-column: 1; grid-row: 3"
+                  title="Tooltip Improvements - High Impact, Low Effort"
+                ></div>
+                <div
+                  class="matrix__dot matrix__dot--medium-impact"
+                  style="grid-column: 2; grid-row: 2"
+                  title="Checkout Reliability - High Impact, High Effort"
+                ></div>
+                <div
+                  class="matrix__dot matrix__dot--medium-impact"
+                  style="grid-column: 2; grid-row: 3"
+                  title="Advanced Search - High Impact, High Effort"
+                ></div>
+                <div
+                  class="matrix__dot matrix__dot--low-impact"
+                  style="grid-column: 4; grid-row: 2"
+                  title="Copy Tweaks - Low Impact, Low Effort"
+                ></div>
+                <div
+                  class="matrix__dot matrix__dot--low-impact"
+                  style="grid-column: 4; grid-row: 3"
+                  title="Icon Updates - Low Impact, Low Effort"
+                ></div>
+              </div>
+
+              <!-- Matrix Legend -->
+              <div class="mt-6 flex justify-center gap-6">
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-negative"
+                    style="background-color: var(--color-negative)"
+                  ></div>
+                  <span class="text-sm">High Impact</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-warning"
+                    style="background-color: var(--color-warning)"
+                  ></div>
+                  <span class="text-sm">Medium Impact</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-positive"
+                    style="background-color: var(--color-positive)"
+                  ></div>
+                  <span class="text-sm">Low Impact</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drivers Section -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Top Drivers</h2>
+          <div class="grid grid--2">
+            <div class="card">
+              <div class="card__header">
+                <h3>Negative Feedback Drivers</h3>
+              </div>
+              <div class="card__body">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Checkout friction</div>
+                      <div class="text-sm text-muted">
+                        Payment failures, errors
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-negative">23%</div>
+                      <div class="text-sm text-muted">of negative feedback</div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Slow startup</div>
+                      <div class="text-sm text-muted">App loading times</div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-negative">18%</div>
+                      <div class="text-sm text-muted">of negative feedback</div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Missing SSO</div>
+                      <div class="text-sm text-muted">
+                        Enterprise authentication
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-negative">15%</div>
+                      <div class="text-sm text-muted">of negative feedback</div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Export timeouts</div>
+                      <div class="text-sm text-muted">
+                        Large dataset downloads
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-negative">12%</div>
+                      <div class="text-sm text-muted">of negative feedback</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h3>Positive Feedback Drivers</h3>
+              </div>
+              <div class="card__body">
+                <div class="space-y-4">
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Dashboard design</div>
+                      <div class="text-sm text-muted">
+                        UI improvements, clarity
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-positive">31%</div>
+                      <div class="text-sm text-muted">of positive feedback</div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Onboarding flow</div>
+                      <div class="text-sm text-muted">
+                        Setup process, guidance
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-positive">24%</div>
+                      <div class="text-sm text-muted">of positive feedback</div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Team features</div>
+                      <div class="text-sm text-muted">
+                        Collaboration, sharing
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-positive">19%</div>
+                      <div class="text-sm text-muted">of positive feedback</div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium">Performance</div>
+                      <div class="text-sm text-muted">Speed improvements</div>
+                    </div>
+                    <div class="text-right">
+                      <div class="font-medium text-positive">16%</div>
+                      <div class="text-sm text-muted">of positive feedback</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Priority Model Section -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Priority Model</h2>
+          <div class="card">
+            <div class="card__header">
+              <h3>RICE Scoring Model</h3>
+              <p class="text-sm text-muted">
+                Reach × Impact × Confidence ÷ Effort
+              </p>
+            </div>
+            <div class="card__body">
+              <div class="grid grid--4 gap-6">
+                <div class="text-center">
+                  <h4 class="font-medium mb-2">Reach</h4>
+                  <div class="text-2xl font-bold text-primary mb-2">8.5</div>
+                  <div class="text-sm text-muted">
+                    How many users will this affect?
+                  </div>
+                  <div class="mt-3">
+                    <div class="meter">
+                      <div class="meter__fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <h4 class="font-medium mb-2">Impact</h4>
+                  <div class="text-2xl font-bold text-warning mb-2">7.2</div>
+                  <div class="text-sm text-muted">
+                    How much will this impact each user?
+                  </div>
+                  <div class="mt-3">
+                    <div class="meter">
+                      <div class="meter__fill" style="width: 72%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <h4 class="font-medium mb-2">Confidence</h4>
+                  <div class="text-2xl font-bold text-positive mb-2">9.1</div>
+                  <div class="text-sm text-muted">
+                    How confident are we in our estimates?
+                  </div>
+                  <div class="mt-3">
+                    <div class="meter">
+                      <div class="meter__fill" style="width: 91%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <h4 class="font-medium mb-2">Effort</h4>
+                  <div class="text-2xl font-bold text-negative mb-2">6.8</div>
+                  <div class="text-sm text-muted">
+                    How much effort will this require?
+                  </div>
+                  <div class="mt-3">
+                    <div class="meter">
+                      <div class="meter__fill" style="width: 68%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-light rounded-lg text-center">
+                <div class="text-lg font-medium mb-1">Overall RICE Score</div>
+                <div class="text-3xl font-bold text-primary">8.7</div>
+                <div class="text-sm text-muted">(8.5 × 7.2 × 9.1) ÷ 6.8</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+        </div>
+        <div class="footer__version">Client Feedback Hub v0.1</div>
+      </footer>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </body>
+</html>

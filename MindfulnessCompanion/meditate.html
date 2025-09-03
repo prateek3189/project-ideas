@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Meditate</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__link">
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a
+            href="meditate.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a href="breathe.html" class="sidebar__link">
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a href="checkin.html" class="sidebar__link">
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a href="insights.html" class="sidebar__link">
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a href="library.html" class="sidebar__link">
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a href="settings.html" class="sidebar__link">
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Meditation Sessions</h2>
+            <p class="welcome__subtitle">Find your perfect practice</p>
+          </section>
+
+          <section class="filters">
+            <h3 class="section-title">Filter Sessions</h3>
+            <div class="filter-controls">
+              <div class="filter-group">
+                <label for="theme-filter" class="filter-label">Theme</label>
+                <select id="theme-filter" class="filter-select">
+                  <option value="">All Themes</option>
+                  <option value="calm">Calm</option>
+                  <option value="focus">Focus</option>
+                  <option value="sleep">Sleep</option>
+                  <option value="gratitude">Gratitude</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="duration-filter" class="filter-label"
+                  >Duration</label
+                >
+                <select id="duration-filter" class="filter-select">
+                  <option value="">All Durations</option>
+                  <option value="short">Short (2-5 min)</option>
+                  <option value="medium">Medium (5-10 min)</option>
+                  <option value="long">Long (10+ min)</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="sessions">
+            <h3 class="section-title">Available Sessions</h3>
+            <div class="card-grid">
+              <!-- Body Scan -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Body Scan</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">10 min</span>
+                    <span class="session-card__theme">Calm</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Progressive relaxation through systematic body awareness.
+                  Perfect for stress relief and deep relaxation.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Find a comfortable position. Close your eyes gently. Take
+                    three deep breaths, feeling your body settle into the
+                    surface beneath you...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Loving-Kindness -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Loving-Kindness</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">7 min</span>
+                    <span class="session-card__theme">Gratitude</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Cultivate compassion and goodwill toward yourself and others.
+                  A heart-opening practice for emotional balance.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Music</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Begin by bringing to mind someone you care about deeply.
+                    Feel the warmth of your affection for them...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Box Breathing Focus -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Box Breathing Focus</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">5 min</span>
+                    <span class="session-card__theme">Focus</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Combine rhythmic breathing with focused attention to sharpen
+                  concentration and calm the mind.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Inhale for four counts, hold for four, exhale for four, hold
+                    for four. Let this rhythm become your anchor...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Sleep Wind-down -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Sleep Wind-down</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">12 min</span>
+                    <span class="session-card__theme">Sleep</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Gentle guidance to release daily tensions and prepare your
+                  mind and body for restful sleep.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Music</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    As you settle into bed, allow your body to feel heavy and
+                    supported. Let go of any remaining tension...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Gratitude -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Gratitude</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">5 min</span>
+                    <span class="session-card__theme">Gratitude</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Reflect on the blessings in your life and cultivate an
+                  attitude of appreciation and contentment.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Take a moment to reflect on three things you're grateful for
+                    today. They can be simple or profound...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Mountain Visualization -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Mountain Visualization</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">8 min</span>
+                    <span class="session-card__theme">Calm</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Visualize yourself as a mountain - steady, strong, and unmoved
+                  by the changing weather of life.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Imagine yourself as a majestic mountain, rising from the
+                    earth. Your base is solid and grounded...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Micro Pause -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Micro Pause</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">2 min</span>
+                    <span class="session-card__theme">Focus</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  A quick reset for busy moments. Perfect for between meetings
+                  or when you need a mental break.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Stop. Take three deep breaths. Notice where you are. Feel
+                    your feet on the ground...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Open Awareness -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Open Awareness</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">15 min</span>
+                    <span class="session-card__theme">Focus</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Expand your awareness to include all experiences without
+                  judgment. Develop equanimity and presence.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Allow your awareness to expand like a vast sky. Thoughts,
+                    feelings, and sensations can pass through like clouds...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+
+              <!-- Calm Before Meeting -->
+              <div class="session-card">
+                <div class="session-card__header">
+                  <h4 class="session-card__title">Calm Before Meeting</h4>
+                  <div class="session-card__meta">
+                    <span class="session-card__duration">3 min</span>
+                    <span class="session-card__theme">Focus</span>
+                  </div>
+                </div>
+                <p class="session-card__description">
+                  Quick centering practice to enter meetings with clarity,
+                  presence, and calm confidence.
+                </p>
+                <div class="session-card__tags">
+                  <span class="session-card__tag">Voice</span>
+                  <span class="session-card__tag">Silent</span>
+                </div>
+                <details class="session-card__preview">
+                  <summary>Script Preview</summary>
+                  <p>
+                    Take a moment to arrive fully in this space. Feel your feet
+                    on the ground, your breath steady...
+                  </p>
+                </details>
+                <a href="#" class="session-card__cta">Start Session</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="session-tips">
+            <h3 class="section-title">Tips for Your Practice</h3>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <h4>Find Your Space</h4>
+                <p>
+                  Choose a quiet, comfortable place where you won't be
+                  interrupted. Even a few minutes of undisturbed practice can be
+                  transformative.
+                </p>
+              </div>
+              <div class="tip-card">
+                <h4>Start Small</h4>
+                <p>
+                  Begin with shorter sessions and gradually increase duration.
+                  Consistency matters more than length.
+                </p>
+              </div>
+              <div class="tip-card">
+                <h4>Be Kind to Yourself</h4>
+                <p>
+                  Thoughts will wander - that's normal. Gently return to your
+                  focus without judgment. Every return is a moment of
+                  mindfulness.
+                </p>
+              </div>
+              <div class="tip-card">
+                <h4>Practice Regularly</h4>
+                <p>
+                  Even 5 minutes daily is more beneficial than an hour once a
+                  week. Build a habit that fits your life.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

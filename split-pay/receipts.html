@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipts - Split & Pay</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="receipts.html" class="btn btn--secondary btn--small"
+              >Print</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="receipts">
+            <div class="flex items-center justify-between mb-6">
+              <h1>Receipts & Documents</h1>
+              <a href="#" class="btn btn--primary">Upload Receipt</a>
+            </div>
+
+            <!-- Filter Options -->
+            <div class="card mb-6">
+              <div class="card__body">
+                <div class="flex gap-4 items-center">
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label for="group-filter" class="form-label">Group:</label>
+                    <select id="group-filter" class="form-select">
+                      <option value="all">All Groups</option>
+                      <option value="goa-trip">Goa Trip</option>
+                      <option value="roommates">Flat 3B Roommates</option>
+                      <option value="office">Office Team Lunch</option>
+                      <option value="weekend">Weekend Trip</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label for="category-filter" class="form-label"
+                      >Category:</label
+                    >
+                    <select id="category-filter" class="form-select">
+                      <option value="all">All Categories</option>
+                      <option value="food">Food</option>
+                      <option value="travel">Travel</option>
+                      <option value="stay">Stay</option>
+                      <option value="utilities">Utilities</option>
+                      <option value="office">Office</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom: 0">
+                    <label for="date-filter" class="form-label">Date:</label>
+                    <select id="date-filter" class="form-select">
+                      <option value="all">All Time</option>
+                      <option value="this-week">This Week</option>
+                      <option value="this-month">This Month</option>
+                      <option value="last-month">Last Month</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Receipts Grid -->
+            <div class="receipts__grid">
+              <!-- Water Sports Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🏄</div>
+                <div class="receipts__amount tabular-nums">₹3,600</div>
+                <div class="receipts__date">Dec 17, 2024</div>
+                <div class="text-sm text-muted mt-1">Water Sports Package</div>
+                <div class="text-sm text-muted">Goa Trip • Travel</div>
+              </div>
+
+              <!-- Resort Booking Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🏨</div>
+                <div class="receipts__amount tabular-nums">₹9,800</div>
+                <div class="receipts__date">Dec 15, 2024</div>
+                <div class="text-sm text-muted mt-1">
+                  Resort Booking (2 nights)
+                </div>
+                <div class="text-sm text-muted">Goa Trip • Stay</div>
+              </div>
+
+              <!-- Lunch Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🍽️</div>
+                <div class="receipts__amount tabular-nums">₹1,860</div>
+                <div class="receipts__date">Dec 16, 2024</div>
+                <div class="text-sm text-muted mt-1">
+                  Lunch Day 1 - Beach Shack
+                </div>
+                <div class="text-sm text-muted">Goa Trip • Food</div>
+              </div>
+
+              <!-- Taxi Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🚗</div>
+                <div class="receipts__amount tabular-nums">₹1,200</div>
+                <div class="receipts__date">Dec 15, 2024</div>
+                <div class="text-sm text-muted mt-1">Taxi Airport → Hotel</div>
+                <div class="text-sm text-muted">Goa Trip • Travel</div>
+              </div>
+
+              <!-- Rent Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🏠</div>
+                <div class="receipts__amount tabular-nums">₹36,000</div>
+                <div class="receipts__date">Dec 1, 2024</div>
+                <div class="text-sm text-muted mt-1">Monthly Rent</div>
+                <div class="text-sm text-muted">Flat 3B • Utilities</div>
+              </div>
+
+              <!-- Internet Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">📶</div>
+                <div class="receipts__amount tabular-nums">₹899</div>
+                <div class="receipts__date">Dec 5, 2024</div>
+                <div class="text-sm text-muted mt-1">Internet Bill</div>
+                <div class="text-sm text-muted">Flat 3B • Utilities</div>
+              </div>
+
+              <!-- Electricity Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">⚡</div>
+                <div class="receipts__amount tabular-nums">₹2,340</div>
+                <div class="receipts__date">Dec 10, 2024</div>
+                <div class="text-sm text-muted mt-1">Electricity Bill</div>
+                <div class="text-sm text-muted">Flat 3B • Utilities</div>
+              </div>
+
+              <!-- Office Lunch Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🍕</div>
+                <div class="receipts__amount tabular-nums">₹2,450</div>
+                <div class="receipts__date">Dec 12, 2024</div>
+                <div class="text-sm text-muted mt-1">Team Lunch - Pizza</div>
+                <div class="text-sm text-muted">Office Team • Food</div>
+              </div>
+
+              <!-- Weekend Trip Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🎢</div>
+                <div class="receipts__amount tabular-nums">₹4,200</div>
+                <div class="receipts__date">Dec 8, 2024</div>
+                <div class="text-sm text-muted mt-1">Theme Park Tickets</div>
+                <div class="text-sm text-muted">
+                  Weekend Trip • Entertainment
+                </div>
+              </div>
+
+              <!-- Grocery Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">🛒</div>
+                <div class="receipts__amount tabular-nums">₹1,850</div>
+                <div class="receipts__date">Dec 3, 2024</div>
+                <div class="text-sm text-muted mt-1">Weekly Groceries</div>
+                <div class="text-sm text-muted">Flat 3B • Food</div>
+              </div>
+
+              <!-- Coffee Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">☕</div>
+                <div class="receipts__amount tabular-nums">₹680</div>
+                <div class="receipts__date">Dec 14, 2024</div>
+                <div class="text-sm text-muted mt-1">Coffee Meeting</div>
+                <div class="text-sm text-muted">Office Team • Food</div>
+              </div>
+
+              <!-- Gas Receipt -->
+              <div class="receipts__item">
+                <div class="receipts__thumb">⛽</div>
+                <div class="receipts__amount tabular-nums">₹1,200</div>
+                <div class="receipts__date">Dec 7, 2024</div>
+                <div class="text-sm text-muted mt-1">Gas Station</div>
+                <div class="text-sm text-muted">Weekend Trip • Travel</div>
+              </div>
+            </div>
+
+            <!-- Upload Placeholder -->
+            <div class="card mt-6">
+              <div class="card__header">
+                <h3>Upload New Receipt</h3>
+              </div>
+              <div class="card__body">
+                <div class="nudge nudge--info">
+                  <strong>V1 Limitation:</strong> Receipt upload is a visual
+                  placeholder. In a real app, this would support image upload,
+                  OCR scanning, and automatic expense parsing.
+                </div>
+
+                <div
+                  class="mt-4 p-8 border-2 border-dashed border-gray-300 rounded-lg text-center"
+                >
+                  <div class="text-4xl mb-4">📄</div>
+                  <h4 class="mb-2">Drop receipt here or click to upload</h4>
+                  <p class="text-muted mb-4">
+                    Supports JPG, PNG, PDF (up to 10MB)
+                  </p>
+                  <button class="btn btn--primary" disabled>Choose File</button>
+                </div>
+
+                <div class="mt-4">
+                  <h4>OCR Features (Future)</h4>
+                  <ul class="text-sm text-muted">
+                    <li>• Automatic merchant name detection</li>
+                    <li>• Amount extraction</li>
+                    <li>• Date parsing</li>
+                    <li>• Category suggestion</li>
+                    <li>• Multi-language support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Receipt Statistics -->
+            <div class="card mt-6">
+              <div class="card__header">
+                <h3>Receipt Statistics</h3>
+              </div>
+              <div class="card__body">
+                <div class="grid grid-4 gap-4">
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">12</div>
+                    <div class="stat-tile__label">Total Receipts</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">₹64,879</div>
+                    <div class="stat-tile__label">Total Amount</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">₹5,407</div>
+                    <div class="stat-tile__label">Average per Receipt</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">4</div>
+                    <div class="stat-tile__label">Groups</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+    </script>
+  </body>
+</html>

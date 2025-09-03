@@ -1,0 +1,443 @@
+/* Print Styles - Mental Health Chat */
+
+/* Print-specific CSS variables */
+@media print {
+  :root {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #ffffff;
+    --color-bg-tertiary: #f5f5f5;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-muted: #666666;
+    --color-primary: #0000ff;
+    --color-success: #008000;
+    --color-warning: #ff8c00;
+    --color-danger: #ff0000;
+    --color-info: #0000ff;
+    --color-chat-border: #000000;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+  }
+}
+
+/* Base Print Styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: black !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    color: black;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-bottom: 10pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+  }
+
+  p {
+    margin-bottom: 8pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+    color: black;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .btn,
+  .toolbar,
+  .modal,
+  .theme-toggle,
+  .nav,
+  .shell__sidebar,
+  .session-layout__input,
+  .form-input,
+  .form-textarea,
+  .form-checkbox input[type="checkbox"] {
+    display: none !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Resource Pack Print Layout */
+@media print {
+  .resource-pack {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resource-pack__header {
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 2pt solid black;
+  }
+
+  .resource-pack__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 5pt;
+  }
+
+  .resource-pack__subtitle {
+    font-size: 12pt;
+    color: #666;
+  }
+
+  .resource-pack__section {
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+
+  .resource-pack__section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 8pt;
+    padding-bottom: 3pt;
+    border-bottom: 1pt solid black;
+  }
+
+  .resource-pack__item {
+    margin-bottom: 8pt;
+    padding-left: 10pt;
+  }
+
+  .resource-pack__item-title {
+    font-weight: bold;
+    margin-bottom: 3pt;
+  }
+
+  .resource-pack__item-description {
+    font-size: 10pt;
+    color: #666;
+    margin-bottom: 5pt;
+  }
+
+  .resource-pack__contact {
+    background: #f5f5f5;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    border: 1pt solid black;
+  }
+
+  .resource-pack__contact-title {
+    font-weight: bold;
+    margin-bottom: 3pt;
+  }
+
+  .resource-pack__contact-info {
+    font-size: 11pt;
+  }
+}
+
+/* Session Summary Print Layout */
+@media print {
+  .session-summary {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .session-summary__header {
+    text-align: center;
+    margin-bottom: 15pt;
+    padding-bottom: 8pt;
+    border-bottom: 1pt solid black;
+  }
+
+  .session-summary__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 3pt;
+  }
+
+  .session-summary__date {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  .session-summary__section {
+    margin-bottom: 15pt;
+    page-break-inside: avoid;
+  }
+
+  .session-summary__section-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 5pt;
+    text-decoration: underline;
+  }
+
+  .session-summary__tips {
+    list-style: none;
+    padding: 0;
+  }
+
+  .session-summary__tip {
+    margin-bottom: 5pt;
+    padding-left: 10pt;
+    position: relative;
+  }
+
+  .session-summary__tip:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .session-summary__resources {
+    background: #f5f5f5;
+    padding: 8pt;
+    border: 1pt solid black;
+  }
+
+  .session-summary__resource {
+    margin-bottom: 3pt;
+    font-size: 10pt;
+  }
+
+  .session-summary__disclaimer {
+    font-size: 9pt;
+    color: #666;
+    text-align: center;
+    margin-top: 20pt;
+    padding-top: 8pt;
+    border-top: 1pt solid #ccc;
+  }
+}
+
+/* Chat Print Layout */
+@media print {
+  .chat-print {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .chat-print__header {
+    text-align: center;
+    margin-bottom: 15pt;
+    padding-bottom: 8pt;
+    border-bottom: 1pt solid black;
+  }
+
+  .chat-print__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 3pt;
+  }
+
+  .chat-print__participants {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  .chat-print__message {
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+
+  .chat-print__message-header {
+    font-size: 9pt;
+    color: #666;
+    margin-bottom: 2pt;
+  }
+
+  .chat-print__message-sender {
+    font-weight: bold;
+  }
+
+  .chat-print__message-time {
+    margin-left: 5pt;
+  }
+
+  .chat-print__message-content {
+    font-size: 10pt;
+    line-height: 1.3;
+    padding-left: 10pt;
+  }
+
+  .chat-print__message--seeker .chat-print__message-content {
+    border-left: 2pt solid #0000ff;
+  }
+
+  .chat-print__message--listener .chat-print__message-content {
+    border-left: 2pt solid #000000;
+  }
+}
+
+/* Page Breaks */
+@media print {
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  .page-break-inside-auto {
+    page-break-inside: auto;
+  }
+}
+
+/* Print-specific Utility Classes */
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-visible {
+    display: block !important;
+  }
+
+  .print-text-center {
+    text-align: center !important;
+  }
+
+  .print-text-left {
+    text-align: left !important;
+  }
+
+  .print-text-right {
+    text-align: right !important;
+  }
+
+  .print-bold {
+    font-weight: bold !important;
+  }
+
+  .print-italic {
+    font-style: italic !important;
+  }
+
+  .print-underline {
+    text-decoration: underline !important;
+  }
+
+  .print-border {
+    border: 1pt solid black !important;
+  }
+
+  .print-border-top {
+    border-top: 1pt solid black !important;
+  }
+
+  .print-border-bottom {
+    border-bottom: 1pt solid black !important;
+  }
+
+  .print-margin-top {
+    margin-top: 10pt !important;
+  }
+
+  .print-margin-bottom {
+    margin-bottom: 10pt !important;
+  }
+
+  .print-padding {
+    padding: 8pt !important;
+  }
+
+  .print-bg-gray {
+    background: #f5f5f5 !important;
+  }
+}
+
+/* Print-specific Component Styles */
+@media print {
+  .card {
+    border: 1pt solid black;
+    background: white;
+    margin-bottom: 10pt;
+    padding: 8pt;
+  }
+
+  .alert {
+    border: 1pt solid black;
+    background: white;
+    margin-bottom: 8pt;
+    padding: 6pt;
+  }
+
+  .alert--crisis {
+    border-color: #ff0000;
+    background: #fff5f5;
+  }
+
+  .chip {
+    border: 1pt solid black;
+    background: white;
+    padding: 2pt 4pt;
+    margin-right: 3pt;
+    margin-bottom: 3pt;
+    display: inline-block;
+  }
+
+  .progress {
+    border: 1pt solid black;
+    background: white;
+    height: 6pt;
+  }
+
+  .progress__bar {
+    background: black;
+    height: 100%;
+  }
+}

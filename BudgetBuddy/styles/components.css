@@ -1,0 +1,670 @@
+/* Components - Budget Buddy */
+
+/* Stat Tiles */
+.tile {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.tile:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.tile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.tile__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tile__icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.tile__value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  line-height: 1;
+}
+
+.tile__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-2);
+}
+
+.tile--spend .tile__value {
+  color: var(--color-expense);
+}
+.tile--income .tile__value {
+  color: var(--color-income);
+}
+.tile--warning .tile__value {
+  color: var(--color-warning);
+}
+.tile--success .tile__value {
+  color: var(--color-success);
+}
+
+/* Budget Progress Bars */
+.budget {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.budget__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.budget__category {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.budget__icon {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.budget__name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.budget__amount {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.budget__bar {
+  height: 8px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-2);
+}
+
+.budget__progress {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.budget__progress--low {
+  background-color: var(--color-success);
+}
+.budget__progress--medium {
+  background-color: var(--color-warning);
+}
+.budget__progress--high {
+  background-color: var(--color-error);
+}
+
+.budget__details {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Category Pills */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pill--category {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+}
+
+.pill--food {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.pill--transport {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+.pill--shopping {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+.pill--bills {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+.pill--entertainment {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+.pill--health {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+.pill--education {
+  background-color: #cffafe;
+  color: #155e75;
+}
+.pill--other {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Merchant Chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.chip__avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Transaction Rows */
+.txn-row {
+  display: flex;
+  align-items: center;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.txn-row:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.txn-row__main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.txn-row__merchant {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.txn-row__category {
+  margin-left: var(--space-2);
+}
+
+.txn-row__amount {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+}
+
+.txn-row__amount--debit {
+  color: var(--color-expense);
+}
+
+.txn-row__amount--credit {
+  color: var(--color-income);
+}
+
+.txn-row__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+
+.txn-row__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.txn-row__account {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.txn-row__tags {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.txn-row__tag {
+  font-size: var(--font-size-xs);
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+/* Alert Banners */
+.alert {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid;
+  margin-bottom: var(--space-4);
+}
+
+.alert--info {
+  background-color: #eff6ff;
+  border-left-color: var(--color-info);
+  color: #1e40af;
+}
+
+.alert--warning {
+  background-color: #fffbeb;
+  border-left-color: var(--color-warning);
+  color: #92400e;
+}
+
+.alert--error {
+  background-color: #fef2f2;
+  border-left-color: var(--color-error);
+  color: #991b1b;
+}
+
+.alert--success {
+  background-color: #f0fdf4;
+  border-left-color: var(--color-success);
+  color: #065f46;
+}
+
+.alert__title {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.alert__message {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Filter Pills */
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
+.filter-pill--active {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+.filter-pill__count {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.filter-pill--active .filter-pill__count {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Import Preview Table */
+.import-preview {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.import-preview__header {
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.import-preview__title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.import-preview__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.import-preview__table th,
+.import-preview__table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.import-preview__table th {
+  background-color: var(--color-bg-tertiary);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Confidence Chips */
+.confidence-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.confidence-chip--high {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.confidence-chip--medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.confidence-chip--low {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Account Cards */
+.account-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: box-shadow var(--transition-fast);
+}
+
+.account-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.account-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.account-card__type {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.account-card__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.account-card__name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.account-card__balance {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+}
+
+.account-card__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-4);
+}
+
+/* Chart Blocks */
+.chart-block {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.chart-block__header {
+  margin-bottom: var(--space-6);
+}
+
+.chart-block__title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.chart-block__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.chart-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.chart-bar__label {
+  min-width: 80px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.chart-bar__container {
+  flex: 1;
+  height: 20px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-bar__fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.chart-bar__value {
+  min-width: 60px;
+  text-align: right;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Receipt Cards */
+.receipt-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: box-shadow var(--transition-fast);
+}
+
+.receipt-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.receipt-card__thumbnail {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+}
+
+.receipt-card__details {
+  font-size: var(--font-size-sm);
+}
+
+.receipt-card__merchant {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.receipt-card__amount {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.receipt-card__date {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-xs);
+}
+
+/* Rule Rows */
+.rule-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
+  background-color: var(--color-surface);
+}
+
+.rule-row__pattern {
+  flex: 1;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+}
+
+.rule-row__arrow {
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-bold);
+}
+
+.rule-row__action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Cashflow Badge */
+.cashflow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cashflow-badge--positive {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.cashflow-badge--negative {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.cashflow-badge--neutral {
+  background-color: #f3f4f6;
+  color: #374151;
+}

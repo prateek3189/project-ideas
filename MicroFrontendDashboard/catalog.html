@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget Catalog - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <div class="page-header">
+          <h1 class="page-title">Widget Catalog</h1>
+          <p class="page-subtitle">
+            Browse and manage available widgets for your dashboards
+          </p>
+        </div>
+
+        <!-- Catalog Filters -->
+        <div class="catalog-filters">
+          <div class="catalog-filters__search">
+            <input
+              type="search"
+              placeholder="Search widgets..."
+              class="search__input"
+            />
+          </div>
+          <div class="catalog-filters__tags">
+            <span class="chip">All</span>
+            <span class="chip">Approved</span>
+            <span class="chip">Draft</span>
+            <span class="chip">Deprecated</span>
+            <span class="chip">Web Component</span>
+            <span class="chip">Module Federation</span>
+            <span class="chip">iframe</span>
+          </div>
+        </div>
+
+        <!-- Widget Grid -->
+        <div class="catalog-grid">
+          <!-- Alerts Table Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Alerts Table</h3>
+                <p class="widget-card__id">alerts-table@3.2</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Displays active alerts and incidents in a sortable table format
+              with filtering capabilities. Supports real-time updates and custom
+              column configurations.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">SRE Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">ops</span>
+              <span class="chip">incidents</span>
+              <span class="chip">monitoring</span>
+            </div>
+            <div class="version-drawer">
+              <div class="version-drawer__header">
+                <h4 class="font-semibold">Versions</h4>
+                <button class="button button--ghost">View All</button>
+              </div>
+              <div class="version-drawer__content">
+                <table class="version-table">
+                  <thead>
+                    <tr>
+                      <th>Version</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>3.2.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>2 days ago</td>
+                    </tr>
+                    <tr>
+                      <td>3.1.5</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>1 week ago</td>
+                    </tr>
+                    <tr>
+                      <td>3.0.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>2 weeks ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Revenue Trend Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Revenue Trend</h3>
+                <p class="widget-card__id">revenue-trend@2.5</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Interactive chart showing revenue trends over time with drill-down
+              capabilities. Supports multiple chart types and data export
+              functionality.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">Finance Team</span>
+              <span class="widget-card__kind">Module Federation</span>
+              <span class="chip">charts</span>
+              <span class="chip">finance</span>
+              <span class="chip">analytics</span>
+            </div>
+            <div class="version-drawer">
+              <div class="version-drawer__header">
+                <h4 class="font-semibold">Versions</h4>
+                <button class="button button--ghost">View All</button>
+              </div>
+              <div class="version-drawer__content">
+                <table class="version-table">
+                  <thead>
+                    <tr>
+                      <th>Version</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2.5.1</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>3 days ago</td>
+                    </tr>
+                    <tr>
+                      <td>2.4.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>1 week ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deploy Panel Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Deploy Panel</h3>
+                <p class="widget-card__id">deploy-panel@1.8</p>
+              </div>
+              <span class="badge badge--deprecated">Deprecated</span>
+            </div>
+            <p class="widget-card__description">
+              Shows deployment status and recent releases. This widget is
+              deprecated and will be removed in v2.0. Please migrate to the new
+              deployment-dashboard widget.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">DevEx Team</span>
+              <span class="widget-card__kind">iframe</span>
+              <span class="chip">ci/cd</span>
+              <span class="chip">deployments</span>
+              <span class="chip">deprecated</span>
+            </div>
+            <div class="banner banner--warning">
+              <strong>Deprecation Notice:</strong> This widget will be removed
+              on March 1, 2024. Please migrate to deployment-dashboard@2.0.
+            </div>
+          </div>
+
+          <!-- Tickets Queue Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Tickets Queue</h3>
+                <p class="widget-card__id">tickets-queue@1.4</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Real-time ticket queue with priority sorting and assignment
+              capabilities. Integrates with Jira and ServiceNow.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">Support Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">support</span>
+              <span class="chip">tickets</span>
+              <span class="chip">queue</span>
+            </div>
+            <div class="version-drawer">
+              <div class="version-drawer__header">
+                <h4 class="font-semibold">Versions</h4>
+                <button class="button button--ghost">View All</button>
+              </div>
+              <div class="version-drawer__content">
+                <table class="version-table">
+                  <thead>
+                    <tr>
+                      <th>Version</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.4.2</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>5 days ago</td>
+                    </tr>
+                    <tr>
+                      <td>1.3.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>2 weeks ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Flags Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Feature Flags</h3>
+                <p class="widget-card__id">feature-flags@0.9</p>
+              </div>
+              <span class="badge badge--draft">Draft</span>
+            </div>
+            <p class="widget-card__description">
+              Manage and monitor feature flags across environments with toggle
+              controls. Supports A/B testing and gradual rollouts.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">Platform Team</span>
+              <span class="widget-card__kind">Module Federation</span>
+              <span class="chip">feature-flags</span>
+              <span class="chip">config</span>
+              <span class="chip">experiments</span>
+            </div>
+            <div class="banner banner--warning">
+              <strong>Draft Status:</strong> This widget is in development and
+              not recommended for production use.
+            </div>
+          </div>
+
+          <!-- Latency Spark Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Latency Spark</h3>
+                <p class="widget-card__id">latency-spark@1.1</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Compact latency visualization with sparkline charts and threshold
+              indicators. Perfect for dashboard overviews.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">SRE Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">monitoring</span>
+              <span class="chip">latency</span>
+              <span class="chip">performance</span>
+            </div>
+            <div class="version-drawer">
+              <div class="version-drawer__header">
+                <h4 class="font-semibold">Versions</h4>
+                <button class="button button--ghost">View All</button>
+              </div>
+              <div class="version-drawer__content">
+                <table class="version-table">
+                  <thead>
+                    <tr>
+                      <th>Version</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.1.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>1 day ago</td>
+                    </tr>
+                    <tr>
+                      <td>1.0.5</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>1 week ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uptime Gauge Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Uptime Gauge</h3>
+                <p class="widget-card__id">uptime-gauge@2.0</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Circular gauge showing system uptime percentage with color-coded
+              status indicators and historical trends.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">SRE Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">monitoring</span>
+              <span class="chip">uptime</span>
+              <span class="chip">availability</span>
+            </div>
+            <div class="version-drawer">
+              <div class="version-drawer__header">
+                <h4 class="font-semibold">Versions</h4>
+                <button class="button button--ghost">View All</button>
+              </div>
+              <div class="version-drawer__content">
+                <table class="version-table">
+                  <thead>
+                    <tr>
+                      <th>Version</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2.0.1</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>4 days ago</td>
+                    </tr>
+                    <tr>
+                      <td>1.9.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>2 weeks ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- On-Call Rota Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">On-Call Rota</h3>
+                <p class="widget-card__id">oncall-rota@1.3</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Current and upcoming on-call schedule with contact information and
+              escalation paths. Integrates with PagerDuty.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">SRE Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">oncall</span>
+              <span class="chip">schedule</span>
+              <span class="chip">escalation</span>
+            </div>
+            <div class="version-drawer">
+              <div class="version-drawer__header">
+                <h4 class="font-semibold">Versions</h4>
+                <button class="button button--ghost">View All</button>
+              </div>
+              <div class="version-drawer__content">
+                <table class="version-table">
+                  <thead>
+                    <tr>
+                      <th>Version</th>
+                      <th>Status</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.3.2</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>6 days ago</td>
+                    </tr>
+                    <tr>
+                      <td>1.2.0</td>
+                      <td>
+                        <span class="badge badge--approved">Approved</span>
+                      </td>
+                      <td>3 weeks ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Health Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">System Health</h3>
+                <p class="widget-card__id">system-health@1.7</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Comprehensive system health overview with CPU, memory, disk, and
+              network metrics in a compact dashboard format.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">DevOps Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">monitoring</span>
+              <span class="chip">infrastructure</span>
+              <span class="chip">metrics</span>
+            </div>
+          </div>
+
+          <!-- User Activity Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">User Activity</h3>
+                <p class="widget-card__id">user-activity@2.2</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Real-time user activity tracking with session analytics, page
+              views, and user engagement metrics.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">Analytics Team</span>
+              <span class="widget-card__kind">Module Federation</span>
+              <span class="chip">analytics</span>
+              <span class="chip">users</span>
+              <span class="chip">tracking</span>
+            </div>
+          </div>
+
+          <!-- Error Tracking Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Error Tracking</h3>
+                <p class="widget-card__id">error-tracking@1.5</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Error and exception tracking with stack traces, error rates, and
+              resolution status. Integrates with Sentry and Bugsnag.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">Platform Team</span>
+              <span class="widget-card__kind">Web Component</span>
+              <span class="chip">errors</span>
+              <span class="chip">debugging</span>
+              <span class="chip">monitoring</span>
+            </div>
+          </div>
+
+          <!-- Performance Metrics Widget -->
+          <div class="widget-card">
+            <div class="widget-card__header">
+              <div>
+                <h3 class="widget-card__title">Performance Metrics</h3>
+                <p class="widget-card__id">performance-metrics@3.1</p>
+              </div>
+              <span class="badge badge--approved">Approved</span>
+            </div>
+            <p class="widget-card__description">
+              Advanced performance monitoring with Core Web Vitals, custom
+              metrics, and performance budgets.
+            </p>
+            <div class="widget-card__meta">
+              <span class="chip chip--owner">Frontend Team</span>
+              <span class="widget-card__kind">Module Federation</span>
+              <span class="chip">performance</span>
+              <span class="chip">web-vitals</span>
+              <span class="chip">optimization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <section class="section">
+          <h2 class="section-title">Quick Actions</h2>
+          <div class="flex gap-4">
+            <button class="button button--primary">Register New Widget</button>
+            <button class="button">Import Widget</button>
+            <button class="button">Export Catalog</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Insights</title>
+    <meta
+      name="description"
+      content="Analyze your spending patterns and financial insights"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Report</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a
+                  href="insights.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Insights</h1>
+            <p class="main__subtitle">
+              Analyze your spending patterns and financial trends
+            </p>
+          </div>
+
+          <!-- Key Metrics -->
+          <div class="dashboard-section">
+            <div class="dashboard-grid">
+              <div class="tile tile--info">
+                <div class="tile__header">
+                  <h3 class="tile__title">Top Category</h3>
+                  <span class="tile__icon">🍕</span>
+                </div>
+                <div class="tile__value">Food & Dining</div>
+                <div class="tile__subtitle">₹5,760 (25% of spend)</div>
+              </div>
+
+              <div class="tile tile--warning">
+                <div class="tile__header">
+                  <h3 class="tile__title">Top Merchant</h3>
+                  <span class="tile__icon">🛍️</span>
+                </div>
+                <div class="tile__value">AMAZON</div>
+                <div class="tile__subtitle">₹3,899 (17% of spend)</div>
+              </div>
+
+              <div class="tile tile--success">
+                <div class="tile__header">
+                  <h3 class="tile__title">Avg Daily Spend</h3>
+                  <span class="tile__icon">📊</span>
+                </div>
+                <div class="tile__value tabular-nums">₹781</div>
+                <div class="tile__subtitle">Last 30 days</div>
+              </div>
+
+              <div class="tile tile--income">
+                <div class="tile__header">
+                  <h3 class="tile__title">Savings Rate</h3>
+                  <span class="tile__icon">💰</span>
+                </div>
+                <div class="tile__value tabular-nums">48%</div>
+                <div class="tile__subtitle">₹21,550 saved</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spending by Category -->
+          <div class="dashboard-section">
+            <div class="insights-layout">
+              <div class="insights-section">
+                <h3 class="insights-section__title">Spending by Category</h3>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Food & Dining</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 100%; background-color: var(--color-food)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹5,760</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Shopping</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 68%;
+                        background-color: var(--color-shopping);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹3,899</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Bills & Utilities</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 71%; background-color: var(--color-bills)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹4,100</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Transport</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 39%;
+                        background-color: var(--color-transport);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹2,220</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Entertainment</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 17%;
+                        background-color: var(--color-entertainment);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹799</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Health</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 7%; background-color: var(--color-health)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹320</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Education</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 14%;
+                        background-color: var(--color-education);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹650</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Other</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 13%; background-color: var(--color-other)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹622</div>
+                </div>
+              </div>
+
+              <!-- Top Merchants -->
+              <div class="insights-section">
+                <h3 class="insights-section__title">Top Merchants</h3>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">AMAZON</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 100%;
+                        background-color: var(--color-shopping);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹3,899</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">SWIGGY</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 37%; background-color: var(--color-food)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹1,450</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">BIG BAZAAR</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 32%; background-color: var(--color-food)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹1,240</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">OLA CABS</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 21%;
+                        background-color: var(--color-transport);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹820</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">ZOMATO</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="width: 19%; background-color: var(--color-food)"
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹450</div>
+                </div>
+
+                <div class="chart-bar">
+                  <div class="chart-bar__label">NETFLIX</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill"
+                      style="
+                        width: 20%;
+                        background-color: var(--color-entertainment);
+                      "
+                    ></div>
+                  </div>
+                  <div class="chart-bar__value tabular-nums">₹799</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monthly Trend -->
+          <div class="dashboard-section">
+            <div class="insights-section">
+              <h3 class="insights-section__title">Monthly Spending Trend</h3>
+              <p
+                style="color: var(--color-text-secondary); margin-bottom: 2rem"
+              >
+                Last 6 months comparison
+              </p>
+
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(6, 1fr);
+                  gap: 1rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <div style="text-align: center">
+                  <div
+                    style="
+                      height: 120px;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                      margin-bottom: 0.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 65%;
+                        background: var(--color-expense);
+                        border-radius: 0 0 var(--radius-md) var(--radius-md);
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      font-weight: var(--font-weight-medium);
+                    "
+                  >
+                    Apr
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-xs);
+                      color: var(--color-text-tertiary);
+                    "
+                  >
+                    ₹18,200
+                  </div>
+                </div>
+
+                <div style="text-align: center">
+                  <div
+                    style="
+                      height: 120px;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                      margin-bottom: 0.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 72%;
+                        background: var(--color-expense);
+                        border-radius: 0 0 var(--radius-md) var(--radius-md);
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      font-weight: var(--font-weight-medium);
+                    "
+                  >
+                    May
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-xs);
+                      color: var(--color-text-tertiary);
+                    "
+                  >
+                    ₹20,100
+                  </div>
+                </div>
+
+                <div style="text-align: center">
+                  <div
+                    style="
+                      height: 120px;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                      margin-bottom: 0.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 78%;
+                        background: var(--color-expense);
+                        border-radius: 0 0 var(--radius-md) var(--radius-md);
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      font-weight: var(--font-weight-medium);
+                    "
+                  >
+                    Jun
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-xs);
+                      color: var(--color-text-tertiary);
+                    "
+                  >
+                    ₹21,800
+                  </div>
+                </div>
+
+                <div style="text-align: center">
+                  <div
+                    style="
+                      height: 120px;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                      margin-bottom: 0.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 85%;
+                        background: var(--color-expense);
+                        border-radius: 0 0 var(--radius-md) var(--radius-md);
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      font-weight: var(--font-weight-medium);
+                    "
+                  >
+                    Jul
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-xs);
+                      color: var(--color-text-tertiary);
+                    "
+                  >
+                    ₹23,900
+                  </div>
+                </div>
+
+                <div style="text-align: center">
+                  <div
+                    style="
+                      height: 120px;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                      margin-bottom: 0.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 88%;
+                        background: var(--color-expense);
+                        border-radius: 0 0 var(--radius-md) var(--radius-md);
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      font-weight: var(--font-weight-medium);
+                    "
+                  >
+                    Aug
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-xs);
+                      color: var(--color-text-tertiary);
+                    "
+                  >
+                    ₹24,700
+                  </div>
+                </div>
+
+                <div style="text-align: center">
+                  <div
+                    style="
+                      height: 120px;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                      margin-bottom: 0.5rem;
+                      position: relative;
+                    "
+                  >
+                    <div
+                      style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 95%;
+                        background: var(--color-warning);
+                        border-radius: 0 0 var(--radius-md) var(--radius-md);
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      font-weight: var(--font-weight-medium);
+                    "
+                  >
+                    Sep
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-xs);
+                      color: var(--color-text-tertiary);
+                    "
+                  >
+                    ₹23,450
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 1rem;
+                  background: var(--color-bg-tertiary);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                    "
+                  >
+                    Average Monthly Spend
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-lg);
+                      font-weight: var(--font-weight-semibold);
+                      font-family: var(--font-family-mono);
+                    "
+                  >
+                    ₹22,358
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                    "
+                  >
+                    vs Last Month
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-lg);
+                      font-weight: var(--font-weight-semibold);
+                      color: var(--color-success);
+                    "
+                  >
+                    -5.1%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recurring Bills -->
+          <div class="dashboard-section">
+            <div class="insights-section">
+              <h3 class="insights-section__title">
+                Recurring Bills & Subscriptions
+              </h3>
+              <p
+                style="color: var(--color-text-secondary); margin-bottom: 2rem"
+              >
+                Automatically detected recurring payments
+              </p>
+
+              <div style="display: grid; gap: 1rem">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background: var(--color-entertainment);
+                        border-radius: var(--radius-md);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: var(--font-weight-bold);
+                      "
+                    >
+                      N
+                    </div>
+                    <div>
+                      <div style="font-weight: var(--font-weight-medium)">
+                        NETFLIX
+                      </div>
+                      <div
+                        style="
+                          font-size: var(--font-size-sm);
+                          color: var(--color-text-secondary);
+                        "
+                      >
+                        Entertainment
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align: right">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-semibold);
+                      "
+                    >
+                      ₹799
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Monthly
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background: var(--color-bills);
+                        border-radius: var(--radius-md);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: var(--font-weight-bold);
+                      "
+                    >
+                      ⚡
+                    </div>
+                    <div>
+                      <div style="font-weight: var(--font-weight-medium)">
+                        ELECTRICITY BILL
+                      </div>
+                      <div
+                        style="
+                          font-size: var(--font-size-sm);
+                          color: var(--color-text-secondary);
+                        "
+                      >
+                        Utilities
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align: right">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-semibold);
+                      "
+                    >
+                      ₹2,100
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Monthly
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background: var(--color-bills);
+                        border-radius: var(--radius-md);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: var(--font-weight-bold);
+                      "
+                    >
+                      📶
+                    </div>
+                    <div>
+                      <div style="font-weight: var(--font-weight-medium)">
+                        INTERNET BILL
+                      </div>
+                      <div
+                        style="
+                          font-size: var(--font-size-sm);
+                          color: var(--color-text-secondary);
+                        "
+                      >
+                        Utilities
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align: right">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-semibold);
+                      "
+                    >
+                      ₹1,200
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Monthly
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background: var(--color-income);
+                        border-radius: var(--radius-md);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: var(--font-weight-bold);
+                      "
+                    >
+                      💰
+                    </div>
+                    <div>
+                      <div style="font-weight: var(--font-weight-medium)">
+                        SALARY
+                      </div>
+                      <div
+                        style="
+                          font-size: var(--font-size-sm);
+                          color: var(--color-text-secondary);
+                        "
+                      >
+                        Income
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align: right">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-semibold);
+                      "
+                    >
+                      ₹40,000
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Monthly
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  padding: 1rem;
+                  background: var(--color-accent-light);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-accent);
+                  "
+                >
+                  <strong>💡 Tip:</strong> Recurring bills are automatically
+                  detected from your transaction patterns. You can manually add
+                  or remove recurring items in Settings.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cashflow Analysis -->
+          <div class="dashboard-section">
+            <div class="insights-section">
+              <h3 class="insights-section__title">Cashflow Analysis</h3>
+
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 1rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      font-size: var(--font-size-2xl);
+                      font-weight: var(--font-weight-bold);
+                      color: var(--color-income);
+                      font-family: var(--font-family-mono);
+                    "
+                  >
+                    ₹45,000
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                      margin-top: 0.5rem;
+                    "
+                  >
+                    Total Income
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      font-size: var(--font-size-2xl);
+                      font-weight: var(--font-weight-bold);
+                      color: var(--color-expense);
+                      font-family: var(--font-family-mono);
+                    "
+                  >
+                    ₹23,450
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                      margin-top: 0.5rem;
+                    "
+                  >
+                    Total Expenses
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      font-size: var(--font-size-2xl);
+                      font-weight: var(--font-weight-bold);
+                      color: var(--color-success);
+                      font-family: var(--font-family-mono);
+                    "
+                  >
+                    ₹21,550
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                      margin-top: 0.5rem;
+                    "
+                  >
+                    Net Savings
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 1.5rem;
+                  background: var(--color-success);
+                  color: white;
+                  border-radius: var(--radius-lg);
+                "
+              >
+                <div>
+                  <div
+                    style="
+                      font-size: var(--font-size-lg);
+                      font-weight: var(--font-weight-semibold);
+                    "
+                  >
+                    Great job! 🎉
+                  </div>
+                  <div style="font-size: var(--font-size-sm); opacity: 0.9">
+                    You're saving 48% of your income this month
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <div
+                    style="
+                      font-size: var(--font-size-2xl);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    48%
+                  </div>
+                  <div style="font-size: var(--font-size-sm); opacity: 0.9">
+                    Savings Rate
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

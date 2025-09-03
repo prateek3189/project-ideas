@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topics - Language Learning Buddy</title>
+    <meta
+      name="description"
+      content="Choose from various conversation scenarios and roleplay topics to practice your language skills"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search topics, scenarios..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a
+              href="topics.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a href="pronun-lab.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a href="lessons.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a href="review.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a href="progress.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Filter Topics</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              All Levels
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🟢</span>
+              Beginner (A1-A2)
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🟡</span>
+              Intermediate (B1-B2)
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔴</span>
+              Advanced (C1-C2)
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Conversation Topics</h1>
+          <p class="main__subtitle">
+            Choose a scenario to start practicing your conversation skills
+          </p>
+        </div>
+
+        <div class="main__content">
+          <div class="topics-grid">
+            <!-- Café Order -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Café Order</h3>
+                <span class="cefr-badge cefr-badge--a1">A1</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Food & Drink</span>
+                <span class="tag-chip">Service</span>
+                <span>⏱️ 15 min</span>
+              </div>
+              <div class="topic-card__description">
+                Practice ordering coffee, asking about menu items, and making
+                polite requests in a café setting.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Travel Check-in -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Travel Check-in</h3>
+                <span class="cefr-badge cefr-badge--a2">A2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Travel</span>
+                <span class="tag-chip">Hotel</span>
+                <span>⏱️ 20 min</span>
+              </div>
+              <div class="topic-card__description">
+                Learn to check into hotels, ask about amenities, and handle
+                travel-related questions.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Directions -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Asking for Directions</h3>
+                <span class="cefr-badge cefr-badge--a2">A2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Navigation</span>
+                <span class="tag-chip">City</span>
+                <span>⏱️ 18 min</span>
+              </div>
+              <div class="topic-card__description">
+                Practice asking for and giving directions, understanding
+                landmarks, and navigating the city.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Small Talk -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Small Talk & Socializing</h3>
+                <span class="cefr-badge cefr-badge--b1">B1</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Social</span>
+                <span class="tag-chip">Casual</span>
+                <span>⏱️ 25 min</span>
+              </div>
+              <div class="topic-card__description">
+                Master casual conversations about weather, hobbies, work, and
+                cultural topics.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Job Interview -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Job Interview</h3>
+                <span class="cefr-badge cefr-badge--b2">B2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Professional</span>
+                <span class="tag-chip">Career</span>
+                <span>⏱️ 30 min</span>
+              </div>
+              <div class="topic-card__description">
+                Practice professional language, discuss experience, and answer
+                interview questions confidently.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Presentation Pitch -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Business Presentation</h3>
+                <span class="cefr-badge cefr-badge--c1">C1</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Business</span>
+                <span class="tag-chip">Formal</span>
+                <span>⏱️ 35 min</span>
+              </div>
+              <div class="topic-card__description">
+                Develop advanced presentation skills, handle questions, and use
+                persuasive language.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Emergency Help -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Emergency & Help</h3>
+                <span class="cefr-badge cefr-badge--a2">A2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Emergency</span>
+                <span class="tag-chip">Health</span>
+                <span>⏱️ 20 min</span>
+              </div>
+              <div class="topic-card__description">
+                Learn essential phrases for emergencies, medical situations, and
+                getting help quickly.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Restaurant -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Restaurant Dining</h3>
+                <span class="cefr-badge cefr-badge--a1">A1</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Food & Drink</span>
+                <span class="tag-chip">Dining</span>
+                <span>⏱️ 22 min</span>
+              </div>
+              <div class="topic-card__description">
+                Practice ordering food, asking about ingredients, and handling
+                restaurant interactions.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Shopping -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Shopping & Bargaining</h3>
+                <span class="cefr-badge cefr-badge--a2">A2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Shopping</span>
+                <span class="tag-chip">Commerce</span>
+                <span>⏱️ 25 min</span>
+              </div>
+              <div class="topic-card__description">
+                Learn to ask about prices, negotiate, and make purchases in
+                various shopping scenarios.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Doctor Visit -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Doctor's Appointment</h3>
+                <span class="cefr-badge cefr-badge--b1">B1</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Health</span>
+                <span class="tag-chip">Medical</span>
+                <span>⏱️ 28 min</span>
+              </div>
+              <div class="topic-card__description">
+                Practice describing symptoms, understanding medical advice, and
+                scheduling appointments.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Public Transport -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Public Transportation</h3>
+                <span class="cefr-badge cefr-badge--a2">A2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Transport</span>
+                <span class="tag-chip">City</span>
+                <span>⏱️ 20 min</span>
+              </div>
+              <div class="topic-card__description">
+                Learn to ask about routes, buy tickets, and navigate public
+                transportation systems.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+
+            <!-- Cultural Exchange -->
+            <div class="topic-card">
+              <div class="topic-card__header">
+                <h3 class="topic-card__title">Cultural Exchange</h3>
+                <span class="cefr-badge cefr-badge--b2">B2</span>
+              </div>
+              <div class="topic-card__meta">
+                <span class="tag-chip">Culture</span>
+                <span class="tag-chip">Social</span>
+                <span>⏱️ 32 min</span>
+              </div>
+              <div class="topic-card__description">
+                Discuss cultural differences, traditions, and share experiences
+                from different backgrounds.
+              </div>
+              <div class="topic-card__actions">
+                <a href="index.html" class="btn btn--primary">Start Chat</a>
+                <button class="btn btn--outline">Preview Phrases</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role Cards Section -->
+          <div class="mt-8">
+            <h2>Role Cards for Practice</h2>
+            <p class="text-muted mb-4">
+              Each topic includes role cards to help you practice different
+              perspectives
+            </p>
+
+            <div class="d-grid grid-cols-3 gap-4">
+              <div class="role-card">
+                <h4 class="role-card__title">Customer/Client</h4>
+                <p class="role-card__description">
+                  Practice being the person making requests, asking questions,
+                  and expressing needs.
+                </p>
+              </div>
+
+              <div class="role-card">
+                <h4 class="role-card__title">Service Provider</h4>
+                <p class="role-card__description">
+                  Practice being the person helping others, answering questions,
+                  and providing assistance.
+                </p>
+              </div>
+
+              <div class="role-card">
+                <h4 class="role-card__title">Bystander/Helper</h4>
+                <p class="role-card__description">
+                  Practice offering help, giving directions, and participating
+                  in conversations as a third party.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

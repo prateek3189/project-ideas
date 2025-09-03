@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Homework Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="theme-light">
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">AI Homework Assistant</h1>
+                <div class="header__search">
+                    <input type="search" placeholder="Search subjects, topics..." class="search-input" disabled>
+                    <button class="search-button" disabled>🔍</button>
+                </div>
+                <div class="header__actions">
+                    <button class="profile-chip">
+                        <span class="profile-chip__avatar">👤</span>
+                        <span class="profile-chip__name">Student</span>
+                    </button>
+                    <button class="print-link" onclick="window.print()">🖨️ Print</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="index.html" class="nav-link">📊 Dashboard</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="subjects.html" class="nav-link">📚 Subjects</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="progress.html" class="nav-link">📈 Progress</a>
+                    </li>
+                    <li class="nav-list__item nav-list__item--active">
+                        <a href="settings.html" class="nav-link">⚙️ Settings</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="about.html" class="nav-link">ℹ️ About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__subjects">
+                <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+                <div class="subject-chips">
+                    <span class="subject-chip">Math</span>
+                    <span class="subject-chip">Science</span>
+                    <span class="subject-chip">Literature</span>
+                    <span class="subject-chip">History</span>
+                    <span class="subject-chip">CS</span>
+                </div>
+            </div>
+
+            <div class="sidebar__theme">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="settings-page">
+                <!-- Page Header -->
+                <header class="page-header">
+                    <h1 class="page-header__title">Settings & Preferences</h1>
+                    <p class="page-header__subtitle">Customize your learning experience</p>
+                </header>
+
+                <!-- Learning Preferences -->
+                <section class="settings-section">
+                    <h2 class="section-title">Learning Preferences</h2>
+                    
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Difficulty Level</h3>
+                        <p class="setting-group__description">Choose how challenging your practice problems should be.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="radio" name="difficulty" value="gentle" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Gentle</div>
+                                    <div class="setting-option__description">Start with easier problems and build confidence</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="radio" name="difficulty" value="standard">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Standard</div>
+                                    <div class="setting-option__description">Balanced mix of easy, medium, and hard problems</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="radio" name="difficulty" value="challenging">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Challenging</div>
+                                    <div class="setting-option__description">Focus on harder problems to push your limits</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Hint Depth</h3>
+                        <p class="setting-group__description">How detailed should the hints be before showing solutions?</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="radio" name="hint-depth" value="shallow">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Shallow</div>
+                                    <div class="setting-option__description">Minimal hints to encourage independent thinking</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="radio" name="hint-depth" value="medium" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Medium</div>
+                                    <div class="setting-option__description">Balanced guidance without giving away too much</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="radio" name="hint-depth" value="deep">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Deep</div>
+                                    <div class="setting-option__description">Detailed hints for maximum learning support</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Learning Strategy</h3>
+                        <p class="setting-group__description">Choose how you want to approach problem-solving.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="checkbox" name="show-mistakes-first" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Show Common Mistakes First</div>
+                                    <div class="setting-option__description">Highlight typical errors before you make them</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="socratic-prompts" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Socratic Prompts</div>
+                                    <div class="setting-option__description">Ask guiding questions to help you think through problems</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="step-validation">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Step-by-Step Validation</div>
+                                    <div class="setting-option__description">Check each step before moving to the next</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Appearance & Theme -->
+                <section class="settings-section">
+                    <h2 class="section-title">Appearance & Theme</h2>
+                    
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Theme</h3>
+                        <p class="setting-group__description">Choose your preferred color scheme.</p>
+                        <div class="theme-options">
+                            <button class="theme-option theme-option--light theme-option--active">
+                                <div class="theme-option__icon">☀️</div>
+                                <div class="theme-option__content">
+                                    <div class="theme-option__title">Light</div>
+                                    <div class="theme-option__description">Clean, bright interface</div>
+                                </div>
+                            </button>
+                            <button class="theme-option theme-option--dark">
+                                <div class="theme-option__icon">🌙</div>
+                                <div class="theme-option__content">
+                                    <div class="theme-option__title">Dark</div>
+                                    <div class="theme-option__description">Easy on the eyes in low light</div>
+                                </div>
+                            </button>
+                            <button class="theme-option theme-option--high-contrast">
+                                <div class="theme-option__icon">🎨</div>
+                                <div class="theme-option__content">
+                                    <div class="theme-option__title">High Contrast</div>
+                                    <div class="theme-option__description">Maximum readability</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Font Size</h3>
+                        <p class="setting-group__description">Adjust text size for better readability.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="radio" name="font-size" value="small">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Small</div>
+                                    <div class="setting-option__description">More content visible on screen</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="radio" name="font-size" value="normal" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Normal</div>
+                                    <div class="setting-option__description">Standard reading size</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="radio" name="font-size" value="large">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Large</div>
+                                    <div class="setting-option__description">Easier to read from a distance</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Layout Preferences</h3>
+                        <p class="setting-group__content">Customize how content is displayed.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="checkbox" name="compact-layout">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Compact Layout</div>
+                                    <div class="setting-option__description">Show more content in less space</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="wide-sidebar">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Wide Sidebar</div>
+                                    <div class="setting-option__description">More space for navigation and subjects</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Accessibility -->
+                <section class="settings-section">
+                    <h2 class="section-title">Accessibility</h2>
+                    
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Visual Aids</h3>
+                        <p class="setting-group__description">Enhance visual clarity and navigation.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="checkbox" name="focus-outlines" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Enhanced Focus Outlines</div>
+                                    <div class="setting-option__description">Clear focus indicators for keyboard navigation</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="reduced-motion">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Reduced Motion</div>
+                                    <div class="setting-option__description">Minimize animations and transitions</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="high-contrast-text">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">High Contrast Text</div>
+                                    <div class="setting-option__description">Ensure text meets accessibility standards</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Reading Support</h3>
+                        <p class="setting-group__description">Tools to help with reading and comprehension.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="checkbox" name="line-spacing">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Increased Line Spacing</div>
+                                    <div class="setting-option__description">More space between lines for easier reading</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="paragraph-spacing">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Paragraph Spacing</div>
+                                    <div class="setting-option__description">Clear separation between paragraphs</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data & Privacy -->
+                <section class="settings-section">
+                    <h2 class="section-title">Data & Privacy</h2>
+                    
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Learning Analytics</h3>
+                        <p class="setting-group__description">Control what data is collected to improve your learning experience.</p>
+                        <div class="setting-options">
+                            <label class="setting-option">
+                                <input type="checkbox" name="track-progress" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Track Learning Progress</div>
+                                    <div class="setting-option__description">Save your mastery levels and practice history</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="study-patterns" checked>
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Study Pattern Analysis</div>
+                                    <div class="setting-option__description">Analyze when and how you study best</div>
+                                </div>
+                            </label>
+                            <label class="setting-option">
+                                <input type="checkbox" name="personalized-recommendations">
+                                <div class="setting-option__content">
+                                    <div class="setting-option__title">Personalized Recommendations</div>
+                                    <div class="setting-option__description">Suggest topics based on your performance</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Data Export</h3>
+                        <p class="setting-group__description">Download your learning data.</p>
+                        <div class="setting-actions">
+                            <button class="setting-button setting-button--secondary">Export Progress Data</button>
+                            <button class="setting-button setting-button--secondary">Export Practice History</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reset & Defaults -->
+                <section class="settings-section">
+                    <h2 class="section-title">Reset & Defaults</h2>
+                    
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Restore Defaults</h3>
+                        <p class="setting-group__description">Reset all settings to their original values.</p>
+                        <div class="setting-actions">
+                            <button class="setting-button setting-button--danger">Reset All Settings</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3 class="setting-group__title">Clear Learning Data</h3>
+                        <p class="setting-group__description">Remove all progress and practice history. This cannot be undone.</p>
+                        <div class="setting-actions">
+                            <button class="setting-button setting-button--danger">Clear All Data</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Save Settings -->
+                <section class="settings-actions">
+                    <div class="settings-actions__content">
+                        <button class="settings-save-button">Save Settings</button>
+                        <button class="settings-reset-button">Reset to Defaults</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2024 AI Homework Assistant. Built for learning, not cheating.</p>
+                <p>Version 1.0 • <a href="about.html">About</a> • <a href="settings.html">Help</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

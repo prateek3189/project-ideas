@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - AI Travel Agent</title>
+    <meta
+      name="description"
+      content="Customize your AI Travel Agent experience with preferences, currency, language, and accessibility settings."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">✈</div>
+          <h1 class="header__title">AI Travel Agent</h1>
+        </a>
+        <div class="header__actions">
+          <select class="form-input" style="width: auto; min-width: 80px">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+          <a href="itinerary.html" class="btn btn--primary">Print Itinerary</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              Plan Trip
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="itinerary.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              Itinerary
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="bookings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              Bookings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="budget.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💰</span>
+              Budget
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="collections.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📍</span>
+              Collections
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="settings.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Settings</h1>
+          <p class="main__subtitle">
+            Customize your travel planning experience
+          </p>
+        </div>
+
+        <div class="settings">
+          <!-- Currency & Language -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">🌍 Currency & Language</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="currency" class="form-label"
+                  >Default Currency</label
+                >
+                <select id="currency" class="form-input form-select">
+                  <option value="INR" selected>₹ Indian Rupee (INR)</option>
+                  <option value="USD">$ US Dollar (USD)</option>
+                  <option value="EUR">€ Euro (EUR)</option>
+                  <option value="GBP">£ British Pound (GBP)</option>
+                  <option value="SGD">S$ Singapore Dollar (SGD)</option>
+                  <option value="JPY">¥ Japanese Yen (JPY)</option>
+                  <option value="AUD">A$ Australian Dollar (AUD)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="language" class="form-label">Language</label>
+                <select id="language" class="form-input form-select">
+                  <option value="en" selected>English</option>
+                  <option value="hi">हिन्दी (Hindi)</option>
+                  <option value="es">Español (Spanish)</option>
+                  <option value="fr">Français (French)</option>
+                  <option value="de">Deutsch (German)</option>
+                  <option value="ja">日本語 (Japanese)</option>
+                  <option value="ko">한국어 (Korean)</option>
+                  <option value="zh">中文 (Chinese)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Units & Measurements -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">📏 Units & Measurements</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="distance" class="form-label">Distance Units</label>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="distance-km"
+                    name="distance"
+                    value="km"
+                    checked
+                  />
+                  <label for="distance-km">Kilometers (km)</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="distance-mi"
+                    name="distance"
+                    value="mi"
+                  />
+                  <label for="distance-mi">Miles (mi)</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="temperature" class="form-label"
+                  >Temperature Units</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="temp-c"
+                    name="temperature"
+                    value="celsius"
+                    checked
+                  />
+                  <label for="temp-c">Celsius (°C)</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="temp-f"
+                    name="temperature"
+                    value="fahrenheit"
+                  />
+                  <label for="temp-f">Fahrenheit (°F)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Display & Theme -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">🎨 Display & Theme</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="theme" class="form-label">Theme</label>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="theme-light"
+                    name="theme"
+                    value="light"
+                    checked
+                  />
+                  <label for="theme-light">Light</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="theme-dark"
+                    name="theme"
+                    value="dark"
+                  />
+                  <label for="theme-dark">Dark</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="theme-high-contrast"
+                    name="theme"
+                    value="high-contrast"
+                  />
+                  <label for="theme-high-contrast">High Contrast</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="theme-auto"
+                    name="theme"
+                    value="auto"
+                  />
+                  <label for="theme-auto">Auto (System)</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="font-size" class="form-label">Font Size</label>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="font-small"
+                    name="font-size"
+                    value="small"
+                  />
+                  <label for="font-small">Small</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="font-medium"
+                    name="font-size"
+                    value="medium"
+                    checked
+                  />
+                  <label for="font-medium">Medium</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="font-large"
+                    name="font-size"
+                    value="large"
+                  />
+                  <label for="font-large">Large</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessibility -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">♿ Accessibility</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="reduced-motion" class="form-label"
+                  >Motion Preferences</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="reduced-motion"
+                    name="reduced-motion"
+                  />
+                  <label for="reduced-motion"
+                    >Reduce motion and animations</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="high-contrast" class="form-label"
+                  >Visual Preferences</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="high-contrast"
+                    name="high-contrast"
+                  />
+                  <label for="high-contrast">High contrast mode</label>
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="focus-indicators"
+                    name="focus-indicators"
+                    checked
+                  />
+                  <label for="focus-indicators"
+                    >Enhanced focus indicators</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="screen-reader" class="form-label"
+                  >Screen Reader Support</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="screen-reader"
+                    name="screen-reader"
+                  />
+                  <label for="screen-reader">Optimize for screen readers</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Travel Preferences -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">✈️ Travel Preferences</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="default-pace" class="form-label"
+                  >Default Travel Pace</label
+                >
+                <select id="default-pace" class="form-input form-select">
+                  <option value="relaxed">Relaxed - Take it easy</option>
+                  <option value="standard" selected>Standard - Balanced</option>
+                  <option value="packed">Packed - See everything</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="default-budget" class="form-label"
+                  >Default Budget Range</label
+                >
+                <select id="default-budget" class="form-input form-select">
+                  <option value="budget">Budget (₹30,000-60,000)</option>
+                  <option value="mid-range" selected>
+                    Mid-range (₹60,000-1,20,000)
+                  </option>
+                  <option value="luxury">Luxury (₹1,20,000+)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="interests" class="form-label"
+                >Default Interests</label
+              >
+              <div class="flex flex--wrap gap-2">
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value="food"
+                    checked
+                    style="display: none"
+                  />
+                  🍜 Food
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value="culture"
+                    style="display: none"
+                  />
+                  🏛️ Culture
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value="nature"
+                    style="display: none"
+                  />
+                  🌿 Nature
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value="family"
+                    checked
+                    style="display: none"
+                  />
+                  👨‍👩‍👧‍👦 Family
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value="nightlife"
+                    style="display: none"
+                  />
+                  🌃 Nightlife
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="interests"
+                    value="outdoors"
+                    style="display: none"
+                  />
+                  🏃‍♂️ Outdoors
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy & Data -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">🔒 Privacy & Data</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="data-storage" class="form-label"
+                  >Data Storage</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="storage-local"
+                    name="data-storage"
+                    value="local"
+                    checked
+                  />
+                  <label for="storage-local"
+                    >Local only (browser storage)</label
+                  >
+                </div>
+                <div class="settings__option">
+                  <input
+                    type="radio"
+                    id="storage-cloud"
+                    name="data-storage"
+                    value="cloud"
+                  />
+                  <label for="storage-cloud"
+                    >Cloud sync (requires account)</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="analytics" class="form-label"
+                  >Analytics & Usage</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="analytics"
+                    name="analytics"
+                    checked
+                  />
+                  <label for="analytics"
+                    >Help improve the app with anonymous usage data</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="personalization" class="form-label"
+                  >Personalization</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="personalization"
+                    name="personalization"
+                    checked
+                  />
+                  <label for="personalization"
+                    >Use data to personalize recommendations</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">🔔 Notifications</h2>
+
+            <div class="settings__group">
+              <div class="form-group">
+                <label for="price-alerts" class="form-label"
+                  >Price Alerts</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="price-alerts"
+                    name="price-alerts"
+                    checked
+                  />
+                  <label for="price-alerts"
+                    >Flight and hotel price changes</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="trip-reminders" class="form-label"
+                  >Trip Reminders</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="trip-reminders"
+                    name="trip-reminders"
+                    checked
+                  />
+                  <label for="trip-reminders"
+                    >Booking deadlines and check-in reminders</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="weather-alerts" class="form-label"
+                  >Weather Alerts</label
+                >
+                <div class="settings__option">
+                  <input
+                    type="checkbox"
+                    id="weather-alerts"
+                    name="weather-alerts"
+                    checked
+                  />
+                  <label for="weather-alerts"
+                    >Weather updates for your destinations</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export & Backup -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">💾 Export & Backup</h2>
+
+            <div class="flex gap-4 mb-4">
+              <button class="btn btn--secondary">Export Trip Data</button>
+              <button class="btn btn--secondary">Backup Settings</button>
+              <button class="btn btn--secondary">Download Itinerary</button>
+            </div>
+
+            <div class="nudge nudge--info">
+              <span>ℹ️</span>
+              <div class="text-sm">
+                <strong>Data Export:</strong> Export your trips, preferences,
+                and settings for backup or migration. All data is stored locally
+                in your browser.
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset & Clear -->
+          <div class="settings__section">
+            <h2 class="settings__section-title">🗑️ Reset & Clear</h2>
+
+            <div class="flex gap-4 mb-4">
+              <button class="btn btn--secondary">Clear Trip History</button>
+              <button class="btn btn--secondary">Reset Preferences</button>
+              <button class="btn btn--danger">Clear All Data</button>
+            </div>
+
+            <div class="nudge nudge--warning">
+              <span>⚠️</span>
+              <div class="text-sm">
+                <strong>Warning:</strong> Clearing all data will permanently
+                delete your trips, preferences, and settings. This action cannot
+                be undone.
+              </div>
+            </div>
+          </div>
+
+          <!-- Save Settings -->
+          <div class="text-center mt-8">
+            <button class="btn btn--primary btn--lg" onclick="saveSettings()">
+              💾 Save Settings
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          AI Travel Agent v0.1 • <a href="about.html">About</a> •
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+
+      // Theme selection
+      document.querySelectorAll('input[name="theme"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          if (this.checked) {
+            const theme = this.value;
+            if (theme === "auto") {
+              // Auto theme based on system preference
+              const prefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)"
+              ).matches;
+              document.documentElement.setAttribute(
+                "data-theme",
+                prefersDark ? "dark" : "light"
+              );
+            } else {
+              document.documentElement.setAttribute("data-theme", theme);
+            }
+            localStorage.setItem("theme", theme);
+          }
+        });
+      });
+
+      // Reduced motion
+      document
+        .getElementById("reduced-motion")
+        .addEventListener("change", function () {
+          if (this.checked) {
+            document.documentElement.style.setProperty(
+              "--transition-fast",
+              "0ms"
+            );
+            document.documentElement.style.setProperty(
+              "--transition-normal",
+              "0ms"
+            );
+          } else {
+            document.documentElement.style.setProperty(
+              "--transition-fast",
+              "150ms ease"
+            );
+            document.documentElement.style.setProperty(
+              "--transition-normal",
+              "250ms ease"
+            );
+          }
+        });
+
+      // High contrast
+      document
+        .getElementById("high-contrast")
+        .addEventListener("change", function () {
+          if (this.checked) {
+            document.documentElement.setAttribute(
+              "data-theme",
+              "high-contrast"
+            );
+          } else {
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          }
+        });
+
+      // Font size
+      document.querySelectorAll('input[name="font-size"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          if (this.checked) {
+            const size = this.value;
+            document.documentElement.style.fontSize =
+              size === "small" ? "14px" : size === "large" ? "18px" : "16px";
+          }
+        });
+      });
+
+      // Chip selection for interests
+      document.querySelectorAll(".chip").forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const checkbox = this.querySelector('input[type="checkbox"]');
+          if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+            this.classList.toggle("chip--theme", checkbox.checked);
+          }
+        });
+      });
+
+      // Save settings
+      function saveSettings() {
+        const settings = {
+          currency: document.getElementById("currency").value,
+          language: document.getElementById("language").value,
+          distance: document.querySelector('input[name="distance"]:checked')
+            .value,
+          temperature: document.querySelector(
+            'input[name="temperature"]:checked'
+          ).value,
+          theme: document.querySelector('input[name="theme"]:checked').value,
+          fontSize: document.querySelector('input[name="font-size"]:checked')
+            .value,
+          reducedMotion: document.getElementById("reduced-motion").checked,
+          highContrast: document.getElementById("high-contrast").checked,
+          focusIndicators: document.getElementById("focus-indicators").checked,
+          screenReader: document.getElementById("screen-reader").checked,
+          defaultPace: document.getElementById("default-pace").value,
+          defaultBudget: document.getElementById("default-budget").value,
+          interests: Array.from(
+            document.querySelectorAll('input[name="interests"]:checked')
+          ).map((cb) => cb.value),
+          dataStorage: document.querySelector(
+            'input[name="data-storage"]:checked'
+          ).value,
+          analytics: document.getElementById("analytics").checked,
+          personalization: document.getElementById("personalization").checked,
+          priceAlerts: document.getElementById("price-alerts").checked,
+          tripReminders: document.getElementById("trip-reminders").checked,
+          weatherAlerts: document.getElementById("weather-alerts").checked,
+        };
+
+        localStorage.setItem("travelAgentSettings", JSON.stringify(settings));
+        alert("Settings saved successfully!");
+      }
+
+      // Load settings
+      function loadSettings() {
+        const savedSettings = localStorage.getItem("travelAgentSettings");
+        if (savedSettings) {
+          const settings = JSON.parse(savedSettings);
+
+          // Apply settings
+          if (settings.currency)
+            document.getElementById("currency").value = settings.currency;
+          if (settings.language)
+            document.getElementById("language").value = settings.language;
+          if (settings.distance)
+            document.querySelector(
+              `input[name="distance"][value="${settings.distance}"]`
+            ).checked = true;
+          if (settings.temperature)
+            document.querySelector(
+              `input[name="temperature"][value="${settings.temperature}"]`
+            ).checked = true;
+          if (settings.theme)
+            document.querySelector(
+              `input[name="theme"][value="${settings.theme}"]`
+            ).checked = true;
+          if (settings.fontSize)
+            document.querySelector(
+              `input[name="font-size"][value="${settings.fontSize}"]`
+            ).checked = true;
+          if (settings.reducedMotion)
+            document.getElementById("reduced-motion").checked =
+              settings.reducedMotion;
+          if (settings.highContrast)
+            document.getElementById("high-contrast").checked =
+              settings.highContrast;
+          if (settings.focusIndicators)
+            document.getElementById("focus-indicators").checked =
+              settings.focusIndicators;
+          if (settings.screenReader)
+            document.getElementById("screen-reader").checked =
+              settings.screenReader;
+          if (settings.defaultPace)
+            document.getElementById("default-pace").value =
+              settings.defaultPace;
+          if (settings.defaultBudget)
+            document.getElementById("default-budget").value =
+              settings.defaultBudget;
+          if (settings.dataStorage)
+            document.querySelector(
+              `input[name="data-storage"][value="${settings.dataStorage}"]`
+            ).checked = true;
+          if (settings.analytics)
+            document.getElementById("analytics").checked = settings.analytics;
+          if (settings.personalization)
+            document.getElementById("personalization").checked =
+              settings.personalization;
+          if (settings.priceAlerts)
+            document.getElementById("price-alerts").checked =
+              settings.priceAlerts;
+          if (settings.tripReminders)
+            document.getElementById("trip-reminders").checked =
+              settings.tripReminders;
+          if (settings.weatherAlerts)
+            document.getElementById("weather-alerts").checked =
+              settings.weatherAlerts;
+
+          // Apply interests
+          if (settings.interests) {
+            settings.interests.forEach((interest) => {
+              const checkbox = document.querySelector(
+                `input[name="interests"][value="${interest}"]`
+              );
+              if (checkbox) {
+                checkbox.checked = true;
+                checkbox.closest(".chip").classList.add("chip--theme");
+              }
+            });
+          }
+        }
+      }
+
+      // Load settings on page load
+      loadSettings();
+    </script>
+  </body>
+</html>

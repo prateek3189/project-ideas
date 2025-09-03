@@ -1,0 +1,614 @@
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  /* ===== GENERAL PRINT RESET ===== */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* ===== PAGE SETUP ===== */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* ===== HIDE NON-PRINTABLE ELEMENTS ===== */
+  .app-header,
+  .app-sidebar,
+  .app-footer,
+  .theme-toggle,
+  .print-button,
+  .currency-switch,
+  .nav-menu,
+  .sidebar-footer,
+  .quick-actions-section,
+  .btn,
+  button {
+    display: none !important;
+  }
+
+  /* ===== LAYOUT ADJUSTMENTS ===== */
+  .app-layout {
+    display: block !important;
+    grid-template-areas: none !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  .app-main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    overflow: visible !important;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    color: black !important;
+  }
+
+  h1 {
+    font-size: 18pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+    margin-bottom: 10pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  h4 {
+    font-size: 12pt !important;
+    margin-bottom: 6pt !important;
+  }
+
+  p {
+    margin-bottom: 8pt !important;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* ===== CARDS AND COMPONENTS ===== */
+  .stat-tile,
+  .program-card,
+  .expiration-item,
+  .quick-action-card,
+  .goal-card,
+  .award-card,
+  .transfer-tile,
+  .alert-banner {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ccc !important;
+    background: white !important;
+    padding: 12pt !important;
+    margin-bottom: 12pt !important;
+    box-shadow: none !important;
+  }
+
+  /* ===== STAT TILES ===== */
+  .stat-tile__value {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .stat-tile__title {
+    font-size: 10pt !important;
+    color: #666 !important;
+  }
+
+  .stat-tile__subtitle {
+    font-size: 9pt !important;
+    color: #666 !important;
+  }
+
+  /* ===== PROGRAM CARDS ===== */
+  .program-card__balance {
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .program-name {
+    font-size: 12pt !important;
+    color: black !important;
+  }
+
+  .program-type {
+    font-size: 9pt !important;
+    color: #666 !important;
+  }
+
+  /* ===== EXPIRATION ITEMS ===== */
+  .expiration-amount {
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .expiration-date {
+    color: #666 !important;
+  }
+
+  .expiration-item__summary {
+    color: #2563eb !important;
+  }
+
+  .keep-alive-options {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* ===== GOAL CARDS ===== */
+  .goal-card__route {
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .goal-card__dates {
+    color: #666 !important;
+  }
+
+  .preference-chip {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    color: #666 !important;
+  }
+
+  /* ===== AWARD CARDS ===== */
+  .award-card__airline h4 {
+    font-size: 12pt !important;
+    color: black !important;
+  }
+
+  .award-card__route {
+    color: #666 !important;
+  }
+
+  .detail-value {
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .detail-label {
+    color: #666 !important;
+  }
+
+  /* ===== VALUATION CHIPS ===== */
+  .valuation-chip {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    color: black !important;
+  }
+
+  /* ===== TRANSFER TILES ===== */
+  .transfer-tile__ratio {
+    font-size: 12pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .transfer-tile__time {
+    color: #666 !important;
+  }
+
+  .transfer-tile__bonus {
+    background: #e5f7e5 !important;
+    border: 1px solid #4caf50 !important;
+    color: #2e7d32 !important;
+  }
+
+  /* ===== ALERT BANNERS ===== */
+  .alert-banner {
+    border-left: 4px solid #ccc !important;
+  }
+
+  .alert-banner--expiry {
+    border-left-color: #f44336 !important;
+  }
+
+  .alert-banner--bonus {
+    border-left-color: #4caf50 !important;
+  }
+
+  .alert-banner--promo {
+    border-left-color: #2196f3 !important;
+  }
+
+  .alert-banner__title {
+    color: black !important;
+  }
+
+  .alert-banner__message {
+    color: #666 !important;
+  }
+
+  .alert-banner__valid-until {
+    color: #999 !important;
+  }
+
+  /* ===== BADGES ===== */
+  .badge {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    color: #666 !important;
+  }
+
+  .badge--achievement {
+    background: #fff3cd !important;
+    border-color: #ffeaa7 !important;
+    color: #856404 !important;
+  }
+
+  .badge--optimizer {
+    background: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+  }
+
+  .badge--family {
+    background: #d1ecf1 !important;
+    border-color: #bee5eb !important;
+    color: #0c5460 !important;
+  }
+
+  /* ===== TABLES ===== */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 12pt !important;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc !important;
+    padding: 6pt !important;
+    text-align: left !important;
+    vertical-align: top !important;
+  }
+
+  th {
+    background: #f5f5f5 !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  /* ===== LISTS ===== */
+  ul,
+  ol {
+    margin-left: 20pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  li {
+    margin-bottom: 4pt !important;
+  }
+
+  /* ===== ICONS ===== */
+  .icon {
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    margin-right: 4pt !important;
+  }
+
+  /* ===== EXPIRY BARS ===== */
+  .expiry-bar {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    height: 8pt !important;
+  }
+
+  .expiry-bar__fill {
+    background: #ccc !important;
+  }
+
+  .expiry-bar__fill--safe {
+    background: #4caf50 !important;
+  }
+
+  .expiry-bar__fill--warning {
+    background: #ff9800 !important;
+  }
+
+  .expiry-bar__fill--danger {
+    background: #f44336 !important;
+  }
+
+  .expiry-bar__label {
+    color: #666 !important;
+    font-size: 8pt !important;
+  }
+
+  /* ===== GAP BARS ===== */
+  .gap-bar {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    height: 12pt !important;
+  }
+
+  .gap-bar__fill {
+    background: #2563eb !important;
+  }
+
+  .gap-label {
+    color: #666 !important;
+    font-size: 9pt !important;
+  }
+
+  /* ===== STATUS CHIPS ===== */
+  .status-chip {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    color: #666 !important;
+  }
+
+  .status-chip--gold {
+    background: #fff3cd !important;
+    border-color: #ffeaa7 !important;
+    color: #856404 !important;
+  }
+
+  .status-chip--silver {
+    background: #e9ecef !important;
+    border-color: #dee2e6 !important;
+    color: #495057 !important;
+  }
+
+  .status-chip--platinum {
+    background: #f8f9fa !important;
+    border-color: #e9ecef !important;
+    color: #6c757d !important;
+  }
+
+  .status-chip--elite {
+    background: #fff3cd !important;
+    border-color: #ffeaa7 !important;
+    color: #856404 !important;
+  }
+
+  /* ===== SEARCH FORMS ===== */
+  .search-form {
+    border: 1px solid #ccc !important;
+    background: white !important;
+  }
+
+  .search-form__title {
+    color: black !important;
+  }
+
+  .search-form__label {
+    color: #666 !important;
+  }
+
+  /* ===== PAGINATION ===== */
+  .pagination {
+    display: none !important;
+  }
+
+  /* ===== MODALS ===== */
+  .modal {
+    display: none !important;
+  }
+
+  /* ===== TOOLTIPS ===== */
+  .tooltip__content {
+    display: none !important;
+  }
+
+  /* ===== LOADING STATES ===== */
+  .loading {
+    display: none !important;
+  }
+
+  /* ===== EMPTY STATES ===== */
+  .empty-state {
+    display: none !important;
+  }
+
+  /* ===== PAGE BREAKS ===== */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* ===== HEADERS AND FOOTERS ===== */
+  .print-header {
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .print-header h1 {
+    margin: 0 0 8pt 0;
+    color: black !important;
+  }
+
+  .print-header p {
+    margin: 0;
+    color: #666 !important;
+  }
+
+  .print-footer {
+    text-align: center;
+    margin-top: 20pt;
+    padding-top: 10pt;
+    border-top: 1px solid #ccc;
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* ===== REDEMPTION PLAN SPECIFIC ===== */
+  .redemption-plan {
+    page-break-inside: avoid;
+  }
+
+  .redemption-plan__summary {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 12pt !important;
+    margin-bottom: 16pt !important;
+  }
+
+  .redemption-plan__options {
+    margin-bottom: 16pt !important;
+  }
+
+  .redemption-plan__option {
+    border: 1px solid #ccc !important;
+    padding: 12pt !important;
+    margin-bottom: 12pt !important;
+    break-inside: avoid;
+  }
+
+  .redemption-plan__option--recommended {
+    border-color: #4caf50 !important;
+    background: #f1f8e9 !important;
+  }
+
+  /* ===== MONTHLY STATEMENT SPECIFIC ===== */
+  .monthly-statement {
+    page-break-inside: avoid;
+  }
+
+  .statement-header {
+    text-align: center;
+    margin-bottom: 20pt;
+  }
+
+  .statement-summary {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 12pt !important;
+    margin-bottom: 16pt !important;
+  }
+
+  .statement-transactions {
+    margin-bottom: 16pt !important;
+  }
+
+  .transaction-row {
+    border-bottom: 1px solid #eee !important;
+    padding: 6pt 0 !important;
+  }
+
+  .transaction-row:last-child {
+    border-bottom: none !important;
+  }
+
+  /* ===== UTILITY CLASSES FOR PRINT ===== */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break {
+    page-break-before: always;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid;
+  }
+
+  /* ===== COLOR OVERRIDES FOR PRINT ===== */
+  .text-primary,
+  .text-secondary,
+  .text-muted,
+  .text-accent,
+  .text-success,
+  .text-warning,
+  .text-danger,
+  .text-info {
+    color: black !important;
+  }
+
+  .bg-primary,
+  .bg-secondary,
+  .bg-accent,
+  .bg-success,
+  .bg-warning,
+  .bg-danger,
+  .bg-info {
+    background: white !important;
+  }
+
+  /* ===== SHADOW OVERRIDES FOR PRINT ===== */
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: none !important;
+  }
+
+  /* ===== BORDER OVERRIDES FOR PRINT ===== */
+  .border,
+  .border-t,
+  .border-r,
+  .border-b,
+  .border-l {
+    border-color: #ccc !important;
+  }
+
+  /* ===== RESPONSIVE OVERRIDES FOR PRINT ===== */
+  @media print and (max-width: 8.5in) {
+    body {
+      font-size: 10pt !important;
+    }
+
+    .stat-tile,
+    .program-card,
+    .expiration-item,
+    .quick-action-card,
+    .goal-card,
+    .award-card,
+    .transfer-tile,
+    .alert-banner {
+      padding: 8pt !important;
+      margin-bottom: 8pt !important;
+    }
+
+    h1 {
+      font-size: 16pt !important;
+    }
+
+    h2 {
+      font-size: 14pt !important;
+    }
+
+    h3 {
+      font-size: 12pt !important;
+    }
+  }
+}

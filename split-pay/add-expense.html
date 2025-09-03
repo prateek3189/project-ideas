@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Expense - Split & Pay</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="add-expense.html" class="btn btn--secondary btn--small"
+              >Print</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="add-expense">
+            <div class="add-expense__form">
+              <h1>Add New Expense</h1>
+
+              <!-- Basic Information -->
+              <div class="add-expense__section">
+                <h2 class="add-expense__section-title">Basic Information</h2>
+
+                <div class="form-group">
+                  <label for="group" class="form-label">Group</label>
+                  <select id="group" class="form-select">
+                    <option value="goa-trip">Goa Trip</option>
+                    <option value="roommates">Flat 3B Roommates</option>
+                    <option value="office">Office Team Lunch</option>
+                    <option value="weekend">Weekend Trip</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="payer" class="form-label">Paid by</label>
+                  <select id="payer" class="form-select">
+                    <option value="you">You</option>
+                    <option value="aditi">Aditi</option>
+                    <option value="rahul">Rahul</option>
+                    <option value="neha">Neha</option>
+                  </select>
+                </div>
+
+                <div class="grid grid-2 gap-4">
+                  <div class="form-group">
+                    <label for="amount" class="form-label">Amount</label>
+                    <input
+                      type="number"
+                      id="amount"
+                      class="form-input"
+                      placeholder="0.00"
+                      step="0.01"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="currency" class="form-label">Currency</label>
+                    <select id="currency" class="form-select">
+                      <option value="INR">₹ (INR)</option>
+                      <option value="USD">$ (USD)</option>
+                      <option value="EUR">€ (EUR)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="date" class="form-label">Date</label>
+                  <input
+                    type="date"
+                    id="date"
+                    class="form-input"
+                    value="2024-12-18"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="category" class="form-label">Category</label>
+                  <select id="category" class="form-select">
+                    <option value="food">🍽️ Food</option>
+                    <option value="travel">🚗 Travel</option>
+                    <option value="stay">🏨 Stay</option>
+                    <option value="utilities">⚡ Utilities</option>
+                    <option value="office">💼 Office</option>
+                    <option value="entertainment">🎬 Entertainment</option>
+                    <option value="shopping">🛍️ Shopping</option>
+                    <option value="other">📝 Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="description" class="form-label"
+                    >Description / Merchant</label
+                  >
+                  <input
+                    type="text"
+                    id="description"
+                    class="form-input"
+                    placeholder="e.g., Lunch at Beach Shack"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="notes" class="form-label">Notes (optional)</label>
+                  <textarea
+                    id="notes"
+                    class="form-textarea"
+                    placeholder="Additional details..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="receipt" class="form-label"
+                    >Receipt (placeholder)</label
+                  >
+                  <input
+                    type="file"
+                    id="receipt"
+                    class="form-input"
+                    accept="image/*,.pdf"
+                    disabled
+                  />
+                  <p class="text-muted text-sm">
+                    Receipt upload is a placeholder in v1
+                  </p>
+                </div>
+              </div>
+
+              <!-- Split Type -->
+              <div class="add-expense__section">
+                <h2 class="add-expense__section-title">How to Split</h2>
+
+                <div class="form-group">
+                  <fieldset>
+                    <legend class="form-label">Split Type</legend>
+
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="split-equal"
+                        name="split-type"
+                        value="equal"
+                        checked
+                      />
+                      <label for="split-equal">
+                        <strong>Equal</strong> - Split equally among all
+                        participants
+                      </label>
+                    </div>
+
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="split-shares"
+                        name="split-type"
+                        value="shares"
+                      />
+                      <label for="split-shares">
+                        <strong>Shares</strong> - Use shares when some people
+                        consumed more (e.g., 1-2-1)
+                      </label>
+                    </div>
+
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="split-percentage"
+                        name="split-type"
+                        value="percentage"
+                      />
+                      <label for="split-percentage">
+                        <strong>Percentage</strong> - Split by percentage (must
+                        sum to 100%)
+                      </label>
+                    </div>
+
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="split-itemized"
+                        name="split-type"
+                        value="itemized"
+                      />
+                      <label for="split-itemized">
+                        <strong>Itemized</strong> - Split by individual items
+                      </label>
+                    </div>
+
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="split-weights"
+                        name="split-type"
+                        value="weights"
+                      />
+                      <label for="split-weights">
+                        <strong>Weights</strong> - Split by custom weights
+                        (e.g., 0.7, 0.3)
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <!-- Split Panel -->
+              <div class="add-expense__section">
+                <h2 class="add-expense__section-title">Participants</h2>
+
+                <div class="add-expense__split-panel">
+                  <!-- Equal Split Panel -->
+                  <div id="split-panel-equal" class="split-panel">
+                    <h3>Equal Split</h3>
+                    <p class="text-muted mb-4">
+                      All participants pay the same amount
+                    </p>
+
+                    <div class="add-expense__participants">
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-aditi"
+                            checked
+                          />
+                          <label for="participant-aditi">Aditi</label>
+                        </div>
+                        <div class="tabular-nums">₹0.00</div>
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-rahul"
+                            checked
+                          />
+                          <label for="participant-rahul">Rahul</label>
+                        </div>
+                        <div class="tabular-nums">₹0.00</div>
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-neha"
+                            checked
+                          />
+                          <label for="participant-neha">Neha</label>
+                        </div>
+                        <div class="tabular-nums">₹0.00</div>
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input type="checkbox" id="participant-you" checked />
+                          <label for="participant-you">You</label>
+                        </div>
+                        <div class="tabular-nums">₹0.00</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Shares Split Panel -->
+                  <div
+                    id="split-panel-shares"
+                    class="split-panel"
+                    style="display: none"
+                  >
+                    <h3>Shares Split</h3>
+                    <p class="text-muted mb-4">
+                      Enter the number of shares for each participant
+                    </p>
+
+                    <div class="add-expense__participants">
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-aditi-shares"
+                            checked
+                          />
+                          <label for="participant-aditi-shares">Aditi</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="1"
+                          min="0"
+                          step="1"
+                        />
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-rahul-shares"
+                            checked
+                          />
+                          <label for="participant-rahul-shares">Rahul</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="1"
+                          min="0"
+                          step="1"
+                        />
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-neha-shares"
+                            checked
+                          />
+                          <label for="participant-neha-shares">Neha</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="1"
+                          min="0"
+                          step="1"
+                        />
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-you-shares"
+                            checked
+                          />
+                          <label for="participant-you-shares">You</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="1"
+                          min="0"
+                          step="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Percentage Split Panel -->
+                  <div
+                    id="split-panel-percentage"
+                    class="split-panel"
+                    style="display: none"
+                  >
+                    <h3>Percentage Split</h3>
+                    <p class="text-muted mb-4">
+                      Enter percentages (must sum to 100%)
+                    </p>
+
+                    <div class="add-expense__participants">
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-aditi-percent"
+                            checked
+                          />
+                          <label for="participant-aditi-percent">Aditi</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="25"
+                          min="0"
+                          max="100"
+                          step="0.01"
+                        />%
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-rahul-percent"
+                            checked
+                          />
+                          <label for="participant-rahul-percent">Rahul</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="25"
+                          min="0"
+                          max="100"
+                          step="0.01"
+                        />%
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-neha-percent"
+                            checked
+                          />
+                          <label for="participant-neha-percent">Neha</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="25"
+                          min="0"
+                          max="100"
+                          step="0.01"
+                        />%
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-you-percent"
+                            checked
+                          />
+                          <label for="participant-you-percent">You</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="25"
+                          min="0"
+                          max="100"
+                          step="0.01"
+                        />%
+                      </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-info rounded">
+                      <strong>Total:</strong>
+                      <span id="percentage-total">100</span>%
+                    </div>
+                  </div>
+
+                  <!-- Itemized Split Panel -->
+                  <div
+                    id="split-panel-itemized"
+                    class="split-panel"
+                    style="display: none"
+                  >
+                    <h3>Itemized Split</h3>
+                    <p class="text-muted mb-4">
+                      Add individual items and assign to participants
+                    </p>
+
+                    <div class="mb-4">
+                      <button
+                        type="button"
+                        class="btn btn--secondary btn--small"
+                      >
+                        + Add Item
+                      </button>
+                    </div>
+
+                    <table class="split-table">
+                      <thead>
+                        <tr>
+                          <th>Item</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Assigned to</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input
+                              type="text"
+                              class="form-input"
+                              placeholder="Item name"
+                              style="width: 120px"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              class="form-input"
+                              value="1"
+                              min="1"
+                              style="width: 60px"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              class="form-input"
+                              placeholder="0.00"
+                              step="0.01"
+                              style="width: 80px"
+                            />
+                          </td>
+                          <td>
+                            <select class="form-select" style="width: 100px">
+                              <option value="aditi">Aditi</option>
+                              <option value="rahul">Rahul</option>
+                              <option value="neha">Neha</option>
+                              <option value="you">You</option>
+                            </select>
+                          </td>
+                          <td class="tabular-nums">₹0.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Weights Split Panel -->
+                  <div
+                    id="split-panel-weights"
+                    class="split-panel"
+                    style="display: none"
+                  >
+                    <h3>Weights Split</h3>
+                    <p class="text-muted mb-4">
+                      Enter custom weights for each participant
+                    </p>
+
+                    <div class="add-expense__participants">
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-aditi-weights"
+                            checked
+                          />
+                          <label for="participant-aditi-weights">Aditi</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="0.3"
+                          min="0"
+                          step="0.1"
+                        />
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-rahul-weights"
+                            checked
+                          />
+                          <label for="participant-rahul-weights">Rahul</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="0.3"
+                          min="0"
+                          step="0.1"
+                        />
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-neha-weights"
+                            checked
+                          />
+                          <label for="participant-neha-weights">Neha</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="0.2"
+                          min="0"
+                          step="0.1"
+                        />
+                      </div>
+
+                      <div class="add-expense__participant">
+                        <div class="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            id="participant-you-weights"
+                            checked
+                          />
+                          <label for="participant-you-weights">You</label>
+                        </div>
+                        <input
+                          type="number"
+                          class="form-input"
+                          style="width: 80px"
+                          value="0.2"
+                          min="0"
+                          step="0.1"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-info rounded">
+                      <strong>Total Weight:</strong>
+                      <span id="weights-total">1.0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="add-expense__actions">
+                <a href="group.html" class="btn btn--secondary">Cancel</a>
+                <button type="submit" class="btn btn--primary">
+                  Save Expense
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+
+      // Split type switching
+      document.addEventListener("DOMContentLoaded", function () {
+        const splitTypeRadios = document.querySelectorAll(
+          'input[name="split-type"]'
+        );
+        const splitPanels = document.querySelectorAll(".split-panel");
+
+        splitTypeRadios.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            // Hide all panels
+            splitPanels.forEach((panel) => (panel.style.display = "none"));
+
+            // Show selected panel
+            const selectedPanel = document.getElementById(
+              "split-panel-" + this.value
+            );
+            if (selectedPanel) {
+              selectedPanel.style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Receipts</title>
+    <meta
+      name="description"
+      content="Manage and organize your receipt images and documents"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Statement</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a
+                  href="receipts.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Receipts</h1>
+            <p class="main__subtitle">
+              Manage and organize your receipt images and documents
+            </p>
+          </div>
+
+          <!-- Receipt Summary -->
+          <div class="dashboard-section">
+            <div class="dashboard-grid">
+              <div class="tile tile--info">
+                <div class="tile__header">
+                  <h3 class="tile__title">Total Receipts</h3>
+                  <span class="tile__icon">🧾</span>
+                </div>
+                <div class="tile__value tabular-nums">47</div>
+                <div class="tile__subtitle">This month</div>
+              </div>
+
+              <div class="tile tile--success">
+                <div class="tile__header">
+                  <h3 class="tile__title">Linked Transactions</h3>
+                  <span class="tile__icon">🔗</span>
+                </div>
+                <div class="tile__value tabular-nums">42</div>
+                <div class="tile__subtitle">89% linked</div>
+              </div>
+
+              <div class="tile tile--warning">
+                <div class="tile__header">
+                  <h3 class="tile__title">Pending Review</h3>
+                  <span class="tile__icon">⏳</span>
+                </div>
+                <div class="tile__value tabular-nums">5</div>
+                <div class="tile__subtitle">Need linking</div>
+              </div>
+
+              <div class="tile tile--spend">
+                <div class="tile__header">
+                  <h3 class="tile__title">Storage Used</h3>
+                  <span class="tile__icon">💾</span>
+                </div>
+                <div class="tile__value">24.5 MB</div>
+                <div class="tile__subtitle">Local storage</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upload Area -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Upload Receipts</h3>
+              <p
+                style="color: var(--color-text-secondary); margin-bottom: 2rem"
+              >
+                Upload receipt images to link them with your transactions and
+                keep digital records.
+              </p>
+
+              <div
+                style="
+                  margin-bottom: 2rem;
+                  padding: 3rem;
+                  border: 2px dashed var(--color-border);
+                  border-radius: var(--radius-lg);
+                  text-align: center;
+                  background: var(--color-bg-tertiary);
+                "
+              >
+                <div style="font-size: 4rem; margin-bottom: 1rem">📷</div>
+                <h4 style="margin-bottom: 0.5rem">Drop receipt images here</h4>
+                <p
+                  style="
+                    color: var(--color-text-secondary);
+                    margin-bottom: 1.5rem;
+                  "
+                >
+                  or click to browse files
+                </p>
+                <button class="btn">Choose Files</button>
+                <p
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-text-tertiary);
+                    margin-top: 1rem;
+                  "
+                >
+                  Supported formats: JPG, PNG, PDF (max 10MB each)
+                </p>
+              </div>
+
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+                <button class="btn">Upload Selected</button>
+                <button class="btn btn--secondary">Scan with Camera</button>
+                <button class="btn btn--secondary">Import from Gallery</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Receipt Filters -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Filter Receipts</h3>
+
+              <div
+                style="
+                  display: flex;
+                  gap: 1rem;
+                  margin-bottom: 1rem;
+                  flex-wrap: wrap;
+                "
+              >
+                <select style="min-width: 150px">
+                  <option value="">All Categories</option>
+                  <option value="food">Food & Dining</option>
+                  <option value="transport">Transport</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="bills">Bills & Utilities</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="health">Health</option>
+                  <option value="education">Education</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <select style="min-width: 150px">
+                  <option value="">All Status</option>
+                  <option value="linked">Linked to Transaction</option>
+                  <option value="unlinked">Not Linked</option>
+                  <option value="pending">Pending Review</option>
+                </select>
+
+                <select style="min-width: 150px">
+                  <option value="">All Dates</option>
+                  <option value="today">Today</option>
+                  <option value="this-week">This Week</option>
+                  <option value="this-month">This Month</option>
+                  <option value="last-month">Last Month</option>
+                </select>
+
+                <input
+                  type="text"
+                  placeholder="Search receipts..."
+                  style="min-width: 200px"
+                />
+              </div>
+
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap">
+                <div class="filter-pill filter-pill--active">
+                  <span>All</span>
+                  <span class="filter-pill__count">47</span>
+                </div>
+                <div class="filter-pill">
+                  <span>Linked</span>
+                  <span class="filter-pill__count">42</span>
+                </div>
+                <div class="filter-pill">
+                  <span>Unlinked</span>
+                  <span class="filter-pill__count">5</span>
+                </div>
+                <div class="filter-pill">
+                  <span>This Month</span>
+                  <span class="filter-pill__count">23</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Receipt Grid -->
+          <div class="dashboard-section">
+            <h2 class="dashboard-section__title">Recent Receipts</h2>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+              "
+            >
+              <!-- Receipt Card 1 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">SWIGGY</div>
+                  <div class="receipt-card__amount tabular-nums">₹289.00</div>
+                  <div class="receipt-card__date">Today, 7:24 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--food">Food</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 2 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">AMAZON</div>
+                  <div class="receipt-card__amount tabular-nums">₹1,299.00</div>
+                  <div class="receipt-card__date">Yesterday, 9:10 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--shopping">Shopping</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 3 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">BIG BAZAAR</div>
+                  <div class="receipt-card__amount tabular-nums">₹1,240.00</div>
+                  <div class="receipt-card__date">Sep 14, 2:15 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--food">Food</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 4 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">MEDICAL STORE</div>
+                  <div class="receipt-card__amount tabular-nums">₹320.00</div>
+                  <div class="receipt-card__date">Sep 7, 4:15 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--health">Health</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 5 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">BOOKSTORE</div>
+                  <div class="receipt-card__amount tabular-nums">₹650.00</div>
+                  <div class="receipt-card__date">Aug 18, 3:20 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--education">Education</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 6 - Unlinked -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">Unknown Merchant</div>
+                  <div class="receipt-card__amount tabular-nums">₹150.00</div>
+                  <div class="receipt-card__date">Sep 16, 1:30 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--other">Other</span>
+                    <span
+                      class="txn-row__tag"
+                      style="
+                        margin-left: 0.5rem;
+                        background: var(--color-warning);
+                        color: white;
+                      "
+                      >Unlinked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 7 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">FLIPKART</div>
+                  <div class="receipt-card__amount tabular-nums">₹2,600.00</div>
+                  <div class="receipt-card__date">Sep 8, 3:30 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--shopping">Shopping</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Receipt Card 8 -->
+              <div class="receipt-card">
+                <div class="receipt-card__thumbnail">🧾</div>
+                <div class="receipt-card__details">
+                  <div class="receipt-card__merchant">PETROL PUMP</div>
+                  <div class="receipt-card__amount tabular-nums">₹1,200.00</div>
+                  <div class="receipt-card__date">Aug 25, 5:30 PM</div>
+                  <div style="margin-top: 1rem">
+                    <span class="pill pill--transport">Transport</span>
+                    <span class="txn-row__tag" style="margin-left: 0.5rem"
+                      >Linked</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Receipt Actions -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Receipt Management</h3>
+              <div
+                style="
+                  display: flex;
+                  gap: 1rem;
+                  flex-wrap: wrap;
+                  margin-bottom: 1rem;
+                "
+              >
+                <button class="btn">Link to Transaction</button>
+                <button class="btn btn--secondary">Bulk Actions</button>
+                <button class="btn btn--secondary">Export Receipts</button>
+                <button class="btn btn--secondary">Delete Selected</button>
+              </div>
+
+              <div
+                style="
+                  padding: 1rem;
+                  background: var(--color-accent-light);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-accent);
+                  "
+                >
+                  <strong>💡 Tip:</strong> Link receipts to transactions for
+                  better expense tracking and tax purposes. You can also add
+                  notes to receipts for additional context.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OCR Information -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Receipt Processing</h3>
+              <p
+                style="color: var(--color-text-secondary); margin-bottom: 2rem"
+              >
+                Budget Buddy can automatically extract information from receipt
+                images using OCR (Optical Character Recognition).
+              </p>
+
+              <div style="display: grid; gap: 1rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    🔍
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      OCR Processing
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Automatically extract merchant name, amount, and date from
+                      receipt images
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    🔗
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Auto-Linking
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Automatically link receipts to matching transactions
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    📝
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Manual Review
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Review and correct extracted information before linking
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 2rem;
+                  padding: 1rem;
+                  background: var(--color-warning);
+                  color: white;
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div style="font-size: var(--font-size-sm)">
+                  <strong>⚠️ Note:</strong> OCR accuracy depends on receipt
+                  image quality and text clarity. Always verify extracted
+                  information before linking to transactions.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

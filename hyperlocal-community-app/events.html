@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Hyperlocal Community</title>
+    <meta
+      name="description"
+      content="Discover and join community events in your neighborhood."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search events..."
+              aria-label="Search events"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a
+            href="events.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a href="items.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a href="carpool.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a href="groups.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a href="messages.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a href="profile.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">Community Events</h1>
+          <p class="page-subtitle">
+            Join your neighbors for fun activities, community service, and
+            social gatherings
+          </p>
+        </div>
+
+        <!-- Event Helper -->
+        <div class="alert alert--info">
+          <div class="alert__title">Event Tips</div>
+          <div class="alert__content">
+            Add a clear meetup point and backup contact. Check the event details
+            before attending.
+          </div>
+        </div>
+
+        <!-- Event Filters -->
+        <div class="feed-filters">
+          <div class="feed-filters__left">
+            <div class="filter-pills">
+              <a href="#" class="filter-pill filter-pill--active">All Events</a>
+              <a href="#" class="filter-pill">This Week</a>
+              <a href="#" class="filter-pill">Family</a>
+              <a href="#" class="filter-pill">Kids</a>
+              <a href="#" class="filter-pill">Fitness</a>
+              <a href="#" class="filter-pill">Learning</a>
+              <a href="#" class="filter-pill">Social</a>
+            </div>
+          </div>
+
+          <div class="feed-filters__right">
+            <div class="feed-sort">
+              <label class="feed-sort__label" for="sort-select">Sort by:</label>
+              <select id="sort-select" class="feed-sort__select">
+                <option value="date">Date</option>
+                <option value="near">Nearest</option>
+                <option value="popular">Most Popular</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="feed-grid">
+          <!-- Event 1 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🧹</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Weekend Park Clean-up</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Sat, Dec 16 • 7:30 AM</span
+                >
+                <span class="chip chip--distance">0.8 km</span>
+                <span class="chip chip--default">Social</span>
+                <span class="chip chip--default">Kids</span>
+                <span class="chip chip--default">Service</span>
+              </div>
+              <p class="feed-card__description">
+                Join us for a community clean-up at Central Park. Bring gloves
+                and water bottles. All ages welcome! We'll provide trash bags
+                and refreshments.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">SM</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Sarah M.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 2 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🌱</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Weekend Farmers' Market</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Sun, Dec 17 • 9:00 AM</span
+                >
+                <span class="chip chip--distance">1.2 km</span>
+                <span class="chip chip--default">Food</span>
+                <span class="chip chip--default">Local</span>
+                <span class="chip chip--default">Family</span>
+              </div>
+              <p class="feed-card__description">
+                Fresh local produce, homemade goods, and community vendors.
+                Every Sunday morning at Lot B. Live music and food trucks!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">MG</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Maria G.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 3 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🏃</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Morning Run Club</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Tue, Dec 19 • 6:00 AM</span
+                >
+                <span class="chip chip--distance">0.5 km</span>
+                <span class="chip chip--default">Fitness</span>
+                <span class="chip chip--default">Recurring</span>
+              </div>
+              <p class="feed-card__description">
+                Weekly morning runs every Tuesday & Thursday. All fitness levels
+                welcome! Meet at the community center entrance.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">LK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Lisa K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 4 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">📚</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Book Swap Meet</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Sat, Dec 23 • 2:00 PM</span
+                >
+                <span class="chip chip--distance">0.9 km</span>
+                <span class="chip chip--default">Learning</span>
+                <span class="chip chip--default">Social</span>
+              </div>
+              <p class="feed-card__description">
+                Bring books to swap and discover new reads! Coffee and snacks
+                provided. All genres welcome.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">AS</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Anita S.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 5 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🎨</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Kids Art Workshop</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Sun, Dec 24 • 10:00 AM</span
+                >
+                <span class="chip chip--distance">1.1 km</span>
+                <span class="chip chip--default">Kids</span>
+                <span class="chip chip--default">Learning</span>
+                <span class="chip chip--default">Arts</span>
+              </div>
+              <p class="feed-card__description">
+                Creative art workshop for kids aged 5-12. All materials
+                provided. Parents welcome to stay and participate!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">RK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Ravi K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 6 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🎵</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Community Music Night</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Fri, Dec 29 • 7:00 PM</span
+                >
+                <span class="chip chip--distance">0.6 km</span>
+                <span class="chip chip--default">Social</span>
+                <span class="chip chip--default">Music</span>
+                <span class="chip chip--default">Family</span>
+              </div>
+              <p class="feed-card__description">
+                Live music performance by local artists. Bring your own chairs
+                and snacks. All ages welcome!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">JP</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">John P.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 7 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🧘</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Morning Yoga Session</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Wed, Jan 3 • 7:00 AM</span
+                >
+                <span class="chip chip--distance">0.4 km</span>
+                <span class="chip chip--default">Fitness</span>
+                <span class="chip chip--default">Wellness</span>
+              </div>
+              <p class="feed-card__description">
+                Gentle yoga session in the park. Bring your own mat. Perfect for
+                beginners and experienced practitioners.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">NM</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Neha M.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 8 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🌿</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Gardening Workshop</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Sat, Jan 6 • 3:00 PM</span
+                >
+                <span class="chip chip--distance">1.3 km</span>
+                <span class="chip chip--default">Learning</span>
+                <span class="chip chip--default">Gardening</span>
+              </div>
+              <p class="feed-card__description">
+                Learn about winter gardening and plant care. Take home some
+                seeds and starter plants!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">GT</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Gita T.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 9 -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🎯</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Game Night</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums"
+                  >Fri, Jan 12 • 6:30 PM</span
+                >
+                <span class="chip chip--distance">0.7 km</span>
+                <span class="chip chip--default">Social</span>
+                <span class="chip chip--default">Games</span>
+                <span class="chip chip--default">Family</span>
+              </div>
+              <p class="feed-card__description">
+                Board games, card games, and fun activities for all ages. Snacks
+                and drinks provided!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">SK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Sunil K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#event-detail" class="btn btn--sm btn--primary"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Event Detail Modal (Visual Placeholder) -->
+        <details class="detail-layout no-print" style="margin-top: 2rem">
+          <summary
+            style="
+              font-size: 1.2rem;
+              font-weight: 600;
+              margin-bottom: 1rem;
+              cursor: pointer;
+            "
+          >
+            View Event Detail Example
+          </summary>
+
+          <div class="detail-main">
+            <div class="detail-card">
+              <h2 class="detail-card__title">Weekend Park Clean-up</h2>
+
+              <div class="map-box">
+                <span class="map-box__pin">📍</span>
+              </div>
+
+              <div class="mt-4">
+                <h3>When & Where</h3>
+                <p><strong>Date:</strong> Saturday, December 16, 2023</p>
+                <p><strong>Time:</strong> 7:30 AM - 10:00 AM</p>
+                <p>
+                  <strong>Location:</strong> Central Park, near the playground
+                </p>
+                <p>
+                  <strong>Address:</strong> 123 Community Drive (visual
+                  placeholder)
+                </p>
+              </div>
+
+              <div class="mt-4">
+                <h3>About This Event</h3>
+                <p>
+                  Join us for a community clean-up at Central Park! This is a
+                  great opportunity to give back to our neighborhood and meet
+                  fellow residents.
+                </p>
+
+                <p><strong>What to bring:</strong></p>
+                <ul>
+                  <li>Work gloves</li>
+                  <li>Water bottle</li>
+                  <li>Comfortable clothes</li>
+                  <li>Positive attitude!</li>
+                </ul>
+
+                <p><strong>We'll provide:</strong></p>
+                <ul>
+                  <li>Trash bags</li>
+                  <li>Refreshments</li>
+                  <li>Basic tools</li>
+                </ul>
+              </div>
+
+              <div class="mt-4">
+                <h3>RSVP</h3>
+                <div class="rsvp">
+                  <button class="rsvp__chip rsvp__chip--going">
+                    Going (12)
+                  </button>
+                  <button class="rsvp__chip rsvp__chip--interested">
+                    Interested (8)
+                  </button>
+                  <button class="rsvp__chip rsvp__chip--not-going">
+                    Not Going
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-sidebar">
+            <div class="detail-card">
+              <h3 class="detail-card__title">Event Host</h3>
+              <div class="profile-chip">
+                <div class="profile-chip__avatar">SM</div>
+                <div class="profile-chip__info">
+                  <div class="profile-chip__name">Sarah M.</div>
+                  <div class="profile-chip__badges">
+                    <span class="badge badge--verified">✓ Verified</span>
+                    <span class="badge badge--helper">Helper</span>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3">
+                Community organizer and environmental enthusiast. Hosted 15+
+                successful events.
+              </p>
+              <a href="profile.html" class="btn btn--sm btn--secondary mt-3"
+                >View Profile</a
+              >
+            </div>
+
+            <div class="detail-card">
+              <h3 class="detail-card__title">Community Rules</h3>
+              <p>Please follow our community guidelines:</p>
+              <ul>
+                <li>Be respectful to all participants</li>
+                <li>Follow safety instructions</li>
+                <li>Clean up after yourself</li>
+                <li>Have fun and make friends!</li>
+              </ul>
+              <a href="moderation.html" class="btn btn--sm btn--ghost mt-3"
+                >View All Rules</a
+              >
+            </div>
+          </div>
+        </details>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      });
+    </script>
+  </body>
+</html>

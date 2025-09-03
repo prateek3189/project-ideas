@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Travel Agent - Plan Your Perfect Trip</title>
+    <meta
+      name="description"
+      content="AI-powered travel planning that creates personalized itineraries based on your budget and preferences."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">✈</div>
+          <h1 class="header__title">AI Travel Agent</h1>
+        </a>
+        <div class="header__actions">
+          <select class="form-input" style="width: auto; min-width: 80px">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+          <a href="itinerary.html" class="btn btn--primary">Print Itinerary</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a
+              href="index.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🏠</span>
+              Plan Trip
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="itinerary.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              Itinerary
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="bookings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              Bookings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="budget.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💰</span>
+              Budget
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="collections.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📍</span>
+              Collections
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="page">
+          <div class="page__header">
+            <h1 class="page__title">Plan Your Perfect Trip</h1>
+            <p class="page__description">
+              Building a plan that fits <strong>your budget</strong> and
+              <strong>pace</strong>. Tell us about your dream destination and
+              we'll create a personalized itinerary just for you.
+            </p>
+          </div>
+
+          <!-- Trip Form -->
+          <form class="trip-form" id="tripForm">
+            <div class="trip-form__section">
+              <h2 class="trip-form__section-title">Trip Details</h2>
+              <div class="trip-form__grid">
+                <div class="form-group">
+                  <label for="destination" class="form-label"
+                    >Destination</label
+                  >
+                  <input
+                    type="text"
+                    id="destination"
+                    class="form-input"
+                    placeholder="e.g., Singapore, Tokyo, Paris"
+                    value="Singapore"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="startDate" class="form-label">Start Date</label>
+                  <input
+                    type="date"
+                    id="startDate"
+                    class="form-input"
+                    value="2024-11-15"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="endDate" class="form-label">End Date</label>
+                  <input
+                    type="date"
+                    id="endDate"
+                    class="form-input"
+                    value="2024-11-19"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="travelers" class="form-label">Travelers</label>
+                  <select
+                    id="travelers"
+                    class="form-input form-select"
+                    required
+                  >
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                    <option value="family">Family (2 Adults + 2 Kids)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="trip-form__section">
+              <h2 class="trip-form__section-title">Budget & Preferences</h2>
+              <div class="trip-form__grid">
+                <div class="form-group">
+                  <label for="budget" class="form-label"
+                    >Total Budget (₹)</label
+                  >
+                  <input
+                    type="range"
+                    id="budget"
+                    class="slider"
+                    min="30000"
+                    max="200000"
+                    value="85000"
+                    step="5000"
+                  />
+                  <div class="flex flex--between mt-2">
+                    <span class="text-sm text-muted">₹30,000</span>
+                    <span class="text-sm font-semibold" id="budgetValue"
+                      >₹85,000</span
+                    >
+                    <span class="text-sm text-muted">₹2,00,000</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pace" class="form-label">Travel Pace</label>
+                  <select id="pace" class="form-input form-select" required>
+                    <option value="relaxed">Relaxed - Take it easy</option>
+                    <option value="standard" selected>
+                      Standard - Balanced
+                    </option>
+                    <option value="packed">Packed - See everything</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="trip-form__section">
+              <h2 class="trip-form__section-title">Interests & Themes</h2>
+              <div class="flex flex--wrap gap-3 mb-4">
+                <label class="chip chip--theme">
+                  <input
+                    type="checkbox"
+                    name="themes"
+                    value="food"
+                    checked
+                    style="display: none"
+                  />
+                  🍜 Food
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="themes"
+                    value="culture"
+                    style="display: none"
+                  />
+                  🏛️ Culture
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="themes"
+                    value="nature"
+                    style="display: none"
+                  />
+                  🌿 Nature
+                </label>
+                <label class="chip chip--theme">
+                  <input
+                    type="checkbox"
+                    name="themes"
+                    value="family"
+                    checked
+                    style="display: none"
+                  />
+                  👨‍👩‍👧‍👦 Family
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="themes"
+                    value="nightlife"
+                    style="display: none"
+                  />
+                  🌃 Nightlife
+                </label>
+                <label class="chip">
+                  <input
+                    type="checkbox"
+                    name="themes"
+                    value="outdoors"
+                    style="display: none"
+                  />
+                  🏃‍♂️ Outdoors
+                </label>
+              </div>
+            </div>
+
+            <div class="trip-form__section">
+              <h2 class="trip-form__section-title">Must-See & Avoid</h2>
+              <div class="trip-form__grid">
+                <div class="form-group">
+                  <label for="musts" class="form-label">Must-See Places</label>
+                  <textarea
+                    id="musts"
+                    class="form-input form-textarea"
+                    placeholder="e.g., Gardens by the Bay, Marina Bay Sands, Sentosa Island"
+                  >
+Gardens by the Bay</textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="avoids" class="form-label">Avoid</label>
+                  <textarea
+                    id="avoids"
+                    class="form-input form-textarea"
+                    placeholder="e.g., Crowded areas, Late-night events, Expensive restaurants"
+                  >
+Late-night events</textarea
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn--primary btn--lg">
+                🚀 Generate AI Itinerary
+              </button>
+            </div>
+          </form>
+
+          <!-- AI Plan Summary -->
+          <div class="ai-plan" id="aiPlan" style="display: none">
+            <div class="ai-plan__header">
+              <h2 class="ai-plan__title">Your AI-Generated Trip Plan</h2>
+              <p class="ai-plan__subtitle">
+                Singapore • Nov 15-19, 2024 • 2 Adults
+              </p>
+            </div>
+
+            <!-- Cost Meter -->
+            <div class="mb-6">
+              <div class="flex flex--between mb-2">
+                <span class="font-semibold">Budget Status</span>
+                <span class="font-semibold text-success">Within Budget</span>
+              </div>
+              <div class="meter meter--budget">
+                <div class="meter__fill" style="width: 94%"></div>
+              </div>
+              <div class="flex flex--between mt-2">
+                <span class="text-sm text-muted">₹0</span>
+                <span class="text-sm font-semibold text-success"
+                  >₹79,800 est.</span
+                >
+                <span class="text-sm text-muted">₹85,000</span>
+              </div>
+            </div>
+
+            <!-- Quick Summary -->
+            <div class="grid grid--3 gap-4 mb-6">
+              <div class="card">
+                <div class="card__body text-center">
+                  <div class="text-2xl mb-2">🏨</div>
+                  <h3 class="font-semibold mb-1">Bugis 3★ Boutique</h3>
+                  <p class="text-sm text-muted">Breakfast near MRT</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__body text-center">
+                  <div class="text-2xl mb-2">✈️</div>
+                  <h3 class="font-semibold mb-1">Morning Flights</h3>
+                  <p class="text-sm text-muted">6E 151 • 1 stop</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__body text-center">
+                  <div class="text-2xl mb-2">🎯</div>
+                  <h3 class="font-semibold mb-1">4 Days</h3>
+                  <p class="text-sm text-muted">Standard pace</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights -->
+            <div class="ai-plan__highlights">
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="font-semibold mb-2">🌙 Night Safari Experience</h3>
+                  <p class="text-muted mb-3">
+                    Explore the world's first nocturnal zoo with over 2,500
+                    animals in their natural nighttime habitats.
+                  </p>
+                  <details>
+                    <summary>Why this?</summary>
+                    <p>
+                      Perfect for families, unique experience, and fits your
+                      evening activity preference. The tram ride is comfortable
+                      and educational.
+                    </p>
+                  </details>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="font-semibold mb-2">🍜 Hawker Food Trail</h3>
+                  <p class="text-muted mb-3">
+                    Discover authentic Singaporean cuisine through guided tours
+                    of famous hawker centers and local markets.
+                  </p>
+                  <details>
+                    <summary>Why this?</summary>
+                    <p>
+                      Aligns with your food interest, budget-friendly, and
+                      provides cultural immersion. Local guides know the best
+                      stalls.
+                    </p>
+                  </details>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__body">
+                  <h3 class="font-semibold mb-2">🌊 Marina Bay Spectra Show</h3>
+                  <p class="text-muted mb-3">
+                    Free nightly light and water show at Marina Bay Sands with
+                    stunning visuals and music.
+                  </p>
+                  <details>
+                    <summary>Why this?</summary>
+                    <p>
+                      Free activity that saves budget, spectacular views, and
+                      perfect for evening entertainment. No booking required.
+                    </p>
+                  </details>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-6">
+              <a href="itinerary.html" class="btn btn--primary btn--lg">
+                📅 View Full Itinerary
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          AI Travel Agent v0.1 • <a href="about.html">About</a> •
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+
+      // Budget slider update
+      const budgetSlider = document.getElementById("budget");
+      const budgetValue = document.getElementById("budgetValue");
+
+      budgetSlider.addEventListener("input", function () {
+        budgetValue.textContent = "₹" + this.value.toLocaleString();
+      });
+
+      // Form submission
+      document
+        .getElementById("tripForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("aiPlan").style.display = "block";
+          document
+            .getElementById("aiPlan")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+
+      // Chip selection
+      document.querySelectorAll(".chip").forEach((chip) => {
+        chip.addEventListener("click", function () {
+          const checkbox = this.querySelector('input[type="checkbox"]');
+          if (checkbox) {
+            checkbox.checked = !checkbox.checked;
+            this.classList.toggle("chip--theme", checkbox.checked);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

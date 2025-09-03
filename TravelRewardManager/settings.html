@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item nav-item--active">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Settings</h2>
+          <p class="page-subtitle">
+            Customize your Travel Reward Manager experience
+          </p>
+        </div>
+
+        <!-- Settings Navigation -->
+        <section class="settings-nav-section">
+          <div class="settings-tabs">
+            <ul class="tabs__list">
+              <li class="tabs__tab tabs__tab--active">General</li>
+              <li class="tabs__tab">Account</li>
+              <li class="tabs__tab">Privacy</li>
+              <li class="tabs__tab">Data</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- General Settings -->
+        <section class="settings-section">
+          <h3 class="section-title">General Settings</h3>
+          <div class="settings-form">
+            <div class="settings-group">
+              <h4 class="settings-group__title">Appearance</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label for="theme-select" class="setting-label">Theme</label>
+                  <select id="theme-select" class="setting-select">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">Auto (System)</option>
+                  </select>
+                </div>
+                <div class="setting-item">
+                  <label for="currency-select" class="setting-label"
+                    >Default Currency</label
+                  >
+                  <select id="currency-select" class="setting-select">
+                    <option value="INR">₹ INR (Indian Rupee)</option>
+                    <option value="USD">$ USD (US Dollar)</option>
+                    <option value="EUR">€ EUR (Euro)</option>
+                    <option value="GBP">£ GBP (British Pound)</option>
+                    <option value="CAD">$ CAD (Canadian Dollar)</option>
+                  </select>
+                </div>
+                <div class="setting-item">
+                  <label for="date-format" class="setting-label"
+                    >Date Format</label
+                  >
+                  <select id="date-format" class="setting-select">
+                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Display Preferences</h4>
+              <div class="settings-options">
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Show point values in tooltips</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">Display expiration warnings</span>
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label"
+                    >Show advanced transfer options</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Enable animations and transitions</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label">Compact view for mobile</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Default Search Settings</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label for="default-passengers" class="setting-label"
+                    >Default Passengers</label
+                  >
+                  <select id="default-passengers" class="setting-select">
+                    <option value="1">1 Passenger</option>
+                    <option value="2" selected>2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4 Passengers</option>
+                  </select>
+                </div>
+                <div class="setting-item">
+                  <label for="default-cabin" class="setting-label"
+                    >Default Cabin Class</label
+                  >
+                  <select id="default-cabin" class="setting-select">
+                    <option value="economy">Economy</option>
+                    <option value="business" selected>Business</option>
+                    <option value="first">First</option>
+                  </select>
+                </div>
+                <div class="setting-item">
+                  <label for="default-flexibility" class="setting-label"
+                    >Default Date Flexibility</label
+                  >
+                  <select id="default-flexibility" class="setting-select">
+                    <option value="exact">Exact Dates</option>
+                    <option value="3days" selected>±3 Days</option>
+                    <option value="7days">±7 Days</option>
+                    <option value="14days">±14 Days</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Account Settings -->
+        <section class="settings-section" style="display: none">
+          <h3 class="section-title">Account Settings</h3>
+          <div class="settings-form">
+            <div class="settings-group">
+              <h4 class="settings-group__title">Profile Information</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label for="display-name" class="setting-label"
+                    >Display Name</label
+                  >
+                  <input
+                    type="text"
+                    id="display-name"
+                    class="setting-input"
+                    value="Travel Enthusiast"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="email" class="setting-label">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="setting-input"
+                    value="user@example.com"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="home-airport" class="setting-label"
+                    >Home Airport</label
+                  >
+                  <input
+                    type="text"
+                    id="home-airport"
+                    class="setting-input"
+                    value="BOM"
+                    placeholder="Airport Code"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="preferred-alliance" class="setting-label"
+                    >Preferred Alliance</label
+                  >
+                  <select id="preferred-alliance" class="setting-select">
+                    <option value="">No Preference</option>
+                    <option value="star" selected>Star Alliance</option>
+                    <option value="oneworld">oneworld</option>
+                    <option value="skyteam">SkyTeam</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Security</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label for="current-password" class="setting-label"
+                    >Current Password</label
+                  >
+                  <input
+                    type="password"
+                    id="current-password"
+                    class="setting-input"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="new-password" class="setting-label"
+                    >New Password</label
+                  >
+                  <input
+                    type="password"
+                    id="new-password"
+                    class="setting-input"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="confirm-password" class="setting-label"
+                    >Confirm New Password</label
+                  >
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    class="setting-input"
+                  />
+                </div>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Enable two-factor authentication</span
+                  >
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Privacy Settings -->
+        <section class="settings-section" style="display: none">
+          <h3 class="section-title">Privacy Settings</h3>
+          <div class="settings-form">
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Collection</h4>
+              <div class="settings-options">
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Allow anonymous usage analytics</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Share aggregated data for research</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label"
+                    >Allow personalized recommendations</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">Enable crash reporting</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Sharing</h4>
+              <div class="settings-options">
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label"
+                    >Share data with airline partners</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label"
+                    >Allow third-party integrations</span
+                  >
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label"
+                    >Share anonymized redemption data</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Retention</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label for="data-retention" class="setting-label"
+                    >Keep data for</label
+                  >
+                  <select id="data-retention" class="setting-select">
+                    <option value="1year">1 Year</option>
+                    <option value="2years" selected>2 Years</option>
+                    <option value="5years">5 Years</option>
+                    <option value="indefinite">Indefinitely</option>
+                  </select>
+                </div>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label"
+                    >Auto-delete expired point data</span
+                  >
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Data Management -->
+        <section class="settings-section" style="display: none">
+          <h3 class="section-title">Data Management</h3>
+          <div class="settings-form">
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Export</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label class="setting-label">Export your data</label>
+                  <div class="setting-actions">
+                    <button class="btn btn--secondary btn--sm">
+                      Export All Data
+                    </button>
+                    <button class="btn btn--secondary btn--sm">
+                      Export Points Only
+                    </button>
+                    <button class="btn btn--secondary btn--sm">
+                      Export Goals Only
+                    </button>
+                  </div>
+                </div>
+                <div class="setting-description">
+                  Download your data in JSON or CSV format. Includes all points,
+                  goals, and transaction history.
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Import</h4>
+              <div class="settings-options">
+                <div class="setting-item">
+                  <label for="import-file" class="setting-label"
+                    >Import data from file</label
+                  >
+                  <input
+                    type="file"
+                    id="import-file"
+                    class="setting-file"
+                    accept=".json,.csv"
+                  />
+                </div>
+                <div class="setting-description">
+                  Import data from a previous export or compatible third-party
+                  application.
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Backup</h4>
+              <div class="settings-options">
+                <label class="setting-option">
+                  <input type="checkbox" checked />
+                  <span class="setting-label">Automatic daily backups</span>
+                </label>
+                <label class="setting-option">
+                  <input type="checkbox" />
+                  <span class="setting-label">Cloud backup (encrypted)</span>
+                </label>
+                <div class="setting-item">
+                  <label class="setting-label">Last backup</label>
+                  <span class="setting-value">January 20, 2025 at 2:30 AM</span>
+                </div>
+                <div class="setting-actions">
+                  <button class="btn btn--secondary btn--sm">
+                    Create Backup Now
+                  </button>
+                  <button class="btn btn--secondary btn--sm">
+                    Restore from Backup
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4 class="settings-group__title">Data Reset</h4>
+              <div class="settings-options">
+                <div class="setting-warning">
+                  <span class="warning-icon">⚠️</span>
+                  <div class="warning-content">
+                    <h5 class="warning-title">Danger Zone</h5>
+                    <p class="warning-description">
+                      These actions cannot be undone. Please make sure you have
+                      exported your data before proceeding.
+                    </p>
+                  </div>
+                </div>
+                <div class="setting-actions">
+                  <button class="btn btn--danger btn--sm">
+                    Clear All Goals
+                  </button>
+                  <button class="btn btn--danger btn--sm">
+                    Reset All Data
+                  </button>
+                  <button class="btn btn--danger btn--sm">
+                    Delete Account
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Save Settings -->
+        <section class="settings-actions-section">
+          <div class="settings-actions">
+            <button class="btn btn--primary">Save All Settings</button>
+            <button class="btn btn--secondary">Reset to Defaults</button>
+            <button class="btn btn--secondary">Cancel</button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple tab switching functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tabs__tab");
+        const sections = document.querySelectorAll(".settings-section");
+
+        tabs.forEach((tab, index) => {
+          tab.addEventListener("click", () => {
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("tabs__tab--active"));
+            // Add active class to clicked tab
+            tab.classList.add("tabs__tab--active");
+
+            // Hide all sections
+            sections.forEach((section) => (section.style.display = "none"));
+            // Show corresponding section
+            if (sections[index]) {
+              sections[index].style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

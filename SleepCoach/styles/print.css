@@ -1,0 +1,420 @@
+/* Sleep Coach - Print Styles */
+
+@media print {
+  /* Reset all colors and backgrounds for print */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .sidebar,
+  .header,
+  .footer,
+  .btn,
+  .toggle,
+  .form-input,
+  .form-textarea,
+  .form-select,
+  .sounds-tab-list,
+  .sidebar__theme-toggle {
+    display: none !important;
+  }
+
+  /* Main content layout */
+  .main {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .main__content {
+    max-width: none !important;
+  }
+
+  /* Typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    font-family: "Times New Roman", serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-bottom: 10pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+  }
+
+  p {
+    margin-bottom: 8pt;
+  }
+
+  /* Print header */
+  .print-header {
+    text-align: center;
+    margin-bottom: 20pt;
+    border-bottom: 2pt solid black;
+    padding-bottom: 10pt;
+  }
+
+  .print-header__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 5pt;
+  }
+
+  .print-header__subtitle {
+    font-size: 12pt;
+    color: #666;
+  }
+
+  .print-header__date {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Weekly sleep report specific styles */
+  .sleep-report {
+    margin-bottom: 20pt;
+  }
+
+  .sleep-report__summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10pt;
+    margin-bottom: 20pt;
+    padding: 10pt;
+    border: 1pt solid black;
+  }
+
+  .sleep-report__metric {
+    text-align: center;
+  }
+
+  .sleep-report__metric-value {
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+  }
+
+  .sleep-report__metric-label {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+  }
+
+  /* Sleep log table for print */
+  .sleep-log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20pt;
+    font-size: 10pt;
+  }
+
+  .sleep-log-table th,
+  .sleep-log-table td {
+    border: 1pt solid black;
+    padding: 6pt;
+    text-align: left;
+  }
+
+  .sleep-log-table th {
+    background-color: #f0f0f0 !important;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .sleep-log-table .date-column {
+    width: 15%;
+  }
+
+  .sleep-log-table .time-column {
+    width: 12%;
+    font-family: "Courier New", monospace;
+  }
+
+  .sleep-log-table .duration-column {
+    width: 12%;
+    font-family: "Courier New", monospace;
+    text-align: center;
+  }
+
+  .sleep-log-table .quality-column {
+    width: 8%;
+    text-align: center;
+  }
+
+  .sleep-log-table .tags-column {
+    width: 20%;
+  }
+
+  .sleep-log-table .notes-column {
+    width: 21%;
+  }
+
+  /* Trend visualization for print */
+  .print-trend {
+    margin: 15pt 0;
+    page-break-inside: avoid;
+  }
+
+  .print-trend__title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 8pt;
+  }
+
+  .print-trend__bars {
+    display: flex;
+    align-items: end;
+    gap: 2pt;
+    height: 40pt;
+    margin-bottom: 8pt;
+  }
+
+  .print-trend__bar {
+    flex: 1;
+    background-color: black !important;
+    min-height: 2pt;
+    border: 0.5pt solid black;
+  }
+
+  .print-trend__labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    font-family: "Courier New", monospace;
+  }
+
+  /* Consistency dots for print */
+  .print-consistency {
+    margin: 10pt 0;
+  }
+
+  .print-consistency__title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 5pt;
+  }
+
+  .print-consistency__dots {
+    display: flex;
+    gap: 2pt;
+    margin-bottom: 5pt;
+  }
+
+  .print-consistency__dot {
+    width: 6pt;
+    height: 6pt;
+    border: 0.5pt solid black;
+    background-color: black !important;
+  }
+
+  .print-consistency__dot--offtarget {
+    background-color: #666 !important;
+  }
+
+  .print-consistency__dot--late {
+    background-color: #999 !important;
+  }
+
+  .print-consistency__legend {
+    font-size: 8pt;
+    display: flex;
+    gap: 10pt;
+  }
+
+  .print-consistency__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 3pt;
+  }
+
+  .print-consistency__legend-dot {
+    width: 4pt;
+    height: 4pt;
+    border: 0.5pt solid black;
+    background-color: black !important;
+  }
+
+  /* Suggestions for print */
+  .print-suggestions {
+    margin-top: 20pt;
+    page-break-inside: avoid;
+  }
+
+  .print-suggestions__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 10pt;
+    border-bottom: 1pt solid black;
+    padding-bottom: 5pt;
+  }
+
+  .print-suggestions__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .print-suggestions__item {
+    margin-bottom: 6pt;
+    padding-left: 15pt;
+    position: relative;
+  }
+
+  .print-suggestions__item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  /* Chronotype for print */
+  .print-chronotype {
+    margin: 15pt 0;
+    padding: 8pt;
+    border: 1pt solid black;
+    text-align: center;
+  }
+
+  .print-chronotype__label {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    margin-bottom: 3pt;
+  }
+
+  .print-chronotype__value {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Print footer */
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #666;
+    border-top: 1pt solid #ccc;
+    padding-top: 5pt;
+  }
+
+  .print-footer__page-number::after {
+    content: "Page " counter(page);
+  }
+
+  /* Links in print */
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Hide audio controls and interactive elements */
+  audio,
+  .sound-card__play-button,
+  .routine-step__handle,
+  .toggle,
+  .form-checkbox input[type="checkbox"] {
+    display: none !important;
+  }
+
+  /* Show checkbox labels as text */
+  .form-checkbox label::before {
+    content: "☐ ";
+  }
+
+  .form-checkbox input[type="checkbox"]:checked + label::before {
+    content: "☑ ";
+  }
+
+  /* Ensure tables don't break across pages */
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure cards and tiles print well */
+  .card,
+  .tile {
+    border: 1pt solid black !important;
+    margin-bottom: 10pt;
+    page-break-inside: avoid;
+  }
+
+  .card__title,
+  .tile__value {
+    font-weight: bold;
+  }
+
+  /* Print-specific utility classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  /* Ensure proper spacing */
+  .tonight-grid,
+  .planner-grid,
+  .log-grid,
+  .settings-grid,
+  .sounds-grid,
+  .insights-grid {
+    display: block !important;
+  }
+
+  .tonight-grid > *,
+  .planner-grid > *,
+  .log-grid > *,
+  .settings-grid > *,
+  .sounds-grid > *,
+  .insights-grid > * {
+    margin-bottom: 15pt;
+  }
+}

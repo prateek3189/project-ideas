@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Portfolio</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link nav__link--active"
+            >Portfolio</a
+          >
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Portfolio Holdings</h2>
+        <p class="page-subtitle">
+          Detailed view of your investment positions and allocation
+        </p>
+      </div>
+
+      <!-- Portfolio Summary -->
+      <section class="portfolio-summary">
+        <div class="stats-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Total Value</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">₹12,45,000</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--positive">+8.2%</span>
+                  <span class="value-display__period">1Y</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Holdings Count</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">12</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">Securities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Avg Expense Ratio</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">0.08%</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--positive">Low</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Concentration Risk</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">14%</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--warning">High</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Target vs Actual Allocation -->
+      <section class="allocation-comparison">
+        <h3 class="section-title">Target vs Actual Allocation</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Asset Classes</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Equity</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 68%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">68%</span>
+                  <span class="delta-chip delta-chip--over">+3%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Bonds</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 22%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">22%</span>
+                  <span class="delta-chip delta-chip--under">-3%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Cash</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 8%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">8%</span>
+                  <span class="delta-chip delta-chip--over">+3%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Alternatives</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 2%; background-color: var(--color-alt)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">2%</span>
+                  <span class="delta-chip delta-chip--under">-3%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Geographic Distribution</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">US</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 45%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">45%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">India</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 25%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">25%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Europe</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 15%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">15%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Emerging</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 15%; background-color: var(--color-alt)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">15%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sector Allocation -->
+      <section class="sector-allocation">
+        <h3 class="section-title">Sector Allocation</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="bar-chart">
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Technology</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 28%; background-color: var(--color-equity)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">28%</span>
+                <span class="delta-chip delta-chip--over">+6%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Healthcare</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 12%; background-color: var(--color-bonds)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">12%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Financials</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 10%; background-color: var(--color-cash)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">10%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Consumer</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 8%; background-color: var(--color-alt)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">8%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Industrial</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 6%; background-color: var(--color-equity)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">6%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Energy</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 4%; background-color: var(--color-bonds)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">4%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Real Estate</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 3%; background-color: var(--color-cash)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">3%</span>
+              </div>
+              <div class="bar-chart__item">
+                <span class="bar-chart__label">Other</span>
+                <div class="bar-chart__track">
+                  <div
+                    class="bar-chart__fill"
+                    style="width: 29%; background-color: var(--color-alt)"
+                  ></div>
+                </div>
+                <span class="bar-chart__value">29%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Holdings Table -->
+      <section class="holdings-table">
+        <h3 class="section-title">Holdings Details</h3>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Weight</th>
+                <th>Cost Basis</th>
+                <th>Current Value</th>
+                <th>Gain/Loss</th>
+                <th>Expense Ratio</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tabular">VTI</td>
+                <td>Vanguard Total Stock Market ETF</td>
+                <td><span class="badge badge--info">Equity</span></td>
+                <td class="tabular">32%</td>
+                <td class="tabular">₹3,20,000</td>
+                <td class="tabular">₹3,98,400</td>
+                <td class="tabular">
+                  <span class="delta-chip delta-chip--positive">+24.5%</span>
+                </td>
+                <td class="tabular">0.03%</td>
+                <td>Core US equity</td>
+              </tr>
+              <tr>
+                <td class="tabular">VXUS</td>
+                <td>Vanguard Total International Stock ETF</td>
+                <td><span class="badge badge--info">Equity</span></td>
+                <td class="tabular">18%</td>
+                <td class="tabular">₹1,80,000</td>
+                <td class="tabular">₹2,24,100</td>
+                <td class="tabular">
+                  <span class="delta-chip delta-chip--positive">+24.5%</span>
+                </td>
+                <td class="tabular">0.07%</td>
+                <td>International exposure</td>
+              </tr>
+              <tr>
+                <td class="tabular">BND</td>
+                <td>Vanguard Total Bond Market ETF</td>
+                <td><span class="badge badge--success">Bond</span></td>
+                <td class="tabular">22%</td>
+                <td class="tabular">₹2,20,000</td>
+                <td class="tabular">₹2,73,900</td>
+                <td class="tabular">
+                  <span class="delta-chip delta-chip--positive">+24.5%</span>
+                </td>
+                <td class="tabular">0.04%</td>
+                <td>Fixed income core</td>
+              </tr>
+              <tr>
+                <td class="tabular">ABC</td>
+                <td>ABC Corporation</td>
+                <td><span class="badge badge--info">Equity</span></td>
+                <td class="tabular">14%</td>
+                <td class="tabular">₹1,40,000</td>
+                <td class="tabular">₹1,74,300</td>
+                <td class="tabular">
+                  <span class="delta-chip delta-chip--positive">+24.5%</span>
+                </td>
+                <td class="tabular">—</td>
+                <td>
+                  <span class="badge badge--danger">High concentration</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="tabular">ICICI</td>
+                <td>ICICI Liquid Fund</td>
+                <td><span class="badge badge--warning">Cash</span></td>
+                <td class="tabular">8%</td>
+                <td class="tabular">₹80,000</td>
+                <td class="tabular">₹99,600</td>
+                <td class="tabular">
+                  <span class="delta-chip delta-chip--positive">+24.5%</span>
+                </td>
+                <td class="tabular">0.15%</td>
+                <td>Emergency fund</td>
+              </tr>
+              <tr>
+                <td class="tabular">GLD</td>
+                <td>SPDR Gold Trust</td>
+                <td><span class="badge badge--info">Alternative</span></td>
+                <td class="tabular">6%</td>
+                <td class="tabular">₹60,000</td>
+                <td class="tabular">₹74,700</td>
+                <td class="tabular">
+                  <span class="delta-chip delta-chip--positive">+24.5%</span>
+                </td>
+                <td class="tabular">0.40%</td>
+                <td>Inflation hedge</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Concentration Warning -->
+      <section class="concentration-warning">
+        <div class="alert alert--warning">
+          <h4>⚠️ Concentration Risk Alert</h4>
+          <p>
+            Your portfolio has a high concentration in ABC Corporation (14% of
+            total portfolio). Consider diversifying to reduce single-stock risk.
+            The recommended maximum for any single holding is typically 5-10% of
+            your total portfolio.
+          </p>
+        </div>
+      </section>
+
+      <!-- Performance Attribution -->
+      <section class="performance-attribution">
+        <h3 class="section-title">Performance Attribution</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Contributions vs Market</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Contributions</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 40%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹2.1L</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Market Growth</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 60%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹3.2L</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Top Performers</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">ABC Corp</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="
+                        width: 100%;
+                        background-color: var(--color-positive);
+                      "
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+45%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">VTI</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 80%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+24%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">VXUS</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 60%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+18%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

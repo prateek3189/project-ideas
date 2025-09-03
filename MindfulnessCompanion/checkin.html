@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Check-in</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__link">
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a href="meditate.html" class="sidebar__link">
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a href="breathe.html" class="sidebar__link">
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a
+            href="checkin.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a href="insights.html" class="sidebar__link">
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a href="library.html" class="sidebar__link">
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a href="settings.html" class="sidebar__link">
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Daily Check-in</h2>
+            <p class="welcome__subtitle">How are you feeling today?</p>
+          </section>
+
+          <form class="checkin-form form-layout">
+            <section class="stress-assessment">
+              <h3 class="section-title">Stress Level</h3>
+              <p class="form-help">
+                Rate your current stress level from 0 (completely relaxed) to 10
+                (extremely stressed)
+              </p>
+
+              <div class="stress-slider">
+                <div class="stress-slider__container">
+                  <input
+                    type="range"
+                    class="stress-slider__input"
+                    id="stress-level"
+                    name="stress-level"
+                    min="0"
+                    max="10"
+                    value="5"
+                    step="1"
+                  />
+                  <div class="stress-slider__labels">
+                    <span>0 - Relaxed</span>
+                    <span>5 - Moderate</span>
+                    <span>10 - Stressed</span>
+                  </div>
+                </div>
+                <div class="stress-slider__current">
+                  <span class="stress-slider__label">Current Level:</span>
+                  <span class="stress-slider__value">5</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="mood-assessment">
+              <h3 class="section-title">Mood</h3>
+              <p class="form-help">
+                Select the word that best describes your current mood
+              </p>
+
+              <div class="mood-chips">
+                <input
+                  type="radio"
+                  name="mood"
+                  id="mood-calm"
+                  value="calm"
+                  class="mood-chip__input"
+                />
+                <label for="mood-calm" class="mood-chip">Calm</label>
+
+                <input
+                  type="radio"
+                  name="mood"
+                  id="mood-neutral"
+                  value="neutral"
+                  class="mood-chip__input"
+                />
+                <label for="mood-neutral" class="mood-chip">Neutral</label>
+
+                <input
+                  type="radio"
+                  name="mood"
+                  id="mood-anxious"
+                  value="anxious"
+                  class="mood-chip__input"
+                />
+                <label for="mood-anxious" class="mood-chip">Anxious</label>
+
+                <input
+                  type="radio"
+                  name="mood"
+                  id="mood-low"
+                  value="low"
+                  class="mood-chip__input"
+                />
+                <label for="mood-low" class="mood-chip">Low</label>
+
+                <input
+                  type="radio"
+                  name="mood"
+                  id="mood-energized"
+                  value="energized"
+                  class="mood-chip__input"
+                />
+                <label for="mood-energized" class="mood-chip">Energized</label>
+              </div>
+            </section>
+
+            <section class="body-assessment">
+              <h3 class="section-title">Body Awareness</h3>
+              <p class="form-help">
+                Check any areas where you're feeling tension or discomfort
+              </p>
+
+              <div class="body-map">
+                <div class="body-map__container">
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-head"
+                      name="body-areas"
+                      value="head"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-head" class="body-area__label">Head</label>
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-neck"
+                      name="body-areas"
+                      value="neck"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-neck" class="body-area__label">Neck</label>
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-shoulders"
+                      name="body-areas"
+                      value="shoulders"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-shoulders" class="body-area__label"
+                      >Shoulders</label
+                    >
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-chest"
+                      name="body-areas"
+                      value="chest"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-chest" class="body-area__label"
+                      >Chest</label
+                    >
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-stomach"
+                      name="body-areas"
+                      value="stomach"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-stomach" class="body-area__label"
+                      >Stomach</label
+                    >
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-back"
+                      name="body-areas"
+                      value="back"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-back" class="body-area__label">Back</label>
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-arms"
+                      name="body-areas"
+                      value="arms"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-arms" class="body-area__label">Arms</label>
+                  </div>
+
+                  <div class="body-area">
+                    <input
+                      type="checkbox"
+                      id="body-legs"
+                      name="body-areas"
+                      value="legs"
+                      class="body-area__checkbox"
+                    />
+                    <label for="body-legs" class="body-area__label">Legs</label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="journal-entry">
+              <h3 class="section-title">Journal</h3>
+              <p class="form-help">
+                What's on your mind? Write freely about your thoughts, feelings,
+                or anything you'd like to note
+              </p>
+
+              <div class="journal">
+                <textarea
+                  class="journal__textarea"
+                  name="journal-entry"
+                  placeholder="Name it to tame it—what word fits your mood? What's happening in your life right now? How are you taking care of yourself?"
+                  rows="6"
+                ></textarea>
+              </div>
+            </section>
+
+            <section class="gratitude-prompt">
+              <h3 class="section-title">Gratitude</h3>
+              <p class="form-help">
+                Name one thing you're grateful for today, no matter how small
+              </p>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="gratitude"
+                  name="gratitude"
+                  class="form-group__input"
+                  placeholder="e.g., A warm cup of tea, a kind message, the sunshine..."
+                />
+              </div>
+            </section>
+
+            <section class="form-actions">
+              <button type="submit" class="save-button">Save Check-in</button>
+              <a href="index.html" class="btn btn--secondary">Back to Today</a>
+            </section>
+          </form>
+
+          <section class="checkin-tips">
+            <h3 class="section-title">Tips for Meaningful Check-ins</h3>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <h4>Be Honest</h4>
+                <p>
+                  There's no right or wrong way to feel. Honest self-assessment
+                  helps you understand your patterns and needs.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Notice Patterns</h4>
+                <p>
+                  Over time, you'll see connections between your stress levels,
+                  mood, and body sensations.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Be Kind</h4>
+                <p>
+                  Approach your check-ins with curiosity and compassion, not
+                  judgment. You're learning about yourself.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Use as a Tool</h4>
+                <p>
+                  Your check-ins can guide you to choose the right practices for
+                  your current state.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="recent-checkins">
+            <h3 class="section-title">Recent Check-ins</h3>
+            <div class="checkin-history">
+              <div class="checkin-entry">
+                <div class="checkin-entry__date">Yesterday</div>
+                <div class="checkin-entry__summary">
+                  <span class="checkin-entry__stress">Stress: 4</span>
+                  <span class="checkin-entry__mood">Mood: Calm</span>
+                </div>
+                <div class="checkin-entry__note">
+                  Had a good day at work, feeling accomplished
+                </div>
+              </div>
+
+              <div class="checkin-entry">
+                <div class="checkin-entry__date">2 days ago</div>
+                <div class="checkin-entry__summary">
+                  <span class="checkin-entry__stress">Stress: 7</span>
+                  <span class="checkin-entry__mood">Mood: Anxious</span>
+                </div>
+                <div class="checkin-entry__note">
+                  Big presentation tomorrow, feeling nervous but prepared
+                </div>
+              </div>
+
+              <div class="checkin-entry">
+                <div class="checkin-entry__date">3 days ago</div>
+                <div class="checkin-entry__summary">
+                  <span class="checkin-entry__stress">Stress: 3</span>
+                  <span class="checkin-entry__mood">Mood: Energized</span>
+                </div>
+                <div class="checkin-entry__note">
+                  Great workout this morning, feeling strong and motivated
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

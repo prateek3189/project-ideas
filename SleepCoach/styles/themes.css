@@ -1,0 +1,279 @@
+/* Sleep Coach - Theme Styles */
+
+/* Theme Toggle Functionality */
+[data-theme="light"] {
+  /* Light theme is default, defined in tokens.css */
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables are defined in tokens.css */
+}
+
+[data-theme="high-contrast"] {
+  /* High contrast theme variables are defined in tokens.css */
+}
+
+/* Reduced Motion Theme */
+[data-theme="reduced-motion"] {
+  --transition-fast: 0ms;
+  --transition-normal: 0ms;
+  --transition-slow: 0ms;
+}
+
+[data-theme="reduced-motion"] * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Theme-specific component adjustments */
+
+/* Dark theme adjustments */
+[data-theme="dark"] .bedtime-pill {
+  background: linear-gradient(135deg, #7ac3b2, #5b7bd5);
+}
+
+[data-theme="dark"] .card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sound-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .tile:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .table {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* High contrast theme adjustments */
+[data-theme="high-contrast"] .bedtime-pill {
+  background: #0000ff;
+  color: #ffffff;
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .card {
+  border: 2px solid #000000;
+  box-shadow: none;
+}
+
+[data-theme="high-contrast"] .card:hover {
+  border-color: #0000ff;
+  box-shadow: 0 0 0 2px #0000ff;
+}
+
+[data-theme="high-contrast"] .btn {
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .btn--primary {
+  background-color: #0000ff;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+[data-theme="high-contrast"] .btn--primary:hover:not(:disabled) {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #0000ff;
+}
+
+[data-theme="high-contrast"] .btn--secondary {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+[data-theme="high-contrast"] .btn--secondary:hover:not(:disabled) {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #0000ff;
+}
+
+[data-theme="high-contrast"] .pill {
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .pill--accent {
+  background-color: #0000ff;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+[data-theme="high-contrast"] .form-input,
+[data-theme="high-contrast"] .form-textarea,
+[data-theme="high-contrast"] .form-select {
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .form-input:focus,
+[data-theme="high-contrast"] .form-textarea:focus,
+[data-theme="high-contrast"] .form-select:focus {
+  border-color: #0000ff;
+  box-shadow: 0 0 0 2px #0000ff;
+}
+
+[data-theme="high-contrast"] .toggle__slider {
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .toggle input:checked + .toggle__slider {
+  background-color: #0000ff;
+  border-color: #000000;
+}
+
+[data-theme="high-contrast"] .table {
+  border: 2px solid #000000;
+}
+
+[data-theme="high-contrast"] .table th,
+[data-theme="high-contrast"] .table td {
+  border: 1px solid #000000;
+}
+
+[data-theme="high-contrast"] .sidebar__nav-item {
+  border: 1px solid transparent;
+}
+
+[data-theme="high-contrast"] .sidebar__nav-item:hover {
+  border-color: #000000;
+}
+
+[data-theme="high-contrast"] .sidebar__nav-item--active {
+  background-color: #0000ff;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+[data-theme="high-contrast"] .sounds-tab {
+  border-bottom: 2px solid transparent;
+}
+
+[data-theme="high-contrast"] .sounds-tab--active {
+  border-bottom-color: #0000ff;
+}
+
+/* Reduced motion adjustments */
+[data-theme="reduced-motion"] .bedtime-pill:hover {
+  transform: none;
+}
+
+[data-theme="reduced-motion"] .sound-card:hover {
+  transform: none;
+}
+
+[data-theme="reduced-motion"] .sound-card__play-button:hover {
+  transform: none;
+}
+
+[data-theme="reduced-motion"] .routine-step:hover {
+  transform: none;
+}
+
+/* Theme transition animations */
+* {
+  transition: background-color var(--transition-normal),
+    border-color var(--transition-normal), color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+/* Disable transitions for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .bedtime-pill:hover,
+  .sound-card:hover,
+  .sound-card__play-button:hover,
+  .routine-step:hover {
+    transform: none !important;
+  }
+}
+
+/* Theme-specific focus styles */
+[data-theme="high-contrast"] :focus {
+  outline: 3px solid #0000ff !important;
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] :focus {
+  outline-color: #7ac3b2;
+}
+
+/* Theme-specific selection styles */
+[data-theme="dark"] ::selection {
+  background-color: rgba(122, 195, 178, 0.3);
+  color: var(--color-text-primary);
+}
+
+[data-theme="high-contrast"] ::selection {
+  background-color: #0000ff;
+  color: #ffffff;
+}
+
+/* Theme-specific scrollbar styles */
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+[data-theme="high-contrast"] ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="high-contrast"] ::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+
+[data-theme="high-contrast"] ::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 1px solid #000000;
+}
+
+[data-theme="high-contrast"] ::-webkit-scrollbar-thumb:hover {
+  background: #0000ff;
+}
+
+/* Theme-specific print styles */
+@media print {
+  [data-theme="dark"] * {
+    background: white !important;
+    color: black !important;
+  }
+
+  [data-theme="high-contrast"] * {
+    background: white !important;
+    color: black !important;
+    border-color: black !important;
+  }
+}

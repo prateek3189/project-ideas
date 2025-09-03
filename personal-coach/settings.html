@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Coach - Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">AI Personal Coach</h1>
+                <div class="header-actions">
+                    <div class="date-pill">
+                        <time datetime="2024-01-15">Mon, Jan 15</time>
+                    </div>
+                    <a href="#print" class="print-link" aria-label="Print weekly plan">Print</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Today</a></li>
+                <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+                <li><a href="plans.html" class="nav-link">Plans</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="library.html" class="nav-link">Library</a></li>
+                <li><a href="settings.html" class="nav-link nav-link--active" aria-current="page">Settings</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-toggle__button" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h2 class="page-title">Settings</h2>
+                <p class="text-muted">Customize your coaching experience</p>
+            </div>
+
+            <div class="settings-grid">
+                <div class="settings-section">
+                    <h3 class="settings-section__title">Active Tracks</h3>
+                    <div class="settings-section__content">
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Fitness</div>
+                                <div class="setting-item__description">Workouts, nutrition, and recovery tracking</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden" checked>
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Productivity</div>
+                                <div class="setting-item__description">Focus time, deep work, and task management</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden" checked>
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Leadership</div>
+                                <div class="setting-item__description">1:1s, feedback, and team development</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden">
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-section__title">Appearance</h3>
+                    <div class="settings-section__content">
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Theme</div>
+                                <div class="setting-item__description">Choose your preferred color scheme</div>
+                            </div>
+                            <select class="form-input" style="width: auto;">
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="high-contrast">High Contrast</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Reduced Motion</div>
+                                <div class="setting-item__description">Minimize animations and transitions</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden">
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-section__title">Notifications</h3>
+                    <div class="settings-section__content">
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Daily Check-in Reminder</div>
+                                <div class="setting-item__description">Remind me to log my daily check-in</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden" checked>
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Focus Block Alerts</div>
+                                <div class="setting-item__description">Notify me when focus blocks start</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden">
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Weekly Review</div>
+                                <div class="setting-item__description">Weekly insights and progress summary</div>
+                            </div>
+                            <label class="micro-habit">
+                                <input type="checkbox" class="micro-habit__input visually-hidden" checked>
+                                <span class="micro-habit__checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-section__title">Data & Privacy</h3>
+                    <div class="settings-section__content">
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Data Storage</div>
+                                <div class="setting-item__description">All data is stored locally on your device</div>
+                            </div>
+                            <span class="text-success text-sm">✓ Local Only</span>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Export Data</div>
+                                <div class="setting-item__description">Download your data as CSV or JSON</div>
+                            </div>
+                            <button class="btn btn--secondary btn--small">Export</button>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Clear All Data</div>
+                                <div class="setting-item__description">Permanently delete all your data</div>
+                            </div>
+                            <button class="btn btn--secondary btn--small" style="color: var(--color-danger);">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-section__title">About</h3>
+                    <div class="settings-section__content">
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Version</div>
+                                <div class="setting-item__description">AI Personal Coach</div>
+                            </div>
+                            <span class="text-muted">v0.1</span>
+                        </div>
+                        <div class="setting-item">
+                            <div>
+                                <div class="setting-item__label">Methodology</div>
+                                <div class="setting-item__description">Based on behavioral science and habit research</div>
+                            </div>
+                            <a href="about.html" class="btn btn--secondary btn--small">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nudge-banner nudge-banner--info">
+                <p class="nudge-banner__text">
+                    <strong>Privacy Note:</strong> This is a local-only concept. No data is sent to external servers.
+                </p>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p class="footer-text">AI Personal Coach — v0.1</p>
+            <a href="about.html" class="footer-link">About</a>
+        </footer>
+    </div>
+</body>
+</html>

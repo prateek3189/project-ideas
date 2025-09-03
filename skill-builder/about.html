@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Builder - About</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Skill Builder</h1>
+          <div class="header__actions">
+            <button class="search-btn" aria-label="Search courses">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+            <div class="profile-chip">
+              <img
+                src="assets/avatar-placeholder.svg"
+                alt="Profile"
+                class="profile-chip__avatar"
+              />
+              <span class="profile-chip__name">Alex</span>
+            </div>
+            <a href="#" class="print-link" aria-label="Print view">📄</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+            <li><a href="progress.html" class="nav-link">Progress</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+            <li>
+              <a href="about.html" class="nav-link nav-link--active">About</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__categories">
+          <h3 class="sidebar__heading">Categories</h3>
+          <ul class="category-list">
+            <li><a href="#" class="category-link">Web Development</a></li>
+            <li><a href="#" class="category-link">Data Science</a></li>
+            <li><a href="#" class="category-link">Design</a></li>
+            <li><a href="#" class="category-link">Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="about-page">
+          <!-- Page Header -->
+          <header class="page-header">
+            <h2 class="page-title">About Skill Builder</h2>
+            <p class="page-subtitle">
+              Learn more about our micro-course approach
+            </p>
+          </header>
+
+          <!-- Mission Statement -->
+          <section class="mission-section">
+            <div class="mission-content">
+              <h3 class="mission-title">Our Mission</h3>
+              <p class="mission-text">
+                Skill Builder transforms learning into bite-sized, achievable
+                experiences. We believe that the best learning happens in small,
+                focused increments that fit into your busy life.
+              </p>
+              <p class="mission-text">
+                Our micro-courses are designed to be completed in 5-10 minutes,
+                making them perfect for coffee breaks, commutes, or any spare
+                moment you have to invest in yourself.
+              </p>
+            </div>
+          </section>
+
+          <!-- How It Works -->
+          <section class="how-it-works">
+            <h3 class="section-title">How Micro-Courses Work</h3>
+            <div class="workflow-grid">
+              <div class="workflow-step">
+                <div class="workflow-step__number">1</div>
+                <h4 class="workflow-step__title">Choose Your Skill</h4>
+                <p class="workflow-step__description">
+                  Browse our catalog of focused micro-courses across web
+                  development, design, data science, and more.
+                </p>
+              </div>
+
+              <div class="workflow-step">
+                <div class="workflow-step__number">2</div>
+                <h4 class="workflow-step__title">Learn in Minutes</h4>
+                <p class="workflow-step__description">
+                  Each lesson is designed to teach one specific concept in under
+                  10 minutes with clear examples.
+                </p>
+              </div>
+
+              <div class="workflow-step">
+                <div class="workflow-step__number">3</div>
+                <h4 class="workflow-step__title">Practice & Test</h4>
+                <p class="workflow-step__description">
+                  Reinforce your learning with quick quizzes and hands-on
+                  examples.
+                </p>
+              </div>
+
+              <div class="workflow-step">
+                <div class="workflow-step__number">4</div>
+                <h4 class="workflow-step__title">Track Progress</h4>
+                <p class="workflow-step__description">
+                  Monitor your learning journey with progress bars, badges, and
+                  achievement tracking.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Philosophy -->
+          <section class="philosophy-section">
+            <h3 class="section-title">Our Learning Philosophy</h3>
+            <div class="philosophy-grid">
+              <div class="philosophy-item">
+                <h4 class="philosophy-item__title">🎯 Focused Learning</h4>
+                <p class="philosophy-item__description">
+                  Each micro-course covers one specific skill or concept,
+                  eliminating cognitive overload and improving retention.
+                </p>
+              </div>
+
+              <div class="philosophy-item">
+                <h4 class="philosophy-item__title">⏱️ Time-Conscious</h4>
+                <p class="philosophy-item__description">
+                  Respect your time with lessons that can be completed in short
+                  sessions, fitting into any schedule.
+                </p>
+              </div>
+
+              <div class="philosophy-item">
+                <h4 class="philosophy-item__title">🔄 Active Engagement</h4>
+                <p class="philosophy-item__description">
+                  Learn by doing with interactive quizzes, examples, and
+                  practical exercises that reinforce concepts.
+                </p>
+              </div>
+
+              <div class="philosophy-item">
+                <h4 class="philosophy-item__title">📈 Progressive Mastery</h4>
+                <p class="philosophy-item__description">
+                  Build skills progressively with courses that scaffold
+                  knowledge from basic to advanced concepts.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Accessibility Commitment -->
+          <section class="accessibility-section">
+            <h3 class="section-title">Accessibility & Inclusive Design</h3>
+            <div class="accessibility-content">
+              <p class="accessibility-text">
+                We're committed to making learning accessible to everyone. Our
+                platform is designed with accessibility in mind, featuring:
+              </p>
+              <ul class="accessibility-features">
+                <li>Semantic HTML structure for screen readers</li>
+                <li>High contrast themes and customizable font sizes</li>
+                <li>Keyboard navigation support</li>
+                <li>Alternative text for all images and diagrams</li>
+                <li>Focus indicators for interactive elements</li>
+                <li>Print-friendly styles for offline learning</li>
+              </ul>
+              <p class="accessibility-text">
+                We continuously work to improve accessibility and welcome
+                feedback from our community.
+              </p>
+            </div>
+          </section>
+
+          <!-- Future Features -->
+          <section class="future-features">
+            <h3 class="section-title">What's Coming Next</h3>
+            <div class="features-roadmap">
+              <div class="roadmap-item roadmap-item--coming-soon">
+                <div class="roadmap-item__header">
+                  <h4 class="roadmap-item__title">AI-Powered Learning</h4>
+                  <span class="roadmap-item__status">Coming Soon</span>
+                </div>
+                <p class="roadmap-item__description">
+                  Personalized learning paths and adaptive quizzes that adjust
+                  to your skill level and learning pace.
+                </p>
+              </div>
+
+              <div class="roadmap-item roadmap-item--planned">
+                <div class="roadmap-item__header">
+                  <h4 class="roadmap-item__title">Spaced Repetition</h4>
+                  <span class="roadmap-item__status">Planned</span>
+                </div>
+                <p class="roadmap-item__description">
+                  Smart review scheduling to help you retain information
+                  long-term using proven memory techniques.
+                </p>
+              </div>
+
+              <div class="roadmap-item roadmap-item--planned">
+                <div class="roadmap-item__header">
+                  <h4 class="roadmap-item__title">Community Learning</h4>
+                  <span class="roadmap-item__status">Planned</span>
+                </div>
+                <p class="roadmap-item__description">
+                  Connect with other learners, share progress, and participate
+                  in group challenges.
+                </p>
+              </div>
+
+              <div class="roadmap-item roadmap-item--future">
+                <div class="roadmap-item__header">
+                  <h4 class="roadmap-item__title">Offline Learning</h4>
+                  <span class="roadmap-item__status">Future</span>
+                </div>
+                <p class="roadmap-item__description">
+                  Download courses for offline access, perfect for learning
+                  without internet connectivity.
+                </p>
+              </div>
+
+              <div class="roadmap-item roadmap-item--future">
+                <div class="roadmap-item__header">
+                  <h4 class="roadmap-item__title">Advanced Analytics</h4>
+                  <span class="roadmap-item__status">Future</span>
+                </div>
+                <p class="roadmap-item__description">
+                  Detailed insights into your learning patterns, strengths, and
+                  areas for improvement.
+                </p>
+              </div>
+
+              <div class="roadmap-item roadmap-item--future">
+                <div class="roadmap-item__header">
+                  <h4 class="roadmap-item__title">Authoring Tools</h4>
+                  <span class="roadmap-item__status">Future</span>
+                </div>
+                <p class="roadmap-item__description">
+                  Create and share your own micro-courses with the community.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Team & Contact -->
+          <section class="team-section">
+            <h3 class="section-title">Get in Touch</h3>
+            <div class="contact-content">
+              <p class="contact-text">
+                Have questions, suggestions, or want to contribute? We'd love to
+                hear from you!
+              </p>
+              <div class="contact-options">
+                <div class="contact-option">
+                  <h4 class="contact-option__title">📧 Email</h4>
+                  <p class="contact-option__description">
+                    hello@skillbuilder.com
+                  </p>
+                </div>
+
+                <div class="contact-option">
+                  <h4 class="contact-option__title">🐛 Bug Reports</h4>
+                  <p class="contact-option__description">
+                    Report issues or suggest improvements
+                  </p>
+                </div>
+
+                <div class="contact-option">
+                  <h4 class="contact-option__title">💡 Feature Requests</h4>
+                  <p class="contact-option__description">
+                    Help shape the future of Skill Builder
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Version Info -->
+          <section class="version-section">
+            <div class="version-info">
+              <p class="version-text">Skill Builder v1.0 - Static Prototype</p>
+              <p class="version-description">
+                This is a static HTML/CSS prototype demonstrating the UI and
+                user experience. Future versions will include JavaScript
+                functionality, real data persistence, and interactive features.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__version">Skill Builder v1.0</p>
+          <p class="footer__help">
+            Need help? <a href="about.html">Learn more</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

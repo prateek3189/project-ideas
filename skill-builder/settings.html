@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Builder - Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Skill Builder</h1>
+          <div class="header__actions">
+            <button class="search-btn" aria-label="Search courses">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+            <div class="profile-chip">
+              <img
+                src="assets/avatar-placeholder.svg"
+                alt="Profile"
+                class="profile-chip__avatar"
+              />
+              <span class="profile-chip__name">Alex</span>
+            </div>
+            <a href="#" class="print-link" aria-label="Print view">📄</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+            <li><a href="progress.html" class="nav-link">Progress</a></li>
+            <li>
+              <a href="settings.html" class="nav-link nav-link--active"
+                >Settings</a
+              >
+            </li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__categories">
+          <h3 class="sidebar__heading">Categories</h3>
+          <ul class="category-list">
+            <li><a href="#" class="category-link">Web Development</a></li>
+            <li><a href="#" class="category-link">Data Science</a></li>
+            <li><a href="#" class="category-link">Design</a></li>
+            <li><a href="#" class="category-link">Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="settings-page">
+          <!-- Page Header -->
+          <header class="page-header">
+            <h2 class="page-title">Settings</h2>
+            <p class="page-subtitle">Customize your learning experience</p>
+          </header>
+
+          <!-- Settings Sections -->
+          <div class="settings-sections">
+            <!-- Appearance Settings -->
+            <section class="settings-section">
+              <h3 class="settings-section__title">Appearance</h3>
+
+              <div class="setting-group">
+                <label class="setting-label">Theme</label>
+                <div class="setting-controls">
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="theme"
+                      value="light"
+                      checked
+                      class="radio-option__input"
+                    />
+                    <span class="radio-option__text">Light</span>
+                  </label>
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="theme"
+                      value="dark"
+                      class="radio-option__input"
+                    />
+                    <span class="radio-option__text">Dark</span>
+                  </label>
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="theme"
+                      value="high-contrast"
+                      class="radio-option__input"
+                    />
+                    <span class="radio-option__text">High Contrast</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Density</label>
+                <div class="setting-controls">
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="density"
+                      value="comfortable"
+                      checked
+                      class="radio-option__input"
+                    />
+                    <span class="radio-option__text">Comfortable</span>
+                  </label>
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="density"
+                      value="compact"
+                      class="radio-option__input"
+                    />
+                    <span class="radio-option__text">Compact</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Font Size</label>
+                <div class="setting-controls">
+                  <select class="setting-select">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                    <option value="extra-large">Extra Large</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <!-- Learning Preferences -->
+            <section class="settings-section">
+              <h3 class="settings-section__title">Learning Preferences</h3>
+
+              <div class="setting-group">
+                <label class="setting-label">Auto-advance Lessons</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input type="checkbox" class="toggle-switch__input" />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Automatically move to the next lesson after
+                    completion</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Show Progress Bars</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="toggle-switch__input"
+                    />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Display progress indicators throughout the interface</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Quiz Feedback</label>
+                <div class="setting-controls">
+                  <select class="setting-select">
+                    <option value="immediate" selected>Immediate</option>
+                    <option value="end-of-quiz">End of Quiz</option>
+                    <option value="never">Never</option>
+                  </select>
+                  <span class="setting-description"
+                    >When to show quiz explanations</span
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Notifications -->
+            <section class="settings-section">
+              <h3 class="settings-section__title">Notifications</h3>
+
+              <div class="setting-group">
+                <label class="setting-label">Daily Reminders</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="toggle-switch__input"
+                    />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Remind me to continue learning each day</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Streak Alerts</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="toggle-switch__input"
+                    />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Notify me about learning streaks and achievements</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Course Updates</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input type="checkbox" class="toggle-switch__input" />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Inform me about new courses and content</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Reminder Time</label>
+                <div class="setting-controls">
+                  <select class="setting-select">
+                    <option value="9:00">9:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="18:00" selected>6:00 PM</option>
+                    <option value="21:00">9:00 PM</option>
+                  </select>
+                  <span class="setting-description"
+                    >When to send daily learning reminders</span
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Accessibility -->
+            <section class="settings-section">
+              <h3 class="settings-section__title">Accessibility</h3>
+
+              <div class="setting-group">
+                <label class="setting-label">Reduce Motion</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input type="checkbox" class="toggle-switch__input" />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Minimize animations and transitions</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">High Contrast Mode</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input type="checkbox" class="toggle-switch__input" />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Increase contrast for better visibility</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Focus Indicators</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="toggle-switch__input"
+                    />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Always show keyboard focus indicators</span
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Data & Privacy -->
+            <section class="settings-section">
+              <h3 class="settings-section__title">Data & Privacy</h3>
+
+              <div class="setting-group">
+                <label class="setting-label">Learning Analytics</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="toggle-switch__input"
+                    />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Share anonymous learning data to improve courses</span
+                  >
+                </div>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">Progress Sync</label>
+                <div class="setting-controls">
+                  <label class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked
+                      class="toggle-switch__input"
+                    />
+                    <span class="toggle-switch__slider"></span>
+                  </label>
+                  <span class="setting-description"
+                    >Sync progress across devices</span
+                  >
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Settings Actions -->
+          <div class="settings-actions">
+            <button class="btn btn--secondary">Reset to Defaults</button>
+            <button class="btn btn--primary">Save Changes</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__version">Skill Builder v1.0</p>
+          <p class="footer__help">
+            Need help? <a href="about.html">Learn more</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

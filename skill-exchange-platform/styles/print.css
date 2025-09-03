@@ -1,0 +1,434 @@
+/* Print Styles */
+
+@media print {
+  /* Reset all themes for print */
+  :root,
+  [data-theme="dark"],
+  [data-theme="high-contrast"],
+  [data-theme="reduced-motion"] {
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-border: #000000;
+    --color-accent: #0000ff;
+    --color-shadow: none;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .header,
+  .sidebar,
+  .footer,
+  .btn,
+  .theme-toggle,
+  .search-form,
+  .filters,
+  .card__actions,
+  .nav-link,
+  .profile-link {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  /* Typography for print */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 18pt;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  h2 {
+    font-size: 16pt;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  h4 {
+    font-size: 12pt;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    color: black;
+  }
+
+  /* Cards become simple boxes */
+  .card {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background: white;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .card__title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .card__content {
+    padding: 0;
+  }
+
+  /* Exchange line for print */
+  .exchange-line {
+    border: 1px solid black;
+    padding: 0.25em;
+    margin: 0.5em 0;
+    background: white;
+  }
+
+  .exchange-line__gives,
+  .exchange-line__wants {
+    font-weight: bold;
+  }
+
+  /* Badges and chips */
+  .badge,
+  .chip {
+    border: 1px solid black;
+    padding: 0.125em 0.25em;
+    margin: 0.125em;
+    background: white;
+    display: inline-block;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 0.25em;
+    text-align: left;
+  }
+
+  th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+
+  /* Proposal table specific */
+  .proposal-table {
+    page-break-inside: avoid;
+  }
+
+  .proposal-table th {
+    background: #e0e0e0;
+  }
+
+  /* Agreement banner */
+  .agreement-banner {
+    border: 2px solid black;
+    padding: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    margin: 1em 0;
+    background: white;
+  }
+
+  /* Details/summary */
+  details {
+    page-break-inside: avoid;
+  }
+
+  details[open] {
+    border: 1px solid black;
+    padding: 0.25em;
+    margin: 0.5em 0;
+  }
+
+  summary {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  /* Links */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Print header for trade agreements */
+  .print-header {
+    text-align: center;
+    margin-bottom: 2em;
+    border-bottom: 2px solid black;
+    padding-bottom: 1em;
+  }
+
+  .print-header h1 {
+    font-size: 20pt;
+    margin-bottom: 0.5em;
+  }
+
+  .print-header .print-date {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Print footer */
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10pt;
+    color: #666;
+    border-top: 1px solid black;
+    padding-top: 0.5em;
+  }
+
+  /* Signature lines */
+  .signature-line {
+    border-bottom: 1px solid black;
+    width: 200px;
+    display: inline-block;
+    margin: 0 1em;
+  }
+
+  .signature-section {
+    margin-top: 2em;
+    page-break-inside: avoid;
+  }
+
+  /* Session details */
+  .session-details {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    page-break-inside: avoid;
+  }
+
+  .session-details h4 {
+    margin-bottom: 0.25em;
+  }
+
+  /* Profile print layout */
+  .profile-print {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  .profile-print__section {
+    border: 1px solid black;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .profile-print__section h3 {
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Skills offered/wanted */
+  .skills-list {
+    margin: 0.5em 0;
+  }
+
+  .skill-item {
+    border: 1px solid black;
+    padding: 0.25em;
+    margin: 0.25em 0;
+    page-break-inside: avoid;
+  }
+
+  .skill-item__title {
+    font-weight: bold;
+  }
+
+  .skill-item__meta {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* References */
+  .reference-item {
+    border: 1px solid black;
+    padding: 0.25em;
+    margin: 0.25em 0;
+    page-break-inside: avoid;
+  }
+
+  .reference-item__text {
+    font-style: italic;
+    margin-bottom: 0.25em;
+  }
+
+  .reference-item__author {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Utility classes for print */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Main content adjustments */
+  .main {
+    padding: 0;
+    max-width: none;
+  }
+
+  /* Grid adjustments */
+  .skills-grid {
+    display: block;
+  }
+
+  .two-column {
+    display: block;
+  }
+
+  /* Meter bars for print */
+  .meter__bar {
+    border: 1px solid black;
+    background: white;
+  }
+
+  .meter__fill {
+    background: black;
+  }
+
+  /* Message bubbles for print */
+  .message-bubble {
+    border: 1px solid black;
+    margin: 0.25em 0;
+    padding: 0.25em;
+    background: white;
+  }
+
+  .message-bubble--sent {
+    background: #f0f0f0;
+  }
+
+  /* Circle cards for print */
+  .circle-card {
+    border: 1px solid black;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background: white;
+    page-break-inside: avoid;
+  }
+
+  /* Trust panel for print */
+  .trust-panel {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    background: white;
+    page-break-inside: avoid;
+  }
+
+  /* Trade Agreement specific print styles */
+  .trade-agreement {
+    page-break-inside: avoid;
+    border: 2px solid black;
+    padding: 2em;
+    margin: 2em 0;
+    background: white;
+  }
+
+  .trade-agreement h4 {
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .trade-agreement h4:first-child {
+    margin-top: 0;
+  }
+
+  .trade-agreement p {
+    margin: 0.5em 0;
+  }
+
+  .trade-agreement ul {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+  }
+
+  .trade-agreement li {
+    margin: 0.25em 0;
+  }
+
+  .signatures {
+    margin-top: 3em;
+    page-break-inside: avoid;
+  }
+
+  .signatures p {
+    margin: 1em 0;
+    line-height: 2;
+  }
+}

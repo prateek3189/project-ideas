@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Dashboard</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item nav-item--active">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Dashboard</h2>
+          <p class="page-subtitle">
+            Your loyalty points overview and quick actions
+          </p>
+        </div>
+
+        <!-- Stats Tiles -->
+        <section class="stats-section">
+          <div class="stats-grid">
+            <div class="stat-tile stat-tile--primary">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Total Points</h3>
+                <span class="icon">💎</span>
+              </div>
+              <div class="stat-tile__value">241,300</div>
+              <div class="stat-tile__subtitle">Across all programs</div>
+            </div>
+
+            <div class="stat-tile stat-tile--success">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Est. Value</h3>
+                <span class="icon">💰</span>
+              </div>
+              <div class="stat-tile__value">₹3,85,000</div>
+              <div class="stat-tile__subtitle">~1.6 cpp average</div>
+            </div>
+
+            <div class="stat-tile stat-tile--warning">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Expiring Soon</h3>
+                <span class="icon">⏰</span>
+              </div>
+              <div class="stat-tile__value">4,500</div>
+              <div class="stat-tile__subtitle">Next 90 days</div>
+            </div>
+
+            <div class="stat-tile stat-tile--info">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Trips Planned</h3>
+                <span class="icon">🗺️</span>
+              </div>
+              <div class="stat-tile__value">3</div>
+              <div class="stat-tile__subtitle">Active goals</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Upcoming Expirations -->
+        <section class="expirations-section">
+          <h3 class="section-title">Upcoming Expirations</h3>
+          <div class="expirations-list">
+            <div class="expiration-item">
+              <div class="expiration-item__header">
+                <div class="expiration-item__program">
+                  <span class="program-logo">🛩️</span>
+                  <div class="program-info">
+                    <h4 class="program-name">KrisFlyer</h4>
+                    <span class="program-type">Singapore Airlines</span>
+                  </div>
+                </div>
+                <div class="expiration-item__details">
+                  <span class="expiration-amount">2,000 points</span>
+                  <span class="expiration-date">in 28 days</span>
+                </div>
+              </div>
+              <details class="expiration-item__actions">
+                <summary class="expiration-item__summary">
+                  Keep Alive Ideas
+                </summary>
+                <div class="keep-alive-options">
+                  <p>Any activity resets the clock. Try:</p>
+                  <ul>
+                    <li>Small partner dining earn</li>
+                    <li>Transfer from Amex MR (1:1)</li>
+                    <li>Book a short domestic flight</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <div class="expiration-item">
+              <div class="expiration-item__header">
+                <div class="expiration-item__program">
+                  <span class="program-logo">🏨</span>
+                  <div class="program-info">
+                    <h4 class="program-name">Marriott Bonvoy</h4>
+                    <span class="program-type">Hotels</span>
+                  </div>
+                </div>
+                <div class="expiration-item__details">
+                  <span class="expiration-amount">1,500 points</span>
+                  <span class="expiration-date">in 45 days</span>
+                </div>
+              </div>
+              <details class="expiration-item__actions">
+                <summary class="expiration-item__summary">
+                  Keep Alive Ideas
+                </summary>
+                <div class="keep-alive-options">
+                  <p>Any activity resets the clock. Try:</p>
+                  <ul>
+                    <li>Small partner shopping earn</li>
+                    <li>Transfer from Chase UR (1:1)</li>
+                    <li>Book a hotel night</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <div class="expiration-item">
+              <div class="expiration-item__header">
+                <div class="expiration-item__program">
+                  <span class="program-logo">✈️</span>
+                  <div class="program-info">
+                    <h4 class="program-name">Avios</h4>
+                    <span class="program-type">British Airways</span>
+                  </div>
+                </div>
+                <div class="expiration-item__details">
+                  <span class="expiration-amount">1,000 points</span>
+                  <span class="expiration-date">in 67 days</span>
+                </div>
+              </div>
+              <details class="expiration-item__actions">
+                <summary class="expiration-item__summary">
+                  Keep Alive Ideas
+                </summary>
+                <div class="keep-alive-options">
+                  <p>Any activity resets the clock. Try:</p>
+                  <ul>
+                    <li>Small partner dining earn</li>
+                    <li>Transfer from Amex MR (1:1)</li>
+                    <li>Book a short domestic flight</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions-section">
+          <h3 class="section-title">Quick Actions</h3>
+          <div class="quick-actions-grid">
+            <a href="wallet.html" class="quick-action-card">
+              <span class="icon">➕</span>
+              <h4 class="quick-action-title">Add Program</h4>
+              <p class="quick-action-description">
+                Connect a new loyalty program
+              </p>
+            </a>
+
+            <a href="goals.html" class="quick-action-card">
+              <span class="icon">🎯</span>
+              <h4 class="quick-action-title">New Trip Goal</h4>
+              <p class="quick-action-description">Plan your next redemption</p>
+            </a>
+
+            <a href="awards.html" class="quick-action-card">
+              <span class="icon">🔍</span>
+              <h4 class="quick-action-title">Award Finder</h4>
+              <p class="quick-action-description">
+                Search for award availability
+              </p>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,489 @@
+/* Print Styles */
+
+@media print {
+  /* Reset all colors for print */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page Setup */
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+
+  /* Hide non-printable elements */
+  .app-header,
+  .app-sidebar,
+  .app-footer,
+  .btn,
+  .theme-toggle,
+  .date-picker,
+  .alert,
+  .modal,
+  .drawer,
+  .skip-link,
+  .tooltip,
+  .loading,
+  .skeleton {
+    display: none !important;
+  }
+
+  /* Main layout for print */
+  .app-shell {
+    display: block !important;
+    grid-template-areas: none !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  .app-main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black !important;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 18pt;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.2em;
+  }
+
+  h2 {
+    font-size: 16pt;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.1em;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 12pt;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Tables */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid black !important;
+    padding: 0.3em 0.5em !important;
+    text-align: left !important;
+    vertical-align: top !important;
+  }
+
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold !important;
+  }
+
+  /* Cards and containers */
+  .card,
+  .kpi-tile,
+  .booking-card {
+    border: 1px solid black !important;
+    background: white !important;
+    margin-bottom: 1em;
+    padding: 0.5em !important;
+    page-break-inside: avoid;
+  }
+
+  .card__header,
+  .kpi-tile__header,
+  .booking-card__time {
+    background: #f0f0f0 !important;
+    border-bottom: 1px solid black !important;
+    padding: 0.3em 0.5em !important;
+    margin: -0.5em -0.5em 0.5em -0.5em !important;
+  }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .kpi-tile__value {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .kpi-tile__change {
+    font-size: 10pt !important;
+    color: #666 !important;
+  }
+
+  /* Booking List */
+  .booking-list {
+    display: block !important;
+  }
+
+  .booking-card {
+    display: block !important;
+    margin-bottom: 0.5em !important;
+    padding: 0.5em !important;
+  }
+
+  .booking-card__time {
+    display: inline-block !important;
+    font-weight: bold !important;
+    margin-right: 1em !important;
+    min-width: 3em !important;
+  }
+
+  .booking-card__content {
+    display: inline-block !important;
+    margin-right: 1em !important;
+  }
+
+  .booking-card__status {
+    display: inline-block !important;
+    float: right !important;
+  }
+
+  /* Badges */
+  .badge {
+    border: 1px solid black !important;
+    background: white !important;
+    color: black !important;
+    padding: 0.1em 0.3em !important;
+    font-size: 10pt !important;
+    margin: 0 0.2em !important;
+  }
+
+  /* Calendar */
+  .calendar {
+    border: 1px solid black !important;
+    background: white !important;
+    page-break-inside: avoid;
+  }
+
+  .calendar__header {
+    background: #f0f0f0 !important;
+    border-bottom: 1px solid black !important;
+    padding: 0.5em !important;
+  }
+
+  .calendar__grid {
+    border: none !important;
+  }
+
+  .calendar__day-header {
+    background: #f0f0f0 !important;
+    border: 1px solid black !important;
+    padding: 0.3em !important;
+    font-weight: bold !important;
+  }
+
+  .calendar__day {
+    border: 1px solid black !important;
+    padding: 0.3em !important;
+    min-height: 2em !important;
+    background: white !important;
+  }
+
+  .calendar__day--today {
+    background: #f0f0f0 !important;
+  }
+
+  .slot {
+    border: 1px solid black !important;
+    background: white !important;
+    padding: 0.2em !important;
+    margin: 0.1em 0 !important;
+    font-size: 10pt !important;
+  }
+
+  /* Utilization Bars */
+  .bar {
+    border: 1px solid black !important;
+    background: white !important;
+    height: 0.5em !important;
+  }
+
+  .bar__fill {
+    background: black !important;
+    height: 100% !important;
+  }
+
+  /* Usage Rings */
+  .ring {
+    display: none !important;
+  }
+
+  .ring__text {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    font-size: 12pt !important;
+    font-weight: bold !important;
+  }
+
+  /* Forms */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    border: 1px solid black !important;
+    background: white !important;
+    padding: 0.3em !important;
+  }
+
+  /* Navigation */
+  .nav-list {
+    display: none !important;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Print headers and footers */
+  .print-header {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .print-footer {
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 0.5em;
+    margin-top: 1em;
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Invoice specific styles */
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2em;
+  }
+
+  .invoice-details {
+    text-align: right;
+  }
+
+  .invoice-items {
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  .invoice-total {
+    text-align: right;
+    margin-top: 1em;
+    font-weight: bold;
+  }
+
+  /* Roster specific styles */
+  .roster-header {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .roster-date {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .roster-staff {
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .roster-staff-name {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5em;
+  }
+
+  .roster-session {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em 0;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  /* Schedule specific styles */
+  .schedule-header {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .schedule-week {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .schedule-room {
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .schedule-room-name {
+    font-weight: bold;
+    background: #f0f0f0;
+    padding: 0.3em;
+    border: 1px solid black;
+    margin-bottom: 0.5em;
+  }
+
+  .schedule-session {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em 0.5em;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  /* Member statement styles */
+  .member-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+
+  .member-info {
+    flex: 1;
+  }
+
+  .statement-period {
+    text-align: right;
+    flex: 1;
+  }
+
+  .plan-summary {
+    background: #f0f0f0;
+    padding: 0.5em;
+    border: 1px solid black;
+    margin-bottom: 1em;
+  }
+
+  .plan-name {
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  .plan-details {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Hide interactive elements */
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .btn,
+  .theme-toggle,
+  .date-picker,
+  .alert__action {
+    display: none !important;
+  }
+
+  /* Ensure text is readable */
+  .text-muted,
+  .text-secondary {
+    color: #666 !important;
+  }
+
+  .text-primary,
+  .text-success,
+  .text-warning,
+  .text-danger,
+  .text-info {
+    color: black !important;
+  }
+
+  /* Print-specific utility classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Page numbers */
+  @page {
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+
+  /* Watermark for drafts */
+  .draft-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 48pt;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    pointer-events: none;
+  }
+}

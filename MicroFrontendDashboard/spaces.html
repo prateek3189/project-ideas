@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaces - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <div class="page-header">
+          <h1 class="page-title">Spaces</h1>
+          <p class="page-subtitle">
+            Manage your dashboard spaces and their configurations
+          </p>
+        </div>
+
+        <!-- Spaces Grid -->
+        <div class="spaces-grid">
+          <!-- Ops NOC Space -->
+          <div class="space-card">
+            <div class="space-card__header">
+              <div>
+                <h3 class="space-card__title">Ops NOC</h3>
+                <p class="space-card__id">ops-noc</p>
+              </div>
+              <span class="status-badge status-badge--success">Live</span>
+            </div>
+            <div class="space-card__meta">
+              <span>Owner: Sarah Chen</span>
+              <span>Last publish: 2h ago</span>
+            </div>
+            <div class="space-card__stats">
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">8</span>
+                <span class="space-card__stat-label">Pages</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">12</span>
+                <span class="space-card__stat-label">Widgets</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">5</span>
+                <span class="space-card__stat-label">Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Finance Dashboard -->
+          <div class="space-card">
+            <div class="space-card__header">
+              <div>
+                <h3 class="space-card__title">Finance Dashboard</h3>
+                <p class="space-card__id">finance-dashboard</p>
+              </div>
+              <span class="status-badge status-badge--success">Live</span>
+            </div>
+            <div class="space-card__meta">
+              <span>Owner: Mike Rodriguez</span>
+              <span>Last publish: 1d ago</span>
+            </div>
+            <div class="space-card__stats">
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">4</span>
+                <span class="space-card__stat-label">Pages</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">7</span>
+                <span class="space-card__stat-label">Widgets</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">3</span>
+                <span class="space-card__stat-label">Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Marketing Analytics -->
+          <div class="space-card">
+            <div class="space-card__header">
+              <div>
+                <h3 class="space-card__title">Marketing Analytics</h3>
+                <p class="space-card__id">marketing-analytics</p>
+              </div>
+              <span class="status-badge status-badge--warning">Draft</span>
+            </div>
+            <div class="space-card__meta">
+              <span>Owner: Jennifer Lee</span>
+              <span>Last publish: Never</span>
+            </div>
+            <div class="space-card__stats">
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">2</span>
+                <span class="space-card__stat-label">Pages</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">5</span>
+                <span class="space-card__stat-label">Widgets</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">4</span>
+                <span class="space-card__stat-label">Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Support -->
+          <div class="space-card">
+            <div class="space-card__header">
+              <div>
+                <h3 class="space-card__title">Customer Support</h3>
+                <p class="space-card__id">customer-support</p>
+              </div>
+              <span class="status-badge status-badge--success">Live</span>
+            </div>
+            <div class="space-card__meta">
+              <span>Owner: David Kim</span>
+              <span>Last publish: 3h ago</span>
+            </div>
+            <div class="space-card__stats">
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">6</span>
+                <span class="space-card__stat-label">Pages</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">9</span>
+                <span class="space-card__stat-label">Widgets</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">8</span>
+                <span class="space-card__stat-label">Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sales Performance -->
+          <div class="space-card">
+            <div class="space-card__header">
+              <div>
+                <h3 class="space-card__title">Sales Performance</h3>
+                <p class="space-card__id">sales-performance</p>
+              </div>
+              <span class="status-badge status-badge--success">Live</span>
+            </div>
+            <div class="space-card__meta">
+              <span>Owner: Lisa Wang</span>
+              <span>Last publish: 5h ago</span>
+            </div>
+            <div class="space-card__stats">
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">3</span>
+                <span class="space-card__stat-label">Pages</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">6</span>
+                <span class="space-card__stat-label">Widgets</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">6</span>
+                <span class="space-card__stat-label">Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps Monitoring -->
+          <div class="space-card">
+            <div class="space-card__header">
+              <div>
+                <h3 class="space-card__title">DevOps Monitoring</h3>
+                <p class="space-card__id">devops-monitoring</p>
+              </div>
+              <span class="status-badge status-badge--success">Live</span>
+            </div>
+            <div class="space-card__meta">
+              <span>Owner: Alex Thompson</span>
+              <span>Last publish: 1h ago</span>
+            </div>
+            <div class="space-card__stats">
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">5</span>
+                <span class="space-card__stat-label">Pages</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">11</span>
+                <span class="space-card__stat-label">Widgets</span>
+              </div>
+              <div class="space-card__stat">
+                <span class="space-card__stat-value">4</span>
+                <span class="space-card__stat-label">Members</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <section class="section">
+          <h2 class="section-title">Quick Actions</h2>
+          <div class="flex gap-4">
+            <button class="button button--primary">Create New Space</button>
+            <button class="button">Import Space</button>
+            <button class="button">Export All Spaces</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

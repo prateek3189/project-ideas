@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Settings</title>
+    <meta
+      name="description"
+      content="Configure your Budget Buddy preferences and settings"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Statement</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a
+                  href="settings.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Settings</h1>
+            <p class="main__subtitle">
+              Configure your Budget Buddy preferences
+            </p>
+          </div>
+
+          <!-- Currency & Format -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1.5rem">Currency & Format</h3>
+
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 2rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <div>
+                  <label
+                    for="currency"
+                    style="
+                      display: block;
+                      margin-bottom: 0.5rem;
+                      font-weight: var(--font-weight-medium);
+                    "
+                    >Currency</label
+                  >
+                  <select id="currency" style="width: 100%">
+                    <option value="INR" selected>Indian Rupee (₹)</option>
+                    <option value="USD">US Dollar ($)</option>
+                    <option value="EUR">Euro (€)</option>
+                    <option value="GBP">British Pound (£)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    for="number-format"
+                    style="
+                      display: block;
+                      margin-bottom: 0.5rem;
+                      font-weight: var(--font-weight-medium);
+                    "
+                    >Number Format</label
+                  >
+                  <select id="number-format" style="width: 100%">
+                    <option value="tabular" selected>Tabular Numerals</option>
+                    <option value="proportional">Proportional</option>
+                  </select>
+                </div>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"
+              >
+                <div>
+                  <label
+                    for="date-format"
+                    style="
+                      display: block;
+                      margin-bottom: 0.5rem;
+                      font-weight: var(--font-weight-medium);
+                    "
+                    >Date Format</label
+                  >
+                  <select id="date-format" style="width: 100%">
+                    <option value="DD-MM-YYYY" selected>DD-MM-YYYY</option>
+                    <option value="MM-DD-YYYY">MM-DD-YYYY</option>
+                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    for="time-format"
+                    style="
+                      display: block;
+                      margin-bottom: 0.5rem;
+                      font-weight: var(--font-weight-medium);
+                    "
+                    >Time Format</label
+                  >
+                  <select id="time-format" style="width: 100%">
+                    <option value="12h" selected>12-hour (AM/PM)</option>
+                    <option value="24h">24-hour</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories Management -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1.5rem">Categories</h3>
+
+              <div style="display: grid; gap: 1rem; margin-bottom: 2rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-food);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    🍕
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Food & Dining
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Restaurants, groceries, food delivery
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-transport);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    🚗
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Transport
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Taxi, fuel, public transport
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-shopping);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    🛍️
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Shopping
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Online shopping, retail
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-bills);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    ⚡
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Bills & Utilities
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Electricity, internet, rent
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-entertainment);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    🎬
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Entertainment
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Movies, subscriptions, games
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-health);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    💊
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Health
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Medical, pharmacy, fitness
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-education);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    📚
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Education
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Books, courses, training
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 24px;
+                      height: 24px;
+                      background: var(--color-other);
+                      border-radius: var(--radius-sm);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: var(--font-size-sm);
+                    "
+                  >
+                    💰
+                  </div>
+                  <div style="flex: 1">
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Other
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Miscellaneous expenses
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem">
+                <button class="btn">Add Category</button>
+                <button class="btn btn--secondary">Import Categories</button>
+                <button class="btn btn--secondary">Reset to Default</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auto-Categorization Rules -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1.5rem">Auto-Categorization Rules</h3>
+              <p
+                style="color: var(--color-text-secondary); margin-bottom: 2rem"
+              >
+                Set up rules to automatically categorize transactions based on
+                merchant names or descriptions.
+              </p>
+
+              <div style="display: grid; gap: 1rem; margin-bottom: 2rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="flex: 1">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-size: var(--font-size-sm);
+                        background: var(--color-surface);
+                        padding: 0.5rem;
+                        border-radius: var(--radius-sm);
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      SWIGGY
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Contains "SWIGGY"
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-text-tertiary);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    →
+                  </div>
+                  <div>
+                    <span class="pill pill--food">Food</span>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="flex: 1">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-size: var(--font-size-sm);
+                        background: var(--color-surface);
+                        padding: 0.5rem;
+                        border-radius: var(--radius-sm);
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      OLA CABS
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Contains "OLA CABS"
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-text-tertiary);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    →
+                  </div>
+                  <div>
+                    <span class="pill pill--transport">Transport</span>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="flex: 1">
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-size: var(--font-size-sm);
+                        background: var(--color-surface);
+                        padding: 0.5rem;
+                        border-radius: var(--radius-sm);
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      AMAZON
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Contains "AMAZON"
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-text-tertiary);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    →
+                  </div>
+                  <div>
+                    <span class="pill pill--shopping">Shopping</span>
+                  </div>
+                  <button class="btn btn--secondary">Edit</button>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem">
+                <button class="btn">Add Rule</button>
+                <button class="btn btn--secondary">Import Rules</button>
+                <button class="btn btn--secondary">Test Rules</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy & Security -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1.5rem">Privacy & Security</h3>
+
+              <div style="display: grid; gap: 1.5rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Local Data Storage
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      All data is stored locally on your device
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-success);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    ✓ Enabled
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Data Masking
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Hide sensitive account numbers in displays
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-success);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    ✓ Enabled
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Auto-Lock
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Lock app after 15 minutes of inactivity
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-success);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    ✓ Enabled
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Export Data
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Allow exporting data in CSV/JSON format
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-success);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    ✓ Enabled
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 2rem;
+                  padding: 1rem;
+                  background: var(--color-accent-light);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-accent);
+                  "
+                >
+                  <strong>🔒 Privacy Note:</strong> Budget Buddy processes all
+                  data locally on your device. No personal financial information
+                  is sent to external servers. You have full control over your
+                  data.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessibility -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1.5rem">Accessibility</h3>
+
+              <div style="display: grid; gap: 1.5rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      High Contrast Mode
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Enhanced contrast for better visibility
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Enable</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Reduced Motion
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Minimize animations and transitions
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Enable</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Large Text
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Increase font size for better readability
+                    </div>
+                  </div>
+                  <button class="btn btn--secondary">Enable</button>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-medium);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Keyboard Navigation
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Full keyboard support for all features
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-success);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    ✓ Enabled
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Management -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1.5rem">Data Management</h3>
+
+              <div style="display: grid; gap: 1rem; margin-bottom: 2rem">
+                <button
+                  class="btn btn--secondary"
+                  style="justify-content: flex-start; text-align: left"
+                >
+                  <span style="margin-right: 1rem">📤</span>
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Export All Data
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Download your data as CSV or JSON
+                    </div>
+                  </div>
+                </button>
+
+                <button
+                  class="btn btn--secondary"
+                  style="justify-content: flex-start; text-align: left"
+                >
+                  <span style="margin-right: 1rem">📥</span>
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Import Data
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Import data from other apps
+                    </div>
+                  </div>
+                </button>
+
+                <button
+                  class="btn btn--secondary"
+                  style="justify-content: flex-start; text-align: left"
+                >
+                  <span style="margin-right: 1rem">🔄</span>
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Sync Settings
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Backup and restore your settings
+                    </div>
+                  </div>
+                </button>
+
+                <button
+                  class="btn btn--danger"
+                  style="justify-content: flex-start; text-align: left"
+                >
+                  <span style="margin-right: 1rem">🗑️</span>
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Clear All Data
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Permanently delete all your data
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <div
+                style="
+                  padding: 1rem;
+                  background: var(--color-warning);
+                  color: white;
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div style="font-size: var(--font-size-sm)">
+                  <strong>⚠️ Warning:</strong> Clearing all data is permanent
+                  and cannot be undone. Make sure to export your data before
+                  proceeding.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

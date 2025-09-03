@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Builder - TypeScript Primitives</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Skill Builder</h1>
+          <div class="header__actions">
+            <button class="search-btn" aria-label="Search courses">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+            <div class="profile-chip">
+              <img
+                src="assets/avatar-placeholder.svg"
+                alt="Profile"
+                class="profile-chip__avatar"
+              />
+              <span class="profile-chip__name">Alex</span>
+            </div>
+            <a href="#" class="print-link" aria-label="Print view">📄</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+            <li><a href="progress.html" class="nav-link">Progress</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__categories">
+          <h3 class="sidebar__heading">Categories</h3>
+          <ul class="category-list">
+            <li><a href="#" class="category-link">Web Development</a></li>
+            <li><a href="#" class="category-link">Data Science</a></li>
+            <li><a href="#" class="category-link">Design</a></li>
+            <li><a href="#" class="category-link">Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="course-overview">
+          <!-- Course Hero -->
+          <section class="course-hero">
+            <div class="course-hero__content">
+              <div class="course-hero__header">
+                <h2 class="course-hero__title">TypeScript Primitives</h2>
+                <p class="course-hero__subtitle">
+                  Master the basics of TypeScript types in under 10 minutes
+                </p>
+              </div>
+
+              <div class="course-hero__meta">
+                <div class="course-hero__stats">
+                  <span
+                    class="course-hero__level course-hero__level--intermediate"
+                    >Intermediate</span
+                  >
+                  <span class="course-hero__duration">9 min</span>
+                  <span class="course-hero__lessons">4 lessons</span>
+                </div>
+
+                <div class="course-hero__progress">
+                  <div class="progress-bar progress-bar--chunky">
+                    <div class="progress-bar__fill" style="width: 60%"></div>
+                    <span class="progress-bar__label">60% Complete</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="course-hero__prerequisites">
+                <h4>Prerequisites</h4>
+                <div class="prerequisite-tags">
+                  <span class="tag tag--prerequisite">Basic JavaScript</span>
+                  <span class="tag tag--prerequisite">ES6+ Knowledge</span>
+                </div>
+              </div>
+
+              <div class="course-hero__actions">
+                <a href="lesson.html" class="btn btn--primary btn--large"
+                  >Continue Learning</a
+                >
+                <a href="quiz.html" class="btn btn--secondary btn--large"
+                  >Take Quiz</a
+                >
+              </div>
+            </div>
+          </section>
+
+          <!-- Learning Outcomes -->
+          <section class="learning-outcomes">
+            <h3 class="section-title">What You'll Learn</h3>
+            <ul class="outcomes-list">
+              <li>Understand TypeScript's type system fundamentals</li>
+              <li>Work with primitive types (string, number, boolean)</li>
+              <li>Use union types and type guards effectively</li>
+              <li>Apply basic type annotations in your code</li>
+              <li>Handle common TypeScript compilation errors</li>
+            </ul>
+          </section>
+
+          <!-- Syllabus -->
+          <section class="syllabus">
+            <h3 class="section-title">Course Syllabus</h3>
+            <ol class="syllabus-list">
+              <li class="syllabus-item syllabus-item--completed">
+                <div class="syllabus-item__content">
+                  <h4 class="syllabus-item__title">Introduction to Types</h4>
+                  <p class="syllabus-item__description">
+                    Learn why types matter and how TypeScript helps
+                  </p>
+                  <div class="syllabus-item__meta">
+                    <span class="syllabus-item__duration">2 min</span>
+                    <span
+                      class="syllabus-item__status syllabus-item__status--completed"
+                      >✓ Completed</span
+                    >
+                  </div>
+                </div>
+                <a href="lesson.html" class="btn btn--small">Review</a>
+              </li>
+
+              <li class="syllabus-item syllabus-item--completed">
+                <div class="syllabus-item__content">
+                  <h4 class="syllabus-item__title">
+                    Primitive Types Deep Dive
+                  </h4>
+                  <p class="syllabus-item__description">
+                    Explore string, number, and boolean types
+                  </p>
+                  <div class="syllabus-item__meta">
+                    <span class="syllabus-item__duration">3 min</span>
+                    <span
+                      class="syllabus-item__status syllabus-item__status--completed"
+                      >✓ Completed</span
+                    >
+                  </div>
+                </div>
+                <a href="lesson.html" class="btn btn--small">Review</a>
+              </li>
+
+              <li class="syllabus-item syllabus-item--current">
+                <div class="syllabus-item__content">
+                  <h4 class="syllabus-item__title">
+                    Union Types & Type Guards
+                  </h4>
+                  <p class="syllabus-item__description">
+                    Combine types and narrow them safely
+                  </p>
+                  <div class="syllabus-item__meta">
+                    <span class="syllabus-item__duration">2 min</span>
+                    <span
+                      class="syllabus-item__status syllabus-item__status--current"
+                      >🔄 In Progress</span
+                    >
+                  </div>
+                </div>
+                <a href="lesson.html" class="btn btn--primary btn--small"
+                  >Continue</a
+                >
+              </li>
+
+              <li class="syllabus-item syllabus-item--locked">
+                <div class="syllabus-item__content">
+                  <h4 class="syllabus-item__title">Practice & Quiz</h4>
+                  <p class="syllabus-item__description">
+                    Test your knowledge with hands-on examples
+                  </p>
+                  <div class="syllabus-item__meta">
+                    <span class="syllabus-item__duration">2 min</span>
+                    <span
+                      class="syllabus-item__status syllabus-item__status--locked"
+                      >🔒 Locked</span
+                    >
+                  </div>
+                </div>
+                <span class="btn btn--disabled btn--small">Locked</span>
+              </li>
+            </ol>
+          </section>
+
+          <!-- Resources -->
+          <section class="resources">
+            <h3 class="section-title">Additional Resources</h3>
+            <div class="resources-grid">
+              <div class="resource-card">
+                <h4 class="resource-card__title">TypeScript Handbook</h4>
+                <p class="resource-card__description">
+                  Official TypeScript documentation
+                </p>
+                <a href="#" class="resource-card__link">Read More →</a>
+              </div>
+
+              <div class="resource-card">
+                <h4 class="resource-card__title">TypeScript Playground</h4>
+                <p class="resource-card__description">
+                  Experiment with types online
+                </p>
+                <a href="#" class="resource-card__link">Try It →</a>
+              </div>
+
+              <div class="resource-card">
+                <h4 class="resource-card__title">Community Examples</h4>
+                <p class="resource-card__description">
+                  Real-world TypeScript patterns
+                </p>
+                <a href="#" class="resource-card__link">Browse →</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__version">Skill Builder v1.0</p>
+          <p class="footer__help">
+            Need help? <a href="about.html">Learn more</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

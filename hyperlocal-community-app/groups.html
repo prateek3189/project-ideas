@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groups - Hyperlocal Community</title>
+    <meta
+      name="description"
+      content="Join interest groups and connect with like-minded neighbors."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search groups..."
+              aria-label="Search groups"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="events.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a href="items.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a href="carpool.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a
+            href="groups.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a href="messages.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a href="profile.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">Community Groups</h1>
+          <p class="page-subtitle">
+            Join interest groups and connect with like-minded neighbors
+          </p>
+        </div>
+
+        <!-- Group Filters -->
+        <div class="feed-filters">
+          <div class="feed-filters__left">
+            <div class="filter-pills">
+              <a href="#" class="filter-pill filter-pill--active">All Groups</a>
+              <a href="#" class="filter-pill">Fitness</a>
+              <a href="#" class="filter-pill">Parents</a>
+              <a href="#" class="filter-pill">Pets</a>
+              <a href="#" class="filter-pill">Hobbies</a>
+              <a href="#" class="filter-pill">Carpool</a>
+            </div>
+          </div>
+
+          <div class="feed-filters__right">
+            <div class="feed-sort">
+              <label class="feed-sort__label" for="sort-select">Sort by:</label>
+              <select id="sort-select" class="feed-sort__select">
+                <option value="members">Most Members</option>
+                <option value="recent">Recently Active</option>
+                <option value="near">Nearest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Groups Grid -->
+        <div class="feed-grid">
+          <!-- Group 1 -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">🏃</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Runners Club</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">45 members</span>
+                <span class="chip chip--distance">0.5 km</span>
+                <span class="chip chip--default">Fitness</span>
+              </div>
+              <p class="feed-card__description">
+                Morning runs every Tuesday & Thursday at 6 AM. All fitness
+                levels welcome! Join us for healthy living.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">LK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Lisa K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#group-detail" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Group 2 -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">👶</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Parents Circle</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">120 members</span>
+                <span class="chip chip--distance">0.8 km</span>
+                <span class="chip chip--default">Parents</span>
+              </div>
+              <p class="feed-card__description">
+                Support group for parents. Playdates, parenting tips, and
+                community events for families with children.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">PN</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Priya N.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--phone">Phone ✓</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#group-detail" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Group 3 -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">🐕</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Pets & Pawrents</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">60 members</span>
+                <span class="chip chip--distance">0.9 km</span>
+                <span class="chip chip--default">Pets</span>
+              </div>
+              <p class="feed-card__description">
+                Pet owners community. Playdates, vet recommendations, and pet
+                care tips. All pets welcome!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">DK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">David K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#group-detail" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Group 4 -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">📚</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Book Swap</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">34 members</span>
+                <span class="chip chip--distance">1.1 km</span>
+                <span class="chip chip--default">Hobbies</span>
+              </div>
+              <p class="feed-card__description">
+                Book lovers unite! Monthly book swaps, reading discussions, and
+                literary events in the community.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">AS</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Anita S.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#group-detail" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Group 5 -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">🌱</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Gardening</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">27 members</span>
+                <span class="chip chip--distance">1.3 km</span>
+                <span class="chip chip--default">Hobbies</span>
+              </div>
+              <p class="feed-card__description">
+                Green thumbs welcome! Plant swaps, gardening tips, and community
+                garden projects.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">GT</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Gita T.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#group-detail" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Group 6 -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">🚗</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Carpool Block C</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">18 members</span>
+                <span class="chip chip--distance">0.2 km</span>
+                <span class="chip chip--default">Carpool</span>
+              </div>
+              <p class="feed-card__description">
+                Block C residents carpool coordination. Daily commutes, weekend
+                trips, and shared transportation.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">AP</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Amit P.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--driver">Safe Driver</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#group-detail" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Group Detail Modal (Visual Placeholder) -->
+        <details class="detail-layout no-print" style="margin-top: 2rem">
+          <summary
+            style="
+              font-size: 1.2rem;
+              font-weight: 600;
+              margin-bottom: 1rem;
+              cursor: pointer;
+            "
+          >
+            View Group Detail Example
+          </summary>
+
+          <div class="detail-main">
+            <div class="detail-card">
+              <h2 class="detail-card__title">Runners Club</h2>
+
+              <div class="mt-4">
+                <h3>About This Group</h3>
+                <p>
+                  Join our vibrant running community! We organize regular
+                  morning runs, fitness challenges, and social events. Whether
+                  you're a beginner or an experienced runner, you'll find your
+                  pace with us.
+                </p>
+
+                <p><strong>Regular Schedule:</strong></p>
+                <ul>
+                  <li>Tuesday: 6:00 AM - Community Center</li>
+                  <li>Thursday: 6:00 AM - Central Park</li>
+                  <li>Saturday: 7:00 AM - Long run (various locations)</li>
+                </ul>
+
+                <p><strong>What to expect:</strong></p>
+                <ul>
+                  <li>All fitness levels welcome</li>
+                  <li>Group warm-up and cool-down</li>
+                  <li>Post-run refreshments</li>
+                  <li>Monthly social events</li>
+                </ul>
+              </div>
+
+              <div class="mt-4">
+                <h3>Group Rules</h3>
+                <ul>
+                  <li>Be respectful to all members</li>
+                  <li>Follow safety guidelines</li>
+                  <li>Inform group if you can't make it</li>
+                  <li>Help newcomers feel welcome</li>
+                </ul>
+              </div>
+
+              <div class="mt-4">
+                <div class="rsvp">
+                  <button class="rsvp__chip rsvp__chip--going">
+                    Join Group
+                  </button>
+                  <button class="rsvp__chip rsvp__chip--interested">
+                    Interested
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Posts -->
+            <div class="detail-card mt-6">
+              <h3 class="detail-card__title">Recent Posts</h3>
+
+              <div class="list-layout">
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <h4 class="list-item__title">
+                      Saturday Long Run - New Route!
+                    </h4>
+                    <span class="chip chip--time">2 days ago</span>
+                  </div>
+                  <div class="list-item__content">
+                    This Saturday we're trying a new 10K route through the
+                    botanical gardens. Meet at 7 AM at the community center.
+                  </div>
+                  <div class="list-item__actions">
+                    <span class="chip chip--default">Event</span>
+                    <span class="chip chip--default">5 interested</span>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <h4 class="list-item__title">
+                      Running Shoes Recommendation
+                    </h4>
+                    <span class="chip chip--time">1 week ago</span>
+                  </div>
+                  <div class="list-item__content">
+                    Looking for new running shoes? Check out the sports store on
+                    Main Street - they have a great selection and offer group
+                    discounts.
+                  </div>
+                  <div class="list-item__actions">
+                    <span class="chip chip--default">Tip</span>
+                    <span class="chip chip--default">8 likes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-sidebar">
+            <div class="detail-card">
+              <h3 class="detail-card__title">Group Admin</h3>
+              <div class="profile-chip">
+                <div class="profile-chip__avatar">LK</div>
+                <div class="profile-chip__info">
+                  <div class="profile-chip__name">Lisa K.</div>
+                  <div class="profile-chip__badges">
+                    <span class="badge badge--verified">✓ Verified</span>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3">
+                Fitness enthusiast and certified running coach. Started this
+                group 2 years ago.
+              </p>
+              <a href="profile.html" class="btn btn--sm btn--secondary mt-3"
+                >View Profile</a
+              >
+            </div>
+
+            <div class="detail-card">
+              <h3 class="detail-card__title">Group Stats</h3>
+              <ul>
+                <li><strong>Members:</strong> 45</li>
+                <li><strong>Founded:</strong> 2 years ago</li>
+                <li><strong>Events:</strong> 24 this year</li>
+                <li><strong>Activity:</strong> Very active</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      });
+    </script>
+  </body>
+</html>

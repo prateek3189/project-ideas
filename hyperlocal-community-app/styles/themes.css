@@ -1,0 +1,182 @@
+/* Themes - Hyperlocal Community App */
+
+/* Theme Toggle */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-surface);
+}
+
+.theme-toggle__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-caption);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .theme-toggle {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background-color: var(--color-bg);
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  color-scheme: light;
+}
+
+[data-theme="high-contrast"] .theme-toggle {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .theme-toggle:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Management */
+[data-theme="high-contrast"] *:focus {
+  outline: 3px solid var(--color-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* High Contrast Adjustments */
+[data-theme="high-contrast"] .card,
+[data-theme="high-contrast"] .feed-card,
+[data-theme="high-contrast"] .detail-card {
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .btn {
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .chip {
+  border-width: 2px;
+}
+
+[data-theme="high-contrast"] .badge {
+  border: 2px solid currentColor;
+}
+
+/* Theme-specific color adjustments */
+[data-theme="dark"] .map-box::before {
+  background-image: linear-gradient(
+      45deg,
+      var(--color-border) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, var(--color-border) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--color-border) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--color-border) 75%);
+}
+
+[data-theme="high-contrast"] .map-box::before {
+  background-image: linear-gradient(
+      45deg,
+      var(--color-border) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, var(--color-border) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--color-border) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--color-border) 75%);
+  opacity: 0.5;
+}
+
+/* Theme persistence */
+.theme-toggle[data-theme="light"] .theme-toggle__icon::before {
+  content: "☀️";
+}
+
+.theme-toggle[data-theme="dark"] .theme-toggle__icon::before {
+  content: "🌙";
+}
+
+.theme-toggle[data-theme="high-contrast"] .theme-toggle__icon::before {
+  content: "🔍";
+}
+
+/* System theme detection */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #0b1220;
+    --color-surface: #111827;
+    --color-text: #e5e7eb;
+    --color-text-muted: #9ca3af;
+    --color-border: #374151;
+    --color-border-light: #1f2937;
+
+    --color-success-bg: #064e3b;
+    --color-warning-bg: #78350f;
+    --color-danger-bg: #7f1d1d;
+    --color-info-bg: #1e3a8a;
+  }
+}
+
+/* Accessibility improvements for all themes */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #000000;
+    --color-text-muted: #333333;
+  }
+
+  [data-theme="dark"] {
+    --color-border: #ffffff;
+    --color-text-muted: #cccccc;
+  }
+}
+
+/* Print theme (always light) */
+@media print {
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-border: #000000;
+    --color-border-light: #666666;
+    --color-accent: #0000ff;
+    --color-trust: #008000;
+    --color-warning: #ff8c00;
+    --color-danger: #ff0000;
+    --color-info: #0000ff;
+  }
+}

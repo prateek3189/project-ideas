@@ -1,0 +1,608 @@
+/* ==========================================================================
+   Print Styles - Smart Coding Agent
+   ========================================================================== */
+
+/* Print Page Setup */
+@page {
+  size: A4;
+  margin: 1in;
+}
+
+/* Print Header and Footer */
+@page {
+  @top-left {
+    content: "Smart Coding Agent - " attr(data-page-title);
+    font-family: var(--font-family-sans);
+    font-size: 10pt;
+    color: #666;
+  }
+
+  @top-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: var(--font-family-sans);
+    font-size: 10pt;
+    color: #666;
+  }
+
+  @bottom-center {
+    content: "Generated on " date();
+    font-family: var(--font-family-sans);
+    font-size: 9pt;
+    color: #999;
+  }
+}
+
+/* Print Layout Reset */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  /* Hide Interactive Elements */
+  .shell__header,
+  .shell__sidebar,
+  .shell__footer,
+  .workspace__top-bar,
+  .chat__input,
+  .actions,
+  .btn,
+  .theme-toggle,
+  .palette,
+  .search-box,
+  .nav,
+  .project-tree {
+    display: none !important;
+  }
+
+  /* Main Layout */
+  .shell__body {
+    padding-top: 0;
+    display: block;
+  }
+
+  .shell__main {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Workspace Print Layout */
+  .workspace {
+    display: block;
+  }
+
+  .workspace__panes {
+    display: block;
+  }
+
+  .workspace__pane {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-bottom: 2em;
+    page-break-inside: avoid;
+  }
+
+  /* Code Blocks */
+  .code-block {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    page-break-inside: avoid;
+    margin-bottom: 1em;
+  }
+
+  .code-block__header {
+    background: #e9e9e9;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em;
+    font-weight: bold;
+  }
+
+  .code-block__content {
+    padding: 1em;
+    overflow: visible;
+  }
+
+  .code {
+    font-size: 10pt;
+    line-height: 1.3;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .code__line {
+    display: block;
+    margin-bottom: 0.2em;
+  }
+
+  .code__line-number {
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+    margin-right: 1em;
+    color: #666;
+    font-weight: normal;
+  }
+
+  .code__line-content {
+    display: inline;
+  }
+
+  .code__line--error {
+    background: #ffe6e6;
+    border-left: 3px solid #d00;
+    padding-left: 0.5em;
+  }
+
+  .code__line--added {
+    background: #e6ffe6;
+    border-left: 3px solid #0a0;
+    padding-left: 0.5em;
+  }
+
+  .code__line--removed {
+    background: #ffe6e6;
+    border-left: 3px solid #d00;
+    padding-left: 0.5em;
+  }
+
+  /* Chat Messages */
+  .chat__messages {
+    padding: 0;
+  }
+
+  .chat__message {
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .chat__bubble {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    padding: 1em;
+    max-width: none;
+  }
+
+  .chat__bubble--user {
+    background: #e6f3ff;
+    border-color: #0066cc;
+  }
+
+  .chat__bubble--agent {
+    background: #f0f0f0;
+    border-color: #666;
+  }
+
+  .chat__content {
+    margin: 0;
+  }
+
+  .chat__content p {
+    margin-bottom: 0.5em;
+  }
+
+  .chat__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .chat__details {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+  }
+
+  .chat__details summary {
+    font-weight: bold;
+    cursor: default;
+  }
+
+  .chat__details summary::before {
+    content: "▶ ";
+  }
+
+  .chat__details[open] summary::before {
+    content: "▼ ";
+  }
+
+  /* Context Panel */
+  .context-panel {
+    padding: 0;
+  }
+
+  .context-panel__section {
+    margin-bottom: 1.5em;
+    page-break-inside: avoid;
+  }
+
+  .context-panel__title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: black;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.5em;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  /* Stack Trace */
+  .stack-trace {
+    font-family: monospace;
+    font-size: 10pt;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 1em;
+  }
+
+  .stack-trace__line {
+    margin-bottom: 0.3em;
+  }
+
+  .stack-trace__line--error {
+    background: #ffe6e6;
+    border-left: 3px solid #d00;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    font-weight: bold;
+  }
+
+  .stack-trace__type {
+    color: #d00;
+    font-weight: bold;
+  }
+
+  .stack-trace__message {
+    color: black;
+  }
+
+  .stack-trace__location {
+    color: #666;
+  }
+
+  /* Environment Variables */
+  .env-vars {
+    font-family: monospace;
+    font-size: 10pt;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 1em;
+  }
+
+  .env-vars__item {
+    display: block;
+    margin-bottom: 0.3em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .env-vars__item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .env-vars__key {
+    font-weight: bold;
+    color: black;
+    display: inline;
+  }
+
+  .env-vars__value {
+    color: #666;
+    display: inline;
+  }
+
+  /* Dependencies */
+  .deps-list {
+    font-family: monospace;
+    font-size: 10pt;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 1em;
+  }
+
+  .deps-list__item {
+    display: block;
+    margin-bottom: 0.3em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .deps-list__item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .deps-list__name {
+    font-weight: bold;
+    color: black;
+    display: inline;
+  }
+
+  .deps-list__version {
+    color: #666;
+    display: inline;
+    float: right;
+  }
+
+  /* Test Summary */
+  .test-summary {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 1em;
+  }
+
+  .test-summary__stats {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .test-summary__stat {
+    text-align: center;
+  }
+
+  .test-summary__label {
+    display: block;
+    font-size: 9pt;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3em;
+  }
+
+  .test-summary__value {
+    display: block;
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  .test-summary__value--success {
+    color: #0a0;
+  }
+
+  .test-summary__value--error {
+    color: #d00;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 18pt;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.3em;
+  }
+
+  h2 {
+    font-size: 16pt;
+    border-bottom: 1px solid #666;
+    padding-bottom: 0.2em;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 0.3em 0.5em;
+    text-align: left;
+  }
+
+  th {
+    background: #e9e9e9;
+    font-weight: bold;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.2em;
+  }
+
+  /* Code */
+  code {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 0.1em 0.3em;
+    font-size: 10pt;
+  }
+
+  pre {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 1em;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+
+  /* Page Breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Print-specific classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Diff-specific print styles */
+  .diff-block {
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .diff-block__header {
+    background: #e9e9e9;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em;
+    font-weight: bold;
+  }
+
+  .diff-block__content {
+    padding: 0;
+  }
+
+  .diff-line {
+    display: block;
+    margin: 0;
+    padding: 0.2em 0.5em;
+    font-family: monospace;
+    font-size: 10pt;
+  }
+
+  .diff-line__gutter {
+    display: inline-block;
+    width: 2em;
+    text-align: center;
+    margin-right: 1em;
+    font-weight: bold;
+  }
+
+  .diff-line__content {
+    display: inline;
+  }
+
+  .diff-line--added {
+    background: #e6ffe6;
+    border-left: 3px solid #0a0;
+  }
+
+  .diff-line--added .diff-line__gutter {
+    background: #0a0;
+    color: white;
+  }
+
+  .diff-line--removed {
+    background: #ffe6e6;
+    border-left: 3px solid #d00;
+  }
+
+  .diff-line--removed .diff-line__gutter {
+    background: #d00;
+    color: white;
+  }
+
+  .diff-line--context {
+    background: #f9f9f9;
+  }
+
+  .diff-line--context .diff-line__gutter {
+    background: #ccc;
+    color: #666;
+  }
+}
+
+/* Print Report Header */
+.print-header {
+  display: none;
+}
+
+@media print {
+  .print-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #333;
+  }
+
+  .print-header__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .print-header__subtitle {
+    font-size: 12pt;
+    color: #666;
+  }
+
+  .print-header__meta {
+    font-size: 10pt;
+    color: #999;
+    margin-top: 0.5em;
+  }
+}
+
+/* Print Footer */
+.print-footer {
+  display: none;
+}
+
+@media print {
+  .print-footer {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    font-size: 9pt;
+    color: #666;
+  }
+}

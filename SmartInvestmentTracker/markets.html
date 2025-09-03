@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Markets & Trends</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link nav__link--active"
+            >Markets & Trends</a
+          >
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Markets & Trends</h2>
+        <p class="page-subtitle">
+          Market overview and sector performance indicators
+        </p>
+      </div>
+
+      <!-- Disclaimer -->
+      <section class="disclaimer-section">
+        <div class="alert alert--info">
+          <h4>📊 Market Data Disclaimer</h4>
+          <p>
+            Market signals and trends shown are simplified placeholders for
+            educational purposes. Always verify with current market data before
+            making investment decisions. Past performance does not guarantee
+            future results.
+          </p>
+        </div>
+      </section>
+
+      <!-- Macro Overview -->
+      <section class="macro-overview">
+        <h3 class="section-title">Macro Economic Overview</h3>
+        <div class="card-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Equity Markets</h4>
+              <span class="badge badge--info">Mixed Signals</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                Global equities showing mixed performance with technology sector
+                leading gains while energy and financials lag behind. Volatility
+                remains elevated due to interest rate uncertainty.
+              </p>
+              <div class="stats-grid mt-4">
+                <div class="stat-item">
+                  <span class="stat-label">S&P 500</span>
+                  <span class="stat-value tabular">+12.3%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">NASDAQ</span>
+                  <span class="stat-value tabular">+18.7%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">NIFTY 50</span>
+                  <span class="stat-value tabular">+8.9%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Interest Rates</h4>
+              <span class="badge badge--warning">Elevated</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                Central banks maintaining higher rates to combat inflation.
+                Yield curve remains inverted with short-term rates above
+                long-term rates, signaling potential economic headwinds.
+              </p>
+              <div class="stats-grid mt-4">
+                <div class="stat-item">
+                  <span class="stat-label">Fed Funds</span>
+                  <span class="stat-value tabular">5.25%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">10Y Treasury</span>
+                  <span class="stat-value tabular">4.12%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">30Y Treasury</span>
+                  <span class="stat-value tabular">4.28%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Credit Spreads</h4>
+              <span class="badge badge--success">Stable</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                Corporate credit spreads remain within normal ranges, indicating
+                healthy credit conditions. High-yield spreads have tightened
+                slightly as risk appetite improves.
+              </p>
+              <div class="stats-grid mt-4">
+                <div class="stat-item">
+                  <span class="stat-label">Investment Grade</span>
+                  <span class="stat-value tabular">+1.2%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">High Yield</span>
+                  <span class="stat-value tabular">+3.8%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">EM Debt</span>
+                  <span class="stat-value tabular">+4.5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Commodities</h4>
+              <span class="badge badge--info">Volatile</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                Commodity prices showing mixed trends with energy prices
+                stabilizing while precious metals gain on safe-haven demand.
+                Agricultural commodities face supply chain challenges.
+              </p>
+              <div class="stats-grid mt-4">
+                <div class="stat-item">
+                  <span class="stat-label">Gold</span>
+                  <span class="stat-value tabular">+5.2%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Oil (WTI)</span>
+                  <span class="stat-value tabular">-2.1%</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Copper</span>
+                  <span class="stat-value tabular">+3.4%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sector Performance -->
+      <section class="sector-performance">
+        <h3 class="section-title">Sector Performance Heat Map</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="heat-grid">
+              <div class="heat-cell heat-cell--pos-2">
+                <div class="heat-cell__label">Technology</div>
+                <div class="heat-cell__value">+15.2%</div>
+              </div>
+              <div class="heat-cell heat-cell--pos-1">
+                <div class="heat-cell__label">Healthcare</div>
+                <div class="heat-cell__value">+8.7%</div>
+              </div>
+              <div class="heat-cell heat-cell--neutral">
+                <div class="heat-cell__label">Consumer</div>
+                <div class="heat-cell__value">+2.1%</div>
+              </div>
+              <div class="heat-cell heat-cell--neutral">
+                <div class="heat-cell__label">Industrial</div>
+                <div class="heat-cell__value">+1.8%</div>
+              </div>
+              <div class="heat-cell heat-cell--neg-1">
+                <div class="heat-cell__label">Financials</div>
+                <div class="heat-cell__value">-3.2%</div>
+              </div>
+              <div class="heat-cell heat-cell--neg-1">
+                <div class="heat-cell__label">Energy</div>
+                <div class="heat-cell__value">-4.1%</div>
+              </div>
+              <div class="heat-cell heat-cell--neg-2">
+                <div class="heat-cell__label">Real Estate</div>
+                <div class="heat-cell__value">-8.9%</div>
+              </div>
+              <div class="heat-cell heat-cell--neutral">
+                <div class="heat-cell__label">Utilities</div>
+                <div class="heat-cell__value">+0.5%</div>
+              </div>
+              <div class="heat-cell heat-cell--pos-1">
+                <div class="heat-cell__label">Materials</div>
+                <div class="heat-cell__value">+6.3%</div>
+              </div>
+              <div class="heat-cell heat-cell--neutral">
+                <div class="heat-cell__label">Communication</div>
+                <div class="heat-cell__value">+1.2%</div>
+              </div>
+              <div class="heat-cell heat-cell--pos-1">
+                <div class="heat-cell__label">Consumer Staples</div>
+                <div class="heat-cell__value">+4.8%</div>
+              </div>
+              <div class="heat-cell heat-cell--neg-1">
+                <div class="heat-cell__label">Transportation</div>
+                <div class="heat-cell__value">-2.7%</div>
+              </div>
+            </div>
+            <div class="heat-legend mt-4">
+              <div class="heat-legend__item">
+                <span
+                  class="heat-legend__color heat-legend__color--neg-2"
+                ></span>
+                <span class="heat-legend__label">Strong Negative</span>
+              </div>
+              <div class="heat-legend__item">
+                <span
+                  class="heat-legend__color heat-legend__color--neg-1"
+                ></span>
+                <span class="heat-legend__label">Negative</span>
+              </div>
+              <div class="heat-legend__item">
+                <span
+                  class="heat-legend__color heat-legend__color--neutral"
+                ></span>
+                <span class="heat-legend__label">Neutral</span>
+              </div>
+              <div class="heat-legend__item">
+                <span
+                  class="heat-legend__color heat-legend__color--pos-1"
+                ></span>
+                <span class="heat-legend__label">Positive</span>
+              </div>
+              <div class="heat-legend__item">
+                <span
+                  class="heat-legend__color heat-legend__color--pos-2"
+                ></span>
+                <span class="heat-legend__label">Strong Positive</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Yield Curve -->
+      <section class="yield-curve">
+        <h3 class="section-title">Yield Curve Analysis</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="yield-curve__chart">
+              <div class="yield-curve__item">
+                <span class="yield-curve__label">3M</span>
+                <div
+                  class="yield-curve__bar"
+                  style="height: 80px; background-color: var(--color-warning)"
+                ></div>
+                <span class="yield-curve__value">5.25%</span>
+              </div>
+              <div class="yield-curve__item">
+                <span class="yield-curve__label">2Y</span>
+                <div
+                  class="yield-curve__bar"
+                  style="height: 70px; background-color: var(--color-warning)"
+                ></div>
+                <span class="yield-curve__value">4.65%</span>
+              </div>
+              <div class="yield-curve__item">
+                <span class="yield-curve__label">5Y</span>
+                <div
+                  class="yield-curve__bar"
+                  style="height: 60px; background-color: var(--color-info)"
+                ></div>
+                <span class="yield-curve__value">4.25%</span>
+              </div>
+              <div class="yield-curve__item">
+                <span class="yield-curve__label">10Y</span>
+                <div
+                  class="yield-curve__bar"
+                  style="height: 55px; background-color: var(--color-info)"
+                ></div>
+                <span class="yield-curve__value">4.12%</span>
+              </div>
+              <div class="yield-curve__item">
+                <span class="yield-curve__label">30Y</span>
+                <div
+                  class="yield-curve__bar"
+                  style="height: 58px; background-color: var(--color-info)"
+                ></div>
+                <span class="yield-curve__value">4.28%</span>
+              </div>
+            </div>
+            <div class="yield-curve__analysis mt-4">
+              <p>
+                <strong>Analysis:</strong> The yield curve remains inverted with
+                short-term rates (3M, 2Y) above long-term rates (10Y, 30Y). This
+                inversion typically signals economic uncertainty and potential
+                recession risk. The curve has steepened slightly compared to
+                last month.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Factor Performance -->
+      <section class="factor-performance">
+        <h3 class="section-title">Factor Performance</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Style Factors</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Growth</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 75%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+12.3%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Value</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 45%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+5.8%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Quality</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 60%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+8.1%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Momentum</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 80%; background-color: var(--color-alt)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+14.2%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Size Factors</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Large Cap</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 70%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+10.5%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Mid Cap</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 55%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+7.2%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Small Cap</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 40%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+4.8%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Micro Cap</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 25%; background-color: var(--color-alt)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+2.1%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Sentiment -->
+      <section class="market-sentiment">
+        <h3 class="section-title">Market Sentiment Indicators</h3>
+        <div class="card-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">VIX (Fear Index)</h4>
+              <span class="badge badge--warning">Elevated</span>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">18.5</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--negative">-2.1</span>
+                  <span class="value-display__period">vs last week</span>
+                </div>
+              </div>
+              <p class="mt-3">
+                Volatility index showing elevated but declining levels,
+                indicating improving risk appetite.
+              </p>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Put/Call Ratio</h4>
+              <span class="badge badge--info">Neutral</span>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">0.85</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--positive">+0.05</span>
+                  <span class="value-display__period">vs last week</span>
+                </div>
+              </div>
+              <p class="mt-3">
+                Options sentiment showing balanced positioning between bullish
+                and bearish bets.
+              </p>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">AAII Sentiment</h4>
+              <span class="badge badge--info">Mixed</span>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">42%</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">Bullish</span>
+                </div>
+              </div>
+              <p class="mt-3">
+                Individual investor sentiment showing cautious optimism with 42%
+                bullish, 28% bearish, 30% neutral.
+              </p>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Insider Trading</h4>
+              <span class="badge badge--warning">Selling</span>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">2.1:1</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">Sell/Buy Ratio</span>
+                </div>
+              </div>
+              <p class="mt-3">
+                Corporate insiders showing net selling activity, potentially
+                indicating valuation concerns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Currency & International -->
+      <section class="currency-international">
+        <h3 class="section-title">Currency & International Markets</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Major Currencies</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">USD/INR</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 60%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">83.25</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">EUR/USD</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 45%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">1.085</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">GBP/USD</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 50%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">1.265</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">USD/JPY</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 70%; background-color: var(--color-alt)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">149.80</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">International Markets</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">MSCI World</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 65%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+11.2%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">MSCI EM</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 40%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+6.8%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">FTSE 100</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 35%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+4.2%</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Nikkei 225</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 55%; background-color: var(--color-alt)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">+8.9%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

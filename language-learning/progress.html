@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress - Language Learning Buddy</title>
+    <meta
+      name="description"
+      content="Track your language learning progress with detailed analytics and insights"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search progress, stats..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a href="topics.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a href="pronun-lab.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a href="lessons.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a href="review.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a
+              href="progress.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Progress Filters</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              All Time
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              This Month
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📈</span>
+              This Week
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              By Topic
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Learning Progress</h1>
+          <p class="main__subtitle">
+            Track your language learning journey with detailed analytics and
+            insights
+          </p>
+        </div>
+
+        <div class="main__content">
+          <!-- Overview Stats -->
+          <div class="mt-8">
+            <h2>Overview</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Current Streak</div>
+                <h3 class="lesson-card__title">🔥 7 Days</h3>
+                <div class="lesson-card__content">
+                  You're on fire! Keep up the daily practice to maintain your
+                  streak.
+                </div>
+                <details>
+                  <summary>View Streak History</summary>
+                  <div class="mt-3">
+                    <h4>Recent Activity:</h4>
+                    <ul>
+                      <li>Today: ✅ 30 minutes practice</li>
+                      <li>Yesterday: ✅ 45 minutes practice</li>
+                      <li>2 days ago: ✅ 20 minutes practice</li>
+                      <li>3 days ago: ✅ 35 minutes practice</li>
+                    </ul>
+                    <h4>Best Streak:</h4>
+                    <p>15 days (achieved last month)</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Total Practice Time</div>
+                <h3 class="lesson-card__title">⏱️ 23 Hours</h3>
+                <div class="lesson-card__content">
+                  You've spent 23 hours practicing Spanish this month.
+                </div>
+                <details>
+                  <summary>View Time Breakdown</summary>
+                  <div class="mt-3">
+                    <h4>This Month:</h4>
+                    <ul>
+                      <li>Conversation: 12 hours</li>
+                      <li>Lessons: 6 hours</li>
+                      <li>Review: 3 hours</li>
+                      <li>Pronunciation: 2 hours</li>
+                    </ul>
+                    <h4>Daily Average:</h4>
+                    <p>45 minutes per day</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Phrases Mastered</div>
+                <h3 class="lesson-card__title">📝 156 Phrases</h3>
+                <div class="lesson-card__content">
+                  You've successfully learned and retained 156 Spanish phrases.
+                </div>
+                <details>
+                  <summary>View Learning Progress</summary>
+                  <div class="mt-3">
+                    <h4>By Category:</h4>
+                    <ul>
+                      <li>Greetings: 25 phrases</li>
+                      <li>Food & Dining: 32 phrases</li>
+                      <li>Travel: 28 phrases</li>
+                      <li>Daily Life: 45 phrases</li>
+                      <li>Business: 26 phrases</li>
+                    </ul>
+                    <h4>Retention Rate:</h4>
+                    <p>87% (excellent!)</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Current Level</div>
+                <h3 class="lesson-card__title">🎯 A2 (Elementary)</h3>
+                <div class="lesson-card__content">
+                  You're making great progress toward B1 (Intermediate) level.
+                </div>
+                <details>
+                  <summary>View Level Details</summary>
+                  <div class="mt-3">
+                    <h4>CEFR Level A2:</h4>
+                    <ul>
+                      <li>Can communicate in simple, routine tasks</li>
+                      <li>Can describe family, living conditions, education</li>
+                      <li>Can handle basic social situations</li>
+                      <li>Vocabulary: ~1,500 words</li>
+                    </ul>
+                    <h4>Next Milestone:</h4>
+                    <p>B1 level - 15 more hours of practice needed</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Learning Analytics -->
+          <div class="mt-8">
+            <h2>Learning Analytics</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Weekly Activity</div>
+                <h3 class="lesson-card__title">📊 Practice Heatmap</h3>
+                <div class="lesson-card__content">
+                  Visual representation of your daily practice habits.
+                </div>
+                <details>
+                  <summary>View Weekly Breakdown</summary>
+                  <div class="mt-3">
+                    <h4>This Week:</h4>
+                    <ul>
+                      <li>Monday: 🔴 60 minutes</li>
+                      <li>Tuesday: 🟡 30 minutes</li>
+                      <li>Wednesday: 🔴 45 minutes</li>
+                      <li>Thursday: 🟢 20 minutes</li>
+                      <li>Friday: 🔴 55 minutes</li>
+                      <li>Saturday: 🟡 35 minutes</li>
+                      <li>Sunday: 🔴 40 minutes</li>
+                    </ul>
+                    <h4>Total:</h4>
+                    <p>285 minutes (4.75 hours)</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Topic Mastery</div>
+                <h3 class="lesson-card__title">🎯 Skill Distribution</h3>
+                <div class="lesson-card__content">
+                  Your proficiency across different conversation topics.
+                </div>
+                <details>
+                  <summary>View Topic Breakdown</summary>
+                  <div class="mt-3">
+                    <h4>Mastery Levels:</h4>
+                    <ul>
+                      <li>Greetings & Introductions: 🟢 95%</li>
+                      <li>Food & Dining: 🟡 78%</li>
+                      <li>Travel & Directions: 🟡 72%</li>
+                      <li>Daily Activities: 🟡 68%</li>
+                      <li>Business & Work: 🔴 45%</li>
+                    </ul>
+                    <h4>Focus Area:</h4>
+                    <p>Business & Work needs attention</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Pronunciation Progress</div>
+                <h3 class="lesson-card__title">🎵 Speaking Accuracy</h3>
+                <div class="lesson-card__content">
+                  Your pronunciation improvement over time.
+                </div>
+                <details>
+                  <summary>View Pronunciation Stats</summary>
+                  <div class="mt-3">
+                    <h4>Accuracy Trends:</h4>
+                    <ul>
+                      <li>Week 1: 65% accuracy</li>
+                      <li>Week 2: 72% accuracy</li>
+                      <li>Week 3: 78% accuracy</li>
+                      <li>Week 4: 82% accuracy</li>
+                    </ul>
+                    <h4>Common Sounds:</h4>
+                    <p>R, Ñ, and J sounds improving steadily</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Review Performance</div>
+                <h3 class="lesson-card__title">🔄 SRS Success Rate</h3>
+                <div class="lesson-card__content">
+                  How well you're retaining vocabulary through spaced
+                  repetition.
+                </div>
+                <details>
+                  <summary>View Review Stats</summary>
+                  <div class="mt-3">
+                    <h4>Success Rates:</h4>
+                    <ul>
+                      <li>New cards: 75% success</li>
+                      <li>Learning cards: 82% success</li>
+                      <li>Review cards: 89% success</li>
+                      <li>Mature cards: 94% success</li>
+                    </ul>
+                    <h4>Daily Reviews:</h4>
+                    <p>Average 25 cards per day</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements & Goals -->
+          <div class="mt-8">
+            <h2>Achievements & Goals</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">🏆 Achievements</div>
+                <h3 class="lesson-card__title">Recent Accomplishments</h3>
+                <div class="lesson-card__content">
+                  Celebrate your learning milestones and achievements.
+                </div>
+                <details>
+                  <summary>View All Achievements</summary>
+                  <div class="mt-3">
+                    <h4>This Month:</h4>
+                    <ul>
+                      <li>🔥 7-Day Streak Master</li>
+                      <li>📚 Lesson Learner (10 lessons completed)</li>
+                      <li>🎯 Topic Explorer (5 topics mastered)</li>
+                      <li>⏰ Time Warrior (20+ hours practice)</li>
+                    </ul>
+                    <h4>Total Badges:</h4>
+                    <p>12 achievements unlocked</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">🎯 Goals</div>
+                <h3 class="lesson-card__title">Learning Objectives</h3>
+                <div class="lesson-card__content">
+                  Track your progress toward specific learning goals.
+                </div>
+                <details>
+                  <summary>View Goal Progress</summary>
+                  <div class="mt-3">
+                    <h4>Current Goals:</h4>
+                    <ul>
+                      <li>📖 Complete 20 lessons: 15/20 (75%)</li>
+                      <li>💬 Master 200 phrases: 156/200 (78%)</li>
+                      <li>⏰ Practice 30 hours: 23/30 (77%)</li>
+                      <li>🎯 Reach B1 level: 65% complete</li>
+                    </ul>
+                    <h4>Next Goal:</h4>
+                    <p>Complete all A2 lessons by month-end</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">📈 Trends</div>
+                <h3 class="lesson-card__title">Learning Velocity</h3>
+                <div class="lesson-card__content">
+                  Your learning speed and efficiency improvements.
+                </div>
+                <details>
+                  <summary>View Learning Trends</summary>
+                  <div class="mt-3">
+                    <h4>Speed Improvements:</h4>
+                    <ul>
+                      <li>Phrases per hour: +15%</li>
+                      <li>Lesson completion: +22%</li>
+                      <li>Review efficiency: +18%</li>
+                      <li>Pronunciation accuracy: +26%</li>
+                    </ul>
+                    <h4>Consistency Score:</h4>
+                    <p>85% (very good)</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">🔮 Predictions</div>
+                <h3 class="lesson-card__title">Future Milestones</h3>
+                <div class="lesson-card__content">
+                  Projected achievements based on current learning pace.
+                </div>
+                <details>
+                  <summary>View Predictions</summary>
+                  <div class="mt-3">
+                    <h4>By End of Month:</h4>
+                    <ul>
+                      <li>🎯 B1 level achievement</li>
+                      <li>📚 25 lessons completed</li>
+                      <li>💬 200+ phrases mastered</li>
+                      <li>⏰ 35+ hours practice</li>
+                    </ul>
+                    <h4>By End of Quarter:</h4>
+                    <p>B2 level proficiency expected</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study Recommendations -->
+          <div class="mt-8">
+            <h2>Study Recommendations</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">💡 Smart Suggestions</div>
+                <h3 class="lesson-card__title">Personalized Tips</h3>
+                <div class="lesson-card__content">
+                  AI-powered recommendations to optimize your learning.
+                </div>
+                <details>
+                  <summary>View Recommendations</summary>
+                  <div class="mt-3">
+                    <h4>Today's Focus:</h4>
+                    <ul>
+                      <li>🎯 Practice business vocabulary (weak area)</li>
+                      <li>🔄 Review yesterday's new phrases</li>
+                      <li>📖 Complete 2 grammar lessons</li>
+                      <li>💬 Practice with café scenario</li>
+                    </ul>
+                    <h4>Weekly Goal:</h4>
+                    <p>Strengthen formal register usage</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">⏰ Optimal Timing</div>
+                <h3 class="lesson-card__title">Best Study Times</h3>
+                <div class="lesson-card__content">
+                  When you're most productive based on your patterns.
+                </div>
+                <details>
+                  <summary>View Timing Analysis</summary>
+                  <div class="mt-3">
+                    <h4>Peak Performance:</h4>
+                    <ul>
+                      <li>🌅 Morning (7-9 AM): 92% retention</li>
+                      <li>🌞 Afternoon (2-4 PM): 78% retention</li>
+                      <li>🌙 Evening (8-10 PM): 85% retention</li>
+                      <li>🌃 Late Night: 65% retention</li>
+                    </ul>
+                    <h4>Recommendation:</h4>
+                    <p>Focus on new content in the morning</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">🎯 Weak Areas</div>
+                <h3 class="lesson-card__title">Focus Points</h3>
+                <div class="lesson-card__content">
+                  Areas that need extra attention and practice.
+                </div>
+                <details>
+                  <summary>View Weak Areas</summary>
+                  <div class="mt-3">
+                    <h4>Priority Areas:</h4>
+                    <ul>
+                      <li>💼 Business vocabulary (45% mastery)</li>
+                      <li>🔢 Numbers above 100 (52% mastery)</li>
+                      <li>⏰ Time expressions (58% mastery)</li>
+                      <li>🌍 Regional variations (62% mastery)</li>
+                    </ul>
+                    <h4>Suggested Approach:</h4>
+                    <p>Daily focused practice on business terms</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">🚀 Next Steps</div>
+                <h3 class="lesson-card__title">Learning Path</h3>
+                <div class="lesson-card__content">
+                  Recommended next topics and lessons for progression.
+                </div>
+                <details>
+                  <summary>View Learning Path</summary>
+                  <div class="mt-3">
+                    <h4>Immediate Next:</h4>
+                    <ul>
+                      <li>📖 Business Spanish Basics</li>
+                      <li>💬 Advanced Greetings</li>
+                      <li>🎯 Complex Time Expressions</li>
+                      <li>🌍 Cultural Business Etiquette</li>
+                    </ul>
+                    <h4>Long-term Goal:</h4>
+                    <p>B1 level by month-end</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

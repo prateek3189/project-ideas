@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Bookings</h1>
+          <p class="page-subtitle">Manage appointments and reservations</p>
+        </div>
+
+        <!-- Filters and Actions -->
+        <div class="card mb-6">
+          <div class="card__content">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-4">
+                <div class="form-group" style="margin-bottom: 0">
+                  <input
+                    type="date"
+                    class="form-input"
+                    value="2025-01-15"
+                    style="width: auto"
+                  />
+                </div>
+                <select class="form-select" style="width: auto">
+                  <option>All Status</option>
+                  <option>Confirmed</option>
+                  <option>Waitlist</option>
+                  <option>Cancelled</option>
+                  <option>Completed</option>
+                </select>
+                <select class="form-select" style="width: auto">
+                  <option>All Services</option>
+                  <option>Hair Salon</option>
+                  <option>Gym</option>
+                  <option>Yoga Studio</option>
+                  <option>Co-working</option>
+                </select>
+                <select class="form-select" style="width: auto">
+                  <option>All Staff</option>
+                  <option>Arjun Patel</option>
+                  <option>Neha Singh</option>
+                  <option>Kabir Sharma</option>
+                </select>
+              </div>
+              <button class="btn btn--primary">
+                <span class="icon">➕</span>
+                New Booking
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookings List -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Today's Bookings (72 total)</h3>
+          </div>
+          <div class="card__content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Service</th>
+                    <th>Member</th>
+                    <th>Staff</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10:00 AM</td>
+                    <td>Haircut & Styling</td>
+                    <td>Priya Sharma</td>
+                    <td>Arjun Patel</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>11:00 AM</td>
+                    <td>Personal Training</td>
+                    <td>Rajesh Kumar</td>
+                    <td>Neha Singh</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--due">Payment Due</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>12:30 PM</td>
+                    <td>Yoga Class</td>
+                    <td>Sneha Reddy</td>
+                    <td>Kabir Sharma</td>
+                    <td>
+                      <span class="badge badge--waitlist">Waitlist #2</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">
+                        Promote
+                      </button>
+                      <button class="btn btn--secondary btn--sm">Remove</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2:00 PM</td>
+                    <td>Co-working Desk</td>
+                    <td>Amit Joshi</td>
+                    <td>-</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3:30 PM</td>
+                    <td>Hair Color</td>
+                    <td>Deepika Mehta</td>
+                    <td>Arjun Patel</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4:00 PM</td>
+                    <td>Group Fitness</td>
+                    <td>8/12 members</td>
+                    <td>Neha Singh</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5:00 PM</td>
+                    <td>Beard Trim</td>
+                    <td>Vikram Singh</td>
+                    <td>Arjun Patel</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6:00 PM</td>
+                    <td>Pilates</td>
+                    <td>10/12 members</td>
+                    <td>Kabir Sharma</td>
+                    <td>
+                      <span class="badge badge--confirmed">Confirmed</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">Cancel</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7:00 PM</td>
+                    <td>Massage</td>
+                    <td>Kavya Patel</td>
+                    <td>Neha Singh</td>
+                    <td>
+                      <span class="badge badge--cancelled">Cancelled</span>
+                    </td>
+                    <td><span class="badge badge--refunded">Refunded</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">
+                        Reschedule
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>8:00 PM</td>
+                    <td>Evening Yoga</td>
+                    <td>12/15 members</td>
+                    <td>Kabir Sharma</td>
+                    <td>
+                      <span class="badge badge--waitlist">Waitlist #3</span>
+                    </td>
+                    <td><span class="badge badge--paid">Paid</span></td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">
+                        Promote
+                      </button>
+                      <button class="btn btn--secondary btn--sm">Remove</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Booking Form (Modal-like) -->
+        <div class="card mt-6">
+          <div class="card__header">
+            <h3 class="card__title">New Booking</h3>
+          </div>
+          <div class="card__content">
+            <form class="form-layout">
+              <div class="form-group">
+                <label class="form-label">Member</label>
+                <select class="form-select">
+                  <option>Select Member</option>
+                  <option>Priya Sharma</option>
+                  <option>Rajesh Kumar</option>
+                  <option>Sneha Reddy</option>
+                  <option>Amit Joshi</option>
+                  <option>Deepika Mehta</option>
+                  <option>Guest (New Customer)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Service</label>
+                <select class="form-select">
+                  <option>Select Service</option>
+                  <option>Haircut & Styling (30 min) - ₹500</option>
+                  <option>Hair Color (60 min) - ₹1,200</option>
+                  <option>Personal Training (60 min) - ₹800</option>
+                  <option>Group Fitness (45 min) - ₹300</option>
+                  <option>Yoga Class (60 min) - ₹400</option>
+                  <option>Co-working Desk (4 hours) - ₹200</option>
+                  <option>Massage (90 min) - ₹1,500</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Staff Member</label>
+                <select class="form-select">
+                  <option>Select Staff</option>
+                  <option>Arjun Patel (Hair Salon)</option>
+                  <option>Neha Singh (Fitness)</option>
+                  <option>Kabir Sharma (Yoga)</option>
+                  <option>Auto-assign</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Date & Time</label>
+                <input
+                  type="datetime-local"
+                  class="form-input"
+                  value="2025-01-15T10:00"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Location</label>
+                <select class="form-select">
+                  <option>Mumbai Central</option>
+                  <option>Bandra West</option>
+                  <option>Andheri East</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Duration</label>
+                <select class="form-select">
+                  <option>30 minutes</option>
+                  <option>45 minutes</option>
+                  <option>60 minutes</option>
+                  <option>90 minutes</option>
+                  <option>120 minutes</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Recurrence</label>
+                <select class="form-select">
+                  <option>One-time booking</option>
+                  <option>Weekly (8 weeks)</option>
+                  <option>Bi-weekly (4 weeks)</option>
+                  <option>Monthly (3 months)</option>
+                </select>
+                <div class="form-help">
+                  Recurring bookings will be created automatically
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Add-ons</label>
+                <div class="flex flex-wrap gap-2">
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" />
+                    <span>Towel Service (+₹50)</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" />
+                    <span>Locker (+₹30)</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" />
+                    <span>Equipment Rental (+₹100)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Notes</label>
+                <textarea
+                  class="form-textarea"
+                  placeholder="Any special requests or notes..."
+                ></textarea>
+              </div>
+            </form>
+
+            <!-- Policy Information -->
+            <div class="policy--warning">
+              <h4 class="policy__title">Booking Policy</h4>
+              <p class="policy__text">
+                Free cancellation up to <strong>6 hours</strong> before start;
+                after that, one credit is deducted. No-show bookings will be
+                charged the full amount.
+              </p>
+            </div>
+
+            <!-- Payment Section -->
+            <div class="card mt-4">
+              <div class="card__header">
+                <h4 class="card__title">Payment</h4>
+              </div>
+              <div class="card__content">
+                <div class="form-layout">
+                  <div class="form-group">
+                    <label class="form-label">Payment Method</label>
+                    <select class="form-select">
+                      <option>Credit/Debit Card</option>
+                      <option>UPI</option>
+                      <option>Cash</option>
+                      <option>Wallet Balance</option>
+                      <option>Plan Credit</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Amount</label>
+                    <input
+                      type="number"
+                      class="form-input"
+                      value="500"
+                      readonly
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Tax (GST 18%)</label>
+                    <input
+                      type="number"
+                      class="form-input"
+                      value="90"
+                      readonly
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Discount/Coupon</label>
+                    <div class="flex gap-2">
+                      <input
+                        type="text"
+                        class="form-input"
+                        placeholder="Enter coupon code"
+                      />
+                      <button class="btn btn--secondary">Apply</button>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Total Amount</label>
+                    <input
+                      type="number"
+                      class="form-input"
+                      value="590"
+                      readonly
+                      style="font-weight: bold; font-size: 1.2em"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirmation Actions -->
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="btn btn--secondary">Save as Draft</button>
+              <button class="btn btn--primary">Create Booking</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Confirmation (Example) -->
+        <div class="card mt-6">
+          <div class="card__header">
+            <h3 class="card__title">Booking Confirmation</h3>
+          </div>
+          <div class="card__content">
+            <div class="text-center mb-6">
+              <div class="text-2xl mb-2">✅</div>
+              <h3 class="text-xl font-semibold mb-2">Booking Confirmed!</h3>
+              <p class="text-muted">
+                Your appointment has been successfully scheduled
+              </p>
+            </div>
+
+            <div class="two-column">
+              <div>
+                <h4 class="font-semibold mb-3">Booking Details</h4>
+                <div class="space-y-2">
+                  <div class="flex justify-between">
+                    <span class="text-muted">Booking ID:</span>
+                    <span class="font-mono">BK-2025-0115-001</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Service:</span>
+                    <span>Haircut & Styling</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Date & Time:</span>
+                    <span>Jan 15, 2025 at 10:00 AM</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Duration:</span>
+                    <span>30 minutes</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Staff:</span>
+                    <span>Arjun Patel</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Location:</span>
+                    <span>Mumbai Central</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Check-in Information</h4>
+                <div class="text-center mb-4">
+                  <div
+                    class="text-4xl font-mono bg-surface p-4 rounded-lg border"
+                  >
+                    QR-CODE
+                  </div>
+                  <p class="text-sm text-muted mt-2">
+                    Show this QR code at check-in
+                  </p>
+                </div>
+
+                <div class="space-y-2">
+                  <div class="flex justify-between">
+                    <span class="text-muted">Check-in Code:</span>
+                    <span class="font-mono">CI-789456</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-muted">Arrival Time:</span>
+                    <span>5 minutes before</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-surface-secondary rounded-lg">
+              <h4 class="font-semibold mb-2">Next Steps</h4>
+              <ul class="space-y-1 text-sm">
+                <li>• You'll receive a confirmation email shortly</li>
+                <li>• Reminder notifications will be sent 24h and 2h before</li>
+                <li>
+                  • Add to calendar:
+                  <a href="#" class="text-primary">Google Calendar</a> |
+                  <a href="#" class="text-primary">Outlook</a>
+                </li>
+                <li>
+                  • <a href="#" class="text-primary">Download invoice</a> for
+                  your records
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex justify-center gap-3 mt-6">
+              <button class="btn btn--secondary">Print Confirmation</button>
+              <button class="btn btn--primary">Add to Calendar</button>
+              <button class="btn btn--secondary">Send Reminder</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

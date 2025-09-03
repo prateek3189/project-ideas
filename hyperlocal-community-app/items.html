@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Items - Hyperlocal Community</title>
+    <meta
+      name="description"
+      content="Give, borrow, or sell items with your neighbors."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search items..."
+              aria-label="Search items"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="events.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a
+            href="items.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a href="carpool.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a href="groups.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a href="messages.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a href="profile.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">Item Exchange</h1>
+          <p class="page-subtitle">
+            Give, borrow, or sell items with your neighbors
+          </p>
+        </div>
+
+        <!-- Item Helper -->
+        <div class="alert alert--info">
+          <div class="alert__title">Item Exchange Tips</div>
+          <div class="alert__content">
+            For Borrow, specify a return date and condition expectations. Meet
+            in public places for exchanges.
+          </div>
+        </div>
+
+        <!-- Item Filters -->
+        <div class="feed-filters">
+          <div class="feed-filters__left">
+            <div class="filter-pills">
+              <a href="#" class="filter-pill filter-pill--active">All Items</a>
+              <a href="#" class="filter-pill">Giveaways</a>
+              <a href="#" class="filter-pill">Borrow</a>
+              <a href="#" class="filter-pill">For Sale</a>
+            </div>
+          </div>
+
+          <div class="feed-filters__right">
+            <div class="feed-sort">
+              <label class="feed-sort__label" for="category-select"
+                >Category:</label
+              >
+              <select id="category-select" class="feed-sort__select">
+                <option value="all">All Categories</option>
+                <option value="tools">Tools</option>
+                <option value="kids">Kids</option>
+                <option value="sports">Sports</option>
+                <option value="electronics">Electronics</option>
+                <option value="home">Home</option>
+                <option value="books">Books</option>
+              </select>
+            </div>
+
+            <div class="feed-sort">
+              <label class="feed-sort__label" for="sort-select">Sort by:</label>
+              <select id="sort-select" class="feed-sort__select">
+                <option value="new">Newest</option>
+                <option value="near">Nearest</option>
+                <option value="price">Price</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="feed-grid">
+          <!-- Item 1 - Giveaway -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">📚</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Children's Storybooks</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--trust">Giveaway</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">0.3 km</span>
+                <span class="chip chip--default">Kids</span>
+                <span class="chip chip--default">Books</span>
+              </div>
+              <p class="feed-card__description">
+                Collection of 15 children's books in good condition. Perfect for
+                ages 3-8. Pickup at Gate 2.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">RJ</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Raj K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2 - Borrow -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🔧</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Drill Machine</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--warning">Borrow</span>
+                <span class="chip chip--default">2 days</span>
+                <span class="chip chip--distance">0.7 km</span>
+                <span class="chip chip--default">Tools</span>
+                <span class="chip chip--deposit">₹500 deposit</span>
+              </div>
+              <p class="feed-card__description">
+                Cordless drill machine available for 2-day rental. Refundable
+                deposit required. Good condition.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">VS</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Vikram S.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3 - For Sale -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🪑</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Office Chair</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--info">For Sale</span>
+                <span class="chip chip--default">Used</span>
+                <span class="chip chip--distance">1.1 km</span>
+                <span class="chip chip--default">Home</span>
+                <span class="chip chip--price">₹1,800</span>
+              </div>
+              <p class="feed-card__description">
+                Ergonomic office chair in good condition. Adjustable height and
+                lumbar support. Cashless payment preferred.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">AS</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Anita S.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4 - Giveaway -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🧸</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Stuffed Animals</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--trust">Giveaway</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">0.5 km</span>
+                <span class="chip chip--default">Kids</span>
+                <span class="chip chip--default">Toys</span>
+              </div>
+              <p class="feed-card__description">
+                Collection of 8 stuffed animals in good condition. Perfect for
+                toddlers. Pickup at Block A.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">MK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Meera K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5 - Borrow -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🎾</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Tennis Racket</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--warning">Borrow</span>
+                <span class="chip chip--default">1 week</span>
+                <span class="chip chip--distance">0.8 km</span>
+                <span class="chip chip--default">Sports</span>
+                <span class="chip chip--deposit">₹300 deposit</span>
+              </div>
+              <p class="feed-card__description">
+                Professional tennis racket available for 1-week rental. Includes
+                case and extra strings.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">RP</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Rohit P.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6 - For Sale -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">📱</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">iPhone 12</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--info">For Sale</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">1.3 km</span>
+                <span class="chip chip--default">Electronics</span>
+                <span class="chip chip--price">₹35,000</span>
+              </div>
+              <p class="feed-card__description">
+                iPhone 12 128GB in good condition. Includes charger and case.
+                Battery health 85%.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">SK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Sunil K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 7 - Giveaway -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🌱</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Plant Pots</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--trust">Giveaway</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">0.9 km</span>
+                <span class="chip chip--default">Home</span>
+                <span class="chip chip--default">Gardening</span>
+              </div>
+              <p class="feed-card__description">
+                Set of 6 ceramic plant pots in various sizes. Perfect for indoor
+                plants. Pickup at Gate 3.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">GT</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Gita T.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 8 - Borrow -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">📷</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">DSLR Camera</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--warning">Borrow</span>
+                <span class="chip chip--default">3 days</span>
+                <span class="chip chip--distance">1.0 km</span>
+                <span class="chip chip--default">Electronics</span>
+                <span class="chip chip--deposit">₹2,000 deposit</span>
+              </div>
+              <p class="feed-card__description">
+                Canon DSLR camera with 18-55mm lens. Perfect for events and
+                photography. Includes memory card.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">NM</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Neha M.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 9 - For Sale -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🚲</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Mountain Bike</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--info">For Sale</span>
+                <span class="chip chip--default">Used</span>
+                <span class="chip chip--distance">0.6 km</span>
+                <span class="chip chip--default">Sports</span>
+                <span class="chip chip--price">₹8,500</span>
+              </div>
+              <p class="feed-card__description">
+                21-speed mountain bike in good condition. Recently serviced.
+                Perfect for commuting and weekend rides.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">AP</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Amit P.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 10 - Giveaway -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">👶</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Baby Clothes</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--trust">Giveaway</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">0.4 km</span>
+                <span class="chip chip--default">Kids</span>
+                <span class="chip chip--default">Clothing</span>
+              </div>
+              <p class="feed-card__description">
+                Collection of baby clothes (6-12 months). All items washed and
+                in good condition. Pickup at Block B.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">PN</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Priya N.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--phone">Phone ✓</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 11 - Borrow -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🔨</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Tool Set</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--warning">Borrow</span>
+                <span class="chip chip--default">1 week</span>
+                <span class="chip chip--distance">1.2 km</span>
+                <span class="chip chip--default">Tools</span>
+                <span class="chip chip--deposit">₹800 deposit</span>
+              </div>
+              <p class="feed-card__description">
+                Complete tool set with hammer, screwdrivers, wrenches, and more.
+                Perfect for home repairs.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">JP</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">John P.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 12 - For Sale -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">💻</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Laptop</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--info">For Sale</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">0.7 km</span>
+                <span class="chip chip--default">Electronics</span>
+                <span class="chip chip--price">₹25,000</span>
+              </div>
+              <p class="feed-card__description">
+                Dell Inspiron laptop, 8GB RAM, 256GB SSD. Great for work and
+                study. Includes charger and bag.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">RK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Ravi K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Item Detail Modal (Visual Placeholder) -->
+        <details class="detail-layout no-print" style="margin-top: 2rem">
+          <summary
+            style="
+              font-size: 1.2rem;
+              font-weight: 600;
+              margin-bottom: 1rem;
+              cursor: pointer;
+            "
+          >
+            View Item Detail Example
+          </summary>
+
+          <div class="detail-main">
+            <div class="detail-card">
+              <h2 class="detail-card__title">Children's Storybooks</h2>
+
+              <div class="map-box">
+                <span class="map-box__pin">📍</span>
+              </div>
+
+              <div class="mt-4">
+                <h3>Item Details</h3>
+                <p>
+                  <strong>Type:</strong>
+                  <span class="chip chip--trust">Giveaway</span>
+                </p>
+                <p><strong>Condition:</strong> Good</p>
+                <p><strong>Category:</strong> Kids • Books</p>
+                <p><strong>Pickup Location:</strong> Gate 2, Maple Gardens</p>
+                <p><strong>Available:</strong> First come, first serve</p>
+              </div>
+
+              <div class="mt-4">
+                <h3>Description</h3>
+                <p>
+                  Collection of 15 children's books in good condition. Perfect
+                  for ages 3-8. Includes:
+                </p>
+                <ul>
+                  <li>Picture books with colorful illustrations</li>
+                  <li>Early reader books</li>
+                  <li>Bedtime stories</li>
+                  <li>Educational books</li>
+                </ul>
+                <p>
+                  All books are clean and in good condition. Perfect for
+                  building a home library for young children.
+                </p>
+              </div>
+
+              <div class="mt-4">
+                <h3>Exchange Details</h3>
+                <div class="alert alert--success">
+                  <div class="alert__title">Free Giveaway</div>
+                  <div class="alert__content">
+                    This item is free! First come, first serve. Please message
+                    the poster to arrange pickup.
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <a href="messages.html" class="message-btn"
+                  >💬 Message Poster</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-sidebar">
+            <div class="detail-card">
+              <h3 class="detail-card__title">Item Poster</h3>
+              <div class="profile-chip">
+                <div class="profile-chip__avatar">RJ</div>
+                <div class="profile-chip__info">
+                  <div class="profile-chip__name">Raj K.</div>
+                  <div class="profile-chip__badges">
+                    <span class="badge badge--helper">Helper</span>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3">
+                Active community member who frequently shares items. 5+
+                successful exchanges.
+              </p>
+              <a href="profile.html" class="btn btn--sm btn--secondary mt-3"
+                >View Profile</a
+              >
+            </div>
+
+            <div class="detail-card">
+              <h3 class="detail-card__title">Safety Tips</h3>
+              <div class="alert alert--safety">
+                <div class="alert__title">Exchange Safely</div>
+                <div class="alert__content">
+                  <ul>
+                    <li>Meet in public places</li>
+                    <li>Bring a friend if possible</li>
+                    <li>Verify item condition before exchange</li>
+                    <li>Use cashless payment when possible</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      });
+    </script>
+  </body>
+</html>

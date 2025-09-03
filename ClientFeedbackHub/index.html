@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Client Feedback Hub</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">CF</div>
+          <h1 class="header__title">Client Feedback Hub</h1>
+          <span class="header__environment">v0.1</span>
+        </div>
+        <div class="header__actions">
+          <div class="header__search">
+            <svg
+              class="header__search-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search feedback, tags, themes..."
+              aria-label="Search"
+            />
+          </div>
+          <a href="#" class="header__print" onclick="window.print()">Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__item">
+            <a href="index.html" class="sidebar__link sidebar__link--active">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="inbox.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Inbox
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="explorer.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Explorer
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="themes.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                ></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              Themes & Tags
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="insights.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              Insights
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="surveys.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4m0-7v7m0-7h10a2 2 0 0 1 2 2v3c0 1.1-.9 2-2 2H9m0-7V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"
+                ></path>
+              </svg>
+              Surveys
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="roadmap.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 3v18h18"></path>
+                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+              </svg>
+              Roadmap
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="reports.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10,9 9,9 8,9"></polyline>
+              </svg>
+              Reports
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="settings.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div
+          class="sidebar__theme-toggle"
+          onclick="toggleTheme()"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="20"
+            height="20"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__header">
+          <h1 class="main__title">Dashboard</h1>
+          <p class="main__subtitle">
+            Overview of feedback trends, insights, and key metrics
+          </p>
+        </div>
+
+        <!-- Alert Banner -->
+        <div class="alert alert--warning">
+          <strong>Tag coverage below 80%</strong> — prioritize triage to keep
+          insights reliable.
+        </div>
+
+        <!-- KPI Tiles -->
+        <div class="dashboard-grid">
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">264</div>
+            <div class="kpi-tile__label">New this week</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +12% vs last week
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">78%</div>
+            <div class="kpi-tile__label">Tagged</div>
+            <div class="kpi-tile__change kpi-tile__change--negative">
+              -3% vs last week
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">P1</div>
+            <div class="kpi-tile__label">Median Priority</div>
+            <div class="kpi-tile__change">Stable</div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">+41</div>
+            <div class="kpi-tile__label">NPS</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +2 vs last month
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">4.3/5</div>
+            <div class="kpi-tile__label">CSAT</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +0.2 vs last month
+            </div>
+          </div>
+          <div class="kpi-tile">
+            <div class="kpi-tile__value">0.62</div>
+            <div class="kpi-tile__label">Neg:Pos Ratio</div>
+            <div class="kpi-tile__change kpi-tile__change--negative">
+              +0.05 vs last month
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Trends</h2>
+          <div class="grid grid--2">
+            <div class="chart">
+              <div class="chart__header">
+                <h3 class="chart__title">Feedback Volume</h3>
+                <p class="chart__subtitle">
+                  Weekly feedback count by product area
+                </p>
+              </div>
+              <div class="chart__content">
+                <div
+                  class="chart__bar"
+                  style="height: 60%"
+                  title="Checkout: 45"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 80%"
+                  title="Analytics: 62"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 40%"
+                  title="UI: 28"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 70%"
+                  title="Performance: 52"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 55%"
+                  title="Mobile: 38"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 35%"
+                  title="Integrations: 24"
+                ></div>
+                <div
+                  class="chart__bar"
+                  style="height: 90%"
+                  title="Onboarding: 68"
+                ></div>
+              </div>
+            </div>
+            <div class="chart">
+              <div class="chart__header">
+                <h3 class="chart__title">Sentiment Over Time</h3>
+                <p class="chart__subtitle">Weekly sentiment distribution</p>
+              </div>
+              <div class="chart__content">
+                <div
+                  class="chart__bar chart__bar--positive"
+                  style="height: 45%"
+                  title="Positive: 45%"
+                ></div>
+                <div
+                  class="chart__bar chart__bar--neutral"
+                  style="height: 30%"
+                  title="Neutral: 30%"
+                ></div>
+                <div
+                  class="chart__bar chart__bar--negative"
+                  style="height: 25%"
+                  title="Negative: 25%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Drivers -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Top Drivers</h2>
+          <div class="card">
+            <div class="card__body">
+              <ol>
+                <li>
+                  <strong>Checkout friction</strong> — 23% of negative feedback
+                </li>
+                <li>
+                  <strong>Slow startup</strong> — 18% of negative feedback
+                </li>
+                <li><strong>Missing SSO</strong> — 15% of negative feedback</li>
+                <li>
+                  <strong>Export timeouts</strong> — 12% of negative feedback
+                </li>
+                <li>
+                  <strong>Mobile dark mode</strong> — 10% of negative feedback
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Highlights -->
+        <div class="dashboard-section">
+          <h2 class="dashboard-section__title">Recent Highlights</h2>
+          <div class="grid grid--3">
+            <div class="feedback-card">
+              <div class="feedback-card__meta">
+                <span class="badge badge--source">In-app</span>
+                <span class="badge badge--sentiment-pos">Positive</span>
+                <span class="badge badge--priority-3">P3</span>
+              </div>
+              <div class="feedback-card__excerpt">
+                "Love the new dashboard design! Much cleaner and easier to
+                navigate."
+              </div>
+              <div class="feedback-card__tags">
+                <span class="chip chip--tag">ui-improvement</span>
+                <span class="chip chip--tag">dashboard</span>
+              </div>
+            </div>
+            <div class="feedback-card">
+              <div class="feedback-card__meta">
+                <span class="badge badge--source">Email</span>
+                <span class="badge badge--sentiment-neg">Negative</span>
+                <span class="badge badge--priority-1">P1</span>
+              </div>
+              <div class="feedback-card__excerpt">
+                "Apple Pay keeps failing on first attempt. Very frustrating
+                during checkout."
+              </div>
+              <div class="feedback-card__tags">
+                <span class="chip chip--tag">payments</span>
+                <span class="chip chip--tag">ios</span>
+                <span class="chip chip--tag">checkout</span>
+              </div>
+            </div>
+            <div class="feedback-card">
+              <div class="feedback-card__meta">
+                <span class="badge badge--source">Store</span>
+                <span class="badge badge--sentiment-neu">Neutral</span>
+                <span class="badge badge--priority-2">P2</span>
+              </div>
+              <div class="feedback-card__excerpt">
+                "Great app overall, but would love dark mode on Android."
+              </div>
+              <div class="feedback-card__tags">
+                <span class="chip chip--tag">dark-mode</span>
+                <span class="chip chip--tag">android</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+        </div>
+        <div class="footer__version">Client Feedback Hub v0.1</div>
+      </footer>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </body>
+</html>

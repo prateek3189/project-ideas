@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Members - Split & Pay</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="members.html" class="btn btn--secondary btn--small"
+              >Print</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="members">
+            <div class="flex items-center justify-between mb-6">
+              <h1>Group Members</h1>
+              <a href="#" class="btn btn--primary">Add Member</a>
+            </div>
+
+            <div class="members__list">
+              <!-- Aditi -->
+              <div class="members__item">
+                <div class="members__avatar">A</div>
+                <div class="members__info">
+                  <div class="members__name">Aditi</div>
+                  <div class="members__handle">aditi@okhdfc</div>
+                  <div class="text-sm text-muted mt-1">
+                    Default share: 25% • UPI: aditi@okhdfc
+                  </div>
+                </div>
+                <div class="members__actions">
+                  <button class="btn btn--secondary btn--small">Edit</button>
+                  <button class="btn btn--owe btn--small">Remove</button>
+                </div>
+              </div>
+
+              <!-- Rahul -->
+              <div class="members__item">
+                <div class="members__avatar">R</div>
+                <div class="members__info">
+                  <div class="members__name">Rahul</div>
+                  <div class="members__handle">rahul@okicici</div>
+                  <div class="text-sm text-muted mt-1">
+                    Default share: 25% • UPI: rahul@okicici
+                  </div>
+                </div>
+                <div class="members__actions">
+                  <button class="btn btn--secondary btn--small">Edit</button>
+                  <button class="btn btn--owe btn--small">Remove</button>
+                </div>
+              </div>
+
+              <!-- Neha -->
+              <div class="members__item">
+                <div class="members__avatar">N</div>
+                <div class="members__info">
+                  <div class="members__name">Neha</div>
+                  <div class="members__handle">neha@ybl</div>
+                  <div class="text-sm text-muted mt-1">
+                    Default share: 25% • UPI: neha@ybl
+                  </div>
+                </div>
+                <div class="members__actions">
+                  <button class="btn btn--secondary btn--small">Edit</button>
+                  <button class="btn btn--owe btn--small">Remove</button>
+                </div>
+              </div>
+
+              <!-- You -->
+              <div class="members__item">
+                <div class="members__avatar">Y</div>
+                <div class="members__info">
+                  <div class="members__name">You</div>
+                  <div class="members__handle">you@okaxis</div>
+                  <div class="text-sm text-muted mt-1">
+                    Default share: 25% • UPI: you@okaxis
+                  </div>
+                </div>
+                <div class="members__actions">
+                  <button class="btn btn--secondary btn--small">Edit</button>
+                  <span class="text-muted text-sm"
+                    >(Cannot remove yourself)</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Member Statistics -->
+            <div class="card mt-6">
+              <div class="card__header">
+                <h3>Member Statistics</h3>
+              </div>
+              <div class="card__body">
+                <div class="grid grid-2 gap-4">
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">4</div>
+                    <div class="stat-tile__label">Total Members</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">₹16,460</div>
+                    <div class="stat-tile__label">Total Expenses</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">₹4,115</div>
+                    <div class="stat-tile__label">Average per Member</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">₹1,230</div>
+                    <div class="stat-tile__label">Unsettled Amount</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Handles -->
+            <div class="card mt-6">
+              <div class="card__header">
+                <h3>Payment Handles</h3>
+              </div>
+              <div class="card__body">
+                <div class="nudge nudge--info">
+                  <strong>Privacy note:</strong> Handles are shown for demo
+                  purposes. In a real app, these would be masked (e.g.,
+                  <code>name@ok****</code>).
+                </div>
+
+                <table class="split-table mt-4">
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>UPI Handle</th>
+                      <th>PayPal</th>
+                      <th>Bank Transfer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Aditi</td>
+                      <td>aditi@okhdfc</td>
+                      <td>aditi@paypal.com</td>
+                      <td>HDFC Bank ••••1234</td>
+                    </tr>
+                    <tr>
+                      <td>Rahul</td>
+                      <td>rahul@okicici</td>
+                      <td>rahul@paypal.com</td>
+                      <td>ICICI Bank ••••5678</td>
+                    </tr>
+                    <tr>
+                      <td>Neha</td>
+                      <td>neha@ybl</td>
+                      <td>neha@paypal.com</td>
+                      <td>Yes Bank ••••9012</td>
+                    </tr>
+                    <tr>
+                      <td>You</td>
+                      <td>you@okaxis</td>
+                      <td>you@paypal.com</td>
+                      <td>Axis Bank ••••3456</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Reminders -->
+            <div class="card mt-6">
+              <div class="card__header">
+                <h3>Reminders & Notifications</h3>
+              </div>
+              <div class="card__body">
+                <div class="nudge nudge--warning">
+                  <strong>Visual placeholder:</strong> Reminder settings would
+                  be configured here.
+                </div>
+
+                <div class="grid grid-2 gap-4 mt-4">
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="reminder-weekly" checked />
+                    <label for="reminder-weekly"
+                      >Weekly settlement reminders</label
+                    >
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="reminder-monthly" checked />
+                    <label for="reminder-monthly"
+                      >Monthly expense summaries</label
+                    >
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="reminder-large" />
+                    <label for="reminder-large"
+                      >Large expense alerts (>₹5,000)</label
+                    >
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="reminder-unsettled" checked />
+                    <label for="reminder-unsettled"
+                      >Unsettled balance alerts</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+    </script>
+  </body>
+</html>

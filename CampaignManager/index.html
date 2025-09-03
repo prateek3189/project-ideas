@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaign Manager - Dashboard</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button class="btn btn--primary" type="button">
+              <span class="icon icon--plus" aria-hidden="true"></span>
+              Create Campaign
+            </button>
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print dashboard"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a
+              href="index.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Dashboard</h2>
+          <p class="page-subtitle">
+            Monitor your marketing campaign performance
+          </p>
+        </div>
+
+        <!-- KPI Tiles -->
+        <section class="kpi-grid" aria-labelledby="kpi-heading">
+          <h3 id="kpi-heading" class="visually-hidden">
+            Key Performance Indicators
+          </h3>
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Total Sends</span>
+              <span class="icon icon--send" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">1,247,890</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              +12.3%
+            </div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Deliverability</span>
+              <span class="icon icon--delivery" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">97.6%</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">+0.8%</div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Open Rate</span>
+              <span class="icon icon--open" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">36.9%</div>
+            <div class="kpi-tile__change kpi-tile__change--negative">-2.1%</div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Click Rate</span>
+              <span class="icon icon--click" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">7.4%</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">+0.5%</div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Unsubscribe Rate</span>
+              <span class="icon icon--unsub" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">0.19%</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              -0.03%
+            </div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">SMS Reply Rate</span>
+              <span class="icon icon--reply" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">4.2%</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">+0.7%</div>
+          </div>
+        </section>
+
+        <!-- Alerts -->
+        <section class="alerts-section" aria-labelledby="alerts-heading">
+          <h3 id="alerts-heading" class="section-title">
+            Alerts & Notifications
+          </h3>
+          <div class="alert alert--warning">
+            <span class="icon icon--warning" aria-hidden="true"></span>
+            <div class="alert__content">
+              <strong>Domain Authentication Required</strong>
+              <p>
+                Your sending domain needs SPF/DKIM setup to improve
+                deliverability.
+              </p>
+            </div>
+            <button class="btn btn--ghost btn--small" type="button">
+              Fix Now
+            </button>
+          </div>
+
+          <div class="alert alert--info">
+            <span class="icon icon--info" aria-hidden="true"></span>
+            <div class="alert__content">
+              <strong>High Bounce Rate Detected</strong>
+              <p>
+                Campaign "Spring Sale" has 5.2% bounce rate - above recommended
+                2%.
+              </p>
+            </div>
+            <button class="btn btn--ghost btn--small" type="button">
+              Review
+            </button>
+          </div>
+        </section>
+
+        <!-- Recent Campaigns -->
+        <section class="campaigns-section" aria-labelledby="campaigns-heading">
+          <div class="section-header">
+            <h3 id="campaigns-heading" class="section-title">
+              Recent Campaigns
+            </h3>
+            <a href="campaigns.html" class="btn btn--ghost btn--small"
+              >View All</a
+            >
+          </div>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Campaign</th>
+                  <th>Channel</th>
+                  <th>Status</th>
+                  <th>Sent</th>
+                  <th>Open</th>
+                  <th>Click</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="campaign-info">
+                      <strong>Spring Sale Teaser</strong>
+                      <span class="text-muted">Product Launch</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--email">Email</span>
+                  </td>
+                  <td>
+                    <span class="badge badge--completed">Completed</span>
+                  </td>
+                  <td class="text-numeric">45,120</td>
+                  <td class="text-numeric">38.0%</td>
+                  <td class="text-numeric">8.4%</td>
+                  <td>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      View Report
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="campaign-info">
+                      <strong>Cart Nudge Day-2</strong>
+                      <span class="text-muted">Abandoned Cart</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--sms">SMS</span>
+                  </td>
+                  <td>
+                    <span class="badge badge--scheduled">Scheduled</span>
+                  </td>
+                  <td class="text-numeric">12,340</td>
+                  <td class="text-numeric">—</td>
+                  <td class="text-numeric">—</td>
+                  <td>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="campaign-info">
+                      <strong>Onboarding Step 1</strong>
+                      <span class="text-muted">Welcome Series</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--email">Email</span>
+                  </td>
+                  <td>
+                    <span class="badge badge--active">Active</span>
+                  </td>
+                  <td class="text-numeric">3,200/day</td>
+                  <td class="text-numeric">42.0%</td>
+                  <td class="text-numeric">6.7%</td>
+                  <td>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Pause
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

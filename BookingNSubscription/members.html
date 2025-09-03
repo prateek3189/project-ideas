@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Members - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Members</h1>
+          <p class="page-subtitle">
+            Manage member profiles, plans, and activity
+          </p>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="card mb-6">
+          <div class="card__content">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-4">
+                <div class="form-group" style="margin-bottom: 0">
+                  <input
+                    type="search"
+                    class="form-input"
+                    placeholder="Search members..."
+                    style="width: 20rem"
+                  />
+                </div>
+                <select class="form-select" style="width: auto">
+                  <option>All Plans</option>
+                  <option>Gym Basic</option>
+                  <option>Gym Plus</option>
+                  <option>Gym Pro</option>
+                  <option>No Plan</option>
+                </select>
+                <select class="form-select" style="width: auto">
+                  <option>All Status</option>
+                  <option>Active</option>
+                  <option>Paused</option>
+                  <option>Cancelled</option>
+                  <option>Expired</option>
+                </select>
+              </div>
+              <button class="btn btn--primary">
+                <span class="icon">➕</span>
+                Add Member
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Members Grid -->
+        <div class="card-grid">
+          <!-- Member Card 1 -->
+          <div class="card">
+            <div class="card__header">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="skeleton-avatar bg-primary-light text-primary flex items-center justify-center"
+                  >
+                    PS
+                  </div>
+                  <div>
+                    <h4 class="card__title" style="margin: 0; font-size: 1rem">
+                      Priya Sharma
+                    </h4>
+                    <p class="text-sm text-muted">Member since Jan 2024</p>
+                  </div>
+                </div>
+                <span class="badge badge--confirmed">Active</span>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="space-y-4">
+                <!-- Contact Info -->
+                <div>
+                  <h5 class="font-semibold mb-2">Contact</h5>
+                  <div class="space-y-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📧</span>
+                      <span>priya.sharma@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📱</span>
+                      <span>+91 98765 43210</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📍</span>
+                      <span>Mumbai, Maharashtra</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Current Plan -->
+                <div>
+                  <h5 class="font-semibold mb-2">Current Plan</h5>
+                  <div class="p-3 bg-surface-secondary rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium">Gym Plus</span>
+                      <span class="text-sm text-muted">₹1,999/mo</span>
+                    </div>
+                    <div class="text-sm text-muted mb-2">
+                      Renews on Feb 5, 2025
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div class="ring ring--usage">
+                        <svg class="ring__svg">
+                          <circle
+                            class="ring__background"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                          ></circle>
+                          <circle
+                            class="ring__progress"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            style="
+                              stroke-dasharray: 75.4;
+                              stroke-dashoffset: 18.85;
+                            "
+                          ></circle>
+                        </svg>
+                        <span class="ring__text">75%</span>
+                      </div>
+                      <div class="text-sm">
+                        <div>15/20 sessions used</div>
+                        <div class="text-muted">This month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Passes -->
+                <div>
+                  <h5 class="font-semibold mb-2">Active Passes</h5>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-2 bg-surface-secondary rounded"
+                    >
+                      <div>
+                        <div class="font-medium text-sm">10-Class Pack</div>
+                        <div class="text-xs text-muted">
+                          Expires Dec 12, 2025
+                        </div>
+                      </div>
+                      <span class="badge badge--confirmed">7 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2">
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    View Profile
+                  </button>
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    Book Session
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Card 2 -->
+          <div class="card">
+            <div class="card__header">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="skeleton-avatar bg-success-light text-success flex items-center justify-center"
+                  >
+                    RK
+                  </div>
+                  <div>
+                    <h4 class="card__title" style="margin: 0; font-size: 1rem">
+                      Rajesh Kumar
+                    </h4>
+                    <p class="text-sm text-muted">Member since Nov 2024</p>
+                  </div>
+                </div>
+                <span class="badge badge--confirmed">Active</span>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="space-y-4">
+                <!-- Contact Info -->
+                <div>
+                  <h5 class="font-semibold mb-2">Contact</h5>
+                  <div class="space-y-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📧</span>
+                      <span>rajesh.kumar@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📱</span>
+                      <span>+91 98765 43211</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📍</span>
+                      <span>Mumbai, Maharashtra</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Current Plan -->
+                <div>
+                  <h5 class="font-semibold mb-2">Current Plan</h5>
+                  <div class="p-3 bg-surface-secondary rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium">Gym Pro</span>
+                      <span class="text-sm text-muted">₹2,999/mo</span>
+                    </div>
+                    <div class="text-sm text-muted mb-2">
+                      Renews on Feb 8, 2025
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div class="ring ring--usage">
+                        <svg class="ring__svg">
+                          <circle
+                            class="ring__background"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                          ></circle>
+                          <circle
+                            class="ring__progress"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            style="
+                              stroke-dasharray: 94.2;
+                              stroke-dashoffset: 5.66;
+                            "
+                          ></circle>
+                        </svg>
+                        <span class="ring__text">95%</span>
+                      </div>
+                      <div class="text-sm">
+                        <div>19/20 sessions used</div>
+                        <div class="text-muted">This month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Passes -->
+                <div>
+                  <h5 class="font-semibold mb-2">Active Passes</h5>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-2 bg-surface-secondary rounded"
+                    >
+                      <div>
+                        <div class="font-medium text-sm">5-Class Pack</div>
+                        <div class="text-xs text-muted">
+                          Expires Mar 15, 2025
+                        </div>
+                      </div>
+                      <span class="badge badge--warning">2 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2">
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    View Profile
+                  </button>
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    Book Session
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Card 3 -->
+          <div class="card">
+            <div class="card__header">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="skeleton-avatar bg-warning-light text-warning flex items-center justify-center"
+                  >
+                    SR
+                  </div>
+                  <div>
+                    <h4 class="card__title" style="margin: 0; font-size: 1rem">
+                      Sneha Reddy
+                    </h4>
+                    <p class="text-sm text-muted">Member since Dec 2024</p>
+                  </div>
+                </div>
+                <span class="badge badge--waitlist">Waitlist</span>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="space-y-4">
+                <!-- Contact Info -->
+                <div>
+                  <h5 class="font-semibold mb-2">Contact</h5>
+                  <div class="space-y-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📧</span>
+                      <span>sneha.reddy@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📱</span>
+                      <span>+91 98765 43212</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📍</span>
+                      <span>Mumbai, Maharashtra</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Current Plan -->
+                <div>
+                  <h5 class="font-semibold mb-2">Current Plan</h5>
+                  <div class="p-3 bg-surface-secondary rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium">Yoga Basic</span>
+                      <span class="text-sm text-muted">₹1,499/mo</span>
+                    </div>
+                    <div class="text-sm text-muted mb-2">
+                      Renews on Feb 12, 2025
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div class="ring ring--usage">
+                        <svg class="ring__svg">
+                          <circle
+                            class="ring__background"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                          ></circle>
+                          <circle
+                            class="ring__progress"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            style="
+                              stroke-dasharray: 62.8;
+                              stroke-dashoffset: 31.4;
+                            "
+                          ></circle>
+                        </svg>
+                        <span class="ring__text">50%</span>
+                      </div>
+                      <div class="text-sm">
+                        <div>8/16 sessions used</div>
+                        <div class="text-muted">This month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Passes -->
+                <div>
+                  <h5 class="font-semibold mb-2">Active Passes</h5>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-2 bg-surface-secondary rounded"
+                    >
+                      <div>
+                        <div class="font-medium text-sm">20-Class Pack</div>
+                        <div class="text-xs text-muted">
+                          Expires Jun 30, 2025
+                        </div>
+                      </div>
+                      <span class="badge badge--confirmed">12 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2">
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    View Profile
+                  </button>
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    Book Session
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Card 4 -->
+          <div class="card">
+            <div class="card__header">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="skeleton-avatar bg-info-light text-info flex items-center justify-center"
+                  >
+                    AJ
+                  </div>
+                  <div>
+                    <h4 class="card__title" style="margin: 0; font-size: 1rem">
+                      Amit Joshi
+                    </h4>
+                    <p class="text-sm text-muted">Member since Oct 2024</p>
+                  </div>
+                </div>
+                <span class="badge badge--confirmed">Active</span>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="space-y-4">
+                <!-- Contact Info -->
+                <div>
+                  <h5 class="font-semibold mb-2">Contact</h5>
+                  <div class="space-y-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📧</span>
+                      <span>amit.joshi@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📱</span>
+                      <span>+91 98765 43213</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📍</span>
+                      <span>Mumbai, Maharashtra</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Current Plan -->
+                <div>
+                  <h5 class="font-semibold mb-2">Current Plan</h5>
+                  <div class="p-3 bg-surface-secondary rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium">Co-working Plus</span>
+                      <span class="text-sm text-muted">₹3,999/mo</span>
+                    </div>
+                    <div class="text-sm text-muted mb-2">
+                      Renews on Feb 3, 2025
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div class="ring ring--usage">
+                        <svg class="ring__svg">
+                          <circle
+                            class="ring__background"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                          ></circle>
+                          <circle
+                            class="ring__progress"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            style="
+                              stroke-dasharray: 125.6;
+                              stroke-dashoffset: 0;
+                            "
+                          ></circle>
+                        </svg>
+                        <span class="ring__text">100%</span>
+                      </div>
+                      <div class="text-sm">
+                        <div>Unlimited usage</div>
+                        <div class="text-muted">This month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Passes -->
+                <div>
+                  <h5 class="font-semibold mb-2">Active Passes</h5>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-2 bg-surface-secondary rounded"
+                    >
+                      <div>
+                        <div class="font-medium text-sm">Guest Passes</div>
+                        <div class="text-xs text-muted">
+                          Valid until Feb 28, 2025
+                        </div>
+                      </div>
+                      <span class="badge badge--confirmed">3 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2">
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    View Profile
+                  </button>
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    Book Session
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Card 5 -->
+          <div class="card">
+            <div class="card__header">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="skeleton-avatar bg-danger-light text-danger flex items-center justify-center"
+                  >
+                    DM
+                  </div>
+                  <div>
+                    <h4 class="card__title" style="margin: 0; font-size: 1rem">
+                      Deepika Mehta
+                    </h4>
+                    <p class="text-sm text-muted">Member since Sep 2024</p>
+                  </div>
+                </div>
+                <span class="badge badge--cancelled">Paused</span>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="space-y-4">
+                <!-- Contact Info -->
+                <div>
+                  <h5 class="font-semibold mb-2">Contact</h5>
+                  <div class="space-y-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📧</span>
+                      <span>deepika.mehta@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📱</span>
+                      <span>+91 98765 43214</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📍</span>
+                      <span>Mumbai, Maharashtra</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Current Plan -->
+                <div>
+                  <h5 class="font-semibold mb-2">Current Plan</h5>
+                  <div class="p-3 bg-surface-secondary rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium">Hair Salon Pro</span>
+                      <span class="text-sm text-muted">₹2,499/mo</span>
+                    </div>
+                    <div class="text-sm text-muted mb-2">
+                      Paused until Mar 1, 2025
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div class="ring ring--usage">
+                        <svg class="ring__svg">
+                          <circle
+                            class="ring__background"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                          ></circle>
+                          <circle
+                            class="ring__progress"
+                            cx="24"
+                            cy="24"
+                            r="20"
+                            style="
+                              stroke-dasharray: 0;
+                              stroke-dashoffset: 125.6;
+                            "
+                          ></circle>
+                        </svg>
+                        <span class="ring__text">0%</span>
+                      </div>
+                      <div class="text-sm">
+                        <div>0/8 sessions used</div>
+                        <div class="text-muted">This month</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Passes -->
+                <div>
+                  <h5 class="font-semibold mb-2">Active Passes</h5>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-2 bg-surface-secondary rounded"
+                    >
+                      <div>
+                        <div class="font-medium text-sm">5-Session Pack</div>
+                        <div class="text-xs text-muted">
+                          Expires Apr 15, 2025
+                        </div>
+                      </div>
+                      <span class="badge badge--confirmed">5 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2">
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    View Profile
+                  </button>
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    Resume Plan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Card 6 -->
+          <div class="card">
+            <div class="card__header">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="skeleton-avatar bg-surface-secondary text-muted flex items-center justify-center"
+                  >
+                    VS
+                  </div>
+                  <div>
+                    <h4 class="card__title" style="margin: 0; font-size: 1rem">
+                      Vikram Singh
+                    </h4>
+                    <p class="text-sm text-muted">Member since Aug 2024</p>
+                  </div>
+                </div>
+                <span class="badge badge--cancelled">Expired</span>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="space-y-4">
+                <!-- Contact Info -->
+                <div>
+                  <h5 class="font-semibold mb-2">Contact</h5>
+                  <div class="space-y-1 text-sm">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📧</span>
+                      <span>vikram.singh@email.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📱</span>
+                      <span>+91 98765 43215</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">📍</span>
+                      <span>Mumbai, Maharashtra</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Current Plan -->
+                <div>
+                  <h5 class="font-semibold mb-2">Last Plan</h5>
+                  <div class="p-3 bg-surface-secondary rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="font-medium">Gym Basic</span>
+                      <span class="text-sm text-muted">₹1,499/mo</span>
+                    </div>
+                    <div class="text-sm text-muted mb-2">
+                      Expired on Jan 5, 2025
+                    </div>
+                    <div class="text-sm text-danger">
+                      Plan expired - renewal required
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Passes -->
+                <div>
+                  <h5 class="font-semibold mb-2">Active Passes</h5>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-2 bg-surface-secondary rounded"
+                    >
+                      <div>
+                        <div class="font-medium text-sm">3-Class Pack</div>
+                        <div class="text-xs text-muted">
+                          Expires Feb 20, 2025
+                        </div>
+                      </div>
+                      <span class="badge badge--warning">1 remaining</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="flex gap-2">
+                  <button class="btn btn--secondary btn--sm flex-1">
+                    View Profile
+                  </button>
+                  <button class="btn btn--primary btn--sm flex-1">
+                    Renew Plan
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member Detail View (Example) -->
+        <div class="card mt-6">
+          <div class="card__header">
+            <h3 class="card__title">Member Profile - Priya Sharma</h3>
+          </div>
+          <div class="card__content">
+            <div class="two-column">
+              <!-- Left Column -->
+              <div>
+                <h4 class="font-semibold mb-4">Profile Information</h4>
+
+                <div class="space-y-4">
+                  <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="Priya Sharma"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-input"
+                      value="priya.sharma@email.com"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input
+                      type="tel"
+                      class="form-input"
+                      value="+91 98765 43210"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date" class="form-input" value="1990-05-15" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Emergency Contact</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="Rajesh Sharma (+91 98765 43216)"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Address</label>
+                    <textarea class="form-textarea" rows="3">
+123, Linking Road, Bandra West, Mumbai - 400050</textarea
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div>
+                <h4 class="font-semibold mb-4">Membership & Activity</h4>
+
+                <!-- Current Plan Details -->
+                <div class="card mb-4">
+                  <div class="card__header">
+                    <h5 class="card__title">Current Plan - Gym Plus</h5>
+                  </div>
+                  <div class="card__content">
+                    <div class="space-y-3">
+                      <div class="flex justify-between">
+                        <span class="text-muted">Plan Price:</span>
+                        <span class="font-semibold">₹1,999/month</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-muted">Started:</span>
+                        <span>January 5, 2024</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-muted">Next Billing:</span>
+                        <span>February 5, 2025</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-muted">Auto-renewal:</span>
+                        <span class="badge badge--confirmed">Enabled</span>
+                      </div>
+
+                      <div class="mt-4">
+                        <div class="flex items-center justify-between mb-2">
+                          <span class="text-sm font-medium">Monthly Usage</span>
+                          <span class="text-sm">15/20 sessions</span>
+                        </div>
+                        <div class="ring ring--usage">
+                          <svg class="ring__svg">
+                            <circle
+                              class="ring__background"
+                              cx="24"
+                              cy="24"
+                              r="20"
+                            ></circle>
+                            <circle
+                              class="ring__progress"
+                              cx="24"
+                              cy="24"
+                              r="20"
+                              style="
+                                stroke-dasharray: 75.4;
+                                stroke-dashoffset: 18.85;
+                              "
+                            ></circle>
+                          </svg>
+                          <span class="ring__text">75%</span>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-2 mt-4">
+                        <button class="btn btn--secondary btn--sm flex-1">
+                          Pause Plan
+                        </button>
+                        <button class="btn btn--secondary btn--sm flex-1">
+                          Upgrade
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card">
+                  <div class="card__header">
+                    <h5 class="card__title">Recent Activity</h5>
+                  </div>
+                  <div class="card__content">
+                    <div class="space-y-3">
+                      <div class="flex items-center gap-3">
+                        <span class="icon">✅</span>
+                        <div class="flex-1">
+                          <div class="text-sm font-medium">
+                            Checked in for Personal Training
+                          </div>
+                          <div class="text-xs text-muted">Today, 10:00 AM</div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-center gap-3">
+                        <span class="icon">💳</span>
+                        <div class="flex-1">
+                          <div class="text-sm font-medium">
+                            Payment received - ₹1,999
+                          </div>
+                          <div class="text-xs text-muted">Jan 5, 2025</div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-center gap-3">
+                        <span class="icon">📅</span>
+                        <div class="flex-1">
+                          <div class="text-sm font-medium">
+                            Booked Yoga Class
+                          </div>
+                          <div class="text-xs text-muted">Jan 3, 2025</div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-center gap-3">
+                        <span class="icon">🎁</span>
+                        <div class="flex-1">
+                          <div class="text-sm font-medium">
+                            Redeemed 10-Class Pack
+                          </div>
+                          <div class="text-xs text-muted">Dec 28, 2024</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="btn btn--secondary">Cancel</button>
+              <button class="btn btn--primary">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,450 @@
+/* Print Styles for AI Homework Assistant */
+
+/* Print Media Query */
+@media print {
+  /* Reset all themes for print */
+  * {
+    --color-background: #FFFFFF !important;
+    --color-surface: #FFFFFF !important;
+    --color-surface-secondary: #F8F8F8 !important;
+    --color-text-primary: #000000 !important;
+    --color-text-secondary: #333333 !important;
+    --color-text-muted: #666666 !important;
+    --color-text-inverse: #000000 !important;
+    
+    --color-accent-primary: #000000 !important;
+    --color-accent-secondary: #333333 !important;
+    --color-accent-tertiary: #666666 !important;
+    
+    --color-success: #000000 !important;
+    --color-warning: #000000 !important;
+    --color-error: #000000 !important;
+    --color-info: #000000 !important;
+    
+    --color-border-light: #000000 !important;
+    --color-border-medium: #000000 !important;
+    --color-border-dark: #000000 !important;
+    
+    --shadow-sm: none !important;
+    --shadow-md: none !important;
+    --shadow-lg: none !important;
+    --shadow-xl: none !important;
+  }
+
+  /* Hide non-printable elements */
+  .header,
+  .sidebar,
+  .footer,
+  .nav-list,
+  .filter-section,
+  .print-note,
+  .print-instructions,
+  .settings-actions,
+  .theme-toggle,
+  .btn--secondary,
+  .btn--danger,
+  .filter-chips,
+  .topic-tabs,
+  .heatmap-container,
+  .achievement-badge--locked,
+  .insight-card,
+  .recommended-section,
+  .mission-values,
+  .philosophy-principle,
+  .integrity-guidelines,
+  .process-steps,
+  .roadmap-phase,
+  .team-info,
+  .contact-info,
+  .version-details,
+  .hint-ladder,
+  .socratic-prompt,
+  .common-mistake,
+  .checks-understanding,
+  .reflection-prompts {
+    display: none !important;
+  }
+
+  /* Reset page layout */
+  .app {
+    display: block !important;
+    min-height: auto !important;
+  }
+
+  .main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Typography adjustments for print */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  h1 { font-size: 18pt !important; }
+  h2 { font-size: 16pt !important; }
+  h3 { font-size: 14pt !important; }
+  h4, h5, h6 { font-size: 12pt !important; }
+
+  p, li, td, th {
+    font-size: 11pt !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Card and component print styles */
+  .card,
+  .subject-card,
+  .continue-card,
+  .weak-area-tile,
+  .progress-stat,
+  .mastery-bar,
+  .achievement-badge,
+  .recommended-item,
+  .insight-card,
+  .problem-card,
+  .instruction-item,
+  .philosophy-principle,
+  .integrity-guidelines,
+  .process-step,
+  .roadmap-phase,
+  .version-details,
+  .step-block,
+  .hint,
+  .check-item,
+  .solution-panel,
+  .rubric-table,
+  .reflection-prompt {
+    background: #FFFFFF !important;
+    border: 1px solid #000000 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0.5em 0 !important;
+    padding: 0.5em !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Button print styles */
+  .btn {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.25em 0.5em !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+  }
+
+  .btn--primary {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* Progress bars for print */
+  .progress-bar,
+  .mastery-bar,
+  .weak-area-tile__bar {
+    border: 1px solid #000000 !important;
+    background: #FFFFFF !important;
+    height: 1em !important;
+    margin: 0.25em 0 !important;
+  }
+
+  .progress-bar__fill,
+  .mastery-bar__fill,
+  .weak-area-tile__bar-fill {
+    background: #000000 !important;
+    height: 100% !important;
+  }
+
+  /* Table print styles */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1em 0 !important;
+  }
+
+  th, td {
+    border: 1px solid #000000 !important;
+    padding: 0.5em !important;
+    text-align: left !important;
+    vertical-align: top !important;
+  }
+
+  th {
+    background: #F0F0F0 !important;
+    font-weight: bold !important;
+  }
+
+  /* Form elements for print */
+  input, textarea, select {
+    border: 1px solid #000000 !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 0.25em !important;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    border: 1px solid #000000 !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Links for print */
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")" !important;
+    font-size: 10pt !important;
+    color: #666666 !important;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always !important;
+  }
+
+  .no-break {
+    page-break-inside: avoid !important;
+  }
+
+  /* Worksheet specific print styles */
+  .worksheets-page .problem-set {
+    page-break-before: always !important;
+  }
+
+  .worksheets-page .problem-set:first-child {
+    page-break-before: avoid !important;
+  }
+
+  .problem-card {
+    page-break-inside: avoid !important;
+    margin-bottom: 1em !important;
+  }
+
+  /* Workspace specific print styles */
+  .workspace .problem-input {
+    border: 2px solid #000000 !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .workspace .step-block {
+    border: 1px solid #000000 !important;
+    margin: 1em 0 !important;
+    padding: 1em !important;
+  }
+
+  .workspace .solution-panel {
+    border: 2px solid #000000 !important;
+    background: #F8F8F8 !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+  }
+
+  /* Progress page print styles */
+  .progress-page .progress-overview {
+    border: 2px solid #000000 !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .progress-page .mastery-section {
+    page-break-inside: avoid !important;
+  }
+
+  /* Settings page print styles */
+  .settings-page .settings-section {
+    border: 1px solid #000000 !important;
+    margin: 1em 0 !important;
+    padding: 1em !important;
+  }
+
+  .settings-page .setting-group {
+    margin: 0.5em 0 !important;
+  }
+
+  /* About page print styles */
+  .about-page .mission-section,
+  .about-page .philosophy-section,
+  .about-page .integrity-section,
+  .about-page .how-it-works-section,
+  .about-page .roadmap-section {
+    border: 1px solid #000000 !important;
+    margin: 1em 0 !important;
+    padding: 1em !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Dashboard print styles */
+  .dashboard .continue-card {
+    border: 2px solid #000000 !important;
+    background: #F8F8F8 !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .dashboard .weak-areas {
+    page-break-inside: avoid !important;
+  }
+
+  .dashboard .study-streak {
+    border: 1px solid #000000 !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
+  }
+
+  /* Subjects page print styles */
+  .subjects-page .subject-section {
+    page-break-inside: avoid !important;
+    margin: 1em 0 !important;
+  }
+
+  .subjects-page .subject-card {
+    border: 1px solid #000000 !important;
+    margin: 0.5em 0 !important;
+    padding: 0.5em !important;
+  }
+
+  /* Print header and footer */
+  @page {
+    margin: 1in !important;
+    size: A4 !important;
+  }
+
+  @page :first {
+    margin-top: 0.5in !important;
+  }
+
+  /* Print-specific utility classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Print-specific layout adjustments */
+  .grid,
+  .flex {
+    display: block !important;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Print-specific spacing */
+  .m-0, .m-xs, .m-sm, .m-md, .m-lg, .m-xl { margin: 0 !important; }
+  .p-0, .p-xs, .p-sm, .p-md, .p-lg, .p-xl { padding: 0 !important; }
+
+  /* Print-specific text alignment */
+  .text-left, .text-center, .text-right { text-align: left !important; }
+
+  /* Print-specific visibility */
+  .hidden { display: block !important; }
+  .visible { display: block !important; }
+
+  /* Print-specific borders */
+  .border-0 { border: none !important; }
+  .border { border: 1px solid #000000 !important; }
+
+  /* Print-specific backgrounds */
+  .bg-transparent { background: transparent !important; }
+  .bg-white { background: #FFFFFF !important; }
+  .bg-gray { background: #F0F0F0 !important; }
+
+  /* Print-specific shadows */
+  .shadow-none { box-shadow: none !important; }
+  .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl { box-shadow: none !important; }
+
+  /* Print-specific rounded corners */
+  .rounded-none { border-radius: 0 !important; }
+  .rounded-sm, .rounded-md, .rounded-lg, .rounded-xl { border-radius: 0 !important; }
+
+  /* Print-specific transitions */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Print-specific focus styles */
+  *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Print-specific hover styles */
+  *:hover {
+    background: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    box-shadow: inherit !important;
+  }
+
+  /* Print-specific active styles */
+  *:active {
+    background: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Print-specific visited styles */
+  a:visited {
+    color: #000000 !important;
+  }
+
+  /* Print-specific disabled styles */
+  *:disabled {
+    color: #666666 !important;
+    background: #F0F0F0 !important;
+  }
+
+  /* Print-specific required field indicators */
+  .required::after {
+    content: " *" !important;
+    color: #000000 !important;
+  }
+
+  /* Print-specific error states */
+  .error,
+  .invalid {
+    border-color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Print-specific success states */
+  .success,
+  .valid {
+    border-color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Print-specific warning states */
+  .warning {
+    border-color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Print-specific info states */
+  .info {
+    border-color: #000000 !important;
+    background: #FFFFFF !important;
+  }
+}

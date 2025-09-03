@@ -1,0 +1,407 @@
+/* Print Styles - AI Travel Agent */
+
+@media print {
+  /* Reset margins and set page size */
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+
+  /* Hide non-essential elements */
+  .header__actions,
+  .sidebar,
+  .theme-toggle,
+  .btn,
+  .bookings__tabs,
+  .day-tabs,
+  .map-box,
+  .cart,
+  .nudge,
+  .settings__section,
+  .footer {
+    display: none !important;
+  }
+
+  /* Adjust layout for print */
+  .shell {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .two-column,
+  .itinerary,
+  .bookings,
+  .budget {
+    grid-template-columns: 1fr;
+  }
+
+  /* Typography adjustments */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-bottom: 10pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+  }
+
+  /* Cards and containers */
+  .card,
+  .booking-card,
+  .timeline__block,
+  .ai-plan,
+  .trip-form {
+    border: 1px solid #000000;
+    box-shadow: none;
+    background: #ffffff;
+    page-break-inside: avoid;
+    margin-bottom: 12pt;
+    padding: 12pt;
+  }
+
+  /* Itinerary specific print styles */
+  .itinerary__main {
+    border: 2px solid #000000;
+    padding: 16pt;
+  }
+
+  .timeline__block {
+    border-left: 4px solid #000000;
+    margin-bottom: 16pt;
+  }
+
+  .timeline__block::before {
+    background-color: #000000;
+    border-color: #ffffff;
+  }
+
+  .timeline__time {
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .timeline__title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .timeline__description {
+    color: #333333;
+  }
+
+  /* Chips and badges */
+  .chip {
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    padding: 2pt 6pt;
+    margin: 2pt;
+    display: inline-block;
+  }
+
+  /* Budget bars */
+  .budget-bar__fill {
+    background-color: #000000 !important;
+  }
+
+  .budget-bar__amount {
+    color: #000000;
+    font-weight: bold;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 12pt;
+  }
+
+  th,
+  td {
+    border: 1px solid #000000;
+    padding: 6pt;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  /* Links */
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666666;
+  }
+
+  /* Forms - show values only */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  /* Print header for itinerary */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+
+  .print-header__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+
+  .print-header__subtitle {
+    font-size: 12pt;
+    color: #333333;
+  }
+
+  /* Print footer */
+  .print-footer {
+    display: block !important;
+    text-align: center;
+    border-top: 1px solid #000000;
+    padding-top: 12pt;
+    margin-top: 16pt;
+    font-size: 10pt;
+    color: #666666;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Ticket/Confirmation styles */
+  .ticket {
+    border: 2px solid #000000;
+    padding: 16pt;
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+  }
+
+  .ticket__header {
+    text-align: center;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8pt;
+    margin-bottom: 12pt;
+  }
+
+  .ticket__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+
+  .ticket__subtitle {
+    font-size: 12pt;
+    color: #333333;
+  }
+
+  .ticket__details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12pt;
+    margin-bottom: 12pt;
+  }
+
+  .ticket__detail {
+    border: 1px solid #000000;
+    padding: 8pt;
+  }
+
+  .ticket__detail-label {
+    font-size: 10pt;
+    color: #333333;
+    margin-bottom: 2pt;
+  }
+
+  .ticket__detail-value {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+
+  .ticket__qr {
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 12pt;
+    margin-top: 12pt;
+  }
+
+  .ticket__qr-placeholder {
+    width: 80pt;
+    height: 80pt;
+    border: 2px solid #000000;
+    margin: 0 auto 8pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10pt;
+  }
+
+  /* Collection cards */
+  .collection-card {
+    border: 1px solid #000000;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .collection-card__image {
+    border-bottom: 1px solid #000000;
+    height: 60pt;
+  }
+
+  .collection-card__content {
+    padding: 8pt;
+  }
+
+  .collection-card__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+
+  .collection-card__description {
+    font-size: 11pt;
+    color: #333333;
+    margin-bottom: 6pt;
+  }
+
+  .collection-card__meta {
+    font-size: 10pt;
+    color: #666666;
+  }
+
+  /* AI Plan Summary */
+  .ai-plan__header {
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+
+  .ai-plan__title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+
+  .ai-plan__subtitle {
+    font-size: 12pt;
+    color: #333333;
+  }
+
+  .ai-plan__highlights {
+    display: block;
+  }
+
+  .ai-plan__highlight {
+    border: 1px solid #000000;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .ai-plan__highlight-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+
+  .ai-plan__highlight-description {
+    font-size: 11pt;
+    color: #333333;
+  }
+
+  /* Cost meter */
+  .meter {
+    border: 1px solid #000000;
+    height: 12pt;
+  }
+
+  .meter__fill {
+    background-color: #000000 !important;
+  }
+
+  /* Details/Summary */
+  details {
+    border: 1px solid #000000;
+    padding: 8pt;
+    margin-bottom: 8pt;
+  }
+
+  details[open] {
+    background-color: #f8f8f8;
+  }
+
+  summary {
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+
+  summary::before {
+    content: "▼ ";
+  }
+
+  /* Stars rating */
+  .stars {
+    color: #000000;
+  }
+
+  .star {
+    fill: #000000;
+  }
+
+  .star--empty {
+    fill: none;
+    stroke: #000000;
+  }
+}

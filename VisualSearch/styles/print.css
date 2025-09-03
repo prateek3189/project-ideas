@@ -1,0 +1,396 @@
+/* Print Styles - Visual Search App */
+
+@media print {
+  /* Reset all colors to black and white */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide navigation and interactive elements */
+  .no-print,
+  .header,
+  .sidebar,
+  .theme-toggle,
+  .btn,
+  .upload-card,
+  .camera-tile,
+  .mode-switch,
+  .filter-panel,
+  .similarity-slider,
+  .nudge,
+  .alert {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 18pt;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  h2 {
+    font-size: 16pt;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links */
+  a,
+  a:visited {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+
+  /* Result Cards for Print */
+  .result-card {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+    padding: 0.5em;
+  }
+
+  .result-card__image {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  .result-card__content {
+    overflow: hidden;
+  }
+
+  .result-card__title {
+    font-weight: bold;
+    font-size: 14pt;
+    margin-bottom: 0.25em;
+  }
+
+  .result-card__subtitle {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 0.5em;
+  }
+
+  .result-card__price {
+    font-weight: bold;
+    font-size: 12pt;
+    color: black;
+  }
+
+  .result-card__store {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Detail Page Print */
+  .detail-layout {
+    display: block;
+  }
+
+  .detail-hero {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .detail-hero__image {
+    width: 100%;
+    max-height: 4in;
+    object-fit: contain;
+  }
+
+  .detail-sidebar {
+    display: block;
+  }
+
+  .detail-sidebar__section {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .detail-sidebar__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .detail-sidebar__price {
+    font-size: 18pt;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0.5em;
+  }
+
+  /* Attributes Table */
+  .attributes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+  }
+
+  .attributes-table th,
+  .attributes-table td {
+    border: 1px solid black;
+    padding: 0.25em 0.5em;
+    text-align: left;
+  }
+
+  .attributes-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  /* Compare Layout Print */
+  .compare-layout {
+    display: block;
+  }
+
+  .compare-item {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .compare-item__image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+  }
+
+  .compare-item__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .compare-item__price {
+    font-size: 16pt;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0.5em;
+  }
+
+  /* Collections Print */
+  .collections-layout {
+    display: block;
+  }
+
+  .collection-item {
+    border: 1px solid black;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  .collection-item__image {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  .collection-item__content {
+    overflow: hidden;
+  }
+
+  .collection-item__title {
+    font-weight: bold;
+    font-size: 12pt;
+    margin-bottom: 0.25em;
+  }
+
+  .collection-item__note {
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 0.5em;
+  }
+
+  /* QR Code Placeholders */
+  .qr-placeholder {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 60px;
+    font-size: 8pt;
+    margin: 0.25em;
+  }
+
+  /* Print Header and Footer */
+  .print-header {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .print-header__title {
+    font-size: 20pt;
+    font-weight: bold;
+  }
+
+  .print-header__subtitle {
+    font-size: 12pt;
+    color: #666;
+  }
+
+  .print-footer {
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 0.5em;
+    margin-top: 1em;
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Results Sheet Layout */
+  .results-sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .results-sheet .result-card {
+    margin-bottom: 0;
+  }
+
+  /* Comparison Sheet Layout */
+  .comparison-sheet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+
+  .comparison-sheet .compare-item {
+    margin-bottom: 0;
+  }
+
+  /* Collection Sheet Layout */
+  .collection-sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .collection-sheet .collection-item {
+    margin-bottom: 0;
+  }
+
+  /* Why This Match Section */
+  .why-match {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .why-match__title {
+    font-weight: bold;
+    font-size: 11pt;
+    margin-bottom: 0.25em;
+  }
+
+  .why-match__text {
+    font-size: 10pt;
+    line-height: 1.3;
+  }
+
+  /* Confidence and Similarity Scores */
+  .chip--confidence,
+  .chip--price,
+  .similarity-meter__value {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    padding: 0.125em 0.25em;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+
+  /* Detection Boxes (simplified for print) */
+  .detection-box {
+    border: 2px solid black;
+    background-color: transparent;
+  }
+
+  .detection-box__label {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 0.125em 0.25em;
+    font-size: 8pt;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Event Buddy</title>
+    <meta
+      name="description"
+      content="Learn about Event Buddy - the platform for discovering, joining, and organizing amazing local events."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="form-layout">
+          <div class="main__header">
+            <h1 class="main__title">About Event Buddy</h1>
+            <p class="main__subtitle">
+              Connecting communities through amazing events
+            </p>
+          </div>
+
+          <!-- Mission Statement -->
+          <div class="form-section">
+            <h2 class="form-section__title">Our Mission</h2>
+            <p class="text-lg leading-relaxed mb-6">
+              Event Buddy is dedicated to making it easy for people to discover,
+              join, and organize amazing local events. We believe that great
+              experiences happen when communities come together, and we're here
+              to make that connection seamless.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-4xl mb-4">🔍</div>
+                <h3 class="text-lg font-semibold mb-2">Discover</h3>
+                <p class="text-sm text-muted">
+                  Find events that match your interests, location, and schedule
+                  with our smart discovery tools.
+                </p>
+              </div>
+
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-4xl mb-4">🎫</div>
+                <h3 class="text-lg font-semibold mb-2">Join</h3>
+                <p class="text-sm text-muted">
+                  RSVP or purchase tickets with ease, and get everything you
+                  need for a great event experience.
+                </p>
+              </div>
+
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-4xl mb-4">🎪</div>
+                <h3 class="text-lg font-semibold mb-2">Organize</h3>
+                <p class="text-sm text-muted">
+                  Create and manage your own events with powerful tools for
+                  organizers of all sizes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="form-section">
+            <h2 class="form-section__title">Key Features</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-lg font-semibold mb-4">For Event Goers</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span
+                      >Smart event discovery with filters and
+                      recommendations</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span>Easy ticket purchasing and RSVP management</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span
+                      >Digital tickets with QR codes for quick check-in</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span>Calendar integration and event reminders</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span>Save events and create your personal event list</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-4">For Organizers</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span
+                      >Comprehensive event creation and management tools</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span
+                      >Flexible ticketing with multiple tiers and pricing</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span>Real-time check-in and attendee management</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span>Analytics and insights for event performance</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1">✓</span>
+                    <span>Marketing tools and promotional features</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Community Guidelines -->
+          <div class="form-section">
+            <h2 class="form-section__title">Community Guidelines</h2>
+
+            <div class="space-y-6">
+              <div class="p-6 bg-border-light rounded-lg">
+                <h3 class="text-lg font-semibold mb-3">
+                  Creating a Safe Environment
+                </h3>
+                <p class="text-sm text-muted mb-4">
+                  We're committed to fostering a welcoming and inclusive
+                  community. All events and interactions should follow our
+                  community guidelines to ensure everyone has a positive
+                  experience.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 class="font-semibold mb-2">Do's</h4>
+                    <ul class="space-y-1 text-sm">
+                      <li>• Be respectful and inclusive</li>
+                      <li>• Provide accurate event information</li>
+                      <li>• Follow local laws and regulations</li>
+                      <li>• Create accessible events when possible</li>
+                      <li>• Respond to attendee questions promptly</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold mb-2">Don'ts</h4>
+                    <ul class="space-y-1 text-sm">
+                      <li>• Discriminate or harass others</li>
+                      <li>• Create misleading or false events</li>
+                      <li>• Violate intellectual property rights</li>
+                      <li>• Engage in illegal activities</li>
+                      <li>• Spam or abuse the platform</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="p-6 bg-warning-light border border-warning rounded-lg"
+              >
+                <h3 class="text-lg font-semibold mb-3 text-warning">
+                  Anti-Scalping Policy
+                </h3>
+                <p class="text-sm text-warning">
+                  We strictly prohibit ticket scalping and resale at inflated
+                  prices. All ticket transfers must be done through our official
+                  platform at face value. Violators will be banned from the
+                  platform.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Safety & Security -->
+          <div class="form-section">
+            <h2 class="form-section__title">Safety & Security</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-6 border rounded-lg">
+                <h3 class="text-lg font-semibold mb-3">
+                  Your Data is Protected
+                </h3>
+                <ul class="space-y-2 text-sm">
+                  <li>• End-to-end encryption for all transactions</li>
+                  <li>• Secure payment processing with industry standards</li>
+                  <li>• Privacy-first approach to data collection</li>
+                  <li>• Regular security audits and updates</li>
+                  <li>• GDPR and data protection compliance</li>
+                </ul>
+              </div>
+
+              <div class="p-6 border rounded-lg">
+                <h3 class="text-lg font-semibold mb-3">Event Safety</h3>
+                <ul class="space-y-2 text-sm">
+                  <li>• Verified organizer program</li>
+                  <li>• Event reporting and moderation system</li>
+                  <li>• Clear refund and cancellation policies</li>
+                  <li>• Emergency contact information</li>
+                  <li>• Venue safety guidelines</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Refund Policy -->
+          <div class="form-section">
+            <h2 class="form-section__title">Refund Policy</h2>
+
+            <div class="space-y-4">
+              <div
+                class="p-4 bg-success-light border border-success rounded-lg"
+              >
+                <h3 class="font-semibold mb-2 text-success">
+                  Standard Refund Policy
+                </h3>
+                <p class="text-sm text-success">
+                  Full refunds are available up to 24 hours before the event
+                  start time. Refunds are processed within 5-7 business days to
+                  the original payment method.
+                </p>
+              </div>
+
+              <div class="p-4 bg-info-light border border-info rounded-lg">
+                <h3 class="font-semibold mb-2 text-info">Event Cancellation</h3>
+                <p class="text-sm text-info">
+                  If an event is cancelled by the organizer, all attendees will
+                  receive a full refund automatically. No action required on
+                  your part.
+                </p>
+              </div>
+
+              <div
+                class="p-4 bg-warning-light border border-warning rounded-lg"
+              >
+                <h3 class="font-semibold mb-2 text-warning">
+                  Weather & Force Majeure
+                </h3>
+                <p class="text-sm text-warning">
+                  For outdoor events affected by severe weather or other force
+                  majeure events, organizers may offer rescheduled dates or
+                  partial refunds at their discretion.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Support -->
+          <div class="form-section">
+            <h2 class="form-section__title">Get in Touch</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-3xl mb-3">📧</div>
+                <h3 class="font-semibold mb-2">Email Support</h3>
+                <p class="text-sm text-muted mb-3">
+                  Get help with your account or events
+                </p>
+                <a href="mailto:support@eventbuddy.com" class="text-accent"
+                  >support@eventbuddy.com</a
+                >
+              </div>
+
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-3xl mb-3">💬</div>
+                <h3 class="font-semibold mb-2">Live Chat</h3>
+                <p class="text-sm text-muted mb-3">
+                  Chat with our support team
+                </p>
+                <button class="btn-primary btn-sm">Start Chat</button>
+              </div>
+
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-3xl mb-3">📚</div>
+                <h3 class="font-semibold mb-2">Help Center</h3>
+                <p class="text-sm text-muted mb-3">
+                  Find answers to common questions
+                </p>
+                <a href="#" class="text-accent">Browse Help Articles</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Version Info -->
+          <div class="form-section">
+            <div class="text-center p-6 bg-border-light rounded-lg">
+              <h3 class="text-lg font-semibold mb-2">Event Buddy v0.1</h3>
+              <p class="text-sm text-muted mb-4">
+                This is a prototype version built with HTML and CSS. Future
+                versions will include JavaScript functionality for payments,
+                real-time updates, and advanced features.
+              </p>
+              <div class="flex justify-center gap-4">
+                <a href="#" class="text-accent text-sm">Privacy Policy</a>
+                <a href="#" class="text-accent text-sm">Terms of Service</a>
+                <a href="#" class="text-accent text-sm">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

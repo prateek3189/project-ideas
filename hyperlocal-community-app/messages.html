@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - Hyperlocal Community</title>
+    <meta
+      name="description"
+      content="Connect with neighbors through secure messaging."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search messages..."
+              aria-label="Search messages"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="events.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a href="items.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a href="carpool.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a href="groups.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a
+            href="messages.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a href="profile.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">Messages</h1>
+          <p class="page-subtitle">
+            Connect with neighbors through secure messaging
+          </p>
+        </div>
+
+        <!-- Message Layout -->
+        <div class="detail-layout">
+          <!-- Thread List -->
+          <div class="detail-sidebar">
+            <div class="detail-card">
+              <h3 class="detail-card__title">Conversations</h3>
+
+              <div class="list-layout">
+                <!-- Thread 1 -->
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <div class="profile-chip">
+                      <div class="profile-chip__avatar">SM</div>
+                      <div class="profile-chip__info">
+                        <div class="profile-chip__name">Sarah M.</div>
+                        <div class="profile-chip__badges">
+                          <span class="badge badge--verified">✓</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="chip chip--time">2 min ago</span>
+                  </div>
+                  <div class="list-item__content">
+                    Thanks for joining the park clean-up! See you at 7:30 AM.
+                  </div>
+                </div>
+
+                <!-- Thread 2 -->
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <div class="profile-chip">
+                      <div class="profile-chip__avatar">AP</div>
+                      <div class="profile-chip__info">
+                        <div class="profile-chip__name">Amit P.</div>
+                        <div class="profile-chip__badges">
+                          <span class="badge badge--driver">Driver</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="chip chip--time">1 hour ago</span>
+                  </div>
+                  <div class="list-item__content">
+                    Perfect! I'll be at the lobby at 8:25 AM. Thanks for the
+                    ride.
+                  </div>
+                </div>
+
+                <!-- Thread 3 -->
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <div class="profile-chip">
+                      <div class="profile-chip__avatar">RJ</div>
+                      <div class="profile-chip__info">
+                        <div class="profile-chip__name">Raj K.</div>
+                        <div class="profile-chip__badges">
+                          <span class="badge badge--helper">Helper</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="chip chip--time">3 hours ago</span>
+                  </div>
+                  <div class="list-item__content">
+                    The books are still available. When can you pick them up?
+                  </div>
+                </div>
+
+                <!-- Thread 4 -->
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <div class="profile-chip">
+                      <div class="profile-chip__avatar">PN</div>
+                      <div class="profile-chip__info">
+                        <div class="profile-chip__name">Priya N.</div>
+                        <div class="profile-chip__badges">
+                          <span class="badge badge--phone">Phone ✓</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="chip chip--time">Yesterday</span>
+                  </div>
+                  <div class="list-item__content">
+                    Thanks for the school drop! My daughter loved the ride.
+                  </div>
+                </div>
+
+                <!-- Thread 5 -->
+                <div class="list-item">
+                  <div class="list-item__header">
+                    <div class="profile-chip">
+                      <div class="profile-chip__avatar">VS</div>
+                      <div class="profile-chip__info">
+                        <div class="profile-chip__name">Vikram S.</div>
+                        <div class="profile-chip__badges">
+                          <span class="badge badge--verified">✓</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="chip chip--time">2 days ago</span>
+                  </div>
+                  <div class="list-item__content">
+                    The drill is ready for pickup. Deposit received.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thread View -->
+          <div class="detail-main">
+            <div class="detail-card">
+              <div class="detail-card__header">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">SM</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Sarah M.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-chip__badges">
+                  <span class="chip chip--time">Active now</span>
+                </div>
+              </div>
+
+              <div class="detail-card__body">
+                <!-- Message Thread -->
+                <div class="message-thread">
+                  <!-- Date Separator -->
+                  <div class="message-date">
+                    <span class="chip chip--default">Today</span>
+                  </div>
+
+                  <!-- Message 1 -->
+                  <div class="message message--received">
+                    <div class="message__avatar">SM</div>
+                    <div class="message__content">
+                      <div class="message__text">
+                        Hi! Thanks for joining the park clean-up event. I'm
+                        excited to have you on board!
+                      </div>
+                      <div class="message__time">10:15 AM</div>
+                    </div>
+                  </div>
+
+                  <!-- Message 2 -->
+                  <div class="message message--sent">
+                    <div class="message__content">
+                      <div class="message__text">
+                        Thank you for organizing this! I'm looking forward to
+                        contributing to the community.
+                      </div>
+                      <div class="message__time">10:18 AM</div>
+                    </div>
+                  </div>
+
+                  <!-- Message 3 -->
+                  <div class="message message--received">
+                    <div class="message__avatar">SM</div>
+                    <div class="message__content">
+                      <div class="message__text">
+                        Perfect! Just a reminder to bring work gloves and a
+                        water bottle. We'll provide trash bags and refreshments.
+                      </div>
+                      <div class="message__time">10:20 AM</div>
+                    </div>
+                  </div>
+
+                  <!-- Message 4 -->
+                  <div class="message message--sent">
+                    <div class="message__content">
+                      <div class="message__text">
+                        Got it! I'll bring both. What time should I arrive at
+                        Central Park?
+                      </div>
+                      <div class="message__time">10:22 AM</div>
+                    </div>
+                  </div>
+
+                  <!-- Message 5 -->
+                  <div class="message message--received">
+                    <div class="message__avatar">SM</div>
+                    <div class="message__content">
+                      <div class="message__text">
+                        Please arrive by 7:30 AM. We'll meet near the playground
+                        area. Look for the community banner!
+                      </div>
+                      <div class="message__time">10:25 AM</div>
+                    </div>
+                  </div>
+
+                  <!-- Message 6 -->
+                  <div class="message message--sent">
+                    <div class="message__content">
+                      <div class="message__text">
+                        Perfect! See you at 7:30 AM near the playground. Thanks
+                        for organizing this event!
+                      </div>
+                      <div class="message__time">10:28 AM</div>
+                    </div>
+                  </div>
+
+                  <!-- Message 7 -->
+                  <div class="message message--received">
+                    <div class="message__avatar">SM</div>
+                    <div class="message__content">
+                      <div class="message__text">
+                        Thanks for joining the park clean-up! See you at 7:30
+                        AM.
+                      </div>
+                      <div class="message__time">2 min ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message Composer -->
+              <div class="detail-card__footer">
+                <div class="message-composer">
+                  <div class="message-composer__input">
+                    <input
+                      type="text"
+                      placeholder="Type your message..."
+                      class="form-input"
+                      style="border: none; padding: var(--space-3)"
+                    />
+                  </div>
+                  <div class="message-composer__actions">
+                    <button class="btn btn--ghost btn--sm">📷</button>
+                    <button class="btn btn--primary btn--sm">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Message Styles -->
+    <style>
+      .message-thread {
+        max-height: 400px;
+        overflow-y: auto;
+        padding: var(--space-4);
+      }
+
+      .message-date {
+        text-align: center;
+        margin: var(--space-4) 0;
+      }
+
+      .message {
+        display: flex;
+        margin-bottom: var(--space-4);
+        align-items: flex-end;
+      }
+
+      .message--sent {
+        justify-content: flex-end;
+      }
+
+      .message--received {
+        justify-content: flex-start;
+      }
+
+      .message__avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: var(--radius-full);
+        background-color: var(--color-accent);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--font-size-caption);
+        margin-right: var(--space-2);
+        flex-shrink: 0;
+      }
+
+      .message--sent .message__avatar {
+        display: none;
+      }
+
+      .message__content {
+        max-width: 70%;
+      }
+
+      .message__text {
+        background-color: var(--color-bg);
+        padding: var(--space-3);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-1);
+        word-wrap: break-word;
+      }
+
+      .message--sent .message__text {
+        background-color: var(--color-accent);
+        color: white;
+      }
+
+      .message__time {
+        font-size: var(--font-size-small);
+        color: var(--color-text-muted);
+        text-align: right;
+      }
+
+      .message--received .message__time {
+        text-align: left;
+      }
+
+      .message-composer {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-3);
+        border-top: 1px solid var(--color-border-light);
+      }
+
+      .message-composer__input {
+        flex: 1;
+      }
+
+      .message-composer__actions {
+        display: flex;
+        gap: var(--space-2);
+      }
+    </style>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      });
+    </script>
+  </body>
+</html>

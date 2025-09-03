@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permissions - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <div class="page-header">
+          <h1 class="page-title">Permissions</h1>
+          <p class="page-subtitle">
+            Manage access controls and security policies
+          </p>
+        </div>
+
+        <!-- Role Matrix -->
+        <section class="section mb-8">
+          <div class="permissions-section">
+            <h2 class="permissions-section__title">Role Matrix</h2>
+            <p class="permissions-section__description">
+              Define what each role can do across different spaces. Changes take
+              effect immediately.
+            </p>
+
+            <table class="matrix">
+              <thead>
+                <tr>
+                  <th>Space</th>
+                  <th>Owner</th>
+                  <th>Editor</th>
+                  <th>Viewer</th>
+                  <th>Guest</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ops NOC</strong></td>
+                  <td class="matrix__cell--allow">Full Access</td>
+                  <td class="matrix__cell--allow">Edit Pages</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                  <td class="matrix__cell--deny">No Access</td>
+                </tr>
+                <tr>
+                  <td><strong>Finance Dashboard</strong></td>
+                  <td class="matrix__cell--allow">Full Access</td>
+                  <td class="matrix__cell--allow">Edit Pages</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                  <td class="matrix__cell--deny">No Access</td>
+                </tr>
+                <tr>
+                  <td><strong>Marketing Analytics</strong></td>
+                  <td class="matrix__cell--allow">Full Access</td>
+                  <td class="matrix__cell--allow">Edit Pages</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                  <td class="matrix__cell--deny">No Access</td>
+                </tr>
+                <tr>
+                  <td><strong>Customer Support</strong></td>
+                  <td class="matrix__cell--allow">Full Access</td>
+                  <td class="matrix__cell--allow">Edit Pages</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                </tr>
+                <tr>
+                  <td><strong>Sales Performance</strong></td>
+                  <td class="matrix__cell--allow">Full Access</td>
+                  <td class="matrix__cell--allow">Edit Pages</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                  <td class="matrix__cell--deny">No Access</td>
+                </tr>
+                <tr>
+                  <td><strong>DevOps Monitoring</strong></td>
+                  <td class="matrix__cell--allow">Full Access</td>
+                  <td class="matrix__cell--allow">Edit Pages</td>
+                  <td class="matrix__cell--allow">View Only</td>
+                  <td class="matrix__cell--deny">No Access</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Security Policies -->
+        <section class="section mb-8">
+          <div class="permissions-section">
+            <h2 class="permissions-section__title">Security Policies</h2>
+            <p class="permissions-section__description">
+              Configure security policies that apply across all spaces and
+              widgets.
+            </p>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Data Egress Control</h3>
+                  <p class="text-sm text-muted">
+                    Prevent widgets from making external API calls to
+                    unauthorized domains
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Enabled</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">PII Redaction</h3>
+                  <p class="text-sm text-muted">
+                    Automatically redact personally identifiable information in
+                    widget data
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Enabled</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Content Security Policy</h3>
+                  <p class="text-sm text-muted">
+                    Enforce strict CSP rules for all widget content
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--warning"
+                    >Partial</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Widget Sandboxing</h3>
+                  <p class="text-sm text-muted">
+                    Run widgets in isolated iframe sandboxes for enhanced
+                    security
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Enabled</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 bg-surface border rounded-lg"
+              >
+                <div>
+                  <h3 class="font-semibold">Audit Logging</h3>
+                  <p class="text-sm text-muted">
+                    Log all user actions and system events for compliance
+                  </p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="status-badge status-badge--success"
+                    >Enabled</span
+                  >
+                  <button class="button button--ghost">Configure</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Audit Log -->
+        <section class="section">
+          <div class="permissions-section">
+            <h2 class="permissions-section__title">Audit Log</h2>
+            <p class="permissions-section__description">
+              Recent security events and user actions across the platform.
+            </p>
+
+            <div class="space-y-2">
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 14:32:15</span>
+                <span class="audit-row__actor">sarah.chen@company.com</span>
+                <span class="audit-row__action">PUBLISHED</span>
+                <span class="audit-row__target"
+                  >space:ops-noc release:v2.1.3</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 14:28:42</span>
+                <span class="audit-row__actor">mike.rodriguez@company.com</span>
+                <span class="audit-row__action">UPDATED</span>
+                <span class="audit-row__target"
+                  >space:finance-dashboard permissions</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 14:15:33</span>
+                <span class="audit-row__actor">alex.thompson@company.com</span>
+                <span class="audit-row__action">CREATED</span>
+                <span class="audit-row__target">widget:latency-spark@1.1</span>
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 13:45:21</span>
+                <span class="audit-row__actor">david.kim@company.com</span>
+                <span class="audit-row__action">ROLLED_BACK</span>
+                <span class="audit-row__target"
+                  >space:customer-support release:v2.0.0</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 13:22:18</span>
+                <span class="audit-row__actor">jennifer.lee@company.com</span>
+                <span class="audit-row__action">INVITED</span>
+                <span class="audit-row__target"
+                  >user:lisa.wang@company.com to space:marketing-analytics</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 12:58:07</span>
+                <span class="audit-row__actor">system</span>
+                <span class="audit-row__action">SECURITY_SCAN</span>
+                <span class="audit-row__target"
+                  >widget:feature-flags@0.9 vulnerabilities:0</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 12:30:45</span>
+                <span class="audit-row__actor">lisa.wang@company.com</span>
+                <span class="audit-row__action">VIEWED</span>
+                <span class="audit-row__target"
+                  >space:sales-performance dashboard</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 11:45:12</span>
+                <span class="audit-row__actor">sarah.chen@company.com</span>
+                <span class="audit-row__action">CONFIGURED</span>
+                <span class="audit-row__target"
+                  >widget:alerts-table@3.2 properties</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 11:22:33</span>
+                <span class="audit-row__actor">mike.rodriguez@company.com</span>
+                <span class="audit-row__action">APPROVED</span>
+                <span class="audit-row__target"
+                  >widget:revenue-trend@2.5 for production</span
+                >
+              </div>
+
+              <div class="audit-row">
+                <span class="audit-row__timestamp">2024-01-15 10:15:28</span>
+                <span class="audit-row__actor">alex.thompson@company.com</span>
+                <span class="audit-row__action">DEPLOYED</span>
+                <span class="audit-row__target"
+                  >space:devops-monitoring to staging</span
+                >
+              </div>
+            </div>
+
+            <div class="flex justify-center mt-6">
+              <button class="button button--ghost">Load More</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Policy Configuration -->
+        <section class="section">
+          <h2 class="section-title">Policy Configuration</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <h3 class="font-semibold mb-4">Data Egress Policy</h3>
+            <p class="text-muted mb-4">
+              External network calls must use <strong>approved domains</strong>.
+              All outbound requests are logged and monitored for compliance.
+            </p>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-sm">Allow API calls to external domains</span>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" checked />
+                  <span class="text-sm">Enabled</span>
+                </label>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-sm"
+                  >Require HTTPS for all external calls</span
+                >
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" checked />
+                  <span class="text-sm">Enabled</span>
+                </label>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-sm">Block calls to private IP ranges</span>
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" checked />
+                  <span class="text-sm">Enabled</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label class="block text-sm font-medium mb-2"
+                >Approved Domains</label
+              >
+              <textarea
+                class="w-full"
+                rows="4"
+                placeholder="api.company.com&#10;monitoring.service.com&#10;analytics.provider.com"
+              >
+api.company.com
+monitoring.service.com
+analytics.provider.com
+external-api.partner.com</textarea
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

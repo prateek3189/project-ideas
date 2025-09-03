@@ -1,0 +1,1153 @@
+/* ==========================================================================
+   Print Styles - Skill Builder Micro-Courses
+   ========================================================================== */
+
+@media print {
+  /* ==========================================================================
+     General Print Reset
+     ========================================================================== */
+
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* ==========================================================================
+     Layout Adjustments for Print
+     ========================================================================== */
+
+  .app {
+    display: block !important;
+    grid-template-areas: none !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  .header,
+  .sidebar,
+  .footer,
+  .lesson-navigation,
+  .quiz-actions,
+  .settings-actions,
+  .theme-toggle,
+  .search-btn,
+  .print-link {
+    display: none !important;
+  }
+
+  .main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+  }
+
+  /* ==========================================================================
+     Typography for Print
+     ========================================================================== */
+
+  body {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    color: black !important;
+    background: white !important;
+    margin: var(--print-margin) !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    color: black !important;
+    page-break-after: avoid !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  h1 {
+    font-size: 18pt !important;
+    margin-top: 0 !important;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+  }
+
+  h4 {
+    font-size: 12pt !important;
+  }
+
+  p {
+    margin-bottom: 0.5em !important;
+    text-align: justify !important;
+  }
+
+  /* ==========================================================================
+     Course and Lesson Content for Print
+     ========================================================================== */
+
+  .course-hero,
+  .lesson-header {
+    border: 2px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    page-break-inside: avoid !important;
+  }
+
+  .course-hero__title,
+  .lesson-header__title {
+    text-align: center !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .course-hero__subtitle,
+  .lesson-header__subtitle {
+    text-align: center !important;
+    font-style: italic !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .course-hero__meta,
+  .lesson-header__meta {
+    text-align: center !important;
+    font-size: 10pt !important;
+  }
+
+  .course-hero__prerequisites,
+  .course-hero__actions {
+    display: none !important;
+  }
+
+  /* ==========================================================================
+     Lesson Content for Print
+     ========================================================================== */
+
+  .lesson-content {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  .lesson-toc {
+    display: none !important;
+  }
+
+  .lesson-section {
+    margin-bottom: 1.5em !important;
+    page-break-inside: avoid !important;
+  }
+
+  .lesson-section__title {
+    border-bottom: 1px solid black !important;
+    padding-bottom: 0.25em !important;
+    margin-bottom: 0.75em !important;
+  }
+
+  .lesson-section__text {
+    margin-bottom: 0.75em !important;
+  }
+
+  .lesson-takeaways {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .lesson-takeaways__title {
+    text-align: center !important;
+    margin-bottom: 0.75em !important;
+  }
+
+  .lesson-takeaways__list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .lesson-takeaways__list li {
+    margin-bottom: 0.25em !important;
+    padding-left: 1em !important;
+  }
+
+  .lesson-takeaways__list li::before {
+    content: "•" !important;
+    position: static !important;
+    margin-right: 0.5em !important;
+  }
+
+  /* ==========================================================================
+     Code and Examples for Print
+     ========================================================================== */
+
+  .code-example {
+    border: 1px solid black !important;
+    margin: 1em 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .code-example__title {
+    background: #f0f0f0 !important;
+    border-bottom: 1px solid black !important;
+    padding: 0.5em !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .code-example__code {
+    background: #f8f8f8 !important;
+    padding: 1em !important;
+    margin: 0 !important;
+    border: none !important;
+    font-family: "Courier New", monospace !important;
+    font-size: 10pt !important;
+    white-space: pre-wrap !important;
+    overflow: visible !important;
+  }
+
+  .code-example__explanation {
+    background: #f0f0f0 !important;
+    border-top: 1px solid black !important;
+    padding: 1em !important;
+    margin: 0 !important;
+  }
+
+  .code-example__explanation p {
+    margin-bottom: 0.5em !important;
+  }
+
+  .code-example__explanation p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .code-example__explanation ul {
+    margin: 0.5em 0 !important;
+    padding-left: 1.5em !important;
+  }
+
+  /* ==========================================================================
+     Concept Boxes and Tips for Print
+     ========================================================================== */
+
+  .concept-box {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .concept-box__title {
+    font-weight: bold !important;
+    margin-bottom: 0.5em !important;
+    color: black !important;
+  }
+
+  .concept-box__list {
+    margin: 0 !important;
+    padding-left: 1.5em !important;
+  }
+
+  .concept-box__list li {
+    margin-bottom: 0.25em !important;
+  }
+
+  .practice-tip {
+    border: 2px solid black !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    page-break-inside: avoid !important;
+    background: #f8f8f8 !important;
+  }
+
+  .practice-tip__title {
+    font-weight: bold !important;
+    margin-bottom: 0.5em !important;
+    color: black !important;
+  }
+
+  .practice-tip p {
+    margin-bottom: 0 !important;
+    color: black !important;
+  }
+
+  /* ==========================================================================
+     Glossary Terms for Print
+     ========================================================================== */
+
+  .glossary-term {
+    margin: 1em 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .glossary-term__summary {
+    background: #f0f0f0 !important;
+    border: 1px solid black !important;
+    padding: 0.5em !important;
+    font-weight: bold !important;
+    color: black !important;
+    cursor: default !important;
+  }
+
+  .glossary-term__definition {
+    border: 1px solid black !important;
+    border-top: none !important;
+    padding: 1em !important;
+    margin: 0 !important;
+    background: white !important;
+  }
+
+  .glossary-term__definition p {
+    margin-bottom: 0.5em !important;
+  }
+
+  .glossary-term__definition p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* ==========================================================================
+     Mini Quiz for Print
+     ========================================================================== */
+
+  .mini-quiz {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .mini-quiz__title {
+    font-weight: bold !important;
+    margin-bottom: 0.75em !important;
+    color: black !important;
+  }
+
+  .mini-quiz__options {
+    margin-bottom: 0.75em !important;
+  }
+
+  .mini-quiz__option {
+    border: 1px solid black !important;
+    padding: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    background: white !important;
+  }
+
+  .mini-quiz__input {
+    margin-right: 0.5em !important;
+  }
+
+  .mini-quiz__option-text {
+    color: black !important;
+  }
+
+  .mini-quiz__feedback {
+    background: #f0f0f0 !important;
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-top: 0.75em !important;
+  }
+
+  .mini-quiz__answer {
+    font-weight: bold !important;
+    margin-bottom: 0.5em !important;
+    color: black !important;
+  }
+
+  .mini-quiz__selected {
+    color: black !important;
+  }
+
+  .mini-quiz__explanation {
+    color: black !important;
+  }
+
+  .mini-quiz__explanation p {
+    margin-bottom: 0.5em !important;
+  }
+
+  .mini-quiz__explanation p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .mini-quiz__explanation ul {
+    margin: 0.5em 0 !important;
+    padding-left: 1.5em !important;
+  }
+
+  /* ==========================================================================
+     Quiz Content for Print
+     ========================================================================== */
+
+  .quiz-question {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    page-break-inside: avoid !important;
+  }
+
+  .quiz-question__header {
+    margin-bottom: 0.75em !important;
+  }
+
+  .quiz-question__number {
+    background: black !important;
+    color: white !important;
+    padding: 0.25em 0.5em !important;
+    border-radius: 0 !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+  }
+
+  .quiz-question__type {
+    color: black !important;
+    font-size: 10pt !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .quiz-question__title {
+    font-weight: bold !important;
+    margin-bottom: 0.75em !important;
+    color: black !important;
+  }
+
+  .quiz-option {
+    border: 1px solid black !important;
+    padding: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    background: white !important;
+  }
+
+  .quiz-option__input {
+    margin-right: 0.5em !important;
+  }
+
+  .quiz-option__text {
+    color: black !important;
+  }
+
+  .quiz-answer {
+    background: #f0f0f0 !important;
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-top: 0.75em !important;
+  }
+
+  .quiz-answer__text {
+    font-weight: bold !important;
+    margin-bottom: 0.5em !important;
+    color: black !important;
+  }
+
+  .quiz-answer__selected {
+    color: black !important;
+  }
+
+  .quiz-answer__explanation {
+    color: black !important;
+  }
+
+  .quiz-answer__explanation p {
+    margin-bottom: 0.5em !important;
+  }
+
+  .quiz-answer__explanation p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* ==========================================================================
+     Course Overview for Print
+     ========================================================================== */
+
+  .learning-outcomes {
+    margin-bottom: 1.5em !important;
+  }
+
+  .outcomes-list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .outcomes-list li {
+    margin-bottom: 0.25em !important;
+    padding-left: 1em !important;
+  }
+
+  .outcomes-list li::before {
+    content: "✓" !important;
+    position: static !important;
+    margin-right: 0.5em !important;
+    color: black !important;
+  }
+
+  .syllabus {
+    margin-bottom: 1.5em !important;
+  }
+
+  .syllabus-list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .syllabus-item {
+    border: 1px solid black !important;
+    padding: 0.75em !important;
+    margin-bottom: 0.5em !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+  }
+
+  .syllabus-item--completed {
+    background: #e8f5e8 !important;
+    border-color: black !important;
+  }
+
+  .syllabus-item--current {
+    background: #e8f0ff !important;
+    border-color: black !important;
+    color: black !important;
+  }
+
+  .syllabus-item--locked {
+    background: #f0f0f0 !important;
+    border-color: black !important;
+    opacity: 1 !important;
+  }
+
+  .syllabus-item__title {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .syllabus-item__description {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+    opacity: 1 !important;
+  }
+
+  .syllabus-item__meta {
+    margin: 0 !important;
+  }
+
+  .syllabus-item__duration {
+    opacity: 1 !important;
+  }
+
+  .syllabus-item__status {
+    color: black !important;
+  }
+
+  .syllabus-item__status--completed {
+    color: black !important;
+  }
+
+  .syllabus-item__status--current {
+    color: black !important;
+  }
+
+  .syllabus-item__status--locked {
+    color: black !important;
+  }
+
+  .resources {
+    margin-bottom: 1.5em !important;
+  }
+
+  .resources-grid {
+    display: block !important;
+  }
+
+  .resource-card {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+  }
+
+  .resource-card__title {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .resource-card__description {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .resource-card__link {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  /* ==========================================================================
+     Progress and Stats for Print
+     ========================================================================== */
+
+  .overall-stats,
+  .daily-stats {
+    margin-bottom: 1.5em !important;
+  }
+
+  .stats-grid {
+    display: block !important;
+  }
+
+  .stat-tile {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    text-align: center !important;
+    page-break-inside: avoid !important;
+  }
+
+  .stat-tile__value {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .stat-tile__label {
+    color: black !important;
+  }
+
+  .stat-tile__trend {
+    color: black !important;
+    margin-top: 0.25em !important;
+  }
+
+  .course-progress {
+    margin-bottom: 1.5em !important;
+  }
+
+  .course-progress__list {
+    display: block !important;
+  }
+
+  .course-progress__item {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+  }
+
+  .course-progress__title {
+    color: black !important;
+  }
+
+  .course-progress__status {
+    color: black !important;
+  }
+
+  .course-progress__status--completed {
+    background: #e8f5e8 !important;
+    color: black !important;
+  }
+
+  .course-progress__status--in-progress {
+    background: #fff3cd !important;
+    color: black !important;
+  }
+
+  .course-progress__status--not-started {
+    background: #f0f0f0 !important;
+    color: black !important;
+  }
+
+  .course-progress__meta {
+    margin: 0 !important;
+  }
+
+  .course-progress__lessons,
+  .course-progress__time {
+    color: black !important;
+  }
+
+  .course-progress__link {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  .badges-section {
+    margin-bottom: 1.5em !important;
+  }
+
+  .badges-grid {
+    display: block !important;
+  }
+
+  .badge {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    text-align: center !important;
+    page-break-inside: avoid !important;
+  }
+
+  .badge--earned {
+    background: #e8f5e8 !important;
+    border-color: black !important;
+  }
+
+  .badge--locked {
+    background: #f0f0f0 !important;
+    border-color: black !important;
+    opacity: 1 !important;
+  }
+
+  .badge__icon {
+    margin-bottom: 0.25em !important;
+  }
+
+  .badge__title {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .badge__description {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .badge__date,
+  .badge__progress {
+    color: black !important;
+  }
+
+  .recent-activity {
+    margin-bottom: 1.5em !important;
+  }
+
+  .activity-list {
+    border: 1px solid black !important;
+    background: white !important;
+  }
+
+  .activity-item {
+    border-bottom: 1px solid black !important;
+    padding: 0.75em !important;
+    background: white !important;
+  }
+
+  .activity-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .activity-item__icon {
+    margin-right: 0.5em !important;
+  }
+
+  .activity-item__title {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .activity-item__description {
+    color: black !important;
+  }
+
+  .certificate-section {
+    margin-bottom: 1.5em !important;
+  }
+
+  .certificate-card {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    background: white !important;
+    text-align: center !important;
+    page-break-inside: avoid !important;
+  }
+
+  .certificate-card__title {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .certificate-card__description {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .certificate-card__status-text {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .certificate-card__progress-text {
+    color: black !important;
+    margin-top: 0.25em !important;
+  }
+
+  /* ==========================================================================
+     Settings and About for Print
+     ========================================================================== */
+
+  .settings-section {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+  }
+
+  .settings-section__title {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .setting-group {
+    margin-bottom: 0.75em !important;
+  }
+
+  .setting-label {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .setting-controls {
+    background: #f8f8f8 !important;
+    border: 1px solid black !important;
+    border-radius: 0 !important;
+    padding: 0.5em !important;
+  }
+
+  .setting-description {
+    color: black !important;
+  }
+
+  .radio-option,
+  .toggle-switch {
+    background: white !important;
+  }
+
+  .radio-option__text,
+  .toggle-switch__slider {
+    color: black !important;
+  }
+
+  .settings-actions {
+    margin-top: 1em !important;
+  }
+
+  .mission-section {
+    border: 2px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    text-align: center !important;
+    page-break-inside: avoid !important;
+  }
+
+  .mission-title {
+    color: black !important;
+    margin-bottom: 0.75em !important;
+  }
+
+  .mission-text {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .workflow-grid,
+  .philosophy-grid {
+    display: block !important;
+  }
+
+  .workflow-step,
+  .philosophy-item {
+    text-align: center !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    page-break-inside: avoid !important;
+  }
+
+  .workflow-step__number {
+    background: black !important;
+    color: white !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .workflow-step__title,
+  .philosophy-item__title {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .workflow-step__description,
+  .philosophy-item__description {
+    color: black !important;
+  }
+
+  .accessibility-content {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    background: white !important;
+  }
+
+  .accessibility-text {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .accessibility-features {
+    margin: 0.5em 0 !important;
+  }
+
+  .features-roadmap {
+    display: block !important;
+  }
+
+  .roadmap-item {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    margin-bottom: 1em !important;
+    background: white !important;
+    page-break-inside: avoid !important;
+  }
+
+  .roadmap-item--coming-soon {
+    border-color: black !important;
+  }
+
+  .roadmap-item--planned {
+    border-color: black !important;
+  }
+
+  .roadmap-item--future {
+    border-color: black !important;
+    opacity: 1 !important;
+  }
+
+  .roadmap-item__title {
+    color: black !important;
+  }
+
+  .roadmap-item__status {
+    color: black !important;
+  }
+
+  .roadmap-item--coming-soon .roadmap-item__status {
+    background: black !important;
+    color: white !important;
+  }
+
+  .roadmap-item--planned .roadmap-item__status {
+    background: black !important;
+    color: white !important;
+  }
+
+  .roadmap-item--future .roadmap-item__status {
+    background: #666666 !important;
+    color: white !important;
+  }
+
+  .roadmap-item__description {
+    color: black !important;
+  }
+
+  .contact-content {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    background: white !important;
+    text-align: center !important;
+  }
+
+  .contact-text {
+    color: black !important;
+    margin-bottom: 0.75em !important;
+  }
+
+  .contact-options {
+    display: block !important;
+  }
+
+  .contact-option {
+    text-align: center !important;
+    margin-bottom: 1em !important;
+    page-break-inside: avoid !important;
+  }
+
+  .contact-option__title {
+    color: black !important;
+    margin-bottom: 0.25em !important;
+  }
+
+  .contact-option__description {
+    color: black !important;
+  }
+
+  .version-info {
+    border: 1px solid black !important;
+    padding: 1em !important;
+    background: white !important;
+  }
+
+  .version-text {
+    color: black !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .version-description {
+    color: black !important;
+  }
+
+  /* ==========================================================================
+     Page Breaks and Layout
+     ========================================================================== */
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid !important;
+  }
+
+  .lesson-section,
+  .quiz-question,
+  .course-progress__item,
+  .badge,
+  .stat-tile,
+  .resource-card,
+  .syllabus-item,
+  .roadmap-item,
+  .settings-section {
+    page-break-inside: avoid !important;
+  }
+
+  .lesson-content {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  /* ==========================================================================
+     Links and Navigation
+     ========================================================================== */
+
+  a[href]:after {
+    content: " (" attr(href) ")" !important;
+    font-size: 10pt !important;
+    color: black !important;
+  }
+
+  a[href^="#"]:after {
+    content: "" !important;
+  }
+
+  /* ==========================================================================
+     Progress Bars for Print
+     ========================================================================== */
+
+  .progress-bar {
+    border: 1px solid black !important;
+    background: white !important;
+    height: 20px !important;
+    position: relative !important;
+    margin: 0.5em 0 !important;
+  }
+
+  .progress-bar__fill {
+    background: black !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  .progress-bar__label {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: black !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+    text-shadow: none !important;
+  }
+
+  /* ==========================================================================
+     Buttons and Interactive Elements
+     ========================================================================== */
+
+  .btn {
+    border: 1px solid black !important;
+    background: white !important;
+    color: black !important;
+    padding: 0.5em 1em !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 0.25em !important;
+  }
+
+  .btn--primary {
+    background: black !important;
+    color: white !important;
+  }
+
+  .btn--secondary {
+    background: white !important;
+    color: black !important;
+  }
+
+  .btn--success {
+    background: #e8f5e8 !important;
+    color: black !important;
+  }
+
+  .btn--warning {
+    background: #fff3cd !important;
+    color: black !important;
+  }
+
+  .btn--error {
+    background: #f8d7da !important;
+    color: black !important;
+  }
+
+  /* ==========================================================================
+     Form Elements for Print
+     ========================================================================== */
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    border: 1px solid black !important;
+    background: white !important;
+  }
+
+  select {
+    border: 1px solid black !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* ==========================================================================
+     Print Header and Footer
+     ========================================================================== */
+
+  @page {
+    margin: var(--print-margin) !important;
+    size: A4 !important;
+  }
+
+  @page :first {
+    margin-top: var(--print-margin) !important;
+  }
+
+  @page :left {
+    margin-left: var(--print-margin) !important;
+    margin-right: calc(var(--print-margin) / 2) !important;
+  }
+
+  @page :right {
+    margin-left: calc(var(--print-margin) / 2) !important;
+    margin-right: var(--print-margin) !important;
+  }
+}

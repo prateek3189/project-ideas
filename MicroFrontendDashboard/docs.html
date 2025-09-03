@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <div class="page-header">
+          <h1 class="page-title">Documentation</h1>
+          <p class="page-subtitle">
+            Comprehensive guides and references for the Micro-Frontend Dashboard
+            Builder
+          </p>
+        </div>
+
+        <!-- Quick Start -->
+        <section class="section mb-8">
+          <h2 class="section-title">Quick Start Guide</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <h3 class="font-semibold mb-4">Getting Started in 5 Minutes</h3>
+            <ol class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span
+                  class="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                  >1</span
+                >
+                <div>
+                  <strong>Create a Space:</strong> Go to Spaces and create your
+                  first dashboard space
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                  >2</span
+                >
+                <div>
+                  <strong>Add Pages:</strong> Create pages within your space for
+                  different views
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                  >3</span
+                >
+                <div>
+                  <strong>Build Dashboard:</strong> Use the Page Builder to drag
+                  widgets from the Catalog
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                  >4</span
+                >
+                <div>
+                  <strong>Configure Widgets:</strong> Set properties, data
+                  sources, and visibility rules
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold"
+                  >5</span
+                >
+                <div>
+                  <strong>Publish:</strong> Deploy your dashboard to your target
+                  environment
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Documentation Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Widget Development -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Widget Development</h2>
+            <p class="settings-section__description">
+              Learn how to create, register, and maintain widgets for the
+              platform.
+            </p>
+
+            <div class="space-y-3">
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Embedding Contracts</h3>
+                <p class="text-sm text-muted">
+                  Events, props, and resize API specifications
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Widget Lifecycle</h3>
+                <p class="text-sm text-muted">
+                  Mount, update, unmount, and error handling
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Data Binding</h3>
+                <p class="text-sm text-muted">
+                  Connect widgets with shared data and events
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Security Guidelines</h3>
+                <p class="text-sm text-muted">
+                  Best practices for secure widget development
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Style Guide -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Style Guide</h2>
+            <p class="settings-section__description">
+              Design system, tokens, and styling guidelines for consistent UI.
+            </p>
+
+            <div class="space-y-3">
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Design Tokens</h3>
+                <p class="text-sm text-muted">
+                  Colors, typography, spacing, and component tokens
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Component Library</h3>
+                <p class="text-sm text-muted">
+                  Reusable UI components and patterns
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Accessibility</h3>
+                <p class="text-sm text-muted">
+                  WCAG compliance and keyboard navigation
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Responsive Design</h3>
+                <p class="text-sm text-muted">
+                  Breakpoints and mobile-first approach
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Platform Administration -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Platform Administration</h2>
+            <p class="settings-section__description">
+              Manage spaces, users, permissions, and platform configuration.
+            </p>
+
+            <div class="space-y-3">
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">User Management</h3>
+                <p class="text-sm text-muted">
+                  SSO integration, roles, and access controls
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Space Configuration</h3>
+                <p class="text-sm text-muted">
+                  Themes, branding, and environment settings
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Release Management</h3>
+                <p class="text-sm text-muted">
+                  Deployment pipelines and rollback procedures
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Monitoring & Analytics</h3>
+                <p class="text-sm text-muted">
+                  Performance tracking and usage analytics
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Governance -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">Governance</h2>
+            <p class="settings-section__description">
+              Policies, procedures, and best practices for platform governance.
+            </p>
+
+            <div class="space-y-3">
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Versioning Policy</h3>
+                <p class="text-sm text-muted">
+                  Semantic versioning and compatibility guidelines
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Deprecation Process</h3>
+                <p class="text-sm text-muted">
+                  Sunset dates and migration procedures
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Security Review</h3>
+                <p class="text-sm text-muted">
+                  Security checklist and approval process
+                </p>
+              </a>
+
+              <a
+                href="#"
+                class="block p-3 bg-surface border rounded-lg hover:shadow-sm transition-all"
+              >
+                <h3 class="font-semibold">Content Security</h3>
+                <p class="text-sm text-muted">
+                  CSP policies and sandboxing requirements
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- API Reference -->
+        <section class="section mb-8">
+          <h2 class="section-title">API Reference</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <h3 class="font-semibold mb-4">Widget API</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium mb-2">Widget Registration</h4>
+                <pre
+                  class="bg-gray-100 p-3 rounded text-sm"
+                ><code>// Register a new widget
+window.MicroFE.registerWidget({
+  id: 'my-widget',
+  version: '1.0.0',
+  mount: (container, props) => { /* ... */ },
+  unmount: (container) => { /* ... */ },
+  update: (container, props) => { /* ... */ }
+});</code></pre>
+              </div>
+
+              <div>
+                <h4 class="font-medium mb-2">Event Communication</h4>
+                <pre
+                  class="bg-gray-100 p-3 rounded text-sm"
+                ><code>// Emit events to other widgets
+window.MicroFE.emit('data-updated', { 
+  source: 'my-widget', 
+  data: payload 
+});
+
+// Listen for events from other widgets
+window.MicroFE.on('data-updated', (event) => {
+  // Handle the event
+});</code></pre>
+              </div>
+
+              <div>
+                <h4 class="font-medium mb-2">Data Binding</h4>
+                <pre
+                  class="bg-gray-100 p-3 rounded text-sm"
+                ><code>// Bind to shared data
+window.MicroFE.bind('user-selection', (data) => {
+  // React to user selection changes
+});
+
+// Update shared data
+window.MicroFE.update('user-selection', newSelection);</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="section mb-8">
+          <h2 class="section-title">Troubleshooting</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <h3 class="font-semibold mb-4">Common Issues</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium mb-2">Widget Not Loading</h4>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>• Check widget registration and version compatibility</li>
+                  <li>• Verify network connectivity and CORS settings</li>
+                  <li>• Review browser console for JavaScript errors</li>
+                  <li>• Ensure widget bundle size is within limits</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-medium mb-2">Performance Issues</h4>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>• Monitor widget load times and memory usage</li>
+                  <li>• Check for memory leaks in widget lifecycle</li>
+                  <li>• Optimize data fetching and caching strategies</li>
+                  <li>• Review bundle size and lazy loading implementation</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-medium mb-2">Data Binding Problems</h4>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>• Verify event names and data structure consistency</li>
+                  <li>• Check for circular dependencies in data flow</li>
+                  <li>• Ensure proper cleanup of event listeners</li>
+                  <li>• Review data validation and error handling</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Support -->
+        <section class="section">
+          <h2 class="section-title">Support & Resources</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface border rounded-lg p-6 text-center">
+              <div class="text-3xl mb-3">📚</div>
+              <h3 class="font-semibold mb-2">Knowledge Base</h3>
+              <p class="text-sm text-muted mb-4">
+                Comprehensive articles and tutorials
+              </p>
+              <button class="button button--primary">Browse Articles</button>
+            </div>
+
+            <div class="bg-surface border rounded-lg p-6 text-center">
+              <div class="text-3xl mb-3">💬</div>
+              <h3 class="font-semibold mb-2">Community Forum</h3>
+              <p class="text-sm text-muted mb-4">
+                Connect with other developers
+              </p>
+              <button class="button button--primary">Join Discussion</button>
+            </div>
+
+            <div class="bg-surface border rounded-lg p-6 text-center">
+              <div class="text-3xl mb-3">🎫</div>
+              <h3 class="font-semibold mb-2">Support Tickets</h3>
+              <p class="text-sm text-muted mb-4">Get help from our team</p>
+              <button class="button button--primary">Submit Ticket</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

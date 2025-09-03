@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Split & Pay</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="about.html" class="btn btn--secondary btn--small">Print</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="container">
+            <div class="text-center mb-8">
+              <h1>About Split & Pay</h1>
+              <p class="text-h3 text-muted">
+                Making bill splitting simple and fair
+              </p>
+            </div>
+
+            <!-- What is Split & Pay -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>What is Split & Pay?</h2>
+              </div>
+              <div class="card__body">
+                <p>
+                  Split & Pay is a group expense tracker designed to make
+                  splitting bills simple and fair for friends, roommates, and
+                  teams. Whether you're planning a trip, managing household
+                  expenses, or tracking project costs, Split & Pay helps you
+                  keep track of who owes what and provides clear settlement
+                  plans.
+                </p>
+
+                <h3 class="mt-6 mb-4">Key Features</h3>
+                <div class="grid grid-2 gap-4">
+                  <div>
+                    <h4>Multiple Split Types</h4>
+                    <ul class="text-muted">
+                      <li>Equal splits for shared expenses</li>
+                      <li>Shares for different consumption levels</li>
+                      <li>Percentage-based splits</li>
+                      <li>Itemized splits for detailed tracking</li>
+                      <li>Custom weight-based splits</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4>Smart Settlement</h4>
+                    <ul class="text-muted">
+                      <li>Minimized transfer plans</li>
+                      <li>Payment link placeholders</li>
+                      <li>Multiple payment methods</li>
+                      <li>Fair rounding adjustments</li>
+                      <li>Alternative settlement options</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4>Comprehensive Tracking</h4>
+                    <ul class="text-muted">
+                      <li>Receipt management (placeholder)</li>
+                      <li>Category-based organization</li>
+                      <li>Multi-currency support (visual)</li>
+                      <li>Detailed expense breakdowns</li>
+                      <li>Member balance tracking</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4>Privacy & Control</h4>
+                    <ul class="text-muted">
+                      <li>Local data storage (v1)</li>
+                      <li>No external dependencies</li>
+                      <li>Export capabilities (future)</li>
+                      <li>Masked payment handles</li>
+                      <li>Print-friendly summaries</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>How Split & Pay Works</h2>
+              </div>
+              <div class="card__body">
+                <div class="grid grid-3 gap-6">
+                  <div class="text-center">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3>1. Create Groups</h3>
+                    <p class="text-muted">
+                      Set up groups for different contexts - trips, roommates,
+                      office teams, or any shared expense scenario.
+                    </p>
+                  </div>
+
+                  <div class="text-center">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3>2. Add Expenses</h3>
+                    <p class="text-muted">
+                      Log expenses with flexible split options. Choose the
+                      method that best fits your situation - equal, shares,
+                      percentages, or custom weights.
+                    </p>
+                  </div>
+
+                  <div class="text-center">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3>3. Settle Up</h3>
+                    <p class="text-muted">
+                      Get optimized settlement plans that minimize the number of
+                      transfers needed to balance all accounts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Split Types Explained -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>Split Types Explained</h2>
+              </div>
+              <div class="card__body">
+                <div class="grid gap-6">
+                  <div>
+                    <h3>Equal Split</h3>
+                    <p class="text-muted">
+                      Everyone pays the same amount. Perfect for shared meals,
+                      group activities, or when consumption is roughly equal.
+                    </p>
+                    <div class="bg-info p-3 rounded mt-2">
+                      <strong>Example:</strong> ₹1,200 taxi fare split equally
+                      among 4 people = ₹300 each
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3>Shares Split</h3>
+                    <p class="text-muted">
+                      Use whole numbers to represent consumption levels. Great
+                      for situations where some people consume more than others.
+                    </p>
+                    <div class="bg-info p-3 rounded mt-2">
+                      <strong>Example:</strong> ₹1,860 lunch with shares 1-2-1-0
+                      = ₹465, ₹930, ₹465, ₹0
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3>Percentage Split</h3>
+                    <p class="text-muted">
+                      Split by exact percentages. Useful when you have specific
+                      ratios or when shares don't work well.
+                    </p>
+                    <div class="bg-info p-3 rounded mt-2">
+                      <strong>Example:</strong> ₹3,600 water sports split
+                      25%-25%-25%-25% = ₹900 each
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3>Itemized Split</h3>
+                    <p class="text-muted">
+                      Assign individual items to specific people. Perfect for
+                      shopping trips or when people buy different things.
+                    </p>
+                    <div class="bg-info p-3 rounded mt-2">
+                      <strong>Example:</strong> Grocery bill with individual
+                      items assigned to each person
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3>Weights Split</h3>
+                    <p class="text-muted">
+                      Use decimal weights for precise splitting. Ideal for
+                      complex scenarios or when percentages are too rigid.
+                    </p>
+                    <div class="bg-info p-3 rounded mt-2">
+                      <strong>Example:</strong> ₹9,800 resort booking with
+                      weights 0.3-0.3-0.2-0.2
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settlement Algorithm -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>Settlement Algorithm</h2>
+              </div>
+              <div class="card__body">
+                <p>
+                  Split & Pay uses a minimal cash flow algorithm to determine
+                  the most efficient way to settle all balances. The goal is to
+                  minimize the number of transfers needed while ensuring
+                  everyone gets paid what they're owed.
+                </p>
+
+                <h3 class="mt-6 mb-4">How It Works</h3>
+                <ol class="text-muted">
+                  <li>
+                    <strong>Calculate Net Balances:</strong> Determine who owes
+                    money and who is owed money
+                  </li>
+                  <li>
+                    <strong>Find Optimal Transfers:</strong> Identify the
+                    minimum number of payments needed
+                  </li>
+                  <li>
+                    <strong>Handle Rounding:</strong> Adjust the last payment to
+                    account for rounding differences
+                  </li>
+                  <li>
+                    <strong>Provide Alternatives:</strong> Offer different
+                    settlement strategies
+                  </li>
+                </ol>
+
+                <div class="nudge nudge--info mt-4">
+                  <strong>Fairness Note:</strong> The algorithm ensures that
+                  rounding differences are handled fairly, typically by
+                  adjusting the last payment in the sequence.
+                </div>
+              </div>
+            </div>
+
+            <!-- Version Information -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>Version 1.0 - Static Prototype</h2>
+              </div>
+              <div class="card__body">
+                <div class="nudge nudge--warning">
+                  <strong>Important:</strong> This is a static HTML/CSS
+                  prototype. No calculations, payments, or data persistence are
+                  functional in this version.
+                </div>
+
+                <h3 class="mt-6 mb-4">What Works (Visual Only)</h3>
+                <ul class="text-muted">
+                  <li>Complete user interface and navigation</li>
+                  <li>All split type forms and controls</li>
+                  <li>Sample data and mock calculations</li>
+                  <li>Responsive design and themes</li>
+                  <li>Print-friendly layouts</li>
+                  <li>Accessibility features</li>
+                </ul>
+
+                <h3 class="mt-6 mb-4">What's Not Functional</h3>
+                <ul class="text-muted">
+                  <li>Real expense calculations</li>
+                  <li>Payment link generation</li>
+                  <li>Data storage and persistence</li>
+                  <li>Receipt upload and OCR</li>
+                  <li>Multi-currency conversion</li>
+                  <li>Email/SMS notifications</li>
+                </ul>
+
+                <h3 class="mt-6 mb-4">Future Enhancements</h3>
+                <ul class="text-muted">
+                  <li>JavaScript-based calculation engine</li>
+                  <li>Real payment provider integration</li>
+                  <li>Local storage and data persistence</li>
+                  <li>Receipt scanning and OCR</li>
+                  <li>Multi-currency with live exchange rates</li>
+                  <li>Offline-first Progressive Web App</li>
+                  <li>Import/export functionality</li>
+                  <li>Advanced analytics and insights</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Technical Details -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>Technical Details</h2>
+              </div>
+              <div class="card__body">
+                <div class="grid grid-2 gap-6">
+                  <div>
+                    <h3>Built With</h3>
+                    <ul class="text-muted">
+                      <li>HTML5 semantic markup</li>
+                      <li>CSS3 with custom properties</li>
+                      <li>BEM methodology for CSS</li>
+                      <li>Responsive design principles</li>
+                      <li>Accessibility best practices</li>
+                      <li>Print-optimized stylesheets</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3>Browser Support</h3>
+                    <ul class="text-muted">
+                      <li>Chrome 90+</li>
+                      <li>Firefox 88+</li>
+                      <li>Safari 14+</li>
+                      <li>Edge 90+</li>
+                      <li>Mobile browsers</li>
+                      <li>Print media</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3 class="mt-6 mb-4">CSS Architecture</h3>
+                <ul class="text-muted">
+                  <li>
+                    <strong>tokens.css:</strong> Design tokens (colors, spacing,
+                    typography)
+                  </li>
+                  <li>
+                    <strong>base.css:</strong> Reset, typography, and base
+                    element styles
+                  </li>
+                  <li>
+                    <strong>utilities.css:</strong> Utility classes for layout
+                    and spacing
+                  </li>
+                  <li>
+                    <strong>components.css:</strong> Reusable component styles
+                  </li>
+                  <li>
+                    <strong>layouts.css:</strong> Page layout and structure
+                  </li>
+                  <li>
+                    <strong>themes.css:</strong> Light, dark, and high-contrast
+                    themes
+                  </li>
+                  <li><strong>print.css:</strong> Print-optimized styles</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- License & Credits -->
+            <div class="card mb-6">
+              <div class="card__header">
+                <h2>License & Credits</h2>
+              </div>
+              <div class="card__body">
+                <p>
+                  Split & Pay is released under the MIT License, making it free
+                  to use, modify, and distribute for both personal and
+                  commercial projects.
+                </p>
+
+                <h3 class="mt-6 mb-4">Credits</h3>
+                <ul class="text-muted">
+                  <li>Design system inspired by modern web standards</li>
+                  <li>Icons from Unicode emoji set</li>
+                  <li>Typography using system fonts for optimal performance</li>
+                  <li>Color palette based on accessibility guidelines</li>
+                  <li>Layout patterns from established design systems</li>
+                </ul>
+
+                <h3 class="mt-6 mb-4">Contributing</h3>
+                <p class="text-muted">
+                  This is a prototype project. For production use, consider
+                  implementing the JavaScript functionality, adding proper data
+                  persistence, and integrating with real payment providers.
+                </p>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="card">
+              <div class="card__header">
+                <h2>Get Started</h2>
+              </div>
+              <div class="card__body text-center">
+                <p class="mb-6">
+                  Ready to start tracking your group expenses? Create your first
+                  group and add some expenses to see how it works.
+                </p>
+
+                <div class="flex gap-4 justify-center">
+                  <a href="index.html" class="btn btn--primary"
+                    >Go to Dashboard</a
+                  >
+                  <a href="add-expense.html" class="btn btn--secondary"
+                    >Add First Expense</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Workspace - AI Homework Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="theme-light">
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">AI Homework Assistant</h1>
+                <div class="header__search">
+                    <input type="search" placeholder="Search subjects, topics..." class="search-input" disabled>
+                    <button class="search-button" disabled>🔍</button>
+                </div>
+                <div class="header__actions">
+                    <button class="profile-chip">
+                        <span class="profile-chip__avatar">👤</span>
+                        <span class="profile-chip__name">Student</span>
+                    </button>
+                    <button class="print-link" onclick="window.print()">🖨️ Print</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="index.html" class="nav-link">📊 Dashboard</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="subjects.html" class="nav-link">📚 Subjects</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="progress.html" class="nav-link">📈 Progress</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="settings.html" class="nav-link">⚙️ Settings</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="about.html" class="nav-link">ℹ️ About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__subjects">
+                <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+                <div class="subject-chips">
+                    <span class="subject-chip">Math</span>
+                    <span class="subject-chip">Science</span>
+                    <span class="subject-chip">Literature</span>
+                    <span class="subject-chip">History</span>
+                    <span class="subject-chip">CS</span>
+                </div>
+            </div>
+
+            <div class="sidebar__theme">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="workspace">
+                <!-- Problem Header -->
+                <header class="workspace-header">
+                    <div class="workspace-header__breadcrumb">
+                        <a href="subjects.html#math">Mathematics</a> → 
+                        <a href="subjects.html#algebra">Algebra</a> → 
+                        <span>Linear Equations</span>
+                    </div>
+                    <h1 class="workspace-header__title">Problem #12: Linear Equation</h1>
+                    <p class="workspace-header__intro">
+                        We'll solve this by breaking it into small steps. Try each <strong>hint</strong> in order before revealing the solution.
+                    </p>
+                </header>
+
+                <!-- Problem Input Panel -->
+                <section class="problem-input">
+                    <h2 class="section-title">Problem Statement</h2>
+                    <div class="problem-panel">
+                        <div class="problem-panel__content">
+                            <h3 class="problem-panel__title">Solve for x: 3x + 5 = 20</h3>
+                            <div class="problem-context">
+                                <div class="context-item">
+                                    <strong>Given:</strong> 3x + 5 = 20
+                                </div>
+                                <div class="context-item">
+                                    <strong>Unknown:</strong> x
+                                </div>
+                                <div class="context-item">
+                                    <strong>Goal:</strong> Find the value of x
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Guided Plan -->
+                <section class="guided-plan">
+                    <h2 class="section-title">Guided Plan</h2>
+                    <div class="plan-outline">
+                        <ol class="plan-list">
+                            <li class="plan-list__item plan-list__item--active">
+                                <span class="plan-list__number">1</span>
+                                <span class="plan-list__text">Isolate the variable term</span>
+                            </li>
+                            <li class="plan-list__item">
+                                <span class="plan-list__number">2</span>
+                                <span class="plan-list__text">Subtract 5 from both sides</span>
+                            </li>
+                            <li class="plan-list__item">
+                                <span class="plan-list__number">3</span>
+                                <span class="plan-list__text">Divide both sides by 3</span>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Step Blocks -->
+                <section class="step-blocks">
+                    <!-- Step 1 -->
+                    <div class="step-block">
+                        <div class="step-block__header">
+                            <h3 class="step-block__title">Step 1: Isolate the Variable Term</h3>
+                            <p class="step-block__description">
+                                We need to get the term with x by itself on one side of the equation.
+                            </p>
+                        </div>
+
+                        <div class="step-block__content">
+                            <!-- Hint Ladder -->
+                            <div class="hint-ladder">
+                                <details class="hint hint--level-1">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">💡</span>
+                                        <span class="hint__text">Hint 1: Undo addition first</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>Since we're adding 5 to 3x, we need to subtract 5 to undo this operation.</p>
+                                    </div>
+                                </details>
+
+                                <details class="hint hint--level-2">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">💡💡</span>
+                                        <span class="hint__text">Hint 2: Subtract 5 from both sides</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>Remember: whatever you do to one side, you must do to the other side to keep the equation balanced.</p>
+                                        <p>3x + 5 - 5 = 20 - 5</p>
+                                    </div>
+                                </details>
+
+                                <details class="hint hint--final">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">🎯</span>
+                                        <span class="hint__text">Final Hint: The result</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>After subtracting 5 from both sides: 3x = 15</p>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Student Action Area -->
+                            <div class="student-action">
+                                <div class="socratic-prompt">
+                                    <em>What operation should you perform first? Why?</em>
+                                </div>
+                                <div class="action-input">
+                                    <label for="step1-answer" class="action-input__label">Your answer:</label>
+                                    <input type="text" id="step1-answer" class="action-input__field" placeholder="Type your answer here..." disabled>
+                                    <button class="action-input__button" disabled>Check</button>
+                                </div>
+                            </div>
+
+                            <!-- Common Mistake -->
+                            <div class="common-mistake">
+                                <div class="common-mistake__icon">⚠️</div>
+                                <div class="common-mistake__content">
+                                    <strong>Common Mistake:</strong> Trying to divide by 3 first instead of subtracting 5.
+                                    <p>Remember the order of operations - addition/subtraction comes before multiplication/division when solving equations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-block">
+                        <div class="step-block__header">
+                            <h3 class="step-block__title">Step 2: Subtract 5 from Both Sides</h3>
+                            <p class="step-block__description">
+                                Now we have 3x = 15. The next step is to isolate x by dividing.
+                            </p>
+                        </div>
+
+                        <div class="step-block__content">
+                            <!-- Hint Ladder -->
+                            <div class="hint-ladder">
+                                <details class="hint hint--level-1">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">💡</span>
+                                        <span class="hint__text">Hint 1: What operation isolates x?</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>Since x is multiplied by 3, we need to divide by 3 to get x by itself.</p>
+                                    </div>
+                                </details>
+
+                                <details class="hint hint--level-2">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">💡💡</span>
+                                        <span class="hint__text">Hint 2: Divide both sides by 3</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>3x ÷ 3 = 15 ÷ 3</p>
+                                        <p>This gives us: x = 5</p>
+                                    </div>
+                                </details>
+
+                                <details class="hint hint--final">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">🎯</span>
+                                        <span class="hint__text">Final Hint: Check your work</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>Verify: 3(5) + 5 = 15 + 5 = 20 ✓</p>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Student Action Area -->
+                            <div class="student-action">
+                                <div class="socratic-prompt">
+                                    <em>Which formula or rule applies here? Why?</em>
+                                </div>
+                                <div class="action-input">
+                                    <label for="step2-answer" class="action-input__label">Your answer:</label>
+                                    <input type="text" id="step2-answer" class="action-input__field" placeholder="Type your answer here..." disabled>
+                                    <button class="action-input__button" disabled>Check</button>
+                                </div>
+                            </div>
+
+                            <!-- Common Mistake -->
+                            <div class="common-mistake">
+                                <div class="common-mistake__icon">⚠️</div>
+                                <div class="common-mistake__content">
+                                    <strong>Common Mistake:</strong> Forgetting to divide both sides equally.
+                                    <p>If you only divide the left side by 3, the equation becomes unbalanced.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-block">
+                        <div class="step-block__header">
+                            <h3 class="step-block__title">Step 3: Divide Both Sides by 3</h3>
+                            <p class="step-block__description">
+                                Final step to get x = 5 and verify the solution.
+                            </p>
+                        </div>
+
+                        <div class="step-block__content">
+                            <!-- Hint Ladder -->
+                            <div class="hint-ladder">
+                                <details class="hint hint--level-1">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">💡</span>
+                                        <span class="hint__text">Hint 1: Perform the division</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>3x ÷ 3 = x and 15 ÷ 3 = 5</p>
+                                    </div>
+                                </details>
+
+                                <details class="hint hint--level-2">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">💡💡</span>
+                                        <span class="hint__text">Hint 2: Verify the solution</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>Substitute x = 5 back into the original equation: 3(5) + 5 = 20</p>
+                                    </div>
+                                </details>
+
+                                <details class="hint hint--final">
+                                    <summary class="hint__summary">
+                                        <span class="hint__icon">🎯</span>
+                                        <span class="hint__text">Final Hint: The complete solution</span>
+                                    </summary>
+                                    <div class="hint__content">
+                                        <p>Solution: x = 5</p>
+                                        <p>Verification: 3(5) + 5 = 15 + 5 = 20 ✓</p>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Student Action Area -->
+                            <div class="student-action">
+                                <div class="socratic-prompt">
+                                    <em>Can you check units/signs/reasonableness?</em>
+                                </div>
+                                <div class="action-input">
+                                    <label for="step3-answer" class="action-input__label">Your answer:</label>
+                                    <input type="text" id="step3-answer" class="action-input__field" placeholder="Type your answer here..." disabled>
+                                    <button class="action-input__button" disabled>Check</button>
+                                </div>
+                            </div>
+
+                            <!-- Common Mistake -->
+                            <div class="common-mistake">
+                                <div class="common-mistake__icon">⚠️</div>
+                                <div class="common-mistake__content">
+                                    <strong>Common Mistake:</strong> Not verifying the solution.
+                                    <p>Always substitute your answer back into the original equation to check if it's correct.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Checks for Understanding -->
+                <section class="checks-understanding">
+                    <h2 class="section-title">Checks for Understanding</h2>
+                    <div class="checks-grid">
+                        <div class="check-item">
+                            <fieldset class="check-fieldset">
+                                <legend class="check-legend">True or False: When solving 3x + 5 = 20, you should divide by 3 first.</legend>
+                                <div class="check-options">
+                                    <label class="check-option">
+                                        <input type="radio" name="check1" value="true" disabled>
+                                        <span class="check-option__text">True</span>
+                                    </label>
+                                    <label class="check-option">
+                                        <input type="radio" name="check1" value="false" disabled>
+                                        <span class="check-option__text">False</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="check-explanation">
+                                <strong>Explanation:</strong> False. You should subtract 5 first to isolate the variable term, then divide by 3.
+                            </div>
+                        </div>
+
+                        <div class="check-item">
+                            <fieldset class="check-fieldset">
+                                <legend class="check-legend">What is the solution to 3x + 5 = 20?</legend>
+                                <div class="check-options">
+                                    <label class="check-option">
+                                        <input type="radio" name="check2" value="a" disabled>
+                                        <span class="check-option__text">x = 3</span>
+                                    </label>
+                                    <label class="check-option">
+                                        <input type="radio" name="check2" value="b" disabled>
+                                        <span class="check-option__text">x = 5</span>
+                                    </label>
+                                    <label class="check-option">
+                                        <input type="radio" name="check2" value="c" disabled>
+                                        <span class="check-option__text">x = 15</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="check-explanation">
+                                <strong>Explanation:</strong> x = 5. After subtracting 5 from both sides: 3x = 15, then dividing by 3: x = 5.
+                            </div>
+                        </div>
+
+                        <div class="check-item">
+                            <fieldset class="check-fieldset">
+                                <legend class="check-legend">Why is it important to perform the same operation on both sides of an equation?</legend>
+                                <div class="check-options">
+                                    <label class="check-option">
+                                        <input type="checkbox" name="check3" value="a" disabled>
+                                        <span class="check-option__text">To maintain balance</span>
+                                    </label>
+                                    <label class="check-option">
+                                        <input type="checkbox" name="check3" value="b" disabled>
+                                        <span class="check-option__text">To get the right answer</span>
+                                    </label>
+                                    <label class="check-option">
+                                        <input type="checkbox" name="check3" value="c" disabled>
+                                        <span class="check-option__text">To follow mathematical rules</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="check-explanation">
+                                <strong>Explanation:</strong> All three are correct! Maintaining balance ensures the equation remains true, leading to the correct answer while following mathematical principles.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Worked Solution -->
+                <section class="worked-solution">
+                    <h2 class="section-title">Worked Solution</h2>
+                    <div class="solution-panel">
+                        <div class="solution-panel__content">
+                            <h3 class="solution-panel__title">Complete Solution</h3>
+                            <div class="solution-steps">
+                                <div class="solution-step">
+                                    <div class="solution-step__label">Original Equation</div>
+                                    <div class="solution-step__math">3x + 5 = 20</div>
+                                </div>
+                                <div class="solution-step">
+                                    <div class="solution-step__label">Step 1: Subtract 5 from both sides</div>
+                                    <div class="solution-step__math">3x + 5 - 5 = 20 - 5</div>
+                                    <div class="solution-step__math">3x = 15</div>
+                                </div>
+                                <div class="solution-step">
+                                    <div class="solution-step__label">Step 2: Divide both sides by 3</div>
+                                    <div class="solution-step__math">3x ÷ 3 = 15 ÷ 3</div>
+                                    <div class="solution-step__math">x = 5</div>
+                                </div>
+                                <div class="solution-step">
+                                    <div class="solution-step__label">Verification</div>
+                                    <div class="solution-step__math">3(5) + 5 = 15 + 5 = 20 ✓</div>
+                                </div>
+                            </div>
+                            <div class="solution-answer">
+                                <strong>Answer: x = 5</strong>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rubric & Reflection -->
+                <section class="rubric-reflection">
+                    <h2 class="section-title">Rubric & Reflection</h2>
+                    <div class="rubric-section">
+                        <h3 class="rubric-section__title">Scoring Rubric</h3>
+                        <div class="rubric-table">
+                            <div class="rubric-row rubric-row--header">
+                                <div class="rubric-cell rubric-cell--header">Criteria</div>
+                                <div class="rubric-cell rubric-cell--header">Points</div>
+                                <div class="rubric-cell rubric-cell--header">Description</div>
+                            </div>
+                            <div class="rubric-row">
+                                <div class="rubric-cell">Setup</div>
+                                <div class="rubric-cell">1</div>
+                                <div class="rubric-cell">Correctly identified given, unknown, and goal</div>
+                            </div>
+                            <div class="rubric-row">
+                                <div class="rubric-cell">Method</div>
+                                <div class="rubric-cell">2</div>
+                                <div class="rubric-cell">Used correct order of operations and maintained equation balance</div>
+                            </div>
+                            <div class="rubric-row">
+                                <div class="rubric-cell">Accuracy</div>
+                                <div class="rubric-cell">1</div>
+                                <div class="rubric-cell">Correct final answer (x = 5)</div>
+                            </div>
+                            <div class="rubric-row">
+                                <div class="rubric-cell">Explanation</div>
+                                <div class="rubric-cell">1</div>
+                                <div class="rubric-cell">Clear reasoning and verification</div>
+                            </div>
+                        </div>
+                        <div class="rubric-total">
+                            <strong>Total: 5 points</strong>
+                        </div>
+                    </div>
+
+                    <div class="reflection-section">
+                        <h3 class="reflection-section__title">Self-Reflection</h3>
+                        <div class="reflection-prompts">
+                            <div class="reflection-prompt">
+                                <strong>What tripped you up?</strong>
+                                <textarea class="reflection-input" placeholder="Write your thoughts here..." disabled></textarea>
+                            </div>
+                            <div class="reflection-prompt">
+                                <strong>Next time you'll...</strong>
+                                <textarea class="reflection-input" placeholder="Write your thoughts here..." disabled></textarea>
+                            </div>
+                            <div class="reflection-prompt">
+                                <strong>One-line summary of the method used:</strong>
+                                <textarea class="reflection-input" placeholder="Write your thoughts here..." disabled></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2024 AI Homework Assistant. Built for learning, not cheating.</p>
+                <p>Version 1.0 • <a href="about.html">About</a> • <a href="settings.html">Help</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

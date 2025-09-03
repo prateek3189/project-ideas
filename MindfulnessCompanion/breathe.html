@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Breathe</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__link">
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a href="meditate.html" class="sidebar__link">
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a
+            href="breathe.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a href="checkin.html" class="sidebar__link">
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a href="insights.html" class="sidebar__link">
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a href="library.html" class="sidebar__link">
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a href="settings.html" class="sidebar__link">
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Breathing Coach</h2>
+            <p class="welcome__subtitle">Find your rhythm, find your calm</p>
+          </section>
+
+          <section class="breathing-patterns">
+            <h3 class="section-title">Choose Your Pattern</h3>
+            <div class="breathing-patterns">
+              <div class="pattern-chip pattern-chip--active">
+                <div class="pattern-chip__name">Box 4-4-4-4</div>
+                <div class="pattern-chip__timing">
+                  Inhale 4 • Hold 4 • Exhale 4 • Hold 4
+                </div>
+              </div>
+
+              <div class="pattern-chip">
+                <div class="pattern-chip__name">4-7-8</div>
+                <div class="pattern-chip__timing">
+                  Inhale 4 • Hold 7 • Exhale 8
+                </div>
+              </div>
+
+              <div class="pattern-chip">
+                <div class="pattern-chip__name">Coherence 5-5</div>
+                <div class="pattern-chip__timing">Inhale 5 • Exhale 5</div>
+              </div>
+
+              <div class="pattern-chip">
+                <div class="pattern-chip__name">Triangle 4-4-8</div>
+                <div class="pattern-chip__timing">
+                  Inhale 4 • Hold 4 • Exhale 8
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="breath-coach">
+            <h3 class="section-title">Your Breath Ring</h3>
+            <div class="breath-ring">
+              <div class="breath-ring__container">
+                <div class="breath-ring__ring"></div>
+                <div class="breath-ring__phase breath-ring__phase--inhale">
+                  Inhale
+                </div>
+                <div class="breath-ring__phase breath-ring__phase--hold">
+                  Hold
+                </div>
+                <div class="breath-ring__phase breath-ring__phase--exhale">
+                  Exhale
+                </div>
+                <div class="breath-ring__count">4</div>
+              </div>
+            </div>
+
+            <div class="breath-controls">
+              <div class="breath-controls__row">
+                <div class="breath-controls__group">
+                  <label class="breath-controls__label">Voice Guide</label>
+                  <div class="breath-controls__toggle">
+                    <span class="toggle-option toggle-option--active">On</span>
+                    <span class="toggle-option">Off</span>
+                  </div>
+                </div>
+
+                <div class="breath-controls__group">
+                  <label class="breath-controls__label">Bell Sounds</label>
+                  <div class="breath-controls__toggle">
+                    <span class="toggle-option toggle-option--active">On</span>
+                    <span class="toggle-option">Off</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="breath-controls__row">
+                <div class="breath-controls__group">
+                  <label class="breath-controls__label">Pace</label>
+                  <div class="breath-controls__toggle">
+                    <span class="toggle-option">Slow</span>
+                    <span class="toggle-option toggle-option--active"
+                      >Medium</span
+                    >
+                    <span class="toggle-option">Fast</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="breathing-tips">
+            <h3 class="section-title">Breathing Tips</h3>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <h4>Nose Breathing</h4>
+                <p>
+                  Breathe through your nose to filter air, warm it, and activate
+                  your parasympathetic nervous system for relaxation.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Relax Your Shoulders</h4>
+                <p>
+                  Keep your shoulders relaxed and down. Tension in the upper
+                  body can restrict natural breathing patterns.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Belly Breathing</h4>
+                <p>
+                  Allow your belly to expand on inhale and contract on exhale.
+                  This engages your diaphragm for deeper, more efficient
+                  breathing.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <h4>Consistent Rhythm</h4>
+                <p>
+                  Maintain a steady, consistent rhythm. The regularity helps
+                  calm your nervous system and focus your mind.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="breathing-benefits">
+            <h3 class="section-title">Why Breathing Works</h3>
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <div class="benefit-card__icon">🧠</div>
+                <h4>Calms the Mind</h4>
+                <p>
+                  Controlled breathing activates the parasympathetic nervous
+                  system, reducing stress hormones and promoting mental clarity.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-card__icon">💓</div>
+                <h4>Regulates Heart Rate</h4>
+                <p>
+                  Deep breathing can lower your heart rate and blood pressure,
+                  creating a sense of physical calm and stability.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-card__icon">😌</div>
+                <h4>Reduces Anxiety</h4>
+                <p>
+                  Focusing on breath redirects attention away from anxious
+                  thoughts and creates a natural relaxation response.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <div class="benefit-card__icon">⚡</div>
+                <h4>Improves Focus</h4>
+                <p>
+                  Breath awareness trains your mind to stay present, enhancing
+                  concentration and reducing mental distractions.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="quick-breathing">
+            <h3 class="section-title">Quick Breathing Exercises</h3>
+            <div class="quick-exercises">
+              <div class="quick-exercise">
+                <h4>Emergency Reset (1 minute)</h4>
+                <p>
+                  Take 4 deep breaths: inhale for 4 counts, hold for 4, exhale
+                  for 4, hold for 4. Repeat 4 times.
+                </p>
+                <button class="quick-exercise__start">Start Now</button>
+              </div>
+
+              <div class="quick-exercise">
+                <h4>Energy Boost (2 minutes)</h4>
+                <p>
+                  Quick, energizing breaths: inhale for 2 counts, exhale for 2
+                  counts. Increase pace gradually.
+                </p>
+                <button class="quick-exercise__start">Start Now</button>
+              </div>
+
+              <div class="quick-exercise">
+                <h4>Sleep Prep (3 minutes)</h4>
+                <p>
+                  Slow, deep breathing: inhale for 6 counts, exhale for 8
+                  counts. Focus on the exhale being longer.
+                </p>
+                <button class="quick-exercise__start">Start Now</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

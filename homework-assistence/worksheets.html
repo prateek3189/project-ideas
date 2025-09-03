@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheets - AI Homework Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="theme-light">
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">AI Homework Assistant</h1>
+                <div class="header__search">
+                    <input type="search" placeholder="Search subjects, topics..." class="search-input" disabled>
+                    <button class="search-button" disabled>🔍</button>
+                </div>
+                <div class="header__actions">
+                    <button class="profile-chip">
+                        <span class="profile-chip__avatar">👤</span>
+                        <span class="profile-chip__name">Student</span>
+                    </button>
+                    <button class="print-link" onclick="window.print()">🖨️ Print</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="index.html" class="nav-link">📊 Dashboard</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="subjects.html" class="nav-link">📚 Subjects</a>
+                    </li>
+                    <li class="nav-list__item nav-list__item--active">
+                        <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="progress.html" class="nav-link">📈 Progress</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="settings.html" class="nav-link">⚙️ Settings</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="about.html" class="nav-link">ℹ️ About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__subjects">
+                <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+                <div class="subject-chips">
+                    <span class="subject-chip">Math</span>
+                    <span class="subject-chip">Science</span>
+                    <span class="subject-chip">Literature</span>
+                    <span class="subject-chip">History</span>
+                    <span class="subject-chip">CS</span>
+                </div>
+            </div>
+
+            <div class="sidebar__theme">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="worksheets-page">
+                <!-- Page Header -->
+                <header class="page-header">
+                    <h1 class="page-header__title">Practice Worksheets</h1>
+                    <p class="page-header__subtitle">Printable problem sets organized by topic and difficulty level</p>
+                    <div class="print-note">
+                        <strong>💡 Tip:</strong> Use the print button to generate a practice set with space for your work.
+                    </div>
+                </header>
+
+                <!-- Topic Selector -->
+                <section class="topic-selector">
+                    <h2 class="section-title">Select Topic</h2>
+                    <div class="topic-tabs">
+                        <button class="topic-tab topic-tab--active">Algebra</button>
+                        <button class="topic-tab">Geometry</button>
+                        <button class="topic-tab">Physics</button>
+                        <button class="topic-tab">Literature</button>
+                        <button class="topic-tab">History</button>
+                    </div>
+                </section>
+
+                <!-- Problem Sets -->
+                <section class="problem-sets">
+                    <h2 class="section-title">Algebra Problems</h2>
+                    
+                    <!-- Linear Equations Set -->
+                    <div class="problem-set">
+                        <h3 class="problem-set__title">Linear Equations</h3>
+                        <div class="problem-grid">
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#1</span>
+                                    <span class="problem-card__level problem-card__level--easy">Easy</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Basic Linear Equation</h4>
+                                    <p class="problem-card__problem">Solve for x: 2x + 3 = 11</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#2</span>
+                                    <span class="problem-card__level problem-card__level--medium">Medium</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Linear Equation with Fractions</h4>
+                                    <p class="problem-card__problem">Solve for x: (1/2)x + 4 = 7</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#3</span>
+                                    <span class="problem-card__level problem-card__level--medium">Medium</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Linear Equation with Decimals</h4>
+                                    <p class="problem-card__problem">Solve for x: 0.5x - 2.5 = 1.5</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#4</span>
+                                    <span class="problem-card__level problem-card__level--hard">Hard</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Linear Equation with Variables on Both Sides</h4>
+                                    <p class="problem-card__problem">Solve for x: 3x + 2 = 2x + 8</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#5</span>
+                                    <span class="problem-card__level problem-card__level--hard">Hard</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Linear Equation with Parentheses</h4>
+                                    <p class="problem-card__problem">Solve for x: 2(x + 3) = 4x - 6</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#6</span>
+                                    <span class="problem-card__level problem-card__level--easy">Easy</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Simple Linear Equation</h4>
+                                    <p class="problem-card__problem">Solve for x: x - 5 = 10</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quadratic Equations Set -->
+                    <div class="problem-set">
+                        <h3 class="problem-set__title">Quadratic Equations</h3>
+                        <div class="problem-grid">
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#7</span>
+                                    <span class="problem-card__level problem-card__level--medium">Medium</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Factoring Quadratic</h4>
+                                    <p class="problem-card__problem">Solve: x² + 5x + 6 = 0</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#8</span>
+                                    <span class="problem-card__level problem-card__level--hard">Hard</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Quadratic Formula</h4>
+                                    <p class="problem-card__problem">Solve: 2x² - 7x + 3 = 0</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#9</span>
+                                    <span class="problem-card__level problem-card__level--medium">Medium</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Completing the Square</h4>
+                                    <p class="problem-card__problem">Solve: x² + 6x + 5 = 0</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#10</span>
+                                    <span class="problem-card__level problem-card__level--hard">Hard</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Complex Quadratic</h4>
+                                    <p class="problem-card__problem">Solve: 3x² + 2x - 8 = 0</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Systems of Equations Set -->
+                    <div class="problem-set">
+                        <h3 class="problem-set__title">Systems of Equations</h3>
+                        <div class="problem-grid">
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#11</span>
+                                    <span class="problem-card__level problem-card__level--medium">Medium</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Substitution Method</h4>
+                                    <p class="problem-card__problem">Solve: y = 2x + 1 and 3x + y = 9</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="problem-card">
+                                <div class="problem-card__header">
+                                    <span class="problem-card__number">#12</span>
+                                    <span class="problem-card__level problem-card__level--hard">Hard</span>
+                                </div>
+                                <div class="problem-card__content">
+                                    <h4 class="problem-card__title">Elimination Method</h4>
+                                    <p class="problem-card__problem">Solve: 2x + 3y = 12 and 4x - y = 5</p>
+                                    <div class="problem-card__actions">
+                                        <a href="workspace.html" class="problem-card__button">Show Plan</a>
+                                        <button class="problem-card__print" onclick="window.print()">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Print Instructions -->
+                <section class="print-instructions">
+                    <h2 class="section-title">Printing Instructions</h2>
+                    <div class="instructions-content">
+                        <div class="instruction-item">
+                            <h3>📋 Individual Problems</h3>
+                            <p>Click the "Print" button on any problem card to generate a single problem worksheet with space for your work.</p>
+                        </div>
+                        <div class="instruction-item">
+                            <h3>📚 Complete Sets</h3>
+                            <p>Use your browser's print function (Ctrl+P / Cmd+P) to print the entire page as a complete practice set.</p>
+                        </div>
+                        <div class="instruction-item">
+                            <h3>🎯 Custom Worksheets</h3>
+                            <p>Select multiple problems and use the print function to create your own custom practice set.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2024 AI Homework Assistant. Built for learning, not cheating.</p>
+                <p>Version 1.0 • <a href="about.html">About</a> • <a href="settings.html">Help</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

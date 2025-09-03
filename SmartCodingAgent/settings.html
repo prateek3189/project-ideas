@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Coding Agent - Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__title">
+          <span class="shell__icon">🤖</span>
+          Smart Coding Agent
+        </h1>
+        <div class="shell__controls">
+          <div class="repo-selector">
+            <span class="repo-selector__name">my-project</span>
+            <span class="badge badge--branch">main</span>
+          </div>
+          <button class="btn btn--ghost" aria-label="Print settings">
+            <span class="btn__icon">🖨️</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="nav__icon">💻</span>
+              Workspace
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="diff.html" class="nav__link">
+              <span class="nav__icon">📊</span>
+              Diff Review
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="tests.html" class="nav__link">
+              <span class="nav__icon">🧪</span>
+              Tests
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="perf.html" class="nav__link">
+              <span class="nav__icon">⚡</span>
+              Performance
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="playbooks.html" class="nav__link">
+              <span class="nav__icon">📚</span>
+              Playbooks
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="settings.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="nav__icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">
+              <span class="nav__icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+
+        <div class="project-tree">
+          <h3 class="project-tree__title">Settings Categories</h3>
+          <ul class="project-tree__list">
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🤖</span>
+              AI Model
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🎨</span>
+              Appearance
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🔒</span>
+              Privacy
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📁</span>
+              Project
+            </li>
+          </ul>
+        </div>
+
+        <div class="theme-toggle">
+          <button class="btn btn--ghost" aria-label="Toggle theme">
+            <span class="btn__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main id="main-content" class="shell__main">
+        <!-- Settings Page -->
+        <div class="settings-page">
+          <!-- Header -->
+          <div class="settings-page__header">
+            <div class="settings-page__title">
+              <h1>Settings</h1>
+              <div class="settings-page__meta">
+                <span class="badge badge--info">4 categories</span>
+                <span class="badge badge--success">Auto-save enabled</span>
+              </div>
+            </div>
+            <div class="settings-page__actions">
+              <button class="btn btn--secondary">Reset to Defaults</button>
+              <button class="btn btn--primary">Save Changes</button>
+            </div>
+          </div>
+
+          <!-- AI Model Settings -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">
+              <span class="settings-section__icon">🤖</span>
+              AI Model Configuration
+            </h2>
+            <div class="settings-grid">
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="model-select" class="setting-item__label"
+                    >Model</label
+                  >
+                  <span class="setting-item__description"
+                    >Choose the AI model for code analysis</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <select id="model-select" class="setting-item__select">
+                    <option value="gpt-4">GPT-4 (Recommended)</option>
+                    <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                    <option value="claude-3">Claude 3</option>
+                    <option value="claude-3-sonnet">Claude 3 Sonnet</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="context-window" class="setting-item__label"
+                    >Context Window</label
+                  >
+                  <span class="setting-item__description"
+                    >Maximum tokens for context (affects cost)</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <input
+                    type="range"
+                    id="context-window"
+                    class="setting-item__range"
+                    min="1000"
+                    max="32000"
+                    value="8000"
+                    step="1000"
+                  />
+                  <div class="setting-item__range-value">8,000 tokens</div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="temperature" class="setting-item__label"
+                    >Temperature</label
+                  >
+                  <span class="setting-item__description"
+                    >Creativity vs consistency (0.0 = deterministic, 1.0 =
+                    creative)</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <input
+                    type="range"
+                    id="temperature"
+                    class="setting-item__range"
+                    min="0"
+                    max="1"
+                    value="0.1"
+                    step="0.1"
+                  />
+                  <div class="setting-item__range-value">0.1</div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="max-tokens" class="setting-item__label"
+                    >Max Response Tokens</label
+                  >
+                  <span class="setting-item__description"
+                    >Maximum tokens in AI responses</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <input
+                    type="range"
+                    id="max-tokens"
+                    class="setting-item__range"
+                    min="100"
+                    max="4000"
+                    value="2000"
+                    step="100"
+                  />
+                  <div class="setting-item__range-value">2,000 tokens</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appearance Settings -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">
+              <span class="settings-section__icon">🎨</span>
+              Appearance & Accessibility
+            </h2>
+            <div class="settings-grid">
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="theme-select" class="setting-item__label"
+                    >Theme</label
+                  >
+                  <span class="setting-item__description"
+                    >Choose your preferred color scheme</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <select id="theme-select" class="setting-item__select">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="auto">Auto (System)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="font-size" class="setting-item__label"
+                    >Font Size</label
+                  >
+                  <span class="setting-item__description"
+                    >Base font size for the interface</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <input
+                    type="range"
+                    id="font-size"
+                    class="setting-item__range"
+                    min="12"
+                    max="18"
+                    value="16"
+                    step="1"
+                  />
+                  <div class="setting-item__range-value">16px</div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="font-family" class="setting-item__label"
+                    >Code Font</label
+                  >
+                  <span class="setting-item__description"
+                    >Monospace font for code blocks</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <select id="font-family" class="setting-item__select">
+                    <option value="ui-monospace">System Monospace</option>
+                    <option value="SFMono-Regular">SF Mono</option>
+                    <option value="Menlo">Menlo</option>
+                    <option value="Consolas">Consolas</option>
+                    <option value="Liberation Mono">Liberation Mono</option>
+                    <option value="Fira Code">Fira Code</option>
+                    <option value="JetBrains Mono">JetBrains Mono</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label class="setting-item__label">Accessibility</label>
+                  <span class="setting-item__description"
+                    >Accessibility and usability options</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <div class="setting-checkboxes">
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label">Reduce motion</span>
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label"
+                        >High contrast borders</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Focus indicators</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label"
+                        >Screen reader optimizations</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy Settings -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">
+              <span class="settings-section__icon">🔒</span>
+              Privacy & Security
+            </h2>
+            <div class="settings-grid">
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label class="setting-item__label">Data Handling</label>
+                  <span class="setting-item__description"
+                    >How your code and data is processed</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <div class="setting-checkboxes">
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Local processing only</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label"
+                        >Send to AI service</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Auto-redact sensitive data</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label class="setting-item__label">Telemetry</label>
+                  <span class="setting-item__description"
+                    >Usage analytics and error reporting</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <div class="setting-checkboxes">
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label"
+                        >Send usage analytics</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Send error reports</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label"
+                        >Send performance metrics</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="api-key" class="setting-item__label"
+                    >API Key</label
+                  >
+                  <span class="setting-item__description"
+                    >Your AI service API key (stored locally)</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <input
+                    type="password"
+                    id="api-key"
+                    class="setting-item__input"
+                    placeholder="sk-..."
+                  />
+                  <div class="setting-item__help">
+                    Key is encrypted and stored locally only
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Settings -->
+          <div class="settings-section">
+            <h2 class="settings-section__title">
+              <span class="settings-section__icon">📁</span>
+              Project Configuration
+            </h2>
+            <div class="settings-grid">
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="project-scope" class="setting-item__label"
+                    >Project Scope</label
+                  >
+                  <span class="setting-item__description"
+                    >Folders and files to include in analysis</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <textarea
+                    id="project-scope"
+                    class="setting-item__textarea"
+                    rows="3"
+                    placeholder="src/
+tests/
+docs/"
+                  ></textarea>
+                  <div class="setting-item__help">
+                    One path per line. Leave empty to include all files.
+                  </div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label for="ignore-patterns" class="setting-item__label"
+                    >Ignore Patterns</label
+                  >
+                  <span class="setting-item__description"
+                    >Files and folders to exclude from analysis</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <textarea
+                    id="ignore-patterns"
+                    class="setting-item__textarea"
+                    rows="3"
+                    placeholder="node_modules/
+*.log
+.env
+.git/"
+                  ></textarea>
+                  <div class="setting-item__help">
+                    Glob patterns, one per line
+                  </div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label class="setting-item__label">File Types</label>
+                  <span class="setting-item__description"
+                    >Supported file extensions for analysis</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <div class="setting-checkboxes">
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >JavaScript (.js, .jsx)</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >TypeScript (.ts, .tsx)</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label">Python (.py)</span>
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label">Java (.java)</span>
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label">Go (.go)</span>
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" />
+                      <span class="setting-checkbox__label">Rust (.rs)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="setting-item">
+                <div class="setting-item__header">
+                  <label class="setting-item__label">Warnings</label>
+                  <span class="setting-item__description"
+                    >Safety warnings for potentially unsafe operations</span
+                  >
+                </div>
+                <div class="setting-item__control">
+                  <div class="setting-checkboxes">
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Warn about unsafe file types</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Warn about large files (>1MB)</span
+                      >
+                    </label>
+                    <label class="setting-checkbox">
+                      <input type="checkbox" checked />
+                      <span class="setting-checkbox__label"
+                        >Warn about sensitive data patterns</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="settings-section settings-section--danger">
+            <h2 class="settings-section__title">
+              <span class="settings-section__icon">⚠️</span>
+              Danger Zone
+            </h2>
+            <div class="danger-zone">
+              <div class="danger-item">
+                <div class="danger-item__content">
+                  <h3>Reset All Settings</h3>
+                  <p>
+                    Reset all settings to their default values. This action
+                    cannot be undone.
+                  </p>
+                </div>
+                <button class="btn btn--danger">Reset Settings</button>
+              </div>
+
+              <div class="danger-item">
+                <div class="danger-item__content">
+                  <h3>Clear All Data</h3>
+                  <p>
+                    Delete all cached data, API keys, and local storage. This
+                    will require reconfiguration.
+                  </p>
+                </div>
+                <button class="btn btn--danger">Clear Data</button>
+              </div>
+
+              <div class="danger-item">
+                <div class="danger-item__content">
+                  <h3>Export Settings</h3>
+                  <p>
+                    Download your current settings as a JSON file for backup or
+                    sharing.
+                  </p>
+                </div>
+                <button class="btn btn--secondary">Export Settings</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="shell__footer">
+      <div class="status-bar">
+        <div class="status-bar__left">
+          <span class="status-bar__model">GPT-4</span>
+          <span class="status-bar__tokens">~1.2k tokens</span>
+        </div>
+        <div class="status-bar__right">
+          <span class="status-bar__latency">—</span>
+          <span class="status-bar__git">main*</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

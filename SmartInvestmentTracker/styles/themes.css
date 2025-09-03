@@ -1,0 +1,308 @@
+/* Themes - Smart Investment Tracker */
+
+/* Theme Toggle Functionality */
+.theme-toggle__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.theme-toggle__btn:hover::after {
+  left: 100%;
+}
+
+/* Dark Theme Specific Adjustments */
+.theme-dark .donut::before {
+  background-color: var(--color-surface);
+}
+
+.theme-dark .range-bar__fill {
+  background: linear-gradient(
+    90deg,
+    var(--color-negative) 0%,
+    var(--color-warning) 50%,
+    var(--color-positive) 100%
+  );
+}
+
+.theme-dark .score-meter__fill {
+  background: linear-gradient(
+    90deg,
+    var(--color-negative) 0%,
+    var(--color-warning) 50%,
+    var(--color-positive) 100%
+  );
+}
+
+/* High Contrast Theme */
+.theme-high-contrast {
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f5f5f5;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-border: #000000;
+  --color-border-light: #333333;
+  --color-border-strong: #000000;
+  --color-accent: #0000ff;
+  --color-accent-hover: #0000cc;
+  --color-accent-light: #e6e6ff;
+  --color-equity: #0000ff;
+  --color-bonds: #008000;
+  --color-cash: #ff8c00;
+  --color-alt: #800080;
+  --color-positive: #008000;
+  --color-negative: #ff0000;
+  --color-warning: #ff8c00;
+  --color-info: #0000ff;
+  --color-danger: #ff0000;
+  --color-positive-bg: #e6ffe6;
+  --color-negative-bg: #ffe6e6;
+  --color-warning-bg: #fff0e6;
+  --color-info-bg: #e6e6ff;
+  --color-danger-bg: #ffe6e6;
+}
+
+.theme-high-contrast .btn {
+  border-width: 2px;
+}
+
+.theme-high-contrast .tile {
+  border-width: 2px;
+}
+
+.theme-high-contrast .suggestion-card {
+  border-width: 2px;
+}
+
+.theme-high-contrast .nudge {
+  border-width: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__btn::after {
+    display: none;
+  }
+
+  .suggestion-card:hover {
+    transform: none;
+  }
+
+  .tile:hover {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .nav__link {
+    transition: none;
+  }
+
+  .btn {
+    transition: none;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    transition: none;
+  }
+
+  .radio-item {
+    transition: none;
+  }
+
+  .heat-cell {
+    transition: none;
+  }
+
+  .table tbody tr:hover {
+    background-color: transparent;
+  }
+}
+
+/* Focus Management for Themes */
+.theme-dark :focus {
+  outline-color: #60a5fa;
+}
+
+.theme-high-contrast :focus {
+  outline-color: #0000ff;
+  outline-width: 3px;
+}
+
+/* Theme-specific animations */
+.theme-light .delta-chip {
+  animation: pulse-light 2s infinite;
+}
+
+.theme-dark .delta-chip {
+  animation: pulse-dark 2s infinite;
+}
+
+@keyframes pulse-light {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-dark {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Theme transition */
+.theme-transitioning * {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease !important;
+}
+
+/* Custom scrollbar for themes */
+.theme-light ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+.theme-dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+.theme-high-contrast ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.theme-high-contrast ::-webkit-scrollbar-track {
+  background: var(--color-border-light);
+  border: 1px solid var(--color-border);
+}
+
+.theme-high-contrast ::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border: 1px solid var(--color-border);
+}
+
+.theme-high-contrast ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-primary);
+}
+
+/* Theme-specific shadows */
+.theme-light .tile {
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-light .tile:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.theme-dark .tile {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .tile:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+.theme-high-contrast .tile {
+  box-shadow: none;
+  border: 2px solid var(--color-border);
+}
+
+/* Theme-specific gradients */
+.theme-light .range-bar__fill {
+  background: linear-gradient(
+    90deg,
+    var(--color-negative) 0%,
+    var(--color-warning) 50%,
+    var(--color-positive) 100%
+  );
+}
+
+.theme-dark .range-bar__fill {
+  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+}
+
+.theme-high-contrast .range-bar__fill {
+  background: linear-gradient(90deg, #ff0000 0%, #ff8c00 50%, #008000 100%);
+}
+
+/* Theme-specific donut colors */
+.theme-light .donut {
+  background: conic-gradient(
+    var(--color-equity) 0deg 244.8deg,
+    var(--color-bonds) 244.8deg 323.2deg,
+    var(--color-cash) 323.2deg 352deg,
+    var(--color-alt) 352deg 360deg
+  );
+}
+
+.theme-dark .donut {
+  background: conic-gradient(
+    #60a5fa 0deg 244.8deg,
+    #34d399 244.8deg 323.2deg,
+    #fbbf24 323.2deg 352deg,
+    #a78bfa 352deg 360deg
+  );
+}
+
+.theme-high-contrast .donut {
+  background: conic-gradient(
+    #0000ff 0deg 244.8deg,
+    #008000 244.8deg 323.2deg,
+    #ff8c00 323.2deg 352deg,
+    #800080 352deg 360deg
+  );
+}

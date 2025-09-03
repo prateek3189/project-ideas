@@ -1,21 +1,21 @@
 :root {
   /* Colors - Light Theme */
-  --color-background: #FFFDF7;
-  --color-surface: #FFFFFF;
-  --color-text: #1F2A44;
-  --color-text-muted: #6B7280;
-  --color-accent: #FF7A59;
-  --color-secondary: #3BB6F6;
-  --color-success: #22C55E;
-  --color-warning: #F59E0B;
-  --color-error: #EF4444;
-  
+  --color-background: #fffdf7;
+  --color-surface: #ffffff;
+  --color-text: #1f2a44;
+  --color-text-muted: #6b7280;
+  --color-accent: #ff7a59;
+  --color-secondary: #3bb6f6;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
   /* High Contrast Variants */
   --color-high-contrast-bg: #000000;
-  --color-high-contrast-surface: #FFFFFF;
-  --color-high-contrast-text: #FFFFFF;
-  --color-high-contrast-accent: #FFD700;
-  
+  --color-high-contrast-surface: #ffffff;
+  --color-high-contrast-text: #ffffff;
+  --color-high-contrast-accent: #ffd700;
+
   /* Spacing Scale */
   --space-xs: 6px;
   --space-sm: 12px;
@@ -24,17 +24,18 @@
   --space-xl: 32px;
   --space-2xl: 48px;
   --space-3xl: 64px;
-  
+
   /* Border Radius */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 999px;
-  
+
   /* Typography */
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-dyslexia: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
-  
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-family-dyslexia: "OpenDyslexic", "Comic Sans MS", sans-serif;
+
   --font-size-xs: 14px;
   --font-size-sm: 16px;
   --font-size-md: 18px;
@@ -42,21 +43,21 @@
   --font-size-xl: 24px;
   --font-size-2xl: 28px;
   --font-size-3xl: 32px;
-  
+
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.8;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  
+
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Z-Index */
   --z-dropdown: 1000;
   --z-sticky: 1020;
@@ -64,11 +65,11 @@
   --z-modal: 1040;
   --z-popover: 1050;
   --z-tooltip: 1060;
-  
+
   /* Touch Targets */
   --touch-target-min: 44px;
   --touch-target-ideal: 56px;
-  
+
   /* Container */
   --container-max-width: 1200px;
   --container-padding: var(--space-md);
@@ -76,12 +77,12 @@
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --color-background: #1F2A44;
-  --color-surface: #2D3748;
-  --color-text: #F7FAFC;
-  --color-text-muted: #A0AEC0;
-  --color-accent: #FF7A59;
-  --color-secondary: #3BB6F6;
+  --color-background: #1f2a44;
+  --color-surface: #2d3748;
+  --color-text: #f7fafc;
+  --color-text-muted: #a0aec0;
+  --color-accent: #ff7a59;
+  --color-secondary: #3bb6f6;
 }
 
 /* High Contrast Theme */

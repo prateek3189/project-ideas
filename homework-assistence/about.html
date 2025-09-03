@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - AI Homework Assistant</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">AI Homework Assistant</h1>
+          <div class="header__search">
+            <input
+              type="search"
+              placeholder="Search subjects, topics..."
+              class="search-input"
+              disabled
+            />
+            <button class="search-button" disabled>🔍</button>
+          </div>
+          <div class="header__actions">
+            <button class="profile-chip">
+              <span class="profile-chip__avatar">👤</span>
+              <span class="profile-chip__name">Student</span>
+            </button>
+            <button class="print-link" onclick="window.print()">
+              🖨️ Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="index.html" class="nav-link">📊 Dashboard</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="subjects.html" class="nav-link">📚 Subjects</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="progress.html" class="nav-link">📈 Progress</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">⚙️ Settings</a>
+            </li>
+            <li class="nav-list__item nav-list__item--active">
+              <a href="about.html" class="nav-link">ℹ️ About</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__subjects">
+          <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+          <div class="subject-chips">
+            <span class="subject-chip">Math</span>
+            <span class="subject-chip">Science</span>
+            <span class="subject-chip">Literature</span>
+            <span class="subject-chip">History</span>
+            <span class="subject-chip">CS</span>
+          </div>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="about-page">
+          <!-- Page Header -->
+          <header class="page-header">
+            <h1 class="page-header__title">About AI Homework Assistant</h1>
+            <p class="page-header__subtitle">
+              Our mission, philosophy, and commitment to learning
+            </p>
+          </header>
+
+          <!-- Mission Statement -->
+          <section class="mission-section">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-content">
+              <div class="mission-statement">
+                <h3>
+                  Transform "Give me the answer" into "Teach me how to think"
+                </h3>
+                <p>
+                  The AI Homework Assistant is built on a fundamental belief:
+                  true learning happens through guided discovery, not instant
+                  answers. We're here to replace the quick-fix mentality with a
+                  structured approach that builds lasting understanding.
+                </p>
+              </div>
+              <div class="mission-values">
+                <div class="mission-value">
+                  <div class="mission-value__icon">🧠</div>
+                  <h4>Critical Thinking</h4>
+                  <p>
+                    Develop problem-solving skills that last beyond the test
+                  </p>
+                </div>
+                <div class="mission-value">
+                  <div class="mission-value__icon">📚</div>
+                  <h4>Deep Learning</h4>
+                  <p>Build conceptual understanding, not just memorization</p>
+                </div>
+                <div class="mission-value">
+                  <div class="mission-value__icon">🎯</div>
+                  <h4>Personalized Growth</h4>
+                  <p>Adapt to your learning pace and style</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Learning Philosophy -->
+          <section class="philosophy-section">
+            <h2 class="section-title">Learning Philosophy</h2>
+            <div class="philosophy-content">
+              <div class="philosophy-principle">
+                <h3>The Socratic Method</h3>
+                <p>
+                  We believe in asking questions that guide you to discover
+                  answers yourself. Rather than telling you "this is the
+                  answer," we ask "what do you think the first step should be?"
+                  This approach builds confidence and independent thinking
+                  skills.
+                </p>
+              </div>
+              <div class="philosophy-principle">
+                <h3>Scaffolded Learning</h3>
+                <p>
+                  Learning is most effective when it builds progressively. We
+                  start with foundational concepts and gradually increase
+                  complexity, providing support at each level until you're ready
+                  to advance.
+                </p>
+              </div>
+              <div class="philosophy-principle">
+                <h3>Mistake-Friendly Environment</h3>
+                <p>
+                  Mistakes are learning opportunities, not failures. We
+                  highlight common misconceptions and help you understand why
+                  they occur, turning errors into valuable insights.
+                </p>
+              </div>
+              <div class="philosophy-principle">
+                <h3>Metacognitive Awareness</h3>
+                <p>
+                  We encourage you to think about your thinking. Through
+                  reflection prompts and self-assessment, you develop awareness
+                  of your learning process and strategies.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Academic Integrity -->
+          <section class="integrity-section">
+            <h2 class="section-title">Academic Integrity</h2>
+            <div class="integrity-content">
+              <div class="integrity-statement">
+                <h3>Built for Learning, Not Cheating</h3>
+                <p>
+                  Our platform is designed with academic integrity at its core.
+                  We provide guidance and support, but never complete solutions
+                  that could be submitted as your own work.
+                </p>
+              </div>
+              <div class="integrity-guidelines">
+                <h4>What We Do:</h4>
+                <ul>
+                  <li>Provide step-by-step guidance and hints</li>
+                  <li>Ask probing questions to develop understanding</li>
+                  <li>Show common mistakes and explain why they're wrong</li>
+                  <li>Offer practice problems with guided solutions</li>
+                  <li>Track progress to identify areas for improvement</li>
+                </ul>
+              </div>
+              <div class="integrity-guidelines">
+                <h4>What We Don't Do:</h4>
+                <ul>
+                  <li>Provide complete answers to submit as homework</li>
+                  <li>Solve problems without requiring student effort</li>
+                  <li>Enable plagiarism or academic dishonesty</li>
+                  <li>Bypass the learning process</li>
+                </ul>
+              </div>
+              <div class="integrity-commitment">
+                <h4>Our Commitment:</h4>
+                <p>
+                  We're committed to helping you learn effectively while
+                  maintaining the highest standards of academic integrity. Our
+                  tools are designed to supplement your education, not replace
+                  your effort and thinking.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- How It Works -->
+          <section class="how-it-works-section">
+            <h2 class="section-title">How It Works</h2>
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="process-step__number">1</div>
+                <div class="process-step__content">
+                  <h3>Choose Your Topic</h3>
+                  <p>
+                    Select from mathematics, science, literature, history, or
+                    computer science. Each subject offers multiple topics with
+                    varying difficulty levels.
+                  </p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-step__number">2</div>
+                <div class="process-step__content">
+                  <h3>Work Through Problems</h3>
+                  <p>
+                    Each problem is broken into manageable steps with
+                    progressive hints. Start with basic guidance and reveal more
+                    detailed help as needed.
+                  </p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-step__number">3</div>
+                <div class="process-step__content">
+                  <h3>Check Understanding</h3>
+                  <p>
+                    Complete comprehension checks and reflect on your learning
+                    process. Identify what you've mastered and where you need
+                    more practice.
+                  </p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-step__number">4</div>
+                <div class="process-step__content">
+                  <h3>Track Progress</h3>
+                  <p>
+                    Monitor your mastery levels across topics and see your
+                    learning patterns. Use insights to focus your study efforts
+                    effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Roadmap -->
+          <section class="roadmap-section">
+            <h2 class="section-title">Development Roadmap</h2>
+            <div class="roadmap-content">
+              <div class="roadmap-phase">
+                <h3>Phase 1: Foundation (Current)</h3>
+                <p>
+                  Static HTML/CSS prototype with guided learning structure and
+                  visual placeholders for AI functionality.
+                </p>
+                <ul>
+                  <li>Complete user interface and navigation</li>
+                  <li>Problem workspace with step-by-step guidance</li>
+                  <li>Subject organization and topic structure</li>
+                  <li>Progress tracking and analytics display</li>
+                  <li>Printable worksheets and solutions</li>
+                </ul>
+              </div>
+              <div class="roadmap-phase">
+                <h3>Phase 2: Smart Features</h3>
+                <p>
+                  Add intelligent functionality to enhance the learning
+                  experience.
+                </p>
+                <ul>
+                  <li>Adaptive hint system based on student performance</li>
+                  <li>Personalized problem recommendations</li>
+                  <li>Real-time progress tracking and analytics</li>
+                  <li>Interactive step validation</li>
+                  <li>Student performance analytics</li>
+                </ul>
+              </div>
+              <div class="roadmap-phase">
+                <h3>Phase 3: AI Tutor</h3>
+                <p>
+                  Implement advanced AI capabilities for personalized learning.
+                </p>
+                <ul>
+                  <li>Natural language problem understanding</li>
+                  <li>Adaptive learning paths</li>
+                  <li>Misconception detection and correction</li>
+                  <li>Personalized study plans</li>
+                  <li>Advanced analytics and insights</li>
+                </ul>
+              </div>
+              <div class="roadmap-phase">
+                <h3>Phase 4: Teacher Tools</h3>
+                <p>Expand to support educators and classroom integration.</p>
+                <ul>
+                  <li>Teacher dashboard and analytics</li>
+                  <li>Assignment creation and management</li>
+                  <li>Student progress monitoring</li>
+                  <li>Class performance insights</li>
+                  <li>Integration with learning management systems</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Team & Contact -->
+          <section class="team-section">
+            <h2 class="section-title">Team & Contact</h2>
+            <div class="team-content">
+              <div class="team-info">
+                <h3>About Our Team</h3>
+                <p>
+                  The AI Homework Assistant is developed by educators,
+                  technologists, and learning scientists who believe in the
+                  power of technology to enhance education while preserving the
+                  fundamental principles of learning and academic integrity.
+                </p>
+              </div>
+              <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-methods">
+                  <div class="contact-method">
+                    <div class="contact-method__icon">📧</div>
+                    <div class="contact-method__content">
+                      <h4>Email</h4>
+                      <p>feedback@aihomeworkassistant.com</p>
+                    </div>
+                  </div>
+                  <div class="contact-method">
+                    <div class="contact-method__icon">💬</div>
+                    <div class="contact-method__content">
+                      <h4>Feedback</h4>
+                      <p>
+                        We welcome suggestions for improvements and new features
+                      </p>
+                    </div>
+                  </div>
+                  <div class="contact-method">
+                    <div class="contact-method__icon">🐛</div>
+                    <div class="contact-method__content">
+                      <h4>Bug Reports</h4>
+                      <p>
+                        Help us improve by reporting any issues you encounter
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Version Info -->
+          <section class="version-section">
+            <h2 class="section-title">Version Information</h2>
+            <div class="version-content">
+              <div class="version-details">
+                <div class="version-detail">
+                  <strong>Current Version:</strong> 1.0.0 (Prototype)
+                </div>
+                <div class="version-detail">
+                  <strong>Release Date:</strong> December 2024
+                </div>
+                <div class="version-detail">
+                  <strong>Browser Support:</strong> Modern browsers (Chrome,
+                  Firefox, Safari, Edge)
+                </div>
+                <div class="version-detail">
+                  <strong>Accessibility:</strong> WCAG 2.1 AA compliant
+                </div>
+              </div>
+              <div class="version-notes">
+                <h4>Version 1.0 Notes:</h4>
+                <p>
+                  This is a static prototype demonstrating the user interface
+                  and learning flow. All AI functionality is represented by
+                  visual placeholders. The actual AI features will be
+                  implemented in future versions.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>
+            &copy; 2024 AI Homework Assistant. Built for learning, not cheating.
+          </p>
+          <p>
+            Version 1.0 • <a href="about.html">About</a> •
+            <a href="settings.html">Help</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

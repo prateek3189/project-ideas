@@ -1,0 +1,470 @@
+/* ===== THEME STYLES ===== */
+
+/* Theme Toggle Functionality */
+.theme-toggle[data-theme="light"] .theme-toggle__icon::before {
+  content: "🌙";
+}
+
+.theme-toggle[data-theme="dark"] .theme-toggle__icon::before {
+  content: "☀️";
+}
+
+.theme-toggle[data-theme="high-contrast"] .theme-toggle__icon::before {
+  content: "🔍";
+}
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-accent-light: #3b82f6;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #dc2626;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+
+  --heat-0: #f1f5f9;
+  --heat-1: #dbeafe;
+  --heat-2: #93c5fd;
+  --heat-3: #3b82f6;
+  --heat-4: #1d4ed8;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg: #0b1220;
+  --color-surface: #111827;
+  --color-text: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-accent: #3b82f6;
+  --color-accent-light: #60a5fa;
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-danger: #ef4444;
+  --color-border: #374151;
+  --color-border-light: #1f2937;
+
+  --heat-0: #1f2937;
+  --heat-1: #374151;
+  --heat-2: #4b5563;
+  --heat-3: #60a5fa;
+  --heat-4: #3b82f6;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --color-bg: #000000;
+  --color-surface: #ffffff;
+  --color-text: #ffffff;
+  --color-text-muted: #cccccc;
+  --color-accent: #ffff00;
+  --color-accent-light: #ffff66;
+  --color-success: #00ff00;
+  --color-warning: #ffaa00;
+  --color-danger: #ff0000;
+  --color-border: #ffffff;
+  --color-border-light: #cccccc;
+
+  --heat-0: #000000;
+  --heat-1: #333333;
+  --heat-2: #666666;
+  --heat-3: #ffff00;
+  --heat-4: #ffaa00;
+}
+
+/* Theme Transition */
+* {
+  transition: background-color var(--transition-slow),
+    color var(--transition-slow), border-color var(--transition-slow);
+}
+
+/* Theme-Specific Component Adjustments */
+
+/* Dark Theme Adjustments */
+[data-theme="dark"] .chat-bubble--buddy {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .phrase-block {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .topic-card {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .lesson-card {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .srs-card {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .progress-tile {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .role-card {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .assist-strip {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .settings-section {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+/* High Contrast Theme Adjustments */
+[data-theme="high-contrast"] .chat-bubble--buddy {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .phrase-block {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .topic-card {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .lesson-card {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .srs-card {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .progress-tile {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .role-card {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .assist-strip {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+[data-theme="high-contrast"] .settings-section {
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
+}
+
+/* High Contrast Focus States */
+[data-theme="high-contrast"] .btn:focus,
+[data-theme="high-contrast"] .input:focus,
+[data-theme="high-contrast"] .nav__link:focus,
+[data-theme="high-contrast"] .sidebar__nav-link:focus {
+  outline: 4px solid #ffff00;
+  outline-offset: 2px;
+}
+
+/* Theme Toggle Button States */
+.theme-toggle[data-theme="light"]:hover {
+  background-color: #e2e8f0;
+}
+
+.theme-toggle[data-theme="dark"]:hover {
+  background-color: #374151;
+}
+
+.theme-toggle[data-theme="high-contrast"]:hover {
+  background-color: #333333;
+}
+
+/* Theme-Specific Shadows */
+[data-theme="light"] .topic-card:hover,
+[data-theme="light"] .lesson-card:hover,
+[data-theme="light"] .srs-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .topic-card:hover,
+[data-theme="dark"] .lesson-card:hover,
+[data-theme="dark"] .srs-card:hover {
+  box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.8), 0 4px 6px -4px rgb(0 0 0 / 0.8);
+}
+
+[data-theme="high-contrast"] .topic-card:hover,
+[data-theme="high-contrast"] .lesson-card:hover,
+[data-theme="high-contrast"] .srs-card:hover {
+  box-shadow: 0 0 0 4px #ffff00;
+}
+
+/* Theme-Specific Button Hover States */
+[data-theme="light"] .btn--primary:hover {
+  background-color: #1d4ed8;
+}
+
+[data-theme="dark"] .btn--primary:hover {
+  background-color: #60a5fa;
+}
+
+[data-theme="high-contrast"] .btn--primary:hover {
+  background-color: #ffaa00;
+  color: #000000;
+}
+
+/* Theme-Specific Link Hover States */
+[data-theme="light"] a:hover {
+  color: #1d4ed8;
+}
+
+[data-theme="dark"] a:hover {
+  color: #60a5fa;
+}
+
+[data-theme="high-contrast"] a:hover {
+  color: #ffaa00;
+  text-decoration: underline;
+}
+
+/* Theme-Specific Border Colors */
+[data-theme="light"] .chat-bubble--buddy:hover {
+  border-color: #2563eb;
+}
+
+[data-theme="dark"] .chat-bubble--buddy:hover {
+  border-color: #3b82f6;
+}
+
+[data-theme="high-contrast"] .chat-bubble--buddy:hover {
+  border-color: #ffff00;
+}
+
+/* Theme-Specific Score Bar Colors */
+[data-theme="light"] .score-bar__fill--low {
+  background-color: #dc2626;
+}
+
+[data-theme="light"] .score-bar__fill--medium {
+  background-color: #f59e0b;
+}
+
+[data-theme="light"] .score-bar__fill--high {
+  background-color: #16a34a;
+}
+
+[data-theme="dark"] .score-bar__fill--low {
+  background-color: #ef4444;
+}
+
+[data-theme="dark"] .score-bar__fill--medium {
+  background-color: #fbbf24;
+}
+
+[data-theme="dark"] .score-bar__fill--high {
+  background-color: #22c55e;
+}
+
+[data-theme="high-contrast"] .score-bar__fill--low {
+  background-color: #ff0000;
+}
+
+[data-theme="high-contrast"] .score-bar__fill--medium {
+  background-color: #ffaa00;
+}
+
+[data-theme="high-contrast"] .score-bar__fill--high {
+  background-color: #00ff00;
+}
+
+/* Theme-Specific IPA Segment Colors */
+[data-theme="light"] .ipa__seg--low {
+  background-color: #dc2626;
+  color: white;
+}
+
+[data-theme="light"] .ipa__seg--medium {
+  background-color: #f59e0b;
+  color: white;
+}
+
+[data-theme="light"] .ipa__seg--high {
+  background-color: #16a34a;
+  color: white;
+}
+
+[data-theme="dark"] .ipa__seg--low {
+  background-color: #ef4444;
+  color: white;
+}
+
+[data-theme="dark"] .ipa__seg--medium {
+  background-color: #fbbf24;
+  color: #000000;
+}
+
+[data-theme="dark"] .ipa__seg--high {
+  background-color: #22c55e;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .ipa__seg--low {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+[data-theme="high-contrast"] .ipa__seg--medium {
+  background-color: #ffaa00;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .ipa__seg--high {
+  background-color: #00ff00;
+  color: #000000;
+}
+
+/* Theme-Specific CEFR Badge Colors */
+[data-theme="light"] .cefr-badge--a1 {
+  background-color: #16a34a;
+}
+
+[data-theme="light"] .cefr-badge--a2 {
+  background-color: #2563eb;
+}
+
+[data-theme="light"] .cefr-badge--b1 {
+  background-color: #f59e0b;
+}
+
+[data-theme="light"] .cefr-badge--b2 {
+  background-color: #f59e0b;
+}
+
+[data-theme="light"] .cefr-badge--c1 {
+  background-color: #dc2626;
+}
+
+[data-theme="light"] .cefr-badge--c2 {
+  background-color: #dc2626;
+}
+
+[data-theme="dark"] .cefr-badge--a1 {
+  background-color: #22c55e;
+}
+
+[data-theme="dark"] .cefr-badge--a2 {
+  background-color: #3b82f6;
+}
+
+[data-theme="dark"] .cefr-badge--b1 {
+  background-color: #fbbf24;
+}
+
+[data-theme="dark"] .cefr-badge--b2 {
+  background-color: #fbbf24;
+}
+
+[data-theme="dark"] .cefr-badge--c1 {
+  background-color: #ef4444;
+}
+
+[data-theme="dark"] .cefr-badge--c2 {
+  background-color: #ef4444;
+}
+
+[data-theme="high-contrast"] .cefr-badge--a1 {
+  background-color: #00ff00;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .cefr-badge--a2 {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .cefr-badge--b1 {
+  background-color: #ffaa00;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .cefr-badge--b2 {
+  background-color: #ffaa00;
+  color: #000000;
+}
+
+[data-theme="high-contrast"] .cefr-badge--c1 {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+[data-theme="high-contrast"] .cefr-badge--c2 {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+/* Theme-Specific Heatmap Colors */
+[data-theme="light"] .heatmap__cell--heat-1 {
+  background-color: #dbeafe;
+}
+
+[data-theme="light"] .heatmap__cell--heat-2 {
+  background-color: #93c5fd;
+}
+
+[data-theme="light"] .heatmap__cell--heat-3 {
+  background-color: #3b82f6;
+}
+
+[data-theme="light"] .heatmap__cell--heat-4 {
+  background-color: #1d4ed8;
+}
+
+[data-theme="dark"] .heatmap__cell--heat-1 {
+  background-color: #374151;
+}
+
+[data-theme="dark"] .heatmap__cell--heat-2 {
+  background-color: #4b5563;
+}
+
+[data-theme="dark"] .heatmap__cell--heat-3 {
+  background-color: #60a5fa;
+}
+
+[data-theme="dark"] .heatmap__cell--heat-4 {
+  background-color: #3b82f6;
+}
+
+[data-theme="high-contrast"] .heatmap__cell--heat-1 {
+  background-color: #333333;
+}
+
+[data-theme="high-contrast"] .heatmap__cell--heat-2 {
+  background-color: #666666;
+}
+
+[data-theme="high-contrast"] .heatmap__cell--heat-3 {
+  background-color: #ffff00;
+}
+
+[data-theme="high-contrast"] .heatmap__cell--heat-4 {
+  background-color: #ffaa00;
+}

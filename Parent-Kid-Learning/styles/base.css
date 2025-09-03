@@ -1,5 +1,5 @@
 /* Import tokens first */
-@import 'tokens.css';
+@import "tokens.css";
 
 /* Reset and Base Styles */
 *,
@@ -29,18 +29,35 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: var(--line-height-tight);
   margin-bottom: var(--space-md);
 }
 
-h1 { font-size: var(--font-size-3xl); }
-h2 { font-size: var(--font-size-2xl); }
-h3 { font-size: var(--font-size-xl); }
-h4 { font-size: var(--font-size-lg); }
-h5 { font-size: var(--font-size-md); }
-h6 { font-size: var(--font-size-sm); }
+h1 {
+  font-size: var(--font-size-3xl);
+}
+h2 {
+  font-size: var(--font-size-2xl);
+}
+h3 {
+  font-size: var(--font-size-xl);
+}
+h4 {
+  font-size: var(--font-size-lg);
+}
+h5 {
+  font-size: var(--font-size-md);
+}
+h6 {
+  font-size: var(--font-size-sm);
+}
 
 p {
   margin-bottom: var(--space-md);
@@ -88,7 +105,8 @@ img {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   list-style: none;
   margin-bottom: var(--space-md);
 }
@@ -98,7 +116,9 @@ li {
 }
 
 /* Forms */
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
   font-size: inherit;
   border: 2px solid var(--color-text-muted);
@@ -177,7 +197,7 @@ select:focus {
     background: white;
     color: black;
   }
-  
+
   .no-print {
     display: none !important;
   }

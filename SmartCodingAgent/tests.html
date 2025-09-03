@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Coding Agent - Tests</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__title">
+          <span class="shell__icon">🤖</span>
+          Smart Coding Agent
+        </h1>
+        <div class="shell__controls">
+          <div class="repo-selector">
+            <span class="repo-selector__name">my-project</span>
+            <span class="badge badge--branch">main</span>
+          </div>
+          <button class="btn btn--ghost" aria-label="Print tests">
+            <span class="btn__icon">🖨️</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="nav__icon">💻</span>
+              Workspace
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="diff.html" class="nav__link">
+              <span class="nav__icon">📊</span>
+              Diff Review
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="tests.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="nav__icon">🧪</span>
+              Tests
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="perf.html" class="nav__link">
+              <span class="nav__icon">⚡</span>
+              Performance
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="playbooks.html" class="nav__link">
+              <span class="nav__icon">📚</span>
+              Playbooks
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="nav__icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">
+              <span class="nav__icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+
+        <div class="project-tree">
+          <h3 class="project-tree__title">Test Files</h3>
+          <ul class="project-tree__list">
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📁</span>
+              __tests__/
+              <ul class="project-tree__list project-tree__list--nested">
+                <li class="project-tree__item">
+                  <span class="project-tree__icon">📄</span>
+                  table.test.ts
+                </li>
+                <li class="project-tree__item">
+                  <span class="project-tree__icon">📄</span>
+                  app.test.tsx
+                </li>
+              </ul>
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📄</span>
+              jest.config.js
+            </li>
+          </ul>
+        </div>
+
+        <div class="theme-toggle">
+          <button class="btn btn--ghost" aria-label="Toggle theme">
+            <span class="btn__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main id="main-content" class="shell__main">
+        <!-- Tests Page -->
+        <div class="tests-page">
+          <!-- Header -->
+          <div class="tests-page__header">
+            <div class="tests-page__title">
+              <h1>Test Plan & Coverage</h1>
+              <div class="tests-page__meta">
+                <span class="badge badge--success">12 passed</span>
+                <span class="badge badge--danger">1 failed</span>
+                <span class="badge badge--info">85% coverage</span>
+              </div>
+            </div>
+            <div class="tests-page__actions">
+              <button class="btn btn--primary">Run Tests</button>
+              <button class="btn btn--secondary">Generate Tests</button>
+              <button class="btn btn--ghost">Export Report</button>
+            </div>
+          </div>
+
+          <!-- Coverage Overview -->
+          <div class="tests-page__coverage">
+            <div class="coverage-overview">
+              <div class="coverage-overview__ring">
+                <div class="coverage-ring">
+                  <svg class="coverage-ring__svg" viewBox="0 0 120 120">
+                    <circle
+                      class="coverage-ring__background"
+                      cx="60"
+                      cy="60"
+                      r="50"
+                    ></circle>
+                    <circle
+                      class="coverage-ring__progress"
+                      cx="60"
+                      cy="60"
+                      r="50"
+                      stroke-dasharray="314"
+                      stroke-dashoffset="47"
+                    ></circle>
+                  </svg>
+                  <div class="coverage-ring__text">
+                    <span class="coverage-ring__percentage">85%</span>
+                    <span class="coverage-ring__label">Coverage</span>
+                  </div>
+                </div>
+              </div>
+              <div class="coverage-overview__details">
+                <div class="coverage-overview__stat">
+                  <span class="coverage-overview__label">Lines</span>
+                  <span class="coverage-overview__value">85%</span>
+                  <div class="meter">
+                    <div class="meter__fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="coverage-overview__stat">
+                  <span class="coverage-overview__label">Functions</span>
+                  <span class="coverage-overview__value">92%</span>
+                  <div class="meter">
+                    <div class="meter__fill" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div class="coverage-overview__stat">
+                  <span class="coverage-overview__label">Branches</span>
+                  <span class="coverage-overview__value">78%</span>
+                  <div class="meter">
+                    <div class="meter__fill" style="width: 78%"></div>
+                  </div>
+                </div>
+                <div class="coverage-overview__stat">
+                  <span class="coverage-overview__label">Statements</span>
+                  <span class="coverage-overview__value">87%</span>
+                  <div class="meter">
+                    <div class="meter__fill" style="width: 87%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suggested Test Cases -->
+          <div class="tests-page__suggestions">
+            <h2>Suggested Test Cases</h2>
+            <div class="test-cases">
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name">buildRows/empty array</span>
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> <code>[]</code></p>
+                  <p><strong>Expected:</strong> <code>[]</code></p>
+                  <p><strong>Priority:</strong> High</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name">buildRows/nulls filtered</span>
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p>
+                    <strong>Input:</strong>
+                    <code>[row1, null, row2, undefined]</code>
+                  </p>
+                  <p><strong>Expected:</strong> <code>[row1, row2]</code></p>
+                  <p><strong>Priority:</strong> High</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name"
+                    >buildRows/undefined parameter</span
+                  >
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> <code>undefined</code></p>
+                  <p><strong>Expected:</strong> <code>[]</code></p>
+                  <p><strong>Priority:</strong> High</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name"
+                    >render/handles empty state</span
+                  >
+                  <span class="badge badge--warning">WIP</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> Empty data from API</p>
+                  <p><strong>Expected:</strong> Shows "No data" message</p>
+                  <p><strong>Priority:</strong> Medium</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name">buildRows/large dataset</span>
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> Array with 1000+ rows</p>
+                  <p><strong>Expected:</strong> Handles efficiently</p>
+                  <p><strong>Priority:</strong> Low</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name"
+                    >buildRows/mixed data types</span
+                  >
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> Mixed valid/invalid rows</p>
+                  <p><strong>Expected:</strong> Filters correctly</p>
+                  <p><strong>Priority:</strong> Medium</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name">buildRows/edge cases</span>
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> Empty strings, 0, false</p>
+                  <p><strong>Expected:</strong> Handles truthy/falsy</p>
+                  <p><strong>Priority:</strong> Low</p>
+                </div>
+              </div>
+
+              <div class="test-case">
+                <div class="test-case__header">
+                  <span class="test-case__name">buildRows/performance</span>
+                  <span class="badge badge--info">Planned</span>
+                </div>
+                <div class="test-case__content">
+                  <p><strong>Input:</strong> Large dataset</p>
+                  <p><strong>Expected:</strong> Completes in &lt;100ms</p>
+                  <p><strong>Priority:</strong> Low</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Test Scaffolds -->
+          <div class="tests-page__scaffolds">
+            <h2>Test Scaffolds</h2>
+            <div class="test-scaffolds">
+              <div class="test-scaffold">
+                <div class="test-scaffold__header">
+                  <span class="test-scaffold__title"
+                    >TypeScript/Jest Template</span
+                  >
+                  <button class="btn btn--sm btn--ghost">Copy</button>
+                </div>
+                <div class="test-scaffold__content">
+                  <div class="code-block">
+                    <div class="code-block__content">
+                      <pre
+                        class="code"
+                      ><code><span class="code__line"><span class="code__line-number">1</span><span class="code__line-content">describe('buildRows', () => {</span></span>
+<span class="code__line"><span class="code__line-number">2</span><span class="code__line-content">  it('should handle empty array', () => {</span></span>
+<span class="code__line"><span class="code__line-number">3</span><span class="code__line-content">    // Arrange</span></span>
+<span class="code__line"><span class="code__line-number">4</span><span class="code__line-content">    const input: Row[] = [];</span></span>
+<span class="code__line"><span class="code__line-number">5</span><span class="code__line-content">    </span></span>
+<span class="code__line"><span class="code__line-number">6</span><span class="code__line-content">    // Act</span></span>
+<span class="code__line"><span class="code__line-number">7</span><span class="code__line-content">    const result = buildRows(input);</span></span>
+<span class="code__line"><span class="code__line-number">8</span><span class="code__line-content">    </span></span>
+<span class="code__line"><span class="code__line-number">9</span><span class="code__line-content">    // Assert</span></span>
+<span class="code__line"><span class="code__line-number">10</span><span class="code__line-content">    expect(result).toEqual([]);</span></span>
+<span class="code__line"><span class="code__line-number">11</span><span class="code__line-content">  });</span></span>
+<span class="code__line"><span class="code__line-number">12</span><span class="code__line-content">});</span></span></code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="test-scaffold">
+                <div class="test-scaffold__header">
+                  <span class="test-scaffold__title"
+                    >React Testing Library Template</span
+                  >
+                  <button class="btn btn--sm btn--ghost">Copy</button>
+                </div>
+                <div class="test-scaffold__content">
+                  <div class="code-block">
+                    <div class="code-block__content">
+                      <pre
+                        class="code"
+                      ><code><span class="code__line"><span class="code__line-number">1</span><span class="code__line-content">import { render, screen } from '@testing-library/react';</span></span>
+<span class="code__line"><span class="code__line-number">2</span><span class="code__line-content">import { App } from './App';</span></span>
+<span class="code__line"><span class="code__line-number">3</span><span class="code__line-content"></span></span>
+<span class="code__line"><span class="code__line-number">4</span><span class="code__line-content">describe('App', () => {</span></span>
+<span class="code__line"><span class="code__line-number">5</span><span class="code__line-content">  it('renders empty state', () => {</span></span>
+<span class="code__line"><span class="code__line-number">6</span><span class="code__line-content">    render(&lt;App data={[]} /&gt;);</span></span>
+<span class="code__line"><span class="code__line-number">7</span><span class="code__line-content">    </span></span>
+<span class="code__line"><span class="code__line-number">8</span><span class="code__line-content">    expect(screen.getByText('No data')).toBeInTheDocument();</span></span>
+<span class="code__line"><span class="code__line-number">9</span><span class="code__line-content">  });</span></span>
+<span class="code__line"><span class="code__line-number">10</span><span class="code__line-content">});</span></span></code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flaky Test Detection -->
+          <div class="tests-page__flaky">
+            <h2>Flaky Test Detection</h2>
+            <div class="flaky-detection">
+              <div class="alert alert--warning">
+                <div class="alert__title">Potential Flaky Test Detected</div>
+                <div class="alert__message">
+                  <strong>test: "render/handles empty state"</strong> has
+                  inconsistent timing behavior. Consider adding proper async
+                  handling or increasing timeout.
+                </div>
+              </div>
+
+              <div class="flaky-heuristics">
+                <h3>Detection Heuristics</h3>
+                <ul>
+                  <li>
+                    <strong>Timing Issues:</strong> Tests that depend on
+                    specific timing or delays
+                  </li>
+                  <li>
+                    <strong>Async Operations:</strong> Missing await or improper
+                    promise handling
+                  </li>
+                  <li>
+                    <strong>External Dependencies:</strong> Tests that rely on
+                    network or file system
+                  </li>
+                  <li>
+                    <strong>Random Data:</strong> Tests using Math.random() or
+                    similar
+                  </li>
+                  <li>
+                    <strong>State Pollution:</strong> Tests that don't clean up
+                    after themselves
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="shell__footer">
+      <div class="status-bar">
+        <div class="status-bar__left">
+          <span class="status-bar__model">GPT-4</span>
+          <span class="status-bar__tokens">~3.2k tokens</span>
+        </div>
+        <div class="status-bar__right">
+          <span class="status-bar__latency">—</span>
+          <span class="status-bar__git">main*</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

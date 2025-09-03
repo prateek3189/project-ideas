@@ -1,0 +1,555 @@
+/* Print Styles - Campaign Manager */
+
+@media print {
+  /* Reset and base print styles */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  /* Hide non-essential elements */
+  .app-header,
+  .app-sidebar,
+  .btn,
+  .nav__list,
+  .header__actions,
+  .sidebar__footer,
+  .footer__nav,
+  .theme-toggle,
+  .alert,
+  .wizard__footer,
+  .report__actions,
+  .journey-canvas__controls {
+    display: none !important;
+  }
+
+  /* Layout adjustments */
+  .app-shell {
+    display: block;
+    grid-template: none;
+  }
+
+  .app-main {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-bottom: 10pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+  }
+
+  p {
+    margin-bottom: 8pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Page headers and footers */
+  .page-header {
+    margin-bottom: 20pt;
+    border-bottom: 2pt solid black;
+    padding-bottom: 10pt;
+  }
+
+  .page-title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 0 0 5pt 0;
+  }
+
+  .page-subtitle {
+    font-size: 12pt;
+    color: #666;
+    margin: 0;
+  }
+
+  /* KPI Tiles */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10pt;
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+
+  .kpi-tile {
+    border: 1pt solid black;
+    padding: 10pt;
+    background: white;
+    page-break-inside: avoid;
+  }
+
+  .kpi-tile__header {
+    margin-bottom: 5pt;
+  }
+
+  .kpi-tile__label {
+    font-size: 10pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .kpi-tile__value {
+    font-size: 16pt;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 3pt;
+  }
+
+  .kpi-tile__change {
+    font-size: 9pt;
+    color: black;
+  }
+
+  /* Tables */
+  .table-container {
+    border: 1pt solid black;
+    background: white;
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table th {
+    background: #f0f0f0;
+    border: 1pt solid black;
+    padding: 6pt;
+    font-size: 10pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .table td {
+    border: 1pt solid black;
+    padding: 6pt;
+    font-size: 10pt;
+    color: black;
+  }
+
+  .table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+  /* Campaign Info */
+  .campaign-info strong {
+    font-weight: bold;
+    color: black;
+  }
+
+  .campaign-info .text-muted {
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Badges */
+  .badge {
+    border: 1pt solid black;
+    padding: 2pt 4pt;
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: white;
+    color: black;
+  }
+
+  .badge--completed {
+    background: #e6ffe6;
+  }
+
+  .badge--scheduled {
+    background: #fff2e6;
+  }
+
+  .badge--active {
+    background: #e6f3ff;
+  }
+
+  .badge--email {
+    background: #f0e6f0;
+  }
+
+  .badge--sms {
+    background: #e6ffe6;
+  }
+
+  /* Progress bars */
+  .progress {
+    border: 1pt solid black;
+    background: white;
+    height: 8pt;
+  }
+
+  .progress__bar {
+    background: black;
+    height: 100%;
+  }
+
+  /* Link share bars */
+  .link-share {
+    border-bottom: 1pt solid #ccc;
+    padding: 4pt 0;
+  }
+
+  .link-share:last-child {
+    border-bottom: none;
+  }
+
+  .link-share__url {
+    font-family: monospace;
+    font-size: 9pt;
+    color: black;
+  }
+
+  .link-share__bar {
+    border: 1pt solid black;
+    background: white;
+    height: 6pt;
+  }
+
+  .link-share__fill {
+    background: black;
+    height: 100%;
+  }
+
+  .link-share__percentage {
+    font-family: monospace;
+    font-size: 9pt;
+    font-weight: bold;
+    color: black;
+  }
+
+  /* Journey nodes */
+  .journey-canvas {
+    border: 1pt solid black;
+    background: white;
+    padding: 10pt;
+    page-break-inside: avoid;
+  }
+
+  .journey-node {
+    border: 2pt solid black;
+    background: white;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+
+  .journey-node__type {
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .journey-node__title {
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+    margin: 2pt 0;
+  }
+
+  .journey-node__content {
+    font-size: 9pt;
+    color: black;
+  }
+
+  .journey-connector {
+    text-align: center;
+    margin: 4pt 0;
+  }
+
+  .journey-connector::before {
+    display: none;
+  }
+
+  .journey-connector::after {
+    content: "↓";
+    font-size: 12pt;
+    color: black;
+  }
+
+  /* Checklist */
+  .checklist {
+    margin: 0;
+    padding: 0;
+  }
+
+  .checklist__item {
+    border-bottom: 1pt solid #ccc;
+    padding: 4pt 0;
+  }
+
+  .checklist__item:last-child {
+    border-bottom: none;
+  }
+
+  .checklist__icon {
+    width: 12pt;
+    height: 12pt;
+    border: 1pt solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-right: 6pt;
+  }
+
+  .checklist__icon--ok::before {
+    content: "✓";
+  }
+
+  .checklist__icon--warning::before {
+    content: "!";
+  }
+
+  .checklist__icon--error::before {
+    content: "✗";
+  }
+
+  .checklist__title {
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 2pt 0;
+  }
+
+  .checklist__description {
+    font-size: 9pt;
+    color: black;
+    margin: 0;
+  }
+
+  /* Form elements */
+  .form-group {
+    margin-bottom: 12pt;
+  }
+
+  .form-label {
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 3pt;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border: 1pt solid black;
+    background: white;
+    padding: 4pt;
+    font-size: 10pt;
+    color: black;
+    width: 100%;
+  }
+
+  .form-help {
+    font-size: 8pt;
+    color: #666;
+    margin-top: 2pt;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 10pt 0;
+    border-bottom: 1pt solid black;
+    padding-bottom: 3pt;
+  }
+
+  .section-header {
+    margin-bottom: 10pt;
+  }
+
+  /* Report specific */
+  .report__header {
+    border-bottom: 2pt solid black;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+  }
+
+  .report__title {
+    font-size: 18pt;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+  }
+
+  .report__meta {
+    font-size: 10pt;
+    color: #666;
+    margin-top: 5pt;
+  }
+
+  .report__section {
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+
+  .report__section-title {
+    font-size: 12pt;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 8pt 0;
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 3pt;
+  }
+
+  /* Wizard specific */
+  .wizard__content {
+    border: 1pt solid black;
+    background: white;
+    padding: 15pt;
+    margin-bottom: 15pt;
+  }
+
+  .wizard__title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 5pt 0;
+  }
+
+  .wizard__subtitle {
+    font-size: 11pt;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Steps */
+  .steps {
+    margin-bottom: 15pt;
+  }
+
+  .step__number {
+    border: 2pt solid black;
+    background: white;
+    color: black;
+    width: 20pt;
+    height: 20pt;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-right: 6pt;
+  }
+
+  .step--active .step__number,
+  .step--completed .step__number {
+    background: black;
+    color: white;
+  }
+
+  .step__label {
+    font-size: 10pt;
+    color: black;
+  }
+
+  /* Footer */
+  .app-footer {
+    border-top: 1pt solid black;
+    padding: 8pt 0;
+    margin-top: 20pt;
+  }
+
+  .footer__content {
+    font-size: 9pt;
+    color: #666;
+    text-align: center;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* URLs and links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Hide decorative elements */
+  .icon {
+    display: none;
+  }
+
+  /* Ensure proper spacing */
+  .mb-8 {
+    margin-bottom: 20pt;
+  }
+
+  .mb-6 {
+    margin-bottom: 15pt;
+  }
+
+  .mb-4 {
+    margin-bottom: 10pt;
+  }
+
+  .mt-8 {
+    margin-top: 20pt;
+  }
+
+  .mt-6 {
+    margin-top: 15pt;
+  }
+
+  .mt-4 {
+    margin-top: 10pt;
+  }
+}

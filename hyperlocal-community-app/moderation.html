@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderation - Hyperlocal Community</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <div class="header__brand">
+            <h1 class="header__title">
+              <a href="index.html" class="header__link">Hyperlocal Community</a>
+            </h1>
+            <p class="header__subtitle">
+              Connecting neighbors, building community
+            </p>
+          </div>
+          <div class="header__actions">
+            <button
+              class="btn btn--ghost"
+              id="theme-toggle"
+              aria-label="Toggle theme"
+            >
+              <span class="btn__icon">🌙</span>
+            </button>
+            <div class="profile-chip">
+              <div class="profile-chip__avatar">M</div>
+              <span class="profile-chip__name">Moderator</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" aria-label="Main navigation">
+        <ul class="sidebar__nav">
+          <li><a href="index.html" class="sidebar__link">Home</a></li>
+          <li><a href="events.html" class="sidebar__link">Events</a></li>
+          <li><a href="items.html" class="sidebar__link">Items</a></li>
+          <li><a href="carpool.html" class="sidebar__link">Carpool</a></li>
+          <li><a href="groups.html" class="sidebar__link">Groups</a></li>
+          <li><a href="messages.html" class="sidebar__link">Messages</a></li>
+          <li><a href="profile.html" class="sidebar__link">Profile</a></li>
+          <li>
+            <a
+              href="moderation.html"
+              class="sidebar__link sidebar__link--active"
+              >Moderation</a
+            >
+          </li>
+          <li><a href="settings.html" class="sidebar__link">Settings</a></li>
+          <li><a href="about.html" class="sidebar__link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-header__title">Moderation Dashboard</h1>
+          <p class="page-header__subtitle">
+            Review and manage community content
+          </p>
+        </div>
+
+        <!-- Moderation Stats -->
+        <div class="alert alert--info">
+          <h3>Moderation Overview</h3>
+          <p>
+            3 pending reports • 12 items flagged • 2 users restricted this week
+          </p>
+        </div>
+
+        <!-- Moderation Tabs -->
+        <div class="tab-layout">
+          <nav class="tab-layout__nav" role="tablist">
+            <button
+              class="tab-layout__tab tab-layout__tab--active"
+              role="tab"
+              aria-selected="true"
+              data-tab="reports"
+            >
+              Reports (3)
+            </button>
+            <button
+              class="tab-layout__tab"
+              role="tab"
+              aria-selected="false"
+              data-tab="flagged"
+            >
+              Flagged Content (12)
+            </button>
+            <button
+              class="tab-layout__tab"
+              role="tab"
+              aria-selected="false"
+              data-tab="users"
+            >
+              User Management (2)
+            </button>
+          </nav>
+
+          <!-- Reports Tab -->
+          <div
+            class="tab-layout__panel tab-layout__panel--active"
+            id="reports"
+            role="tabpanel"
+          >
+            <div class="detail-layout">
+              <div class="detail-layout__sidebar">
+                <h3>Pending Reports</h3>
+                <div class="list-layout">
+                  <div class="list-layout__item">
+                    <div class="list-layout__content">
+                      <h4>Inappropriate Event</h4>
+                      <p>Reported by: Sarah M. • 2 hours ago</p>
+                      <span class="badge badge--warning">Spam</span>
+                    </div>
+                  </div>
+                  <div class="list-layout__item">
+                    <div class="list-layout__content">
+                      <h4>Fake Item Listing</h4>
+                      <p>Reported by: Mike R. • 4 hours ago</p>
+                      <span class="badge badge--danger">Fraud</span>
+                    </div>
+                  </div>
+                  <div class="list-layout__item">
+                    <div class="list-layout__content">
+                      <h4>Harassment in Messages</h4>
+                      <p>Reported by: Lisa K. • 1 day ago</p>
+                      <span class="badge badge--danger">Harassment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="detail-layout__main">
+                <div class="detail-layout__header">
+                  <h2>Report Details</h2>
+                  <div class="detail-layout__actions">
+                    <button class="btn btn--danger">Remove Content</button>
+                    <button class="btn btn--secondary">Dismiss Report</button>
+                    <button class="btn btn--primary">Contact User</button>
+                  </div>
+                </div>
+                <div class="detail-layout__content">
+                  <h3>Inappropriate Event</h3>
+                  <p>
+                    <strong>Reported by:</strong> Sarah M. (verified member)
+                  </p>
+                  <p>
+                    <strong>Reported content:</strong> "Free Party - Bring Your
+                    Own Everything"
+                  </p>
+                  <p>
+                    <strong>Reason:</strong> Spam - appears to be promoting
+                    commercial event
+                  </p>
+                  <p>
+                    <strong>Details:</strong> This event listing contains no
+                    specific details about location, time, or organizer. The
+                    description is vague and appears to be spam.
+                  </p>
+
+                  <h4>Original Content</h4>
+                  <div class="feed-card feed-card--event">
+                    <div class="feed-card__image">
+                      <span class="feed-card__icon">🎉</span>
+                    </div>
+                    <div class="feed-card__content">
+                      <h3 class="feed-card__title">
+                        Free Party - Bring Your Own Everything
+                      </h3>
+                      <p class="feed-card__meta">Today • 7:00 PM</p>
+                      <p class="feed-card__description">
+                        Come join us for an amazing party! Bring your own
+                        drinks, food, and good vibes. Location TBD.
+                      </p>
+                      <div class="feed-card__footer">
+                        <span class="profile-chip profile-chip--small">
+                          <div class="profile-chip__avatar">?</div>
+                          <span class="profile-chip__name">Unknown User</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flagged Content Tab -->
+          <div class="tab-layout__panel" id="flagged" role="tabpanel">
+            <div class="feed-grid">
+              <div class="feed-card feed-card--item">
+                <div class="feed-card__image">
+                  <span class="feed-card__icon">📱</span>
+                </div>
+                <div class="feed-card__content">
+                  <h3 class="feed-card__title">iPhone 13 Pro - $50</h3>
+                  <p class="feed-card__meta">Flagged: Price too low</p>
+                  <p class="feed-card__description">
+                    Selling my iPhone 13 Pro for $50. Must sell today!
+                  </p>
+                  <div class="feed-card__footer">
+                    <span class="badge badge--warning">Flagged</span>
+                    <span class="profile-chip profile-chip--small">
+                      <div class="profile-chip__avatar">J</div>
+                      <span class="profile-chip__name">John D.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feed-card feed-card--event">
+                <div class="feed-card__image">
+                  <span class="feed-card__icon">🏠</span>
+                </div>
+                <div class="feed-card__content">
+                  <h3 class="feed-card__title">House Party - All Welcome</h3>
+                  <p class="feed-card__meta">Flagged: No address</p>
+                  <p class="feed-card__description">
+                    Big house party this weekend. Message for address.
+                  </p>
+                  <div class="feed-card__footer">
+                    <span class="badge badge--warning">Flagged</span>
+                    <span class="profile-chip profile-chip--small">
+                      <div class="profile-chip__avatar">A</div>
+                      <span class="profile-chip__name">Alex T.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Management Tab -->
+          <div class="tab-layout__panel" id="users" role="tabpanel">
+            <div class="detail-layout">
+              <div class="detail-layout__sidebar">
+                <h3>Restricted Users</h3>
+                <div class="list-layout">
+                  <div class="list-layout__item">
+                    <div class="list-layout__content">
+                      <h4>User123</h4>
+                      <p>Restricted: 3 days ago</p>
+                      <span class="badge badge--danger">Banned</span>
+                    </div>
+                  </div>
+                  <div class="list-layout__item">
+                    <div class="list-layout__content">
+                      <h4>SpamUser</h4>
+                      <p>Restricted: 1 week ago</p>
+                      <span class="badge badge--warning">Limited</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="detail-layout__main">
+                <div class="detail-layout__header">
+                  <h2>User Management</h2>
+                  <div class="detail-layout__actions">
+                    <button class="btn btn--danger">Permanent Ban</button>
+                    <button class="btn btn--warning">
+                      Temporary Restriction
+                    </button>
+                    <button class="btn btn--secondary">Restore Access</button>
+                  </div>
+                </div>
+                <div class="detail-layout__content">
+                  <h3>User123</h3>
+                  <p><strong>Status:</strong> Banned (Permanent)</p>
+                  <p>
+                    <strong>Reason:</strong> Multiple violations of community
+                    guidelines
+                  </p>
+                  <p>
+                    <strong>History:</strong> 5 reports, 3 warnings, 1 temporary
+                    restriction
+                  </p>
+                  <p>
+                    <strong>Actions taken:</strong> Content removed, account
+                    suspended
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>
+            &copy; 2024 Hyperlocal Community. Building stronger neighborhoods
+            together.
+          </p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+
+        const icon = themeToggle.querySelector(".btn__icon");
+        icon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+      });
+
+      // Tab switching functionality
+      const tabs = document.querySelectorAll(".tab-layout__tab");
+      const panels = document.querySelectorAll(".tab-layout__panel");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetTab = tab.getAttribute("data-tab");
+
+          // Update tab states
+          tabs.forEach((t) => {
+            t.classList.remove("tab-layout__tab--active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("tab-layout__tab--active");
+          tab.setAttribute("aria-selected", "true");
+
+          // Update panel states
+          panels.forEach((panel) => {
+            panel.classList.remove("tab-layout__panel--active");
+          });
+          document
+            .getElementById(targetTab)
+            .classList.add("tab-layout__panel--active");
+        });
+      });
+    </script>
+  </body>
+</html>

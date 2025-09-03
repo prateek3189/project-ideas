@@ -1,0 +1,12 @@
+/* Main CSS File for AI Homework Assistant */
+
+/* Import CSS files in dependency order */
+@import url('tokens.css');
+@import url('base.css');
+@import url('utilities.css');
+@import url('components.css');
+@import url('layouts.css');
+@import url('themes.css');
+@import url('print.css');
+
+/* Additional global styles and overrides can go here */

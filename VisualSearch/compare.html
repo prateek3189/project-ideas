@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare Items - Visual Search</title>
+    <meta
+      name="description"
+      content="Compare visual search results side by side"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="container">
+          <div class="header">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="header__brand-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Visual Search
+            </a>
+
+            <nav class="header__nav">
+              <a href="results.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  ></path>
+                  <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                </svg>
+                Back to Results
+              </a>
+
+              <button
+                class="theme-toggle"
+                onclick="toggleTheme()"
+                aria-label="Toggle theme"
+              >
+                <svg
+                  class="theme-toggle__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                Light
+              </button>
+
+              <a href="collections.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"
+                  ></path>
+                </svg>
+                Collections
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="shell__main">
+        <div class="container">
+          <!-- Page Header -->
+          <div class="flex flex--between items-center mb-6">
+            <div>
+              <h1 class="text-2xl font-bold mb-2">Compare Items</h1>
+              <p class="text-muted">
+                Side-by-side comparison of your search results
+              </p>
+            </div>
+            <div class="flex gap-3">
+              <button class="btn btn--secondary" onclick="addToComparison()">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Add Item
+              </button>
+              <a href="#" onclick="window.print()" class="btn btn--secondary">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6,9 6,2 18,2 18,9"></polyline>
+                  <path
+                    d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                  ></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print
+              </a>
+            </div>
+          </div>
+
+          <!-- Compare Layout -->
+          <div class="compare-layout">
+            <!-- Item 1 -->
+            <div class="compare-item">
+              <img
+                src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23f0f0f0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 1</text></svg>"
+                alt="Runner Flex 2.0"
+                class="compare-item__image"
+              />
+
+              <h2 class="compare-item__title">Runner Flex 2.0 — Black/White</h2>
+              <div class="compare-item__price">₹3,499</div>
+
+              <div class="compare-item__similarity">
+                <div class="similarity-meter">
+                  <div class="similarity-meter__bar">
+                    <div
+                      class="similarity-meter__fill"
+                      style="width: 91%"
+                    ></div>
+                  </div>
+                  <span class="similarity-meter__value">91%</span>
+                </div>
+              </div>
+
+              <div class="compare-item__pros-cons">
+                <h4 class="pros-cons__title">Pros</h4>
+                <ul class="pros-cons__list">
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    High visual similarity
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Good price point
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Popular brand
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">In stock</li>
+                </ul>
+
+                <h4 class="pros-cons__title">Cons</h4>
+                <ul class="pros-cons__list">
+                  <li class="pros-cons__item pros-cons__item--con">
+                    Limited size options
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--con">
+                    Basic warranty
+                  </li>
+                </ul>
+              </div>
+
+              <div class="compare-item__actions">
+                <button
+                  class="btn btn--primary"
+                  onclick="openDetail('product1')"
+                >
+                  View Details
+                </button>
+                <button
+                  class="btn btn--secondary"
+                  onclick="removeFromComparison(0)"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="compare-item">
+              <img
+                src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23e0e0e0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 2</text></svg>"
+                alt="Street Sprint Low"
+                class="compare-item__image"
+              />
+
+              <h2 class="compare-item__title">Street Sprint Low — Mono</h2>
+              <div class="compare-item__price">₹3,199</div>
+
+              <div class="compare-item__similarity">
+                <div class="similarity-meter">
+                  <div class="similarity-meter__bar">
+                    <div
+                      class="similarity-meter__fill"
+                      style="width: 87%"
+                    ></div>
+                  </div>
+                  <span class="similarity-meter__value">87%</span>
+                </div>
+              </div>
+
+              <div class="compare-item__pros-cons">
+                <h4 class="pros-cons__title">Pros</h4>
+                <ul class="pros-cons__list">
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Lower price
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Minimalist design
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Good reviews
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Fast shipping
+                  </li>
+                </ul>
+
+                <h4 class="pros-cons__title">Cons</h4>
+                <ul class="pros-cons__list">
+                  <li class="pros-cons__item pros-cons__item--con">
+                    Less similar to original
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--con">
+                    Limited color options
+                  </li>
+                </ul>
+              </div>
+
+              <div class="compare-item__actions">
+                <button
+                  class="btn btn--primary"
+                  onclick="openDetail('product2')"
+                >
+                  View Details
+                </button>
+                <button
+                  class="btn btn--secondary"
+                  onclick="removeFromComparison(1)"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="compare-item">
+              <img
+                src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23d0d0d0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 3</text></svg>"
+                alt="Aero Knit Sneaker"
+                class="compare-item__image"
+              />
+
+              <h2 class="compare-item__title">Aero Knit Sneaker — Graphite</h2>
+              <div class="compare-item__price">₹3,899</div>
+
+              <div class="compare-item__similarity">
+                <div class="similarity-meter">
+                  <div class="similarity-meter__bar">
+                    <div
+                      class="similarity-meter__fill"
+                      style="width: 84%"
+                    ></div>
+                  </div>
+                  <span class="similarity-meter__value">84%</span>
+                </div>
+              </div>
+
+              <div class="compare-item__pros-cons">
+                <h4 class="pros-cons__title">Pros</h4>
+                <ul class="pros-cons__list">
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Premium materials
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Lightweight design
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Breathable upper
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--pro">
+                    Extended warranty
+                  </li>
+                </ul>
+
+                <h4 class="pros-cons__title">Cons</h4>
+                <ul class="pros-cons__list">
+                  <li class="pros-cons__item pros-cons__item--con">
+                    Higher price
+                  </li>
+                  <li class="pros-cons__item pros-cons__item--con">
+                    Limited availability
+                  </li>
+                </ul>
+              </div>
+
+              <div class="compare-item__actions">
+                <button
+                  class="btn btn--primary"
+                  onclick="openDetail('product3')"
+                >
+                  View Details
+                </button>
+                <button
+                  class="btn btn--secondary"
+                  onclick="removeFromComparison(2)"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comparison Summary -->
+          <div class="card mt-8">
+            <div class="card__header">
+              <h2>Comparison Summary</h2>
+            </div>
+            <div class="card__body">
+              <div class="two-column">
+                <div>
+                  <h3 class="mb-4">Best Overall Match</h3>
+                  <div class="flex items-center gap-3 mb-4">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><rect width='60' height='60' fill='%23f0f0f0'/><text x='30' y='30' text-anchor='middle' dy='.3em' font-size='10' fill='%23666'>Sneaker 1</text></svg>"
+                      alt="Runner Flex 2.0"
+                      style="width: 60px; height: 60px; border-radius: 6px"
+                    />
+                    <div>
+                      <div class="font-semibold">
+                        Runner Flex 2.0 — Black/White
+                      </div>
+                      <div class="text-sm text-muted">
+                        91% similarity • ₹3,499
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-sm text-muted">
+                    Highest visual similarity with good price point and
+                    availability.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 class="mb-4">Best Value</h3>
+                  <div class="flex items-center gap-3 mb-4">
+                    <img
+                      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><rect width='60' height='60' fill='%23e0e0e0'/><text x='30' y='30' text-anchor='middle' dy='.3em' font-size='10' fill='%23666'>Sneaker 2</text></svg>"
+                      alt="Street Sprint Low"
+                      style="width: 60px; height: 60px; border-radius: 6px"
+                    />
+                    <div>
+                      <div class="font-semibold">Street Sprint Low — Mono</div>
+                      <div class="text-sm text-muted">
+                        87% similarity • ₹3,199
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-sm text-muted">
+                    Best price-to-similarity ratio with minimalist design.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Print Preview -->
+          <div class="card mt-8 no-print">
+            <div class="card__header">
+              <h2>Print Preview</h2>
+            </div>
+            <div class="card__body">
+              <p class="text-muted mb-4">
+                Your comparison will be formatted for printing with detailed
+                specifications and pros/cons.
+              </p>
+              <div class="flex gap-3">
+                <button
+                  class="btn btn--secondary"
+                  onclick="previewPrintComparison()"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10,9 9,9 8,9"></polyline>
+                  </svg>
+                  Preview Print Comparison
+                </button>
+                <button class="btn btn--primary" onclick="window.print()">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6,9 6,2 18,2 18,9"></polyline>
+                    <path
+                      d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                    ></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                  </svg>
+                  Print Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <div class="flex flex--between items-center">
+            <div class="text-sm text-muted">
+              Visual Search v0.1 • <a href="about.html">About</a> •
+              <a href="about.html#privacy">Privacy</a>
+            </div>
+            <div class="text-sm text-muted">
+              <a href="#" onclick="window.print()" class="header__print-link"
+                >Print Comparison</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      function addToComparison() {
+        alert(
+          "Add to comparison functionality will be implemented in the next version!"
+        );
+      }
+
+      function removeFromComparison(index) {
+        if (confirm("Remove this item from comparison?")) {
+          // In a real app, this would remove the item from the comparison
+          alert(`Item ${index + 1} removed from comparison!`);
+        }
+      }
+
+      function openDetail(id) {
+        window.location.href = `detail.html?id=${id}`;
+      }
+
+      function previewPrintComparison() {
+        alert(
+          "Print preview functionality will be implemented in the next version!"
+        );
+      }
+
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme") || "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        body.setAttribute("data-theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = newTheme === "dark" ? "Dark" : "Light";
+
+        // Store preference
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.body.setAttribute("data-theme", savedTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = savedTheme === "dark" ? "Dark" : "Light";
+      });
+    </script>
+  </body>
+</html>

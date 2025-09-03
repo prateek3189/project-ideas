@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collections - Visual Search</title>
+    <meta
+      name="description"
+      content="Your saved visual search results and collections"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="container">
+          <div class="header">
+            <a href="index.html" class="header__brand">
+              <svg
+                class="header__brand-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Visual Search
+            </a>
+
+            <nav class="header__nav">
+              <a href="index.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  ></path>
+                  <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                </svg>
+                Home
+              </a>
+
+              <button
+                class="theme-toggle"
+                onclick="toggleTheme()"
+                aria-label="Toggle theme"
+              >
+                <svg
+                  class="theme-toggle__icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                Light
+              </button>
+
+              <a href="settings.html" class="btn btn--ghost btn--sm">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"
+                  ></path>
+                </svg>
+                Settings
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="shell__main">
+        <div class="container">
+          <!-- Page Header -->
+          <div class="flex flex--between items-center mb-6">
+            <div>
+              <h1 class="text-2xl font-bold mb-2">My Collections</h1>
+              <p class="text-muted">Saved items from your visual searches</p>
+            </div>
+            <div class="flex gap-3">
+              <button class="btn btn--primary" onclick="createNewCollection()">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                New Collection
+              </button>
+              <a href="#" onclick="window.print()" class="btn btn--secondary">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6,9 6,2 18,2 18,9"></polyline>
+                  <path
+                    d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                  ></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print
+              </a>
+            </div>
+          </div>
+
+          <!-- Collections Layout -->
+          <div class="collections-layout">
+            <!-- Sidebar -->
+            <aside class="collections-sidebar">
+              <h2 class="collections-sidebar__title">Folders</h2>
+
+              <ul class="folders-list">
+                <li class="folders-list__item">
+                  <div
+                    class="folder-tile folder-tile--active"
+                    onclick="selectFolder('all')"
+                  >
+                    <svg
+                      class="folder-tile__icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                      ></path>
+                    </svg>
+                    <span class="folder-tile__name">All Items</span>
+                    <span class="folder-tile__count">12</span>
+                  </div>
+                </li>
+
+                <li class="folders-list__item">
+                  <div class="folder-tile" onclick="selectFolder('shoes')">
+                    <svg
+                      class="folder-tile__icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path
+                        d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                      ></path>
+                    </svg>
+                    <span class="folder-tile__name">Shoes</span>
+                    <span class="folder-tile__count">5</span>
+                  </div>
+                </li>
+
+                <li class="folders-list__item">
+                  <div
+                    class="folder-tile"
+                    onclick="selectFolder('living-room')"
+                  >
+                    <svg
+                      class="folder-tile__icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                      ></path>
+                      <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                    </svg>
+                    <span class="folder-tile__name">Living Room</span>
+                    <span class="folder-tile__count">3</span>
+                  </div>
+                </li>
+
+                <li class="folders-list__item">
+                  <div class="folder-tile" onclick="selectFolder('plants')">
+                    <svg
+                      class="folder-tile__icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                      <path d="M2 17l10 5 10-5"></path>
+                      <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="folder-tile__name">Plants</span>
+                    <span class="folder-tile__count">2</span>
+                  </div>
+                </li>
+
+                <li class="folders-list__item">
+                  <div class="folder-tile" onclick="selectFolder('trip-rome')">
+                    <svg
+                      class="folder-tile__icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="folder-tile__name">Trip to Rome</span>
+                    <span class="folder-tile__count">2</span>
+                  </div>
+                </li>
+              </ul>
+            </aside>
+
+            <!-- Collections Grid -->
+            <div class="collections-grid">
+              <!-- Collection Item 1 -->
+              <div class="collection-item" onclick="openDetail('product1')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23f0f0f0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 1</text></svg>"
+                  alt="Runner Flex 2.0"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">
+                    Runner Flex 2.0 — Black/White
+                  </h3>
+                  <p class="collection-item__note">
+                    Great for running, comfortable fit. Similar to my old pair.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >Shop</span
+                    >
+                    <span class="chip">Shoes</span>
+                    <span class="chip">₹3,499</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 2 -->
+              <div class="collection-item" onclick="openDetail('product2')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23e0e0e0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 2</text></svg>"
+                  alt="Street Sprint Low"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">
+                    Street Sprint Low — Mono
+                  </h3>
+                  <p class="collection-item__note">
+                    Minimalist design, perfect for casual wear.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >Shop</span
+                    >
+                    <span class="chip">Shoes</span>
+                    <span class="chip">₹3,199</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 3 -->
+              <div class="collection-item" onclick="openDetail('chair1')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%238B4513'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Chair</text></svg>"
+                  alt="Vintage Chair"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">Vintage Wooden Chair</h3>
+                  <p class="collection-item__note">
+                    Perfect for the living room corner. Matches the coffee table
+                    style.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--medium"
+                      >Shop</span
+                    >
+                    <span class="chip">Furniture</span>
+                    <span class="chip">₹8,500</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 4 -->
+              <div class="collection-item" onclick="openDetail('plant1')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23228B22'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Plant</text></svg>"
+                  alt="Ficus elastica"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">
+                    Ficus elastica (Rubber Plant)
+                  </h3>
+                  <p class="collection-item__note">
+                    Easy to care for, grows well in bright indirect light.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >Learn</span
+                    >
+                    <span class="chip">Plant</span>
+                    <span class="chip">Houseplant</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 5 -->
+              <div class="collection-item" onclick="openDetail('landmark1')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23DAA520'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Landmark</text></svg>"
+                  alt="India Gate"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">India Gate, New Delhi</h3>
+                  <p class="collection-item__note">
+                    War memorial built in 1931. Designed by Edwin Lutyens.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >Learn</span
+                    >
+                    <span class="chip">Landmark</span>
+                    <span class="chip">India</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 6 -->
+              <div class="collection-item" onclick="openDetail('product3')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23d0d0d0'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Sneaker 3</text></svg>"
+                  alt="Aero Knit Sneaker"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">
+                    Aero Knit Sneaker — Graphite
+                  </h3>
+                  <p class="collection-item__note">
+                    Lightweight and breathable. Good for long runs.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >Shop</span
+                    >
+                    <span class="chip">Shoes</span>
+                    <span class="chip">₹3,899</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 7 -->
+              <div class="collection-item" onclick="openDetail('lamp1')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23FFD700'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='%23666'>Lamp</text></svg>"
+                  alt="Table Lamp"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">Modern Table Lamp</h3>
+                  <p class="collection-item__note">
+                    Perfect reading light for the bedroom. Adjustable
+                    brightness.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--medium"
+                      >Shop</span
+                    >
+                    <span class="chip">Lighting</span>
+                    <span class="chip">₹2,200</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collection Item 8 -->
+              <div class="collection-item" onclick="openDetail('plant2')">
+                <img
+                  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%2332CD32'/><text x='100' y='100' text-anchor='middle' dy='.3em' font-size='16' fill='white'>Plant 2</text></svg>"
+                  alt="Monstera"
+                  class="collection-item__image"
+                />
+                <div class="collection-item__content">
+                  <h3 class="collection-item__title">Monstera deliciosa</h3>
+                  <p class="collection-item__note">
+                    Swiss cheese plant. Needs bright indirect light and weekly
+                    watering.
+                  </p>
+                  <div class="collection-item__tags">
+                    <span class="chip chip--confidence chip--confidence--high"
+                      >Learn</span
+                    >
+                    <span class="chip">Plant</span>
+                    <span class="chip">Tropical</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Print Sheet Preview -->
+          <div class="card mt-8 no-print">
+            <div class="card__header">
+              <h2>Print Preview</h2>
+            </div>
+            <div class="card__body">
+              <p class="text-muted mb-4">
+                Your collections will be formatted for printing with QR codes
+                for easy reference.
+              </p>
+              <div class="flex gap-3">
+                <button
+                  class="btn btn--secondary"
+                  onclick="previewPrintSheet()"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10,9 9,9 8,9"></polyline>
+                  </svg>
+                  Preview Print Sheet
+                </button>
+                <button class="btn btn--primary" onclick="window.print()">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6,9 6,2 18,2 18,9"></polyline>
+                    <path
+                      d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+                    ></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                  </svg>
+                  Print Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <div class="flex flex--between items-center">
+            <div class="text-sm text-muted">
+              Visual Search v0.1 • <a href="about.html">About</a> •
+              <a href="about.html#privacy">Privacy</a>
+            </div>
+            <div class="text-sm text-muted">
+              <a href="#" onclick="window.print()" class="header__print-link"
+                >Print Collections</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      let selectedFolder = "all";
+
+      function selectFolder(folderId) {
+        selectedFolder = folderId;
+
+        // Update folder selection
+        document.querySelectorAll(".folder-tile").forEach((tile) => {
+          tile.classList.remove("folder-tile--active");
+        });
+
+        document
+          .querySelector(`[onclick="selectFolder('${folderId}')"]`)
+          .classList.add("folder-tile--active");
+
+        // Filter collections (in a real app, this would filter the actual data)
+        filterCollections(folderId);
+      }
+
+      function filterCollections(folderId) {
+        // In a real app, this would filter the collections based on the selected folder
+        console.log(`Filtering collections for folder: ${folderId}`);
+      }
+
+      function createNewCollection() {
+        const name = prompt("Enter collection name:");
+        if (name) {
+          alert(
+            `New collection "${name}" created! (This would create a new folder in a real implementation)`
+          );
+        }
+      }
+
+      function openDetail(id) {
+        window.location.href = `detail.html?id=${id}`;
+      }
+
+      function previewPrintSheet() {
+        alert(
+          "Print preview functionality will be implemented in the next version!"
+        );
+      }
+
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme") || "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        body.setAttribute("data-theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = newTheme === "dark" ? "Dark" : "Light";
+
+        // Store preference
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.body.setAttribute("data-theme", savedTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const text = button.childNodes[button.childNodes.length - 1];
+        text.textContent = savedTheme === "dark" ? "Dark" : "Light";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,325 @@
+/* Themes - Budget Buddy */
+
+/* Theme Toggle Functionality */
+.theme-toggle {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle__slider {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+}
+
+.theme-toggle__slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-text-primary);
+  border-radius: 50%;
+  transition: transform var(--transition-normal);
+}
+
+.theme-toggle input:checked + .theme-toggle__slider {
+  background-color: var(--color-accent);
+}
+
+.theme-toggle input:checked + .theme-toggle__slider::before {
+  transform: translateX(24px);
+}
+
+/* Dark Theme Specific Styles */
+[data-theme="dark"] {
+  /* Enhanced contrast for dark theme */
+  --color-bg-primary: #0b1220;
+  --color-bg-secondary: #111827;
+  --color-bg-tertiary: #1f2937;
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #d1d5db;
+  --color-text-tertiary: #9ca3af;
+  --color-border: #374151;
+  --color-border-light: #4b5563;
+  --color-surface: #111827;
+  --color-surface-hover: #1f2937;
+
+  /* Category colors adjusted for dark theme */
+  --color-food: #fcd34d;
+  --color-transport: #60a5fa;
+  --color-shopping: #a78bfa;
+  --color-bills: #f87171;
+  --color-entertainment: #f472b6;
+  --color-health: #34d399;
+  --color-education: #22d3ee;
+  --color-other: #9ca3af;
+
+  /* Enhanced shadows for dark theme */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+    0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] .pill--food {
+  background-color: #451a03;
+  color: #fcd34d;
+}
+
+[data-theme="dark"] .pill--transport {
+  background-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .pill--shopping {
+  background-color: #581c87;
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .pill--bills {
+  background-color: #7f1d1d;
+  color: #f87171;
+}
+
+[data-theme="dark"] .pill--entertainment {
+  background-color: #831843;
+  color: #f472b6;
+}
+
+[data-theme="dark"] .pill--health {
+  background-color: #064e3b;
+  color: #34d399;
+}
+
+[data-theme="dark"] .pill--education {
+  background-color: #155e75;
+  color: #22d3ee;
+}
+
+[data-theme="dark"] .pill--other {
+  background-color: #374151;
+  color: #9ca3af;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f0f0f0;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-text-tertiary: #ffffff;
+  --color-accent: #ffff00;
+  --color-accent-hover: #ffff00;
+  --color-accent-light: #ffff00;
+  --color-border: #ffffff;
+  --color-border-light: #ffffff;
+  --color-surface: #000000;
+  --color-surface-hover: #333333;
+
+  /* High contrast status colors */
+  --color-income: #00ff00;
+  --color-expense: #ff0000;
+  --color-warning: #ffff00;
+  --color-info: #00ffff;
+  --color-success: #00ff00;
+  --color-error: #ff0000;
+
+  /* Enhanced borders and focus */
+  --shadow-sm: 0 0 0 2px #ffffff;
+  --shadow-md: 0 0 0 3px #ffffff;
+  --shadow-lg: 0 0 0 4px #ffffff;
+}
+
+[data-theme="high-contrast"] * {
+  border-color: #ffffff !important;
+}
+
+[data-theme="high-contrast"] input:focus,
+[data-theme="high-contrast"] select:focus,
+[data-theme="high-contrast"] textarea:focus,
+[data-theme="high-contrast"] button:focus {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 2px !important;
+}
+
+/* Reduced Motion Theme */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .tile:hover,
+  .account-card:hover,
+  .receipt-card:hover {
+    transform: none !important;
+  }
+
+  .budget__progress {
+    transition: none !important;
+  }
+
+  .chart-bar__fill {
+    transition: none !important;
+  }
+}
+
+/* Print Theme */
+@media print {
+  :root {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #ffffff;
+    --color-bg-tertiary: #f5f5f5;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #666666;
+    --color-border: #cccccc;
+    --color-surface: #ffffff;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+  }
+
+  [data-theme="dark"],
+  [data-theme="high-contrast"] {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #ffffff;
+    --color-bg-tertiary: #f5f5f5;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #666666;
+    --color-border: #cccccc;
+    --color-surface: #ffffff;
+  }
+}
+
+/* Theme Transition */
+* {
+  transition: background-color var(--transition-normal),
+    color var(--transition-normal), border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+/* Theme-specific component adjustments */
+[data-theme="dark"] .alert--info {
+  background-color: #1e3a8a;
+  color: #dbeafe;
+}
+
+[data-theme="dark"] .alert--warning {
+  background-color: #92400e;
+  color: #fef3c7;
+}
+
+[data-theme="dark"] .alert--error {
+  background-color: #991b1b;
+  color: #fee2e2;
+}
+
+[data-theme="dark"] .alert--success {
+  background-color: #065f46;
+  color: #d1fae5;
+}
+
+[data-theme="dark"] .confidence-chip--high {
+  background-color: #064e3b;
+  color: #34d399;
+}
+
+[data-theme="dark"] .confidence-chip--medium {
+  background-color: #92400e;
+  color: #fcd34d;
+}
+
+[data-theme="dark"] .confidence-chip--low {
+  background-color: #991b1b;
+  color: #f87171;
+}
+
+[data-theme="dark"] .cashflow-badge--positive {
+  background-color: #064e3b;
+  color: #34d399;
+}
+
+[data-theme="dark"] .cashflow-badge--negative {
+  background-color: #991b1b;
+  color: #f87171;
+}
+
+[data-theme="dark"] .cashflow-badge--neutral {
+  background-color: #374151;
+  color: #9ca3af;
+}
+
+/* Theme toggle button states */
+.theme-toggle:focus-within .theme-toggle__slider {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Accessibility improvements for themes */
+[data-theme="high-contrast"] .sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Theme persistence indicator */
+.theme-indicator {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  z-index: var(--z-tooltip);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.theme-indicator--show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* System theme detection */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg-primary: #0b1220;
+    --color-bg-secondary: #111827;
+    --color-bg-tertiary: #1f2937;
+    --color-text-primary: #e5e7eb;
+    --color-text-secondary: #d1d5db;
+    --color-text-tertiary: #9ca3af;
+    --color-border: #374151;
+    --color-surface: #111827;
+    --color-surface-hover: #1f2937;
+  }
+}

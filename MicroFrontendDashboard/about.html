@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Micro-Frontend Dashboard Builder</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__logo">Micro-FE Builder</h1>
+        <div class="shell__header-actions">
+          <div class="env-chips">
+            <span class="chip chip--env chip--dev">Dev</span>
+            <span class="chip chip--env chip--staging">Staging</span>
+            <span class="chip chip--env chip--prod">Prod</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search spaces, widgets..."
+              class="search__input"
+            />
+          </div>
+          <a href="#" class="print-link">Print</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="spaces.html" class="nav__link">Spaces</a>
+          </li>
+          <li class="nav__item">
+            <a href="builder.html" class="nav__link">Page Builder</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog.html" class="nav__link">Catalog</a>
+          </li>
+          <li class="nav__item">
+            <a href="releases.html" class="nav__link">Releases</a>
+          </li>
+          <li class="nav__item">
+            <a href="permissions.html" class="nav__link">Permissions</a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">Settings</a>
+          </li>
+          <li class="nav__item">
+            <a href="docs.html" class="nav__link">Docs</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a href="about.html" class="nav__link">About</a>
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <button class="theme-toggle__button" aria-label="Toggle theme">
+            🌙
+          </button>
+        </div>
+      </nav>
+
+      <main class="shell__main">
+        <div class="page-header">
+          <h1 class="page-title">About</h1>
+          <p class="page-subtitle">
+            Learn about the Micro-Frontend Dashboard Builder platform
+          </p>
+        </div>
+
+        <!-- Platform Overview -->
+        <section class="section mb-8">
+          <div class="bg-surface border rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4">Platform Overview</h2>
+            <p class="text-lg text-muted mb-6">
+              The Micro-Frontend Dashboard Builder is a comprehensive platform
+              that enables enterprise teams to compose unified dashboards from
+              independently developed micro-frontends. Built with modern web
+              technologies and designed for scalability, security, and
+              maintainability.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="text-3xl mb-3">🧩</div>
+                <h3 class="font-semibold mb-2">Modular Architecture</h3>
+                <p class="text-sm text-muted">
+                  Build dashboards from reusable, independently deployable
+                  widgets
+                </p>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-3">🔒</div>
+                <h3 class="font-semibold mb-2">Enterprise Security</h3>
+                <p class="text-sm text-muted">
+                  Role-based access, SSO integration, and content security
+                  policies
+                </p>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl mb-3">⚡</div>
+                <h3 class="font-semibold mb-2">High Performance</h3>
+                <p class="text-sm text-muted">
+                  Optimized loading, lazy mounting, and performance budgets
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Scope & Disclaimers -->
+        <section class="section mb-8">
+          <h2 class="section-title">Scope & Disclaimers</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <h3 class="font-semibold mb-4">Current Version (v0.1)</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-medium mb-2">What's Included</h4>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>
+                    • Static HTML + CSS prototype with visual placeholders
+                  </li>
+                  <li>• Complete design system and component library</li>
+                  <li>• Responsive layouts and accessibility features</li>
+                  <li>• Print styles for documentation and reports</li>
+                  <li>• Theme support (light, dark, high-contrast)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-medium mb-2">
+                  What's Not Included (Future Versions)
+                </h4>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>• JavaScript runtime and drag-and-drop functionality</li>
+                  <li>• Module Federation and Web Components integration</li>
+                  <li>• Real-time data binding and event communication</li>
+                  <li>• Authentication and authorization systems</li>
+                  <li>• CI/CD pipelines and deployment automation</li>
+                  <li>• Observability and monitoring capabilities</li>
+                </ul>
+              </div>
+
+              <div class="banner banner--warning">
+                <strong>Important:</strong> This is a visual prototype. All
+                interactive elements are placeholders and do not represent
+                functional behavior. Use this as a foundation for building the
+                actual application with your preferred JavaScript framework and
+                backend services.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section mb-8">
+          <h2 class="section-title">Technology Stack</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface border rounded-lg p-6">
+              <h3 class="font-semibold mb-4">Frontend (Current)</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  <span class="text-sm">HTML5 with semantic markup</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  <span class="text-sm">CSS3 with custom properties</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  <span class="text-sm"
+                    >BEM methodology for CSS organization</span
+                  >
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  <span class="text-sm">Responsive design with CSS Grid</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-primary rounded-full"></span>
+                  <span class="text-sm">Accessibility (WCAG 2.1 AA)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-surface border rounded-lg p-6">
+              <h3 class="font-semibold mb-4">Future Architecture</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-success rounded-full"></span>
+                  <span class="text-sm">Module Federation (Webpack 5)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-success rounded-full"></span>
+                  <span class="text-sm">Web Components (Custom Elements)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-success rounded-full"></span>
+                  <span class="text-sm">React / Vue / Angular widgets</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-success rounded-full"></span>
+                  <span class="text-sm">TypeScript for type safety</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="w-2 h-2 bg-success rounded-full"></span>
+                  <span class="text-sm">Node.js backend services</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Governance -->
+        <section class="section mb-8">
+          <h2 class="section-title">Governance & Policies</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-semibold mb-3">Versioning Policy</h3>
+                <p class="text-sm text-muted mb-2">
+                  We follow semantic versioning (SemVer) for all platform
+                  components:
+                </p>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>
+                    • <strong>Major (X.0.0):</strong> Breaking changes to APIs
+                    or data structures
+                  </li>
+                  <li>
+                    • <strong>Minor (0.X.0):</strong> New features with backward
+                    compatibility
+                  </li>
+                  <li>
+                    • <strong>Patch (0.0.X):</strong> Bug fixes and security
+                    updates
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-semibold mb-3">Deprecation Policy</h3>
+                <p class="text-sm text-muted mb-2">
+                  When deprecating features or widgets:
+                </p>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>• Provide 90 days advance notice</li>
+                  <li>• Document migration paths and alternatives</li>
+                  <li>• Send notifications to affected space owners</li>
+                  <li>• Maintain backward compatibility during transition</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-semibold mb-3">Security Review Process</h3>
+                <p class="text-sm text-muted mb-2">
+                  All widgets must pass security review before production
+                  deployment:
+                </p>
+                <ul class="text-sm text-muted space-y-1 ml-4">
+                  <li>• Static code analysis for vulnerabilities</li>
+                  <li>• Dependency audit and license compliance</li>
+                  <li>• Content Security Policy validation</li>
+                  <li>• Data handling and privacy impact assessment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content Security -->
+        <section class="section mb-8">
+          <h2 class="section-title">Content Security</h2>
+          <div class="bg-surface border rounded-lg p-6">
+            <div class="banner banner--warning mb-4">
+              <strong>Security Notice:</strong> Forbid inline scripts in MFEs;
+              sandbox iframes for enhanced security.
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold mb-2">
+                  Content Security Policy (CSP)
+                </h3>
+                <p class="text-sm text-muted">
+                  All widgets must comply with strict CSP rules. Inline scripts
+                  are prohibited, and all external resources must be
+                  whitelisted. Use nonces or hashes for legitimate inline
+                  content.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-semibold mb-2">Widget Sandboxing</h3>
+                <p class="text-sm text-muted">
+                  Widgets run in isolated iframe sandboxes with restricted
+                  permissions. This prevents malicious widgets from accessing
+                  sensitive data or performing unauthorized actions.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="font-semibold mb-2">Data Isolation</h3>
+                <p class="text-sm text-muted">
+                  Each widget operates in its own context with controlled data
+                  access. Cross-widget communication is mediated through secure
+                  event channels with validation and sanitization.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Team & Credits -->
+        <section class="section mb-8">
+          <h2 class="section-title">Team & Credits</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface border rounded-lg p-6">
+              <h3 class="font-semibold mb-4">Platform Team</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                  >
+                    SC
+                  </div>
+                  <div>
+                    <div class="font-medium">Sarah Chen</div>
+                    <div class="text-sm text-muted">Platform Lead</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 bg-info rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                  >
+                    AT
+                  </div>
+                  <div>
+                    <div class="font-medium">Alex Thompson</div>
+                    <div class="text-sm text-muted">DevOps Engineer</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 bg-success rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                  >
+                    MR
+                  </div>
+                  <div>
+                    <div class="font-medium">Mike Rodriguez</div>
+                    <div class="text-sm text-muted">Security Architect</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-surface border rounded-lg p-6">
+              <h3 class="font-semibold mb-4">Contributing Teams</h3>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 bg-warning rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                  >
+                    JL
+                  </div>
+                  <div>
+                    <div class="font-medium">Jennifer Lee</div>
+                    <div class="text-sm text-muted">UX Designer</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 bg-danger rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                  >
+                    DK
+                  </div>
+                  <div>
+                    <div class="font-medium">David Kim</div>
+                    <div class="text-sm text-muted">Frontend Developer</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                  >
+                    LW
+                  </div>
+                  <div>
+                    <div class="font-medium">Lisa Wang</div>
+                    <div class="text-sm text-muted">Product Manager</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact & Support -->
+        <section class="section">
+          <h2 class="section-title">Contact & Support</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface border rounded-lg p-6 text-center">
+              <div class="text-3xl mb-3">📧</div>
+              <h3 class="font-semibold mb-2">Email Support</h3>
+              <p class="text-sm text-muted mb-4">
+                Get help from our platform team
+              </p>
+              <a
+                href="mailto:platform-support@company.com"
+                class="text-primary hover:underline"
+                >platform-support@company.com</a
+              >
+            </div>
+
+            <div class="bg-surface border rounded-lg p-6 text-center">
+              <div class="text-3xl mb-3">💬</div>
+              <h3 class="font-semibold mb-2">Slack Channel</h3>
+              <p class="text-sm text-muted mb-4">
+                Join the community discussion
+              </p>
+              <a href="#" class="text-primary hover:underline"
+                >#micro-fe-platform</a
+              >
+            </div>
+
+            <div class="bg-surface border rounded-lg p-6 text-center">
+              <div class="text-3xl mb-3">📋</div>
+              <h3 class="font-semibold mb-2">Issue Tracker</h3>
+              <p class="text-sm text-muted mb-4">
+                Report bugs and request features
+              </p>
+              <a href="#" class="text-primary hover:underline">GitHub Issues</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="shell__footer">
+      <div class="shell__footer-content">
+        <span>Micro-FE Builder v0.1</span>
+        <span>Build: 2024.01.15-abc123</span>
+        <a href="docs.html">Help</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker - AI Travel Agent</title>
+    <meta
+      name="description"
+      content="Track your Singapore trip budget with detailed breakdowns and money-saving tips."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">✈</div>
+          <h1 class="header__title">AI Travel Agent</h1>
+        </a>
+        <div class="header__actions">
+          <select class="form-input" style="width: auto; min-width: 80px">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+          <a href="itinerary.html" class="btn btn--primary">Print Itinerary</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              Plan Trip
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="itinerary.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              Itinerary
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="bookings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              Bookings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="budget.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">💰</span>
+              Budget
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="collections.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📍</span>
+              Collections
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Budget Tracker</h1>
+          <p class="main__subtitle">
+            Singapore Trip • Nov 15-19, 2024 • 2 Adults
+          </p>
+        </div>
+
+        <div class="budget">
+          <!-- Budget Overview -->
+          <div class="budget__tiles">
+            <div class="budget__tile">
+              <div class="budget__tile-value">₹85,000</div>
+              <div class="budget__tile-label">Total Budget</div>
+            </div>
+            <div class="budget__tile">
+              <div class="budget__tile-value">₹79,800</div>
+              <div class="budget__tile-label">Planned Spend</div>
+            </div>
+            <div class="budget__tile">
+              <div class="budget__tile-value">₹5,200</div>
+              <div class="budget__tile-label">Buffer</div>
+            </div>
+            <div class="budget__tile">
+              <div class="budget__tile-value">₹19,950</div>
+              <div class="budget__tile-label">Per Day Average</div>
+            </div>
+          </div>
+
+          <!-- Budget Breakdown -->
+          <div class="budget__bars">
+            <h2 class="mb-4">Budget Breakdown</h2>
+
+            <div class="budget-bar">
+              <div class="budget-bar__label">Flights</div>
+              <div class="budget-bar__bar">
+                <div
+                  class="budget-bar__fill"
+                  style="width: 58%; background-color: var(--color-flights)"
+                ></div>
+              </div>
+              <div class="budget-bar__amount">₹49,000</div>
+            </div>
+
+            <div class="budget-bar">
+              <div class="budget-bar__label">Accommodation</div>
+              <div class="budget-bar__bar">
+                <div
+                  class="budget-bar__fill"
+                  style="width: 34%; background-color: var(--color-stay)"
+                ></div>
+              </div>
+              <div class="budget-bar__amount">₹28,800</div>
+            </div>
+
+            <div class="budget-bar">
+              <div class="budget-bar__label">Food & Dining</div>
+              <div class="budget-bar__bar">
+                <div
+                  class="budget-bar__fill"
+                  style="width: 8%; background-color: var(--color-food)"
+                ></div>
+              </div>
+              <div class="budget-bar__amount">₹6,500</div>
+            </div>
+
+            <div class="budget-bar">
+              <div class="budget-bar__label">Local Transport</div>
+              <div class="budget-bar__bar">
+                <div
+                  class="budget-bar__fill"
+                  style="width: 1%; background-color: var(--color-transit)"
+                ></div>
+              </div>
+              <div class="budget-bar__amount">₹1,200</div>
+            </div>
+
+            <div class="budget-bar">
+              <div class="budget-bar__label">Attractions</div>
+              <div class="budget-bar__bar">
+                <div
+                  class="budget-bar__fill"
+                  style="width: 7%; background-color: var(--color-sights)"
+                ></div>
+              </div>
+              <div class="budget-bar__amount">₹6,000</div>
+            </div>
+
+            <div class="budget-bar">
+              <div class="budget-bar__label">Miscellaneous</div>
+              <div class="budget-bar__bar">
+                <div
+                  class="budget-bar__fill"
+                  style="width: 2%; background-color: var(--color-text-muted)"
+                ></div>
+              </div>
+              <div class="budget-bar__amount">₹2,000</div>
+            </div>
+          </div>
+
+          <!-- Money-Saving Tips -->
+          <div class="budget__tips">
+            <h2 class="mb-4">💰 Money-Saving Tips</h2>
+
+            <details class="mb-4">
+              <summary>
+                Swap 1 paid tour for a free walking route to save ~₹2,000
+              </summary>
+              <p>
+                Instead of the paid city bike tour (₹2,000), try the free Marina
+                Bay walking route. You'll see the same landmarks while saving
+                money for other experiences.
+              </p>
+            </details>
+
+            <details class="mb-4">
+              <summary>Metro pass saves ₹500 vs individual tickets</summary>
+              <p>
+                Buy a 3-day MRT tourist pass for ₹200/day instead of individual
+                tickets. You'll save money and have unlimited rides on public
+                transport.
+              </p>
+            </details>
+
+            <details class="mb-4">
+              <summary>Hawker centers vs restaurants save ₹3,000+</summary>
+              <p>
+                Eating at hawker centers like Maxwell Food Centre and Lau Pa Sat
+                instead of restaurants can save you ₹1,000+ per day. Same
+                authentic food, fraction of the cost.
+              </p>
+            </details>
+
+            <details class="mb-4">
+              <summary>Free activities balance paid attractions</summary>
+              <p>
+                Mix free activities (Marina Bay Spectra show, Chinatown heritage
+                walk, Supertree Grove) with paid attractions to stay within
+                budget while seeing everything.
+              </p>
+            </details>
+
+            <details class="mb-4">
+              <summary>Book activities in advance for 10-15% discounts</summary>
+              <p>
+                Many attractions offer online booking discounts. Book Night
+                Safari and Gardens by the Bay tickets online to save ₹500-800
+                total.
+              </p>
+            </details>
+
+            <details class="mb-4">
+              <summary>Consider capsule hotel to save ₹20,400</summary>
+              <p>
+                Switching from Hotel 81 Bugis (₹28,800) to Capsule Downtown
+                (₹8,400) saves ₹20,400. Use the savings for more activities or
+                better flights.
+              </p>
+            </details>
+          </div>
+
+          <!-- Daily Budget Breakdown -->
+          <div class="card">
+            <div class="card__header">
+              <h3>📅 Daily Budget Breakdown</h3>
+            </div>
+            <div class="card__body">
+              <div class="grid grid--4 gap-4 mb-4">
+                <div class="text-center">
+                  <div class="text-lg font-bold text-accent">Day 1</div>
+                  <div class="text-sm text-muted">Arrival</div>
+                  <div class="text-sm font-semibold">₹3,700</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-lg font-bold text-accent">Day 2</div>
+                  <div class="text-sm text-muted">City Tour</div>
+                  <div class="text-sm font-semibold">₹4,500</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-lg font-bold text-accent">Day 3</div>
+                  <div class="text-sm text-muted">Sentosa</div>
+                  <div class="text-sm font-semibold">₹8,000</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-lg font-bold text-accent">Day 4</div>
+                  <div class="text-sm text-muted">Departure</div>
+                  <div class="text-sm font-semibold">₹3,600</div>
+                </div>
+              </div>
+
+              <div class="text-sm text-muted">
+                <strong>Note:</strong> Daily amounts include meals, transport,
+                and activities. Flights and accommodation are spread across the
+                total budget.
+              </div>
+            </div>
+          </div>
+
+          <!-- Currency Information -->
+          <div class="nudge nudge--info">
+            <span>💱</span>
+            <div>
+              <strong>Currency Note:</strong> All prices shown in Indian Rupees
+              (₹). Current exchange rate: 1 SGD ≈ ₹62. Multi-currency support
+              coming soon.
+            </div>
+          </div>
+
+          <!-- Budget Alerts -->
+          <div class="nudge nudge--success">
+            <span>✅</span>
+            <div>
+              <strong>Great job!</strong> You're within budget with ₹5,200
+              buffer remaining. This gives you flexibility for unexpected
+              expenses or additional activities.
+            </div>
+          </div>
+        </div>
+
+        <!-- Alternative Budget Scenarios -->
+        <div class="card mt-6">
+          <div class="card__header">
+            <h3>🔄 Alternative Budget Scenarios</h3>
+          </div>
+          <div class="card__body">
+            <div class="grid grid--3 gap-4">
+              <div class="text-center p-4 border rounded">
+                <h4 class="font-semibold mb-2">Budget Option</h4>
+                <div class="text-2xl font-bold text-success mb-2">₹65,000</div>
+                <ul class="text-sm text-muted text-left">
+                  <li>• Capsule hotel (₹8,400)</li>
+                  <li>• Budget flights (₹45,000)</li>
+                  <li>• Hawker food only</li>
+                  <li>• Free walking tours</li>
+                </ul>
+              </div>
+
+              <div class="text-center p-4 border rounded">
+                <h4 class="font-semibold mb-2">Current Plan</h4>
+                <div class="text-2xl font-bold text-accent mb-2">₹79,800</div>
+                <ul class="text-sm text-muted text-left">
+                  <li>• 3★ hotel (₹28,800)</li>
+                  <li>• Standard flights (₹49,000)</li>
+                  <li>• Mix of hawker & restaurants</li>
+                  <li>• Key paid attractions</li>
+                </ul>
+              </div>
+
+              <div class="text-center p-4 border rounded">
+                <h4 class="font-semibold mb-2">Premium Option</h4>
+                <div class="text-2xl font-bold text-warning mb-2">
+                  ₹1,20,000
+                </div>
+                <ul class="text-sm text-muted text-left">
+                  <li>• 4★ hotel (₹45,000)</li>
+                  <li>• Non-stop flights (₹65,000)</li>
+                  <li>• Fine dining experiences</li>
+                  <li>• All premium attractions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Budget Tracking Tools -->
+        <div class="card mt-6">
+          <div class="card__header">
+            <h3>📊 Budget Tracking Tools</h3>
+          </div>
+          <div class="card__body">
+            <div class="grid grid--2 gap-6">
+              <div>
+                <h4 class="font-semibold mb-3">Expense Categories</h4>
+                <div class="flex flex--wrap gap-2">
+                  <span class="chip chip--flights">Flights</span>
+                  <span class="chip chip--stay">Accommodation</span>
+                  <span class="chip chip--food">Food</span>
+                  <span class="chip chip--transit">Transport</span>
+                  <span class="chip chip--sights">Attractions</span>
+                  <span class="chip">Shopping</span>
+                  <span class="chip">Emergency</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Quick Actions</h4>
+                <div class="flex flex--col gap-2">
+                  <button class="btn btn--secondary btn--sm">
+                    Export to Excel
+                  </button>
+                  <button class="btn btn--secondary btn--sm">
+                    Share Budget
+                  </button>
+                  <button class="btn btn--secondary btn--sm">Set Alerts</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          AI Travel Agent v0.1 • <a href="about.html">About</a> •
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+
+      // Currency converter (mock)
+      function convertCurrency(amount, fromCurrency, toCurrency) {
+        // Mock conversion rates
+        const rates = {
+          INR: { USD: 0.012, EUR: 0.011 },
+          USD: { INR: 83, EUR: 0.92 },
+          EUR: { INR: 90, USD: 1.09 },
+        };
+
+        if (fromCurrency === toCurrency) return amount;
+        return Math.round(amount * rates[fromCurrency][toCurrency]);
+      }
+
+      // Update currency display
+      document.querySelector("select").addEventListener("change", function () {
+        const selectedCurrency = this.value;
+        // In a real app, this would update all price displays
+        console.log("Currency changed to:", selectedCurrency);
+      });
+    </script>
+  </body>
+</html>

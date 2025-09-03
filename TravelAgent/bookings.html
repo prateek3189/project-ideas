@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings - AI Travel Agent</title>
+    <meta
+      name="description"
+      content="Book your flights, accommodations, and activities for your Singapore trip with our curated selections."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">✈</div>
+          <h1 class="header__title">AI Travel Agent</h1>
+        </a>
+        <div class="header__actions">
+          <select class="form-input" style="width: auto; min-width: 80px">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+          <a href="itinerary.html" class="btn btn--primary">Print Itinerary</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              Plan Trip
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="itinerary.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              Itinerary
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="bookings.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🎫</span>
+              Bookings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="budget.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💰</span>
+              Budget
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="collections.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📍</span>
+              Collections
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Book Your Trip</h1>
+          <p class="main__subtitle">
+            Curated selections for flights, stays, and activities
+          </p>
+        </div>
+
+        <div class="bookings">
+          <!-- Main Bookings Content -->
+          <div class="bookings__main">
+            <!-- Booking Tabs -->
+            <div class="bookings__tabs">
+              <button
+                class="bookings__tab bookings__tab--active"
+                data-tab="flights"
+              >
+                ✈️ Flights
+              </button>
+              <button class="bookings__tab" data-tab="stays">🏨 Stays</button>
+              <button class="bookings__tab" data-tab="activities">
+                🎯 Activities
+              </button>
+            </div>
+
+            <!-- Flights Tab -->
+            <div
+              id="flights"
+              class="bookings__content bookings__content--active"
+            >
+              <h2 class="mb-4">Flight Options</h2>
+
+              <!-- Outbound Flights -->
+              <div class="mb-6">
+                <h3 class="mb-3">Outbound: Mumbai → Singapore</h3>
+
+                <div class="booking-card booking-card--flight">
+                  <div class="booking-card__header">
+                    <div>
+                      <h4 class="booking-card__title">6E 151</h4>
+                      <p class="booking-card__subtitle">
+                        IndiGo • 1 stop via Chennai
+                      </p>
+                    </div>
+                    <div class="booking-card__price">₹24,500</div>
+                  </div>
+                  <div class="booking-card__details">
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Departure</span>
+                      <span class="booking-card__detail-value">09:25 BOM</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Arrival</span>
+                      <span class="booking-card__detail-value">17:40 SIN</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Duration</span>
+                      <span class="booking-card__detail-value">8h 15m</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Baggage</span>
+                      <span class="booking-card__detail-value"
+                        >15kg included</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex flex--between">
+                    <div class="flex gap-2">
+                      <span class="chip chip--flights">Economy</span>
+                      <span class="chip">1 Stop</span>
+                    </div>
+                    <button
+                      class="btn btn--primary"
+                      onclick="addToCart('flight', '6E151', 24500)"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+
+                <div class="booking-card booking-card--flight">
+                  <div class="booking-card__header">
+                    <div>
+                      <h4 class="booking-card__title">SQ 423</h4>
+                      <p class="booking-card__subtitle">
+                        Singapore Airlines • Non-stop
+                      </p>
+                    </div>
+                    <div class="booking-card__price">₹31,800</div>
+                  </div>
+                  <div class="booking-card__details">
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Departure</span>
+                      <span class="booking-card__detail-value">14:20 BOM</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Arrival</span>
+                      <span class="booking-card__detail-value">22:35 SIN</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Duration</span>
+                      <span class="booking-card__detail-value">5h 15m</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Baggage</span>
+                      <span class="booking-card__detail-value"
+                        >30kg included</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex flex--between">
+                    <div class="flex gap-2">
+                      <span class="chip chip--flights">Economy</span>
+                      <span class="chip chip--success">Non-stop</span>
+                    </div>
+                    <button
+                      class="btn btn--primary"
+                      onclick="addToCart('flight', 'SQ423', 31800)"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Return Flights -->
+              <div class="mb-6">
+                <h3 class="mb-3">Return: Singapore → Mumbai</h3>
+
+                <div class="booking-card booking-card--flight">
+                  <div class="booking-card__header">
+                    <div>
+                      <h4 class="booking-card__title">6E 152</h4>
+                      <p class="booking-card__subtitle">
+                        IndiGo • 1 stop via Chennai
+                      </p>
+                    </div>
+                    <div class="booking-card__price">₹24,500</div>
+                  </div>
+                  <div class="booking-card__details">
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Departure</span>
+                      <span class="booking-card__detail-value">15:40 SIN</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Arrival</span>
+                      <span class="booking-card__detail-value">23:55 BOM</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Duration</span>
+                      <span class="booking-card__detail-value">8h 15m</span>
+                    </div>
+                    <div class="booking-card__detail">
+                      <span class="booking-card__detail-label">Baggage</span>
+                      <span class="booking-card__detail-value"
+                        >15kg included</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex flex--between">
+                    <div class="flex gap-2">
+                      <span class="chip chip--flights">Economy</span>
+                      <span class="chip">1 Stop</span>
+                    </div>
+                    <button
+                      class="btn btn--primary"
+                      onclick="addToCart('flight', '6E152', 24500)"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stays Tab -->
+            <div id="stays" class="bookings__content">
+              <h2 class="mb-4">Accommodation Options</h2>
+
+              <div class="booking-card booking-card--stay">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">Hotel 81 Bugis</h4>
+                    <p class="booking-card__subtitle">
+                      Bugis • 3★ Boutique Hotel
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹7,200/night</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Rating</span>
+                    <div class="stars">
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star star--empty">
+                        <use href="#star"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Location</span>
+                    <span class="booking-card__detail-value">5min to MRT</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Amenities</span>
+                    <span class="booking-card__detail-value"
+                      >WiFi, AC, Breakfast</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label"
+                      >Total (4 nights)</span
+                    >
+                    <span class="booking-card__detail-value">₹28,800</span>
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--stay">3★</span>
+                    <span class="chip">Breakfast</span>
+                    <span class="chip">Near MRT</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('stay', 'hotel81bugis', 28800)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--stay">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">V Hotel Lavender</h4>
+                    <p class="booking-card__subtitle">
+                      Lavender • 3★ Business Hotel
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹8,000/night</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Rating</span>
+                    <div class="stars">
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                    </div>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Location</span>
+                    <span class="booking-card__detail-value">2min to MRT</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Amenities</span>
+                    <span class="booking-card__detail-value"
+                      >WiFi, AC, Gym, Pool</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label"
+                      >Total (4 nights)</span
+                    >
+                    <span class="booking-card__detail-value">₹32,000</span>
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--stay">3★</span>
+                    <span class="chip">Pool</span>
+                    <span class="chip">Gym</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('stay', 'vhotellavender', 32000)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--stay">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">Capsule Downtown</h4>
+                    <p class="booking-card__subtitle">
+                      Chinatown • Budget Capsule Hotel
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹2,100/night</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Rating</span>
+                    <div class="stars">
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star"><use href="#star"></use></svg>
+                      <svg class="star star--empty">
+                        <use href="#star"></use>
+                      </svg>
+                      <svg class="star star--empty">
+                        <use href="#star"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Location</span>
+                    <span class="booking-card__detail-value"
+                      >Chinatown MRT</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Amenities</span>
+                    <span class="booking-card__detail-value"
+                      >WiFi, Shared Bathroom</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label"
+                      >Total (4 nights)</span
+                    >
+                    <span class="booking-card__detail-value">₹8,400</span>
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--stay">Budget</span>
+                    <span class="chip">Capsule</span>
+                    <span class="chip">Shared</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('stay', 'capsuledowntown', 8400)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activities Tab -->
+            <div id="activities" class="bookings__content">
+              <h2 class="mb-4">Activity Bookings</h2>
+
+              <div class="booking-card booking-card--activity">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">Night Safari</h4>
+                    <p class="booking-card__subtitle">
+                      Mandai • Wildlife Experience
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹3,200</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Duration</span>
+                    <span class="booking-card__detail-value">3-4 hours</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Best Time</span>
+                    <span class="booking-card__detail-value">19:30-22:00</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Includes</span>
+                    <span class="booking-card__detail-value"
+                      >Tram ride, Fire show</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Transport</span>
+                    <span class="booking-card__detail-value"
+                      >Taxi recommended</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--sights">Wildlife</span>
+                    <span class="chip">Family</span>
+                    <span class="chip">Evening</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('activity', 'nightsafari', 3200)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--activity">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">Gardens by the Bay</h4>
+                    <p class="booking-card__subtitle">
+                      Marina Bay • Nature & Gardens
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹2,400</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Duration</span>
+                    <span class="booking-card__detail-value">2-3 hours</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Best Time</span>
+                    <span class="booking-card__detail-value">14:00-17:00</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Includes</span>
+                    <span class="booking-card__detail-value"
+                      >Flower Dome, Cloud Forest</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Transport</span>
+                    <span class="booking-card__detail-value"
+                      >MRT to Bayfront</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--sights">Nature</span>
+                    <span class="chip">Indoor</span>
+                    <span class="chip">Family</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('activity', 'gardensbythebay', 2400)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--activity">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">Singapore River Cruise</h4>
+                    <p class="booking-card__subtitle">
+                      Marina Bay • Scenic Boat Ride
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹1,500</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Duration</span>
+                    <span class="booking-card__detail-value">40 minutes</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Best Time</span>
+                    <span class="booking-card__detail-value">18:00-20:00</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Includes</span>
+                    <span class="booking-card__detail-value"
+                      >Audio commentary</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Transport</span>
+                    <span class="booking-card__detail-value"
+                      >Walk from Gardens</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--sights">Water</span>
+                    <span class="chip">Relaxing</span>
+                    <span class="chip">Evening</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('activity', 'rivercruise', 1500)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--activity">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">
+                      Universal Studios Singapore
+                    </h4>
+                    <p class="booking-card__subtitle">Sentosa • Theme Park</p>
+                  </div>
+                  <div class="booking-card__price">₹4,000</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Duration</span>
+                    <span class="booking-card__detail-value">Full day</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Best Time</span>
+                    <span class="booking-card__detail-value">09:00-18:00</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Includes</span>
+                    <span class="booking-card__detail-value"
+                      >All rides & shows</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Transport</span>
+                    <span class="booking-card__detail-value"
+                      >MRT + Cable car</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--sights">Theme Park</span>
+                    <span class="chip">Family</span>
+                    <span class="chip">Full Day</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('activity', 'universalstudios', 4000)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--activity">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">S.E.A. Aquarium</h4>
+                    <p class="booking-card__subtitle">Sentosa • Marine Life</p>
+                  </div>
+                  <div class="booking-card__price">₹2,800</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Duration</span>
+                    <span class="booking-card__detail-value">2-3 hours</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Best Time</span>
+                    <span class="booking-card__detail-value">10:00-13:00</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Includes</span>
+                    <span class="booking-card__detail-value"
+                      >All exhibits & shows</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Transport</span>
+                    <span class="booking-card__detail-value"
+                      >MRT + Monorail</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--sights">Marine</span>
+                    <span class="chip">Indoor</span>
+                    <span class="chip">Educational</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('activity', 'seaaquarium', 2800)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+
+              <div class="booking-card booking-card--activity">
+                <div class="booking-card__header">
+                  <div>
+                    <h4 class="booking-card__title">City Bike Tour</h4>
+                    <p class="booking-card__subtitle">
+                      Marina Bay • Guided Cycling
+                    </p>
+                  </div>
+                  <div class="booking-card__price">₹2,000</div>
+                </div>
+                <div class="booking-card__details">
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Duration</span>
+                    <span class="booking-card__detail-value">3 hours</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Best Time</span>
+                    <span class="booking-card__detail-value">09:00-12:00</span>
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-label">Includes</span>
+                    <span class="booking-card__detail-value"
+                      >Bike, helmet, guide</span
+                    >
+                  </div>
+                  <div class="booking-card__detail">
+                    <span class="booking-card__detail-value">Transport</span>
+                    <span class="booking-card__detail-value"
+                      >Meet at Marina Bay</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex--between">
+                  <div class="flex gap-2">
+                    <span class="chip chip--sights">Outdoor</span>
+                    <span class="chip">Active</span>
+                    <span class="chip">Morning</span>
+                  </div>
+                  <button
+                    class="btn btn--primary"
+                    onclick="addToCart('activity', 'citybiketour', 2000)"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Sidebar -->
+          <div class="cart">
+            <h3 class="mb-4">Shopping Cart</h3>
+
+            <div id="cartItems">
+              <div class="cart__item">
+                <div>
+                  <div class="font-semibold">6E 151 (Outbound)</div>
+                  <div class="text-sm text-muted">Mumbai → Singapore</div>
+                </div>
+                <div class="font-semibold">₹24,500</div>
+              </div>
+              <div class="cart__item">
+                <div>
+                  <div class="font-semibold">6E 152 (Return)</div>
+                  <div class="text-sm text-muted">Singapore → Mumbai</div>
+                </div>
+                <div class="font-semibold">₹24,500</div>
+              </div>
+              <div class="cart__item">
+                <div>
+                  <div class="font-semibold">Hotel 81 Bugis</div>
+                  <div class="text-sm text-muted">4 nights</div>
+                </div>
+                <div class="font-semibold">₹28,800</div>
+              </div>
+              <div class="cart__item">
+                <div>
+                  <div class="font-semibold">Night Safari</div>
+                  <div class="text-sm text-muted">2 adults</div>
+                </div>
+                <div class="font-semibold">₹3,200</div>
+              </div>
+              <div class="cart__item">
+                <div>
+                  <div class="font-semibold">Gardens by the Bay</div>
+                  <div class="text-sm text-muted">2 adults</div>
+                </div>
+                <div class="font-semibold">₹2,400</div>
+              </div>
+            </div>
+
+            <div class="cart__total">
+              <span>Total</span>
+              <span>₹83,400</span>
+            </div>
+
+            <div class="mt-4">
+              <button
+                class="btn btn--primary w-full"
+                onclick="proceedToCheckout()"
+              >
+                Proceed to Checkout
+              </button>
+            </div>
+
+            <div class="nudge nudge--info mt-4">
+              <span>ℹ️</span>
+              <div class="text-sm">
+                <strong>Note:</strong> Prices & availability are illustrative in
+                this prototype. Real booking would require actual API
+                integration.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmation Modal (Hidden by default) -->
+        <div
+          id="confirmationModal"
+          class="card"
+          style="
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-width: 500px;
+            width: 90%;
+          "
+        >
+          <div class="card__header">
+            <h3>Booking Confirmation</h3>
+          </div>
+          <div class="card__body">
+            <div class="text-center mb-4">
+              <div class="text-4xl mb-2">✅</div>
+              <h4 class="font-semibold mb-2">Booking Successful!</h4>
+              <p class="text-muted">
+                Your trip has been confirmed. Confirmation details will be sent
+                to your email.
+              </p>
+            </div>
+
+            <div class="ticket">
+              <div class="ticket__header">
+                <h4 class="ticket__title">Booking Reference</h4>
+                <p class="ticket__subtitle">AI-TR-2024-001</p>
+              </div>
+              <div class="ticket__details">
+                <div class="ticket__detail">
+                  <span class="ticket__detail-label">Total Amount</span>
+                  <span class="ticket__detail-value">₹83,400</span>
+                </div>
+                <div class="ticket__detail">
+                  <span class="ticket__detail-label">Payment Method</span>
+                  <span class="ticket__detail-value">Credit Card</span>
+                </div>
+              </div>
+              <div class="ticket__qr">
+                <div class="ticket__qr-placeholder">QR Code</div>
+                <p class="text-sm text-muted">Scan for mobile tickets</p>
+              </div>
+            </div>
+          </div>
+          <div class="card__footer">
+            <div class="flex gap-3">
+              <button
+                class="btn btn--secondary flex-1"
+                onclick="closeConfirmation()"
+              >
+                Close
+              </button>
+              <button class="btn btn--primary flex-1" onclick="window.print()">
+                Print Tickets
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          AI Travel Agent v0.1 • <a href="about.html">About</a> •
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+
+      // Tab functionality
+      document.querySelectorAll(".bookings__tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          // Remove active class from all tabs
+          document
+            .querySelectorAll(".bookings__tab")
+            .forEach((t) => t.classList.remove("bookings__tab--active"));
+
+          // Add active class to clicked tab
+          this.classList.add("bookings__tab--active");
+
+          // Hide all content
+          document.querySelectorAll(".bookings__content").forEach((content) => {
+            content.classList.remove("bookings__content--active");
+          });
+
+          // Show selected content
+          const tabId = this.getAttribute("data-tab");
+          document
+            .getElementById(tabId)
+            .classList.add("bookings__content--active");
+        });
+      });
+
+      // Cart functionality
+      function addToCart(type, id, price) {
+        // In a real app, this would add to cart and update the UI
+        alert(`Added ${type} to cart! (This is a prototype)`);
+      }
+
+      function proceedToCheckout() {
+        document.getElementById("confirmationModal").style.display = "block";
+      }
+
+      function closeConfirmation() {
+        document.getElementById("confirmationModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

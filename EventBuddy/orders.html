@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders & Check-in - Event Buddy</title>
+    <meta
+      name="description"
+      content="Manage event orders and check-in attendees with Event Buddy's organizer tools."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="orders.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="checkin-layout">
+          <!-- Main Content -->
+          <div class="checkin-main">
+            <div class="main__header">
+              <h1 class="main__title">Orders & Check-in</h1>
+              <p class="main__subtitle">
+                Manage attendee check-ins for your events
+              </p>
+            </div>
+
+            <!-- Event Selector -->
+            <div class="form-section mb-8">
+              <h2 class="form-section__title">Select Event</h2>
+              <div class="form-row">
+                <div>
+                  <label for="eventSelect">Choose Event</label>
+                  <select id="eventSelect" name="eventSelect" class="w-full">
+                    <option value="">Select an event...</option>
+                    <option value="indie-night" selected>
+                      Indie Night @ Blue Door - Dec 15, 2023
+                    </option>
+                    <option value="tech-meetup">
+                      Tech Meetup: AI & ML - Dec 20, 2023
+                    </option>
+                    <option value="yoga-workshop">
+                      Yoga Workshop - Dec 22, 2023
+                    </option>
+                    <option value="food-festival">
+                      Food Festival - Dec 25, 2023
+                    </option>
+                  </select>
+                </div>
+                <div class="flex items-end">
+                  <button class="btn-primary">Load Event</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Event Summary -->
+            <div class="form-section mb-8">
+              <h2 class="form-section__title">Event Summary</h2>
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="stat-tile">
+                  <div class="stat-tile__number">80</div>
+                  <div class="stat-tile__label">Total Capacity</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile__number">65</div>
+                  <div class="stat-tile__label">Tickets Sold</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile__number">42</div>
+                  <div class="stat-tile__label">Checked In</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile__number">23</div>
+                  <div class="stat-tile__label">Pending</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="form-section mb-8">
+              <div class="flex justify-between items-center mb-6">
+                <h2 class="form-section__title">Orders</h2>
+                <div class="flex gap-3">
+                  <button class="btn-secondary">📊 Export CSV</button>
+                  <button class="btn-secondary">🖨️ Print List</button>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Buyer</th>
+                      <th>Tickets</th>
+                      <th>Status</th>
+                      <th>Purchase Date</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-mono text-sm">EB-2023-001234</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Prateek Magarde</div>
+                          <div class="text-sm text-muted">
+                            prateek@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-sm">
+                          <div>Early Bird (2x)</div>
+                          <div>General (1x)</div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip tag-chip--family">Paid</span>
+                      </td>
+                      <td>Dec 10, 2023</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Details
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">EB-2023-001235</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Priya Sharma</div>
+                          <div class="text-sm text-muted">
+                            priya@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-sm">
+                          <div>General (2x)</div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip tag-chip--family">Paid</span>
+                      </td>
+                      <td>Dec 11, 2023</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Details
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">EB-2023-001236</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Raj Patel</div>
+                          <div class="text-sm text-muted">raj@example.com</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-sm">
+                          <div>Early Bird (1x)</div>
+                        </div>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-warning-light);
+                            color: var(--color-warning);
+                          "
+                          >Pending</span
+                        >
+                      </td>
+                      <td>Dec 12, 2023</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Details
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">EB-2023-001237</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Anita Singh</div>
+                          <div class="text-sm text-muted">
+                            anita@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-sm">
+                          <div>General (1x)</div>
+                        </div>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-danger-light);
+                            color: var(--color-danger);
+                          "
+                          >Cancelled</span
+                        >
+                      </td>
+                      <td>Dec 13, 2023</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Details
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Attendee List -->
+            <div class="form-section">
+              <div class="flex justify-between items-center mb-6">
+                <h2 class="form-section__title">Attendee Check-in</h2>
+                <div class="flex gap-3">
+                  <button class="btn-secondary">📊 Export Check-in List</button>
+                  <button class="btn-secondary">🖨️ Print Badges</button>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full">
+                  <thead>
+                    <tr>
+                      <th>Ticket #</th>
+                      <th>Name</th>
+                      <th>Tier</th>
+                      <th>Check-in Status</th>
+                      <th>Check-in Time</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-mono text-sm">TKT-001</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Prateek Magarde</div>
+                          <div class="text-sm text-muted">
+                            prateek@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip">Early Bird</span>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-success-light);
+                            color: var(--color-success);
+                          "
+                          >Checked In</span
+                        >
+                      </td>
+                      <td>Dec 15, 7:45 PM</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Ticket
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">TKT-002</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Priya Sharma</div>
+                          <div class="text-sm text-muted">
+                            priya@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip">Early Bird</span>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-success-light);
+                            color: var(--color-success);
+                          "
+                          >Checked In</span
+                        >
+                      </td>
+                      <td>Dec 15, 7:50 PM</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Ticket
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">TKT-003</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Raj Patel</div>
+                          <div class="text-sm text-muted">raj@example.com</div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip">General</span>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-warning-light);
+                            color: var(--color-warning);
+                          "
+                          >Not Checked In</span
+                        >
+                      </td>
+                      <td>—</td>
+                      <td>
+                        <button class="btn-primary btn-sm">Check In</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">TKT-004</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Sneha Kumar</div>
+                          <div class="text-sm text-muted">
+                            sneha@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip">General</span>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-warning-light);
+                            color: var(--color-warning);
+                          "
+                          >Not Checked In</span
+                        >
+                      </td>
+                      <td>—</td>
+                      <td>
+                        <button class="btn-primary btn-sm">Check In</button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="font-mono text-sm">TKT-005</td>
+                      <td>
+                        <div>
+                          <div class="font-semibold">Vikram Joshi</div>
+                          <div class="text-sm text-muted">
+                            vikram@example.com
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="tag-chip">General</span>
+                      </td>
+                      <td>
+                        <span
+                          class="tag-chip"
+                          style="
+                            background-color: var(--color-success-light);
+                            color: var(--color-success);
+                          "
+                          >Checked In</span
+                        >
+                      </td>
+                      <td>Dec 15, 8:15 PM</td>
+                      <td>
+                        <button class="btn-secondary btn-sm">
+                          View Ticket
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="checkin-sidebar">
+            <!-- QR Check-in -->
+            <div class="checkin-qr">
+              <h2 class="checkin-qr__title">QR Code Check-in</h2>
+              <div class="qr-placeholder qr-placeholder--large mb-4"></div>
+              <p class="text-sm text-muted text-center mb-4">
+                Scan attendee QR codes for instant check-in
+              </p>
+              <button class="btn-primary w-full">📱 Open Scanner</button>
+            </div>
+
+            <!-- Manual Check-in -->
+            <div class="checkin-manual">
+              <h2 class="checkin-manual__title">Manual Check-in</h2>
+              <form class="space-y-4">
+                <div>
+                  <label for="ticketCode" class="required">Ticket Code</label>
+                  <input
+                    type="text"
+                    id="ticketCode"
+                    name="ticketCode"
+                    placeholder="Enter ticket code or scan"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="attendeeName">Attendee Name</label>
+                  <input
+                    type="text"
+                    id="attendeeName"
+                    name="attendeeName"
+                    placeholder="Enter attendee name"
+                  />
+                </div>
+
+                <div>
+                  <label for="checkinNotes">Notes (Optional)</label>
+                  <textarea
+                    id="checkinNotes"
+                    name="checkinNotes"
+                    rows="3"
+                    placeholder="Any special notes..."
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary w-full">
+                  ✅ Check In
+                </button>
+              </form>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="form-section mt-6">
+              <h3 class="form-section__title">Quick Stats</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span class="text-sm">Check-in Rate</span>
+                  <span class="text-sm font-semibold">65%</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-sm">Avg. Check-in Time</span>
+                  <span class="text-sm font-semibold">2.3 min</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-sm">Peak Check-in</span>
+                  <span class="text-sm font-semibold">7:45 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-sm">No-shows</span>
+                  <span class="text-sm font-semibold">3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Check-ins -->
+            <div class="form-section mt-6">
+              <h3 class="form-section__title">Recent Check-ins</h3>
+              <div class="space-y-3">
+                <div
+                  class="flex items-center justify-between p-3 bg-border-light rounded-lg"
+                >
+                  <div>
+                    <div class="font-semibold text-sm">Prateek Magarde</div>
+                    <div class="text-xs text-muted">TKT-001</div>
+                  </div>
+                  <div class="text-xs text-muted">7:45 PM</div>
+                </div>
+
+                <div
+                  class="flex items-center justify-between p-3 bg-border-light rounded-lg"
+                >
+                  <div>
+                    <div class="font-semibold text-sm">Priya Sharma</div>
+                    <div class="text-xs text-muted">TKT-002</div>
+                  </div>
+                  <div class="text-xs text-muted">7:50 PM</div>
+                </div>
+
+                <div
+                  class="flex items-center justify-between p-3 bg-border-light rounded-lg"
+                >
+                  <div>
+                    <div class="font-semibold text-sm">Vikram Joshi</div>
+                    <div class="text-xs text-muted">TKT-005</div>
+                  </div>
+                  <div class="text-xs text-muted">8:15 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

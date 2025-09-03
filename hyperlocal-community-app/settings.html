@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - Hyperlocal Community</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/utilities.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/layouts.css" />
+  <link rel="stylesheet" href="styles/themes.css" />
+  <link rel="stylesheet" href="styles/print.css" />
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- App Shell -->
+  <div class="app-shell">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__content">
+        <div class="header__brand">
+          <h1 class="header__title">
+            <a href="index.html" class="header__link">Hyperlocal Community</a>
+          </h1>
+          <p class="header__subtitle">
+            Connecting neighbors, building community
+          </p>
+        </div>
+        <div class="header__actions">
+          <button
+            class="btn btn--ghost"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <span class="btn__icon">🌙</span>
+          </button>
+          <div class="profile-chip">
+            <div class="profile-chip__avatar">S</div>
+            <span class="profile-chip__name">Sarah M.</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" aria-label="Main navigation">
+      <ul class="sidebar__nav">
+        <li><a href="index.html" class="sidebar__link">Home</a></li>
+        <li><a href="events.html" class="sidebar__link">Events</a></li>
+        <li><a href="items.html" class="sidebar__link">Items</a></li>
+        <li><a href="carpool.html" class="sidebar__link">Carpool</a></li>
+        <li><a href="groups.html" class="sidebar__link">Groups</a></li>
+        <li><a href="messages.html" class="sidebar__link">Messages</a></li>
+        <li><a href="profile.html" class="sidebar__link">Profile</a></li>
+        <li><a href="moderation.html" class="sidebar__link">Moderation</a></li>
+        <li>
+          <a href="settings.html" class="sidebar__link sidebar__link--active"
+            >Settings</a
+          >
+        </li>
+        <li><a href="about.html" class="sidebar__link">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main" class="main">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-header__title">Settings</h1>
+        <p class="page-header__subtitle">
+          Manage your account and preferences
+        </p>
+      </div>
+
+      <!-- Settings Tabs -->
+      <div class="tab-layout">
+        <nav class="tab-layout__nav" role="tablist">
+          <button
+            class="tab-layout__tab tab-layout__tab--active"
+            role="tab"
+            aria-selected="true"
+            data-tab="profile"
+          >
+            Profile
+          </button>
+          <button
+            class="tab-layout__tab"
+            role="tab"
+            aria-selected="false"
+            data-tab="notifications"
+          >
+            Notifications
+          </button>
+          <button
+            class="tab-layout__tab"
+            role="tab"
+            aria-selected="false"
+            data-tab="privacy"
+          >
+            Privacy
+          </button>
+          <button
+            class="tab-layout__tab"
+            role="tab"
+            aria-selected="false"
+            data-tab="account"
+          >
+            Account
+          </button>
+        </nav>
+
+        <!-- Profile Tab -->
+        <div
+          class="tab-layout__panel tab-layout__panel--active"
+          id="profile"
+          role="tabpanel"
+        >
+          <div class="detail-layout">
+            <div class="detail-layout__main">
+              <div class="detail-layout__header">
+                <h2>Profile Settings</h2>
+                <div class="detail-layout__actions">
+                  <button class="btn btn--primary">Save Changes</button>
+                </div>
+              </div>
+              <div class="detail-layout__content">
+                <form class="form">
+                  <div class="form__group">
+                    <label for="name" class="form__label">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="form__input"
+                      value="Sarah Mitchell"
+                    />
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="email" class="form__label">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form__input"
+                      value="sarah.mitchell@email.com"
+                    />
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="phone" class="form__label">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form__input"
+                      value="(555) 123-4567"
+                    />
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="bio" class="form__label">Bio</label>
+                    <textarea
+                      id="bio"
+                      class="form__textarea"
+                      rows="4"
+                    >Local mom and community volunteer. Love organizing neighborhood events and helping out where I can!</textarea>
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="location" class="form__label">Neighborhood</label>
+                    <input
+                      type="text"
+                      id="location"
+                      class="form__input"
+                      value="Sunset Hills"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications Tab -->
+        <div class="tab-layout__panel" id="notifications" role="tabpanel">
+          <div class="detail-layout">
+            <div class="detail-layout__main">
+              <div class="detail-layout__header">
+                <h2>Notification Preferences</h2>
+                <div class="detail-layout__actions">
+                  <button class="btn btn--primary">Save Changes</button>
+                </div>
+              </div>
+              <div class="detail-layout__content">
+                <form class="form">
+                  <div class="form__group">
+                    <h3>Email Notifications</h3>
+                    <div class="form__checkbox-group">
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">New messages</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">Event reminders</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" />
+                        <span class="form__checkbox-label">Weekly digest</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">Safety alerts</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form__group">
+                    <h3>Push Notifications</h3>
+                    <div class="form__checkbox-group">
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">Direct messages</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" />
+                        <span class="form__checkbox-label">New events nearby</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" />
+                        <span class="form__checkbox-label">Item matches</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="quiet-hours" class="form__label">Quiet Hours</label>
+                    <select id="quiet-hours" class="form__select">
+                      <option value="none">No quiet hours</option>
+                      <option value="10pm-8am" selected>10 PM - 8 AM</option>
+                      <option value="9pm-7am">9 PM - 7 AM</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy Tab -->
+        <div class="tab-layout__panel" id="privacy" role="tabpanel">
+          <div class="detail-layout">
+            <div class="detail-layout__main">
+              <div class="detail-layout__header">
+                <h2>Privacy Settings</h2>
+                <div class="detail-layout__actions">
+                  <button class="btn btn--primary">Save Changes</button>
+                </div>
+              </div>
+              <div class="detail-layout__content">
+                <form class="form">
+                  <div class="form__group">
+                    <h3>Profile Visibility</h3>
+                    <div class="form__radio-group">
+                      <label class="form__radio">
+                        <input type="radio" name="visibility" value="public" checked />
+                        <span class="form__radio-label">Public - Anyone can see my profile</span>
+                      </label>
+                      <label class="form__radio">
+                        <input type="radio" name="visibility" value="neighbors" />
+                        <span class="form__radio-label">Neighbors only - Verified members in my area</span>
+                      </label>
+                      <label class="form__radio">
+                        <input type="radio" name="visibility" value="private" />
+                        <span class="form__radio-label">Private - Only people I connect with</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form__group">
+                    <h3>Location Sharing</h3>
+                    <div class="form__checkbox-group">
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">Show general neighborhood</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" />
+                        <span class="form__checkbox-label">Show exact location for carpool</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">Allow location-based recommendations</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="form__group">
+                    <h3>Data & Analytics</h3>
+                    <div class="form__checkbox-group">
+                      <label class="form__checkbox">
+                        <input type="checkbox" />
+                        <span class="form__checkbox-label">Help improve the app with usage data</span>
+                      </label>
+                      <label class="form__checkbox">
+                        <input type="checkbox" checked />
+                        <span class="form__checkbox-label">Receive personalized recommendations</span>
+                      </label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Tab -->
+        <div class="tab-layout__panel" id="account" role="tabpanel">
+          <div class="detail-layout">
+            <div class="detail-layout__main">
+              <div class="detail-layout__header">
+                <h2>Account Management</h2>
+                <div class="detail-layout__actions">
+                  <button class="btn btn--danger">Delete Account</button>
+                </div>
+              </div>
+              <div class="detail-layout__content">
+                <div class="alert alert--warning">
+                  <h3>Account Security</h3>
+                  <p>Keep your account secure with strong passwords and regular updates.</p>
+                </div>
+                
+                <form class="form">
+                  <div class="form__group">
+                    <label for="current-password" class="form__label">Current Password</label>
+                    <input
+                      type="password"
+                      id="current-password"
+                      class="form__input"
+                      placeholder="Enter current password"
+                    />
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="new-password" class="form__label">New Password</label>
+                    <input
+                      type="password"
+                      id="new-password"
+                      class="form__input"
+                      placeholder="Enter new password"
+                    />
+                  </div>
+                  
+                  <div class="form__group">
+                    <label for="confirm-password" class="form__label">Confirm New Password</label>
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      class="form__input"
+                      placeholder="Confirm new password"
+                    />
+                  </div>
+                  
+                  <div class="form__actions">
+                    <button class="btn btn--primary">Update Password</button>
+                  </div>
+                </form>
+                
+                <div class="alert alert--info">
+                  <h3>Data Export</h3>
+                  <p>Download a copy of your data including messages, events, and profile information.</p>
+                  <button class="btn btn--secondary">Export My Data</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__content">
+        <p>
+          &copy; 2024 Hyperlocal Community. Building stronger neighborhoods
+          together.
+        </p>
+        <div class="footer__links">
+          <a href="about.html">About</a>
+          <a href="settings.html">Settings</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", newTheme);
+
+      const icon = themeToggle.querySelector(".btn__icon");
+      icon.textContent = newTheme === "dark" ? "☀️" : "🌙";
+    });
+
+    // Tab switching functionality
+    const tabs = document.querySelectorAll(".tab-layout__tab");
+    const panels = document.querySelectorAll(".tab-layout__panel");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetTab = tab.getAttribute("data-tab");
+
+        // Update tab states
+        tabs.forEach((t) => {
+          t.classList.remove("tab-layout__tab--active");
+          t.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("tab-layout__tab--active");
+        tab.setAttribute("aria-selected", "true");
+
+        // Update panel states
+        panels.forEach((panel) => {
+          panel.classList.remove("tab-layout__panel--active");
+        });
+        document
+          .getElementById(targetTab)
+          .classList.add("tab-layout__panel--active");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link nav__link--active"
+            >Settings</a
+          >
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Settings</h2>
+        <p class="page-subtitle">Configure your preferences and data sources</p>
+      </div>
+
+      <!-- General Settings -->
+      <section class="general-settings">
+        <h3 class="section-title">General Settings</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="settings-grid">
+              <div class="form-group">
+                <label for="currency" class="form-label"
+                  >Default Currency</label
+                >
+                <select id="currency" class="form-select">
+                  <option value="INR" selected>Indian Rupee (₹)</option>
+                  <option value="USD">US Dollar ($)</option>
+                  <option value="EUR">Euro (€)</option>
+                  <option value="GBP">British Pound (£)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="region" class="form-label">Region</label>
+                <select id="region" class="form-select">
+                  <option value="IN" selected>India</option>
+                  <option value="US">United States</option>
+                  <option value="EU">Europe</option>
+                  <option value="UK">United Kingdom</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="date-format" class="form-label">Date Format</label>
+                <select id="date-format" class="form-select">
+                  <option value="DD/MM/YYYY" selected>DD/MM/YYYY</option>
+                  <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                  <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="number-format" class="form-label"
+                  >Number Format</label
+                >
+                <select id="number-format" class="form-select">
+                  <option value="lakhs" selected>Lakhs/Crores (Indian)</option>
+                  <option value="thousands">Thousands/Millions (US)</option>
+                  <option value="raw">Raw Numbers</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Display Settings -->
+      <section class="display-settings">
+        <h3 class="section-title">Display Settings</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="settings-grid">
+              <div class="form-group">
+                <label for="theme" class="form-label">Theme</label>
+                <div class="radio-group">
+                  <div class="radio-item radio-item--selected">
+                    <input
+                      type="radio"
+                      id="light-theme"
+                      name="theme"
+                      value="light"
+                      class="radio-input"
+                      checked
+                    />
+                    <label for="light-theme" class="radio-label">
+                      <div class="radio-label__title">Light</div>
+                      <div class="radio-label__description">
+                        Clean, bright interface
+                      </div>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <input
+                      type="radio"
+                      id="dark-theme"
+                      name="theme"
+                      value="dark"
+                      class="radio-input"
+                    />
+                    <label for="dark-theme" class="radio-label">
+                      <div class="radio-label__title">Dark</div>
+                      <div class="radio-label__description">
+                        Easy on the eyes
+                      </div>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <input
+                      type="radio"
+                      id="high-contrast-theme"
+                      name="theme"
+                      value="high-contrast"
+                      class="radio-input"
+                    />
+                    <label for="high-contrast-theme" class="radio-label">
+                      <div class="radio-label__title">High Contrast</div>
+                      <div class="radio-label__description">
+                        Maximum accessibility
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="chart-style" class="form-label">Chart Style</label>
+                <select id="chart-style" class="form-select">
+                  <option value="modern" selected>Modern</option>
+                  <option value="classic">Classic</option>
+                  <option value="minimal">Minimal</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sidebar-collapse" class="form-label"
+                  >Sidebar Behavior</label
+                >
+                <select id="sidebar-collapse" class="form-select">
+                  <option value="auto" selected>Auto-collapse on mobile</option>
+                  <option value="always-visible">Always visible</option>
+                  <option value="always-collapsed">Always collapsed</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Accessibility</label>
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="reduced-motion"
+                      class="checkbox-input"
+                      checked
+                    />
+                    <label for="reduced-motion" class="checkbox-label"
+                      >Reduce motion</label
+                    >
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="high-contrast"
+                      class="checkbox-input"
+                    />
+                    <label for="high-contrast" class="checkbox-label"
+                      >High contrast mode</label
+                    >
+                  </div>
+                  <div class="checkbox-item">
+                    <input
+                      type="checkbox"
+                      id="large-text"
+                      class="checkbox-input"
+                    />
+                    <label for="large-text" class="checkbox-label"
+                      >Large text</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Sources -->
+      <section class="data-sources">
+        <h3 class="section-title">Data Sources</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="data-source-item">
+              <div class="data-source-item__header">
+                <h4 class="data-source-item__title">CSV Import</h4>
+                <span class="badge badge--info">Available</span>
+              </div>
+              <div class="data-source-item__content">
+                <p>
+                  Import your portfolio data from CSV files exported from your
+                  broker or financial institution.
+                </p>
+                <div class="data-source-item__actions">
+                  <button class="btn btn--primary">Import CSV</button>
+                  <button class="btn btn--secondary">Download Template</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-source-item">
+              <div class="data-source-item__header">
+                <h4 class="data-source-item__title">Broker Integration</h4>
+                <span class="badge badge--warning">Coming Soon</span>
+              </div>
+              <div class="data-source-item__content">
+                <p>
+                  Connect directly to your brokerage account for real-time data
+                  synchronization.
+                </p>
+                <div class="data-source-item__actions">
+                  <button class="btn btn--secondary" disabled>
+                    Connect Broker
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-source-item">
+              <div class="data-source-item__header">
+                <h4 class="data-source-item__title">Manual Entry</h4>
+                <span class="badge badge--success">Available</span>
+              </div>
+              <div class="data-source-item__content">
+                <p>
+                  Manually enter your holdings and transactions for complete
+                  control over your data.
+                </p>
+                <div class="data-source-item__actions">
+                  <button class="btn btn--primary">Add Holding</button>
+                  <button class="btn btn--secondary">Add Transaction</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Security -->
+      <section class="privacy-security">
+        <h3 class="section-title">Privacy & Security</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="privacy-settings">
+              <div class="privacy-item">
+                <div class="privacy-item__header">
+                  <h4 class="privacy-item__title">Data Storage</h4>
+                </div>
+                <div class="privacy-item__content">
+                  <p>
+                    All data is stored locally in your browser. No data is sent
+                    to external servers.
+                  </p>
+                  <div class="privacy-item__actions">
+                    <button class="btn btn--secondary">Export Data</button>
+                    <button class="btn btn--secondary">Clear All Data</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="privacy-item">
+                <div class="privacy-item__header">
+                  <h4 class="privacy-item__title">Analytics</h4>
+                </div>
+                <div class="privacy-item__content">
+                  <p>
+                    Help improve the application by sharing anonymous usage
+                    statistics.
+                  </p>
+                  <div class="checkbox-group">
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="analytics"
+                        class="checkbox-input"
+                      />
+                      <label for="analytics" class="checkbox-label"
+                        >Enable analytics</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="privacy-item">
+                <div class="privacy-item__header">
+                  <h4 class="privacy-item__title">Backup & Sync</h4>
+                </div>
+                <div class="privacy-item__content">
+                  <p>
+                    Create backups of your data and sync across devices (when
+                    available).
+                  </p>
+                  <div class="privacy-item__actions">
+                    <button class="btn btn--secondary">Create Backup</button>
+                    <button class="btn btn--secondary">Restore Backup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notifications -->
+      <section class="notifications">
+        <h3 class="section-title">Notifications</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="notification-settings">
+              <div class="notification-item">
+                <div class="notification-item__header">
+                  <h4 class="notification-item__title">Portfolio Alerts</h4>
+                </div>
+                <div class="notification-item__content">
+                  <div class="checkbox-group">
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="drift-alert"
+                        class="checkbox-input"
+                        checked
+                      />
+                      <label for="drift-alert" class="checkbox-label"
+                        >Allocation drift > 5%</label
+                      >
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="concentration-alert"
+                        class="checkbox-input"
+                        checked
+                      />
+                      <label for="concentration-alert" class="checkbox-label"
+                        >High concentration risk</label
+                      >
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="rebalance-alert"
+                        class="checkbox-input"
+                      />
+                      <label for="rebalance-alert" class="checkbox-label"
+                        >Rebalancing opportunities</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="notification-item">
+                <div class="notification-item__header">
+                  <h4 class="notification-item__title">Market Updates</h4>
+                </div>
+                <div class="notification-item__content">
+                  <div class="checkbox-group">
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="market-volatility"
+                        class="checkbox-input"
+                      />
+                      <label for="market-volatility" class="checkbox-label"
+                        >High market volatility</label
+                      >
+                    </div>
+                    <div class="checkbox-item">
+                      <input
+                        type="checkbox"
+                        id="sector-rotation"
+                        class="checkbox-input"
+                      />
+                      <label for="sector-rotation" class="checkbox-label"
+                        >Sector rotation signals</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Save Settings -->
+      <section class="save-settings">
+        <div class="flex gap-4 justify-center">
+          <button class="btn btn--primary">Save Settings</button>
+          <button class="btn btn--secondary">Reset to Defaults</button>
+          <button class="btn btn--ghost">Cancel</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

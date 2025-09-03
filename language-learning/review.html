@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review - Language Learning Buddy</title>
+    <meta
+      name="description"
+      content="Review and practice phrases with spaced repetition system for optimal learning"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search phrases, words..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a href="topics.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a href="pronun-lab.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a href="lessons.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a
+              href="review.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a href="progress.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Review Stats</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Daily Goal: 20 cards
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              Completed: 15/20
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⏰</span>
+              Next Review: 2 hours
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Review & Practice</h1>
+          <p class="main__subtitle">
+            Practice phrases with spaced repetition for optimal retention
+          </p>
+        </div>
+
+        <div class="main__content">
+          <!-- Daily Progress -->
+          <div class="mt-6">
+            <h3>Daily Review Progress</h3>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width: 75%"></div>
+            </div>
+            <div class="d-flex justify-between items-center mt-2">
+              <span>15 of 20 cards completed</span>
+              <span>75% complete</span>
+            </div>
+          </div>
+
+          <!-- Deck Tabs -->
+          <div class="mt-8">
+            <div class="deck-tabs">
+              <button class="deck-tab deck-tab--active">
+                New
+                <span class="deck-tab__count">8</span>
+              </button>
+              <button class="deck-tab">
+                Learning
+                <span class="deck-tab__count">12</span>
+              </button>
+              <button class="deck-tab">
+                Due
+                <span class="deck-tab__count">15</span>
+              </button>
+              <button class="deck-tab">
+                Mastered
+                <span class="deck-tab__count">45</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- SRS Cards Grid -->
+          <div class="mt-6">
+            <div class="d-grid grid-cols-2 gap-6">
+              <!-- Card 1 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">
+                    Me gustaría un café, por favor.
+                  </div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Food & Drink</span>
+                    <span class="cefr-badge cefr-badge--a1">A1</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">
+                    I would like a coffee, please.
+                  </div>
+                  <div class="srs-card__hint">
+                    Remember: "gustaría" is the conditional form of "gustar"
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Podrías ayudarme?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Requests</span>
+                    <span class="cefr-badge cefr-badge--a2">A2</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">Could you help me?</div>
+                  <div class="srs-card__hint">
+                    "¿Podrías...?" is more polite than "¿Puedes...?"
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Dónde está el baño?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Navigation</span>
+                    <span class="cefr-badge cefr-badge--a1">A1</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">
+                    Where is the bathroom?
+                  </div>
+                  <div class="srs-card__hint">
+                    "¿Dónde está...?" is the standard way to ask "Where is...?"
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Cuánto cuesta?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Shopping</span>
+                    <span class="cefr-badge cefr-badge--a1">A1</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">
+                    How much does it cost?
+                  </div>
+                  <div class="srs-card__hint">
+                    "¿Cuánto cuesta?" is used for singular items, "¿Cuánto
+                    cuestan?" for plural
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">Necesito estudiar más.</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Education</span>
+                    <span class="cefr-badge cefr-badge--a2">A2</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">I need to study more.</div>
+                  <div class="srs-card__hint">
+                    "Necesito + infinitive" means "I need to + verb"
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Qué te gusta hacer?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Hobbies</span>
+                    <span class="cefr-badge cefr-badge--a2">A2</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">
+                    What do you like to do?
+                  </div>
+                  <div class="srs-card__hint">
+                    "¿Qué te gusta hacer?" is a common way to ask about hobbies
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Cómo te llamas?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Introduction</span>
+                    <span class="cefr-badge cefr-badge--a1">A1</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">What's your name?</div>
+                  <div class="srs-card__hint">
+                    Literally means "How do you call yourself?" - the standard
+                    way to ask names
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Hablas inglés?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Language</span>
+                    <span class="cefr-badge cefr-badge--a1">A1</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">Do you speak English?</div>
+                  <div class="srs-card__hint">
+                    "¿Hablas...?" is the informal way to ask "Do you speak...?"
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿A qué hora es la cita?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Appointments</span>
+                    <span class="cefr-badge cefr-badge--a2">A2</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">
+                    What time is the appointment?
+                  </div>
+                  <div class="srs-card__hint">
+                    "¿A qué hora...?" is the standard way to ask about time
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Puedes repetir eso?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Clarification</span>
+                    <span class="cefr-badge cefr-badge--a2">A2</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">Can you repeat that?</div>
+                  <div class="srs-card__hint">
+                    "¿Puedes repetir eso?" is useful when you didn't understand
+                    something
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 11 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Dónde puedo comprar...?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Shopping</span>
+                    <span class="cefr-badge cefr-badge--a2">A2</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">Where can I buy...?</div>
+                  <div class="srs-card__hint">
+                    "¿Dónde puedo + infinitive?" is a useful pattern for asking
+                    where to do things
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 12 -->
+              <div
+                class="srs-card"
+                onclick="this.classList.toggle('srs-card--flipped')"
+              >
+                <div class="srs-card__front">
+                  <div class="srs-card__phrase">¿Te gustaría ir a...?</div>
+                  <div class="d-flex gap-2 justify-center">
+                    <span class="tag-chip">Invitations</span>
+                    <span class="cefr-badge cefr-badge--b1">B1</span>
+                  </div>
+                  <p class="text-muted text-center mt-3">
+                    Click to reveal translation
+                  </p>
+                </div>
+                <div class="srs-card__back">
+                  <div class="srs-card__translation">
+                    Would you like to go to...?
+                  </div>
+                  <div class="srs-card__hint">
+                    "¿Te gustaría + infinitive?" is a polite way to make
+                    suggestions or invitations
+                  </div>
+                  <div class="d-flex gap-2 justify-center mt-3">
+                    <button class="btn btn--success btn--sm">Easy</button>
+                    <button class="btn btn--warning btn--sm">Medium</button>
+                    <button class="btn btn--danger btn--sm">Hard</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review Controls -->
+          <div class="mt-8">
+            <h3>Review Controls</h3>
+            <div class="d-flex gap-4 items-center">
+              <button class="btn btn--primary btn--lg">
+                🔄 Start Review Session
+              </button>
+              <button class="btn btn--secondary btn--lg">
+                📊 View Statistics
+              </button>
+              <button class="btn btn--outline btn--lg">⏰ Set Reminders</button>
+            </div>
+          </div>
+
+          <!-- SRS Information -->
+          <div class="mt-8">
+            <h3>How Spaced Repetition Works</h3>
+            <div class="d-grid grid-cols-3 gap-6">
+              <div class="phrase-block">
+                <h4>New Cards</h4>
+                <p>
+                  Cards you're seeing for the first time. Review them daily
+                  until you're comfortable.
+                </p>
+                <div class="d-flex gap-2 mt-3">
+                  <span class="tag-chip">Daily</span>
+                  <span class="cefr-badge cefr-badge--a1">A1</span>
+                </div>
+              </div>
+
+              <div class="phrase-block">
+                <h4>Learning Cards</h4>
+                <p>
+                  Cards you're actively learning. Review them every few days to
+                  strengthen memory.
+                </p>
+                <div class="d-flex gap-2 mt-3">
+                  <span class="tag-chip">Every 2-3 days</span>
+                  <span class="cefr-badge cefr-badge--a2">A2</span>
+                </div>
+              </div>
+
+              <div class="phrase-block">
+                <h4>Review Cards</h4>
+                <p>
+                  Cards you know well. Review them at increasing intervals to
+                  maintain long-term retention.
+                </p>
+                <div class="d-flex gap-2 mt-3">
+                  <span class="tag-chip">Weekly/Monthly</span>
+                  <span class="cefr-badge cefr-badge--b1">B1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study Tips -->
+          <div class="mt-8">
+            <h3>Study Tips for Better Retention</h3>
+            <div class="d-grid grid-cols-2 gap-6">
+              <div class="alert alert--info">
+                <h4>🎯 Focus on Difficult Cards</h4>
+                <p>
+                  Spend more time on cards you find challenging. The algorithm
+                  will show them more frequently.
+                </p>
+              </div>
+
+              <div class="alert alert--success">
+                <h4>⏰ Study in Short Sessions</h4>
+                <p>
+                  15-20 minute sessions are more effective than long study
+                  marathons. Review daily for best results.
+                </p>
+              </div>
+
+              <div class="alert alert--warning">
+                <h4>🗣️ Practice Speaking</h4>
+                <p>
+                  Don't just read the phrases - say them out loud to improve
+                  pronunciation and retention.
+                </p>
+              </div>
+
+              <div class="alert alert--info">
+                <h4>📚 Use Context</h4>
+                <p>
+                  Try to use phrases in conversations or create sentences with
+                  them to better understand usage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,352 @@
+/* Print Styles - Split & Pay */
+
+@media print {
+  /* Reset margins and set page size */
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .header__actions,
+  .sidebar,
+  .btn,
+  .theme-toggle,
+  .tabs,
+  .add-expense__actions,
+  .members__actions,
+  .settle-card__buttons {
+    display: none !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Base print styles */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-bottom: 10pt;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-bottom: 8pt;
+  }
+
+  /* Layout adjustments */
+  .container,
+  .main__content {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  /* Cards and containers */
+  .card,
+  .group-card,
+  .expense-row,
+  .settle-card {
+    border: 1px solid #000000;
+    box-shadow: none;
+    background: #ffffff;
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: 8pt;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #000000;
+    padding: 4pt 6pt;
+    text-align: left;
+    font-size: 10pt;
+  }
+
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  /* Trip Summary specific styles */
+  .trip-summary {
+    page-break-after: always;
+  }
+
+  .trip-summary__header {
+    text-align: center;
+    margin-bottom: 20pt;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10pt;
+  }
+
+  .trip-summary__title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 5pt;
+  }
+
+  .trip-summary__meta {
+    font-size: 12pt;
+    color: #333333;
+  }
+
+  .trip-summary__section {
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+  }
+
+  .trip-summary__section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 8pt;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 4pt;
+  }
+
+  /* Member balances */
+  .member-balances {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8pt;
+    margin-bottom: 16pt;
+  }
+
+  .member-balance {
+    border: 1px solid #000000;
+    padding: 6pt;
+    text-align: center;
+  }
+
+  .member-balance__name {
+    font-weight: bold;
+    margin-bottom: 2pt;
+  }
+
+  .member-balance__amount {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+
+  .member-balance__amount--owe {
+    color: #000000;
+  }
+
+  .member-balance__amount--owed {
+    color: #000000;
+  }
+
+  /* Settlement plan */
+  .settlement-plan {
+    margin-bottom: 16pt;
+  }
+
+  .settlement-plan__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4pt 0;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .settlement-plan__item:last-child {
+    border-bottom: none;
+  }
+
+  .settlement-plan__description {
+    font-weight: bold;
+  }
+
+  .settlement-plan__amount {
+    font-family: monospace;
+    font-weight: bold;
+  }
+
+  /* Expenses table */
+  .expenses-table {
+    width: 100%;
+    margin-bottom: 16pt;
+  }
+
+  .expenses-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .expenses-table td {
+    text-align: left;
+  }
+
+  .expenses-table .amount {
+    text-align: right;
+    font-family: monospace;
+  }
+
+  /* Monthly statement */
+  .monthly-statement {
+    page-break-after: always;
+  }
+
+  .monthly-statement__header {
+    text-align: center;
+    margin-bottom: 20pt;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10pt;
+  }
+
+  .monthly-statement__title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 5pt;
+  }
+
+  .monthly-statement__period {
+    font-size: 12pt;
+    color: #333333;
+  }
+
+  /* Group summary */
+  .group-summary {
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+  }
+
+  .group-summary__title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 8pt;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 4pt;
+  }
+
+  .group-summary__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8pt;
+    margin-bottom: 8pt;
+  }
+
+  .group-summary__stat {
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 4pt;
+  }
+
+  .group-summary__stat-label {
+    font-size: 10pt;
+    color: #333333;
+    margin-bottom: 2pt;
+  }
+
+  .group-summary__stat-value {
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: monospace;
+  }
+
+  /* Footer */
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10pt;
+    color: #666666;
+    border-top: 1px solid #cccccc;
+    padding: 4pt 0;
+  }
+
+  .print-footer__page {
+    display: inline-block;
+  }
+
+  .print-footer__date {
+    display: inline-block;
+    margin-left: 20pt;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Currency formatting */
+  .currency {
+    font-family: monospace;
+    text-align: right;
+  }
+
+  /* Status indicators */
+  .status--settled {
+    color: #000000;
+  }
+
+  .status--pending {
+    color: #000000;
+  }
+
+  /* Hide interactive elements */
+  details summary {
+    list-style: none;
+  }
+
+  details summary::before {
+    content: none;
+  }
+
+  details[open] > *:not(summary) {
+    display: block;
+  }
+}

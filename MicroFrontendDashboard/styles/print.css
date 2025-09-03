@@ -1,0 +1,576 @@
+/* Print Styles - Micro-Frontend Dashboard Builder */
+
+@media print {
+  /* Reset print styles */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  /* Hide non-printable elements */
+  .shell__header,
+  .shell__sidebar,
+  .shell__footer,
+  .theme-toggle,
+  .search-box,
+  .print-link,
+  .builder__catalog,
+  .builder__props,
+  .tabs,
+  .catalog-filters,
+  .version-drawer,
+  .env-chips,
+  button,
+  .button,
+  .tile__handle,
+  .tile__resize-handle,
+  .canvas {
+    display: none !important;
+  }
+
+  /* Show print-specific elements */
+  .print-header,
+  .print-footer {
+    display: block !important;
+  }
+
+  /* Typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 16pt;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links */
+  a,
+  a:visited {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Code and monospace */
+  code,
+  pre,
+  .font-mono {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 2pt;
+    page-break-inside: avoid;
+  }
+
+  pre {
+    padding: 6pt;
+    margin: 6pt 0;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 4pt;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  /* Print-specific layouts */
+  .shell__main {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid black;
+  }
+
+  .page-title {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .page-subtitle {
+    font-size: 12pt;
+    color: #666;
+    margin: 0;
+  }
+
+  /* KPI Tiles for print */
+  .kpi-section {
+    margin-bottom: 1em;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .kpi-tile {
+    border: 1px solid black;
+    padding: 0.5em;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .kpi-tile__icon {
+    display: none;
+  }
+
+  .kpi-tile__value {
+    font-size: 16pt;
+    font-weight: bold;
+    display: block;
+  }
+
+  .kpi-tile__label {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Environment Health for print */
+  .env-health-section {
+    margin-bottom: 1em;
+  }
+
+  .env-health-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5em;
+  }
+
+  .env-card {
+    border: 1px solid black;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .env-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25em;
+    font-weight: bold;
+  }
+
+  .health-meter {
+    height: 4pt;
+    background: #ccc;
+    border: 1px solid black;
+    margin-bottom: 0.25em;
+  }
+
+  .health-meter__bar {
+    height: 100%;
+    background: black;
+  }
+
+  .env-card__stats {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Activity List for print */
+  .activity-section {
+    margin-bottom: 1em;
+  }
+
+  .activity-list {
+    max-width: none;
+  }
+
+  .activity-item {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .activity-item__icon {
+    display: none;
+  }
+
+  .activity-item__title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .activity-item__meta {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Spaces for print */
+  .spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+  }
+
+  .space-card {
+    border: 1px solid black;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .space-card__title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .space-card__id {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    color: #666;
+    margin-bottom: 0.25em;
+  }
+
+  .space-card__meta {
+    font-size: 10pt;
+    color: #666;
+    margin-bottom: 0.25em;
+  }
+
+  .space-card__stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    border-top: 1px solid #ccc;
+    padding-top: 0.25em;
+  }
+
+  /* Widget Catalog for print */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+  }
+
+  .widget-card {
+    border: 1px solid black;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .widget-card__title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .widget-card__id {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    color: #666;
+    margin-bottom: 0.25em;
+  }
+
+  .widget-card__description {
+    font-size: 10pt;
+    margin-bottom: 0.25em;
+  }
+
+  .widget-card__meta {
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Releases for print */
+  .releases-list {
+    display: block;
+  }
+
+  .release-card {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .release-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25em;
+    font-weight: bold;
+  }
+
+  .release-card__meta {
+    font-size: 10pt;
+    color: #666;
+    margin-bottom: 0.25em;
+  }
+
+  .release-card__summary {
+    margin-bottom: 0.25em;
+  }
+
+  .release-card__notes {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 0.25em;
+    font-size: 10pt;
+  }
+
+  /* Permissions for print */
+  .permissions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+
+  .permissions-section {
+    border: 1px solid black;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .permissions-section__title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .matrix {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .matrix th,
+  .matrix td {
+    border: 1px solid black;
+    padding: 2pt;
+    text-align: center;
+    font-size: 10pt;
+  }
+
+  .matrix th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+
+  .audit-row {
+    border: 1px solid black;
+    padding: 0.25em;
+    margin-bottom: 0.25em;
+    font-size: 10pt;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Settings for print */
+  .settings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+
+  .settings-section {
+    border: 1px solid black;
+    padding: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .settings-section__title {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+  }
+
+  .settings-section__description {
+    font-size: 10pt;
+    color: #666;
+    margin-bottom: 0.25em;
+  }
+
+  .env-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25em;
+  }
+
+  .env-card {
+    border: 1px solid black;
+    padding: 0.25em;
+    text-align: center;
+  }
+
+  .env-card__title {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  .env-card__url {
+    font-family: "Courier New", monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Print headers and footers */
+  .print-header {
+    text-align: center;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid black;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .print-footer {
+    text-align: center;
+    margin-top: 1em;
+    padding-top: 0.5em;
+    border-top: 1px solid black;
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Hide interactive elements */
+  input,
+  textarea,
+  select,
+  button,
+  .button {
+    display: none !important;
+  }
+
+  /* Show only content */
+  .tab-content {
+    display: block !important;
+  }
+
+  /* Ensure proper spacing */
+  .section-title {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+
+  /* Print-specific utility classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure text is readable */
+  .text-muted,
+  .text-subtle {
+    color: #666 !important;
+  }
+
+  /* Status indicators for print */
+  .status-badge,
+  .chip,
+  .badge {
+    border: 1px solid black;
+    padding: 1pt 2pt;
+    font-size: 8pt;
+    background: white;
+    color: black;
+  }
+
+  /* Health indicators for print */
+  .latency-pill {
+    border: 1px solid black;
+    padding: 1pt 2pt;
+    font-size: 8pt;
+    background: white;
+    color: black;
+  }
+}

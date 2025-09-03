@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Coding Agent - Playbooks</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__title">
+          <span class="shell__icon">🤖</span>
+          Smart Coding Agent
+        </h1>
+        <div class="shell__controls">
+          <div class="repo-selector">
+            <span class="repo-selector__name">my-project</span>
+            <span class="badge badge--branch">main</span>
+          </div>
+          <button class="btn btn--ghost" aria-label="Print playbooks">
+            <span class="btn__icon">🖨️</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="nav__icon">💻</span>
+              Workspace
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="diff.html" class="nav__link">
+              <span class="nav__icon">📊</span>
+              Diff Review
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="tests.html" class="nav__link">
+              <span class="nav__icon">🧪</span>
+              Tests
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="perf.html" class="nav__link">
+              <span class="nav__icon">⚡</span>
+              Performance
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="playbooks.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="nav__icon">📚</span>
+              Playbooks
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="nav__icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">
+              <span class="nav__icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+
+        <div class="project-tree">
+          <h3 class="project-tree__title">Playbook Categories</h3>
+          <ul class="project-tree__list">
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🐛</span>
+              Debug
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">⚡</span>
+              Optimize
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🧪</span>
+              Test
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">🚀</span>
+              Ship
+            </li>
+          </ul>
+        </div>
+
+        <div class="theme-toggle">
+          <button class="btn btn--ghost" aria-label="Toggle theme">
+            <span class="btn__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main id="main-content" class="shell__main">
+        <!-- Playbooks Page -->
+        <div class="playbooks-page">
+          <!-- Header -->
+          <div class="playbooks-page__header">
+            <div class="playbooks-page__title">
+              <h1>Development Playbooks</h1>
+              <div class="playbooks-page__meta">
+                <span class="badge badge--info">9 recipes</span>
+                <span class="badge badge--success">4 categories</span>
+                <span class="badge badge--secondary">Best practices</span>
+              </div>
+            </div>
+            <div class="playbooks-page__actions">
+              <button class="btn btn--primary">Create Playbook</button>
+              <button class="btn btn--secondary">Import Recipe</button>
+              <button class="btn btn--ghost">Export All</button>
+            </div>
+          </div>
+
+          <!-- Debug Playbooks -->
+          <div class="playbooks-section">
+            <h2 class="playbooks-section__title">
+              <span class="playbooks-section__icon">🐛</span>
+              Debug Playbooks
+            </h2>
+            <div class="playbooks-grid">
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Reproduce → Min Case → Hypothesis → Patch → Verify</span
+                  >
+                  <span class="badge badge--success">Proven</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Systematic debugging of
+                    complex issues
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Reproduce the issue consistently</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Create minimal reproduction case</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Form hypothesis about root cause</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Implement targeted patch</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">5</span>
+                      <span class="playbook-step__text"
+                        >Verify fix and add regression test</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title">Stack Trace Analysis</span>
+                  <span class="badge badge--info">Quick</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Runtime errors with clear
+                    stack traces
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Identify error type and location</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Check input validation and null checks</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Add defensive programming guards</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Test edge cases and error paths</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Memory Leak Investigation</span
+                  >
+                  <span class="badge badge--warning">Advanced</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Gradual memory growth or OOM
+                    errors
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Profile memory usage over time</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Identify objects not being garbage collected</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Check for circular references and event listeners</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Implement proper cleanup and weak references</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Optimize Playbooks -->
+          <div class="playbooks-section">
+            <h2 class="playbooks-section__title">
+              <span class="playbooks-section__icon">⚡</span>
+              Optimize Playbooks
+            </h2>
+            <div class="playbooks-grid">
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Measure → Focus → Replace → Guard with Tests</span
+                  >
+                  <span class="badge badge--success">Proven</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Performance optimization with
+                    measurable goals
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Measure current performance baseline</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Focus on biggest bottlenecks first</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Replace with more efficient algorithms</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Guard optimizations with performance tests</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Database Query Optimization</span
+                  >
+                  <span class="badge badge--info">Quick</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Slow database operations and
+                    N+1 queries
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Analyze query execution plans</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Add missing indexes and optimize joins</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Implement query batching and caching</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Monitor query performance in production</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Test Playbooks -->
+          <div class="playbooks-section">
+            <h2 class="playbooks-section__title">
+              <span class="playbooks-section__icon">🧪</span>
+              Test Playbooks
+            </h2>
+            <div class="playbooks-grid">
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Arrange/Act/Assert Templates</span
+                  >
+                  <span class="badge badge--success">Proven</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Writing comprehensive unit
+                    tests
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Arrange: Set up test data and mocks</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Act: Execute the function under test</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Assert: Verify expected outcomes</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Clean up: Reset state and mocks</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Property-Based Testing</span
+                  >
+                  <span class="badge badge--warning">Advanced</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Testing pure functions with
+                    edge cases
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Define properties that should always hold</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Generate random test inputs</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Run property checks on generated data</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Shrink failing cases to minimal examples</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ship Playbooks -->
+          <div class="playbooks-section">
+            <h2 class="playbooks-section__title">
+              <span class="playbooks-section__icon">🚀</span>
+              Ship Playbooks
+            </h2>
+            <div class="playbooks-grid">
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title"
+                    >Changelog, Backward Compat, Feature Flag, Rollout
+                    Plan</span
+                  >
+                  <span class="badge badge--success">Proven</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Safe feature deployment and
+                    releases
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Document changes in changelog</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Ensure backward compatibility</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Implement feature flags for gradual rollout</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Plan staged deployment with rollback strategy</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playbook-card">
+                <div class="playbook-card__header">
+                  <span class="playbook-card__title">Migration Assistant</span>
+                  <span class="badge badge--info">Quick</span>
+                </div>
+                <div class="playbook-card__content">
+                  <p>
+                    <strong>When to use:</strong> Breaking changes and API
+                    migrations
+                  </p>
+                  <div class="playbook-steps">
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">1</span>
+                      <span class="playbook-step__text"
+                        >Identify breaking changes and affected code</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">2</span>
+                      <span class="playbook-step__text"
+                        >Create migration scripts and codemods</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">3</span>
+                      <span class="playbook-step__text"
+                        >Provide clear migration documentation</span
+                      >
+                    </div>
+                    <div class="playbook-step">
+                      <span class="playbook-step__number">4</span>
+                      <span class="playbook-step__text"
+                        >Support both old and new APIs during transition</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="shell__footer">
+      <div class="status-bar">
+        <div class="status-bar__left">
+          <span class="status-bar__model">GPT-4</span>
+          <span class="status-bar__tokens">~2.8k tokens</span>
+        </div>
+        <div class="status-bar__right">
+          <span class="status-bar__latency">—</span>
+          <span class="status-bar__git">main*</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

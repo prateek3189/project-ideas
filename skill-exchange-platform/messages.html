@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - SkillSwap</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <div class="header__brand">
+            <h1 class="header__logo">SkillSwap</h1>
+            <p class="header__tagline">Trade time, not money</p>
+          </div>
+
+          <div class="header__search">
+            <form class="search-form" role="search">
+              <label for="search-input" class="visually-hidden"
+                >Search skills</label
+              >
+              <input
+                type="search"
+                id="search-input"
+                class="search-form__input"
+                placeholder="Search messages"
+                autocomplete="off"
+              />
+              <button
+                type="submit"
+                class="search-form__button"
+                aria-label="Search"
+              >
+                <svg
+                  class="icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="header__location">
+            <span class="chip chip--location">
+              <svg
+                class="icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Within 5km
+            </span>
+          </div>
+
+          <div class="header__profile">
+            <a href="profile.html" class="profile-link">
+              <span class="profile-link__avatar">A</span>
+              <span class="profile-link__name">Alex</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a href="index.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg>
+              Explore
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="offers.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              Offers
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="requests.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              Requests
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="matches.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 12l2 2 4-4"></path>
+                <circle cx="21" cy="12" r="1"></circle>
+                <circle cx="3" cy="12" r="1"></circle>
+              </svg>
+              Matches
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="sessions.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Sessions
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a
+              href="messages.html"
+              class="nav-link nav-link--active"
+              aria-current="page"
+            >
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              Messages
+            </a>
+          </li>
+          <li class="nav-list__item">
+            <a href="circles.html" class="nav-link">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+              </svg>
+              Circles
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              class="icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <a href="settings.html" class="nav-link">
+            <svg
+              class="icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+              ></path>
+            </svg>
+            Settings
+          </a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="page-header">
+          <h1 class="page-title">Messages</h1>
+          <p class="page-subtitle">
+            Communicate with your skill exchange partners. Mock conversations in
+            V1.
+          </p>
+        </div>
+
+        <!-- Message Layout -->
+        <div class="messages-layout">
+          <!-- Thread List -->
+          <div class="thread-list">
+            <div class="thread-item thread-item--active">
+              <div class="thread-avatar">
+                <span class="thread-avatar__initials">M</span>
+              </div>
+              <div class="thread-info">
+                <h3 class="thread-name">Maria</h3>
+                <p class="thread-preview">
+                  Thanks for the great guitar lesson! When should we schedule
+                  the next session?
+                </p>
+                <span class="thread-time">2 hours ago</span>
+              </div>
+              <div class="thread-badge">
+                <span class="thread-badge__unread">2</span>
+              </div>
+            </div>
+
+            <div class="thread-item">
+              <div class="thread-avatar">
+                <span class="thread-avatar__initials">J</span>
+              </div>
+              <div class="thread-info">
+                <h3 class="thread-name">Jordan</h3>
+                <p class="thread-preview">
+                  I've prepared the Python exercises for our next session.
+                  Should we meet on Thursday?
+                </p>
+                <span class="thread-time">1 day ago</span>
+              </div>
+            </div>
+
+            <div class="thread-item">
+              <div class="thread-avatar">
+                <span class="thread-avatar__initials">L</span>
+              </div>
+              <div class="thread-info">
+                <h3 class="thread-name">Luna</h3>
+                <p class="thread-preview">
+                  Perfect! I'll bring my yoga mat to Golden Gate Park. See you
+                  Saturday morning.
+                </p>
+                <span class="thread-time">2 days ago</span>
+              </div>
+            </div>
+
+            <div class="thread-item">
+              <div class="thread-avatar">
+                <span class="thread-avatar__initials">S</span>
+              </div>
+              <div class="thread-info">
+                <h3 class="thread-name">Sam</h3>
+                <p class="thread-preview">
+                  Sorry about cancelling yesterday. Can we reschedule for next
+                  week?
+                </p>
+                <span class="thread-time">3 days ago</span>
+              </div>
+            </div>
+
+            <div class="thread-item">
+              <div class="thread-avatar">
+                <span class="thread-avatar__initials">R</span>
+              </div>
+              <div class="thread-info">
+                <h3 class="thread-name">Riley</h3>
+                <p class="thread-preview">
+                  I'm excited to learn photography! What camera should I bring?
+                </p>
+                <span class="thread-time">1 week ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Thread -->
+          <div class="message-thread">
+            <div class="message-header">
+              <div class="message-participant">
+                <span class="message-participant__avatar">M</span>
+                <div class="message-participant__info">
+                  <h3 class="message-participant__name">Maria</h3>
+                  <p class="message-participant__status">Online</p>
+                </div>
+              </div>
+              <div class="message-actions">
+                <button class="btn btn--ghost btn--small">
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="message-content">
+              <!-- Message 1 -->
+              <div class="message-bubble message-bubble--received">
+                <p>
+                  Hi Alex! I'm really excited about our guitar lessons. I've
+                  been wanting to learn for years.
+                </p>
+                <span class="message-bubble__time">Yesterday, 3:45 PM</span>
+              </div>
+
+              <!-- Message 2 -->
+              <div class="message-bubble message-bubble--sent">
+                <p>
+                  Great to meet you, Maria! I'm looking forward to teaching you.
+                  Do you have a guitar already?
+                </p>
+                <span class="message-bubble__time">Yesterday, 3:47 PM</span>
+              </div>
+
+              <!-- Message 3 -->
+              <div class="message-bubble message-bubble--received">
+                <p>
+                  Yes, I have an acoustic guitar. It's been sitting in my closet
+                  for months. I'm not sure if it's in tune though.
+                </p>
+                <span class="message-bubble__time">Yesterday, 3:50 PM</span>
+              </div>
+
+              <!-- Message 4 -->
+              <div class="message-bubble message-bubble--sent">
+                <p>
+                  No worries! We can tune it together in our first session. I'll
+                  also send you some chord charts to practice with.
+                </p>
+                <span class="message-bubble__time">Yesterday, 3:52 PM</span>
+              </div>
+
+              <!-- Message 5 -->
+              <div class="message-bubble message-bubble--received">
+                <p>
+                  Perfect! I've attached a photo of my guitar. Does it look okay
+                  for learning?
+                </p>
+                <a href="#" class="attachment-pill">
+                  <svg
+                    class="icon"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.64 16.2a2 2 0 0 1-2.83-2.83l8.49-8.49"
+                    ></path>
+                  </svg>
+                  guitar_photo.jpg
+                </a>
+                <span class="message-bubble__time">Yesterday, 3:55 PM</span>
+              </div>
+
+              <!-- Message 6 -->
+              <div class="message-bubble message-bubble--sent">
+                <p>
+                  That's a beautiful guitar! It looks perfect for learning. The
+                  size and strings look good.
+                </p>
+                <span class="message-bubble__time">Yesterday, 3:57 PM</span>
+              </div>
+
+              <!-- Message 7 -->
+              <div class="message-bubble message-bubble--received">
+                <p>
+                  Thanks for the great guitar lesson! When should we schedule
+                  the next session?
+                </p>
+                <span class="message-bubble__time">2 hours ago</span>
+              </div>
+
+              <!-- Message 8 -->
+              <div class="message-bubble message-bubble--sent">
+                <p>
+                  You're doing great! How about Thursday evening at 7 PM? We can
+                  work on the G chord and start learning your first song.
+                </p>
+                <span class="message-bubble__time">1 hour ago</span>
+              </div>
+
+              <!-- Message 9 -->
+              <div class="message-bubble message-bubble--received">
+                <p>
+                  Thursday works perfectly! I'll practice the C and G chords you
+                  showed me. See you then!
+                </p>
+                <span class="message-bubble__time">30 minutes ago</span>
+              </div>
+            </div>
+
+            <div class="message-input">
+              <form class="message-form">
+                <div class="message-form__input">
+                  <textarea
+                    placeholder="Type your message..."
+                    rows="1"
+                    class="message-textarea"
+                  ></textarea>
+                  <button type="button" class="message-attachment">
+                    <svg
+                      class="icon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.64 16.2a2 2 0 0 1-2.83-2.83l8.49-8.49"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <button type="submit" class="btn btn--primary">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h3>SkillSwap</h3>
+            <p>Building community through skill exchange</p>
+          </div>
+          <div class="footer__section">
+            <h4>Help</h4>
+            <ul>
+              <li><a href="about.html">How it works</a></li>
+              <li><a href="about.html#safety">Safety guidelines</a></li>
+              <li><a href="about.html#disputes">Dispute resolution</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="circles.html">Skill circles</a></li>
+              <li><a href="about.html#principles">Our principles</a></li>
+              <li><a href="about.html#prohibited">Prohibited services</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Version</h4>
+            <p>Skill-Exchange v0.1</p>
+            <p>Static prototype</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Insights</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link nav__link--active"
+            >Insights</a
+          >
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Portfolio Insights</h2>
+        <p class="page-subtitle">Performance analysis and portfolio metrics</p>
+      </div>
+
+      <!-- Key Metrics -->
+      <section class="key-metrics">
+        <div class="stats-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">12M Contributions</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">₹2,10,000</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">Annual</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Estimated Fees</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">₹996</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">Per Year</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Dividend Yield</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">2.1%</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--positive">+0.3%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Turnover Rate</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">8.5%</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--positive">Low</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Attribution -->
+      <section class="performance-attribution">
+        <h3 class="section-title">Performance Attribution</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Contributions vs Market Growth</h4>
+            </div>
+            <div class="tile__content">
+              <div class="attribution-chart">
+                <div class="attribution-item">
+                  <div class="attribution-item__label">Contributions</div>
+                  <div class="attribution-item__bar">
+                    <div
+                      class="attribution-item__fill attribution-item__fill--contributions"
+                      style="width: 40%"
+                    ></div>
+                  </div>
+                  <div class="attribution-item__value">₹2.1L (40%)</div>
+                </div>
+                <div class="attribution-item">
+                  <div class="attribution-item__label">Market Growth</div>
+                  <div class="attribution-item__bar">
+                    <div
+                      class="attribution-item__fill attribution-item__fill--growth"
+                      style="width: 60%"
+                    ></div>
+                  </div>
+                  <div class="attribution-item__value">₹3.2L (60%)</div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-secondary">
+                Market growth has contributed more to your portfolio value than
+                new contributions, indicating good investment performance.
+              </p>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Asset Class Performance</h4>
+            </div>
+            <div class="tile__content">
+              <div class="performance-list">
+                <div class="performance-item">
+                  <div class="performance-item__label">Equity</div>
+                  <div class="performance-item__value">
+                    <span class="delta-chip delta-chip--positive">+24.5%</span>
+                  </div>
+                  <div class="performance-item__contribution">+₹2.1L</div>
+                </div>
+                <div class="performance-item">
+                  <div class="performance-item__label">Bonds</div>
+                  <div class="performance-item__value">
+                    <span class="delta-chip delta-chip--positive">+8.2%</span>
+                  </div>
+                  <div class="performance-item__contribution">+₹45K</div>
+                </div>
+                <div class="performance-item">
+                  <div class="performance-item__label">Cash</div>
+                  <div class="performance-item__value">
+                    <span class="delta-chip delta-chip--positive">+5.5%</span>
+                  </div>
+                  <div class="performance-item__contribution">+₹5K</div>
+                </div>
+                <div class="performance-item">
+                  <div class="performance-item__label">Alternatives</div>
+                  <div class="performance-item__value">
+                    <span class="delta-chip delta-chip--positive">+12.8%</span>
+                  </div>
+                  <div class="performance-item__contribution">+₹8K</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diversification Analysis -->
+      <section class="diversification-analysis">
+        <h3 class="section-title">Diversification Analysis</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Diversification Score</h4>
+            </div>
+            <div class="tile__content">
+              <div class="diversification-meter">
+                <div class="diversification-meter__score">7.2/10</div>
+                <div class="diversification-meter__bar">
+                  <div
+                    class="diversification-meter__fill"
+                    style="width: 72%"
+                  ></div>
+                </div>
+                <div class="diversification-meter__label">
+                  Good Diversification
+                </div>
+              </div>
+              <div class="diversification-factors mt-4">
+                <div class="diversification-factor">
+                  <span class="diversification-factor__label"
+                    >Asset Classes</span
+                  >
+                  <span class="diversification-factor__score">8/10</span>
+                </div>
+                <div class="diversification-factor">
+                  <span class="diversification-factor__label">Geographic</span>
+                  <span class="diversification-factor__score">7/10</span>
+                </div>
+                <div class="diversification-factor">
+                  <span class="diversification-factor__label">Sector</span>
+                  <span class="diversification-factor__score">6/10</span>
+                </div>
+                <div class="diversification-factor">
+                  <span class="diversification-factor__label"
+                    >Individual Holdings</span
+                  >
+                  <span class="diversification-factor__score">8/10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Top Correlated Holdings</h4>
+            </div>
+            <div class="tile__content">
+              <div class="correlation-list">
+                <div class="correlation-item">
+                  <div class="correlation-item__pair">VTI ↔ VXUS</div>
+                  <div class="correlation-item__value">0.85</div>
+                  <div class="correlation-item__status">High</div>
+                </div>
+                <div class="correlation-item">
+                  <div class="correlation-item__pair">BND ↔ SHY</div>
+                  <div class="correlation-item__value">0.78</div>
+                  <div class="correlation-item__status">High</div>
+                </div>
+                <div class="correlation-item">
+                  <div class="correlation-item__pair">ABC ↔ VTI</div>
+                  <div class="correlation-item__value">0.72</div>
+                  <div class="correlation-item__status">Moderate</div>
+                </div>
+                <div class="correlation-item">
+                  <div class="correlation-item__pair">GLD ↔ VTI</div>
+                  <div class="correlation-item__value">-0.15</div>
+                  <div class="correlation-item__status">Low</div>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-secondary">
+                Gold (GLD) provides good diversification with negative
+                correlation to equity markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fee Analysis -->
+      <section class="fee-analysis">
+        <h3 class="section-title">Fee Analysis</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="fee-breakdown">
+              <div class="fee-item">
+                <div class="fee-item__label">VTI (0.03%)</div>
+                <div class="fee-item__bar">
+                  <div class="fee-item__fill" style="width: 20%"></div>
+                </div>
+                <div class="fee-item__value">₹120</div>
+              </div>
+              <div class="fee-item">
+                <div class="fee-item__label">VXUS (0.07%)</div>
+                <div class="fee-item__bar">
+                  <div class="fee-item__fill" style="width: 35%"></div>
+                </div>
+                <div class="fee-item__value">₹157</div>
+              </div>
+              <div class="fee-item">
+                <div class="fee-item__label">BND (0.04%)</div>
+                <div class="fee-item__bar">
+                  <div class="fee-item__fill" style="width: 25%"></div>
+                </div>
+                <div class="fee-item__value">₹110</div>
+              </div>
+              <div class="fee-item">
+                <div class="fee-item__label">ICICI Liquid (0.15%)</div>
+                <div class="fee-item__bar">
+                  <div class="fee-item__fill" style="width: 100%"></div>
+                </div>
+                <div class="fee-item__value">₹150</div>
+              </div>
+              <div class="fee-item">
+                <div class="fee-item__label">GLD (0.40%)</div>
+                <div class="fee-item__bar">
+                  <div class="fee-item__fill" style="width: 100%"></div>
+                </div>
+                <div class="fee-item__value">₹299</div>
+              </div>
+              <div class="fee-item">
+                <div class="fee-item__label">ABC (0.00%)</div>
+                <div class="fee-item__bar">
+                  <div class="fee-item__fill" style="width: 0%"></div>
+                </div>
+                <div class="fee-item__value">₹0</div>
+              </div>
+            </div>
+            <div class="fee-summary mt-4">
+              <div class="fee-summary__total">
+                <span class="fee-summary__label">Total Annual Fees:</span>
+                <span class="fee-summary__value">₹996 (0.08%)</span>
+              </div>
+              <p class="text-sm text-secondary mt-2">
+                Your portfolio has low fees overall. Consider replacing high-fee
+                funds like GLD and ICICI Liquid with lower-cost alternatives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tax Efficiency -->
+      <section class="tax-efficiency">
+        <h3 class="section-title">Tax Efficiency Analysis</h3>
+        <div class="card-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Tax-Loss Harvesting</h4>
+              <span class="badge badge--info">Opportunity</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                No current tax-loss harvesting opportunities identified. Monitor
+                for future opportunities during market downturns.
+              </p>
+              <div class="mt-4">
+                <div class="tax-item">
+                  <span class="tax-item__label">Unrealized Gains:</span>
+                  <span class="tax-item__value">₹2,45,000</span>
+                </div>
+                <div class="tax-item">
+                  <span class="tax-item__label">Unrealized Losses:</span>
+                  <span class="tax-item__value">₹0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Dividend Tax Impact</h4>
+              <span class="badge badge--success">Efficient</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                Your portfolio generates ₹26,145 in annual dividends with
+                efficient tax treatment.
+              </p>
+              <div class="mt-4">
+                <div class="tax-item">
+                  <span class="tax-item__label">Qualified Dividends:</span>
+                  <span class="tax-item__value">₹18,500</span>
+                </div>
+                <div class="tax-item">
+                  <span class="tax-item__label">Ordinary Dividends:</span>
+                  <span class="tax-item__value">₹7,645</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Capital Gains</h4>
+              <span class="badge badge--warning">Monitor</span>
+            </div>
+            <div class="tile__content">
+              <p>
+                Rebalancing may trigger capital gains. Consider tax-efficient
+                rebalancing strategies.
+              </p>
+              <div class="mt-4">
+                <div class="tax-item">
+                  <span class="tax-item__label">Long-term Gains:</span>
+                  <span class="tax-item__value">₹2,20,000</span>
+                </div>
+                <div class="tax-item">
+                  <span class="tax-item__label">Short-term Gains:</span>
+                  <span class="tax-item__value">₹25,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

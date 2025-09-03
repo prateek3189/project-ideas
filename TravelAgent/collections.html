@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collections - AI Travel Agent</title>
+    <meta
+      name="description"
+      content="Discover Singapore's best neighborhoods, cafes, and must-see spots curated by our AI travel experts."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">✈</div>
+          <h1 class="header__title">AI Travel Agent</h1>
+        </a>
+        <div class="header__actions">
+          <select class="form-input" style="width: auto; min-width: 80px">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+          <a href="itinerary.html" class="btn btn--primary">Print Itinerary</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              Plan Trip
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="itinerary.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              Itinerary
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="bookings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              Bookings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="budget.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💰</span>
+              Budget
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="collections.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">📍</span>
+              Collections
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="settings.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Singapore Collections</h1>
+          <p class="main__subtitle">
+            Curated neighborhoods, cafes, and must-see spots
+          </p>
+        </div>
+
+        <!-- Seasonal Banner -->
+        <div class="nudge nudge--info mb-6">
+          <span>🌧️</span>
+          <div>
+            <strong>Monsoon Season:</strong> Pack a light rain jacket and
+            umbrella. Afternoon showers are common but usually brief. Perfect
+            time for indoor activities and museums.
+          </div>
+        </div>
+
+        <!-- Neighborhoods -->
+        <div class="mb-8">
+          <h2 class="mb-4">🏘️ Neighborhoods</h2>
+          <div class="collections">
+            <div class="collection-card">
+              <div class="collection-card__image">
+                <div>🏛️</div>
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Marina Bay</h3>
+                <p class="collection-card__description">
+                  Modern skyline, Gardens by the Bay, and iconic Marina Bay
+                  Sands. Perfect for first-time visitors and photography
+                  enthusiasts.
+                </p>
+                <div class="collection-card__meta">
+                  <span>💰 High-end</span>
+                  <span>🚶 Very walkable</span>
+                  <span>🚇 MRT: Bayfront</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-card">
+              <div class="collection-card__image">
+                <div>🏮</div>
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Chinatown</h3>
+                <p class="collection-card__description">
+                  Historic temples, traditional shophouses, and authentic hawker
+                  centers. Rich cultural heritage and budget-friendly dining
+                  options.
+                </p>
+                <div class="collection-card__meta">
+                  <span>💰 Budget-friendly</span>
+                  <span>🚶 Very walkable</span>
+                  <span>🚇 MRT: Chinatown</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-card">
+              <div class="collection-card__image">
+                <div>🛍️</div>
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Bugis</h3>
+                <p class="collection-card__description">
+                  Shopping paradise with Bugis Street Market, modern malls, and
+                  diverse food options. Great for souvenirs and budget shopping.
+                </p>
+                <div class="collection-card__meta">
+                  <span>💰 Mid-range</span>
+                  <span>🚶 Walkable</span>
+                  <span>🚇 MRT: Bugis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-card">
+              <div class="collection-card__image">
+                <div>🏖️</div>
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Sentosa Island</h3>
+                <p class="collection-card__description">
+                  Resort island with beaches, theme parks, and entertainment.
+                  Perfect for families and those seeking fun activities.
+                </p>
+                <div class="collection-card__meta">
+                  <span>💰 Premium</span>
+                  <span>🚗 Cable car/Monorail</span>
+                  <span>🚇 MRT: HarbourFront</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-card">
+              <div class="collection-card__image">
+                <div>🌿</div>
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Little India</h3>
+                <p class="collection-card__description">
+                  Vibrant Indian community with colorful streets, traditional
+                  shops, and authentic cuisine. Great for cultural immersion and
+                  shopping.
+                </p>
+                <div class="collection-card__meta">
+                  <span>💰 Budget-friendly</span>
+                  <span>🚶 Walkable</span>
+                  <span>🚇 MRT: Little India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-card">
+              <div class="collection-card__image">
+                <div>🏢</div>
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Orchard Road</h3>
+                <p class="collection-card__description">
+                  Shopping mecca with luxury malls, international brands, and
+                  upscale dining. Perfect for shopping enthusiasts and luxury
+                  experiences.
+                </p>
+                <div class="collection-card__meta">
+                  <span>💰 High-end</span>
+                  <span>🚶 Walkable</span>
+                  <span>🚇 MRT: Orchard</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Cafes -->
+        <div class="mb-8">
+          <h2 class="mb-4">☕ Top Cafes</h2>
+          <div class="grid grid--2 gap-4">
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Common Man Coffee Roasters</h3>
+                <p class="text-muted mb-3">
+                  Specialty coffee with Australian influence. Great for remote
+                  work with reliable WiFi.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--food">Coffee</span>
+                  <span class="chip">WiFi</span>
+                  <span class="chip">Remote Work</span>
+                </div>
+                <div class="text-sm text-muted">
+                  📍 Robertson Quay • ₹400-600
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Tiong Bahru Bakery</h3>
+                <p class="text-muted mb-3">
+                  French-inspired bakery with excellent pastries and coffee.
+                  Popular with locals.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--food">Pastries</span>
+                  <span class="chip">French</span>
+                  <span class="chip">Local Favorite</span>
+                </div>
+                <div class="text-sm text-muted">📍 Tiong Bahru • ₹300-500</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Kafe Utu</h3>
+                <p class="text-muted mb-3">
+                  African-inspired cafe with unique flavors and Instagram-worthy
+                  interiors.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--food">African</span>
+                  <span class="chip">Instagram</span>
+                  <span class="chip">Unique</span>
+                </div>
+                <div class="text-sm text-muted">📍 Chinatown • ₹500-800</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">The Coffee Academics</h3>
+                <p class="text-muted mb-3">
+                  Hong Kong-based chain with excellent coffee and comfortable
+                  seating for work.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--food">Coffee</span>
+                  <span class="chip">WiFi</span>
+                  <span class="chip">Comfortable</span>
+                </div>
+                <div class="text-sm text-muted">
+                  📍 Multiple locations • ₹350-550
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kid-Friendly Spots -->
+        <div class="mb-8">
+          <h2 class="mb-4">👨‍👩‍👧‍👦 Kid-Friendly Spots</h2>
+          <div class="grid grid--3 gap-4">
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Singapore Zoo</h3>
+                <p class="text-muted mb-3">
+                  World-class zoo with interactive exhibits and animal shows.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Animals</span>
+                  <span class="chip">Family</span>
+                  <span class="chip">Educational</span>
+                </div>
+                <div class="text-sm text-muted">📍 Mandai • ₹2,400</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Science Centre Singapore</h3>
+                <p class="text-muted mb-3">
+                  Interactive science exhibits and hands-on learning
+                  experiences.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Science</span>
+                  <span class="chip">Educational</span>
+                  <span class="chip">Indoor</span>
+                </div>
+                <div class="text-sm text-muted">📍 Jurong East • ₹1,200</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Gardens by the Bay</h3>
+                <p class="text-muted mb-3">
+                  Supertree Grove and Children's Garden with water play area.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Nature</span>
+                  <span class="chip">Free Play</span>
+                  <span class="chip">Water Play</span>
+                </div>
+                <div class="text-sm text-muted">
+                  📍 Marina Bay • Free/₹2,400
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sunset Spots -->
+        <div class="mb-8">
+          <h2 class="mb-4">🌅 Sunset Spots</h2>
+          <div class="grid grid--2 gap-4">
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Marina Bay Sands SkyPark</h3>
+                <p class="text-muted mb-3">
+                  Iconic rooftop with panoramic city views. Best sunset spot in
+                  Singapore.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Rooftop</span>
+                  <span class="chip">Panoramic</span>
+                  <span class="chip">Iconic</span>
+                </div>
+                <div class="text-sm text-muted">📍 Marina Bay • ₹2,000</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Mount Faber</h3>
+                <p class="text-muted mb-3">
+                  Free viewpoint with cable car station and walking trails.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Free</span>
+                  <span class="chip">Nature</span>
+                  <span class="chip">Walking</span>
+                </div>
+                <div class="text-sm text-muted">📍 Mount Faber • Free</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Sentosa Beach</h3>
+                <p class="text-muted mb-3">
+                  Beachfront sunset with resort island atmosphere.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Beach</span>
+                  <span class="chip">Resort</span>
+                  <span class="chip">Relaxing</span>
+                </div>
+                <div class="text-sm text-muted">📍 Sentosa • Free</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Henderson Waves</h3>
+                <p class="text-muted mb-3">
+                  Unique pedestrian bridge with city skyline views.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Bridge</span>
+                  <span class="chip">Architecture</span>
+                  <span class="chip">Free</span>
+                </div>
+                <div class="text-sm text-muted">📍 Southern Ridges • Free</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Must-See Attractions -->
+        <div class="mb-8">
+          <h2 class="mb-4">⭐ Must-See Attractions</h2>
+          <div class="grid grid--2 gap-4">
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Gardens by the Bay</h3>
+                <p class="text-muted mb-3">
+                  Futuristic gardens with Supertree Grove and climate-controlled
+                  domes.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Iconic</span>
+                  <span class="chip">Nature</span>
+                  <span class="chip">Photography</span>
+                </div>
+                <div class="text-sm text-muted">
+                  📍 Marina Bay • Free/₹2,400
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Marina Bay Sands</h3>
+                <p class="text-muted mb-3">
+                  Iconic integrated resort with casino, shopping, and rooftop
+                  infinity pool.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Iconic</span>
+                  <span class="chip">Luxury</span>
+                  <span class="chip">Shopping</span>
+                </div>
+                <div class="text-sm text-muted">📍 Marina Bay • Free entry</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Chinatown Heritage Centre</h3>
+                <p class="text-muted mb-3">
+                  Museum showcasing the history and culture of Singapore's
+                  Chinese community.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Culture</span>
+                  <span class="chip">History</span>
+                  <span class="chip">Educational</span>
+                </div>
+                <div class="text-sm text-muted">📍 Chinatown • ₹800</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h3 class="font-semibold mb-2">Singapore Flyer</h3>
+                <p class="text-muted mb-3">
+                  Giant observation wheel offering 360-degree views of the city.
+                </p>
+                <div class="flex gap-2 mb-2">
+                  <span class="chip chip--sights">Views</span>
+                  <span class="chip">Iconic</span>
+                  <span class="chip">Romantic</span>
+                </div>
+                <div class="text-sm text-muted">📍 Marina Bay • ₹2,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Local Tips -->
+        <div class="card">
+          <div class="card__header">
+            <h3>💡 Local Tips</h3>
+          </div>
+          <div class="card__body">
+            <div class="grid grid--2 gap-6">
+              <div>
+                <h4 class="font-semibold mb-3">Best Times to Visit</h4>
+                <ul class="text-sm text-muted">
+                  <li>• Early morning (7-9 AM) for outdoor activities</li>
+                  <li>• Late afternoon (4-6 PM) for shopping and cafes</li>
+                  <li>• Evening (7-9 PM) for dining and nightlife</li>
+                  <li>• Avoid midday (12-2 PM) due to heat</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Transport Tips</h4>
+                <ul class="text-sm text-muted">
+                  <li>• Get EZ-Link card for MRT/bus</li>
+                  <li>• Use Grab app for taxis</li>
+                  <li>• Most attractions within 30min by MRT</li>
+                  <li>• Walking is often faster than driving</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Food Tips</h4>
+                <ul class="text-sm text-muted">
+                  <li>• Hawker centers for authentic local food</li>
+                  <li>• Bring tissues for table reservation</li>
+                  <li>• Try chicken rice, laksa, and satay</li>
+                  <li>• Most places accept contactless payment</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Cultural Tips</h4>
+                <ul class="text-sm text-muted">
+                  <li>• Remove shoes in temples</li>
+                  <li>• Dress modestly for religious sites</li>
+                  <li>• No chewing gum in public</li>
+                  <li>• Be respectful of local customs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          AI Travel Agent v0.1 • <a href="about.html">About</a> •
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+
+      // Collection filtering (mock functionality)
+      function filterCollections(category) {
+        console.log("Filtering by:", category);
+        // In a real app, this would filter the collections
+      }
+
+      // Add to itinerary (mock functionality)
+      function addToItinerary(itemId, itemType) {
+        console.log("Adding to itinerary:", itemId, itemType);
+        // In a real app, this would add the item to the user's itinerary
+      }
+    </script>
+  </body>
+</html>

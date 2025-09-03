@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Dashboard</title>
+    <meta
+      name="description"
+      content="Personal finance app that tracks expenses automatically via SMS parsing and UPI activity"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Statement</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a
+                  href="index.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Dashboard</h1>
+            <p class="main__subtitle">
+              Your financial overview for September 2024
+            </p>
+          </div>
+
+          <!-- Alerts -->
+          <div class="dashboard-section">
+            <div class="alert alert--warning">
+              <div class="alert__title">Budget Alert</div>
+              <div class="alert__message">
+                You're at <strong>72%</strong> of your Food budget. 6 days left
+                in the month.
+              </div>
+            </div>
+
+            <div class="alert alert--info">
+              <div class="alert__title">Import Summary</div>
+              <div class="alert__message">
+                12 SMS parsed • 3 UPI entries • 1 needs review
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat Tiles -->
+          <div class="dashboard-section">
+            <div class="dashboard-grid">
+              <div class="tile tile--spend">
+                <div class="tile__header">
+                  <h3 class="tile__title">This Month Spend</h3>
+                  <span class="tile__icon">💸</span>
+                </div>
+                <div class="tile__value tabular-nums">₹23,450</div>
+                <div class="tile__subtitle">+12% from last month</div>
+              </div>
+
+              <div class="tile tile--income">
+                <div class="tile__header">
+                  <h3 class="tile__title">This Month Income</h3>
+                  <span class="tile__icon">💰</span>
+                </div>
+                <div class="tile__value tabular-nums">₹45,000</div>
+                <div class="tile__subtitle">Salary + freelance</div>
+              </div>
+
+              <div class="tile tile--success">
+                <div class="tile__header">
+                  <h3 class="tile__title">Savings Rate</h3>
+                  <span class="tile__icon">📈</span>
+                </div>
+                <div class="tile__value tabular-nums">48%</div>
+                <div class="tile__subtitle">₹21,550 saved</div>
+              </div>
+
+              <div class="tile tile--warning">
+                <div class="tile__header">
+                  <h3 class="tile__title">Outstanding Bills</h3>
+                  <span class="tile__icon">📋</span>
+                </div>
+                <div class="tile__value tabular-nums">₹4,200</div>
+                <div class="tile__subtitle">Due in 3 days</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Budget Overview -->
+          <div class="dashboard-section">
+            <h2 class="dashboard-section__title">Budget Health</h2>
+
+            <div class="budget">
+              <div class="budget__header">
+                <div class="budget__category">
+                  <div
+                    class="budget__icon"
+                    style="background-color: var(--color-food)"
+                  ></div>
+                  <span class="budget__name">Food & Dining</span>
+                </div>
+                <div class="budget__amount tabular-nums">₹5,760 / ₹8,000</div>
+              </div>
+              <div class="budget__bar">
+                <div
+                  class="budget__progress budget__progress--medium"
+                  style="width: 72%"
+                ></div>
+              </div>
+              <div class="budget__details">
+                <span>₹2,240 remaining</span>
+                <span>6 days left</span>
+              </div>
+            </div>
+
+            <div class="budget">
+              <div class="budget__header">
+                <div class="budget__category">
+                  <div
+                    class="budget__icon"
+                    style="background-color: var(--color-transport)"
+                  ></div>
+                  <span class="budget__name">Transport</span>
+                </div>
+                <div class="budget__amount tabular-nums">₹2,220 / ₹3,000</div>
+              </div>
+              <div class="budget__bar">
+                <div
+                  class="budget__progress budget__progress--low"
+                  style="width: 74%"
+                ></div>
+              </div>
+              <div class="budget__details">
+                <span>₹780 remaining</span>
+                <span>On track</span>
+              </div>
+            </div>
+
+            <div class="budget">
+              <div class="budget__header">
+                <div class="budget__category">
+                  <div
+                    class="budget__icon"
+                    style="background-color: var(--color-shopping)"
+                  ></div>
+                  <span class="budget__name">Shopping</span>
+                </div>
+                <div class="budget__amount tabular-nums">₹1,299 / ₹4,000</div>
+              </div>
+              <div class="budget__bar">
+                <div
+                  class="budget__progress budget__progress--low"
+                  style="width: 32%"
+                ></div>
+              </div>
+              <div class="budget__details">
+                <span>₹2,701 remaining</span>
+                <span>Well under budget</span>
+              </div>
+            </div>
+
+            <div class="budget">
+              <div class="budget__header">
+                <div class="budget__category">
+                  <div
+                    class="budget__icon"
+                    style="background-color: var(--color-bills)"
+                  ></div>
+                  <span class="budget__name">Bills & Utilities</span>
+                </div>
+                <div class="budget__amount tabular-nums">₹4,100 / ₹6,500</div>
+              </div>
+              <div class="budget__bar">
+                <div
+                  class="budget__progress budget__progress--low"
+                  style="width: 63%"
+                ></div>
+              </div>
+              <div class="budget__details">
+                <span>₹2,400 remaining</span>
+                <span>On track</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="dashboard-section">
+            <h2 class="dashboard-section__title">Recent Transactions</h2>
+
+            <div class="transaction-list">
+              <div class="transaction-list__header">
+                <h3 class="transaction-list__title">Latest Activity</h3>
+                <span class="transaction-list__count">Last 5 transactions</span>
+              </div>
+
+              <div class="txn-row">
+                <div class="txn-row__main">
+                  <div class="txn-row__merchant">SWIGGY</div>
+                  <div class="txn-row__category">
+                    <span class="pill pill--food">🍕 Food</span>
+                  </div>
+                </div>
+                <div
+                  class="txn-row__amount txn-row__amount--debit tabular-nums"
+                >
+                  -₹289
+                </div>
+                <div class="txn-row__meta">
+                  <div class="txn-row__date">Today, 7:24 PM</div>
+                  <div class="txn-row__account">HDFC CC</div>
+                </div>
+              </div>
+
+              <div class="txn-row">
+                <div class="txn-row__main">
+                  <div class="txn-row__merchant">OLA CABS</div>
+                  <div class="txn-row__category">
+                    <span class="pill pill--transport">🚗 Transport</span>
+                  </div>
+                </div>
+                <div
+                  class="txn-row__amount txn-row__amount--debit tabular-nums"
+                >
+                  -₹199
+                </div>
+                <div class="txn-row__meta">
+                  <div class="txn-row__date">Today, 8:05 AM</div>
+                  <div class="txn-row__account">UPI</div>
+                </div>
+              </div>
+
+              <div class="txn-row">
+                <div class="txn-row__main">
+                  <div class="txn-row__merchant">AMAZON</div>
+                  <div class="txn-row__category">
+                    <span class="pill pill--shopping">🛍️ Shopping</span>
+                  </div>
+                </div>
+                <div
+                  class="txn-row__amount txn-row__amount--debit tabular-nums"
+                >
+                  -₹1,299
+                </div>
+                <div class="txn-row__meta">
+                  <div class="txn-row__date">Yesterday, 9:10 PM</div>
+                  <div class="txn-row__account">HDFC CC</div>
+                </div>
+              </div>
+
+              <div class="txn-row">
+                <div class="txn-row__main">
+                  <div class="txn-row__merchant">Salary Credit</div>
+                  <div class="txn-row__category">
+                    <span class="pill pill--other">💰 Income</span>
+                  </div>
+                </div>
+                <div
+                  class="txn-row__amount txn-row__amount--credit tabular-nums"
+                >
+                  +₹40,000
+                </div>
+                <div class="txn-row__meta">
+                  <div class="txn-row__date">Sep 1, 9:00 AM</div>
+                  <div class="txn-row__account">SBI Savings</div>
+                </div>
+              </div>
+
+              <div class="txn-row">
+                <div class="txn-row__main">
+                  <div class="txn-row__merchant">BIG BAZAAR</div>
+                  <div class="txn-row__category">
+                    <span class="pill pill--food">🛒 Groceries</span>
+                  </div>
+                </div>
+                <div
+                  class="txn-row__amount txn-row__amount--debit tabular-nums"
+                >
+                  -₹1,240
+                </div>
+                <div class="txn-row__meta">
+                  <div class="txn-row__date">Aug 30, 2:15 PM</div>
+                  <div class="txn-row__account">UPI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

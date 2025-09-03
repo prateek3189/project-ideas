@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizer Console - Event Buddy</title>
+    <meta
+      name="description"
+      content="Manage your events, track sales, and organize amazing experiences with Event Buddy's organizer tools."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="organizer.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="organizer-console">
+          <div class="main__header">
+            <h1 class="main__title">Organizer Console</h1>
+            <p class="main__subtitle">
+              Manage your events and track your success
+            </p>
+          </div>
+
+          <!-- Dashboard Stats -->
+          <div class="organizer-dashboard">
+            <div class="stat-tile">
+              <div class="stat-tile__number">4</div>
+              <div class="stat-tile__label">Upcoming Events</div>
+            </div>
+
+            <div class="stat-tile">
+              <div class="stat-tile__number">32</div>
+              <div class="stat-tile__label">RSVPs Today</div>
+            </div>
+
+            <div class="stat-tile">
+              <div class="stat-tile__number">118</div>
+              <div class="stat-tile__label">Tickets Sold</div>
+            </div>
+
+            <div class="stat-tile">
+              <div class="stat-tile__number">—</div>
+              <div class="stat-tile__label">Revenue (Placeholder)</div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="form-section mb-8">
+            <h2 class="form-section__title">Quick Actions</h2>
+            <div class="flex flex-wrap gap-4">
+              <a href="#create-event" class="btn-primary"
+                >➕ Create New Event</a
+              >
+              <a href="orders.html" class="btn-secondary"
+                >✅ Check-in Attendees</a
+              >
+              <button class="btn-secondary">📊 View Analytics</button>
+              <button class="btn-secondary">📧 Send Updates</button>
+              <button class="btn-secondary">🎨 Create Poster</button>
+            </div>
+          </div>
+
+          <!-- Events Management -->
+          <div class="organizer-events">
+            <div class="organizer-events__header">
+              <h2 class="organizer-events__title">Your Events</h2>
+              <div class="flex gap-3">
+                <select class="px-3 py-2 border rounded">
+                  <option>All Events</option>
+                  <option>Published</option>
+                  <option>Draft</option>
+                  <option>Sold Out</option>
+                </select>
+                <button class="btn-primary">Create Event</button>
+              </div>
+            </div>
+
+            <table class="organizer-events__table">
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>RSVPs</th>
+                  <th>Tickets Sold</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div>
+                      <div class="font-semibold">Indie Night @ Blue Door</div>
+                      <div class="text-sm text-muted">
+                        Blue Door Cafe, Bandra West
+                      </div>
+                    </div>
+                  </td>
+                  <td>Dec 15, 2023</td>
+                  <td>
+                    <span class="tag-chip tag-chip--family">Published</span>
+                  </td>
+                  <td>65/80</td>
+                  <td>45</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn-secondary btn-sm">Edit</button>
+                      <a href="orders.html" class="btn-secondary btn-sm"
+                        >Check-in</a
+                      >
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <div class="font-semibold">Tech Meetup: AI & ML</div>
+                      <div class="text-sm text-muted">
+                        Tech Hub Mumbai, Powai
+                      </div>
+                    </div>
+                  </td>
+                  <td>Dec 20, 2023</td>
+                  <td>
+                    <span class="tag-chip">Draft</span>
+                  </td>
+                  <td>0/100</td>
+                  <td>0</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn-secondary btn-sm">Edit</button>
+                      <button class="btn-primary btn-sm">Publish</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <div class="font-semibold">Yoga Workshop</div>
+                      <div class="text-sm text-muted">Juhu Beach, Juhu</div>
+                    </div>
+                  </td>
+                  <td>Dec 22, 2023</td>
+                  <td>
+                    <span class="tag-chip tag-chip--outdoor">Published</span>
+                  </td>
+                  <td>25/30</td>
+                  <td>20</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn-secondary btn-sm">Edit</button>
+                      <a href="orders.html" class="btn-secondary btn-sm"
+                        >Check-in</a
+                      >
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div>
+                      <div class="font-semibold">Food Festival</div>
+                      <div class="text-sm text-muted">
+                        Gateway of India, Colaba
+                      </div>
+                    </div>
+                  </td>
+                  <td>Dec 25, 2023</td>
+                  <td>
+                    <span
+                      class="tag-chip"
+                      style="
+                        background-color: var(--color-danger-light);
+                        color: var(--color-danger);
+                      "
+                      >Sold Out</span
+                    >
+                  </td>
+                  <td>200/200</td>
+                  <td>200</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn-secondary btn-sm">View</button>
+                      <a href="orders.html" class="btn-secondary btn-sm"
+                        >Check-in</a
+                      >
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Create Event Form -->
+          <div id="create-event" class="form-section mt-8">
+            <h2 class="form-section__title">Create New Event</h2>
+
+            <form class="space-y-6">
+              <!-- Basic Information -->
+              <fieldset>
+                <legend class="text-lg font-semibold mb-4">
+                  Basic Information
+                </legend>
+
+                <div class="form-row">
+                  <div>
+                    <label for="eventTitle" class="required">Event Title</label>
+                    <input
+                      type="text"
+                      id="eventTitle"
+                      name="eventTitle"
+                      required
+                      placeholder="e.g., Indie Night @ Blue Door"
+                    />
+                  </div>
+                  <div>
+                    <label for="eventCategory" class="required">Category</label>
+                    <select id="eventCategory" name="eventCategory" required>
+                      <option value="">Select Category</option>
+                      <option value="music">Music</option>
+                      <option value="tech">Tech</option>
+                      <option value="sports">Sports</option>
+                      <option value="family">Family</option>
+                      <option value="arts">Arts</option>
+                      <option value="food">Food</option>
+                      <option value="wellness">Wellness</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row--full">
+                  <label for="eventDescription" class="required"
+                    >Description</label
+                  >
+                  <textarea
+                    id="eventDescription"
+                    name="eventDescription"
+                    rows="4"
+                    required
+                    placeholder="Describe your event, what attendees can expect, and any special requirements..."
+                  ></textarea>
+                </div>
+
+                <div class="form-row--full">
+                  <label for="eventCover">Cover Image</label>
+                  <input
+                    type="file"
+                    id="eventCover"
+                    name="eventCover"
+                    accept="image/*"
+                  />
+                  <p class="text-xs text-muted mt-1">
+                    Upload a high-quality image (recommended: 1200x630px)
+                  </p>
+                </div>
+              </fieldset>
+
+              <!-- Date & Time -->
+              <fieldset>
+                <legend class="text-lg font-semibold mb-4">Date & Time</legend>
+
+                <div class="form-row">
+                  <div>
+                    <label for="eventDate" class="required">Event Date</label>
+                    <input
+                      type="date"
+                      id="eventDate"
+                      name="eventDate"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="eventTime" class="required">Start Time</label>
+                    <input
+                      type="time"
+                      id="eventTime"
+                      name="eventTime"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div>
+                    <label for="eventEndTime">End Time</label>
+                    <input type="time" id="eventEndTime" name="eventEndTime" />
+                  </div>
+                  <div>
+                    <label for="eventTimezone">Timezone</label>
+                    <select id="eventTimezone" name="eventTimezone">
+                      <option value="Asia/Kolkata">Asia/Kolkata (IST)</option>
+                      <option value="UTC">UTC</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Venue -->
+              <fieldset>
+                <legend class="text-lg font-semibold mb-4">Venue</legend>
+
+                <div class="form-row">
+                  <div>
+                    <label for="venueName" class="required">Venue Name</label>
+                    <input
+                      type="text"
+                      id="venueName"
+                      name="venueName"
+                      required
+                      placeholder="e.g., Blue Door Cafe"
+                    />
+                  </div>
+                  <div>
+                    <label for="venueCapacity">Capacity</label>
+                    <input
+                      type="number"
+                      id="venueCapacity"
+                      name="venueCapacity"
+                      placeholder="e.g., 80"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row--full">
+                  <label for="venueAddress" class="required">Address</label>
+                  <textarea
+                    id="venueAddress"
+                    name="venueAddress"
+                    rows="2"
+                    required
+                    placeholder="Full address including city and postal code"
+                  ></textarea>
+                </div>
+
+                <div class="form-row--full">
+                  <label for="venueMap">Map Embed (Optional)</label>
+                  <textarea
+                    id="venueMap"
+                    name="venueMap"
+                    rows="3"
+                    placeholder="Paste Google Maps embed code here"
+                  ></textarea>
+                </div>
+              </fieldset>
+
+              <!-- Ticket Tiers -->
+              <fieldset>
+                <legend class="text-lg font-semibold mb-4">Ticket Tiers</legend>
+
+                <div class="space-y-4">
+                  <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold mb-3">Tier 1</h4>
+                    <div class="form-row">
+                      <div>
+                        <label for="tier1Name" class="required"
+                          >Tier Name</label
+                        >
+                        <input
+                          type="text"
+                          id="tier1Name"
+                          name="tier1Name"
+                          required
+                          placeholder="e.g., Early Bird"
+                        />
+                      </div>
+                      <div>
+                        <label for="tier1Price" class="required"
+                          >Price (₹)</label
+                        >
+                        <input
+                          type="number"
+                          id="tier1Price"
+                          name="tier1Price"
+                          required
+                          min="0"
+                          step="1"
+                        />
+                      </div>
+                      <div>
+                        <label for="tier1Quantity" class="required"
+                          >Quantity</label
+                        >
+                        <input
+                          type="number"
+                          id="tier1Quantity"
+                          name="tier1Quantity"
+                          required
+                          min="1"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div>
+                        <label for="tier1SalesStart">Sales Start</label>
+                        <input
+                          type="datetime-local"
+                          id="tier1SalesStart"
+                          name="tier1SalesStart"
+                        />
+                      </div>
+                      <div>
+                        <label for="tier1SalesEnd">Sales End</label>
+                        <input
+                          type="datetime-local"
+                          id="tier1SalesEnd"
+                          name="tier1SalesEnd"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn-secondary">
+                    ➕ Add Another Tier
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Settings -->
+              <fieldset>
+                <legend class="text-lg font-semibold mb-4">
+                  Event Settings
+                </legend>
+
+                <div class="form-row">
+                  <div>
+                    <label for="eventVisibility">Visibility</label>
+                    <select id="eventVisibility" name="eventVisibility">
+                      <option value="public">
+                        Public - Anyone can find and join
+                      </option>
+                      <option value="unlisted">
+                        Unlisted - Only people with the link can join
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="eventAgeLimit">Age Limit</label>
+                    <select id="eventAgeLimit" name="eventAgeLimit">
+                      <option value="all">All Ages</option>
+                      <option value="18+">18+ Only</option>
+                      <option value="21+">21+ Only</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row--full">
+                  <label for="refundPolicy">Refund Policy</label>
+                  <textarea
+                    id="refundPolicy"
+                    name="refundPolicy"
+                    rows="3"
+                    placeholder="Describe your refund policy..."
+                  ></textarea>
+                </div>
+
+                <div class="space-y-3">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="waitlistEnabled"
+                      class="mr-3"
+                    />
+                    <span>Enable waitlist when event is sold out</span>
+                  </label>
+
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      name="requireApproval"
+                      class="mr-3"
+                    />
+                    <span>Require approval for RSVPs</span>
+                  </label>
+
+                  <label class="flex items-center">
+                    <input type="checkbox" name="allowTransfers" class="mr-3" />
+                    <span>Allow ticket transfers</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Form Actions -->
+              <div class="form-actions">
+                <button type="button" class="btn-secondary">
+                  Save as Draft
+                </button>
+                <button type="button" class="btn-secondary">Preview</button>
+                <button type="submit" class="btn-primary">Publish Event</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

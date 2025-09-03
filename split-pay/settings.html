@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Split & Pay</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="settings.html" class="btn btn--secondary btn--small"
+              >Print</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="settings">
+            <h1>Settings</h1>
+
+            <!-- Currency Settings -->
+            <div class="settings__section">
+              <h2 class="settings__section-title">Currency & Formatting</h2>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Default Currency</div>
+                  <div class="settings__option-description">
+                    Primary currency for new groups and expenses
+                  </div>
+                </div>
+                <select class="form-select">
+                  <option value="INR" selected>₹ (INR) - Indian Rupee</option>
+                  <option value="USD">$ (USD) - US Dollar</option>
+                  <option value="EUR">€ (EUR) - Euro</option>
+                  <option value="GBP">£ (GBP) - British Pound</option>
+                  <option value="CAD">$ (CAD) - Canadian Dollar</option>
+                  <option value="AUD">$ (AUD) - Australian Dollar</option>
+                </select>
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">
+                    Multi-Currency Support
+                  </div>
+                  <div class="settings__option-description">
+                    Allow different currencies within the same group
+                  </div>
+                </div>
+                <input type="checkbox" id="multi-currency" checked />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Rounding Mode</div>
+                  <div class="settings__option-description">
+                    How to round split amounts
+                  </div>
+                </div>
+                <select class="form-select">
+                  <option value="nearest-1">Nearest ₹1</option>
+                  <option value="nearest-0.5" selected>Nearest ₹0.50</option>
+                  <option value="nearest-0.1">Nearest ₹0.10</option>
+                  <option value="no-rounding">
+                    No rounding (exact amounts)
+                  </option>
+                </select>
+              </div>
+
+              <div class="nudge nudge--info">
+                <strong>Note:</strong> Multi-currency support is a visual
+                placeholder. Real FX rates and conversion would be implemented
+                in future versions.
+              </div>
+            </div>
+
+            <!-- Theme Settings -->
+            <div class="settings__section">
+              <h2 class="settings__section-title">Appearance</h2>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Theme</div>
+                  <div class="settings__option-description">
+                    Choose your preferred color scheme
+                  </div>
+                </div>
+                <select class="form-select" onchange="changeTheme(this.value)">
+                  <option value="light" selected>Light</option>
+                  <option value="dark">Dark</option>
+                  <option value="high-contrast">High Contrast</option>
+                  <option value="auto">Auto (System)</option>
+                </select>
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Reduced Motion</div>
+                  <div class="settings__option-description">
+                    Minimize animations and transitions
+                  </div>
+                </div>
+                <input type="checkbox" id="reduced-motion" />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Compact Mode</div>
+                  <div class="settings__option-description">
+                    Use smaller spacing and fonts
+                  </div>
+                </div>
+                <input type="checkbox" id="compact-mode" />
+              </div>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div class="settings__section">
+              <h2 class="settings__section-title">Privacy & Data</h2>
+
+              <div class="nudge nudge--info">
+                <strong>V1 Privacy:</strong> In this prototype, all data stays
+                in your browser. No data is sent to servers or stored
+                externally.
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Data Storage</div>
+                  <div class="settings__option-description">
+                    Where to store your expense data
+                  </div>
+                </div>
+                <select class="form-select" disabled>
+                  <option value="local" selected>
+                    Local Browser Storage (V1)
+                  </option>
+                  <option value="cloud">Cloud Sync (Future)</option>
+                  <option value="export">Export Only (Future)</option>
+                </select>
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Auto-Export</div>
+                  <div class="settings__option-description">
+                    Automatically export data periodically
+                  </div>
+                </div>
+                <select class="form-select" disabled>
+                  <option value="disabled" selected>Disabled</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Mask Payment Handles</div>
+                  <div class="settings__option-description">
+                    Show partial UPI/PayPal handles (e.g., name@ok****)
+                  </div>
+                </div>
+                <input type="checkbox" id="mask-handles" checked />
+              </div>
+
+              <div class="flex gap-3 mt-4">
+                <button class="btn btn--secondary" disabled>Export CSV</button>
+                <button class="btn btn--secondary" disabled>Export JSON</button>
+                <button class="btn btn--owe" disabled>Clear All Data</button>
+              </div>
+            </div>
+
+            <!-- Payment Settings -->
+            <div class="settings__section">
+              <h2 class="settings__section-title">Payment Providers</h2>
+
+              <div class="nudge nudge--info">
+                <strong>Payment Integration:</strong> These are visual
+                placeholders. Real payment links would integrate with actual
+                payment providers.
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">UPI Integration</div>
+                  <div class="settings__option-description">
+                    Enable UPI payment links (India)
+                  </div>
+                </div>
+                <input type="checkbox" id="upi-enabled" checked />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">PayPal Integration</div>
+                  <div class="settings__option-description">
+                    Enable PayPal payment links
+                  </div>
+                </div>
+                <input type="checkbox" id="paypal-enabled" checked />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Bank Transfer</div>
+                  <div class="settings__option-description">
+                    Show bank account details for transfers
+                  </div>
+                </div>
+                <input type="checkbox" id="bank-transfer" checked />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">
+                    Default Payment Method
+                  </div>
+                  <div class="settings__option-description">
+                    Preferred payment method for new groups
+                  </div>
+                </div>
+                <select class="form-select">
+                  <option value="upi" selected>UPI</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="bank">Bank Transfer</option>
+                  <option value="ask">Ask Each Time</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Notification Settings -->
+            <div class="settings__section">
+              <h2 class="settings__section-title">Notifications</h2>
+
+              <div class="nudge nudge--warning">
+                <strong>Visual Placeholder:</strong> Notification settings are
+                shown for demo purposes.
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Email Notifications</div>
+                  <div class="settings__option-description">
+                    Receive email updates about group activities
+                  </div>
+                </div>
+                <input type="checkbox" id="email-notifications" checked />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">SMS Notifications</div>
+                  <div class="settings__option-description">
+                    Receive SMS for urgent settlements
+                  </div>
+                </div>
+                <input type="checkbox" id="sms-notifications" />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Push Notifications</div>
+                  <div class="settings__option-description">
+                    Browser push notifications (when supported)
+                  </div>
+                </div>
+                <input type="checkbox" id="push-notifications" checked />
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Weekly Summary</div>
+                  <div class="settings__option-description">
+                    Weekly expense and balance summary
+                  </div>
+                </div>
+                <input type="checkbox" id="weekly-summary" checked />
+              </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="settings__section">
+              <h2 class="settings__section-title">About</h2>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Version</div>
+                  <div class="settings__option-description">
+                    Split & Pay v1.0 - Static HTML/CSS Prototype
+                  </div>
+                </div>
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">Build Date</div>
+                  <div class="settings__option-description">December 2024</div>
+                </div>
+              </div>
+
+              <div class="settings__option">
+                <div>
+                  <div class="settings__option-label">License</div>
+                  <div class="settings__option-description">
+                    MIT License - Open Source
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-3 mt-4">
+                <a href="about.html" class="btn btn--secondary"
+                  >About Split & Pay</a
+                >
+                <button class="btn btn--secondary" disabled>
+                  Check for Updates
+                </button>
+                <button class="btn btn--secondary" disabled>Report Bug</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+
+      // Theme selector
+      function changeTheme(theme) {
+        if (theme === "auto") {
+          // In a real app, this would detect system preference
+          theme = "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    </script>
+  </body>
+</html>

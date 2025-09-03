@@ -1,0 +1,244 @@
+/* Theme Variants - AI Personal Coach */
+
+/* Dark Theme */
+.theme-dark {
+  --color-background: #0B1220;
+  --color-surface: #111827;
+  --color-surface-elevated: #1F2937;
+  --color-text: #E5E7EB;
+  --color-text-muted: #9CA3AF;
+  --color-text-subtle: #6B7280;
+  
+  --color-border: #374151;
+  --color-border-strong: #4B5563;
+  
+  --color-fitness-light: #064E3B;
+  --color-productivity-light: #1E3A8A;
+  --color-leadership-light: #581C87;
+  
+  --color-success-light: #14532D;
+  --color-warning-light: #92400E;
+  --color-danger-light: #991B1B;
+  --color-info-light: #1E3A8A;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+.theme-dark .theme-toggle__button {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.theme-dark .theme-toggle__button:hover {
+  background: var(--color-background);
+  border-color: var(--color-border-strong);
+}
+
+/* High Contrast Theme */
+.theme-high-contrast {
+  --color-background: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-text-subtle: #666666;
+  
+  --color-border: #000000;
+  --color-border-strong: #000000;
+  --color-focus: #0000FF;
+  
+  --color-fitness: #006600;
+  --color-fitness-light: #E6F3E6;
+  --color-fitness-dark: #004400;
+  
+  --color-productivity: #0000CC;
+  --color-productivity-light: #E6E6FF;
+  --color-productivity-dark: #000099;
+  
+  --color-leadership: #660066;
+  --color-leadership-light: #F3E6F3;
+  --color-leadership-dark: #440044;
+  
+  --color-success: #006600;
+  --color-success-light: #E6F3E6;
+  --color-warning: #CC6600;
+  --color-warning-light: #FFF0E6;
+  --color-danger: #CC0000;
+  --color-danger-light: #FFE6E6;
+  --color-info: #0000CC;
+  --color-info-light: #E6E6FF;
+  
+  --color-primary: #0000CC;
+  --color-primary-hover: #000099;
+  --color-primary-light: #E6E6FF;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+}
+
+.theme-high-contrast .theme-toggle__button {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.theme-high-contrast .theme-toggle__button:hover {
+  background: var(--color-background);
+  border-color: var(--color-border-strong);
+}
+
+/* Reduced Motion Theme */
+.theme-reduced-motion *,
+.theme-reduced-motion *::before,
+.theme-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+.theme-reduced-motion .coach-card:hover,
+.theme-reduced-motion .plan-card:hover,
+.theme-reduced-motion .template-card:hover {
+  transform: none;
+}
+
+/* Theme Toggle Button States */
+.theme-toggle__button {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle__button::before {
+  content: "☀️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--transition-fast);
+}
+
+.theme-dark .theme-toggle__button::before {
+  content: "🌙";
+}
+
+.theme-high-contrast .theme-toggle__button::before {
+  content: "🌓";
+}
+
+/* Theme-specific component adjustments */
+.theme-dark .coach-card,
+.theme-dark .checkin-card,
+.theme-dark .micro-habits,
+.theme-dark .nudge-banner,
+.theme-dark .stat-tile,
+.theme-dark .plan-card,
+.theme-dark .template-card,
+.theme-dark .track-section,
+.theme-dark .settings-section,
+.theme-dark .chart-container,
+.theme-dark .highlights-list {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.theme-dark .streak-ring__inner {
+  background: var(--color-surface);
+}
+
+.theme-high-contrast .coach-card,
+.theme-high-contrast .checkin-card,
+.theme-high-contrast .micro-habits,
+.theme-high-contrast .nudge-banner,
+.theme-high-contrast .stat-tile,
+.theme-high-contrast .plan-card,
+.theme-high-contrast .template-card,
+.theme-high-contrast .track-section,
+.theme-high-contrast .settings-section,
+.theme-high-contrast .chart-container,
+.theme-high-contrast .highlights-list {
+  border-width: 2px;
+  border-color: var(--color-border);
+}
+
+.theme-high-contrast .streak-ring__inner {
+  border: 2px solid var(--color-border);
+}
+
+/* Focus styles for high contrast */
+.theme-high-contrast *:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.theme-high-contrast .form-input:focus,
+.theme-high-contrast .form-textarea:focus {
+  border-width: 3px;
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Print-friendly theme overrides */
+@media print {
+  .theme-dark,
+  .theme-high-contrast {
+    --color-background: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-border: #000000;
+  }
+  
+  .theme-dark *,
+  .theme-high-contrast * {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* System theme detection */
+@media (prefers-color-scheme: dark) {
+  .theme-auto {
+    --color-background: #0B1220;
+    --color-surface: #111827;
+    --color-surface-elevated: #1F2937;
+    --color-text: #E5E7EB;
+    --color-text-muted: #9CA3AF;
+    --color-text-subtle: #6B7280;
+    
+    --color-border: #374151;
+    --color-border-strong: #4B5563;
+    
+    --color-fitness-light: #064E3B;
+    --color-productivity-light: #1E3A8A;
+    --color-leadership-light: #581C87;
+    
+    --color-success-light: #14532D;
+    --color-warning-light: #92400E;
+    --color-danger-light: #991B1B;
+    --color-info-light: #1E3A8A;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-auto {
+    --transition-fast: 0ms;
+    --transition-normal: 0ms;
+    --transition-slow: 0ms;
+  }
+  
+  .theme-auto .coach-card:hover,
+  .theme-auto .plan-card:hover,
+  .theme-auto .template-card:hover {
+    transform: none;
+  }
+}

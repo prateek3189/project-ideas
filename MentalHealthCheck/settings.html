@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Mental Health Chat</title>
+    <meta
+      name="description"
+      content="Customize your experience with theme, accessibility, and privacy settings."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="header">
+          <a href="index.html" class="header__brand">
+            <span>💬</span>
+            <span>Mental Health Chat</span>
+          </a>
+
+          <div class="header__actions">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+              <span class="theme-toggle__icon theme-toggle__icon--moon"
+                >🌙</span
+              >
+              <span class="theme-toggle__icon theme-toggle__icon--contrast"
+                >🔆</span
+              >
+              <span class="theme-toggle__label">Theme</span>
+            </button>
+
+            <a href="index.html" class="btn btn--secondary"> ← Back to Home </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="shell__main">
+        <div class="shell__content">
+          <div class="container container--sm">
+            <!-- Page Header -->
+            <div class="page__header text-center">
+              <h1 class="page__title">Settings</h1>
+              <p class="page__subtitle">
+                Customize your experience with theme, accessibility, and privacy
+                settings.
+              </p>
+            </div>
+
+            <!-- Theme Settings -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>🎨 Appearance</h2>
+              </div>
+              <div class="card__body">
+                <div class="form-group">
+                  <label class="form-label">Theme</label>
+                  <div class="flex flex-wrap gap-2">
+                    <button class="btn btn--secondary" data-theme="light">
+                      ☀️ Light
+                    </button>
+                    <button class="btn btn--secondary" data-theme="dark">
+                      🌙 Dark
+                    </button>
+                    <button
+                      class="btn btn--secondary"
+                      data-theme="high-contrast"
+                    >
+                      🔆 High Contrast
+                    </button>
+                    <button
+                      class="btn btn--secondary"
+                      data-theme="reduced-motion"
+                    >
+                      🎬 Reduced Motion
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Text Size</label>
+                  <div class="flex items-center gap-3">
+                    <button
+                      class="btn btn--secondary btn--sm"
+                      data-size="small"
+                    >
+                      Small
+                    </button>
+                    <button class="btn btn--primary btn--sm" data-size="medium">
+                      Medium
+                    </button>
+                    <button
+                      class="btn btn--secondary btn--sm"
+                      data-size="large"
+                    >
+                      Large
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="high-contrast" checked />
+                  <label for="high-contrast"
+                    >High contrast mode for better visibility</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="reduced-motion" />
+                  <label for="reduced-motion"
+                    >Reduce animations and motion effects</label
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Anonymity Settings -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>🔒 Privacy & Anonymity</h2>
+              </div>
+              <div class="card__body">
+                <div class="alert alert--info mb-4">
+                  <strong>Your Privacy:</strong> We never collect personal
+                  information. Your conversations are anonymous and secure.
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Pseudonym</label>
+                  <div class="flex gap-2">
+                    <input
+                      type="text"
+                      class="form-input flex-1"
+                      value="Seeker-Sky"
+                      readonly
+                    />
+                    <button class="btn btn--secondary">🔄 Regenerate</button>
+                  </div>
+                  <p class="text-sm text-muted mt-1">
+                    Your pseudonym is randomly generated and can be changed
+                    anytime.
+                  </p>
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="hide-typing" checked />
+                  <label for="hide-typing"
+                    >Hide typing indicators from others</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="auto-delete" checked />
+                  <label for="auto-delete"
+                    >Automatically delete session history after 24 hours</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="no-tracking" />
+                  <label for="no-tracking"
+                    >Opt out of anonymous usage analytics</label
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Accessibility Settings -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>♿ Accessibility</h2>
+              </div>
+              <div class="card__body">
+                <div class="form-group">
+                  <label class="form-label">Screen Reader Support</label>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="screen-reader" checked />
+                    <label for="screen-reader"
+                      >Enhanced screen reader announcements</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Keyboard Navigation</label>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="keyboard-nav" checked />
+                    <label for="keyboard-nav"
+                      >Enhanced keyboard navigation support</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Focus Indicators</label>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="focus-indicators" checked />
+                    <label for="focus-indicators"
+                      >High visibility focus indicators</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Color Blind Support</label>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="color-blind" />
+                    <label for="color-blind"
+                      >Use patterns and shapes in addition to colors</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Notification Settings -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>🔔 Notifications</h2>
+              </div>
+              <div class="card__body">
+                <div class="form-checkbox">
+                  <input type="checkbox" id="session-alerts" checked />
+                  <label for="session-alerts"
+                    >Session status alerts (connected, disconnected)</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="safety-alerts" checked />
+                  <label for="safety-alerts"
+                    >Safety and crisis resource reminders</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="wellness-tips" />
+                  <label for="wellness-tips"
+                    >Daily wellness tips and reminders</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="session-feedback" />
+                  <label for="session-feedback"
+                    >Session feedback and follow-up reminders</label
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Language Settings -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>🌍 Language & Region</h2>
+              </div>
+              <div class="card__body">
+                <div class="form-group">
+                  <label for="language" class="form-label">Language</label>
+                  <select id="language" class="form-input">
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="zh">中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="ar">العربية</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="region" class="form-label">Region</label>
+                  <select id="region" class="form-input">
+                    <option value="us" selected>United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                    <option value="es">Spain</option>
+                    <option value="it">Italy</option>
+                    <option value="jp">Japan</option>
+                    <option value="kr">South Korea</option>
+                  </select>
+                  <p class="text-sm text-muted mt-1">
+                    This helps us show relevant crisis resources and support
+                    numbers.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Data & Privacy -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>📊 Data & Privacy</h2>
+              </div>
+              <div class="card__body">
+                <div class="alert alert--info mb-4">
+                  <strong>Your Data:</strong> We don't store personal
+                  information or chat transcripts. Only anonymous usage data is
+                  collected for service improvement.
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Data Retention</label>
+                  <div class="flex flex-wrap gap-2">
+                    <button
+                      class="btn btn--primary btn--sm"
+                      data-retention="24h"
+                    >
+                      24 Hours
+                    </button>
+                    <button
+                      class="btn btn--secondary btn--sm"
+                      data-retention="7d"
+                    >
+                      7 Days
+                    </button>
+                    <button
+                      class="btn btn--secondary btn--sm"
+                      data-retention="30d"
+                    >
+                      30 Days
+                    </button>
+                    <button
+                      class="btn btn--secondary btn--sm"
+                      data-retention="none"
+                    >
+                      None
+                    </button>
+                  </div>
+                  <p class="text-sm text-muted mt-1">
+                    How long to keep anonymous session data for safety
+                    monitoring.
+                  </p>
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="data-export" />
+                  <label for="data-export"
+                    >Allow data export for personal records</label
+                  >
+                </div>
+
+                <div class="form-checkbox">
+                  <input type="checkbox" id="research-participation" />
+                  <label for="research-participation"
+                    >Participate in anonymous research to improve mental health
+                    support</label
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Account Actions -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h2>⚙️ Account Actions</h2>
+              </div>
+              <div class="card__body">
+                <div class="space-y-3">
+                  <button class="btn btn--secondary btn--full">
+                    📥 Export My Data
+                  </button>
+                  <button class="btn btn--secondary btn--full">
+                    🗑️ Clear All Data
+                  </button>
+                  <button class="btn btn--secondary btn--full">
+                    🔄 Reset All Settings
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Save Settings -->
+            <div class="text-center">
+              <button class="btn btn--primary btn--lg">💾 Save Settings</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <p class="text-xs text-muted">
+            This service provides peer support only. Not a substitute for
+            professional mental health care.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Settings Script -->
+    <script>
+      // Theme toggle
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const html = document.documentElement;
+          const currentTheme = html.getAttribute("data-theme") || "light";
+          const themes = ["light", "dark", "high-contrast", "reduced-motion"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+          html.setAttribute("data-theme", nextTheme);
+
+          const label = this.querySelector(".theme-toggle__label");
+          const themeNames = {
+            light: "Light",
+            dark: "Dark",
+            "high-contrast": "High Contrast",
+            "reduced-motion": "Reduced Motion",
+          };
+          label.textContent = themeNames[nextTheme];
+        });
+
+      // Theme buttons
+      document.querySelectorAll("[data-theme]").forEach((button) => {
+        button.addEventListener("click", function () {
+          const theme = this.getAttribute("data-theme");
+          document.documentElement.setAttribute("data-theme", theme);
+
+          // Update button states
+          document.querySelectorAll("[data-theme]").forEach((btn) => {
+            btn.classList.remove("btn--primary");
+            btn.classList.add("btn--secondary");
+          });
+          this.classList.remove("btn--secondary");
+          this.classList.add("btn--primary");
+        });
+      });
+
+      // Text size buttons
+      document.querySelectorAll("[data-size]").forEach((button) => {
+        button.addEventListener("click", function () {
+          const size = this.getAttribute("data-size");
+
+          // Update button states
+          document.querySelectorAll("[data-size]").forEach((btn) => {
+            btn.classList.remove("btn--primary");
+            btn.classList.add("btn--secondary");
+          });
+          this.classList.remove("btn--secondary");
+          this.classList.add("btn--primary");
+
+          // Apply text size (visual only in prototype)
+          document.body.style.fontSize =
+            size === "small" ? "14px" : size === "large" ? "18px" : "16px";
+        });
+      });
+
+      // Data retention buttons
+      document.querySelectorAll("[data-retention]").forEach((button) => {
+        button.addEventListener("click", function () {
+          // Update button states
+          document.querySelectorAll("[data-retention]").forEach((btn) => {
+            btn.classList.remove("btn--primary");
+            btn.classList.add("btn--secondary");
+          });
+          this.classList.remove("btn--secondary");
+          this.classList.add("btn--primary");
+        });
+      });
+
+      // Pseudonym regeneration
+      document
+        .querySelector('button[onclick*="Regenerate"]')
+        ?.addEventListener("click", function () {
+          const pseudonyms = [
+            "Seeker-Sky",
+            "Seeker-River",
+            "Seeker-Star",
+            "Seeker-Ocean",
+            "Seeker-Forest",
+          ];
+          const randomPseudonym =
+            pseudonyms[Math.floor(Math.random() * pseudonyms.length)];
+          document.querySelector('input[value*="Seeker-"]').value =
+            randomPseudonym;
+        });
+    </script>
+  </body>
+</html>

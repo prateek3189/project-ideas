@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation - Indie Night @ Blue Door - Event Buddy</title>
+    <meta
+      name="description"
+      content="Your tickets for Indie Night @ Blue Door have been confirmed. Download your tickets and get ready for an amazing evening."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="profile.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="form-layout">
+          <!-- Success Message -->
+          <div class="alert-banner alert-banner--success mb-8">
+            <span class="alert-banner__icon">✅</span>
+            <div class="alert-banner__content">
+              <div class="alert-banner__title">Payment Successful!</div>
+              <div class="alert-banner__message">
+                Your tickets have been confirmed. Check your email for the
+                confirmation.
+              </div>
+            </div>
+          </div>
+
+          <h1 class="text-3xl font-bold mb-2">Order Confirmed</h1>
+          <p class="text-muted mb-8">
+            Order #EB-2023-001234 - Friday, December 15, 2023
+          </p>
+
+          <!-- Order Summary -->
+          <div class="form-section mb-8">
+            <h2 class="form-section__title">Order Summary</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="font-semibold mb-3">Event Details</h3>
+                <div class="space-y-2 text-sm">
+                  <div><strong>Event:</strong> Indie Night @ Blue Door</div>
+                  <div><strong>Date:</strong> Friday, December 15, 2023</div>
+                  <div><strong>Time:</strong> 8:00 PM - 11:00 PM</div>
+                  <div><strong>Venue:</strong> Blue Door Cafe, Bandra West</div>
+                  <div>
+                    <strong>Address:</strong> 123 Linking Road, Bandra West,
+                    Mumbai 400050
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-semibold mb-3">Purchase Details</h3>
+                <div class="space-y-2 text-sm">
+                  <div><strong>Order ID:</strong> EB-2023-001234</div>
+                  <div><strong>Purchase Date:</strong> December 10, 2023</div>
+                  <div><strong>Payment Method:</strong> UPI Payment</div>
+                  <div><strong>Total Paid:</strong> ₹1,235</div>
+                  <div><strong>Buyer:</strong> Prateek Magarde</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tickets -->
+          <div class="form-section mb-8">
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="form-section__title">Your Tickets</h2>
+              <div class="flex gap-3">
+                <button class="btn-secondary" onclick="window.print()">
+                  🖨️ Print All
+                </button>
+                <button class="btn-secondary">📱 Add to Wallet</button>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <!-- Ticket 1 -->
+              <div class="ticket-card">
+                <div class="ticket-card__header">
+                  <div class="ticket-card__event">
+                    <h3 class="ticket-card__title">Indie Night @ Blue Door</h3>
+                    <div class="ticket-card__date">
+                      Friday, December 15, 2023 • 8:00 PM
+                    </div>
+                  </div>
+                  <div class="ticket-card__qr">
+                    <div class="qr-placeholder"></div>
+                  </div>
+                </div>
+
+                <div class="ticket-card__details">
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Ticket Type</div>
+                    <div class="ticket-detail__value">Early Bird</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Ticket Number</div>
+                    <div class="ticket-detail__value">TKT-001</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Attendee</div>
+                    <div class="ticket-detail__value">Prateek Magarde</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Price</div>
+                    <div class="ticket-detail__value">₹299</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ticket 2 -->
+              <div class="ticket-card">
+                <div class="ticket-card__header">
+                  <div class="ticket-card__event">
+                    <h3 class="ticket-card__title">Indie Night @ Blue Door</h3>
+                    <div class="ticket-card__date">
+                      Friday, December 15, 2023 • 8:00 PM
+                    </div>
+                  </div>
+                  <div class="ticket-card__qr">
+                    <div class="qr-placeholder"></div>
+                  </div>
+                </div>
+
+                <div class="ticket-card__details">
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Ticket Type</div>
+                    <div class="ticket-detail__value">Early Bird</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Ticket Number</div>
+                    <div class="ticket-detail__value">TKT-002</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Attendee</div>
+                    <div class="ticket-detail__value">Priya Sharma</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Price</div>
+                    <div class="ticket-detail__value">₹299</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ticket 3 -->
+              <div class="ticket-card">
+                <div class="ticket-card__header">
+                  <div class="ticket-card__event">
+                    <h3 class="ticket-card__title">Indie Night @ Blue Door</h3>
+                    <div class="ticket-card__date">
+                      Friday, December 15, 2023 • 8:00 PM
+                    </div>
+                  </div>
+                  <div class="ticket-card__qr">
+                    <div class="qr-placeholder"></div>
+                  </div>
+                </div>
+
+                <div class="ticket-card__details">
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Ticket Type</div>
+                    <div class="ticket-detail__value">General</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Ticket Number</div>
+                    <div class="ticket-detail__value">TKT-003</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Attendee</div>
+                    <div class="ticket-detail__value">Raj Patel</div>
+                  </div>
+                  <div class="ticket-detail">
+                    <div class="ticket-detail__label">Price</div>
+                    <div class="ticket-detail__value">₹399</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Information -->
+          <div class="form-section mb-8">
+            <h2 class="form-section__title">Important Information</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="alert-banner alert-banner--info">
+                <span class="alert-banner__icon">📱</span>
+                <div class="alert-banner__content">
+                  <div class="alert-banner__title">Mobile Check-in</div>
+                  <div class="alert-banner__message">
+                    Show your QR code at the venue entrance for quick check-in
+                  </div>
+                </div>
+              </div>
+
+              <div class="alert-banner alert-banner--warning">
+                <span class="alert-banner__icon">⏰</span>
+                <div class="alert-banner__content">
+                  <div class="alert-banner__title">Arrival Time</div>
+                  <div class="alert-banner__message">
+                    Doors open at 7:30 PM. Arrive early for best seats
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-border-light rounded-lg">
+              <h3 class="font-semibold mb-3">What to Bring:</h3>
+              <ul class="space-y-1 text-sm">
+                <li>• Valid photo ID (required for entry)</li>
+                <li>• Your ticket (digital or printed)</li>
+                <li>• Face mask (recommended)</li>
+                <li>• Cash for food and drinks (cards also accepted)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Next Steps -->
+          <div class="form-section">
+            <h2 class="form-section__title">What's Next?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-3xl mb-3">📅</div>
+                <h3 class="font-semibold mb-2">Add to Calendar</h3>
+                <p class="text-sm text-muted mb-4">
+                  Never miss your event with calendar reminders
+                </p>
+                <button class="btn-secondary">Add to Calendar</button>
+              </div>
+
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-3xl mb-3">📍</div>
+                <h3 class="font-semibold mb-2">Get Directions</h3>
+                <p class="text-sm text-muted mb-4">
+                  Find the best route to Blue Door Cafe
+                </p>
+                <button class="btn-secondary">Get Directions</button>
+              </div>
+
+              <div class="text-center p-6 border rounded-lg">
+                <div class="text-3xl mb-3">🎵</div>
+                <h3 class="font-semibold mb-2">Discover More</h3>
+                <p class="text-sm text-muted mb-4">
+                  Find similar events you might enjoy
+                </p>
+                <a href="index.html" class="btn-secondary">Browse Events</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <a href="profile.html" class="btn-secondary">View All Tickets</a>
+            <a href="index.html" class="btn-primary">Discover More Events</a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

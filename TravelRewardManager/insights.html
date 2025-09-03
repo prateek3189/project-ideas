@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Insights</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item nav-item--active">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Insights</h2>
+          <p class="page-subtitle">
+            Analyze your points portfolio and optimize your strategy
+          </p>
+        </div>
+
+        <!-- Portfolio Overview -->
+        <section class="portfolio-overview-section">
+          <h3 class="section-title">Portfolio Overview</h3>
+          <div class="portfolio-stats-grid">
+            <div class="stat-tile stat-tile--primary">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Total Portfolio Value</h3>
+                <span class="icon">💰</span>
+              </div>
+              <div class="stat-tile__value">₹3,85,000</div>
+              <div class="stat-tile__subtitle">
+                241,300 points across 12 programs
+              </div>
+            </div>
+
+            <div class="stat-tile stat-tile--success">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Average CPP</h3>
+                <span class="icon">📊</span>
+              </div>
+              <div class="stat-tile__value">1.6</div>
+              <div class="stat-tile__subtitle">
+                Above industry average of 1.2
+              </div>
+            </div>
+
+            <div class="stat-tile stat-tile--warning">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Expiring Soon</h3>
+                <span class="icon">⏰</span>
+              </div>
+              <div class="stat-tile__value">4,500</div>
+              <div class="stat-tile__subtitle">
+                Points expiring in next 90 days
+              </div>
+            </div>
+
+            <div class="stat-tile stat-tile--info">
+              <div class="stat-tile__header">
+                <h3 class="stat-tile__title">Diversification</h3>
+                <span class="icon">🎯</span>
+              </div>
+              <div class="stat-tile__value">85%</div>
+              <div class="stat-tile__subtitle">
+                Well-diversified across alliances
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Points Distribution -->
+        <section class="points-distribution-section">
+          <h3 class="section-title">Points Distribution</h3>
+          <div class="distribution-grid">
+            <div class="distribution-card">
+              <h4 class="distribution-card__title">By Category</h4>
+              <div class="distribution-chart">
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Airlines</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill chart-bar__fill--airlines"
+                      style="width: 45%"
+                    ></div>
+                    <span class="chart-bar__value">45%</span>
+                  </div>
+                </div>
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Hotels</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill chart-bar__fill--hotels"
+                      style="width: 30%"
+                    ></div>
+                    <span class="chart-bar__value">30%</span>
+                  </div>
+                </div>
+                <div class="chart-bar">
+                  <div class="chart-bar__label">Credit Cards</div>
+                  <div class="chart-bar__container">
+                    <div
+                      class="chart-bar__fill chart-bar__fill--banks"
+                      style="width: 25%"
+                    ></div>
+                    <span class="chart-bar__value">25%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="distribution-card">
+              <h4 class="distribution-card__title">By Alliance</h4>
+              <div class="alliance-breakdown">
+                <div class="alliance-item">
+                  <div class="alliance-info">
+                    <span class="alliance-logo">⭐</span>
+                    <span class="alliance-name">Star Alliance</span>
+                  </div>
+                  <div class="alliance-stats">
+                    <span class="alliance-points">85,000</span>
+                    <span class="alliance-percentage">35%</span>
+                  </div>
+                </div>
+                <div class="alliance-item">
+                  <div class="alliance-info">
+                    <span class="alliance-logo">🌍</span>
+                    <span class="alliance-name">oneworld</span>
+                  </div>
+                  <div class="alliance-stats">
+                    <span class="alliance-points">65,000</span>
+                    <span class="alliance-percentage">27%</span>
+                  </div>
+                </div>
+                <div class="alliance-item">
+                  <div class="alliance-info">
+                    <span class="alliance-logo">☁️</span>
+                    <span class="alliance-name">SkyTeam</span>
+                  </div>
+                  <div class="alliance-stats">
+                    <span class="alliance-points">45,000</span>
+                    <span class="alliance-percentage">19%</span>
+                  </div>
+                </div>
+                <div class="alliance-item">
+                  <div class="alliance-info">
+                    <span class="alliance-logo">🏨</span>
+                    <span class="alliance-name">Independent</span>
+                  </div>
+                  <div class="alliance-stats">
+                    <span class="alliance-points">46,300</span>
+                    <span class="alliance-percentage">19%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Value Analysis -->
+        <section class="value-analysis-section">
+          <h3 class="section-title">Value Analysis</h3>
+          <div class="value-analysis-grid">
+            <div class="value-card">
+              <h4 class="value-card__title">Best Value Programs</h4>
+              <div class="value-list">
+                <div class="value-item">
+                  <div class="value-program">
+                    <span class="program-logo">🛩️</span>
+                    <span class="program-name">KrisFlyer</span>
+                  </div>
+                  <div class="value-metrics">
+                    <span class="value-cpp">2.1 cpp</span>
+                    <span class="value-trend trend--up">↗ +0.2</span>
+                  </div>
+                </div>
+                <div class="value-item">
+                  <div class="value-program">
+                    <span class="program-logo">✈️</span>
+                    <span class="program-name">Avios</span>
+                  </div>
+                  <div class="value-metrics">
+                    <span class="value-cpp">1.9 cpp</span>
+                    <span class="value-trend trend--stable">→ 0.0</span>
+                  </div>
+                </div>
+                <div class="value-item">
+                  <div class="value-program">
+                    <span class="program-logo">🏨</span>
+                    <span class="program-name">Marriott Bonvoy</span>
+                  </div>
+                  <div class="value-metrics">
+                    <span class="value-cpp">1.8 cpp</span>
+                    <span class="value-trend trend--down">↘ -0.1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="value-card">
+              <h4 class="value-card__title">Optimization Opportunities</h4>
+              <div class="optimization-list">
+                <div class="optimization-item">
+                  <div class="optimization-icon">💡</div>
+                  <div class="optimization-content">
+                    <h5 class="optimization-title">Transfer to KrisFlyer</h5>
+                    <p class="optimization-description">
+                      Transfer 10,000 Amex MR to KrisFlyer for Tokyo trip. Could
+                      save ₹8,000 vs current redemption.
+                    </p>
+                  </div>
+                </div>
+                <div class="optimization-item">
+                  <div class="optimization-icon">🎯</div>
+                  <div class="optimization-content">
+                    <h5 class="optimization-title">Consolidate Hotel Points</h5>
+                    <p class="optimization-description">
+                      Transfer scattered hotel points to Marriott for better
+                      redemption value and elite status benefits.
+                    </p>
+                  </div>
+                </div>
+                <div class="optimization-item">
+                  <div class="optimization-icon">⚡</div>
+                  <div class="optimization-content">
+                    <h5 class="optimization-title">Use Expiring Points</h5>
+                    <p class="optimization-description">
+                      4,500 points expiring in 90 days. Consider small
+                      redemptions or partner transfers to preserve value.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Trends & Patterns -->
+        <section class="trends-section">
+          <h3 class="section-title">Trends & Patterns</h3>
+          <div class="trends-grid">
+            <div class="trend-card">
+              <h4 class="trend-card__title">Earning Trends</h4>
+              <div class="trend-chart">
+                <div class="trend-bars">
+                  <div
+                    class="trend-bar trend-bar--airlines"
+                    style="height: 60%"
+                  ></div>
+                  <div
+                    class="trend-bar trend-bar--hotels"
+                    style="height: 40%"
+                  ></div>
+                  <div
+                    class="trend-bar trend-bar--banks"
+                    style="height: 80%"
+                  ></div>
+                </div>
+                <div class="trend-labels">
+                  <span class="trend-label">Q1 2024</span>
+                  <span class="trend-label">Q2 2024</span>
+                  <span class="trend-label">Q3 2024</span>
+                  <span class="trend-label">Q4 2024</span>
+                </div>
+              </div>
+              <div class="trend-insight">
+                <p>
+                  Credit card spending increased 40% in Q4, driving higher point
+                  accumulation.
+                </p>
+              </div>
+            </div>
+
+            <div class="trend-card">
+              <h4 class="trend-card__title">Redemption Patterns</h4>
+              <div class="redemption-patterns">
+                <div class="pattern-item">
+                  <div class="pattern-category">Business Class</div>
+                  <div class="pattern-percentage">65%</div>
+                </div>
+                <div class="pattern-item">
+                  <div class="pattern-category">Economy Class</div>
+                  <div class="pattern-percentage">25%</div>
+                </div>
+                <div class="pattern-item">
+                  <div class="pattern-category">Hotel Stays</div>
+                  <div class="pattern-percentage">10%</div>
+                </div>
+              </div>
+              <div class="trend-insight">
+                <p>
+                  Strong preference for premium redemptions, maximizing point
+                  value.
+                </p>
+              </div>
+            </div>
+
+            <div class="trend-card">
+              <h4 class="trend-card__title">Seasonal Analysis</h4>
+              <div class="seasonal-data">
+                <div class="season-item">
+                  <div class="season-name">Spring</div>
+                  <div class="season-value">High Redemption</div>
+                </div>
+                <div class="season-item">
+                  <div class="season-name">Summer</div>
+                  <div class="season-value">Peak Earning</div>
+                </div>
+                <div class="season-item">
+                  <div class="season-name">Fall</div>
+                  <div class="season-value">Moderate Activity</div>
+                </div>
+                <div class="season-item">
+                  <div class="season-name">Winter</div>
+                  <div class="season-value">Holiday Travel</div>
+                </div>
+              </div>
+              <div class="trend-insight">
+                <p>
+                  Summer months show highest earning, spring has most
+                  redemptions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations-section">
+          <h3 class="section-title">Personalized Recommendations</h3>
+          <div class="recommendations-grid">
+            <div class="recommendation-card recommendation-card--high">
+              <div class="recommendation-header">
+                <h4 class="recommendation-title">Immediate Action</h4>
+                <span class="priority-badge priority-badge--high"
+                  >High Priority</span
+                >
+              </div>
+              <div class="recommendation-content">
+                <p>
+                  Transfer 6,500 Amex MR points to KrisFlyer to complete your
+                  Tokyo goal. This will save you ₹13,000 compared to paying
+                  cash.
+                </p>
+              </div>
+              <div class="recommendation-actions">
+                <button class="btn btn--primary btn--sm">
+                  Execute Transfer
+                </button>
+                <button class="btn btn--secondary btn--sm">Learn More</button>
+              </div>
+            </div>
+
+            <div class="recommendation-card recommendation-card--medium">
+              <div class="recommendation-header">
+                <h4 class="recommendation-title">Strategic Move</h4>
+                <span class="priority-badge priority-badge--medium"
+                  >Medium Priority</span
+                >
+              </div>
+              <div class="recommendation-content">
+                <p>
+                  Consider applying for the Amex Platinum card to earn 5x points
+                  on flights and access to Centurion lounges for your frequent
+                  travel.
+                </p>
+              </div>
+              <div class="recommendation-actions">
+                <button class="btn btn--secondary btn--sm">View Details</button>
+              </div>
+            </div>
+
+            <div class="recommendation-card recommendation-card--low">
+              <div class="recommendation-header">
+                <h4 class="recommendation-title">Future Planning</h4>
+                <span class="priority-badge priority-badge--low"
+                  >Low Priority</span
+                >
+              </div>
+              <div class="recommendation-content">
+                <p>
+                  Start earning Hyatt points for your 2026 Europe trip. Hyatt
+                  has excellent redemption value in European cities.
+                </p>
+              </div>
+              <div class="recommendation-actions">
+                <button class="btn btn--secondary btn--sm">Set Reminder</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

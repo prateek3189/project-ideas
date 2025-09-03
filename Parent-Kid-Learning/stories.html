@@ -1,241 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Story Library - Parent-Kid Learning App</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layouts.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="stylesheet" href="styles/print.css">
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
     <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Parent-Kid Learning</h1>
-            <div class="header__controls">
-                <span class="language-chip">EN</span>
-                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
-            </div>
+      <div class="header__content">
+        <h1 class="header__title">Parent-Kid Learning</h1>
+        <div class="header__controls">
+          <span class="language-chip">EN</span>
+          <div class="profile-avatar">👨‍👩‍👧‍👦</div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <div class="main__container">
-            <div class="main__header">
-                <h1 class="main__title">Story Library</h1>
-                <p class="main__subtitle">Discover wonderful stories to read together with your little ones</p>
-            </div>
-
-            <div class="filters">
-                <div class="filter-group">
-                    <label class="filter-group__label">Age:</label>
-                    <select class="filter-group__select">
-                        <option value="all">All Ages</option>
-                        <option value="2+">2+ years</option>
-                        <option value="3+">3+ years</option>
-                        <option value="4+">4+ years</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-group__label">Length:</label>
-                    <select class="filter-group__select">
-                        <option value="all">All Lengths</option>
-                        <option value="short">Short</option>
-                        <option value="medium">Medium</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label class="filter-group__label">Language:</label>
-                    <select class="filter-group__select">
-                        <option value="all">All Languages</option>
-                        <option value="en">English</option>
-                        <option value="hi">Hindi</option>
-                        <option value="mr">Marathi</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="story-grid">
-                <!-- Story 1: The Red Ball -->
-                <div class="story-card">
-                    <div class="story-card__cover">🔴</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">The Red Ball</h3>
-                        <p class="story-card__synopsis">A little bunny finds a red ball and learns about colors and sharing.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Bilingual</span>
-                            <span class="story-card__tag">Colors</span>
-                            <span class="story-card__tag">Sharing</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 2: Mimi's Garden -->
-                <div class="story-card">
-                    <div class="story-card__cover">🌱</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Mimi's Garden</h3>
-                        <p class="story-card__synopsis">Mimi plants seeds and learns about fruits, counting, and patience.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Bilingual</span>
-                            <span class="story-card__tag">Fruits</span>
-                            <span class="story-card__tag">Counting</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 3: Animal Parade -->
-                <div class="story-card">
-                    <div class="story-card__cover">🐘</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Animal Parade</h3>
-                        <p class="story-card__synopsis">Animals march in a parade, making sounds and learning about friendship.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Bilingual</span>
-                            <span class="story-card__tag">Animals</span>
-                            <span class="story-card__tag">Sounds</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 4: Rainbow Friends -->
-                <div class="story-card">
-                    <div class="story-card__cover">🌈</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Rainbow Friends</h3>
-                        <p class="story-card__synopsis">Colorful friends work together to create a beautiful rainbow bridge.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Colors</span>
-                            <span class="story-card__tag">Cooperation</span>
-                            <span class="story-card__tag">Friendship</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 5: Number Train -->
-                <div class="story-card">
-                    <div class="story-card__cover">🚂</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Number Train</h3>
-                        <p class="story-card__synopsis">A train carries numbers and teaches counting from 1 to 10.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Numbers</span>
-                            <span class="story-card__tag">Counting</span>
-                            <span class="story-card__tag">Transport</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 6: Bedtime Stars -->
-                <div class="story-card">
-                    <div class="story-card__cover">⭐</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Bedtime Stars</h3>
-                        <p class="story-card__synopsis">A gentle story about saying goodnight to the stars and going to sleep.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Bedtime</span>
-                            <span class="story-card__tag">Calm</span>
-                            <span class="story-card__tag">Stars</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 7: Shape Hunt -->
-                <div class="story-card">
-                    <div class="story-card__cover">🔷</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Shape Hunt</h3>
-                        <p class="story-card__synopsis">A little detective hunts for shapes in everyday objects around the house.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Shapes</span>
-                            <span class="story-card__tag">Discovery</span>
-                            <span class="story-card__tag">Home</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 8: Weather Friends -->
-                <div class="story-card">
-                    <div class="story-card__cover">🌤️</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Weather Friends</h3>
-                        <p class="story-card__synopsis">Sun, rain, and wind learn to work together to create perfect weather.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Weather</span>
-                            <span class="story-card__tag">Cooperation</span>
-                            <span class="story-card__tag">Nature</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Story 9: Family Tree -->
-                <div class="story-card">
-                    <div class="story-card__cover">👨‍👩‍👧‍👦</div>
-                    <div class="story-card__content">
-                        <h3 class="story-card__title">Family Tree</h3>
-                        <p class="story-card__synopsis">A story about different family members and the love that connects them all.</p>
-                        <div class="story-card__tags">
-                            <span class="story-card__tag">Family</span>
-                            <span class="story-card__tag">Love</span>
-                            <span class="story-card__tag">Relationships</span>
-                        </div>
-                        <div class="story-card__actions">
-                            <a href="reader.html" class="btn btn--primary">Read</a>
-                            <a href="#" class="btn btn--secondary">Preview</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <nav class="quick-nav">
-                <a href="index.html" class="quick-nav__link">🏠 Home</a>
-                <a href="rhymes.html" class="quick-nav__link">🎵 Rhymes</a>
-                <a href="pronounce.html" class="quick-nav__link">🗣️ Pronounce</a>
-                <a href="progress.html" class="quick-nav__link">🏆 Progress</a>
-            </nav>
+      <div class="main__container">
+        <div class="main__header">
+          <h1 class="main__title">Story Library</h1>
+          <p class="main__subtitle">
+            Discover wonderful stories to read together with your little ones
+          </p>
         </div>
+
+        <div class="filters">
+          <div class="filter-group">
+            <label class="filter-group__label">Age:</label>
+            <select class="filter-group__select">
+              <option value="all">All Ages</option>
+              <option value="2+">2+ years</option>
+              <option value="3+">3+ years</option>
+              <option value="4+">4+ years</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-group__label">Length:</label>
+            <select class="filter-group__select">
+              <option value="all">All Lengths</option>
+              <option value="short">Short</option>
+              <option value="medium">Medium</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-group__label">Language:</label>
+            <select class="filter-group__select">
+              <option value="all">All Languages</option>
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+              <option value="mr">Marathi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="story-grid">
+          <!-- Story 1: The Red Ball -->
+          <div class="story-card">
+            <div class="story-card__cover">🔴</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">The Red Ball</h3>
+              <p class="story-card__synopsis">
+                A little bunny finds a red ball and learns about colors and
+                sharing.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Bilingual</span>
+                <span class="story-card__tag">Colors</span>
+                <span class="story-card__tag">Sharing</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2: Mimi's Garden -->
+          <div class="story-card">
+            <div class="story-card__cover">🌱</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Mimi's Garden</h3>
+              <p class="story-card__synopsis">
+                Mimi plants seeds and learns about fruits, counting, and
+                patience.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Bilingual</span>
+                <span class="story-card__tag">Fruits</span>
+                <span class="story-card__tag">Counting</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 3: Animal Parade -->
+          <div class="story-card">
+            <div class="story-card__cover">🐘</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Animal Parade</h3>
+              <p class="story-card__synopsis">
+                Animals march in a parade, making sounds and learning about
+                friendship.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Bilingual</span>
+                <span class="story-card__tag">Animals</span>
+                <span class="story-card__tag">Sounds</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 4: Rainbow Friends -->
+          <div class="story-card">
+            <div class="story-card__cover">🌈</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Rainbow Friends</h3>
+              <p class="story-card__synopsis">
+                Colorful friends work together to create a beautiful rainbow
+                bridge.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Colors</span>
+                <span class="story-card__tag">Cooperation</span>
+                <span class="story-card__tag">Friendship</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 5: Number Train -->
+          <div class="story-card">
+            <div class="story-card__cover">🚂</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Number Train</h3>
+              <p class="story-card__synopsis">
+                A train carries numbers and teaches counting from 1 to 10.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Numbers</span>
+                <span class="story-card__tag">Counting</span>
+                <span class="story-card__tag">Transport</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 6: Bedtime Stars -->
+          <div class="story-card">
+            <div class="story-card__cover">⭐</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Bedtime Stars</h3>
+              <p class="story-card__synopsis">
+                A gentle story about saying goodnight to the stars and going to
+                sleep.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Bedtime</span>
+                <span class="story-card__tag">Calm</span>
+                <span class="story-card__tag">Stars</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 7: Shape Hunt -->
+          <div class="story-card">
+            <div class="story-card__cover">🔷</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Shape Hunt</h3>
+              <p class="story-card__synopsis">
+                A little detective hunts for shapes in everyday objects around
+                the house.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Shapes</span>
+                <span class="story-card__tag">Discovery</span>
+                <span class="story-card__tag">Home</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 8: Weather Friends -->
+          <div class="story-card">
+            <div class="story-card__cover">🌤️</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Weather Friends</h3>
+              <p class="story-card__synopsis">
+                Sun, rain, and wind learn to work together to create perfect
+                weather.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Weather</span>
+                <span class="story-card__tag">Cooperation</span>
+                <span class="story-card__tag">Nature</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 9: Family Tree -->
+          <div class="story-card">
+            <div class="story-card__cover">👨‍👩‍👧‍👦</div>
+            <div class="story-card__content">
+              <h3 class="story-card__title">Family Tree</h3>
+              <p class="story-card__synopsis">
+                A story about different family members and the love that
+                connects them all.
+              </p>
+              <div class="story-card__tags">
+                <span class="story-card__tag">Family</span>
+                <span class="story-card__tag">Love</span>
+                <span class="story-card__tag">Relationships</span>
+              </div>
+              <div class="story-card__actions">
+                <a href="reader.html" class="btn btn--primary">Read</a>
+                <a href="#" class="btn btn--secondary">Preview</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="quick-nav">
+          <a href="index.html" class="quick-nav__link">🏠 Home</a>
+          <a href="rhymes.html" class="quick-nav__link">🎵 Rhymes</a>
+          <a href="pronounce.html" class="quick-nav__link">🗣️ Pronounce</a>
+          <a href="progress.html" class="quick-nav__link">🏆 Progress</a>
+        </nav>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
-        </div>
+      <div class="footer__content">
+        <p class="footer__text">
+          For families • v0.1 • <a href="#" class="footer__link">Print</a>
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

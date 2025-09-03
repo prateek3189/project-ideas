@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goa Trip - Split & Pay</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Skip Link -->
+      <a href="#main" class="skip-link">Skip to main content</a>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <a href="index.html" class="header__logo">Split & Pay</a>
+
+          <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Dashboard</a>
+            <a href="group.html" class="header__nav-link">Groups</a>
+            <a href="add-expense.html" class="header__nav-link">Add Expense</a>
+            <a href="settings.html" class="header__nav-link">Settings</a>
+          </nav>
+
+          <div class="header__actions">
+            <button class="theme-toggle" onclick="toggleTheme()">
+              <span class="theme-toggle__icon">🌙</span>
+              <span class="theme-toggle__label">Dark</span>
+            </button>
+            <a href="group.html" class="btn btn--secondary btn--small">Print</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__content">
+          <div class="group">
+            <!-- Group Header -->
+            <div class="group__header">
+              <div>
+                <h1 class="group__title">Goa Trip</h1>
+                <div class="group__meta">
+                  <span>₹ (INR)</span>
+                  <span>•</span>
+                  <span>Dec 15-18, 2024</span>
+                  <span>•</span>
+                  <span>4 members</span>
+                </div>
+              </div>
+              <div class="group__balances">
+                <div class="balance-badge balance-badge--owe">
+                  <span>You owe ₹1,050</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+              <div class="tabs__list">
+                <a href="#expenses" class="tabs__tab tabs__tab--active"
+                  >Expenses</a
+                >
+                <a href="#balances" class="tabs__tab">Balances</a>
+                <a href="#settle" class="tabs__tab">Settle Up</a>
+                <a href="#insights" class="tabs__tab">Insights</a>
+              </div>
+            </div>
+
+            <!-- Expenses Tab Content -->
+            <div id="expenses" class="group__content">
+              <div class="expenses">
+                <div class="expenses__header">
+                  <h2>Recent Expenses</h2>
+                  <a href="add-expense.html" class="btn btn--primary"
+                    >Add Expense</a
+                  >
+                </div>
+
+                <div class="expenses__list">
+                  <!-- Water Sports Expense -->
+                  <div class="expense-row">
+                    <div class="expense-row__icon">🏄</div>
+                    <div class="expense-row__content">
+                      <div class="expense-row__title">Water Sports Package</div>
+                      <div class="expense-row__meta">
+                        Paid by <strong>Neha</strong> • Split among
+                        <strong>4</strong> •
+                        <span class="tag-chip tag-chip--travel">Travel</span>
+                      </div>
+                      <details>
+                        <summary>Split breakdown</summary>
+                        <table class="split-table">
+                          <thead>
+                            <tr>
+                              <th>Member</th>
+                              <th>Share</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Aditi</td>
+                              <td>25%</td>
+                              <td class="split-table__cell--amount">₹900</td>
+                            </tr>
+                            <tr>
+                              <td>Rahul</td>
+                              <td>25%</td>
+                              <td class="split-table__cell--amount">₹900</td>
+                            </tr>
+                            <tr>
+                              <td>Neha</td>
+                              <td>25%</td>
+                              <td class="split-table__cell--amount">₹900</td>
+                            </tr>
+                            <tr>
+                              <td>You</td>
+                              <td>25%</td>
+                              <td class="split-table__cell--amount">₹900</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </details>
+                    </div>
+                    <div
+                      class="expense-row__amount expense-row__amount--debit tabular-nums"
+                    >
+                      ₹3,600
+                    </div>
+                  </div>
+
+                  <!-- Resort Booking Expense -->
+                  <div class="expense-row">
+                    <div class="expense-row__icon">🏨</div>
+                    <div class="expense-row__content">
+                      <div class="expense-row__title">
+                        Resort Booking (2 nights)
+                      </div>
+                      <div class="expense-row__meta">
+                        Paid by <strong>Aditi</strong> • Split by
+                        <strong>Weights</strong> •
+                        <span class="tag-chip tag-chip--stay">Stay</span>
+                      </div>
+                      <details>
+                        <summary>Split breakdown</summary>
+                        <table class="split-table">
+                          <thead>
+                            <tr>
+                              <th>Member</th>
+                              <th>Weight</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Aditi</td>
+                              <td>0.3</td>
+                              <td class="split-table__cell--amount">₹2,940</td>
+                            </tr>
+                            <tr>
+                              <td>Rahul</td>
+                              <td>0.3</td>
+                              <td class="split-table__cell--amount">₹2,940</td>
+                            </tr>
+                            <tr>
+                              <td>Neha</td>
+                              <td>0.2</td>
+                              <td class="split-table__cell--amount">₹1,960</td>
+                            </tr>
+                            <tr>
+                              <td>You</td>
+                              <td>0.2</td>
+                              <td class="split-table__cell--amount">₹1,960</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </details>
+                    </div>
+                    <div
+                      class="expense-row__amount expense-row__amount--debit tabular-nums"
+                    >
+                      ₹9,800
+                    </div>
+                  </div>
+
+                  <!-- Lunch Day 1 Expense -->
+                  <div class="expense-row">
+                    <div class="expense-row__icon">🍽️</div>
+                    <div class="expense-row__content">
+                      <div class="expense-row__title">
+                        Lunch Day 1 - Beach Shack
+                      </div>
+                      <div class="expense-row__meta">
+                        Paid by <strong>You</strong> • Split by
+                        <strong>Shares</strong> •
+                        <span class="tag-chip tag-chip--food">Food</span>
+                      </div>
+                      <details>
+                        <summary>Split breakdown</summary>
+                        <table class="split-table">
+                          <thead>
+                            <tr>
+                              <th>Member</th>
+                              <th>Shares</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Aditi</td>
+                              <td>1</td>
+                              <td class="split-table__cell--amount">₹465</td>
+                            </tr>
+                            <tr>
+                              <td>Rahul</td>
+                              <td>2</td>
+                              <td class="split-table__cell--amount">₹930</td>
+                            </tr>
+                            <tr>
+                              <td>Neha</td>
+                              <td>1</td>
+                              <td class="split-table__cell--amount">₹465</td>
+                            </tr>
+                            <tr>
+                              <td>You</td>
+                              <td>0</td>
+                              <td class="split-table__cell--amount">₹0</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </details>
+                    </div>
+                    <div
+                      class="expense-row__amount expense-row__amount--credit tabular-nums"
+                    >
+                      ₹1,860
+                    </div>
+                  </div>
+
+                  <!-- Taxi Airport Expense -->
+                  <div class="expense-row">
+                    <div class="expense-row__icon">🚗</div>
+                    <div class="expense-row__content">
+                      <div class="expense-row__title">Taxi Airport → Hotel</div>
+                      <div class="expense-row__meta">
+                        Paid by <strong>Rahul</strong> • Split
+                        <strong>Equal</strong> •
+                        <span class="tag-chip tag-chip--travel">Travel</span>
+                      </div>
+                      <details>
+                        <summary>Split breakdown</summary>
+                        <table class="split-table">
+                          <thead>
+                            <tr>
+                              <th>Member</th>
+                              <th>Share</th>
+                              <th>Amount</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Aditi</td>
+                              <td>1/4</td>
+                              <td class="split-table__cell--amount">₹300</td>
+                            </tr>
+                            <tr>
+                              <td>Rahul</td>
+                              <td>1/4</td>
+                              <td class="split-table__cell--amount">₹300</td>
+                            </tr>
+                            <tr>
+                              <td>Neha</td>
+                              <td>1/4</td>
+                              <td class="split-table__cell--amount">₹300</td>
+                            </tr>
+                            <tr>
+                              <td>You</td>
+                              <td>1/4</td>
+                              <td class="split-table__cell--amount">₹300</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </details>
+                    </div>
+                    <div
+                      class="expense-row__amount expense-row__amount--debit tabular-nums"
+                    >
+                      ₹1,200
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Balances Tab Content -->
+            <div id="balances" class="group__content" style="display: none">
+              <div class="members">
+                <h2>Member Balances</h2>
+                <div class="members__list">
+                  <div class="members__item">
+                    <div class="members__avatar">A</div>
+                    <div class="members__info">
+                      <div class="members__name">Aditi</div>
+                      <div class="members__handle">aditi@okhdfc</div>
+                    </div>
+                    <div class="balance-badge balance-badge--owed">
+                      <span>Owed ₹180</span>
+                    </div>
+                  </div>
+
+                  <div class="members__item">
+                    <div class="members__avatar">R</div>
+                    <div class="members__info">
+                      <div class="members__name">Rahul</div>
+                      <div class="members__handle">rahul@okicici</div>
+                    </div>
+                    <div class="balance-badge balance-badge--owed">
+                      <span>Owed ₹620</span>
+                    </div>
+                  </div>
+
+                  <div class="members__item">
+                    <div class="members__avatar">N</div>
+                    <div class="members__info">
+                      <div class="members__name">Neha</div>
+                      <div class="members__handle">neha@ybl</div>
+                    </div>
+                    <div class="balance-badge balance-badge--neutral">
+                      <span>Balanced</span>
+                    </div>
+                  </div>
+
+                  <div class="members__item">
+                    <div class="members__avatar">Y</div>
+                    <div class="members__info">
+                      <div class="members__name">You</div>
+                      <div class="members__handle">you@okaxis</div>
+                    </div>
+                    <div class="balance-badge balance-badge--owe">
+                      <span>Owe ₹1,050</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settle Up Tab Content -->
+            <div id="settle" class="group__content" style="display: none">
+              <div class="settlement-plan">
+                <h2>Settle Up Plan</h2>
+                <p class="text-muted mb-4">
+                  Plan minimizes transfers. Last payer's amount adjusted for
+                  rounding.
+                </p>
+
+                <div class="settle-card">
+                  <div class="settle-card__header">
+                    <div class="settle-card__amount tabular-nums">
+                      You → Rahul ₹650
+                    </div>
+                  </div>
+                  <div class="settle-card__buttons">
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--upi"
+                      >UPI</a
+                    >
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--paytm"
+                      >Paytm</a
+                    >
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--phonepe"
+                      >PhonePe</a
+                    >
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--paypal"
+                      >PayPal</a
+                    >
+                  </div>
+                </div>
+
+                <div class="settle-card">
+                  <div class="settle-card__header">
+                    <div class="settle-card__amount tabular-nums">
+                      You → Aditi ₹400
+                    </div>
+                  </div>
+                  <div class="settle-card__buttons">
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--upi"
+                      >UPI</a
+                    >
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--paytm"
+                      >Paytm</a
+                    >
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--phonepe"
+                      >PhonePe</a
+                    >
+                    <a
+                      href="#"
+                      class="settle-card__button settle-card__button--paypal"
+                      >PayPal</a
+                    >
+                  </div>
+                </div>
+
+                <details>
+                  <summary>Alternative Plans</summary>
+                  <div class="mt-4">
+                    <h4>Fewer Transfers (3 payments)</h4>
+                    <ul class="mb-4">
+                      <li>You → Rahul ₹1,050</li>
+                      <li>Rahul → Aditi ₹180</li>
+                    </ul>
+
+                    <h4>Balanced Payers (4 payments)</h4>
+                    <ul>
+                      <li>You → Rahul ₹500</li>
+                      <li>You → Aditi ₹400</li>
+                      <li>Neha → Rahul ₹150</li>
+                    </ul>
+                  </div>
+                </details>
+
+                <div class="nudge nudge--info mt-6">
+                  <strong>Payment hint:</strong> Use UPI handle (e.g.,
+                  <code>alex@okicici</code>). Add the group name in the note.
+                </div>
+              </div>
+            </div>
+
+            <!-- Insights Tab Content -->
+            <div id="insights" class="group__content" style="display: none">
+              <div class="insights">
+                <div class="insights__tiles">
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">Rahul</div>
+                    <div class="stat-tile__label">Top Spender</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">Rahul</div>
+                    <div class="stat-tile__label">Most Owed</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value">Stay</div>
+                    <div class="stat-tile__label">Biggest Category</div>
+                  </div>
+
+                  <div class="stat-tile">
+                    <div class="stat-tile__value tabular-nums">₹4,100</div>
+                    <div class="stat-tile__label">Avg per Day</div>
+                  </div>
+                </div>
+
+                <div class="insights__charts">
+                  <div class="chart">
+                    <div class="chart__header">
+                      <h3 class="chart__title">By Category</h3>
+                      <p class="chart__subtitle">Total spending breakdown</p>
+                    </div>
+                    <div class="chart__bar chart__bar--stay">
+                      <div class="chart__bar-fill" style="width: 60%"></div>
+                    </div>
+                    <div class="chart__bar chart__bar--travel">
+                      <div class="chart__bar-fill" style="width: 25%"></div>
+                    </div>
+                    <div class="chart__bar chart__bar--food">
+                      <div class="chart__bar-fill" style="width: 15%"></div>
+                    </div>
+                  </div>
+
+                  <div class="chart">
+                    <div class="chart__header">
+                      <h3 class="chart__title">By Member</h3>
+                      <p class="chart__subtitle">Individual contributions</p>
+                    </div>
+                    <div class="chart__bar">
+                      <div class="chart__bar-fill" style="width: 30%"></div>
+                    </div>
+                    <div class="chart__bar">
+                      <div class="chart__bar-fill" style="width: 25%"></div>
+                    </div>
+                    <div class="chart__bar">
+                      <div class="chart__bar-fill" style="width: 25%"></div>
+                    </div>
+                    <div class="chart__bar">
+                      <div class="chart__bar-fill" style="width: 20%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>Split & Pay v1.0 - Static HTML/CSS Prototype</p>
+          <p>No JavaScript, no real payments, no data persistence</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple theme toggle
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+
+        const button = document.querySelector(".theme-toggle");
+        const icon = button.querySelector(".theme-toggle__icon");
+        const label = button.querySelector(".theme-toggle__label");
+
+        if (newTheme === "dark") {
+          icon.textContent = "☀️";
+          label.textContent = "Light";
+        } else {
+          icon.textContent = "🌙";
+          label.textContent = "Dark";
+        }
+      }
+
+      // Simple tab switching (minimal JS for demo)
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tabs__tab");
+        const contents = document.querySelectorAll(".group__content");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("tabs__tab--active"));
+            // Add active class to clicked tab
+            this.classList.add("tabs__tab--active");
+
+            // Hide all content
+            contents.forEach((content) => (content.style.display = "none"));
+
+            // Show corresponding content
+            const targetId = this.getAttribute("href").substring(1);
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+              targetContent.style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

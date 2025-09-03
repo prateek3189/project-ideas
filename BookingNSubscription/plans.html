@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plans & Products - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Plans & Products</h1>
+          <p class="page-subtitle">
+            Manage memberships, class packs, and add-ons
+          </p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="flex gap-4 mb-6">
+          <button class="btn btn--primary">
+            <span class="icon">➕</span>
+            New Membership Plan
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">📦</span>
+            New Class Pack
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">🎁</span>
+            New Add-on
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">🎫</span>
+            New Coupon
+          </button>
+        </div>
+
+        <!-- Membership Plans -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Membership Plans</h3>
+          </div>
+          <div class="card__content">
+            <div class="card-grid">
+              <!-- Gym Basic Plan -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Gym Basic</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹1,499</div>
+                    <div class="text-sm text-muted">per month</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Unlimited gym access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">2 group classes/week</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Locker access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">❌</span>
+                      <span class="text-sm text-muted">Personal training</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">❌</span>
+                      <span class="text-sm text-muted">Guest passes</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Current subscribers: 45
+                    </div>
+                    <div class="text-sm text-muted">
+                      Monthly revenue: ₹67,455
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Members
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gym Plus Plan -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Gym Plus</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹1,999</div>
+                    <div class="text-sm text-muted">per month</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Unlimited gym access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">4 group classes/week</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Locker access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">1 PT session/month</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">2 guest passes/month</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Current subscribers: 32
+                    </div>
+                    <div class="text-sm text-muted">
+                      Monthly revenue: ₹63,968
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Members
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gym Pro Plan -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Gym Pro</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹2,999</div>
+                    <div class="text-sm text-muted">per month</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Unlimited gym access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Unlimited group classes</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Premium locker</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">4 PT sessions/month</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">5 guest passes/month</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Current subscribers: 18
+                    </div>
+                    <div class="text-sm text-muted">
+                      Monthly revenue: ₹53,982
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Members
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Yoga Basic Plan -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Yoga Basic</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹1,499</div>
+                    <div class="text-sm text-muted">per month</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">8 yoga classes/month</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Mat rental included</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Online class access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">❌</span>
+                      <span class="text-sm text-muted">Private sessions</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">❌</span>
+                      <span class="text-sm text-muted">Workshop access</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Current subscribers: 28
+                    </div>
+                    <div class="text-sm text-muted">
+                      Monthly revenue: ₹41,972
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Members
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Co-working Plus Plan -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">
+                      Co-working Plus
+                    </h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹3,999</div>
+                    <div class="text-sm text-muted">per month</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Unlimited desk access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">High-speed WiFi</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Meeting room access</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Coffee & snacks</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">3 guest passes/month</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Current subscribers: 15
+                    </div>
+                    <div class="text-sm text-muted">
+                      Monthly revenue: ₹59,985
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Members
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class Packs -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Class Packs</h3>
+          </div>
+          <div class="card__content">
+            <div class="card-grid">
+              <!-- 5-Class Pack -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">5-Class Pack</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹1,999</div>
+                    <div class="text-sm text-muted">Valid for 60 days</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">5 group classes</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Transferable</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">All class types</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Sold this month: 23
+                    </div>
+                    <div class="text-sm text-muted">Revenue: ₹45,977</div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Sales
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 10-Class Pack -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">10-Class Pack</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹3,999</div>
+                    <div class="text-sm text-muted">Valid for 90 days</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">10 group classes</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Transferable</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">All class types</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">20% savings</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Sold this month: 18
+                    </div>
+                    <div class="text-sm text-muted">Revenue: ₹71,982</div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Sales
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 20-Class Pack -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">20-Class Pack</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="text-center mb-4">
+                    <div class="text-3xl font-bold text-primary">₹6,999</div>
+                    <div class="text-sm text-muted">Valid for 120 days</div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">20 group classes</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">Transferable</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">All class types</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="icon">✅</span>
+                      <span class="text-sm">30% savings</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="text-sm text-muted mb-2">
+                      Sold this month: 12
+                    </div>
+                    <div class="text-sm text-muted">Revenue: ₹83,988</div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Sales
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Add-ons & Services</h3>
+          </div>
+          <div class="card__content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Usage (This Month)</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Towel Service</td>
+                    <td>₹50/session</td>
+                    <td>Convenience</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>156 uses</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Locker Rental</td>
+                    <td>₹30/session</td>
+                    <td>Storage</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>89 uses</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Equipment Rental</td>
+                    <td>₹100/session</td>
+                    <td>Equipment</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>45 uses</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Personal Training</td>
+                    <td>₹800/session</td>
+                    <td>Training</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>67 sessions</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nutrition Consultation</td>
+                    <td>₹1,500/session</td>
+                    <td>Wellness</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>23 sessions</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Massage Therapy</td>
+                    <td>₹1,500/session</td>
+                    <td>Wellness</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>34 sessions</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coupons -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Active Coupons</h3>
+          </div>
+          <div class="card__content">
+            <div class="card-grid">
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">WELCOME20</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex justify-between">
+                      <span class="text-muted">Discount:</span>
+                      <span class="font-semibold">20% off</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Valid until:</span>
+                      <span>Feb 28, 2025</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Usage limit:</span>
+                      <span>100 redemptions</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Used:</span>
+                      <span>23/100</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Applies to:</span>
+                      <span>All plans</span>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Usage
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">GYM50</h4>
+                    <span class="badge badge--confirmed">Active</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex justify-between">
+                      <span class="text-muted">Discount:</span>
+                      <span class="font-semibold">₹500 off</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Valid until:</span>
+                      <span>Mar 15, 2025</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Usage limit:</span>
+                      <span>50 redemptions</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Used:</span>
+                      <span>12/50</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Applies to:</span>
+                      <span>Gym plans only</span>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Usage
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">NEWYEAR25</h4>
+                    <span class="badge badge--warning">Expiring Soon</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex justify-between">
+                      <span class="text-muted">Discount:</span>
+                      <span class="font-semibold">25% off</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Valid until:</span>
+                      <span>Jan 31, 2025</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Usage limit:</span>
+                      <span>200 redemptions</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Used:</span>
+                      <span>156/200</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Applies to:</span>
+                      <span>All products</span>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Edit
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Usage
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tax Configuration -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Tax & Fee Configuration</h3>
+          </div>
+          <div class="card__content">
+            <div class="form-layout">
+              <div class="form-group">
+                <label class="form-label">GST Rate</label>
+                <select class="form-select">
+                  <option>18% (Standard)</option>
+                  <option>12% (Reduced)</option>
+                  <option>5% (Special)</option>
+                  <option>0% (Exempt)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Service Charge</label>
+                <input
+                  type="number"
+                  class="form-input"
+                  value="0"
+                  placeholder="Percentage"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Convenience Fee</label>
+                <input
+                  type="number"
+                  class="form-input"
+                  value="0"
+                  placeholder="Fixed amount"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Currency</label>
+                <select class="form-select">
+                  <option>INR (₹)</option>
+                  <option>USD ($)</option>
+                  <option>EUR (€)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-surface-secondary rounded-lg">
+              <h4 class="font-semibold mb-2">Tax Calculation Example</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Service Price:</span>
+                  <span>₹1,999</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>GST (18%):</span>
+                  <span>₹359.82</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Service Charge:</span>
+                  <span>₹0</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Convenience Fee:</span>
+                  <span>₹0</span>
+                </div>
+                <hr />
+                <div class="flex justify-between font-semibold">
+                  <span>Total Amount:</span>
+                  <span>₹2,358.82</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="btn btn--secondary">Reset</button>
+              <button class="btn btn--primary">Save Configuration</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

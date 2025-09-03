@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Coach - Library</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">AI Personal Coach</h1>
+                <div class="header-actions">
+                    <div class="date-pill">
+                        <time datetime="2024-01-15">Mon, Jan 15</time>
+                    </div>
+                    <a href="#print" class="print-link" aria-label="Print weekly plan">Print</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Today</a></li>
+                <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+                <li><a href="plans.html" class="nav-link">Plans</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="library.html" class="nav-link nav-link--active" aria-current="page">Library</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-toggle__button" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h2 class="page-title">Coach Library</h2>
+                <p class="text-muted">Playbooks are proven tactics. Pick one and try it for a week.</p>
+            </div>
+
+            <div class="library-section">
+                <h3 class="library-section__title">Productivity Playbooks</h3>
+                <div class="library-grid">
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Timeboxing</h4>
+                            <span class="template-card__badge">Productivity</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Allocate specific time blocks for different activities. Prevents over-optimization and creates natural boundaries.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>Block 25-90 min chunks for deep work</li>
+                                    <li>Use 15-min buffers between blocks</li>
+                                    <li>Color-code by activity type</li>
+                                    <li>Review and adjust weekly</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Pomodoro 50/10</h4>
+                            <span class="template-card__badge">Productivity</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Extended Pomodoro technique: 50 minutes of focused work, 10 minutes of rest. Better for complex tasks.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>Set timer for 50 minutes</li>
+                                    <li>Work on single task only</li>
+                                    <li>Take 10-min break (walk, stretch)</li>
+                                    <li>Repeat 3-4 cycles max</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Kill-Switch for Distractions</h4>
+                            <span class="template-card__badge">Productivity</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Create physical and digital barriers to common distractions during focus time.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>Phone in another room</li>
+                                    <li>Website blockers for social media</li>
+                                    <li>Do Not Disturb mode</li>
+                                    <li>Physical "focus zone" setup</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="library-section">
+                <h3 class="library-section__title">Fitness Playbooks</h3>
+                <div class="library-grid">
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Zone 2 Basics</h4>
+                            <span class="template-card__badge">Fitness</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Low-intensity cardio that builds aerobic base. You should be able to hold a conversation while exercising.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>30-60 minutes, 2-3x per week</li>
+                                    <li>Walking, cycling, or swimming</li>
+                                    <li>Heart rate 60-70% of max</li>
+                                    <li>Conversation test: can you talk?</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Protein Target Guide</h4>
+                            <span class="template-card__badge">Fitness</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Simple protein targets to support muscle maintenance and recovery. No complex tracking required.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>25-30g per meal (3 meals)</li>
+                                    <li>Palm-sized portion of meat/fish</li>
+                                    <li>Greek yogurt or protein shake</li>
+                                    <li>Track for 1 week to build habit</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Mobility-8</h4>
+                            <span class="template-card__badge">Fitness</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>8-minute daily mobility routine to improve flexibility and reduce injury risk.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>Do first thing in morning</li>
+                                    <li>8 exercises, 1 minute each</li>
+                                    <li>Focus on major joints</li>
+                                    <li>No equipment needed</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="library-section">
+                <h3 class="library-section__title">Leadership Playbooks</h3>
+                <div class="library-grid">
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">SBI Feedback</h4>
+                            <span class="template-card__badge">Leadership</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Situation-Behavior-Impact framework for giving clear, actionable feedback.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li><strong>Situation:</strong> When and where</li>
+                                    <li><strong>Behavior:</strong> What they did</li>
+                                    <li><strong>Impact:</strong> How it affected others</li>
+                                    <li>Use for both praise and improvement</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Weekly 1:1 Template</h4>
+                            <span class="template-card__badge">Leadership</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Structured agenda for meaningful 1:1 conversations that build trust and drive results.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li><strong>Wins:</strong> What went well?</li>
+                                    <li><strong>Blocks:</strong> What's in the way?</li>
+                                    <li><strong>Asks:</strong> What do you need?</li>
+                                    <li>30 minutes, weekly cadence</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Decision Log</h4>
+                            <span class="template-card__badge">Leadership</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Track important decisions to improve future decision-making and team transparency.</p>
+                            <details class="mt-4">
+                                <summary>How to implement</summary>
+                                <ul class="mt-2">
+                                    <li>Date, decision, context</li>
+                                    <li>Who was involved</li>
+                                    <li>Expected outcome</li>
+                                    <li>Review monthly</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--primary btn--small">Try This Week</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="library-section">
+                <h3 class="library-section__title">Templates & Resources</h3>
+                <div class="library-grid">
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Daily Plan Template</h4>
+                            <span class="template-card__badge">Template</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Simple daily planning template to prioritize and timebox your day.</p>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--secondary btn--small">Download</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">Team Retro Template</h4>
+                            <span class="template-card__badge">Template</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Structured retrospective template for team improvement discussions.</p>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--secondary btn--small">Download</button>
+                        </div>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-card__header">
+                            <h4 class="template-card__title">1:1 Agenda Template</h4>
+                            <span class="template-card__badge">Template</span>
+                        </div>
+                        <div class="template-card__content">
+                            <p>Pre-built agenda template for effective one-on-one meetings.</p>
+                        </div>
+                        <div class="template-card__actions">
+                            <button class="btn btn--secondary btn--small">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p class="footer-text">AI Personal Coach — v0.1</p>
+            <a href="about.html" class="footer-link">About</a>
+        </footer>
+    </div>
+</body>
+</html>

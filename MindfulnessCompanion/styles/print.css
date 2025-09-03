@@ -1,0 +1,645 @@
+/* Print Styles - Mindfulness Companion */
+
+/* Print Media Query */
+@media print {
+  /* Reset all backgrounds and shadows for print */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure proper page breaks */
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: letter;
+  }
+
+  /* Hide non-essential elements */
+  .header,
+  .sidebar,
+  .footer,
+  .theme-toggle,
+  .nudge,
+  .toast,
+  .sidebar__footer {
+    display: none !important;
+  }
+
+  /* Adjust main content for print */
+  .main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main .container {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Print-specific header */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+  }
+
+  .print-header__title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .print-header__subtitle {
+    font-size: 14pt;
+    color: #333;
+  }
+
+  .print-header__date {
+    font-size: 12pt;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  /* Print-specific footer */
+  .print-footer {
+    display: block !important;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Weekly Reflection Report Styles */
+  .weekly-reflection {
+    page-break-before: auto;
+  }
+
+  .weekly-reflection__summary {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 0;
+  }
+
+  .weekly-reflection__summary-title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .weekly-reflection__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .weekly-reflection__stat {
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+
+  .weekly-reflection__stat-value {
+    font-size: 16pt;
+    font-weight: bold;
+    display: block;
+  }
+
+  .weekly-reflection__stat-label {
+    font-size: 10pt;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Practice Log Table */
+  .practice-log {
+    margin: 2rem 0;
+    page-break-inside: avoid;
+  }
+
+  .practice-log__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .practice-log__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+
+  .practice-log__table th,
+  .practice-log__table td {
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 10pt;
+  }
+
+  .practice-log__table th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .practice-log__table td {
+    vertical-align: top;
+  }
+
+  /* Check-in Notes Section */
+  .checkin-notes {
+    margin: 2rem 0;
+    page-break-inside: avoid;
+  }
+
+  .checkin-notes__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .checkin-notes__day {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+  }
+
+  .checkin-notes__day-header {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem;
+    background: #f0f0f0 !important;
+    border: 1px solid black;
+  }
+
+  .checkin-notes__content {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-left: 2px solid #ccc;
+  }
+
+  .checkin-notes__stress {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .checkin-notes__mood {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+
+  .checkin-notes__body-areas {
+    margin-bottom: 0.5rem;
+  }
+
+  .checkin-notes__body-areas-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .checkin-notes__journal {
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* Trend Charts for Print */
+  .trend-charts {
+    margin: 2rem 0;
+    page-break-inside: avoid;
+  }
+
+  .trend-charts__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .trend-charts__chart {
+    margin-bottom: 2rem;
+  }
+
+  .trend-charts__chart-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .trend-charts__bars {
+    display: flex;
+    align-items: end;
+    height: 3in;
+    gap: 0.1in;
+    padding: 0.5in;
+    border: 1px solid black;
+    background: white !important;
+  }
+
+  .trend-charts__bar {
+    flex: 1;
+    background: #333 !important;
+    border: 1px solid black;
+    min-height: 0.2in;
+  }
+
+  .trend-charts__labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Badges Section */
+  .print-badges {
+    margin: 2rem 0;
+    page-break-inside: avoid;
+  }
+
+  .print-badges__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .print-badges__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .print-badges__badge {
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 0;
+  }
+
+  .print-badges__badge--unlocked {
+    background: #e8f5e8 !important;
+    border-color: #28a745;
+  }
+
+  .print-badges__badge--locked {
+    background: #f8f9fa !important;
+    border-color: #6c757d;
+    opacity: 0.6;
+  }
+
+  .print-badges__badge-icon {
+    font-size: 24pt;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .print-badges__badge-name {
+    font-size: 10pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .print-badges__badge-description {
+    font-size: 8pt;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+
+  /* Insights Summary */
+  .insights-summary {
+    margin: 2rem 0;
+    page-break-inside: avoid;
+  }
+
+  .insights-summary__title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .insights-summary__content {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background: #f9f9f9 !important;
+  }
+
+  .insights-summary__insight {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-left: 3px solid #333;
+    background: white !important;
+  }
+
+  .insights-summary__insight:last-child {
+    margin-bottom: 0;
+  }
+
+  .insights-summary__insight-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .insights-summary__insight-text {
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  /* Page Breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+
+  /* Links */
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 3px solid #333;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+
+  /* Code */
+  code {
+    background: #f0f0f0 !important;
+    padding: 0.1rem 0.3rem;
+    border: 1px solid #ccc;
+    font-family: "Courier New", monospace;
+  }
+
+  pre {
+    background: #f0f0f0 !important;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    overflow-x: auto;
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+  }
+
+  /* Forms */
+  input,
+  textarea,
+  select {
+    border: 1px solid #ccc;
+    padding: 0.25rem;
+    background: white !important;
+  }
+
+  /* Buttons */
+  button,
+  .btn {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+  }
+
+  /* Specific Component Print Adjustments */
+  .tile,
+  .session-card,
+  .plan,
+  .trend-block,
+  .stat-tile {
+    border: 1px solid #ccc !important;
+    background: white !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .breath-ring {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .breath-ring__container {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .breath-ring__ring {
+    border: 3px solid #333 !important;
+    animation: none !important;
+  }
+
+  .breath-ring__phase {
+    position: static !important;
+    display: inline-block !important;
+    margin: 0 1rem !important;
+    font-weight: bold !important;
+  }
+
+  .breath-ring__count {
+    position: static !important;
+    font-size: 24pt !important;
+    font-weight: bold !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Stress Slider Print Version */
+  .stress-slider {
+    margin: 2rem 0;
+  }
+
+  .stress-slider__input {
+    display: none;
+  }
+
+  .stress-slider__print-value {
+    display: block !important;
+    text-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 2px solid #333;
+    background: #f0f0f0 !important;
+  }
+
+  /* Mood Chips Print Version */
+  .mood-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .mood-chip {
+    border: 1px solid #333 !important;
+    background: white !important;
+    color: black !important;
+    padding: 0.25rem 0.5rem !important;
+    font-size: 10pt !important;
+  }
+
+  .mood-chip--active {
+    background: #333 !important;
+    color: white !important;
+  }
+
+  /* Body Map Print Version */
+  .body-map__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .body-area {
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+
+  .body-area__checkbox {
+    display: none;
+  }
+
+  .body-area__label {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  /* Journal Print Version */
+  .journal__textarea {
+    border: 1px solid #ccc !important;
+    background: white !important;
+    min-height: 2in;
+    padding: 0.5rem;
+    font-family: "Times New Roman", serif;
+    line-height: 1.5;
+  }
+
+  /* Save Button Print Version */
+  .save-button {
+    display: none !important;
+  }
+
+  /* Section Titles Print Adjustments */
+  .section-title {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    border-bottom: 2px solid #333 !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .section-title::after {
+    display: none !important;
+  }
+
+  /* Welcome Section Print Adjustments */
+  .welcome {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 2px solid #333;
+    background: #f9f9f9 !important;
+  }
+
+  .welcome__title {
+    font-size: 20pt !important;
+    color: black !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .welcome__subtitle {
+    font-size: 14pt !important;
+    color: #333 !important;
+  }
+
+  /* Nudge Print Adjustments */
+  .nudge {
+    background: #f0f0f0 !important;
+    border: 2px solid #333 !important;
+    color: black !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .nudge__title {
+    color: black !important;
+    font-size: 16pt !important;
+  }
+
+  .nudge__text {
+    color: #333 !important;
+    font-size: 14pt !important;
+  }
+
+  .nudge__cta {
+    display: none !important;
+  }
+}

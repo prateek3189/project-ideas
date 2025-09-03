@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Coach - Today</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">AI Personal Coach</h1>
+                <div class="header-actions">
+                    <div class="date-pill">
+                        <time datetime="2024-01-15">Mon, Jan 15</time>
+                    </div>
+                    <a href="#print" class="print-link" aria-label="Print weekly plan">Print</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link nav-link--active" aria-current="page">Today</a></li>
+                <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+                <li><a href="plans.html" class="nav-link">Plans</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="library.html" class="nav-link">Library</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-toggle__button" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h2 class="page-title">Today's Plan</h2>
+                <div class="track-chips">
+                    <span class="track-chip track-chip--fitness">Fitness</span>
+                    <span class="track-chip track-chip--productivity">Productivity</span>
+                </div>
+            </div>
+
+            <div class="checkin-card">
+                <h3 class="checkin-title">Daily Check-in</h3>
+                <form class="checkin-form">
+                    <div class="form-group">
+                        <label for="sleep-hours" class="form-label">Sleep (hours)</label>
+                        <input type="number" id="sleep-hours" class="form-input" value="6.5" min="0" max="24" step="0.5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Mood</label>
+                        <div class="mood-chips">
+                            <input type="radio" id="mood-great" name="mood" value="great" class="visually-hidden">
+                            <label for="mood-great" class="mood-chip">Great</label>
+                            
+                            <input type="radio" id="mood-good" name="mood" value="good" class="visually-hidden">
+                            <label for="mood-good" class="mood-chip">Good</label>
+                            
+                            <input type="radio" id="mood-okay" name="mood" value="okay" class="visually-hidden">
+                            <label for="mood-okay" class="mood-chip">Okay</label>
+                            
+                            <input type="radio" id="mood-anxious" name="mood" value="anxious" class="visually-hidden" checked>
+                            <label for="mood-anxious" class="mood-chip mood-chip--active">Anxious</label>
+                            
+                            <input type="radio" id="mood-stressed" name="mood" value="stressed" class="visually-hidden">
+                            <label for="mood-stressed" class="mood-chip">Stressed</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Energy Level</label>
+                        <div class="energy-chips">
+                            <input type="radio" id="energy-high" name="energy" value="high" class="visually-hidden">
+                            <label for="energy-high" class="energy-chip">High</label>
+                            
+                            <input type="radio" id="energy-medium" name="energy" value="medium" class="visually-hidden">
+                            <label for="energy-medium" class="energy-chip">Medium</label>
+                            
+                            <input type="radio" id="energy-low" name="energy" value="low" class="visually-hidden" checked>
+                            <label for="energy-low" class="energy-chip energy-chip--active">Low</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkin-note" class="form-label">Note (optional)</label>
+                        <textarea id="checkin-note" class="form-textarea" placeholder="How are you feeling today?">late meeting</textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="coach-feed">
+                <div class="coach-card coach-card--fitness">
+                    <div class="coach-card__header">
+                        <h3 class="coach-card__title">Fitness Coach</h3>
+                        <span class="coach-card__badge">Today's Focus</span>
+                    </div>
+                    <div class="coach-card__content">
+                        <ul class="coach-card__steps">
+                            <li>30-min zone-2 walk</li>
+                            <li>8,000 steps</li>
+                            <li>Protein 25–30g/meal</li>
+                        </ul>
+                        <details class="coach-card__why">
+                            <summary>Why this?</summary>
+                            <p>Low energy + short sleep → gentle cardio + mobility.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="coach-card coach-card--productivity">
+                    <div class="coach-card__header">
+                        <h3 class="coach-card__title">Productivity Coach</h3>
+                        <span class="coach-card__badge">Today's Top-1</span>
+                    </div>
+                    <div class="coach-card__content">
+                        <ul class="coach-card__steps">
+                            <li>Finish proposal draft</li>
+                            <li>90-min block 10:00–11:30</li>
+                            <li>Inbox sweep (15m)</li>
+                        </ul>
+                        <details class="coach-card__why">
+                            <summary>Why this?</summary>
+                            <p>3 meetings afternoon → block deep work in the morning.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="coach-card coach-card--leadership">
+                    <div class="coach-card__header">
+                        <h3 class="coach-card__title">Leadership Coach</h3>
+                        <span class="coach-card__badge">People First</span>
+                    </div>
+                    <div class="coach-card__content">
+                        <ul class="coach-card__steps">
+                            <li>Send 1 SBI praise</li>
+                            <li>Prep 1:1 agenda</li>
+                            <li>Ask one unblocker Q</li>
+                        </ul>
+                        <details class="coach-card__why">
+                            <summary>Why this?</summary>
+                            <p>Retro tomorrow → nudge psychological safety.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="micro-habits">
+                <h3 class="micro-habits__title">Micro-Habits</h3>
+                <div class="micro-habits__grid">
+                    <label class="micro-habit">
+                        <input type="checkbox" class="micro-habit__input visually-hidden">
+                        <span class="micro-habit__checkmark"></span>
+                        <span class="micro-habit__label">Morning stretch</span>
+                    </label>
+                    <label class="micro-habit">
+                        <input type="checkbox" class="micro-habit__input visually-hidden" checked>
+                        <span class="micro-habit__checkmark"></span>
+                        <span class="micro-habit__label">Water first thing</span>
+                    </label>
+                    <label class="micro-habit">
+                        <input type="checkbox" class="micro-habit__input visually-hidden">
+                        <span class="micro-habit__checkmark"></span>
+                        <span class="micro-habit__label">Phone away during meals</span>
+                    </label>
+                    <label class="micro-habit">
+                        <input type="checkbox" class="micro-habit__input visually-hidden">
+                        <span class="micro-habit__checkmark"></span>
+                        <span class="micro-habit__label">Evening reflection</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="nudge-banner nudge-banner--info">
+                <p class="nudge-banner__text">
+                    <strong>Aim for one meaningful win.</strong> Small steps compound.
+                </p>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p class="footer-text">AI Personal Coach — v0.1</p>
+            <a href="about.html" class="footer-link">About</a>
+        </footer>
+    </div>
+</body>
+</html>

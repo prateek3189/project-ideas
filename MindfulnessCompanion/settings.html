@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Settings</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__link">
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a href="meditate.html" class="sidebar__link">
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a href="breathe.html" class="sidebar__link">
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a href="checkin.html" class="sidebar__link">
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a href="insights.html" class="sidebar__link">
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a href="library.html" class="sidebar__link">
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a
+            href="settings.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Settings</h2>
+            <p class="welcome__subtitle">
+              Customize your mindfulness experience
+            </p>
+          </section>
+
+          <form class="settings-form form-layout">
+            <section class="reminders-settings">
+              <h3 class="section-title">Reminders & Notifications</h3>
+              <div class="form-group">
+                <label class="form-group__label">Daily Reminders</label>
+                <div class="reminder-options">
+                  <div class="reminder-option">
+                    <input
+                      type="checkbox"
+                      id="reminder-morning"
+                      name="reminders"
+                      value="morning"
+                      class="reminder-option__checkbox"
+                    />
+                    <label
+                      for="reminder-morning"
+                      class="reminder-option__label"
+                    >
+                      <span class="reminder-option__time">Morning</span>
+                      <span class="reminder-option__description"
+                        >Start your day mindfully</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="reminder-option">
+                    <input
+                      type="checkbox"
+                      id="reminder-evening"
+                      name="reminders"
+                      value="evening"
+                      class="reminder-option__checkbox"
+                    />
+                    <label
+                      for="reminder-evening"
+                      class="reminder-option__label"
+                    >
+                      <span class="reminder-option__time">Evening</span>
+                      <span class="reminder-option__description"
+                        >Wind down before bed</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="reminder-option">
+                    <input
+                      type="checkbox"
+                      id="reminder-breaks"
+                      name="reminders"
+                      value="breaks"
+                      class="reminder-option__checkbox"
+                    />
+                    <label for="reminder-breaks" class="reminder-option__label">
+                      <span class="reminder-option__time">Work Breaks</span>
+                      <span class="reminder-option__description"
+                        >Take mindful breaks during work</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="reminder-time" class="form-group__label"
+                  >Reminder Time</label
+                >
+                <select
+                  id="reminder-time"
+                  name="reminder-time"
+                  class="form-group__input"
+                >
+                  <option value="8:00">8:00 AM</option>
+                  <option value="9:00">9:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                </select>
+                <div class="form-group__help">
+                  Choose when you'd like to receive your daily mindfulness
+                  reminder
+                </div>
+              </div>
+            </section>
+
+            <section class="theme-settings">
+              <h3 class="section-title">Appearance & Theme</h3>
+              <div class="form-group">
+                <label class="form-group__label">Theme</label>
+                <div class="theme-options">
+                  <div class="theme-option">
+                    <input
+                      type="radio"
+                      id="theme-light"
+                      name="theme"
+                      value="light"
+                      class="theme-option__input"
+                      checked
+                    />
+                    <label for="theme-light" class="theme-option__label">
+                      <div
+                        class="theme-option__preview theme-option__preview--light"
+                      ></div>
+                      <span class="theme-option__name">Light</span>
+                    </label>
+                  </div>
+
+                  <div class="theme-option">
+                    <input
+                      type="radio"
+                      id="theme-dark"
+                      name="theme"
+                      value="dark"
+                      class="theme-option__input"
+                    />
+                    <label for="theme-dark" class="theme-option__label">
+                      <div
+                        class="theme-option__preview theme-option__preview--dark"
+                      ></div>
+                      <span class="theme-option__name">Dark</span>
+                    </label>
+                  </div>
+
+                  <div class="theme-option">
+                    <input
+                      type="radio"
+                      id="theme-high-contrast"
+                      name="theme"
+                      value="high-contrast"
+                      class="theme-option__input"
+                    />
+                    <label
+                      for="theme-high-contrast"
+                      class="theme-option__label"
+                    >
+                      <div
+                        class="theme-option__preview theme-option__preview--high-contrast"
+                      ></div>
+                      <span class="theme-option__name">High Contrast</span>
+                    </label>
+                  </div>
+
+                  <div class="theme-option">
+                    <input
+                      type="radio"
+                      id="theme-auto"
+                      name="theme"
+                      value="auto"
+                      class="theme-option__input"
+                    />
+                    <label for="theme-auto" class="theme-option__label">
+                      <div
+                        class="theme-option__preview theme-option__preview--auto"
+                      ></div>
+                      <span class="theme-option__name">Auto (System)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-group__label">Font Size</label>
+                <div class="font-size-options">
+                  <div class="font-size-option">
+                    <input
+                      type="radio"
+                      id="font-small"
+                      name="font-size"
+                      value="small"
+                      class="font-size-option__input"
+                    />
+                    <label for="font-small" class="font-size-option__label"
+                      >Small</label
+                    >
+                  </div>
+
+                  <div class="font-size-option">
+                    <input
+                      type="radio"
+                      id="font-medium"
+                      name="font-size"
+                      value="medium"
+                      class="font-size-option__input"
+                      checked
+                    />
+                    <label for="font-medium" class="font-size-option__label"
+                      >Medium</label
+                    >
+                  </div>
+
+                  <div class="font-size-option">
+                    <input
+                      type="radio"
+                      id="font-large"
+                      name="font-size"
+                      value="large"
+                      class="font-size-option__input"
+                    />
+                    <label for="font-large" class="font-size-option__label"
+                      >Large</label
+                    >
+                  </div>
+
+                  <div class="font-size-option">
+                    <input
+                      type="radio"
+                      id="font-extra-large"
+                      name="font-size"
+                      value="extra-large"
+                      class="font-size-option__input"
+                    />
+                    <label
+                      for="font-extra-large"
+                      class="font-size-option__label"
+                      >Extra Large</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="accessibility-settings">
+              <h3 class="section-title">Accessibility</h3>
+              <div class="form-group">
+                <label class="form-group__label">Motion & Animation</label>
+                <div class="accessibility-options">
+                  <div class="accessibility-option">
+                    <input
+                      type="checkbox"
+                      id="reduced-motion"
+                      name="accessibility"
+                      value="reduced-motion"
+                      class="accessibility-option__checkbox"
+                    />
+                    <label
+                      for="reduced-motion"
+                      class="accessibility-option__label"
+                    >
+                      <span class="accessibility-option__name"
+                        >Reduced Motion</span
+                      >
+                      <span class="accessibility-option__description"
+                        >Minimize animations and transitions</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="accessibility-option">
+                    <input
+                      type="checkbox"
+                      id="dyslexia-friendly"
+                      name="accessibility"
+                      value="dyslexia-friendly"
+                      class="accessibility-option__checkbox"
+                    />
+                    <label
+                      for="dyslexia-friendly"
+                      class="accessibility-option__label"
+                    >
+                      <span class="accessibility-option__name"
+                        >Dyslexia-Friendly Font</span
+                      >
+                      <span class="accessibility-option__description"
+                        >Use OpenDyslexic font family</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="accessibility-option">
+                    <input
+                      type="checkbox"
+                      id="high-contrast-text"
+                      name="accessibility"
+                      value="high-contrast-text"
+                      class="accessibility-option__checkbox"
+                    />
+                    <label
+                      for="high-contrast-text"
+                      class="accessibility-option__label"
+                    >
+                      <span class="accessibility-option__name"
+                        >High Contrast Text</span
+                      >
+                      <span class="accessibility-option__description"
+                        >Ensure maximum text readability</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="accessibility-option">
+                    <input
+                      type="checkbox"
+                      id="focus-indicators"
+                      name="accessibility"
+                      value="focus-indicators"
+                      class="accessibility-option__checkbox"
+                      checked
+                    />
+                    <label
+                      for="focus-indicators"
+                      class="accessibility-option__label"
+                    >
+                      <span class="accessibility-option__name"
+                        >Enhanced Focus Indicators</span
+                      >
+                      <span class="accessibility-option__description"
+                        >Clear visual focus indicators</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="line-spacing" class="form-group__label"
+                  >Line Spacing</label
+                >
+                <select
+                  id="line-spacing"
+                  name="line-spacing"
+                  class="form-group__input"
+                >
+                  <option value="tight">Tight (1.2)</option>
+                  <option value="normal" selected>Normal (1.5)</option>
+                  <option value="relaxed">Relaxed (1.7)</option>
+                  <option value="loose">Loose (2.0)</option>
+                </select>
+                <div class="form-group__help">
+                  Adjust the spacing between lines of text for better
+                  readability
+                </div>
+              </div>
+            </section>
+
+            <section class="privacy-settings">
+              <h3 class="section-title">Privacy & Data</h3>
+              <div class="privacy-info">
+                <p>
+                  <strong>Your data stays on your device.</strong> Mindfulness
+                  Companion doesn't collect, store, or transmit your personal
+                  information to external servers.
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-group__label">Data Storage</label>
+                <div class="privacy-options">
+                  <div class="privacy-option">
+                    <input
+                      type="radio"
+                      id="storage-local"
+                      name="storage"
+                      value="local"
+                      class="privacy-option__input"
+                      checked
+                    />
+                    <label for="storage-local" class="privacy-option__label">
+                      <span class="privacy-option__name">Local Only</span>
+                      <span class="privacy-option__description"
+                        >Store all data on your device</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="privacy-option">
+                    <input
+                      type="radio"
+                      id="storage-export"
+                      name="storage"
+                      value="export"
+                      class="privacy-option__input"
+                    />
+                    <label for="storage-export" class="privacy-option__label">
+                      <span class="privacy-option__name">Export Enabled</span>
+                      <span class="privacy-option__description"
+                        >Allow manual data export</span
+                      >
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-group__label">Data Management</label>
+                <div class="data-actions">
+                  <button type="button" class="btn btn--secondary">
+                    Export My Data
+                  </button>
+                  <button type="button" class="btn btn--secondary">
+                    Clear All Data
+                  </button>
+                </div>
+                <div class="form-group__help">
+                  Export your data as a backup or clear all stored information
+                </div>
+              </div>
+            </section>
+
+            <section class="practice-settings">
+              <h3 class="section-title">Practice Preferences</h3>
+              <div class="form-group">
+                <label for="default-session-length" class="form-group__label"
+                  >Default Session Length</label
+                >
+                <select
+                  id="default-session-length"
+                  name="default-session-length"
+                  class="form-group__input"
+                >
+                  <option value="2">2 minutes</option>
+                  <option value="5" selected>5 minutes</option>
+                  <option value="10">10 minutes</option>
+                  <option value="15">15 minutes</option>
+                  <option value="20">20 minutes</option>
+                </select>
+                <div class="form-group__help">
+                  Set your preferred meditation session duration
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="breathing-pattern" class="form-group__label"
+                  >Default Breathing Pattern</label
+                >
+                <select
+                  id="breathing-pattern"
+                  name="breathing-pattern"
+                  class="form-group__input"
+                >
+                  <option value="box" selected>Box Breathing (4-4-4-4)</option>
+                  <option value="4-7-8">4-7-8 Breathing</option>
+                  <option value="coherence">Coherence (5-5)</option>
+                  <option value="triangle">Triangle (4-4-8)</option>
+                </select>
+                <div class="form-group__help">
+                  Choose your preferred breathing pattern for quick sessions
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-group__label">Session Features</label>
+                <div class="feature-options">
+                  <div class="feature-option">
+                    <input
+                      type="checkbox"
+                      id="feature-bells"
+                      name="features"
+                      value="bells"
+                      class="feature-option__checkbox"
+                      checked
+                    />
+                    <label for="feature-bells" class="feature-option__label"
+                      >Start/End Bells</label
+                    >
+                  </div>
+
+                  <div class="feature-option">
+                    <input
+                      type="checkbox"
+                      id="feature-voice"
+                      name="features"
+                      value="voice"
+                      class="feature-option__checkbox"
+                      checked
+                    />
+                    <label for="feature-voice" class="feature-option__label"
+                      >Voice Guidance</label
+                    >
+                  </div>
+
+                  <div class="feature-option">
+                    <input
+                      type="checkbox"
+                      id="feature-music"
+                      name="features"
+                      value="music"
+                      class="feature-option__checkbox"
+                    />
+                    <label for="feature-music" class="feature-option__label"
+                      >Background Music</label
+                    >
+                  </div>
+
+                  <div class="feature-option">
+                    <input
+                      type="checkbox"
+                      id="feature-timer"
+                      name="features"
+                      value="timer"
+                      class="feature-option__checkbox"
+                      checked
+                    />
+                    <label for="feature-timer" class="feature-option__label"
+                      >Session Timer</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="form-actions">
+              <button type="submit" class="save-button">Save Settings</button>
+              <button type="button" class="btn btn--secondary">
+                Reset to Defaults
+              </button>
+            </section>
+          </form>
+
+          <section class="settings-help">
+            <h3 class="section-title">Need Help?</h3>
+            <div class="help-content">
+              <div class="help-item">
+                <h4>About Privacy</h4>
+                <p>
+                  Your mindfulness journey is personal. We believe in complete
+                  privacy and data sovereignty. All your check-ins, practice
+                  logs, and preferences are stored locally on your device.
+                </p>
+              </div>
+
+              <div class="help-item">
+                <h4>Accessibility Features</h4>
+                <p>
+                  We're committed to making mindfulness accessible to everyone.
+                  Our accessibility features include screen reader support,
+                  keyboard navigation, and customizable visual elements.
+                </p>
+              </div>
+
+              <div class="help-item">
+                <h4>Customization</h4>
+                <p>
+                  Tailor your experience to match your preferences and needs.
+                  From theme selection to practice duration, you're in control
+                  of your mindfulness journey.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

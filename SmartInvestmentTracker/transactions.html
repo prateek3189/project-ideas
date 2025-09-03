@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Transactions</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link nav__link--active"
+            >Transactions</a
+          >
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Transaction History</h2>
+        <p class="page-subtitle">
+          Track all your investment transactions and activities
+        </p>
+      </div>
+
+      <!-- Transaction Filters -->
+      <section class="transaction-filters">
+        <div class="tile">
+          <div class="tile__content">
+            <div class="filter-controls">
+              <div class="form-group">
+                <label for="account-filter" class="form-label">Account</label>
+                <select id="account-filter" class="form-select">
+                  <option value="">All Accounts</option>
+                  <option value="brokerage">Brokerage Account</option>
+                  <option value="retirement">Retirement Account</option>
+                  <option value="taxable">Taxable Account</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="type-filter" class="form-label"
+                  >Transaction Type</label
+                >
+                <select id="type-filter" class="form-select">
+                  <option value="">All Types</option>
+                  <option value="buy">Buy</option>
+                  <option value="sell">Sell</option>
+                  <option value="dividend">Dividend</option>
+                  <option value="reinvestment">Reinvestment</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date-from" class="form-label">From Date</label>
+                <input
+                  type="date"
+                  id="date-from"
+                  class="form-input"
+                  value="2024-01-01"
+                />
+              </div>
+              <div class="form-group">
+                <label for="date-to" class="form-label">To Date</label>
+                <input
+                  type="date"
+                  id="date-to"
+                  class="form-input"
+                  value="2024-12-15"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transaction Summary -->
+      <section class="transaction-summary">
+        <div class="stats-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Total Transactions</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">47</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">This Year</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Total Invested</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">₹2,10,000</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Dividends Received</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">₹26,145</span>
+                <div class="value-display__change">
+                  <span class="delta-chip delta-chip--positive">+12.3%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h3 class="tile__title">Transaction Costs</h3>
+            </div>
+            <div class="tile__content">
+              <div class="value-display">
+                <span class="value-display__amount">₹1,250</span>
+                <div class="value-display__change">
+                  <span class="value-display__period">Fees & Commissions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transaction Table -->
+      <section class="transaction-table">
+        <h3 class="section-title">Transaction History</h3>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Account</th>
+                <th>Type</th>
+                <th>Security</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Fees</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tabular">2024-12-01</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--info">Buy</span></td>
+                <td>VTI</td>
+                <td class="tabular">50</td>
+                <td class="tabular">₹2,450</td>
+                <td class="tabular">₹1,22,500</td>
+                <td class="tabular">₹0</td>
+                <td>Monthly investment</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-11-15</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--success">Dividend</span></td>
+                <td>VTI</td>
+                <td class="tabular">—</td>
+                <td class="tabular">—</td>
+                <td class="tabular">₹2,450</td>
+                <td class="tabular">₹0</td>
+                <td>Quarterly dividend</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-11-01</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--info">Buy</span></td>
+                <td>BND</td>
+                <td class="tabular">100</td>
+                <td class="tabular">₹1,250</td>
+                <td class="tabular">₹1,25,000</td>
+                <td class="tabular">₹0</td>
+                <td>Bond allocation</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-10-15</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--success">Dividend</span></td>
+                <td>VXUS</td>
+                <td class="tabular">—</td>
+                <td class="tabular">—</td>
+                <td class="tabular">₹1,850</td>
+                <td class="tabular">₹0</td>
+                <td>International dividend</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-10-01</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--info">Buy</span></td>
+                <td>VXUS</td>
+                <td class="tabular">75</td>
+                <td class="tabular">₹2,980</td>
+                <td class="tabular">₹2,23,500</td>
+                <td class="tabular">₹0</td>
+                <td>International exposure</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-09-15</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--warning">Sell</span></td>
+                <td>ABC</td>
+                <td class="tabular">-25</td>
+                <td class="tabular">₹3,200</td>
+                <td class="tabular">₹80,000</td>
+                <td class="tabular">₹50</td>
+                <td>Profit taking</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-09-01</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--info">Buy</span></td>
+                <td>GLD</td>
+                <td class="tabular">30</td>
+                <td class="tabular">₹2,490</td>
+                <td class="tabular">₹74,700</td>
+                <td class="tabular">₹0</td>
+                <td>Gold allocation</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-08-15</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--success">Dividend</span></td>
+                <td>BND</td>
+                <td class="tabular">—</td>
+                <td class="tabular">—</td>
+                <td class="tabular">₹1,200</td>
+                <td class="tabular">₹0</td>
+                <td>Bond interest</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-08-01</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--info">Buy</span></td>
+                <td>VTI</td>
+                <td class="tabular">40</td>
+                <td class="tabular">₹2,380</td>
+                <td class="tabular">₹95,200</td>
+                <td class="tabular">₹0</td>
+                <td>Monthly investment</td>
+              </tr>
+              <tr>
+                <td class="tabular">2024-07-15</td>
+                <td>Brokerage</td>
+                <td><span class="badge badge--success">Dividend</span></td>
+                <td>ABC</td>
+                <td class="tabular">—</td>
+                <td class="tabular">—</td>
+                <td class="tabular">₹3,500</td>
+                <td class="tabular">₹0</td>
+                <td>Stock dividend</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Transaction Analysis -->
+      <section class="transaction-analysis">
+        <h3 class="section-title">Transaction Analysis</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Monthly Investment Pattern</h4>
+            </div>
+            <div class="tile__content">
+              <div class="bar-chart">
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Jan</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 80%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹18K</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Feb</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 75%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹17K</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Mar</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 85%; background-color: var(--color-bonds)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹19K</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Apr</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 70%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹16K</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">May</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 90%; background-color: var(--color-cash)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹20K</span>
+                </div>
+                <div class="bar-chart__item">
+                  <span class="bar-chart__label">Jun</span>
+                  <div class="bar-chart__track">
+                    <div
+                      class="bar-chart__fill"
+                      style="width: 65%; background-color: var(--color-equity)"
+                    ></div>
+                  </div>
+                  <span class="bar-chart__value">₹15K</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Transaction Types</h4>
+            </div>
+            <div class="tile__content">
+              <div class="transaction-types">
+                <div class="transaction-type">
+                  <div class="transaction-type__label">Buy Orders</div>
+                  <div class="transaction-type__count">35</div>
+                  <div class="transaction-type__percentage">74%</div>
+                </div>
+                <div class="transaction-type">
+                  <div class="transaction-type__label">Dividends</div>
+                  <div class="transaction-type__count">8</div>
+                  <div class="transaction-type__percentage">17%</div>
+                </div>
+                <div class="transaction-type">
+                  <div class="transaction-type__label">Sell Orders</div>
+                  <div class="transaction-type__count">3</div>
+                  <div class="transaction-type__percentage">6%</div>
+                </div>
+                <div class="transaction-type">
+                  <div class="transaction-type__label">Reinvestments</div>
+                  <div class="transaction-type__count">1</div>
+                  <div class="transaction-type__percentage">3%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

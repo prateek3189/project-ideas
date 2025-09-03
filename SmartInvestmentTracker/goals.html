@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - Goals & Risk</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link nav__link--active"
+            >Goals & Risk</a
+          >
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">Goals & Risk Management</h2>
+        <p class="page-subtitle">
+          Define your financial goals and risk tolerance
+        </p>
+      </div>
+
+      <!-- Financial Goals -->
+      <section class="financial-goals">
+        <h3 class="section-title">Financial Goals</h3>
+        <div class="card-grid">
+          <div class="goal-card">
+            <div class="goal-card__header">
+              <h4 class="goal-card__title">Retirement</h4>
+              <span class="badge badge--info">Primary Goal</span>
+            </div>
+            <div class="goal-card__content">
+              <div class="goal-card__target">
+                <div class="goal-card__amount">₹2,00,00,000</div>
+                <div class="goal-card__date">Target: Dec 2045</div>
+              </div>
+              <div class="goal-card__progress">
+                <div class="goal-card__progress-bar">
+                  <div
+                    class="goal-card__progress-fill"
+                    style="width: 62%"
+                  ></div>
+                </div>
+                <div class="goal-card__progress-text">
+                  ₹1,24,50,000 / ₹2,00,00,000 (62%)
+                </div>
+              </div>
+              <div class="goal-card__details">
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Time Remaining:</span>
+                  <span class="goal-card__detail-value">21 years</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Monthly Need:</span>
+                  <span class="goal-card__detail-value">₹8,500</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Expected Return:</span>
+                  <span class="goal-card__detail-value">7.5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="goal-card">
+            <div class="goal-card__header">
+              <h4 class="goal-card__title">Child's Education</h4>
+              <span class="badge badge--warning">Medium Priority</span>
+            </div>
+            <div class="goal-card__content">
+              <div class="goal-card__target">
+                <div class="goal-card__amount">₹25,00,000</div>
+                <div class="goal-card__date">Target: Jun 2035</div>
+              </div>
+              <div class="goal-card__progress">
+                <div class="goal-card__progress-bar">
+                  <div
+                    class="goal-card__progress-fill"
+                    style="width: 28%"
+                  ></div>
+                </div>
+                <div class="goal-card__progress-text">
+                  ₹7,00,000 / ₹25,00,000 (28%)
+                </div>
+              </div>
+              <div class="goal-card__details">
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Time Remaining:</span>
+                  <span class="goal-card__detail-value">10.5 years</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Monthly Need:</span>
+                  <span class="goal-card__detail-value">₹12,000</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Expected Return:</span>
+                  <span class="goal-card__detail-value">8.0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="goal-card">
+            <div class="goal-card__header">
+              <h4 class="goal-card__title">House Purchase</h4>
+              <span class="badge badge--success">Near Term</span>
+            </div>
+            <div class="goal-card__content">
+              <div class="goal-card__target">
+                <div class="goal-card__amount">₹50,00,000</div>
+                <div class="goal-card__date">Target: Dec 2026</div>
+              </div>
+              <div class="goal-card__progress">
+                <div class="goal-card__progress-bar">
+                  <div
+                    class="goal-card__progress-fill"
+                    style="width: 85%"
+                  ></div>
+                </div>
+                <div class="goal-card__progress-text">
+                  ₹42,50,000 / ₹50,00,000 (85%)
+                </div>
+              </div>
+              <div class="goal-card__details">
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Time Remaining:</span>
+                  <span class="goal-card__detail-value">2 years</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Monthly Need:</span>
+                  <span class="goal-card__detail-value">₹3,000</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Expected Return:</span>
+                  <span class="goal-card__detail-value">6.0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="goal-card">
+            <div class="goal-card__header">
+              <h4 class="goal-card__title">Emergency Fund</h4>
+              <span class="badge badge--danger">Critical</span>
+            </div>
+            <div class="goal-card__content">
+              <div class="goal-card__target">
+                <div class="goal-card__amount">₹5,00,000</div>
+                <div class="goal-card__date">Target: Ongoing</div>
+              </div>
+              <div class="goal-card__progress">
+                <div class="goal-card__progress-bar">
+                  <div
+                    class="goal-card__progress-fill"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <div class="goal-card__progress-text">
+                  ₹5,00,000 / ₹5,00,000 (100%)
+                </div>
+              </div>
+              <div class="goal-card__details">
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Months Coverage:</span>
+                  <span class="goal-card__detail-value">6 months</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Account Type:</span>
+                  <span class="goal-card__detail-value">Liquid Fund</span>
+                </div>
+                <div class="goal-card__detail">
+                  <span class="goal-card__detail-label">Expected Return:</span>
+                  <span class="goal-card__detail-value">5.5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Risk Assessment -->
+      <section class="risk-assessment">
+        <h3 class="section-title">Risk Profile Assessment</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Current Risk Band</h4>
+            </div>
+            <div class="tile__content">
+              <div class="risk-band-selector">
+                <div class="radio-group">
+                  <div class="radio-item radio-item--selected">
+                    <input
+                      type="radio"
+                      id="conservative"
+                      name="risk-band"
+                      value="conservative"
+                      class="radio-input"
+                      checked
+                    />
+                    <label for="conservative" class="radio-label">
+                      <div class="radio-label__title">Conservative</div>
+                      <div class="radio-label__description">
+                        Low risk, stable returns, capital preservation focus
+                      </div>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <input
+                      type="radio"
+                      id="balanced"
+                      name="risk-band"
+                      value="balanced"
+                      class="radio-input"
+                    />
+                    <label for="balanced" class="radio-label">
+                      <div class="radio-label__title">Balanced</div>
+                      <div class="radio-label__description">
+                        Moderate risk, balanced growth and stability
+                      </div>
+                    </label>
+                  </div>
+                  <div class="radio-item">
+                    <input
+                      type="radio"
+                      id="growth"
+                      name="risk-band"
+                      value="growth"
+                      class="radio-input"
+                    />
+                    <label for="growth" class="radio-label">
+                      <div class="radio-label__title">Growth</div>
+                      <div class="radio-label__description">
+                        Higher risk, growth focus, long-term horizon
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Risk Compatibility</h4>
+            </div>
+            <div class="tile__content">
+              <div class="risk-compatibility">
+                <div class="risk-compatibility__score">
+                  <div class="risk-compatibility__value">7.2/10</div>
+                  <div class="risk-compatibility__label">Good Match</div>
+                </div>
+                <div class="risk-compatibility__analysis">
+                  <p>
+                    <strong>Current Risk Level:</strong> Slightly above your
+                    conservative band due to tech overweight.
+                  </p>
+                  <p>
+                    <strong>Recommendation:</strong> Consider reducing equity
+                    allocation by 8% to align with your risk tolerance.
+                  </p>
+                </div>
+                <div class="risk-compatibility__factors">
+                  <div class="risk-factor">
+                    <span class="risk-factor__label">Age Factor</span>
+                    <span class="risk-factor__value risk-factor__value--good"
+                      >✓ Appropriate</span
+                    >
+                  </div>
+                  <div class="risk-factor">
+                    <span class="risk-factor__label">Time Horizon</span>
+                    <span class="risk-factor__value risk-factor__value--good"
+                      >✓ Long-term</span
+                    >
+                  </div>
+                  <div class="risk-factor">
+                    <span class="risk-factor__label">Concentration</span>
+                    <span class="risk-factor__value risk-factor__value--warning"
+                      >⚠ High</span
+                    >
+                  </div>
+                  <div class="risk-factor">
+                    <span class="risk-factor__label">Liquidity</span>
+                    <span class="risk-factor__value risk-factor__value--good"
+                      >✓ Adequate</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Target Allocation -->
+      <section class="target-allocation">
+        <h3 class="section-title">Target Asset Allocation</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="allocation-editor">
+              <div class="allocation-editor__current">
+                <h4>Current vs Target Allocation</h4>
+                <div class="allocation-comparison">
+                  <div class="allocation-item">
+                    <div class="allocation-item__label">Equity</div>
+                    <div class="allocation-item__bars">
+                      <div
+                        class="allocation-item__bar allocation-item__bar--current"
+                        style="width: 68%"
+                      ></div>
+                      <div
+                        class="allocation-item__bar allocation-item__bar--target"
+                        style="width: 60%"
+                      ></div>
+                    </div>
+                    <div class="allocation-item__values">
+                      <span class="allocation-item__current">68%</span>
+                      <span class="allocation-item__target">60%</span>
+                      <span class="delta-chip delta-chip--over">+8%</span>
+                    </div>
+                  </div>
+                  <div class="allocation-item">
+                    <div class="allocation-item__label">Bonds</div>
+                    <div class="allocation-item__bars">
+                      <div
+                        class="allocation-item__bar allocation-item__bar--current"
+                        style="width: 22%"
+                      ></div>
+                      <div
+                        class="allocation-item__bar allocation-item__bar--target"
+                        style="width: 25%"
+                      ></div>
+                    </div>
+                    <div class="allocation-item__values">
+                      <span class="allocation-item__current">22%</span>
+                      <span class="allocation-item__target">25%</span>
+                      <span class="delta-chip delta-chip--under">-3%</span>
+                    </div>
+                  </div>
+                  <div class="allocation-item">
+                    <div class="allocation-item__label">Cash</div>
+                    <div class="allocation-item__bars">
+                      <div
+                        class="allocation-item__bar allocation-item__bar--current"
+                        style="width: 8%"
+                      ></div>
+                      <div
+                        class="allocation-item__bar allocation-item__bar--target"
+                        style="width: 10%"
+                      ></div>
+                    </div>
+                    <div class="allocation-item__values">
+                      <span class="allocation-item__current">8%</span>
+                      <span class="allocation-item__target">10%</span>
+                      <span class="delta-chip delta-chip--under">-2%</span>
+                    </div>
+                  </div>
+                  <div class="allocation-item">
+                    <div class="allocation-item__label">Alternatives</div>
+                    <div class="allocation-item__bars">
+                      <div
+                        class="allocation-item__bar allocation-item__bar--current"
+                        style="width: 2%"
+                      ></div>
+                      <div
+                        class="allocation-item__bar allocation-item__bar--target"
+                        style="width: 5%"
+                      ></div>
+                    </div>
+                    <div class="allocation-item__values">
+                      <span class="allocation-item__current">2%</span>
+                      <span class="allocation-item__target">5%</span>
+                      <span class="delta-chip delta-chip--under">-3%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="allocation-editor__controls">
+                <h4>Adjust Target Allocation</h4>
+                <div class="allocation-inputs">
+                  <div class="form-group">
+                    <label for="equity-target" class="form-label"
+                      >Equity Target (%)</label
+                    >
+                    <input
+                      type="number"
+                      id="equity-target"
+                      class="form-input"
+                      value="60"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="bonds-target" class="form-label"
+                      >Bonds Target (%)</label
+                    >
+                    <input
+                      type="number"
+                      id="bonds-target"
+                      class="form-input"
+                      value="25"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="cash-target" class="form-label"
+                      >Cash Target (%)</label
+                    >
+                    <input
+                      type="number"
+                      id="cash-target"
+                      class="form-input"
+                      value="10"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="alt-target" class="form-label"
+                      >Alternatives Target (%)</label
+                    >
+                    <input
+                      type="number"
+                      id="alt-target"
+                      class="form-input"
+                      value="5"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+                </div>
+                <div class="allocation-total">
+                  <span class="allocation-total__label">Total:</span>
+                  <span class="allocation-total__value">100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Investment Policy Statement -->
+      <section class="investment-policy">
+        <h3 class="section-title">Investment Policy Statement</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="ips-content">
+              <div class="ips-section">
+                <h4>Investment Objectives</h4>
+                <ul>
+                  <li>Primary: Build retirement corpus of ₹2 crores by 2045</li>
+                  <li>Secondary: Fund child's education (₹25 lakhs by 2035)</li>
+                  <li>Tertiary: House purchase fund (₹50 lakhs by 2026)</li>
+                  <li>Maintain emergency fund of 6 months expenses</li>
+                </ul>
+              </div>
+
+              <div class="ips-section">
+                <h4>Risk Tolerance</h4>
+                <ul>
+                  <li>
+                    Conservative risk profile with focus on capital preservation
+                  </li>
+                  <li>Maximum 5% allocation to any single security</li>
+                  <li>Maintain 6-month emergency fund in liquid instruments</li>
+                  <li>Rebalance quarterly or when drift exceeds 5%</li>
+                </ul>
+              </div>
+
+              <div class="ips-section">
+                <h4>Asset Allocation Guidelines</h4>
+                <ul>
+                  <li>Equity: 60% (40% domestic, 20% international)</li>
+                  <li>Bonds: 25% (government and high-grade corporate)</li>
+                  <li>Cash: 10% (money market and liquid funds)</li>
+                  <li>Alternatives: 5% (gold, REITs, commodities)</li>
+                </ul>
+              </div>
+
+              <div class="ips-section">
+                <h4>Review Schedule</h4>
+                <ul>
+                  <li>Monthly: Review portfolio performance and drift</li>
+                  <li>Quarterly: Rebalance if needed, review goals progress</li>
+                  <li>
+                    Annually: Comprehensive review of IPS and risk tolerance
+                  </li>
+                  <li>Life events: Major changes trigger immediate review</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

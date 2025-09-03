@@ -1,0 +1,499 @@
+/* ==========================================================================
+   Themes - Skill Builder Micro-Courses
+   ========================================================================== */
+
+/* ==========================================================================
+   Light Theme (Default)
+   ========================================================================== */
+
+.theme-light {
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f1f5f9;
+  --color-surface-tertiary: #e2e8f0;
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-disabled: #94a3b8;
+
+  --color-accent-primary: #2563eb;
+  --color-accent-primary-hover: #1d4ed8;
+  --color-accent-primary-active: #1e40af;
+  --color-accent-secondary: #7c3aed;
+  --color-accent-tertiary: #059669;
+
+  --color-success: #16a34a;
+  --color-success-light: #22c55e;
+  --color-success-dark: #15803d;
+
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-dark: #d97706;
+
+  --color-error: #dc2626;
+  --color-error-light: #ef4444;
+  --color-error-dark: #b91c1c;
+
+  --color-info: #0891b2;
+  --color-info-light: #06b6d4;
+  --color-info-dark: #0e7490;
+
+  --color-border-primary: #e2e8f0;
+  --color-border-secondary: #cbd5e1;
+  --color-border-focus: #2563eb;
+
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+  --color-shadow-dark: rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Dark Theme
+   ========================================================================== */
+
+.theme-dark {
+  --color-background: #0b1220;
+  --color-surface: #111827;
+  --color-surface-secondary: #1f2937;
+  --color-surface-tertiary: #374151;
+
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #9ca3af;
+  --color-text-disabled: #6b7280;
+
+  --color-accent-primary: #3b82f6;
+  --color-accent-primary-hover: #2563eb;
+  --color-accent-primary-active: #1d4ed8;
+  --color-accent-secondary: #8b5cf6;
+  --color-accent-tertiary: #10b981;
+
+  --color-success: #22c55e;
+  --color-success-light: #4ade80;
+  --color-success-dark: #16a34a;
+
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-dark: #d97706;
+
+  --color-error: #ef4444;
+  --color-error-light: #f87171;
+  --color-error-dark: #dc2626;
+
+  --color-info: #06b6d4;
+  --color-info-light: #22d3ee;
+  --color-info-dark: #0891b2;
+
+  --color-border-primary: #374151;
+  --color-border-secondary: #4b5563;
+  --color-border-focus: #3b82f6;
+
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-light: rgba(0, 0, 0, 0.2);
+  --color-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   High Contrast Theme
+   ========================================================================== */
+
+.theme-high-contrast {
+  --color-background: #000000;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f0f0f0;
+  --color-surface-tertiary: #e0e0e0;
+
+  --color-text-primary: #000000;
+  --color-text-secondary: #000000;
+  --color-text-muted: #000000;
+  --color-text-disabled: #666666;
+
+  --color-accent-primary: #0000ff;
+  --color-accent-primary-hover: #0000cc;
+  --color-accent-primary-active: #000099;
+  --color-accent-secondary: #800080;
+  --color-accent-tertiary: #008000;
+
+  --color-success: #008000;
+  --color-success-light: #00ff00;
+  --color-success-dark: #004000;
+
+  --color-warning: #ff8000;
+  --color-warning-light: #ffcc00;
+  --color-warning-dark: #cc6600;
+
+  --color-error: #ff0000;
+  --color-error-light: #ff6666;
+  --color-error-dark: #cc0000;
+
+  --color-info: #0080ff;
+  --color-info-light: #66ccff;
+  --color-info-dark: #0040cc;
+
+  --color-border-primary: #000000;
+  --color-border-secondary: #000000;
+  --color-border-focus: #0000ff;
+
+  --color-shadow: rgba(0, 0, 0, 0.8);
+  --color-shadow-light: rgba(0, 0, 0, 0.6);
+  --color-shadow-dark: rgba(0, 0, 0, 1);
+}
+
+/* ==========================================================================
+   Theme Toggle Animation
+   ========================================================================== */
+
+.theme-toggle {
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   Theme-Specific Component Adjustments
+   ========================================================================== */
+
+/* Dark Theme Adjustments */
+.theme-dark .course-card {
+  box-shadow: var(--shadow-md);
+}
+
+.theme-dark .course-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-dark .btn--secondary {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .btn--secondary:hover {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-primary);
+}
+
+.theme-dark .progress-bar {
+  background-color: var(--color-surface-tertiary);
+}
+
+.theme-dark .badge--locked {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .quiz-option:hover {
+  background-color: var(--color-surface-tertiary);
+}
+
+.theme-dark .mini-quiz__option:hover {
+  background-color: var(--color-surface-tertiary);
+}
+
+.theme-dark .concept-box {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .practice-tip {
+  background-color: var(--color-warning-dark);
+  border-color: var(--color-warning);
+}
+
+.theme-dark .practice-tip__title,
+.theme-dark .practice-tip p {
+  color: white;
+}
+
+.theme-dark .code-example {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .code-example__title {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .code-example__explanation {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .glossary-term__summary {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .glossary-term__summary:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.theme-dark .glossary-term__definition {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .mini-quiz__feedback {
+  background-color: var(--color-surface-tertiary);
+}
+
+.theme-dark .quiz-answer {
+  background-color: var(--color-surface-tertiary);
+}
+
+.theme-dark .setting-controls {
+  background-color: var(--color-surface-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+}
+
+.theme-dark .radio-option,
+.theme-dark .toggle-switch {
+  background-color: var(--color-surface);
+}
+
+.theme-dark .stat-tile {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .activity-list {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .activity-item {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .resource-card {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .resource-card:hover {
+  border-color: var(--color-accent-primary);
+}
+
+.theme-dark .syllabus-item {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .syllabus-item--completed {
+  background-color: var(--color-success-dark);
+  border-color: var(--color-success);
+}
+
+.theme-dark .syllabus-item--current {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.theme-dark .syllabus-item--locked {
+  background-color: var(--color-surface-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .roadmap-item {
+  border-color: var(--color-border-secondary);
+}
+
+.theme-dark .roadmap-item--coming-soon {
+  border-color: var(--color-accent-primary);
+}
+
+.theme-dark .roadmap-item--planned {
+  border-color: var(--color-warning);
+}
+
+.theme-dark .roadmap-item--future {
+  border-color: var(--color-text-muted);
+}
+
+/* High Contrast Theme Adjustments */
+.theme-high-contrast .course-card {
+  border: 3px solid var(--color-border-primary);
+}
+
+.theme-high-contrast .btn {
+  border-width: 3px;
+}
+
+.theme-high-contrast .progress-bar {
+  border: 2px solid var(--color-border-primary);
+}
+
+.theme-high-contrast .badge {
+  border-width: 3px;
+}
+
+.theme-high-contrast .quiz-option {
+  border-width: 3px;
+}
+
+.theme-high-contrast .mini-quiz__option {
+  border-width: 3px;
+}
+
+.theme-high-contrast .concept-box {
+  border-width: 3px;
+}
+
+.theme-high-contrast .practice-tip {
+  border-width: 3px;
+}
+
+.theme-high-contrast .code-example {
+  border-width: 3px;
+}
+
+.theme-high-contrast .glossary-term__summary {
+  border-width: 3px;
+}
+
+.theme-high-contrast .glossary-term__definition {
+  border-width: 3px;
+}
+
+.theme-high-contrast .mini-quiz__feedback {
+  border-width: 3px;
+}
+
+.theme-high-contrast .quiz-answer {
+  border-width: 3px;
+}
+
+.theme-high-contrast .stat-tile {
+  border-width: 3px;
+}
+
+.theme-high-contrast .activity-list {
+  border-width: 3px;
+}
+
+.theme-high-contrast .activity-item {
+  border-width: 3px;
+}
+
+.theme-high-contrast .resource-card {
+  border-width: 3px;
+}
+
+.theme-high-contrast .syllabus-item {
+  border-width: 3px;
+}
+
+.theme-high-contrast .roadmap-item {
+  border-width: 3px;
+}
+
+/* ==========================================================================
+   Theme Transition Effects
+   ========================================================================== */
+
+/* Smooth transitions when switching themes */
+* {
+  transition: background-color var(--transition-normal),
+    color var(--transition-normal), border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+/* Disable transitions for specific elements that shouldn't animate */
+.theme-toggle,
+.btn,
+.progress-bar__fill {
+  transition: none;
+}
+
+/* ==========================================================================
+   Theme Detection and System Preferences
+   ========================================================================== */
+
+/* Auto-switch to dark theme based on system preference */
+@media (prefers-color-scheme: dark) {
+  .theme-auto {
+    --color-background: var(--color-dark-background);
+    --color-surface: var(--color-dark-surface);
+    --color-surface-secondary: var(--color-dark-surface-secondary);
+    --color-surface-tertiary: var(--color-dark-surface-tertiary);
+
+    --color-text-primary: var(--color-dark-text-primary);
+    --color-text-secondary: var(--color-dark-text-secondary);
+    --color-text-muted: var(--color-dark-text-muted);
+    --color-text-disabled: var(--color-dark-text-disabled);
+
+    --color-border-primary: var(--color-dark-border-primary);
+    --color-border-secondary: var(--color-dark-border-secondary);
+  }
+}
+
+/* Auto-switch to light theme based on system preference */
+@media (prefers-color-scheme: light) {
+  .theme-auto {
+    --color-background: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-secondary: #f1f5f9;
+    --color-surface-tertiary: #e2e8f0;
+
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #334155;
+    --color-text-muted: #64748b;
+    --color-text-disabled: #94a3b8;
+
+    --color-border-primary: #e2e8f0;
+    --color-border-secondary: #cbd5e1;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .theme-toggle:hover {
+    transform: none;
+  }
+
+  .course-card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  .theme-light,
+  .theme-dark {
+    --color-border-primary: #000000;
+    --color-border-secondary: #000000;
+    --color-border-focus: #0000ff;
+
+    --color-text-primary: #000000;
+    --color-text-secondary: #000000;
+    --color-text-muted: #000000;
+
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-secondary: #f0f0f0;
+    --color-surface-tertiary: #e0e0e0;
+  }
+
+  .theme-dark {
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #ffffff;
+    --color-text-muted: #ffffff;
+
+    --color-background: #000000;
+    --color-surface: #000000;
+    --color-surface-secondary: #1a1a1a;
+    --color-surface-tertiary: #333333;
+  }
+}

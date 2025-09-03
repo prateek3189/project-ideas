@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Coach - Sounds & Noise</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="header__title">Sleep Coach</h1>
+        <div class="header__date">
+          <input type="date" class="header__date-picker" value="2024-01-15" />
+          <span class="text-muted">Monday, Jan 15</span>
+        </div>
+        <div class="header__actions">
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__nav-item">
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+              />
+            </svg>
+            Tonight
+          </a>
+          <a href="planner.html" class="sidebar__nav-item">
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Wind-down Planner
+          </a>
+          <a
+            href="sounds.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.794L4.617 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.617l3.766-3.794a1 1 0 011-.13zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Sounds & Noise
+          </a>
+          <a href="log.html" class="sidebar__nav-item">
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Sleep Log
+          </a>
+          <a href="insights.html" class="sidebar__nav-item">
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Insights
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <svg
+              class="sidebar__nav-icon"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__theme-toggle">
+          <label class="sidebar__theme-toggle-label">Theme</label>
+          <div class="sidebar__theme-options">
+            <button
+              class="sidebar__theme-btn sidebar__theme-btn--active"
+              data-theme="light"
+            >
+              Light
+            </button>
+            <button class="sidebar__theme-btn" data-theme="dark">Dark</button>
+            <button class="sidebar__theme-btn" data-theme="high-contrast">
+              High Contrast
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__header">
+          <h1 class="main__title">Sounds & Noise</h1>
+          <p class="main__subtitle">
+            Choose from calming music, white noise, and nature sounds to help
+            you fall asleep faster.
+          </p>
+        </div>
+
+        <div class="main__content">
+          <!-- Sound Tabs -->
+          <div class="sounds-tabs">
+            <div class="sounds-tab-list">
+              <button class="sounds-tab sounds-tab--active" data-tab="music">
+                Calming Music
+              </button>
+              <button class="sounds-tab" data-tab="noise">
+                White/Brown/Pink Noise
+              </button>
+              <button class="sounds-tab" data-tab="nature">
+                Nature Sounds
+              </button>
+            </div>
+
+            <!-- Calming Music Tab -->
+            <div
+              class="sounds-tab-content sounds-tab-content--active"
+              id="music"
+            >
+              <div class="sounds-grid">
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Piano Calm</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >60m</span
+                      >
+                      <span class="duration-chip">120m</span>
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Rain</span>
+                    <span class="tag">Mix with: Brown Noise</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/piano-calm.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Night Strings</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >120m</span
+                      >
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Ocean</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/night-strings.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Ambient Pad</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip duration-chip--active"
+                        >30m</span
+                      >
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip">120m</span>
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Forest</span>
+                    <span class="tag">Mix with: Pink Noise</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/ambient-pad.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              </div>
+            </div>
+
+            <!-- Noise Tab -->
+            <div class="sounds-tab-content" id="noise">
+              <div class="sounds-grid">
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">White Noise</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >60m</span
+                      >
+                      <span class="duration-chip">120m</span>
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Rain</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/white-noise.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Brown Noise</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >120m</span
+                      >
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Piano Calm</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/brown-noise.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Pink Noise</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip duration-chip--active"
+                        >30m</span
+                      >
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip">120m</span>
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Ambient Pad</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/pink-noise.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nature Tab -->
+            <div class="sounds-tab-content" id="nature">
+              <div class="sounds-grid">
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Rain</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip duration-chip--active"
+                        >30m</span
+                      >
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip">120m</span>
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Piano Calm</span>
+                    <span class="tag">Mix with: White Noise</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/rain.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Ocean</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >60m</span
+                      >
+                      <span class="duration-chip">120m</span>
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Night Strings</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/ocean.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Forest</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >120m</span
+                      >
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Ambient Pad</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/forest.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+
+                <div class="sound-card">
+                  <div class="sound-card__header">
+                    <div class="sound-card__title">Fan</div>
+                    <button class="sound-card__play-button">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="sound-card__controls">
+                    <div class="sound-card__duration-chips">
+                      <span class="duration-chip">30m</span>
+                      <span class="duration-chip">60m</span>
+                      <span class="duration-chip duration-chip--active"
+                        >120m</span
+                      >
+                    </div>
+                    <span class="loop-badge">Loop</span>
+                  </div>
+                  <div class="sound-card__mix-with">
+                    <span class="tag">Mix with: Brown Noise</span>
+                  </div>
+                  <audio controls class="mt-4">
+                    <source
+                      src="assets/audio-placeholders/fan.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sound Tips -->
+          <div class="card mt-8">
+            <div class="card__header">
+              <h2 class="card__title">Sound Tips</h2>
+            </div>
+            <div class="card__content">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-semibold mb-2">
+                    Brown noise reduces harsh highs
+                  </h3>
+                  <p class="text-sm text-secondary">
+                    Many find it gentler than white noise. It has more
+                    low-frequency content that can be more soothing.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-2">Mix sounds for variety</h3>
+                  <p class="text-sm text-secondary">
+                    Combine nature sounds with music or noise for a more
+                    complex, engaging soundscape.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-2">Start at low volume</h3>
+                  <p class="text-sm text-secondary">
+                    Begin with a gentle volume and adjust as needed. Too loud
+                    can be stimulating rather than calming.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-2">Use a timer</h3>
+                  <p class="text-sm text-secondary">
+                    Set sounds to fade out after you're likely to be asleep to
+                    avoid disrupting your sleep cycle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#help" class="footer__link">Help</a>
+        </div>
+        <div>Sleep Coach v0.1 - Not medical advice</div>
+      </footer>
+    </div>
+
+    <!-- Simple theme toggle and tab switching script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Theme toggle
+        const themeButtons = document.querySelectorAll(".sidebar__theme-btn");
+        const html = document.documentElement;
+
+        themeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const theme = this.getAttribute("data-theme");
+            html.setAttribute("data-theme", theme);
+
+            // Update active button
+            themeButtons.forEach((btn) =>
+              btn.classList.remove("sidebar__theme-btn--active")
+            );
+            this.classList.add("sidebar__theme-btn--active");
+
+            // Store preference
+            localStorage.setItem("sleep-coach-theme", theme);
+          });
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("sleep-coach-theme") || "light";
+        html.setAttribute("data-theme", savedTheme);
+        themeButtons.forEach((btn) => {
+          if (btn.getAttribute("data-theme") === savedTheme) {
+            btn.classList.add("sidebar__theme-btn--active");
+          }
+        });
+
+        // Tab switching
+        const tabButtons = document.querySelectorAll(".sounds-tab");
+        const tabContents = document.querySelectorAll(".sounds-tab-content");
+
+        tabButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const targetTab = this.getAttribute("data-tab");
+
+            // Update active tab button
+            tabButtons.forEach((btn) =>
+              btn.classList.remove("sounds-tab--active")
+            );
+            this.classList.add("sounds-tab--active");
+
+            // Show target tab content
+            tabContents.forEach((content) => {
+              content.classList.remove("sounds-tab-content--active");
+              if (content.id === targetTab) {
+                content.classList.add("sounds-tab-content--active");
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

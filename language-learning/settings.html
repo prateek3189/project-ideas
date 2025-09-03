@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Language Learning Buddy</title>
+    <meta
+      name="description"
+      content="Customize your learning experience and preferences"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__left">
+          <a href="index.html" class="header__logo">🗣️ LangBuddy</a>
+          <div class="header__search">
+            <div class="search">
+              <span class="search__icon">🔍</span>
+              <input
+                type="text"
+                class="search__input input"
+                placeholder="Search settings..."
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="header__right">
+          <button
+            class="theme-toggle"
+            data-theme="light"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-toggle__icon"></span>
+          </button>
+          <div class="language-switch" aria-label="Switch language">
+            <span class="language-switch__flag">🇺🇸</span>
+            <span class="language-switch__text">EN → ES</span>
+          </div>
+          <div class="profile-chip" aria-label="User profile">
+            <div class="profile-chip__avatar">P</div>
+            <span class="profile-chip__name">Prateek</span>
+          </div>
+          <a href="#" class="print-btn" onclick="window.print()">🖨️ Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Navigation</h3>
+          <nav class="sidebar__nav">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">💬</span>
+              Chat
+            </a>
+            <a href="topics.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📚</span>
+              Topics
+            </a>
+            <a href="pronun-lab.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Pronunciation Lab
+            </a>
+            <a href="lessons.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📖</span>
+              Lessons
+            </a>
+            <a href="review.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔄</span>
+              Review
+            </a>
+            <a href="progress.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📊</span>
+              Progress
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Quick Actions</h3>
+          <nav class="sidebar__nav">
+            <a
+              href="settings.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">⚙️</span>
+              Settings
+            </a>
+            <a href="about.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">ℹ️</span>
+              About
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <h3 class="sidebar__title">Settings Categories</h3>
+          <div class="sidebar__nav">
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🌍</span>
+              Language
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎯</span>
+              Learning
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">♿</span>
+              Accessibility
+            </div>
+            <div class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🔔</span>
+              Notifications
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__header">
+          <h1 class="main__title">Settings</h1>
+          <p class="main__subtitle">
+            Customize your learning experience and preferences
+          </p>
+        </div>
+
+        <div class="main__content">
+          <!-- Language Settings -->
+          <div class="mt-8">
+            <h2>Language Settings</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Native Language</div>
+                <h3 class="lesson-card__title">🇺🇸 English</h3>
+                <div class="lesson-card__content">
+                  Your primary language for translations and explanations.
+                </div>
+                <details>
+                  <summary>Change Language</summary>
+                  <div class="mt-3">
+                    <h4>Available Options:</h4>
+                    <ul>
+                      <li>🇺🇸 English (Current)</li>
+                      <li>🇪🇸 Spanish</li>
+                      <li>🇫🇷 French</li>
+                      <li>🇩🇪 German</li>
+                      <li>🇮🇹 Italian</li>
+                      <li>🇯🇵 Japanese</li>
+                      <li>🇰🇷 Korean</li>
+                      <li>🇨🇳 Chinese</li>
+                    </ul>
+                    <p class="mt-2">
+                      <em
+                        >Note: Changing this will update all interface
+                        translations.</em
+                      >
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Target Language</div>
+                <h3 class="lesson-card__title">🇪🇸 Spanish</h3>
+                <div class="lesson-card__content">
+                  The language you're learning and practicing.
+                </div>
+                <details>
+                  <summary>Change Target Language</summary>
+                  <div class="mt-3">
+                    <h4>Available Languages:</h4>
+                    <ul>
+                      <li>🇪🇸 Spanish (Current)</li>
+                      <li>🇫🇷 French</li>
+                      <li>🇩🇪 German</li>
+                      <li>🇮🇹 Italian</li>
+                      <li>🇵🇹 Portuguese</li>
+                      <li>🇯🇵 Japanese</li>
+                      <li>🇰🇷 Korean</li>
+                      <li>🇨🇳 Chinese</li>
+                      <li>🇦🇷 Arabic</li>
+                    </ul>
+                    <p class="mt-2">
+                      <em
+                        >Changing this will reset your progress for the new
+                        language.</em
+                      >
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Proficiency Level</div>
+                <h3 class="lesson-card__title">🎯 A1 - Beginner</h3>
+                <div class="lesson-card__content">
+                  Your current proficiency level for personalized content.
+                </div>
+                <details>
+                  <summary>Update Level</summary>
+                  <div class="mt-3">
+                    <h4>CEFR Levels:</h4>
+                    <ul>
+                      <li>🎯 A1 - Beginner (Current)</li>
+                      <li>🎯 A2 - Elementary</li>
+                      <li>🎯 B1 - Intermediate</li>
+                      <li>🎯 B2 - Upper Intermediate</li>
+                      <li>🎯 C1 - Advanced</li>
+                      <li>🎯 C2 - Mastery</li>
+                    </ul>
+                    <h4>Assessment:</h4>
+                    <p>
+                      Take our placement test to get an accurate level
+                      assessment.
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Learning Goal</div>
+                <h3 class="lesson-card__title">✈️ Travel & Tourism</h3>
+                <div class="lesson-card__content">
+                  Your primary motivation for learning the language.
+                </div>
+                <details>
+                  <summary>Change Goal</summary>
+                  <div class="mt-3">
+                    <h4>Available Goals:</h4>
+                    <ul>
+                      <li>✈️ Travel & Tourism (Current)</li>
+                      <li>💼 Business & Work</li>
+                      <li>🎓 Academic Study</li>
+                      <li>👨‍👩‍👧‍👦 Heritage & Culture</li>
+                      <li>💬 Casual Conversation</li>
+                      <li>📚 Literature & Media</li>
+                    </ul>
+                    <h4>Impact:</h4>
+                    <p>
+                      This affects the topics and vocabulary you'll encounter.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Learning Preferences -->
+          <div class="mt-8">
+            <h2>Learning Preferences</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Practice Mode</div>
+                <h3 class="lesson-card__title">🎯 Guided Practice</h3>
+                <div class="lesson-card__content">
+                  How much assistance you want during practice sessions.
+                </div>
+                <details>
+                  <summary>Configure Practice Mode</summary>
+                  <div class="mt-3">
+                    <h4>Available Modes:</h4>
+                    <ul>
+                      <li>🎯 Guided (with hints) - Current</li>
+                      <li>🆓 Free conversation</li>
+                      <li>🏆 Challenge mode</li>
+                      <li>📚 Study mode</li>
+                    </ul>
+                    <h4>Guided Mode Features:</h4>
+                    <ul>
+                      <li>Real-time pronunciation feedback</li>
+                      <li>Grammar correction suggestions</li>
+                      <li>Vocabulary hints when stuck</li>
+                      <li>Cultural context notes</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Feedback Level</div>
+                <h3 class="lesson-card__title">📝 Standard Feedback</h3>
+                <div class="lesson-card__content">
+                  How detailed you want your learning feedback to be.
+                </div>
+                <details>
+                  <summary>Adjust Feedback Level</summary>
+                  <div class="mt-3">
+                    <h4>Feedback Options:</h4>
+                    <ul>
+                      <li>📝 Minimal (just corrections)</li>
+                      <li>📝 Standard (corrections + tips) - Current</li>
+                      <li>📝 Detailed (full explanations)</li>
+                      <li>📝 Comprehensive (with examples)</li>
+                    </ul>
+                    <h4>Standard Feedback Includes:</h4>
+                    <ul>
+                      <li>Pronunciation corrections</li>
+                      <li>Grammar explanations</li>
+                      <li>Vocabulary alternatives</li>
+                      <li>Cultural context notes</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Translation Display</div>
+                <h3 class="lesson-card__title">🌐 Smart Translations</h3>
+                <div class="lesson-card__content">
+                  How and when translations are shown during practice.
+                </div>
+                <details>
+                  <summary>Configure Translations</summary>
+                  <div class="mt-3">
+                    <h4>Translation Options:</h4>
+                    <ul>
+                      <li>✅ Show English translations - Enabled</li>
+                      <li>✅ Show pronunciation tips - Enabled</li>
+                      <li>❌ Show IPA transcriptions - Disabled</li>
+                      <li>✅ Show cultural notes - Enabled</li>
+                    </ul>
+                    <h4>Smart Features:</h4>
+                    <ul>
+                      <li>Translations fade after 3 attempts</li>
+                      <li>Context-aware vocabulary help</li>
+                      <li>Progressive hint reduction</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Daily Goal</div>
+                <h3 class="lesson-card__title">⏰ 30 Minutes</h3>
+                <div class="lesson-card__content">
+                  Your target daily practice time for consistent learning.
+                </div>
+                <details>
+                  <summary>Set Daily Goal</summary>
+                  <div class="mt-3">
+                    <h4>Goal Options:</h4>
+                    <ul>
+                      <li>⏰ 15 minutes (light)</li>
+                      <li>⏰ 30 minutes (moderate) - Current</li>
+                      <li>⏰ 45 minutes (intensive)</li>
+                      <li>⏰ 60 minutes (advanced)</li>
+                      <li>⏰ Custom time</li>
+                    </ul>
+                    <h4>Goal Benefits:</h4>
+                    <ul>
+                      <li>Maintains learning streak</li>
+                      <li>Builds consistent habits</li>
+                      <li>Provides daily motivation</li>
+                      <li>Tracks long-term progress</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessibility Settings -->
+          <div class="mt-8">
+            <h2>Accessibility & Preferences</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Visual Preferences</div>
+                <h3 class="lesson-card__title">👁️ Standard Display</h3>
+                <div class="lesson-card__content">
+                  Customize visual elements for better accessibility.
+                </div>
+                <details>
+                  <summary>Configure Visual Settings</summary>
+                  <div class="mt-3">
+                    <h4>Display Options:</h4>
+                    <ul>
+                      <li>❌ High contrast mode - Disabled</li>
+                      <li>❌ Large text - Disabled</li>
+                      <li>✅ Show focus indicators - Enabled</li>
+                      <li>✅ Color-blind friendly - Enabled</li>
+                    </ul>
+                    <h4>Focus Indicators:</h4>
+                    <ul>
+                      <li>Visible focus rings on all interactive elements</li>
+                      <li>High contrast focus styles</li>
+                      <li>Keyboard navigation support</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Motion Preferences</div>
+                <h3 class="lesson-card__title">🎬 Standard Animations</h3>
+                <div class="lesson-card__content">
+                  Control motion and animation effects in the interface.
+                </div>
+                <details>
+                  <summary>Configure Motion Settings</summary>
+                  <div class="mt-3">
+                    <h4>Animation Options:</h4>
+                    <ul>
+                      <li>❌ Reduce animations - Disabled</li>
+                      <li>❌ Disable auto-scroll - Disabled</li>
+                      <li>✅ Smooth transitions - Enabled</li>
+                      <li>✅ Progress animations - Enabled</li>
+                    </ul>
+                    <h4>Motion Features:</h4>
+                    <ul>
+                      <li>Waveform animations for speech</li>
+                      <li>Smooth card transitions</li>
+                      <li>Progress bar animations</li>
+                      <li>Loading state indicators</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Audio Preferences</div>
+                <h3 class="lesson-card__title">🔊 Audio Feedback</h3>
+                <div class="lesson-card__content">
+                  Configure audio cues and feedback during practice.
+                </div>
+                <details>
+                  <summary>Configure Audio Settings</summary>
+                  <div class="mt-3">
+                    <h4>Audio Options:</h4>
+                    <ul>
+                      <li>✅ Audio feedback for actions - Enabled</li>
+                      <li>❌ Screen reader announcements - Disabled</li>
+                      <li>✅ Pronunciation playback - Enabled</li>
+                      <li>✅ Success sound effects - Enabled</li>
+                    </ul>
+                    <h4>Audio Features:</h4>
+                    <ul>
+                      <li>Click confirmation sounds</li>
+                      <li>Progress achievement chimes</li>
+                      <li>Error notification tones</li>
+                      <li>Volume control available</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Keyboard Navigation</div>
+                <h3 class="lesson-card__title">⌨️ Full Support</h3>
+                <div class="lesson-card__content">
+                  Keyboard accessibility and navigation options.
+                </div>
+                <details>
+                  <summary>Configure Keyboard Settings</summary>
+                  <div class="mt-3">
+                    <h4>Navigation Options:</h4>
+                    <ul>
+                      <li>✅ Tab navigation - Enabled</li>
+                      <li>✅ Arrow key support - Enabled</li>
+                      <li>✅ Enter/Space activation - Enabled</li>
+                      <li>✅ Escape key support - Enabled</li>
+                    </ul>
+                    <h4>Keyboard Shortcuts:</h4>
+                    <ul>
+                      <li>Tab: Navigate between elements</li>
+                      <li>Enter/Space: Activate buttons</li>
+                      <li>Escape: Close modals/dropdowns</li>
+                      <li>Arrow keys: Navigate lists</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notification Settings -->
+          <div class="mt-8">
+            <h2>Notifications & Reminders</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Reminder Settings</div>
+                <h3 class="lesson-card__title">🔔 Smart Reminders</h3>
+                <div class="lesson-card__content">
+                  Configure when and how you receive learning reminders.
+                </div>
+                <details>
+                  <summary>Configure Reminders</summary>
+                  <div class="mt-3">
+                    <h4>Reminder Types:</h4>
+                    <ul>
+                      <li>✅ Daily practice reminders - Enabled</li>
+                      <li>✅ Review due notifications - Enabled</li>
+                      <li>❌ Weekly progress reports - Disabled</li>
+                      <li>❌ Achievement celebrations - Disabled</li>
+                    </ul>
+                    <h4>Smart Features:</h4>
+                    <ul>
+                      <li>Adapts to your schedule</li>
+                      <li>Respects quiet hours</li>
+                      <li>Progressive reminder intensity</li>
+                      <li>Streak protection alerts</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Preferred Time</div>
+                <h3 class="lesson-card__title">🕕 6:00 PM</h3>
+                <div class="lesson-card__content">
+                  Your preferred time for daily practice reminders.
+                </div>
+                <details>
+                  <summary>Set Reminder Time</summary>
+                  <div class="mt-3">
+                    <h4>Time Options:</h4>
+                    <ul>
+                      <li>🌅 Morning (6-9 AM)</li>
+                      <li>🌞 Afternoon (12-3 PM)</li>
+                      <li>🌆 Evening (6-9 PM) - Current</li>
+                      <li>🌙 Night (9-11 PM)</li>
+                      <li>⏰ Custom time</li>
+                    </ul>
+                    <h4>Time Zone:</h4>
+                    <ul>
+                      <li>Automatically detected</li>
+                      <li>Respects daylight saving</li>
+                      <li>Updates with device changes</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Notification Channels</div>
+                <h3 class="lesson-card__title">📱 App Notifications</h3>
+                <div class="lesson-card__content">
+                  How you want to receive notifications and updates.
+                </div>
+                <details>
+                  <summary>Configure Channels</summary>
+                  <div class="mt-3">
+                    <h4>Available Channels:</h4>
+                    <ul>
+                      <li>📱 App notifications - Enabled</li>
+                      <li>📧 Email reminders - Disabled</li>
+                      <li>📱 SMS alerts - Disabled</li>
+                      <li>🔔 Browser notifications - Disabled</li>
+                    </ul>
+                    <h4>App Notifications Include:</h4>
+                    <ul>
+                      <li>Daily practice reminders</li>
+                      <li>Review due alerts</li>
+                      <li>Streak maintenance</li>
+                      <li>Progress milestones</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Quiet Hours</div>
+                <h3 class="lesson-card__title">🌙 10 PM - 7 AM</h3>
+                <div class="lesson-card__content">
+                  Times when notifications are automatically silenced.
+                </div>
+                <details>
+                  <summary>Configure Quiet Hours</summary>
+                  <div class="mt-3">
+                    <h4>Quiet Period:</h4>
+                    <ul>
+                      <li>🌙 Start: 10:00 PM</li>
+                      <li>🌅 End: 7:00 AM</li>
+                      <li>🌍 Time zone: Local</li>
+                      <li>📱 App: Silent mode</li>
+                    </ul>
+                    <h4>Exceptions:</h4>
+                    <ul>
+                      <li>Critical streak alerts</li>
+                      <li>Emergency maintenance</li>
+                      <li>Account security</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data & Privacy -->
+          <div class="mt-8">
+            <h2>Data & Privacy</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Data Collection</div>
+                <h3 class="lesson-card__title">📊 Learning Analytics</h3>
+                <div class="lesson-card__content">
+                  Control what data is collected to improve your experience.
+                </div>
+                <details>
+                  <summary>Configure Data Settings</summary>
+                  <div class="mt-3">
+                    <h4>Data Options:</h4>
+                    <ul>
+                      <li>✅ Save conversation history - Enabled</li>
+                      <li>✅ Track learning progress - Enabled</li>
+                      <li>❌ Share anonymous usage data - Disabled</li>
+                      <li>✅ Performance analytics - Enabled</li>
+                    </ul>
+                    <h4>Data Benefits:</h4>
+                    <ul>
+                      <li>Personalized learning paths</li>
+                      <li>Progress tracking</li>
+                      <li>Performance insights</li>
+                      <li>Adaptive difficulty</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Privacy Controls</div>
+                <h3 class="lesson-card__title">🔒 Data Management</h3>
+                <div class="lesson-card__content">
+                  Manage your data and privacy settings.
+                </div>
+                <details>
+                  <summary>Privacy Options</summary>
+                  <div class="mt-3">
+                    <h4>Available Actions:</h4>
+                    <ul>
+                      <li>📥 Export My Data</li>
+                      <li>🗑️ Delete Account</li>
+                      <li>🔒 Privacy Policy</li>
+                      <li>📋 Terms of Service</li>
+                    </ul>
+                    <h4>Data Export Includes:</h4>
+                    <ul>
+                      <li>Learning progress history</li>
+                      <li>Practice session logs</li>
+                      <li>Vocabulary lists</li>
+                      <li>Settings preferences</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Account Security</div>
+                <h3 class="lesson-card__title">🔐 Security Settings</h3>
+                <div class="lesson-card__content">
+                  Manage your account security and authentication.
+                </div>
+                <details>
+                  <summary>Security Options</summary>
+                  <div class="mt-3">
+                    <h4>Security Features:</h4>
+                    <ul>
+                      <li>🔐 Change Password</li>
+                      <li>📱 Two-Factor Authentication</li>
+                      <li>📧 Email Verification</li>
+                      <li>🔍 Login History</li>
+                    </ul>
+                    <h4>Two-Factor Auth:</h4>
+                    <ul>
+                      <li>Authenticator app support</li>
+                      <li>SMS backup codes</li>
+                      <li>Recovery email setup</li>
+                      <li>Device management</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="lesson-card">
+                <div class="lesson-card__type">Session Management</div>
+                <h3 class="lesson-card__title">💻 Active Sessions</h3>
+                <div class="lesson-card__content">
+                  Manage your active login sessions across devices.
+                </div>
+                <details>
+                  <summary>Session Options</summary>
+                  <div class="mt-3">
+                    <h4>Current Sessions:</h4>
+                    <ul>
+                      <li>💻 Desktop (Chrome) - Current</li>
+                      <li>📱 Mobile (Safari) - Active</li>
+                      <li>💻 Laptop (Firefox) - Active</li>
+                      <li>📱 Tablet (Chrome) - Inactive</li>
+                    </ul>
+                    <h4>Actions:</h4>
+                    <ul>
+                      <li>End other sessions</li>
+                      <li>View login history</li>
+                      <li>Set session timeout</li>
+                      <li>Device verification</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="mt-8">
+            <h2>Save & Apply</h2>
+            <div class="lessons-grid">
+              <div class="lesson-card">
+                <div class="lesson-card__type">Actions</div>
+                <h3 class="lesson-card__title">💾 Save Changes</h3>
+                <div class="lesson-card__content">
+                  Apply your settings and save your preferences.
+                </div>
+                <details>
+                  <summary>Available Actions</summary>
+                  <div class="mt-3">
+                    <h4>Primary Actions:</h4>
+                    <ul>
+                      <li>💾 Save Changes</li>
+                      <li>🔄 Reset to Defaults</li>
+                      <li>❌ Cancel Changes</li>
+                      <li>📤 Export Settings</li>
+                    </ul>
+                    <h4>Save Options:</h4>
+                    <ul>
+                      <li>Auto-save on change</li>
+                      <li>Manual save required</li>
+                      <li>Save to cloud</li>
+                      <li>Local backup</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Help</a>
+          </div>
+          <div class="footer__version">Language Learning Buddy v1.0</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Simple Theme Toggle -->
+    <script>
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const themes = ["light", "dark", "high-contrast"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+
+          document.body.setAttribute("data-theme", nextTheme);
+          this.setAttribute("data-theme", nextTheme);
+        });
+    </script>
+  </body>
+</html>

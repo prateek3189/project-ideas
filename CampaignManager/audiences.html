@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audiences - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button class="btn btn--primary" type="button">
+              <span class="icon icon--plus" aria-hidden="true"></span>
+              Create Segment
+            </button>
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print audiences"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="audiences.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Audiences</h2>
+          <p class="page-subtitle">
+            Manage your contact segments and suppression lists
+          </p>
+        </div>
+
+        <!-- Audience Overview -->
+        <div class="kpi-grid mb-8">
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Total Contacts</span>
+              <span class="icon icon--audience" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">45,120</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">+2.3%</div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Active Segments</span>
+              <span class="icon icon--segment" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">12</div>
+            <div class="kpi-tile__change kpi-tile__change--neutral">0</div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Suppressed</span>
+              <span class="icon icon--suppressed" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">3,386</div>
+            <div class="kpi-tile__change kpi-tile__change--negative">+0.8%</div>
+          </div>
+
+          <div class="kpi-tile">
+            <div class="kpi-tile__header">
+              <span class="kpi-tile__label">Growth Rate</span>
+              <span class="icon icon--growth" aria-hidden="true"></span>
+            </div>
+            <div class="kpi-tile__value">+1,247</div>
+            <div class="kpi-tile__change kpi-tile__change--positive">
+              This month
+            </div>
+          </div>
+        </div>
+
+        <!-- Segments -->
+        <section class="mb-8">
+          <div class="section-header">
+            <h3 class="section-title">Audience Segments</h3>
+            <button class="btn btn--secondary btn--small" type="button">
+              Import Contacts
+            </button>
+          </div>
+
+          <div class="audience-grid">
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">All Subscribers</h4>
+                <span class="badge badge--primary">Default</span>
+              </div>
+              <div class="card__content">
+                <div class="text-numeric text-2xl font-bold mb-2">45,120</div>
+                <p class="text-muted text-sm mb-4">
+                  All contacts who have opted in to receive marketing
+                  communications
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">New Signups</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="text-numeric text-2xl font-bold mb-2">3,240</div>
+                <p class="text-muted text-sm mb-4">
+                  Users who signed up in the last 30 days
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">High Value Customers</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="text-numeric text-2xl font-bold mb-2">1,580</div>
+                <p class="text-muted text-sm mb-4">
+                  Customers with lifetime value over $500
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Lapsed Customers</h4>
+                <span class="badge badge--warning">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="text-numeric text-2xl font-bold mb-2">8,920</div>
+                <p class="text-muted text-sm mb-4">
+                  No activity in the last 90 days
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Mobile Users</h4>
+                <span class="badge badge--info">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="text-numeric text-2xl font-bold mb-2">28,450</div>
+                <p class="text-muted text-sm mb-4">
+                  Users who primarily engage on mobile devices
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Newsletter Subscribers</h4>
+                <span class="badge badge--success">Active</span>
+              </div>
+              <div class="card__content">
+                <div class="text-numeric text-2xl font-bold mb-2">32,180</div>
+                <p class="text-muted text-sm mb-4">
+                  Contacts subscribed to weekly newsletter
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Suppression Lists -->
+        <section class="mb-8">
+          <div class="section-header">
+            <h3 class="section-title">Suppression Lists</h3>
+            <button class="btn btn--secondary btn--small" type="button">
+              Import Suppressions
+            </button>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6">
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Unsubscribed</h4>
+                <span class="badge badge--danger">2,340</span>
+              </div>
+              <div class="card__content">
+                <p class="text-muted text-sm mb-4">
+                  Contacts who have opted out of marketing communications
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Export
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Bounced</h4>
+                <span class="badge badge--danger">890</span>
+              </div>
+              <div class="card__content">
+                <p class="text-muted text-sm mb-4">
+                  Email addresses that have bounced
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Clean
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Do Not Contact</h4>
+                <span class="badge badge--danger">156</span>
+              </div>
+              <div class="card__content">
+                <p class="text-muted text-sm mb-4">
+                  Contacts marked as do not contact
+                </p>
+                <div class="flex gap-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    View
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Manage
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Segment Creation Form -->
+        <section>
+          <div class="card">
+            <div class="card__header">
+              <h4 class="card__title">Create New Segment</h4>
+            </div>
+            <div class="card__content">
+              <form class="segment-form">
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <div class="form-group">
+                      <label for="segment-name" class="form-label"
+                        >Segment Name</label
+                      >
+                      <input
+                        type="text"
+                        id="segment-name"
+                        class="form-input"
+                        placeholder="e.g., VIP Customers"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="segment-description" class="form-label"
+                        >Description</label
+                      >
+                      <textarea
+                        id="segment-description"
+                        class="form-textarea"
+                        rows="3"
+                        placeholder="Describe this segment..."
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="form-group">
+                      <label class="form-label">Filters</label>
+                      <div class="space-y-3">
+                        <div class="flex gap-2">
+                          <select class="form-select">
+                            <option>Country</option>
+                            <option>Device Type</option>
+                            <option>Last Activity</option>
+                            <option>Purchase Count</option>
+                            <option>Lifetime Value</option>
+                          </select>
+                          <select class="form-select">
+                            <option>equals</option>
+                            <option>not equals</option>
+                            <option>greater than</option>
+                            <option>less than</option>
+                            <option>contains</option>
+                          </select>
+                          <input
+                            type="text"
+                            class="form-input"
+                            placeholder="Value"
+                          />
+                        </div>
+                        <button type="button" class="btn btn--ghost btn--small">
+                          + Add Filter
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">Preview</label>
+                      <div class="card">
+                        <div class="card__content">
+                          <div class="text-numeric text-lg font-bold">0</div>
+                          <div class="text-muted text-sm">
+                            Estimated contacts
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-end gap-3 mt-6">
+                  <button type="button" class="btn btn--ghost">Cancel</button>
+                  <button type="submit" class="btn btn--primary">
+                    Create Segment
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- Consent Management -->
+        <section class="mt-8">
+          <div class="card">
+            <div class="card__header">
+              <h4 class="card__title">Consent Management</h4>
+            </div>
+            <div class="card__content">
+              <div class="alert alert--info">
+                <span class="icon icon--info" aria-hidden="true"></span>
+                <div class="alert__content">
+                  <strong>Consent Log</strong>
+                  <p>
+                    All consent changes are automatically logged with timestamps
+                    and IP addresses for compliance purposes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-6 mt-4">
+                <div>
+                  <h5 class="font-semibold mb-3">Email Consent</h5>
+                  <div class="space-y-2">
+                    <div class="flex justify-between">
+                      <span>Opted In</span>
+                      <span class="text-numeric">45,120</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Opted Out</span>
+                      <span class="text-numeric">2,340</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Pending</span>
+                      <span class="text-numeric">156</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 class="font-semibold mb-3">SMS Consent</h5>
+                  <div class="space-y-2">
+                    <div class="flex justify-between">
+                      <span>Opted In</span>
+                      <span class="text-numeric">12,890</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Opted Out</span>
+                      <span class="text-numeric">890</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Pending</span>
+                      <span class="text-numeric">45</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

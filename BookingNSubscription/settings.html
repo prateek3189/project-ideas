@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">
+            Configure your business settings and preferences
+          </p>
+        </div>
+
+        <!-- Settings Navigation -->
+        <div class="card mb-6">
+          <div class="card__content">
+            <div class="flex gap-4">
+              <button class="btn btn--primary btn--sm">General</button>
+              <button class="btn btn--secondary btn--sm">Locations</button>
+              <button class="btn btn--secondary btn--sm">Policies</button>
+              <button class="btn btn--secondary btn--sm">Notifications</button>
+              <button class="btn btn--secondary btn--sm">Branding</button>
+              <button class="btn btn--secondary btn--sm">Privacy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- General Settings -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">General Settings</h3>
+          </div>
+          <div class="card__content">
+            <div class="form-layout">
+              <div class="form-group">
+                <label class="form-label">Business Name</label>
+                <input type="text" class="form-input" value="BookingHub" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Business Type</label>
+                <select class="form-select">
+                  <option>Multi-service (Gym + Salon + Co-working)</option>
+                  <option>Fitness Center</option>
+                  <option>Beauty Salon</option>
+                  <option>Co-working Space</option>
+                  <option>Wellness Center</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Time Zone</label>
+                <select class="form-select">
+                  <option>Asia/Kolkata (IST)</option>
+                  <option>Asia/Dubai (GST)</option>
+                  <option>America/New_York (EST)</option>
+                  <option>Europe/London (GMT)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Currency</label>
+                <select class="form-select">
+                  <option>INR (₹)</option>
+                  <option>USD ($)</option>
+                  <option>EUR (€)</option>
+                  <option>AED (د.إ)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Date Format</label>
+                <select class="form-select">
+                  <option>DD/MM/YYYY</option>
+                  <option>MM/DD/YYYY</option>
+                  <option>YYYY-MM-DD</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Time Format</label>
+                <select class="form-select">
+                  <option>12-hour (AM/PM)</option>
+                  <option>24-hour</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Settings -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Location & Hours</h3>
+          </div>
+          <div class="card__content">
+            <div class="form-layout">
+              <div class="form-group">
+                <label class="form-label">Primary Location</label>
+                <input type="text" class="form-input" value="Mumbai Central" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Address</label>
+                <textarea class="form-textarea" rows="3">
+123, Linking Road, Bandra West, Mumbai - 400050, Maharashtra, India</textarea
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-input" value="+91 22 2640 1234" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-input"
+                  value="info@bookinghub.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Website</label>
+                <input
+                  type="url"
+                  class="form-input"
+                  value="https://bookinghub.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Operating Hours</label>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2">
+                    <input
+                      type="time"
+                      class="form-input"
+                      value="06:00"
+                      style="width: auto"
+                    />
+                    <span>to</span>
+                    <input
+                      type="time"
+                      class="form-input"
+                      value="22:00"
+                      style="width: auto"
+                    />
+                    <span class="text-sm text-muted">Monday - Friday</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <input
+                      type="time"
+                      class="form-input"
+                      value="08:00"
+                      style="width: auto"
+                    />
+                    <span>to</span>
+                    <input
+                      type="time"
+                      class="form-input"
+                      value="20:00"
+                      style="width: auto"
+                    />
+                    <span class="text-sm text-muted">Saturday - Sunday</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Policies -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Booking Policies</h3>
+          </div>
+          <div class="card__content">
+            <div class="form-layout">
+              <div class="form-group">
+                <label class="form-label">Cancellation Window</label>
+                <select class="form-select">
+                  <option>2 hours</option>
+                  <option>6 hours</option>
+                  <option>12 hours</option>
+                  <option>24 hours</option>
+                  <option>48 hours</option>
+                </select>
+                <div class="form-help">
+                  Free cancellation allowed before this time
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Late Cancellation Fee</label>
+                <select class="form-select">
+                  <option>No fee</option>
+                  <option>50% of service cost</option>
+                  <option>Full service cost</option>
+                  <option>Deduct 1 credit</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">No-Show Policy</label>
+                <select class="form-select">
+                  <option>No penalty</option>
+                  <option>Deduct 1 credit</option>
+                  <option>Charge full amount</option>
+                  <option>Suspend account</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Deposit Required</label>
+                <select class="form-select">
+                  <option>No deposit</option>
+                  <option>25% of service cost</option>
+                  <option>50% of service cost</option>
+                  <option>Full payment upfront</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Grace Period</label>
+                <select class="form-select">
+                  <option>No grace period</option>
+                  <option>5 minutes</option>
+                  <option>10 minutes</option>
+                  <option>15 minutes</option>
+                </select>
+                <div class="form-help">
+                  Time allowed after scheduled start before marking as no-show
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Buffer Time</label>
+                <select class="form-select">
+                  <option>No buffer</option>
+                  <option>5 minutes</option>
+                  <option>10 minutes</option>
+                  <option>15 minutes</option>
+                </select>
+                <div class="form-help">Time between consecutive bookings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Notification Settings</h3>
+          </div>
+          <div class="card__content">
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-3">Email Notifications</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking confirmations</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking reminders (24h before)</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking reminders (2h before)</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Payment confirmations</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Payment failures</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" />
+                    <span>Marketing emails</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">SMS Notifications</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking confirmations</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking reminders (2h before)</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" />
+                    <span>Payment reminders</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">WhatsApp Notifications</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking confirmations</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Booking reminders</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" />
+                    <span>Promotional messages</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branding -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Branding & Appearance</h3>
+          </div>
+          <div class="card__content">
+            <div class="form-layout">
+              <div class="form-group">
+                <label class="form-label">Logo</label>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-20 h-20 bg-surface-secondary border-2 border-dashed border-border rounded-lg flex items-center justify-center"
+                  >
+                    <span class="text-muted">Logo</span>
+                  </div>
+                  <div>
+                    <button class="btn btn--secondary btn--sm">
+                      Upload Logo
+                    </button>
+                    <p class="text-sm text-muted mt-1">PNG, JPG up to 2MB</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Primary Color</label>
+                <div class="flex items-center gap-3">
+                  <input
+                    type="color"
+                    class="form-input"
+                    value="#2563EB"
+                    style="width: 3rem; height: 2.5rem; padding: 0"
+                  />
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="#2563EB"
+                    style="width: 8rem"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Secondary Color</label>
+                <div class="flex items-center gap-3">
+                  <input
+                    type="color"
+                    class="form-input"
+                    value="#16A34A"
+                    style="width: 3rem; height: 2.5rem; padding: 0"
+                  />
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="#16A34A"
+                    style="width: 8rem"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Invoice Footer</label>
+                <textarea
+                  class="form-textarea"
+                  rows="4"
+                  placeholder="Custom message for invoices..."
+                >
+Thank you for choosing BookingHub!
+
+For any queries, contact us at:
+Phone: +91 22 2640 1234
+Email: info@bookinghub.com
+Website: https://bookinghub.com
+
+Prices inclusive of taxes where applicable.</textarea
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Signature</label>
+                <textarea
+                  class="form-textarea"
+                  rows="3"
+                  placeholder="Email signature..."
+                >
+Best regards,
+BookingHub Team
+Mumbai Central
++91 22 2640 1234 | info@bookinghub.com</textarea
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy & Legal -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Privacy & Legal</h3>
+          </div>
+          <div class="card__content">
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-3">Data Collection</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Collect member contact information</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Track booking history</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" checked />
+                    <span>Store payment information (encrypted)</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" />
+                    <span>Collect health information</span>
+                  </label>
+                  <label class="flex items-center gap-3">
+                    <input type="checkbox" />
+                    <span>Track usage analytics</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Data Retention</h4>
+                <div class="form-layout">
+                  <div class="form-group">
+                    <label class="form-label">Member Data</label>
+                    <select class="form-select">
+                      <option>1 year after last activity</option>
+                      <option>2 years after last activity</option>
+                      <option>5 years after last activity</option>
+                      <option>Indefinitely</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Financial Records</label>
+                    <select class="form-select">
+                      <option>7 years (tax compliance)</option>
+                      <option>5 years</option>
+                      <option>3 years</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-3">Legal Documents</h4>
+                <div class="space-y-3">
+                  <div
+                    class="flex items-center justify-between p-3 bg-surface-secondary rounded"
+                  >
+                    <div>
+                      <div class="font-medium">Terms of Service</div>
+                      <div class="text-sm text-muted">
+                        Last updated: Jan 1, 2025
+                      </div>
+                    </div>
+                    <button class="btn btn--secondary btn--sm">Edit</button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-3 bg-surface-secondary rounded"
+                  >
+                    <div>
+                      <div class="font-medium">Privacy Policy</div>
+                      <div class="text-sm text-muted">
+                        Last updated: Jan 1, 2025
+                      </div>
+                    </div>
+                    <button class="btn btn--secondary btn--sm">Edit</button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-3 bg-surface-secondary rounded"
+                  >
+                    <div>
+                      <div class="font-medium">Cancellation Policy</div>
+                      <div class="text-sm text-muted">
+                        Last updated: Jan 1, 2025
+                      </div>
+                    </div>
+                    <button class="btn btn--secondary btn--sm">Edit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Save Changes -->
+        <div class="flex justify-end gap-3">
+          <button class="btn btn--secondary">Reset to Defaults</button>
+          <button class="btn btn--primary">Save All Changes</button>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Import Data</title>
+    <meta
+      name="description"
+      content="Import transactions from SMS, UPI, or CSV files"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Statement</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a
+                  href="import.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Import Data</h1>
+            <p class="main__subtitle">
+              Import transactions from SMS, UPI, or CSV files
+            </p>
+          </div>
+
+          <!-- Import Tabs -->
+          <div class="import-layout">
+            <div class="import-tabs">
+              <div class="import-tabs__header">
+                <button class="import-tabs__tab import-tabs__tab--active">
+                  SMS Parse
+                </button>
+                <button class="import-tabs__tab">UPI Import</button>
+                <button class="import-tabs__tab">CSV Upload</button>
+              </div>
+
+              <!-- SMS Parse Tab -->
+              <div class="import-tabs__content">
+                <h3 style="margin-bottom: 1rem">Parse SMS Messages</h3>
+                <p
+                  style="
+                    color: var(--color-text-secondary);
+                    margin-bottom: 2rem;
+                  "
+                >
+                  Paste your SMS messages below. The system will automatically
+                  extract transaction details.
+                </p>
+
+                <div style="margin-bottom: 2rem">
+                  <label
+                    for="sms-input"
+                    style="
+                      display: block;
+                      margin-bottom: 0.5rem;
+                      font-weight: var(--font-weight-medium);
+                    "
+                    >SMS Messages:</label
+                  >
+                  <textarea
+                    id="sms-input"
+                    rows="8"
+                    style="
+                      width: 100%;
+                      font-family: var(--font-family-mono);
+                      font-size: var(--font-size-sm);
+                    "
+                    placeholder="Paste your SMS messages here...
+
+Example:
+INR 289.00 spent on your HDFC Credit Card at SWIGGY on 02-Sep 19:24. Avl Cr Lmt INR 45,000.
+Rs. 199.00 debited from A/c **XXXX1234** via UPI to OLA CABS on 03-Sep 08:05. UTR 2XXXXXXXXX.
+INR 1,299.00 spent at AMAZON on 04-Sep 21:10. Txn ID 1234567890."
+                  >
+INR 289.00 spent on your HDFC Credit Card at SWIGGY on 02-Sep 19:24. Avl Cr Lmt INR 45,000.
+Rs. 199.00 debited from A/c **XXXX1234** via UPI to OLA CABS on 03-Sep 08:05. UTR 2XXXXXXXXX.
+INR 1,299.00 spent at AMAZON on 04-Sep 21:10. Txn ID 1234567890.
+INR 450.00 spent at ZOMATO on 05-Sep 20:15. Txn ID 1234567891.
+Rs. 1,200.00 debited from A/c **XXXX5678** for ELECTRICITY BILL on 10-Sep 11:00. UTR 3XXXXXXXXX.</textarea
+                  >
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
+                  <button class="btn">Parse SMS</button>
+                  <button class="btn btn--secondary">Clear</button>
+                </div>
+
+                <!-- Parse Preview -->
+                <div class="import-preview">
+                  <div class="import-preview__header">
+                    <h4 class="import-preview__title">
+                      Parsed Transactions (5 found)
+                    </h4>
+                  </div>
+                  <table class="import-preview__table">
+                    <thead>
+                      <tr>
+                        <th>Merchant</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Account</th>
+                        <th>Source</th>
+                        <th>Confidence</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>SWIGGY</td>
+                        <td class="tabular-nums">₹289</td>
+                        <td>02 Sep 2024</td>
+                        <td><span class="pill pill--food">Food</span></td>
+                        <td>HDFC CC</td>
+                        <td><span class="txn-row__tag">SMS</span></td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>OLA CABS</td>
+                        <td class="tabular-nums">₹199</td>
+                        <td>03 Sep 2024</td>
+                        <td>
+                          <span class="pill pill--transport">Transport</span>
+                        </td>
+                        <td>UPI</td>
+                        <td><span class="txn-row__tag">SMS</span></td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>AMAZON</td>
+                        <td class="tabular-nums">₹1,299</td>
+                        <td>04 Sep 2024</td>
+                        <td>
+                          <span class="pill pill--shopping">Shopping</span>
+                        </td>
+                        <td>HDFC CC</td>
+                        <td><span class="txn-row__tag">SMS</span></td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ZOMATO</td>
+                        <td class="tabular-nums">₹450</td>
+                        <td>05 Sep 2024</td>
+                        <td><span class="pill pill--food">Food</span></td>
+                        <td>HDFC CC</td>
+                        <td><span class="txn-row__tag">SMS</span></td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ELECTRICITY BILL</td>
+                        <td class="tabular-nums">₹1,200</td>
+                        <td>10 Sep 2024</td>
+                        <td><span class="pill pill--bills">Bills</span></td>
+                        <td>SBI Savings</td>
+                        <td><span class="txn-row__tag">SMS</span></td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--medium"
+                            >Medium</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- SMS Parsing Tips -->
+                <details style="margin-top: 2rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                      margin-bottom: 1rem;
+                    "
+                  >
+                    💡 SMS Parsing Tips
+                  </summary>
+                  <div
+                    style="
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <h4 style="margin-bottom: 1rem">Common SMS Patterns:</h4>
+                    <ul style="margin-bottom: 1rem; padding-left: 1.5rem">
+                      <li>
+                        <code>INR 450.00 spent at MERCHANT</code> - Credit card
+                        transactions
+                      </li>
+                      <li>
+                        <code>Rs. 199.00 debited from A/c **XXXX1234**</code> -
+                        Bank account debits
+                      </li>
+                      <li>
+                        <code>via UPI to MERCHANT</code> - UPI transactions
+                      </li>
+                      <li>
+                        <code>Txn ID 1234567890</code> - Transaction reference
+                      </li>
+                      <li>
+                        <code>UTR 2XXXXXXXXX</code> - UPI transaction reference
+                      </li>
+                    </ul>
+                    <h4 style="margin-bottom: 1rem">Supported Banks:</h4>
+                    <p
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      HDFC, SBI, ICICI, Axis, Kotak, PNB, and most major Indian
+                      banks.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- UPI Import Section (Hidden by default) -->
+          <div class="import-layout" style="display: none">
+            <div class="import-tabs">
+              <div class="import-tabs__header">
+                <button class="import-tabs__tab">SMS Parse</button>
+                <button class="import-tabs__tab import-tabs__tab--active">
+                  UPI Import
+                </button>
+                <button class="import-tabs__tab">CSV Upload</button>
+              </div>
+
+              <div class="import-tabs__content">
+                <h3 style="margin-bottom: 1rem">Import UPI Transactions</h3>
+                <p
+                  style="
+                    color: var(--color-text-secondary);
+                    margin-bottom: 2rem;
+                  "
+                >
+                  Enter your UPI ID and paste transaction details from your UPI
+                  app or bank statement.
+                </p>
+
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    margin-bottom: 2rem;
+                  "
+                >
+                  <div>
+                    <label
+                      for="upi-id"
+                      style="
+                        display: block;
+                        margin-bottom: 0.5rem;
+                        font-weight: var(--font-weight-medium);
+                      "
+                      >UPI ID:</label
+                    >
+                    <input
+                      type="text"
+                      id="upi-id"
+                      placeholder="name@okbank"
+                      value="alice@okicici"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="upi-account"
+                      style="
+                        display: block;
+                        margin-bottom: 0.5rem;
+                        font-weight: var(--font-weight-medium);
+                      "
+                      >Account:</label
+                    >
+                    <select id="upi-account">
+                      <option value="upi-primary">Primary UPI</option>
+                      <option value="upi-secondary">Secondary UPI</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 2rem">
+                  <label
+                    for="upi-input"
+                    style="
+                      display: block;
+                      margin-bottom: 0.5rem;
+                      font-weight: var(--font-weight-medium);
+                    "
+                    >UPI Transaction Details:</label
+                  >
+                  <textarea
+                    id="upi-input"
+                    rows="6"
+                    style="
+                      width: 100%;
+                      font-family: var(--font-family-mono);
+                      font-size: var(--font-size-sm);
+                    "
+                    placeholder="Paste UPI transaction details here...
+
+Example:
+To: SWIGGY@paytm | ₹289.00 | 02-Sep-2024 19:24 | UTR: 2XXXXXXXXX
+To: OLA@ybl | ₹199.00 | 03-Sep-2024 08:05 | UTR: 3XXXXXXXXX
+From: john@okaxis | ₹5,000.00 | 28-Aug-2024 14:00 | UTR: 4XXXXXXXXX"
+                  >
+To: SWIGGY@paytm | ₹289.00 | 02-Sep-2024 19:24 | UTR: 2XXXXXXXXX
+To: OLA@ybl | ₹199.00 | 03-Sep-2024 08:05 | UTR: 3XXXXXXXXX
+From: john@okaxis | ₹5,000.00 | 28-Aug-2024 14:00 | UTR: 4XXXXXXXXX
+To: BIGBAZAAR@paytm | ₹1,240.00 | 14-Sep-2024 14:15 | UTR: 5XXXXXXXXX</textarea
+                  >
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem">
+                  <button class="btn">Parse UPI</button>
+                  <button class="btn btn--secondary">Clear</button>
+                </div>
+
+                <!-- UPI Parse Preview -->
+                <div class="import-preview">
+                  <div class="import-preview__header">
+                    <h4 class="import-preview__title">
+                      Parsed UPI Transactions (4 found)
+                    </h4>
+                  </div>
+                  <table class="import-preview__table">
+                    <thead>
+                      <tr>
+                        <th>Payer/Payee</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>UTR</th>
+                        <th>Type</th>
+                        <th>Confidence</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>SWIGGY@paytm</td>
+                        <td class="tabular-nums">-₹289</td>
+                        <td>02 Sep 2024</td>
+                        <td><span class="pill pill--food">Food</span></td>
+                        <td>2XXXXXXXXX</td>
+                        <td>Debit</td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>OLA@ybl</td>
+                        <td class="tabular-nums">-₹199</td>
+                        <td>03 Sep 2024</td>
+                        <td>
+                          <span class="pill pill--transport">Transport</span>
+                        </td>
+                        <td>3XXXXXXXXX</td>
+                        <td>Debit</td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>john@okaxis</td>
+                        <td class="tabular-nums">+₹5,000</td>
+                        <td>28 Aug 2024</td>
+                        <td><span class="pill pill--other">Income</span></td>
+                        <td>4XXXXXXXXX</td>
+                        <td>Credit</td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--medium"
+                            >Medium</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>BIGBAZAAR@paytm</td>
+                        <td class="tabular-nums">-₹1,240</td>
+                        <td>14 Sep 2024</td>
+                        <td><span class="pill pill--food">Food</span></td>
+                        <td>5XXXXXXXXX</td>
+                        <td>Debit</td>
+                        <td>
+                          <span class="confidence-chip confidence-chip--high"
+                            >High</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSV Upload Section (Hidden by default) -->
+          <div class="import-layout" style="display: none">
+            <div class="import-tabs">
+              <div class="import-tabs__header">
+                <button class="import-tabs__tab">SMS Parse</button>
+                <button class="import-tabs__tab">UPI Import</button>
+                <button class="import-tabs__tab import-tabs__tab--active">
+                  CSV Upload
+                </button>
+              </div>
+
+              <div class="import-tabs__content">
+                <h3 style="margin-bottom: 1rem">Upload CSV File</h3>
+                <p
+                  style="
+                    color: var(--color-text-secondary);
+                    margin-bottom: 2rem;
+                  "
+                >
+                  Upload a CSV file with your transaction data. The system will
+                  automatically map columns.
+                </p>
+
+                <div
+                  style="
+                    margin-bottom: 2rem;
+                    padding: 2rem;
+                    border: 2px dashed var(--color-border);
+                    border-radius: var(--radius-lg);
+                    text-align: center;
+                  "
+                >
+                  <div style="font-size: 3rem; margin-bottom: 1rem">📁</div>
+                  <h4 style="margin-bottom: 0.5rem">Drop CSV file here</h4>
+                  <p
+                    style="
+                      color: var(--color-text-secondary);
+                      margin-bottom: 1rem;
+                    "
+                  >
+                    or click to browse
+                  </p>
+                  <button class="btn btn--secondary">Choose File</button>
+                  <p
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-tertiary);
+                      margin-top: 1rem;
+                    "
+                  >
+                    Supported formats: CSV, TXT (max 10MB)
+                  </p>
+                </div>
+
+                <!-- CSV Column Mapping -->
+                <div class="import-preview">
+                  <div class="import-preview__header">
+                    <h4 class="import-preview__title">Column Mapping</h4>
+                  </div>
+                  <div style="padding: 1rem">
+                    <div
+                      style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                      "
+                    >
+                      <div>
+                        <label
+                          style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: var(--font-weight-medium);
+                          "
+                          >Date Column:</label
+                        >
+                        <select>
+                          <option value="date">Date</option>
+                          <option value="transaction_date">
+                            Transaction Date
+                          </option>
+                          <option value="posted_date">Posted Date</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label
+                          style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: var(--font-weight-medium);
+                          "
+                          >Amount Column:</label
+                        >
+                        <select>
+                          <option value="amount">Amount</option>
+                          <option value="transaction_amount">
+                            Transaction Amount
+                          </option>
+                          <option value="debit_amount">Debit Amount</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                      "
+                    >
+                      <div>
+                        <label
+                          style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: var(--font-weight-medium);
+                          "
+                          >Description Column:</label
+                        >
+                        <select>
+                          <option value="description">Description</option>
+                          <option value="merchant">Merchant</option>
+                          <option value="transaction_description">
+                            Transaction Description
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <label
+                          style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: var(--font-weight-medium);
+                          "
+                          >Account Column:</label
+                        >
+                        <select>
+                          <option value="account">Account</option>
+                          <option value="account_number">Account Number</option>
+                          <option value="card_number">Card Number</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CSV Preview -->
+                <div class="import-preview" style="margin-top: 2rem">
+                  <div class="import-preview__header">
+                    <h4 class="import-preview__title">
+                      CSV Preview (First 5 rows)
+                    </h4>
+                  </div>
+                  <table class="import-preview__table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Account</th>
+                        <th>Category</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2024-09-02</td>
+                        <td>SWIGGY</td>
+                        <td class="tabular-nums">-₹289.00</td>
+                        <td>HDFC CC</td>
+                        <td><span class="pill pill--food">Food</span></td>
+                      </tr>
+                      <tr>
+                        <td>2024-09-03</td>
+                        <td>OLA CABS</td>
+                        <td class="tabular-nums">-₹199.00</td>
+                        <td>UPI</td>
+                        <td>
+                          <span class="pill pill--transport">Transport</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2024-09-04</td>
+                        <td>AMAZON</td>
+                        <td class="tabular-nums">-₹1,299.00</td>
+                        <td>HDFC CC</td>
+                        <td>
+                          <span class="pill pill--shopping">Shopping</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2024-09-05</td>
+                        <td>ZOMATO</td>
+                        <td class="tabular-nums">-₹450.00</td>
+                        <td>HDFC CC</td>
+                        <td><span class="pill pill--food">Food</span></td>
+                      </tr>
+                      <tr>
+                        <td>2024-09-10</td>
+                        <td>ELECTRICITY BILL</td>
+                        <td class="tabular-nums">-₹1,200.00</td>
+                        <td>SBI Savings</td>
+                        <td><span class="pill pill--bills">Bills</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Import Actions -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Import Actions</h3>
+              <div
+                style="
+                  display: flex;
+                  gap: 1rem;
+                  flex-wrap: wrap;
+                  margin-bottom: 1rem;
+                "
+              >
+                <button class="btn">Import All (9 transactions)</button>
+                <button class="btn btn--secondary">Review & Edit</button>
+                <button class="btn btn--secondary">Skip Duplicates</button>
+                <button class="btn btn--secondary">Cancel</button>
+              </div>
+              <div
+                style="
+                  padding: 1rem;
+                  background: var(--color-accent-light);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-accent);
+                  "
+                >
+                  <strong>ℹ️ Note:</strong> All parsing happens locally on your
+                  device. No data is sent to external servers. Review the parsed
+                  transactions before importing to ensure accuracy.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

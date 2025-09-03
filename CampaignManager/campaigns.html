@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaigns - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <a href="campaign-new.html" class="btn btn--primary" type="button">
+              <span class="icon icon--plus" aria-hidden="true"></span>
+              Create Campaign
+            </a>
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print campaigns"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="campaigns.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="assets.html" class="nav__link">
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Campaigns</h2>
+          <p class="page-subtitle">Manage and track your marketing campaigns</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="card mb-6">
+          <div class="card__content">
+            <div class="grid grid-cols-4 gap-4">
+              <div>
+                <label for="filter-status" class="form-label">Status</label>
+                <select id="filter-status" class="form-select">
+                  <option value="">All Statuses</option>
+                  <option value="draft">Draft</option>
+                  <option value="scheduled">Scheduled</option>
+                  <option value="active">Active</option>
+                  <option value="completed">Completed</option>
+                  <option value="paused">Paused</option>
+                </select>
+              </div>
+              <div>
+                <label for="filter-channel" class="form-label">Channel</label>
+                <select id="filter-channel" class="form-select">
+                  <option value="">All Channels</option>
+                  <option value="email">Email</option>
+                  <option value="sms">SMS</option>
+                  <option value="both">Both</option>
+                </select>
+              </div>
+              <div>
+                <label for="filter-date" class="form-label">Date Range</label>
+                <select id="filter-date" class="form-select">
+                  <option value="">All Time</option>
+                  <option value="today">Today</option>
+                  <option value="week">This Week</option>
+                  <option value="month">This Month</option>
+                  <option value="quarter">This Quarter</option>
+                </select>
+              </div>
+              <div>
+                <label for="filter-search" class="form-label">Search</label>
+                <input
+                  type="text"
+                  id="filter-search"
+                  class="form-input"
+                  placeholder="Campaign name..."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campaigns Table -->
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Channel</th>
+                <th>Status</th>
+                <th>Sent</th>
+                <th>Open</th>
+                <th>Click</th>
+                <th>Created</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Spring Sale Teaser</strong>
+                    <span class="text-muted">Product Launch</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--email">Email</span>
+                </td>
+                <td>
+                  <span class="badge badge--completed">Completed</span>
+                </td>
+                <td class="text-numeric">45,120</td>
+                <td class="text-numeric">38.0%</td>
+                <td class="text-numeric">8.4%</td>
+                <td class="text-numeric">Mar 15, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      View
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Report
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Cart Nudge Day-2</strong>
+                    <span class="text-muted">Abandoned Cart</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--sms">SMS</span>
+                </td>
+                <td>
+                  <span class="badge badge--scheduled">Scheduled</span>
+                </td>
+                <td class="text-numeric">12,340</td>
+                <td class="text-numeric">—</td>
+                <td class="text-numeric">—</td>
+                <td class="text-numeric">Mar 18, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Edit
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Cancel
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Onboarding Step 1</strong>
+                    <span class="text-muted">Welcome Series</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--email">Email</span>
+                </td>
+                <td>
+                  <span class="badge badge--active">Active</span>
+                </td>
+                <td class="text-numeric">3,200/day</td>
+                <td class="text-numeric">42.0%</td>
+                <td class="text-numeric">6.7%</td>
+                <td class="text-numeric">Mar 10, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Pause
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Report
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Weekly Newsletter</strong>
+                    <span class="text-muted">Content Marketing</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--email">Email</span>
+                </td>
+                <td>
+                  <span class="badge badge--completed">Completed</span>
+                </td>
+                <td class="text-numeric">28,450</td>
+                <td class="text-numeric">34.2%</td>
+                <td class="text-numeric">5.8%</td>
+                <td class="text-numeric">Mar 12, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      View
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Report
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Flash Sale Alert</strong>
+                    <span class="text-muted">Promotional</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="flex gap-1">
+                    <span class="badge badge--email">Email</span>
+                    <span class="badge badge--sms">SMS</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--draft">Draft</span>
+                </td>
+                <td class="text-numeric">—</td>
+                <td class="text-numeric">—</td>
+                <td class="text-numeric">—</td>
+                <td class="text-numeric">Mar 20, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Edit
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Product Launch Announcement</strong>
+                    <span class="text-muted">Product Launch</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--email">Email</span>
+                </td>
+                <td>
+                  <span class="badge badge--completed">Completed</span>
+                </td>
+                <td class="text-numeric">52,890</td>
+                <td class="text-numeric">41.3%</td>
+                <td class="text-numeric">9.2%</td>
+                <td class="text-numeric">Mar 8, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      View
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Report
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="campaign-info">
+                    <strong>Birthday Special</strong>
+                    <span class="text-muted">Customer Retention</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge badge--email">Email</span>
+                </td>
+                <td>
+                  <span class="badge badge--paused">Paused</span>
+                </td>
+                <td class="text-numeric">1,250</td>
+                <td class="text-numeric">45.6%</td>
+                <td class="text-numeric">12.3%</td>
+                <td class="text-numeric">Mar 5, 2024</td>
+                <td>
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Resume
+                    </button>
+                    <button class="btn btn--ghost btn--small" type="button">
+                      Report
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-between items-center mt-6">
+          <div class="text-muted">Showing 1-7 of 7 campaigns</div>
+          <div class="flex gap-2">
+            <button class="btn btn--ghost btn--small" type="button" disabled>
+              Previous
+            </button>
+            <button class="btn btn--primary btn--small" type="button">1</button>
+            <button class="btn btn--ghost btn--small" type="button" disabled>
+              Next
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

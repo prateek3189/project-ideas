@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assets - Campaign Manager</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="icon icon--plane" aria-hidden="true"></span>
+            Campaign Manager
+          </h1>
+          <div class="header__actions">
+            <button class="btn btn--primary" type="button">
+              <span class="icon icon--plus" aria-hidden="true"></span>
+              Upload Asset
+            </button>
+            <button
+              class="btn btn--ghost"
+              type="button"
+              aria-label="Print assets"
+            >
+              <span class="icon icon--print" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="app-sidebar">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="icon icon--dashboard" aria-hidden="true"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="campaigns.html" class="nav__link">
+              <span class="icon icon--campaign" aria-hidden="true"></span>
+              Campaigns
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="reports.html" class="nav__link">
+              <span class="icon icon--chart" aria-hidden="true"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="journeys.html" class="nav__link">
+              <span class="icon icon--journey" aria-hidden="true"></span>
+              Journeys
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="audiences.html" class="nav__link">
+              <span class="icon icon--audience" aria-hidden="true"></span>
+              Audiences
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="templates.html" class="nav__link">
+              <span class="icon icon--template" aria-hidden="true"></span>
+              Templates
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="assets.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="icon icon--asset" aria-hidden="true"></span>
+              Assets
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="icon icon--settings" aria-hidden="true"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button
+            class="btn btn--ghost btn--small"
+            type="button"
+            aria-label="Toggle theme"
+          >
+            <span class="icon icon--theme" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Assets</h2>
+          <p class="page-subtitle">Manage your brand assets and media files</p>
+        </div>
+
+        <!-- Asset Categories -->
+        <div class="tabs mb-6">
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <a href="#images" class="tabs__link tabs__link--active">Images</a>
+            </li>
+            <li class="tabs__item">
+              <a href="#brand-kit" class="tabs__link">Brand Kit</a>
+            </li>
+            <li class="tabs__item">
+              <a href="#documents" class="tabs__link">Documents</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Images -->
+        <div class="tabs__content">
+          <div class="card mb-6">
+            <div class="card__content">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h4 class="font-semibold mb-2">Upload Images</h4>
+                  <p class="text-muted text-sm">
+                    Drag and drop images or click to browse
+                  </p>
+                </div>
+                <div class="flex gap-3">
+                  <button class="btn btn--secondary btn--small" type="button">
+                    Browse Files
+                  </button>
+                  <button class="btn btn--primary btn--small" type="button">
+                    Upload
+                  </button>
+                </div>
+              </div>
+              <div class="upload-area mt-4">
+                <div class="upload-area__content">
+                  <span class="icon icon--upload" aria-hidden="true"></span>
+                  <p>Drop images here or click to browse</p>
+                  <p class="text-muted text-sm">
+                    Supports JPG, PNG, GIF up to 10MB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-4">
+            <div class="asset-card">
+              <div class="asset-card__preview">
+                <div class="image-placeholder">
+                  <span>Hero Image</span>
+                </div>
+              </div>
+              <div class="asset-card__content">
+                <h5 class="asset-card__title">hero-banner.jpg</h5>
+                <p class="asset-card__meta">2.3 MB • 1200x600</p>
+                <div class="flex gap-2 mt-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="asset-card">
+              <div class="asset-card__preview">
+                <div class="image-placeholder">
+                  <span>Product 1</span>
+                </div>
+              </div>
+              <div class="asset-card__content">
+                <h5 class="asset-card__title">product-1.png</h5>
+                <p class="asset-card__meta">1.8 MB • 800x800</p>
+                <div class="flex gap-2 mt-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="asset-card">
+              <div class="asset-card__preview">
+                <div class="image-placeholder">
+                  <span>Product 2</span>
+                </div>
+              </div>
+              <div class="asset-card__content">
+                <h5 class="asset-card__title">product-2.png</h5>
+                <p class="asset-card__meta">1.5 MB • 800x800</p>
+                <div class="flex gap-2 mt-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="asset-card">
+              <div class="asset-card__preview">
+                <div class="image-placeholder">
+                  <span>Logo</span>
+                </div>
+              </div>
+              <div class="asset-card__content">
+                <h5 class="asset-card__title">logo.png</h5>
+                <p class="asset-card__meta">245 KB • 400x200</p>
+                <div class="flex gap-2 mt-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="asset-card">
+              <div class="asset-card__preview">
+                <div class="image-placeholder">
+                  <span>Icon</span>
+                </div>
+              </div>
+              <div class="asset-card__content">
+                <h5 class="asset-card__title">icon-sale.png</h5>
+                <p class="asset-card__meta">89 KB • 200x200</p>
+                <div class="flex gap-2 mt-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="asset-card">
+              <div class="asset-card__preview">
+                <div class="image-placeholder">
+                  <span>Background</span>
+                </div>
+              </div>
+              <div class="asset-card__content">
+                <h5 class="asset-card__title">bg-pattern.jpg</h5>
+                <p class="asset-card__meta">3.2 MB • 1920x1080</p>
+                <div class="flex gap-2 mt-2">
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Use
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Edit
+                  </button>
+                  <button class="btn btn--ghost btn--small" type="button">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Kit -->
+        <div class="tabs__content" style="display: none">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Brand Colors</h4>
+              </div>
+              <div class="card__content">
+                <div class="color-palette">
+                  <div class="color-item">
+                    <div
+                      class="color-swatch"
+                      style="background-color: #2563eb"
+                    ></div>
+                    <div class="color-info">
+                      <div class="color-name">Primary Blue</div>
+                      <div class="color-value">#2563EB</div>
+                    </div>
+                  </div>
+                  <div class="color-item">
+                    <div
+                      class="color-swatch"
+                      style="background-color: #16a34a"
+                    ></div>
+                    <div class="color-info">
+                      <div class="color-name">Success Green</div>
+                      <div class="color-value">#16A34A</div>
+                    </div>
+                  </div>
+                  <div class="color-item">
+                    <div
+                      class="color-swatch"
+                      style="background-color: #f59e0b"
+                    ></div>
+                    <div class="color-info">
+                      <div class="color-name">Warning Orange</div>
+                      <div class="color-value">#F59E0B</div>
+                    </div>
+                  </div>
+                  <div class="color-item">
+                    <div
+                      class="color-swatch"
+                      style="background-color: #dc2626"
+                    ></div>
+                    <div class="color-info">
+                      <div class="color-name">Danger Red</div>
+                      <div class="color-value">#DC2626</div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn--secondary btn--small mt-4"
+                  type="button"
+                >
+                  Edit Colors
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Typography</h4>
+              </div>
+              <div class="card__content">
+                <div class="typography-samples">
+                  <div class="typography-item">
+                    <div
+                      class="typography-sample"
+                      style="font-size: 2rem; font-weight: bold"
+                    >
+                      Heading 1
+                    </div>
+                    <div class="typography-meta">Inter Bold, 32px</div>
+                  </div>
+                  <div class="typography-item">
+                    <div
+                      class="typography-sample"
+                      style="font-size: 1.5rem; font-weight: 600"
+                    >
+                      Heading 2
+                    </div>
+                    <div class="typography-meta">Inter Semibold, 24px</div>
+                  </div>
+                  <div class="typography-item">
+                    <div
+                      class="typography-sample"
+                      style="font-size: 1.25rem; font-weight: 600"
+                    >
+                      Heading 3
+                    </div>
+                    <div class="typography-meta">Inter Semibold, 20px</div>
+                  </div>
+                  <div class="typography-item">
+                    <div class="typography-sample" style="font-size: 1rem">
+                      Body Text
+                    </div>
+                    <div class="typography-meta">Inter Regular, 16px</div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn--secondary btn--small mt-4"
+                  type="button"
+                >
+                  Edit Typography
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Logo Variations</h4>
+              </div>
+              <div class="card__content">
+                <div class="logo-grid">
+                  <div class="logo-item">
+                    <div class="logo-preview">
+                      <span>Logo Light</span>
+                    </div>
+                    <div class="logo-meta">logo-light.png</div>
+                  </div>
+                  <div class="logo-item">
+                    <div class="logo-preview">
+                      <span>Logo Dark</span>
+                    </div>
+                    <div class="logo-meta">logo-dark.png</div>
+                  </div>
+                  <div class="logo-item">
+                    <div class="logo-preview">
+                      <span>Logo Icon</span>
+                    </div>
+                    <div class="logo-meta">logo-icon.png</div>
+                  </div>
+                  <div class="logo-item">
+                    <div class="logo-preview">
+                      <span>Logo Full</span>
+                    </div>
+                    <div class="logo-meta">logo-full.png</div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn--secondary btn--small mt-4"
+                  type="button"
+                >
+                  Upload Logos
+                </button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4 class="card__title">Brand Guidelines</h4>
+              </div>
+              <div class="card__content">
+                <div class="brand-guidelines">
+                  <h5 class="font-semibold mb-3">Usage Rules</h5>
+                  <ul class="space-y-2 text-sm">
+                    <li>• Maintain minimum clear space around logo</li>
+                    <li>• Use approved color combinations only</li>
+                    <li>• Follow typography hierarchy</li>
+                    <li>• Ensure sufficient contrast ratios</li>
+                    <li>• Use high-resolution images only</li>
+                  </ul>
+                  <h5 class="font-semibold mb-3 mt-4">File Formats</h5>
+                  <ul class="space-y-2 text-sm">
+                    <li>• PNG for logos with transparency</li>
+                    <li>• JPG for photographs</li>
+                    <li>• SVG for scalable graphics</li>
+                    <li>• PDF for print materials</li>
+                  </ul>
+                </div>
+                <button
+                  class="btn btn--secondary btn--small mt-4"
+                  type="button"
+                >
+                  Download Guidelines
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documents -->
+        <div class="tabs__content" style="display: none">
+          <div class="card mb-6">
+            <div class="card__content">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h4 class="font-semibold mb-2">Upload Documents</h4>
+                  <p class="text-muted text-sm">
+                    Upload PDFs, Word docs, and other files
+                  </p>
+                </div>
+                <div class="flex gap-3">
+                  <button class="btn btn--secondary btn--small" type="button">
+                    Browse Files
+                  </button>
+                  <button class="btn btn--primary btn--small" type="button">
+                    Upload
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Size</th>
+                  <th>Uploaded</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="file-info">
+                      <strong>Brand Guidelines.pdf</strong>
+                      <span class="text-muted"
+                        >Official brand guidelines document</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--default">PDF</span>
+                  </td>
+                  <td class="text-numeric">2.4 MB</td>
+                  <td class="text-numeric">Mar 15, 2024</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn btn--ghost btn--small" type="button">
+                        Download
+                      </button>
+                      <button class="btn btn--ghost btn--small" type="button">
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="file-info">
+                      <strong>Email Templates.docx</strong>
+                      <span class="text-muted"
+                        >Word document with email templates</span
+                      >
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--default">DOCX</span>
+                  </td>
+                  <td class="text-numeric">1.8 MB</td>
+                  <td class="text-numeric">Mar 12, 2024</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn btn--ghost btn--small" type="button">
+                        Download
+                      </button>
+                      <button class="btn btn--ghost btn--small" type="button">
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="file-info">
+                      <strong>Product Catalog.pdf</strong>
+                      <span class="text-muted">Complete product catalog</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--default">PDF</span>
+                  </td>
+                  <td class="text-numeric">15.2 MB</td>
+                  <td class="text-numeric">Mar 10, 2024</td>
+                  <td>
+                    <div class="flex gap-2">
+                      <button class="btn btn--ghost btn--small" type="button">
+                        Download
+                      </button>
+                      <button class="btn btn--ghost btn--small" type="button">
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Storage Usage -->
+        <section class="mt-8">
+          <div class="card">
+            <div class="card__header">
+              <h4 class="card__title">Storage Usage</h4>
+            </div>
+            <div class="card__content">
+              <div class="storage-info">
+                <div class="flex justify-between items-center mb-4">
+                  <div>
+                    <div class="text-numeric text-2xl font-bold">2.4 GB</div>
+                    <div class="text-muted text-sm">Used of 10 GB</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-numeric text-lg">24%</div>
+                    <div class="text-muted text-sm">Used</div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress__bar" style="width: 24%"></div>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="text-sm text-muted">
+                    <div>Images: 1.8 GB</div>
+                    <div>Documents: 0.6 GB</div>
+                  </div>
+                  <button class="btn btn--secondary btn--small" type="button">
+                    Upgrade Storage
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2024 Campaign Manager v0.1</p>
+          <nav class="footer__nav">
+            <a href="about.html">About</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" aria-label="Help">Help</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

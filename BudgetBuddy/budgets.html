@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Budgets</title>
+    <meta
+      name="description"
+      content="Track and manage your spending budgets across different categories"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Report</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a
+                  href="budgets.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Budgets</h1>
+            <p class="main__subtitle">
+              Track your spending limits and stay on budget
+            </p>
+          </div>
+
+          <!-- Budget Summary -->
+          <div class="dashboard-section">
+            <div class="dashboard-grid">
+              <div class="tile tile--success">
+                <div class="tile__header">
+                  <h3 class="tile__title">Total Budget</h3>
+                  <span class="tile__icon">🎯</span>
+                </div>
+                <div class="tile__value tabular-nums">₹21,500</div>
+                <div class="tile__subtitle">8 categories</div>
+              </div>
+
+              <div class="tile tile--spend">
+                <div class="tile__header">
+                  <h3 class="tile__title">Total Spent</h3>
+                  <span class="tile__icon">💸</span>
+                </div>
+                <div class="tile__value tabular-nums">₹15,370</div>
+                <div class="tile__subtitle">71% of budget</div>
+              </div>
+
+              <div class="tile tile--income">
+                <div class="tile__header">
+                  <h3 class="tile__title">Remaining</h3>
+                  <span class="tile__icon">💰</span>
+                </div>
+                <div class="tile__value tabular-nums">₹6,130</div>
+                <div class="tile__subtitle">29% left</div>
+              </div>
+
+              <div class="tile tile--warning">
+                <div class="tile__header">
+                  <h3 class="tile__title">Days Left</h3>
+                  <span class="tile__icon">📅</span>
+                </div>
+                <div class="tile__value tabular-nums">6</div>
+                <div class="tile__subtitle">in September</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Budget Categories -->
+          <div class="dashboard-section">
+            <div class="budget-layout">
+              <!-- Food & Dining -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">🍕 Food & Dining</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹5,760 / ₹8,000
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-warning);
+                      width: 72%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹2,240 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--negative"
+                    >72% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (12)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>SWIGGY</span>
+                      <span class="tabular-nums">-₹289</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>ZOMATO</span>
+                      <span class="tabular-nums">-₹450</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>DOMINOS</span>
+                      <span class="tabular-nums">-₹380</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>BIG BAZAAR</span>
+                      <span class="tabular-nums">-₹1,240</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹5,760</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Transport -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">🚗 Transport</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹2,220 / ₹3,000
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-warning);
+                      width: 74%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹780 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--negative"
+                    >74% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (8)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>OLA CABS</span>
+                      <span class="tabular-nums">-₹199</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>UBER</span>
+                      <span class="tabular-nums">-₹156</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>PETROL PUMP</span>
+                      <span class="tabular-nums">-₹1,200</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹2,220</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Shopping -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">🛍️ Shopping</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹1,299 / ₹4,000
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-success);
+                      width: 32%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹2,701 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--positive"
+                    >32% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (5)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>AMAZON</span>
+                      <span class="tabular-nums">-₹1,299</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>FLIPKART</span>
+                      <span class="tabular-nums">-₹2,600</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹3,899</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Bills & Utilities -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">⚡ Bills & Utilities</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹4,100 / ₹6,500
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-success);
+                      width: 63%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹2,400 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--positive"
+                    >63% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (3)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>ELECTRICITY BILL</span>
+                      <span class="tabular-nums">-₹2,100</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>INTERNET BILL</span>
+                      <span class="tabular-nums">-₹1,200</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹4,100</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Entertainment -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">🎬 Entertainment</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹799 / ₹2,000
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-success);
+                      width: 40%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹1,201 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--positive"
+                    >40% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (1)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>NETFLIX</span>
+                      <span class="tabular-nums">-₹799</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹799</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Health -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">💊 Health</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹320 / ₹1,500
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-success);
+                      width: 21%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹1,180 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--positive"
+                    >21% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (1)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>MEDICAL STORE</span>
+                      <span class="tabular-nums">-₹320</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹320</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Education -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">📚 Education</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹650 / ₹2,000
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-success);
+                      width: 33%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹1,350 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--positive"
+                    >33% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (1)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>BOOKSTORE</span>
+                      <span class="tabular-nums">-₹650</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹650</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Other -->
+              <div class="budget-category">
+                <div class="budget-category__header">
+                  <div class="budget-category__name">💰 Other</div>
+                  <div class="budget-category__amount tabular-nums">
+                    ₹622 / ₹1,000
+                  </div>
+                </div>
+                <div
+                  class="budget-category__progress"
+                  style="
+                    height: 20px;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div
+                    style="
+                      height: 100%;
+                      background: var(--color-warning);
+                      width: 62%;
+                      border-radius: var(--radius-full);
+                    "
+                  ></div>
+                </div>
+                <div class="budget-category__details">
+                  <span>₹378 remaining</span>
+                  <span class="cashflow-badge cashflow-badge--negative"
+                    >62% used</span
+                  >
+                </div>
+                <details style="margin-top: 1rem">
+                  <summary
+                    style="
+                      cursor: pointer;
+                      font-weight: var(--font-weight-medium);
+                      color: var(--color-accent);
+                    "
+                  >
+                    View transactions (2)
+                  </summary>
+                  <div
+                    style="
+                      margin-top: 1rem;
+                      padding: 1rem;
+                      background: var(--color-bg-tertiary);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 0.5rem;
+                      "
+                    >
+                      <span>Miscellaneous</span>
+                      <span class="tabular-nums">-₹622</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        font-weight: var(--font-weight-semibold);
+                        border-top: 1px solid var(--color-border);
+                        padding-top: 0.5rem;
+                      "
+                    >
+                      <span>Total</span>
+                      <span class="tabular-nums">-₹622</span>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- Budget Actions -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Budget Management</h3>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+                <button class="btn">Set New Budget</button>
+                <button class="btn btn--secondary">Edit Categories</button>
+                <button class="btn btn--secondary">Budget History</button>
+                <button class="btn btn--secondary">Export Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

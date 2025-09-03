@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyperlocal Community - Home</title>
+    <meta
+      name="description"
+      content="Connect with neighbors for events, item exchanges, and carpooling in your local community."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__brand">
+          <div class="header__logo">H</div>
+          <h1 class="header__title">Hyperlocal Community</h1>
+        </a>
+
+        <div class="header__actions">
+          <div class="header__search">
+            <span class="header__search-icon">🔍</span>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search events, items, rides..."
+              aria-label="Search"
+            />
+          </div>
+
+          <div class="header__neighborhood">
+            <span>📍</span>
+            <span>Maple Gardens</span>
+          </div>
+
+          <a href="#print" class="header__print-btn" onclick="window.print()"
+            >🖨️ Print</a
+          >
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a
+            href="index.html"
+            class="sidebar__nav-item sidebar__nav-item--active"
+          >
+            <span class="sidebar__nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="events.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📅</span>
+            <span>Events</span>
+          </a>
+          <a href="items.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">📦</span>
+            <span>Items</span>
+          </a>
+          <a href="carpool.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🚗</span>
+            <span>Carpool</span>
+          </a>
+          <a href="groups.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👥</span>
+            <span>Groups</span>
+          </a>
+          <a href="messages.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">💬</span>
+            <span>Messages</span>
+          </a>
+          <a href="profile.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <div class="sidebar__nav">
+          <a href="moderation.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">🛡️</span>
+            <span>Safety & Rules</span>
+          </a>
+          <a href="settings.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">⚙️</span>
+            <span>Settings</span>
+          </a>
+          <a href="about.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </div>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">☀️</span>
+          <span>Light Theme</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main">
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1 class="page-title">Community Feed</h1>
+          <p class="page-subtitle">
+            Discover events, items, and rides in your neighborhood
+          </p>
+        </div>
+
+        <!-- Safety Alert -->
+        <div class="alert alert--safety">
+          <div class="alert__title">Safety First</div>
+          <div class="alert__content">
+            Meet in public places. Share only what you're comfortable sharing.
+            Complete <strong>Phone</strong> and
+            <strong>Residence</strong> checks to earn a Verified badge.
+          </div>
+        </div>
+
+        <!-- Feed Filters -->
+        <div class="feed-filters">
+          <div class="feed-filters__left">
+            <div class="filter-pills">
+              <a href="#" class="filter-pill filter-pill--active">All</a>
+              <a href="#" class="filter-pill">Events</a>
+              <a href="#" class="filter-pill">Items</a>
+              <a href="#" class="filter-pill">Rides</a>
+              <a href="#" class="filter-pill">Groups</a>
+            </div>
+          </div>
+
+          <div class="feed-filters__right">
+            <div class="feed-sort">
+              <label class="feed-sort__label" for="sort-select">Sort by:</label>
+              <select id="sort-select" class="feed-sort__select">
+                <option value="new">Newest</option>
+                <option value="near">Nearest</option>
+                <option value="popular">Most Popular</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feed Grid -->
+        <div class="feed-grid">
+          <!-- Event Card -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">📅</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Weekend Park Clean-up</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums">Sat 7:30 AM</span>
+                <span class="chip chip--distance">0.8 km</span>
+                <span class="chip chip--default">Social</span>
+                <span class="chip chip--default">Kids</span>
+              </div>
+              <p class="feed-card__description">
+                Join us for a community clean-up at Central Park. Bring gloves
+                and water bottles. All ages welcome!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">SM</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Sarah M.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="events.html" class="btn btn--sm btn--primary"
+                  >View Event</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Item Card -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">📚</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Children's Storybooks</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--trust">Giveaway</span>
+                <span class="chip chip--default">Good</span>
+                <span class="chip chip--distance">0.3 km</span>
+                <span class="chip chip--default">Kids</span>
+              </div>
+              <p class="feed-card__description">
+                Collection of 15 children's books in good condition. Perfect for
+                ages 3-8. Pickup at Gate 2.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">RJ</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Raj K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Ride Card -->
+          <article class="feed-card feed-card--ride">
+            <div class="feed-card__image">🚗</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Maple Apts → Tech Park</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums">8:30 AM</span>
+                <span class="chip chip--distance">2.1 km</span>
+                <span class="chip chip--default">2 seats</span>
+                <span class="chip chip--default">Share fuel</span>
+              </div>
+              <p class="feed-card__description">
+                Daily commute to Tech Park. Pickup from Maple Apts lobby. Mask
+                required, no pets.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">AP</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Amit P.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--driver">Safe Driver</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="carpool.html" class="btn btn--sm btn--primary"
+                  >Join Ride</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Group Card -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">👥</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Runners Club</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">45 members</span>
+                <span class="chip chip--distance">0.5 km</span>
+                <span class="chip chip--default">Fitness</span>
+              </div>
+              <p class="feed-card__description">
+                Morning runs every Tuesday & Thursday at 6 AM. All fitness
+                levels welcome!
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">LK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Lisa K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="groups.html" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- More Event Card -->
+          <article class="feed-card feed-card--event">
+            <div class="feed-card__image">🌱</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Weekend Farmers' Market</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums">Sun 9:00 AM</span>
+                <span class="chip chip--distance">1.2 km</span>
+                <span class="chip chip--default">Food</span>
+                <span class="chip chip--default">Local</span>
+              </div>
+              <p class="feed-card__description">
+                Fresh local produce, homemade goods, and community vendors.
+                Every Sunday morning at Lot B.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">MG</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Maria G.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--helper">Helper</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="events.html" class="btn btn--sm btn--primary"
+                  >View Event</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- More Item Card -->
+          <article class="feed-card feed-card--item">
+            <div class="feed-card__image">🔧</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Drill Machine</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--warning">Borrow</span>
+                <span class="chip chip--default">2 days</span>
+                <span class="chip chip--distance">0.7 km</span>
+                <span class="chip chip--deposit">₹500 deposit</span>
+              </div>
+              <p class="feed-card__description">
+                Cordless drill machine available for 2-day rental. Refundable
+                deposit required. Good condition.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">VS</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Vikram S.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="item-detail.html" class="btn btn--sm btn--primary"
+                  >View Item</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- More Ride Card -->
+          <article class="feed-card feed-card--ride">
+            <div class="feed-card__image">🚌</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">School Drop Request</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--time tabular-nums">7:45 AM</span>
+                <span class="chip chip--distance">1.5 km</span>
+                <span class="chip chip--default">1 seat</span>
+                <span class="chip chip--default">Child seat</span>
+              </div>
+              <p class="feed-card__description">
+                Need ride to Sunshine High School. Child seat available? Willing
+                to share fuel costs.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">PN</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">Priya N.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--phone">Phone ✓</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="carpool.html" class="btn btn--sm btn--primary"
+                  >Offer Ride</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- More Group Card -->
+          <article class="feed-card feed-card--group">
+            <div class="feed-card__image">🐕</div>
+            <div class="feed-card__content">
+              <h3 class="feed-card__title">Pets & Pawrents</h3>
+              <div class="feed-card__meta">
+                <span class="chip chip--default">60 members</span>
+                <span class="chip chip--distance">0.9 km</span>
+                <span class="chip chip--default">Pets</span>
+              </div>
+              <p class="feed-card__description">
+                Pet owners community. Playdates, vet recommendations, and pet
+                care tips.
+              </p>
+              <div class="feed-card__footer">
+                <div class="profile-chip">
+                  <div class="profile-chip__avatar">DK</div>
+                  <div class="profile-chip__info">
+                    <div class="profile-chip__name">David K.</div>
+                    <div class="profile-chip__badges">
+                      <span class="badge badge--verified">✓ Verified</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="groups.html" class="btn btn--sm btn--primary"
+                  >Join Group</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Hyperlocal Community — v0.1 | <a href="about.html">About</a> |
+          <a href="moderation.html">Safety</a> |
+          <a href="settings.html">Settings</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Print Header (hidden by default) -->
+    <div class="print-header no-print">
+      <h1 class="print-header__title">Community Bulletin</h1>
+      <p class="print-header__subtitle">Maple Gardens Neighborhood</p>
+      <p class="print-header__date">
+        Generated on <span id="print-date"></span>
+      </p>
+    </div>
+
+    <!-- Print Footer (hidden by default) -->
+    <div class="print-footer no-print">
+      <div class="print-footer__page"></div>
+      <div class="print-footer__app">Hyperlocal Community — v0.1</div>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme") || "light";
+        const themes = ["light", "dark", "high-contrast"];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+
+        html.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[nextTheme].split(" ")[0]
+        }</span><span>${themeNames[nextTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update button text
+        const button = document.querySelector(".sidebar__theme-toggle");
+        const themeNames = {
+          light: "☀️ Light Theme",
+          dark: "🌙 Dark Theme",
+          "high-contrast": "🔍 High Contrast",
+        };
+        button.innerHTML = `<span class="sidebar__nav-icon">${
+          themeNames[savedTheme].split(" ")[0]
+        }</span><span>${themeNames[savedTheme]
+          .split(" ")
+          .slice(1)
+          .join(" ")}</span>`;
+
+        // Set print date
+        document.getElementById("print-date").textContent =
+          new Date().toLocaleDateString();
+      });
+    </script>
+  </body>
+</html>

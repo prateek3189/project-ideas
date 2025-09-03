@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Homework Assistant - Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">AI Homework Assistant</h1>
+          <div class="header__search">
+            <input
+              type="search"
+              placeholder="Search subjects, topics..."
+              class="search-input"
+              disabled
+            />
+            <button class="search-button" disabled>🔍</button>
+          </div>
+          <div class="header__actions">
+            <button class="profile-chip">
+              <span class="profile-chip__avatar">👤</span>
+              <span class="profile-chip__name">Student</span>
+            </button>
+            <button class="print-link" onclick="window.print()">
+              🖨️ Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li class="nav-list__item nav-list__item--active">
+              <a href="index.html" class="nav-link">📊 Dashboard</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="subjects.html" class="nav-link">📚 Subjects</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="worksheets.html" class="nav-link">📝 Worksheets</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="progress.html" class="nav-link">📈 Progress</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="settings.html" class="nav-link">⚙️ Settings</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="about.html" class="nav-link">ℹ️ About</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar__subjects">
+          <h3 class="sidebar__subjects-title">Quick Subjects</h3>
+          <div class="subject-chips">
+            <span class="subject-chip">Math</span>
+            <span class="subject-chip">Science</span>
+            <span class="subject-chip">Literature</span>
+            <span class="subject-chip">History</span>
+            <span class="subject-chip">CS</span>
+          </div>
+        </div>
+
+        <div class="sidebar__theme">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="dashboard">
+          <!-- Welcome Section -->
+          <section class="welcome-section">
+            <h2 class="welcome-section__title">
+              Welcome back! Let's continue learning.
+            </h2>
+            <p class="welcome-section__subtitle">
+              Pick up where you left off or start something new.
+            </p>
+          </section>
+
+          <!-- Continue Learning -->
+          <section class="continue-learning">
+            <h3 class="section-title">Continue Learning</h3>
+            <div class="continue-card">
+              <div class="continue-card__content">
+                <div class="continue-card__subject">Algebra</div>
+                <div class="continue-card__topic">Linear Equations</div>
+                <div class="continue-card__problem">
+                  Problem #12: Solve for x: 3x + 5 = 20
+                </div>
+                <div class="continue-card__progress">
+                  <span class="progress-text">Step 2 of 3</span>
+                  <div class="progress-bar">
+                    <div class="progress-bar__fill" style="width: 66%"></div>
+                  </div>
+                </div>
+              </div>
+              <a href="workspace.html" class="continue-card__button">Resume</a>
+            </div>
+          </section>
+
+          <!-- Quick Start -->
+          <section class="quick-start">
+            <h3 class="section-title">Quick Start</h3>
+            <div class="subject-grid">
+              <div class="subject-card">
+                <div class="subject-card__icon">🔢</div>
+                <h4 class="subject-card__title">Mathematics</h4>
+                <p class="subject-card__description">
+                  Algebra, Geometry, Calculus
+                </p>
+                <a href="subjects.html#math" class="subject-card__button"
+                  >Start Practice</a
+                >
+              </div>
+              <div class="subject-card">
+                <div class="subject-card__icon">⚗️</div>
+                <h4 class="subject-card__title">Science</h4>
+                <p class="subject-card__description">
+                  Physics, Chemistry, Biology
+                </p>
+                <a href="subjects.html#science" class="subject-card__button"
+                  >Start Practice</a
+                >
+              </div>
+              <div class="subject-card">
+                <div class="subject-card__icon">📖</div>
+                <h4 class="subject-card__title">Literature</h4>
+                <p class="subject-card__description">
+                  Analysis, Writing, Grammar
+                </p>
+                <a href="subjects.html#literature" class="subject-card__button"
+                  >Start Practice</a
+                >
+              </div>
+              <div class="subject-card">
+                <div class="subject-card__icon">🏛️</div>
+                <h4 class="subject-card__title">History</h4>
+                <p class="subject-card__description">
+                  Events, Analysis, Research
+                </p>
+                <a href="subjects.html#history" class="subject-card__button"
+                  >Start Practice</a
+                >
+              </div>
+              <div class="subject-card">
+                <div class="subject-card__icon">💻</div>
+                <h4 class="subject-card__title">Computer Science</h4>
+                <p class="subject-card__description">
+                  Programming, Algorithms, Logic
+                </p>
+                <a href="subjects.html#cs" class="subject-card__button"
+                  >Start Practice</a
+                >
+              </div>
+            </div>
+          </section>
+
+          <!-- Weak Areas -->
+          <section class="weak-areas">
+            <h3 class="section-title">Focus Areas</h3>
+            <div class="weak-areas__grid">
+              <div class="weak-area-tile">
+                <div class="weak-area-tile__topic">Factoring Quadratics</div>
+                <div class="weak-area-tile__mastery">35%</div>
+                <div class="weak-area-tile__bar">
+                  <div
+                    class="weak-area-tile__bar-fill"
+                    style="width: 35%"
+                  ></div>
+                </div>
+              </div>
+              <div class="weak-area-tile">
+                <div class="weak-area-tile__topic">Thesis Statements</div>
+                <div class="weak-area-tile__mastery">40%</div>
+                <div class="weak-area-tile__bar">
+                  <div
+                    class="weak-area-tile__bar-fill"
+                    style="width: 40%"
+                  ></div>
+                </div>
+              </div>
+              <div class="weak-area-tile">
+                <div class="weak-area-tile__topic">Kinematics</div>
+                <div class="weak-area-tile__mastery">55%</div>
+                <div class="weak-area-tile__bar">
+                  <div
+                    class="weak-area-tile__bar-fill"
+                    style="width: 55%"
+                  ></div>
+                </div>
+              </div>
+              <div class="weak-area-tile">
+                <div class="weak-area-tile__topic">Linear Equations</div>
+                <div class="weak-area-tile__mastery">75%</div>
+                <div class="weak-area-tile__bar">
+                  <div
+                    class="weak-area-tile__bar-fill"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Study Streak -->
+          <section class="study-streak">
+            <h3 class="section-title">Study Streak</h3>
+            <div class="streak-display">
+              <div class="streak-display__current">
+                <span class="streak-display__number">7</span>
+                <span class="streak-display__label">days</span>
+              </div>
+              <div class="streak-display__calendar">
+                <div class="streak-day streak-day--active">M</div>
+                <div class="streak-day streak-day--active">T</div>
+                <div class="streak-day streak-day--active">W</div>
+                <div class="streak-day streak-day--active">T</div>
+                <div class="streak-day streak-day--active">F</div>
+                <div class="streak-day streak-day--active">S</div>
+                <div class="streak-day streak-day--active">S</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Recent Activity -->
+          <section class="recent-activity">
+            <h3 class="section-title">Recent Activity</h3>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-item__icon">✅</div>
+                <div class="activity-item__content">
+                  <div class="activity-item__title">
+                    Physics • Kinematics #3
+                  </div>
+                  <div class="activity-item__subtitle">
+                    Completed • 15 min ago
+                  </div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-item__icon">📝</div>
+                <div class="activity-item__content">
+                  <div class="activity-item__title">
+                    Literature • Thesis Analysis
+                  </div>
+                  <div class="activity-item__subtitle">
+                    In Progress • 1 hour ago
+                  </div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-item__icon">🔢</div>
+                <div class="activity-item__content">
+                  <div class="activity-item__title">Algebra • Factoring #8</div>
+                  <div class="activity-item__subtitle">
+                    Completed • 2 hours ago
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>
+            &copy; 2024 AI Homework Assistant. Built for learning, not cheating.
+          </p>
+          <p>
+            Version 1.0 • <a href="about.html">About</a> •
+            <a href="settings.html">Help</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

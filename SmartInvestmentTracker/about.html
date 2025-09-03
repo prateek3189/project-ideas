@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Investment Tracker - About</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Smart Investment Tracker</h1>
+        <div class="header__actions">
+          <div class="date-range">
+            <span class="date-range__label">As of:</span>
+            <span class="date-range__value">Dec 15, 2024</span>
+          </div>
+          <a href="#" class="btn btn--secondary" onclick="window.print()"
+            >Print Report</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <nav class="sidebar">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html" class="nav__link">Dashboard</a>
+        </li>
+        <li class="nav__item">
+          <a href="portfolio.html" class="nav__link">Portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="suggestions.html" class="nav__link">Suggestions</a>
+        </li>
+        <li class="nav__item">
+          <a href="markets.html" class="nav__link">Markets & Trends</a>
+        </li>
+        <li class="nav__item">
+          <a href="transactions.html" class="nav__link">Transactions</a>
+        </li>
+        <li class="nav__item">
+          <a href="goals.html" class="nav__link">Goals & Risk</a>
+        </li>
+        <li class="nav__item">
+          <a href="insights.html" class="nav__link">Insights</a>
+        </li>
+        <li class="nav__item">
+          <a href="settings.html" class="nav__link">Settings</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html" class="nav__link nav__link--active">About</a>
+        </li>
+      </ul>
+
+      <div class="theme-toggle">
+        <button class="theme-toggle__btn" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="page-header">
+        <h2 class="page-title">About Smart Investment Tracker</h2>
+        <p class="page-subtitle">
+          Educational investment portfolio management tool
+        </p>
+      </div>
+
+      <!-- Important Disclaimer -->
+      <section class="disclaimer-section">
+        <div class="alert alert--danger">
+          <h4>⚠️ Important Disclaimer</h4>
+          <p>
+            <strong
+              >This application is for educational purposes only and is not
+              investment advice.</strong
+            >
+            The information, suggestions, and analysis provided are for learning
+            and demonstration purposes. Always consult with a qualified
+            financial advisor before making investment decisions.
+          </p>
+        </div>
+      </section>
+
+      <!-- About the Application -->
+      <section class="about-application">
+        <h3 class="section-title">About This Application</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="about-content">
+              <p>
+                Smart Investment Tracker is a static HTML/CSS prototype designed
+                to demonstrate portfolio management concepts and investment
+                analysis techniques. This educational tool showcases:
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Portfolio Visualization:</strong> Asset allocation
+                  charts, performance metrics, and diversification analysis
+                </li>
+                <li>
+                  <strong>Risk Assessment:</strong> Concentration analysis,
+                  correlation studies, and risk scoring
+                </li>
+                <li>
+                  <strong>Rebalancing Suggestions:</strong> AI-style
+                  recommendations for portfolio optimization
+                </li>
+                <li>
+                  <strong>Market Analysis:</strong> Sector performance, factor
+                  analysis, and market sentiment indicators
+                </li>
+                <li>
+                  <strong>Goal Tracking:</strong> Financial goal setting and
+                  progress monitoring
+                </li>
+                <li>
+                  <strong>Transaction Management:</strong> Investment history
+                  and cost analysis
+                </li>
+              </ul>
+
+              <p>
+                This prototype uses static data and placeholder calculations to
+                illustrate investment management concepts. All data, prices, and
+                calculations are for demonstration purposes only.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Methodology -->
+      <section class="methodology">
+        <h3 class="section-title">Methodology & Calculations</h3>
+        <div class="two-column">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Portfolio Analysis</h4>
+            </div>
+            <div class="tile__content">
+              <div class="methodology-item">
+                <h5>Asset Allocation</h5>
+                <p>
+                  Calculated as percentage of total portfolio value. Target vs
+                  actual allocation drift is measured as the absolute difference
+                  between current and target percentages.
+                </p>
+              </div>
+
+              <div class="methodology-item">
+                <h5>Diversification Score</h5>
+                <p>
+                  Composite score (0-10) based on asset class diversity,
+                  geographic distribution, sector allocation, and individual
+                  holding concentration.
+                </p>
+              </div>
+
+              <div class="methodology-item">
+                <h5>Risk Assessment</h5>
+                <p>
+                  Evaluates concentration risk, correlation analysis, and
+                  volatility metrics to assess portfolio risk levels.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Rebalancing Logic</h4>
+            </div>
+            <div class="tile__content">
+              <div class="methodology-item">
+                <h5>Suggestion Generation</h5>
+                <p>
+                  AI-style suggestions are based on predefined rules for drift
+                  thresholds, concentration limits, and risk management
+                  principles.
+                </p>
+              </div>
+
+              <div class="methodology-item">
+                <h5>Impact Analysis</h5>
+                <p>
+                  Estimates the impact of rebalancing actions on risk, fees, and
+                  expected returns using simplified models.
+                </p>
+              </div>
+
+              <div class="methodology-item">
+                <h5>Tax Considerations</h5>
+                <p>
+                  Identifies potential tax implications of rebalancing actions,
+                  including capital gains and tax-loss harvesting opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Sources -->
+      <section class="data-sources">
+        <h3 class="section-title">Data Sources & Limitations</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="data-sources-content">
+              <h4>Static Data</h4>
+              <p>
+                This prototype uses static, placeholder data for demonstration
+                purposes. No real-time market data or live prices are used.
+              </p>
+
+              <h4>Sample Holdings</h4>
+              <p>
+                The portfolio includes sample holdings such as VTI, VXUS, BND,
+                and others for educational demonstration. These are not
+                recommendations.
+              </p>
+
+              <h4>Market Data</h4>
+              <p>
+                Market trends, sector performance, and economic indicators shown
+                are simplified placeholders and should not be used for actual
+                investment decisions.
+              </p>
+
+              <h4>Calculations</h4>
+              <p>
+                All calculations, including returns, correlations, and risk
+                metrics, are based on simplified models and placeholder data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="features">
+        <h3 class="section-title">Features & Capabilities</h3>
+        <div class="card-grid">
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Portfolio Dashboard</h4>
+            </div>
+            <div class="tile__content">
+              <ul>
+                <li>Total portfolio value tracking</li>
+                <li>Performance attribution analysis</li>
+                <li>Allocation drift monitoring</li>
+                <li>Diversification scoring</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Risk Management</h4>
+            </div>
+            <div class="tile__content">
+              <ul>
+                <li>Concentration risk analysis</li>
+                <li>Correlation studies</li>
+                <li>Risk band assessment</li>
+                <li>Volatility monitoring</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Rebalancing Tools</h4>
+            </div>
+            <div class="tile__content">
+              <ul>
+                <li>AI-style suggestions</li>
+                <li>Impact analysis</li>
+                <li>Tax considerations</li>
+                <li>Action planning</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Market Analysis</h4>
+            </div>
+            <div class="tile__content">
+              <ul>
+                <li>Sector performance heat maps</li>
+                <li>Factor analysis</li>
+                <li>Yield curve visualization</li>
+                <li>Market sentiment indicators</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Goal Tracking</h4>
+            </div>
+            <div class="tile__content">
+              <ul>
+                <li>Financial goal setting</li>
+                <li>Progress monitoring</li>
+                <li>Target allocation management</li>
+                <li>Investment policy statements</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__header">
+              <h4 class="tile__title">Analytics & Insights</h4>
+            </div>
+            <div class="tile__content">
+              <ul>
+                <li>Fee analysis</li>
+                <li>Tax efficiency tracking</li>
+                <li>Performance attribution</li>
+                <li>Transaction analysis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Details -->
+      <section class="technical-details">
+        <h3 class="section-title">Technical Implementation</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="technical-content">
+              <h4>Technology Stack</h4>
+              <ul>
+                <li>
+                  <strong>HTML5:</strong> Semantic markup with accessibility
+                  features
+                </li>
+                <li>
+                  <strong>CSS3:</strong> Modern styling with CSS Grid, Flexbox,
+                  and custom properties
+                </li>
+                <li>
+                  <strong>Design System:</strong> Consistent component library
+                  with BEM methodology
+                </li>
+                <li>
+                  <strong>Responsive Design:</strong> Mobile-first approach with
+                  breakpoint optimization
+                </li>
+                <li>
+                  <strong>Print Styles:</strong> Optimized layouts for portfolio
+                  reports
+                </li>
+              </ul>
+
+              <h4>Accessibility Features</h4>
+              <ul>
+                <li>WCAG 2.1 AA compliance</li>
+                <li>Keyboard navigation support</li>
+                <li>Screen reader compatibility</li>
+                <li>High contrast mode</li>
+                <li>Reduced motion support</li>
+              </ul>
+
+              <h4>Browser Support</h4>
+              <ul>
+                <li>Modern browsers (Chrome, Firefox, Safari, Edge)</li>
+                <li>CSS Grid and Flexbox support required</li>
+                <li>JavaScript-free implementation</li>
+                <li>Progressive enhancement approach</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Version Information -->
+      <section class="version-info">
+        <h3 class="section-title">Version Information</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="version-details">
+              <div class="version-item">
+                <span class="version-item__label">Version:</span>
+                <span class="version-item__value">0.1.0 (Prototype)</span>
+              </div>
+              <div class="version-item">
+                <span class="version-item__label">Release Date:</span>
+                <span class="version-item__value">December 2024</span>
+              </div>
+              <div class="version-item">
+                <span class="version-item__label">License:</span>
+                <span class="version-item__value">Educational Use Only</span>
+              </div>
+              <div class="version-item">
+                <span class="version-item__label">Status:</span>
+                <span class="version-item__value">Static Prototype</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Support -->
+      <section class="contact-support">
+        <h3 class="section-title">Contact & Support</h3>
+        <div class="tile">
+          <div class="tile__content">
+            <div class="contact-content">
+              <p>
+                This is an educational prototype. For questions about investment
+                management concepts or portfolio analysis techniques, consult
+                with qualified financial professionals.
+              </p>
+
+              <div class="contact-info">
+                <h4>Educational Resources</h4>
+                <ul>
+                  <li>Financial Planning Association (FPA)</li>
+                  <li>CFA Institute</li>
+                  <li>Investment Company Institute (ICI)</li>
+                  <li>
+                    Securities and Exchange Commission (SEC) Investor Education
+                  </li>
+                </ul>
+              </div>
+
+              <div class="contact-info">
+                <h4>Professional Advice</h4>
+                <p>
+                  For personalized investment advice, consider consulting with:
+                </p>
+                <ul>
+                  <li>Certified Financial Planners (CFP)</li>
+                  <li>Chartered Financial Analysts (CFA)</li>
+                  <li>Registered Investment Advisors (RIA)</li>
+                  <li>Fee-only financial advisors</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          Smart Investment Tracker v0.1 — Educational Use Only
+        </p>
+        <p class="footer__disclaimer">
+          Not investment advice. See <a href="about.html">About</a> for
+          disclaimers.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

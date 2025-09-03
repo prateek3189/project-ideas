@@ -1,209 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rhymes - Parent-Kid Learning App</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layouts.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="stylesheet" href="styles/print.css">
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
     <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Parent-Kid Learning</h1>
-            <div class="header__controls">
-                <span class="language-chip">EN</span>
-                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
-            </div>
+      <div class="header__content">
+        <h1 class="header__title">Parent-Kid Learning</h1>
+        <div class="header__controls">
+          <span class="language-chip">EN</span>
+          <div class="profile-avatar">👨‍👩‍👧‍👦</div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <div class="rhyme-layout">
-            <div class="rhyme-layout__header">
-                <h1 class="rhyme-layout__title">Fun Rhymes & Songs</h1>
-                <p class="rhyme-layout__description">Clap, sing, and move together with these delightful rhymes</p>
-            </div>
-
-            <div class="rhyme-grid">
-                <!-- Rhyme 1: Clap Clap Little Hands -->
-                <div class="rhyme-card">
-                    <div class="rhyme-card__header">
-                        <h3 class="rhyme-card__title">Clap Clap Little Hands</h3>
-                        <div class="rhyme-card__beat-bars">
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="rhyme-card__actions">
-                        <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
-                        <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
-                        <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
-                    </div>
-                    
-                    <div class="rhyme-card__lyrics">
-                        <p class="rhyme-card__lyric-line">Clap, clap, little hands</p>
-                        <p class="rhyme-card__lyric-line rhyme-card__lyric-line--current">Clap, clap, one, two, three</p>
-                        <p class="rhyme-card__lyric-line">Clap, clap, little hands</p>
-                        <p class="rhyme-card__lyric-line">Clap, clap, just like me!</p>
-                    </div>
-                </div>
-
-                <!-- Rhyme 2: Hop Hop Bunny Hop -->
-                <div class="rhyme-card">
-                    <div class="rhyme-card__header">
-                        <h3 class="rhyme-card__title">Hop Hop Bunny Hop</h3>
-                        <div class="rhyme-card__beat-bars">
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="rhyme-card__actions">
-                        <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
-                        <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
-                        <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
-                    </div>
-                    
-                    <div class="rhyme-card__lyrics">
-                        <p class="rhyme-card__lyric-line">Hop, hop, bunny hop</p>
-                        <p class="rhyme-card__lyric-line">Hop, hop, one, two, three</p>
-                        <p class="rhyme-card__lyric-line">Hop, hop, bunny hop</p>
-                        <p class="rhyme-card__lyric-line">Hop, hop, just like me!</p>
-                    </div>
-                </div>
-
-                <!-- Rhyme 3: Rain Rain Sprinkle Game -->
-                <div class="rhyme-card">
-                    <div class="rhyme-card__header">
-                        <h3 class="rhyme-card__title">Rain Rain Sprinkle Game</h3>
-                        <div class="rhyme-card__beat-bars">
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="rhyme-card__actions">
-                        <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
-                        <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
-                        <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
-                    </div>
-                    
-                    <div class="rhyme-card__lyrics">
-                        <p class="rhyme-card__lyric-line">Rain, rain, go away</p>
-                        <p class="rhyme-card__lyric-line">Come again another day</p>
-                        <p class="rhyme-card__lyric-line">Little children want to play</p>
-                        <p class="rhyme-card__lyric-line">Rain, rain, go away!</p>
-                    </div>
-                </div>
-
-                <!-- Rhyme 4: Twinkle Twinkle Little Star -->
-                <div class="rhyme-card">
-                    <div class="rhyme-card__header">
-                        <h3 class="rhyme-card__title">Twinkle Twinkle Little Star</h3>
-                        <div class="rhyme-card__beat-bars">
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="rhyme-card__actions">
-                        <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
-                        <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
-                        <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
-                    </div>
-                    
-                    <div class="rhyme-card__lyrics">
-                        <p class="rhyme-card__lyric-line">Twinkle, twinkle, little star</p>
-                        <p class="rhyme-card__lyric-line">How I wonder what you are</p>
-                        <p class="rhyme-card__lyric-line">Up above the world so high</p>
-                        <p class="rhyme-card__lyric-line">Like a diamond in the sky</p>
-                    </div>
-                </div>
-
-                <!-- Rhyme 5: Five Little Monkeys -->
-                <div class="rhyme-card">
-                    <div class="rhyme-card__header">
-                        <h3 class="rhyme-card__title">Five Little Monkeys</h3>
-                        <div class="rhyme-card__beat-bars">
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="rhyme-card__actions">
-                        <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
-                        <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
-                        <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
-                    </div>
-                    
-                    <div class="rhyme-card__lyrics">
-                        <p class="rhyme-card__lyric-line">Five little monkeys jumping on the bed</p>
-                        <p class="rhyme-card__lyric-line">One fell off and bumped his head</p>
-                        <p class="rhyme-card__lyric-line">Mama called the doctor and the doctor said</p>
-                        <p class="rhyme-card__lyric-line">"No more monkeys jumping on the bed!"</p>
-                    </div>
-                </div>
-
-                <!-- Rhyme 6: If You're Happy and You Know It -->
-                <div class="rhyme-card">
-                    <div class="rhyme-card__header">
-                        <h3 class="rhyme-card__title">If You're Happy and You Know It</h3>
-                        <div class="rhyme-card__beat-bars">
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                            <div class="rhyme-card__beat-bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="rhyme-card__actions">
-                        <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
-                        <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
-                        <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
-                    </div>
-                    
-                    <div class="rhyme-card__lyrics">
-                        <p class="rhyme-card__lyric-line">If you're happy and you know it, clap your hands</p>
-                        <p class="rhyme-card__lyric-line">If you're happy and you know it, clap your hands</p>
-                        <p class="rhyme-card__lyric-line">If you're happy and you know it, then your face will surely show it</p>
-                        <p class="rhyme-card__lyric-line">If you're happy and you know it, clap your hands</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="parent-tip">
-                <div class="parent-tip__icon">💡</div>
-                <p class="parent-tip__text">Clap on each bold word. Stomp on the last line! Make it fun with actions.</p>
-            </div>
-
-            <nav class="quick-nav">
-                <a href="index.html" class="quick-nav__link">🏠 Home</a>
-                <a href="stories.html" class="quick-nav__link">📚 Stories</a>
-                <a href="pronounce.html" class="quick-nav__link">🗣️ Pronounce</a>
-                <a href="progress.html" class="quick-nav__link">🏆 Progress</a>
-            </nav>
+      <div class="rhyme-layout">
+        <div class="rhyme-layout__header">
+          <h1 class="rhyme-layout__title">Fun Rhymes & Songs</h1>
+          <p class="rhyme-layout__description">
+            Clap, sing, and move together with these delightful rhymes
+          </p>
         </div>
+
+        <div class="rhyme-grid">
+          <!-- Rhyme 1: Clap Clap Little Hands -->
+          <div class="rhyme-card">
+            <div class="rhyme-card__header">
+              <h3 class="rhyme-card__title">Clap Clap Little Hands</h3>
+              <div class="rhyme-card__beat-bars">
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+              </div>
+            </div>
+
+            <div class="rhyme-card__actions">
+              <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
+              <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
+              <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
+            </div>
+
+            <div class="rhyme-card__lyrics">
+              <p class="rhyme-card__lyric-line">Clap, clap, little hands</p>
+              <p class="rhyme-card__lyric-line rhyme-card__lyric-line--current">
+                Clap, clap, one, two, three
+              </p>
+              <p class="rhyme-card__lyric-line">Clap, clap, little hands</p>
+              <p class="rhyme-card__lyric-line">Clap, clap, just like me!</p>
+            </div>
+          </div>
+
+          <!-- Rhyme 2: Hop Hop Bunny Hop -->
+          <div class="rhyme-card">
+            <div class="rhyme-card__header">
+              <h3 class="rhyme-card__title">Hop Hop Bunny Hop</h3>
+              <div class="rhyme-card__beat-bars">
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+              </div>
+            </div>
+
+            <div class="rhyme-card__actions">
+              <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
+              <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
+              <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
+            </div>
+
+            <div class="rhyme-card__lyrics">
+              <p class="rhyme-card__lyric-line">Hop, hop, bunny hop</p>
+              <p class="rhyme-card__lyric-line">Hop, hop, one, two, three</p>
+              <p class="rhyme-card__lyric-line">Hop, hop, bunny hop</p>
+              <p class="rhyme-card__lyric-line">Hop, hop, just like me!</p>
+            </div>
+          </div>
+
+          <!-- Rhyme 3: Rain Rain Sprinkle Game -->
+          <div class="rhyme-card">
+            <div class="rhyme-card__header">
+              <h3 class="rhyme-card__title">Rain Rain Sprinkle Game</h3>
+              <div class="rhyme-card__beat-bars">
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+              </div>
+            </div>
+
+            <div class="rhyme-card__actions">
+              <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
+              <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
+              <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
+            </div>
+
+            <div class="rhyme-card__lyrics">
+              <p class="rhyme-card__lyric-line">Rain, rain, go away</p>
+              <p class="rhyme-card__lyric-line">Come again another day</p>
+              <p class="rhyme-card__lyric-line">Little children want to play</p>
+              <p class="rhyme-card__lyric-line">Rain, rain, go away!</p>
+            </div>
+          </div>
+
+          <!-- Rhyme 4: Twinkle Twinkle Little Star -->
+          <div class="rhyme-card">
+            <div class="rhyme-card__header">
+              <h3 class="rhyme-card__title">Twinkle Twinkle Little Star</h3>
+              <div class="rhyme-card__beat-bars">
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+              </div>
+            </div>
+
+            <div class="rhyme-card__actions">
+              <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
+              <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
+              <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
+            </div>
+
+            <div class="rhyme-card__lyrics">
+              <p class="rhyme-card__lyric-line">
+                Twinkle, twinkle, little star
+              </p>
+              <p class="rhyme-card__lyric-line">How I wonder what you are</p>
+              <p class="rhyme-card__lyric-line">Up above the world so high</p>
+              <p class="rhyme-card__lyric-line">Like a diamond in the sky</p>
+            </div>
+          </div>
+
+          <!-- Rhyme 5: Five Little Monkeys -->
+          <div class="rhyme-card">
+            <div class="rhyme-card__header">
+              <h3 class="rhyme-card__title">Five Little Monkeys</h3>
+              <div class="rhyme-card__beat-bars">
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+              </div>
+            </div>
+
+            <div class="rhyme-card__actions">
+              <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
+              <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
+              <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
+            </div>
+
+            <div class="rhyme-card__lyrics">
+              <p class="rhyme-card__lyric-line">
+                Five little monkeys jumping on the bed
+              </p>
+              <p class="rhyme-card__lyric-line">
+                One fell off and bumped his head
+              </p>
+              <p class="rhyme-card__lyric-line">
+                Mama called the doctor and the doctor said
+              </p>
+              <p class="rhyme-card__lyric-line">
+                "No more monkeys jumping on the bed!"
+              </p>
+            </div>
+          </div>
+
+          <!-- Rhyme 6: If You're Happy and You Know It -->
+          <div class="rhyme-card">
+            <div class="rhyme-card__header">
+              <h3 class="rhyme-card__title">If You're Happy and You Know It</h3>
+              <div class="rhyme-card__beat-bars">
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+                <div class="rhyme-card__beat-bar"></div>
+              </div>
+            </div>
+
+            <div class="rhyme-card__actions">
+              <a href="#" class="rhyme-card__action-btn">▶️ Play</a>
+              <a href="#" class="rhyme-card__action-btn">📝 Lyrics</a>
+              <a href="#" class="rhyme-card__action-btn">🤸 Motions</a>
+            </div>
+
+            <div class="rhyme-card__lyrics">
+              <p class="rhyme-card__lyric-line">
+                If you're happy and you know it, clap your hands
+              </p>
+              <p class="rhyme-card__lyric-line">
+                If you're happy and you know it, clap your hands
+              </p>
+              <p class="rhyme-card__lyric-line">
+                If you're happy and you know it, then your face will surely show
+                it
+              </p>
+              <p class="rhyme-card__lyric-line">
+                If you're happy and you know it, clap your hands
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="parent-tip">
+          <div class="parent-tip__icon">💡</div>
+          <p class="parent-tip__text">
+            Clap on each bold word. Stomp on the last line! Make it fun with
+            actions.
+          </p>
+        </div>
+
+        <nav class="quick-nav">
+          <a href="index.html" class="quick-nav__link">🏠 Home</a>
+          <a href="stories.html" class="quick-nav__link">📚 Stories</a>
+          <a href="pronounce.html" class="quick-nav__link">🗣️ Pronounce</a>
+          <a href="progress.html" class="quick-nav__link">🏆 Progress</a>
+        </nav>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
-        </div>
+      <div class="footer__content">
+        <p class="footer__text">
+          For families • v0.1 • <a href="#" class="footer__link">Print</a>
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

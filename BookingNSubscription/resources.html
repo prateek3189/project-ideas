@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Resources</h1>
+          <p class="page-subtitle">
+            Manage rooms, equipment, and facility resources
+          </p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="flex gap-4 mb-6">
+          <button class="btn btn--primary">
+            <span class="icon">➕</span>
+            Add Resource
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">📊</span>
+            Utilization Report
+          </button>
+          <button class="btn btn--secondary">
+            <span class="icon">🔧</span>
+            Maintenance Schedule
+          </button>
+        </div>
+
+        <!-- Resource Categories -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Resource Categories</h3>
+          </div>
+          <div class="card__content">
+            <div class="card-grid">
+              <!-- Hair Salon -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Hair Salon</h4>
+                    <span class="badge badge--confirmed">4 chairs</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Chair 1</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Chair 2</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Chair 3</span>
+                      <span class="badge badge--waitlist">Occupied</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Chair 4</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium">Utilization</span>
+                      <span class="text-sm">75%</span>
+                    </div>
+                    <div class="bar bar--occupancy">
+                      <div class="bar__fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Details
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Book Slot
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gym Equipment -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Gym Equipment</h4>
+                    <span class="badge badge--confirmed">12 machines</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Treadmill 1</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Treadmill 2</span>
+                      <span class="badge badge--waitlist">In Use</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Elliptical 1</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Weight Station</span>
+                      <span class="badge badge--waitlist">In Use</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium">Utilization</span>
+                      <span class="text-sm">72%</span>
+                    </div>
+                    <div class="bar bar--occupancy">
+                      <div class="bar__fill" style="width: 72%"></div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Details
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Book Slot
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Yoga Studio -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">Yoga Studio</h4>
+                    <span class="badge badge--confirmed">1 studio</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Main Studio</span>
+                      <span class="badge badge--waitlist"
+                        >Class in Progress</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Capacity</span>
+                      <span class="text-sm">15/15 people</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Equipment</span>
+                      <span class="text-sm">Mats, Blocks, Straps</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium">Utilization</span>
+                      <span class="text-sm">68%</span>
+                    </div>
+                    <div class="bar bar--occupancy">
+                      <div class="bar__fill" style="width: 68%"></div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Details
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Book Class
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Co-working Space -->
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <h4 class="card__title" style="margin: 0">
+                      Co-working Space
+                    </h4>
+                    <span class="badge badge--confirmed">20 desks</span>
+                  </div>
+                </div>
+                <div class="card__content">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Hot Desks</span>
+                      <span class="text-sm">15/20 occupied</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Meeting Room 1</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Meeting Room 2</span>
+                      <span class="badge badge--waitlist">In Use</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm">Phone Booth</span>
+                      <span class="badge badge--confirmed">Available</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-4 border-t">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium">Utilization</span>
+                      <span class="text-sm">91%</span>
+                    </div>
+                    <div class="bar bar--occupancy">
+                      <div class="bar__fill" style="width: 91%"></div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-2 mt-4">
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      View Details
+                    </button>
+                    <button class="btn btn--secondary btn--sm flex-1">
+                      Book Desk
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resource Details -->
+        <div class="card mb-6">
+          <div class="card__header">
+            <h3 class="card__title">Resource Details</h3>
+          </div>
+          <div class="card__content">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Resource</th>
+                    <th>Type</th>
+                    <th>Capacity</th>
+                    <th>Status</th>
+                    <th>Utilization</th>
+                    <th>Last Maintenance</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Hair Salon Chair 1</td>
+                    <td>Equipment</td>
+                    <td>1 person</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">85%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 85%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Dec 15, 2024</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">
+                        Maintain
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hair Salon Chair 2</td>
+                    <td>Equipment</td>
+                    <td>1 person</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">78%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 78%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Dec 10, 2024</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">
+                        Maintain
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Treadmill 1</td>
+                    <td>Equipment</td>
+                    <td>1 person</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">92%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 92%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Jan 5, 2025</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">
+                        Maintain
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Yoga Studio</td>
+                    <td>Room</td>
+                    <td>15 people</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">68%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 68%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Dec 20, 2024</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">
+                        Maintain
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Co-working Desk 1-10</td>
+                    <td>Space</td>
+                    <td>10 people</td>
+                    <td><span class="badge badge--confirmed">Active</span></td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">95%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 95%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Jan 10, 2025</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--secondary btn--sm">
+                        Maintain
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Meeting Room 1</td>
+                    <td>Room</td>
+                    <td>8 people</td>
+                    <td>
+                      <span class="badge badge--warning">Maintenance</span>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm">45%</span>
+                        <div class="bar bar--occupancy" style="width: 4rem">
+                          <div class="bar__fill" style="width: 45%"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Jan 12, 2025</td>
+                    <td>
+                      <button class="btn btn--secondary btn--sm">Edit</button>
+                      <button class="btn btn--warning btn--sm">Complete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resource Configuration -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Add New Resource</h3>
+          </div>
+          <div class="card__content">
+            <form class="form-layout">
+              <div class="form-group">
+                <label class="form-label">Resource Name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="e.g., Hair Salon Chair 5"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Resource Type</label>
+                <select class="form-select">
+                  <option>Equipment</option>
+                  <option>Room</option>
+                  <option>Space</option>
+                  <option>Vehicle</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Category</label>
+                <select class="form-select">
+                  <option>Hair Salon</option>
+                  <option>Gym Equipment</option>
+                  <option>Yoga Studio</option>
+                  <option>Co-working Space</option>
+                  <option>Meeting Rooms</option>
+                  <option>Wellness</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Capacity</label>
+                <input
+                  type="number"
+                  class="form-input"
+                  placeholder="1"
+                  min="1"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Location</label>
+                <select class="form-select">
+                  <option>Mumbai Central</option>
+                  <option>Bandra West</option>
+                  <option>Andheri East</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                  <option>Active</option>
+                  <option>Inactive</option>
+                  <option>Maintenance</option>
+                  <option>Out of Order</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea
+                  class="form-textarea"
+                  rows="3"
+                  placeholder="Additional details about this resource..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Maintenance Schedule</label>
+                <select class="form-select">
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Quarterly</option>
+                  <option>Annually</option>
+                  <option>As needed</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Buffer Time (minutes)</label>
+                <input
+                  type="number"
+                  class="form-input"
+                  placeholder="10"
+                  min="0"
+                />
+                <div class="form-help">Time between consecutive bookings</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Booking Rules</label>
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" checked />
+                    <span>Requires staff assignment</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" />
+                    <span>Allow recurring bookings</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" checked />
+                    <span>Requires payment upfront</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input type="checkbox" />
+                    <span>Allow waitlist</span>
+                  </label>
+                </div>
+              </div>
+            </form>
+
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="btn btn--secondary">Cancel</button>
+              <button class="btn btn--primary">Add Resource</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

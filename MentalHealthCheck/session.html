@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Session - Mental Health Chat</title>
+    <meta
+      name="description"
+      content="Active chat session with a trained listener. Safe, anonymous peer support conversation."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Session Layout -->
+    <div class="session-layout">
+      <!-- Session Header -->
+      <header class="session-layout__header">
+        <div class="session-layout__info">
+          <div class="session-layout__participants">
+            <div class="session-layout__participant">
+              <span>👤</span>
+              <span>Seeker-Sky</span>
+            </div>
+            <div class="session-layout__participant">
+              <span>👂</span>
+              <span>Listener-Willow</span>
+            </div>
+          </div>
+          <div class="session-layout__status">
+            <span class="status">
+              <span class="status__dot status__dot--available"></span>
+              <span>Active Session</span>
+            </span>
+            <span class="text-muted">•</span>
+            <span class="text-muted">Started 15 minutes ago</span>
+          </div>
+        </div>
+
+        <div class="session-layout__actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon">🌙</span>
+            <span class="theme-toggle__icon theme-toggle__icon--contrast"
+              >🔆</span
+            >
+          </button>
+
+          <button class="btn btn--secondary btn--sm" onclick="showResources()">
+            📚 Resources
+          </button>
+
+          <button class="btn btn--danger btn--sm" onclick="showCrisisModal()">
+            🆘 Crisis Help
+          </button>
+
+          <button class="btn btn--secondary btn--sm" onclick="endSession()">
+            ❌ End Session
+          </button>
+        </div>
+      </header>
+
+      <!-- Chat Area -->
+      <main id="main-content" class="session-layout__chat">
+        <!-- Messages -->
+        <div class="session-layout__messages">
+          <div class="chat">
+            <!-- Welcome Message -->
+            <div class="chat__bubble chat__bubble--listener">
+              <p>
+                Hello! I'm Listener-Willow. I'm here to listen and support you.
+                How are you feeling today?
+              </p>
+              <div class="chat__timestamp">2:34 PM</div>
+            </div>
+
+            <div class="chat__bubble chat__bubble--seeker">
+              <p>
+                Hi Willow, thank you for being here. I'm feeling really
+                overwhelmed with everything going on.
+              </p>
+              <div class="chat__timestamp">2:35 PM</div>
+            </div>
+
+            <div class="chat__bubble chat__bubble--listener">
+              <p>
+                I can hear that you're feeling overwhelmed. That sounds really
+                difficult. Would you like to tell me more about what's been
+                going on?
+              </p>
+              <div class="chat__timestamp">2:36 PM</div>
+            </div>
+
+            <div class="chat__bubble chat__bubble--seeker">
+              <p>
+                It's work stress mostly. I feel like I can't keep up with
+                everything and I'm letting people down. My manager keeps adding
+                more tasks and I don't know how to say no.
+              </p>
+              <div class="chat__timestamp">2:37 PM</div>
+            </div>
+
+            <div class="chat__bubble chat__bubble--listener">
+              <p>
+                That sounds really challenging. It sounds like you're carrying a
+                lot of responsibility and feeling pressure to meet everyone's
+                expectations. That must be exhausting. What would it feel like
+                to set some boundaries with your manager?
+              </p>
+              <div class="chat__timestamp">2:38 PM</div>
+            </div>
+
+            <div class="chat__bubble chat__bubble--seeker">
+              <p>
+                I guess I'm afraid they'll think I'm not capable or that I'll
+                get in trouble. But you're right, it is exhausting. I don't
+                sleep well anymore because I'm always thinking about work.
+              </p>
+              <div class="chat__timestamp">2:40 PM</div>
+            </div>
+
+            <div class="chat__bubble chat__bubble--listener">
+              <p>
+                I can understand that fear. It's natural to worry about how
+                others perceive us, especially in professional settings. It
+                sounds like this is really affecting your wellbeing, including
+                your sleep. That's a sign that something needs to change. What
+                would healthy boundaries look like for you?
+              </p>
+              <div class="chat__timestamp">2:42 PM</div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="chat__typing">
+              <span>Listener-Willow is typing</span>
+              <div class="chat__typing-dots">
+                <div class="chat__typing-dot"></div>
+                <div class="chat__typing-dot"></div>
+                <div class="chat__typing-dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="session-layout__input">
+          <div class="flex gap-2">
+            <input
+              type="text"
+              class="form-input flex-1"
+              placeholder="Type your message..."
+              disabled
+            />
+            <button class="btn btn--primary" disabled>Send</button>
+          </div>
+          <p class="text-xs text-muted mt-2">
+            💡 <strong>Note:</strong> This is a visual prototype. In the real
+            version, you would be able to type and send messages.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Resources Sidebar (Hidden Initially) -->
+    <div id="resources-sidebar" class="modal hidden">
+      <div
+        class="modal__content"
+        style="
+          max-width: 400px;
+          position: fixed;
+          right: 0;
+          top: 0;
+          height: 100vh;
+          margin: 0;
+        "
+      >
+        <div class="modal__header">
+          <h3 class="modal__title">Resources & Support</h3>
+          <button class="modal__close" onclick="hideResources()">×</button>
+        </div>
+        <div class="modal__body">
+          <div class="space-y-4">
+            <div class="resource-card">
+              <h4 class="resource-card__title">Crisis Support</h4>
+              <p class="resource-card__description">
+                If you're in immediate danger or having thoughts of self-harm,
+                please contact emergency services.
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--danger btn--sm">Call 911/112</button>
+              </div>
+            </div>
+
+            <div class="resource-card">
+              <h4 class="resource-card__title">Breathing Exercise</h4>
+              <p class="resource-card__description">
+                4-7-8 breathing: Inhale for 4, hold for 7, exhale for 8. Repeat
+                4 times.
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  Start Exercise
+                </button>
+              </div>
+            </div>
+
+            <div class="resource-card">
+              <h4 class="resource-card__title">Grounding Technique</h4>
+              <p class="resource-card__description">
+                5-4-3-2-1: Name 5 things you see, 4 you hear, 3 you touch, 2 you
+                smell, 1 you taste.
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--secondary btn--sm">Try Now</button>
+              </div>
+            </div>
+
+            <div class="resource-card">
+              <h4 class="resource-card__title">Sleep Tips</h4>
+              <p class="resource-card__description">
+                Create a bedtime routine, avoid screens 1 hour before bed, keep
+                your room cool and dark.
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--secondary btn--sm">View Tips</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Crisis Modal -->
+    <div id="crisis-modal" class="modal hidden">
+      <div class="modal__content modal--crisis">
+        <div class="modal__header">
+          <h3 class="modal__title">🚨 Crisis Support</h3>
+          <button class="modal__close" onclick="hideCrisisModal()">×</button>
+        </div>
+        <div class="modal__body">
+          <div class="alert alert--crisis mb-4">
+            <strong
+              >If you may be at risk of harming yourself or others, please
+              consider contacting emergency services now.</strong
+            >
+          </div>
+
+          <div class="space-y-4">
+            <div class="resource-card">
+              <h4 class="resource-card__title">Emergency Services</h4>
+              <p class="resource-card__description">
+                Call your local emergency number immediately.
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--danger btn--lg">Call 911/112</button>
+              </div>
+            </div>
+
+            <div class="resource-card">
+              <h4 class="resource-card__title">National Crisis Hotlines</h4>
+              <p class="resource-card__description">
+                <strong>US:</strong> 988 (Suicide & Crisis Lifeline)<br />
+                <strong>UK:</strong> 116 123 (Samaritans)<br />
+                <strong>Canada:</strong> 1-833-456-4566<br />
+                <strong>Australia:</strong> 13 11 14
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--primary btn--sm">
+                  Find Local Number
+                </button>
+              </div>
+            </div>
+
+            <div class="resource-card">
+              <h4 class="resource-card__title">Crisis Text Line</h4>
+              <p class="resource-card__description">
+                Text HOME to 741741 for 24/7 crisis support via text.
+              </p>
+              <div class="resource-card__actions">
+                <button class="btn btn--secondary btn--sm">Text Support</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert--info mt-4">
+            <strong>Remember:</strong> You are not alone. There are people who
+            want to help you through this difficult time.
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button class="btn btn--secondary" onclick="hideCrisisModal()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Session Modal -->
+    <div id="end-session-modal" class="modal hidden">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3 class="modal__title">End Session</h3>
+          <button class="modal__close" onclick="hideEndSessionModal()">
+            ×
+          </button>
+        </div>
+        <div class="modal__body">
+          <p class="mb-4">
+            Are you sure you want to end this session? You'll have the
+            opportunity to provide feedback about your experience.
+          </p>
+
+          <div class="alert alert--info">
+            <strong>Note:</strong> Once ended, this conversation cannot be
+            resumed.
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button class="btn btn--secondary" onclick="hideEndSessionModal()">
+            Cancel
+          </button>
+          <button class="btn btn--primary" onclick="confirmEndSession()">
+            End Session
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guidance Strip -->
+    <div
+      class="alert alert--info"
+      style="
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        border-radius: 0;
+      "
+    >
+      <strong>💡 Remember:</strong> Listeners provide peer support and active
+      listening. They don't diagnose, prescribe, or provide professional
+      therapy.
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Theme toggle
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const html = document.documentElement;
+          const currentTheme = html.getAttribute("data-theme") || "light";
+          const themes = ["light", "dark", "high-contrast", "reduced-motion"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+          html.setAttribute("data-theme", nextTheme);
+        });
+
+      // Modal functions
+      function showResources() {
+        document.getElementById("resources-sidebar").classList.remove("hidden");
+      }
+
+      function hideResources() {
+        document.getElementById("resources-sidebar").classList.add("hidden");
+      }
+
+      function showCrisisModal() {
+        document.getElementById("crisis-modal").classList.remove("hidden");
+      }
+
+      function hideCrisisModal() {
+        document.getElementById("crisis-modal").classList.add("hidden");
+      }
+
+      function endSession() {
+        document.getElementById("end-session-modal").classList.remove("hidden");
+      }
+
+      function hideEndSessionModal() {
+        document.getElementById("end-session-modal").classList.add("hidden");
+      }
+
+      function confirmEndSession() {
+        // In a real app, this would end the session and redirect to feedback
+        alert("Session ended. Thank you for using our service.");
+        window.location.href = "index.html";
+      }
+
+      // Auto-scroll chat to bottom
+      function scrollChatToBottom() {
+        const chat = document.querySelector(".chat");
+        chat.scrollTop = chat.scrollHeight;
+      }
+
+      // Scroll to bottom on load
+      window.addEventListener("load", scrollChatToBottom);
+
+      // Simulate typing indicator
+      setInterval(() => {
+        const typingIndicator = document.querySelector(".chat__typing");
+        if (typingIndicator) {
+          typingIndicator.style.display = Math.random() > 0.7 ? "flex" : "none";
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>

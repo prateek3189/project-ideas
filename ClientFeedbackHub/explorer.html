@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorer - Client Feedback Hub</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">CF</div>
+          <h1 class="header__title">Client Feedback Hub</h1>
+          <span class="header__environment">v0.1</span>
+        </div>
+        <div class="header__actions">
+          <div class="header__search">
+            <svg
+              class="header__search-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input
+              type="search"
+              class="header__search-input"
+              placeholder="Search feedback, tags, themes..."
+              aria-label="Search"
+            />
+          </div>
+          <a href="#" class="header__print" onclick="window.print()">Print</a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__item">
+            <a href="index.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="inbox.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Inbox
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="explorer.html" class="sidebar__link sidebar__link--active">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              Explorer
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="themes.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                ></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              Themes & Tags
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="insights.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              Insights
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="surveys.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4m0-7v7m0-7h10a2 2 0 0 1 2 2v3c0 1.1-.9 2-2 2H9m0-7V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"
+                ></path>
+              </svg>
+              Surveys
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="roadmap.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 3v18h18"></path>
+                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path>
+              </svg>
+              Roadmap
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="reports.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10,9 9,9 8,9"></polyline>
+              </svg>
+              Reports
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="settings.html" class="sidebar__link">
+              <svg
+                class="sidebar__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div
+          class="sidebar__theme-toggle"
+          onclick="toggleTheme()"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="20"
+            height="20"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Explorer</h1>
+            <p class="text-muted">
+              Filter, search, and analyze feedback across all channels
+            </p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn--secondary">Export</button>
+            <button class="btn btn--primary">Save View</button>
+          </div>
+        </div>
+
+        <!-- Helper Text -->
+        <div class="alert alert--info">
+          <strong>Save filters you reuse—views keep teams aligned.</strong> Use
+          the filter bar below to narrow down feedback by various criteria.
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <div class="filter-group">
+            <label class="filter-label">Product Area</label>
+            <select class="form-select" style="min-width: 120px">
+              <option value="">All Areas</option>
+              <option value="checkout">Checkout</option>
+              <option value="analytics">Analytics</option>
+              <option value="ui">UI/UX</option>
+              <option value="performance">Performance</option>
+              <option value="mobile">Mobile</option>
+              <option value="integrations">Integrations</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Tags</label>
+            <select class="form-select" style="min-width: 120px">
+              <option value="">All Tags</option>
+              <option value="payments">payments</option>
+              <option value="ios">ios</option>
+              <option value="checkout">checkout</option>
+              <option value="exports">exports</option>
+              <option value="performance">performance</option>
+              <option value="dark-mode">dark-mode</option>
+              <option value="android">android</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Sentiment</label>
+            <select class="form-select" style="min-width: 100px">
+              <option value="">All</option>
+              <option value="positive">Positive</option>
+              <option value="neutral">Neutral</option>
+              <option value="negative">Negative</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Priority</label>
+            <select class="form-select" style="min-width: 80px">
+              <option value="">All</option>
+              <option value="0">P0</option>
+              <option value="1">P1</option>
+              <option value="2">P2</option>
+              <option value="3">P3</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Segment</label>
+            <select class="form-select" style="min-width: 120px">
+              <option value="">All Segments</option>
+              <option value="enterprise">Enterprise</option>
+              <option value="pro">Pro</option>
+              <option value="free">Free</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Date Range</label>
+            <select class="form-select" style="min-width: 120px">
+              <option value="7d">Last 7 days</option>
+              <option value="30d">Last 30 days</option>
+              <option value="90d">Last 90 days</option>
+              <option value="custom">Custom range</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <button class="btn btn--secondary btn--sm">Clear All</button>
+          </div>
+        </div>
+
+        <!-- Saved Views -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3">Saved Views</h3>
+          <div class="flex flex--wrap gap-2">
+            <span class="chip chip--saved-view">Q3 Bugs</span>
+            <span class="chip chip--saved-view">Enterprise UX</span>
+            <span class="chip chip--saved-view">Mobile Issues</span>
+            <span class="chip chip--saved-view">Payment Problems</span>
+            <span class="chip chip--saved-view">High Priority</span>
+          </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="three-pane">
+          <!-- Left Sidebar - Stats -->
+          <div class="three-pane__left">
+            <h3 class="text-lg font-semibold mb-4">Filter Results</h3>
+
+            <div class="card mb-4">
+              <div class="card__body">
+                <h4 class="font-medium mb-3">By Tag</h4>
+                <div class="space-y-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">payments</span>
+                    <span class="text-sm font-medium">45</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">ios</span>
+                    <span class="text-sm font-medium">32</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">checkout</span>
+                    <span class="text-sm font-medium">28</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">exports</span>
+                    <span class="text-sm font-medium">18</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">performance</span>
+                    <span class="text-sm font-medium">15</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card__body">
+                <h4 class="font-medium mb-3">By Sentiment</h4>
+                <div class="space-y-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">Positive</span>
+                    <span class="text-sm font-medium text-positive">67</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">Neutral</span>
+                    <span class="text-sm font-medium text-neutral">89</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">Negative</span>
+                    <span class="text-sm font-medium text-negative">54</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__body">
+                <h4 class="font-medium mb-3">By Priority</h4>
+                <div class="space-y-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">P0</span>
+                    <span class="text-sm font-medium text-negative">8</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">P1</span>
+                    <span class="text-sm font-medium text-warning">23</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">P2</span>
+                    <span class="text-sm font-medium text-info">45</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm">P3</span>
+                    <span class="text-sm font-medium text-neutral">134</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content - Results -->
+          <div class="three-pane__main">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-semibold">Showing 210 results</h3>
+              <div class="flex gap-2">
+                <button class="btn btn--ghost btn--sm">Select All</button>
+                <button class="btn btn--ghost btn--sm">Bulk Actions</button>
+              </div>
+            </div>
+
+            <!-- Feedback Results -->
+            <div class="space-y-4">
+              <!-- Result 1 -->
+              <div class="feedback-card">
+                <div class="feedback-card__meta">
+                  <span class="badge badge--source">In-app</span>
+                  <span class="badge badge--sentiment-neg">Negative</span>
+                  <span class="badge badge--priority-1">P1</span>
+                  <span class="text-muted text-sm">2 hours ago</span>
+                </div>
+                <div class="feedback-card__excerpt">
+                  "Apple Pay fails with error on first attempt. Very frustrating
+                  during checkout. Had to retry 3 times before it worked."
+                </div>
+                <div class="feedback-card__tags">
+                  <span class="chip chip--tag">payments</span>
+                  <span class="chip chip--tag">ios</span>
+                  <span class="chip chip--tag">checkout</span>
+                </div>
+                <div class="feedback-card__actions">
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--sm">View</button>
+                    <button class="btn btn--ghost btn--sm">Edit</button>
+                    <button class="btn btn--ghost btn--sm">Link Epic</button>
+                  </div>
+                  <div class="flex gap-2">
+                    <span class="text-sm text-muted">Enterprise • US West</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Result 2 -->
+              <div class="feedback-card">
+                <div class="feedback-card__meta">
+                  <span class="badge badge--source">Email</span>
+                  <span class="badge badge--sentiment-neu">Neutral</span>
+                  <span class="badge badge--priority-2">P2</span>
+                  <span class="text-muted text-sm">4 hours ago</span>
+                </div>
+                <div class="feedback-card__excerpt">
+                  "Love the dashboards, but exports time out when trying to
+                  download large datasets. Any way to fix this?"
+                </div>
+                <div class="feedback-card__tags">
+                  <span class="chip chip--tag">exports</span>
+                  <span class="chip chip--tag">performance</span>
+                  <span class="chip chip--tag">analytics</span>
+                </div>
+                <div class="feedback-card__actions">
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--sm">View</button>
+                    <button class="btn btn--ghost btn--sm">Edit</button>
+                    <button class="btn btn--ghost btn--sm">Link Epic</button>
+                  </div>
+                  <div class="flex gap-2">
+                    <span class="text-sm text-muted">Pro • EU</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Result 3 -->
+              <div class="feedback-card">
+                <div class="feedback-card__meta">
+                  <span class="badge badge--source">Store</span>
+                  <span class="badge badge--sentiment-pos">Positive</span>
+                  <span class="badge badge--priority-3">P3</span>
+                  <span class="text-muted text-sm">6 hours ago</span>
+                </div>
+                <div class="feedback-card__excerpt">
+                  "Great app overall, but would love dark mode on Android. The
+                  current light theme is hard on the eyes at night."
+                </div>
+                <div class="feedback-card__tags">
+                  <span class="chip chip--tag">dark-mode</span>
+                  <span class="chip chip--tag">android</span>
+                  <span class="chip chip--tag">ui</span>
+                </div>
+                <div class="feedback-card__actions">
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--sm">View</button>
+                    <button class="btn btn--ghost btn--sm">Edit</button>
+                    <button class="btn btn--ghost btn--sm">Link Epic</button>
+                  </div>
+                  <div class="flex gap-2">
+                    <span class="text-sm text-muted">Free • Global</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Result 4 -->
+              <div class="feedback-card">
+                <div class="feedback-card__meta">
+                  <span class="badge badge--source">Support</span>
+                  <span class="badge badge--sentiment-neg">Negative</span>
+                  <span class="badge badge--priority-0">P0</span>
+                  <span class="text-muted text-sm">8 hours ago</span>
+                </div>
+                <div class="feedback-card__excerpt">
+                  "Critical: Users can't log in after the latest update. Getting
+                  500 errors on authentication. This is blocking our entire
+                  team."
+                </div>
+                <div class="feedback-card__tags">
+                  <span class="chip chip--tag">authentication</span>
+                  <span class="chip chip--tag">critical</span>
+                  <span class="chip chip--tag">login</span>
+                </div>
+                <div class="feedback-card__actions">
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--sm">View</button>
+                    <button class="btn btn--ghost btn--sm">Edit</button>
+                    <button class="btn btn--ghost btn--sm">Link Epic</button>
+                  </div>
+                  <div class="flex gap-2">
+                    <span class="text-sm text-muted">Enterprise • US East</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Result 5 -->
+              <div class="feedback-card">
+                <div class="feedback-card__meta">
+                  <span class="badge badge--source">Interview</span>
+                  <span class="badge badge--sentiment-pos">Positive</span>
+                  <span class="badge badge--priority-3">P3</span>
+                  <span class="text-muted text-sm">1 day ago</span>
+                </div>
+                <div class="feedback-card__excerpt">
+                  "The new onboarding flow is much clearer. Really helped me
+                  understand how to set up my first project."
+                </div>
+                <div class="feedback-card__tags">
+                  <span class="chip chip--tag">onboarding</span>
+                  <span class="chip chip--tag">ux-improvement</span>
+                </div>
+                <div class="feedback-card__actions">
+                  <div class="flex gap-2">
+                    <button class="btn btn--ghost btn--sm">View</button>
+                    <button class="btn btn--ghost btn--sm">Edit</button>
+                    <button class="btn btn--ghost btn--sm">Link Epic</button>
+                  </div>
+                  <div class="flex gap-2">
+                    <span class="text-sm text-muted">Pro • APAC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center mt-8">
+              <div class="text-sm text-muted">Showing 1-5 of 210 results</div>
+              <div class="flex gap-2">
+                <button class="btn btn--secondary btn--sm">Previous</button>
+                <button class="btn btn--primary btn--sm">1</button>
+                <button class="btn btn--secondary btn--sm">2</button>
+                <button class="btn btn--secondary btn--sm">3</button>
+                <span class="px-2 py-1 text-sm text-muted">...</span>
+                <button class="btn btn--secondary btn--sm">42</button>
+                <button class="btn btn--secondary btn--sm">Next</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar - Bulk Actions -->
+          <div class="three-pane__right">
+            <h3 class="text-lg font-semibold mb-4">Bulk Actions</h3>
+
+            <div class="card mb-4">
+              <div class="card__header">
+                <h4>Selected Items (0)</h4>
+              </div>
+              <div class="card__body">
+                <div class="space-y-3">
+                  <button class="btn btn--secondary w-full">Add Tag</button>
+                  <button class="btn btn--secondary w-full">
+                    Change Priority
+                  </button>
+                  <button class="btn btn--secondary w-full">
+                    Assign Owner
+                  </button>
+                  <button class="btn btn--secondary w-full">
+                    Link to Epic
+                  </button>
+                  <button class="btn btn--secondary w-full">
+                    Export Selected
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__header">
+                <h4>Quick Filters</h4>
+              </div>
+              <div class="card__body">
+                <div class="space-y-2">
+                  <button class="btn btn--ghost w-full text-left">
+                    Untagged items
+                  </button>
+                  <button class="btn btn--ghost w-full text-left">
+                    High priority
+                  </button>
+                  <button class="btn btn--ghost w-full text-left">
+                    Recent negative
+                  </button>
+                  <button class="btn btn--ghost w-full text-left">
+                    Enterprise users
+                  </button>
+                  <button class="btn btn--ghost w-full text-left">
+                    Mobile issues
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+        </div>
+        <div class="footer__version">Client Feedback Hub v0.1</div>
+      </footer>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </body>
+</html>

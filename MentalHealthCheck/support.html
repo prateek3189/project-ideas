@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Support - Mental Health Chat</title>
+    <meta
+      name="description"
+      content="Start your anonymous conversation with a trained listener. Safe, confidential peer support."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <div class="shell">
+      <!-- Header -->
+      <header class="shell__header">
+        <div class="header">
+          <a href="index.html" class="header__brand">
+            <span>💬</span>
+            <span>Mental Health Chat</span>
+          </a>
+
+          <div class="header__actions">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="theme-toggle__icon theme-toggle__icon--sun">☀️</span>
+              <span class="theme-toggle__icon theme-toggle__icon--moon"
+                >🌙</span
+              >
+              <span class="theme-toggle__icon theme-toggle__icon--contrast"
+                >🔆</span
+              >
+              <span class="theme-toggle__label">Theme</span>
+            </button>
+
+            <a href="index.html" class="btn btn--secondary"> ← Back to Home </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="shell__main">
+        <div class="shell__content">
+          <div class="container container--sm">
+            <!-- Crisis Banner -->
+            <div class="alert alert--crisis mb-6">
+              <strong>🚨 Crisis Support:</strong> If you're in immediate danger
+              or having thoughts of self-harm, please contact your local
+              emergency services (911/112) or your national crisis hotline
+              immediately.
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Step 1 of 4</span>
+                <span class="text-sm text-muted">Consent & Setup</span>
+              </div>
+              <div class="progress">
+                <div class="progress__bar" style="width: 25%"></div>
+              </div>
+            </div>
+
+            <!-- Step 1: Consent & House Rules -->
+            <section class="card mb-6">
+              <div class="card__header">
+                <h1 class="text-xl font-semibold">Consent & House Rules</h1>
+              </div>
+              <div class="card__body">
+                <p class="mb-4 text-secondary">
+                  Before we begin, please read and agree to our community
+                  guidelines. This helps ensure a safe, supportive environment
+                  for everyone.
+                </p>
+
+                <div class="alert alert--info mb-4">
+                  <strong>Remember:</strong> This is peer support, not
+                  professional therapy or medical advice.
+                </div>
+
+                <form class="space-y-4">
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="consent-respectful" required />
+                    <label for="consent-respectful">
+                      I will use respectful language and treat others with
+                      kindness and empathy.
+                    </label>
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input
+                      type="checkbox"
+                      id="consent-no-harassment"
+                      required
+                    />
+                    <label for="consent-no-harassment">
+                      I will not engage in harassment, hate speech, or
+                      inappropriate behavior.
+                    </label>
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="consent-no-medical" required />
+                    <label for="consent-no-medical">
+                      I understand that listeners cannot provide medical advice,
+                      diagnosis, or professional therapy.
+                    </label>
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="consent-no-pii" required />
+                    <label for="consent-no-pii">
+                      I will not share personal identifying information (name,
+                      address, phone, etc.).
+                    </label>
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="consent-crisis" required />
+                    <label for="consent-crisis">
+                      I understand that if I'm in crisis, I should contact
+                      emergency services or a crisis hotline.
+                    </label>
+                  </div>
+
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="consent-privacy" required />
+                    <label for="consent-privacy">
+                      I understand that conversations may be moderated for
+                      safety, but my privacy is protected.
+                    </label>
+                  </div>
+
+                  <div class="text-center mt-6">
+                    <button
+                      type="button"
+                      class="btn btn--primary btn--lg"
+                      onclick="nextStep()"
+                    >
+                      I Agree - Continue
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            <!-- Step 2: Mood Check-in (Hidden Initially) -->
+            <section id="step-2" class="card mb-6 hidden">
+              <div class="card__header">
+                <h2 class="text-xl font-semibold">
+                  How are you feeling today?
+                </h2>
+              </div>
+              <div class="card__body">
+                <p class="mb-4 text-secondary">
+                  This helps us match you with the right listener and provide
+                  appropriate support.
+                </p>
+
+                <div class="mb-6">
+                  <h3 class="font-semibold mb-3">
+                    Primary emotions (select one or more):
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    <button class="chip chip--mood" data-mood="anxious">
+                      😰 Anxious
+                    </button>
+                    <button class="chip chip--mood" data-mood="sad">
+                      😢 Sad
+                    </button>
+                    <button class="chip chip--mood" data-mood="angry">
+                      😠 Angry
+                    </button>
+                    <button class="chip chip--mood" data-mood="overwhelmed">
+                      😵 Overwhelmed
+                    </button>
+                    <button class="chip chip--mood" data-mood="lonely">
+                      😔 Lonely
+                    </button>
+                    <button class="chip chip--mood" data-mood="numb">
+                      😐 Numb
+                    </button>
+                    <button class="chip chip--mood" data-mood="confused">
+                      😕 Confused
+                    </button>
+                    <button class="chip chip--mood" data-mood="other">
+                      🤔 Other
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mb-6">
+                  <h3 class="font-semibold mb-3">
+                    What's on your mind? (optional):
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    <button class="chip chip--tag" data-tag="relationships">
+                      💕 Relationships
+                    </button>
+                    <button class="chip chip--tag" data-tag="work">
+                      💼 Work/Study
+                    </button>
+                    <button class="chip chip--tag" data-tag="health">
+                      🏥 Health
+                    </button>
+                    <button class="chip chip--tag" data-tag="family">
+                      👨‍👩‍👧‍👦 Family
+                    </button>
+                    <button class="chip chip--tag" data-tag="grief">
+                      🕊️ Grief/Loss
+                    </button>
+                    <button class="chip chip--tag" data-tag="stress">
+                      😤 Stress
+                    </button>
+                    <button class="chip chip--tag" data-tag="identity">
+                      🆔 Identity
+                    </button>
+                    <button class="chip chip--tag" data-tag="future">
+                      🔮 Future
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="additional-context" class="form-label">
+                    Anything else you'd like to share? (optional)
+                  </label>
+                  <textarea
+                    id="additional-context"
+                    class="form-input form-textarea"
+                    placeholder="Share as much or as little as you're comfortable with..."
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div class="text-center mt-6">
+                  <button
+                    type="button"
+                    class="btn btn--primary btn--lg"
+                    onclick="nextStep()"
+                  >
+                    Continue to Matching
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Step 3: Queue (Hidden Initially) -->
+            <section id="step-3" class="card mb-6 hidden">
+              <div class="card__body text-center">
+                <div class="queue-card">
+                  <div class="queue-card__icon">🔍</div>
+                  <h2 class="queue-card__title">Finding a Listener</h2>
+                  <p class="queue-card__subtitle">
+                    We're matching you with a trained listener who can best
+                    support you right now.
+                  </p>
+
+                  <div class="queue-card__progress mb-4">
+                    <div class="progress">
+                      <div class="progress__bar" style="width: 60%"></div>
+                    </div>
+                  </div>
+
+                  <p class="queue-card__estimate">
+                    Estimated wait time: ~2 minutes
+                  </p>
+                </div>
+
+                <!-- Grounding Exercise -->
+                <div class="grounding-card mt-6">
+                  <h3 class="grounding-card__title">While You Wait</h3>
+                  <p class="grounding-card__instruction">
+                    Try this breathing exercise to help you feel more centered:
+                  </p>
+                  <div class="grounding-card__timer">4 - 7 - 8</div>
+                  <p class="text-sm text-secondary">
+                    Inhale for 4 counts, hold for 7, exhale for 8. Repeat 4
+                    times.
+                  </p>
+                </div>
+
+                <div class="text-center mt-6">
+                  <button
+                    type="button"
+                    class="btn btn--primary btn--lg"
+                    onclick="nextStep()"
+                  >
+                    Enter Chat Room
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Step 4: Session Room (Hidden Initially) -->
+            <section id="step-4" class="hidden">
+              <div class="alert alert--success mb-4">
+                <strong>✅ Connected!</strong> You've been matched with
+                Listener-Willow. Your conversation is anonymous and secure.
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="status">
+                        <span class="status__dot status__dot--available"></span>
+                        <span class="text-sm">Listener-Willow is online</span>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="text-sm text-muted"
+                        >Session ID: #MH-2024-001</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card__body p-0">
+                  <!-- Chat Interface -->
+                  <div class="chat" style="height: 400px">
+                    <div class="chat__bubble chat__bubble--listener">
+                      <p>
+                        Hello! I'm Listener-Willow. I'm here to listen and
+                        support you. How are you feeling today?
+                      </p>
+                      <div class="chat__timestamp">2:34 PM</div>
+                    </div>
+
+                    <div class="chat__bubble chat__bubble--seeker">
+                      <p>
+                        Hi Willow, thank you for being here. I'm feeling really
+                        overwhelmed with everything going on.
+                      </p>
+                      <div class="chat__timestamp">2:35 PM</div>
+                    </div>
+
+                    <div class="chat__bubble chat__bubble--listener">
+                      <p>
+                        I can hear that you're feeling overwhelmed. That sounds
+                        really difficult. Would you like to tell me more about
+                        what's been going on?
+                      </p>
+                      <div class="chat__timestamp">2:36 PM</div>
+                    </div>
+
+                    <div class="chat__typing">
+                      <span>Listener-Willow is typing</span>
+                      <div class="chat__typing-dots">
+                        <div class="chat__typing-dot"></div>
+                        <div class="chat__typing-dot"></div>
+                        <div class="chat__typing-dot"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Safety Toolbar -->
+                  <div class="toolbar">
+                    <button class="toolbar__btn" title="Resources">
+                      📚 Resources
+                    </button>
+                    <button class="toolbar__btn" title="Report Message">
+                      🚩 Report
+                    </button>
+                    <button
+                      class="toolbar__btn toolbar__btn--crisis"
+                      title="Crisis Support"
+                    >
+                      🆘 Crisis Help
+                    </button>
+                    <button class="toolbar__btn" title="End Session">
+                      ❌ End Session
+                    </button>
+                  </div>
+
+                  <!-- Chat Input -->
+                  <div class="p-4 border-t">
+                    <div class="flex gap-2">
+                      <input
+                        type="text"
+                        class="form-input flex-1"
+                        placeholder="Type your message..."
+                        disabled
+                      />
+                      <button class="btn btn--primary" disabled>Send</button>
+                    </div>
+                    <p class="text-xs text-muted mt-2">
+                      💡 <strong>Note:</strong> This is a visual prototype. In
+                      the real version, you would be able to type and send
+                      messages.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guidance Strip -->
+              <div class="alert alert--info mt-4">
+                <strong>💡 Remember:</strong> Listeners provide peer support and
+                active listening. They don't diagnose, prescribe, or provide
+                professional therapy.
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="shell__footer">
+        <div class="container">
+          <p class="text-xs text-muted">
+            This service provides peer support only. Not a substitute for
+            professional mental health care.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Step Navigation Script -->
+    <script>
+      let currentStep = 1;
+      const totalSteps = 4;
+
+      function nextStep() {
+        if (currentStep < totalSteps) {
+          // Hide current step
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.add("hidden");
+
+          // Show next step
+          currentStep++;
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.remove("hidden");
+
+          // Update progress bar
+          const progress = (currentStep / totalSteps) * 100;
+          document.querySelector(".progress__bar").style.width = `${progress}%`;
+
+          // Update step indicator
+          const stepText = document.querySelector(
+            ".flex.items-center.justify-between .text-sm.font-medium"
+          );
+          stepText.textContent = `Step ${currentStep} of ${totalSteps}`;
+        }
+      }
+
+      // Chip selection functionality
+      document.querySelectorAll(".chip--mood, .chip--tag").forEach((chip) => {
+        chip.addEventListener("click", function () {
+          this.classList.toggle("chip--active");
+        });
+      });
+
+      // Theme toggle
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          const html = document.documentElement;
+          const currentTheme = html.getAttribute("data-theme") || "light";
+          const themes = ["light", "dark", "high-contrast", "reduced-motion"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          const nextTheme = themes[nextIndex];
+          html.setAttribute("data-theme", nextTheme);
+
+          const label = this.querySelector(".theme-toggle__label");
+          const themeNames = {
+            light: "Light",
+            dark: "Dark",
+            "high-contrast": "High Contrast",
+            "reduced-motion": "Reduced Motion",
+          };
+          label.textContent = themeNames[nextTheme];
+        });
+    </script>
+  </body>
+</html>

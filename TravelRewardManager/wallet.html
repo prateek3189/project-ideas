@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Wallet</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item nav-item--active">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Wallet</h2>
+          <p class="page-subtitle">
+            Manage your loyalty programs and track balances
+          </p>
+        </div>
+
+        <!-- Program Tabs -->
+        <div class="tabs">
+          <ul class="tabs__list">
+            <li class="tabs__tab tabs__tab--active">Airlines</li>
+            <li class="tabs__tab">Hotels</li>
+            <li class="tabs__tab">Banks</li>
+          </ul>
+        </div>
+
+        <!-- Airlines Section -->
+        <section class="programs-section">
+          <div class="programs-grid">
+            <!-- KrisFlyer -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">🛩️</span>
+                <div class="program-info">
+                  <h4 class="program-name">KrisFlyer</h4>
+                  <span class="program-type">Singapore Airlines</span>
+                </div>
+              </div>
+              <div class="program-card__balance">18,500</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--silver">Silver</span>
+                <span class="expiry-bar__label">
+                  <span>2,000 expire in 60d</span>
+                  <span>Last: 2 months ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--warning"
+                  style="width: 70%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 36 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: Star Alliance</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Avios -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">✈️</span>
+                <div class="program-info">
+                  <h4 class="program-name">Avios</h4>
+                  <span class="program-type">British Airways</span>
+                </div>
+              </div>
+              <div class="program-card__balance">24,300</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--gold">Gold</span>
+                <span class="expiry-bar__label">
+                  <span>Activity in 2025-06</span>
+                  <span>Last: 1 month ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 90%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 36 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: oneworld</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- MileagePlus -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">✈️</span>
+                <div class="program-info">
+                  <h4 class="program-name">MileagePlus</h4>
+                  <span class="program-type">United Airlines</span>
+                </div>
+              </div>
+              <div class="program-card__balance">12,000</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--silver">Silver</span>
+                <span class="expiry-bar__label">
+                  <span>No expiry</span>
+                  <span>Last: 3 months ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points never expire. Elite status based on qualifying
+                      miles and segments.
+                    </p>
+                    <ul>
+                      <li>No family pooling</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: Star Alliance</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Flying Blue -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">✈️</span>
+                <div class="program-info">
+                  <h4 class="program-name">Flying Blue</h4>
+                  <span class="program-type">Air France/KLM</span>
+                </div>
+              </div>
+              <div class="program-card__balance">8,750</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--silver">Silver</span>
+                <span class="expiry-bar__label">
+                  <span>Activity in 2025-08</span>
+                  <span>Last: 2 weeks ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 95%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 20 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: SkyTeam</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Privilege Club -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">✈️</span>
+                <div class="program-info">
+                  <h4 class="program-name">Privilege Club</h4>
+                  <span class="program-type">Qatar Airways</span>
+                </div>
+              </div>
+              <div class="program-card__balance">15,200</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--gold">Gold</span>
+                <span class="expiry-bar__label">
+                  <span>Activity in 2025-07</span>
+                  <span>Last: 1 week ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 85%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 36 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: oneworld</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hotels Section (Hidden by default) -->
+        <section class="programs-section" style="display: none">
+          <div class="programs-grid">
+            <!-- Marriott Bonvoy -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">🏨</span>
+                <div class="program-info">
+                  <h4 class="program-name">Marriott Bonvoy</h4>
+                  <span class="program-type">Hotels</span>
+                </div>
+              </div>
+              <div class="program-card__balance">36,000</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--platinum">Platinum</span>
+                <span class="expiry-bar__label">
+                  <span>1,500 expire in 45d</span>
+                  <span>Last: 3 months ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--warning"
+                  style="width: 60%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 24 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 30+ hotel brands</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- World of Hyatt -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">🏨</span>
+                <div class="program-info">
+                  <h4 class="program-name">World of Hyatt</h4>
+                  <span class="program-type">Hotels</span>
+                </div>
+              </div>
+              <div class="program-card__balance">11,500</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--gold">Gold</span>
+                <span class="expiry-bar__label">
+                  <span>Activity in 2025-09</span>
+                  <span>Last: 1 month ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 90%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points never expire. Elite status based on qualifying
+                      nights.
+                    </p>
+                    <ul>
+                      <li>No family pooling</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 20+ hotel brands</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Hilton Honors -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">🏨</span>
+                <div class="program-info">
+                  <h4 class="program-name">Hilton Honors</h4>
+                  <span class="program-type">Hotels</span>
+                </div>
+              </div>
+              <div class="program-card__balance">28,000</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--gold">Gold</span>
+                <span class="expiry-bar__label">
+                  <span>Activity in 2025-08</span>
+                  <span>Last: 2 weeks ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 85%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 12 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 18+ hotel brands</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- IHG One Rewards -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">🏨</span>
+                <div class="program-info">
+                  <h4 class="program-name">IHG One Rewards</h4>
+                  <span class="program-type">Hotels</span>
+                </div>
+              </div>
+              <div class="program-card__balance">19,500</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--silver">Silver</span>
+                <span class="expiry-bar__label">
+                  <span>Activity in 2025-07</span>
+                  <span>Last: 1 month ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 80%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points expire after 12 months of inactivity. Any earning
+                      or redemption activity resets the clock.
+                    </p>
+                    <ul>
+                      <li>Family pooling available</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 17+ hotel brands</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Banks Section (Hidden by default) -->
+        <section class="programs-section" style="display: none">
+          <div class="programs-grid">
+            <!-- Amex MR -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Amex Membership Rewards</h4>
+                  <span class="program-type">Credit Card</span>
+                </div>
+              </div>
+              <div class="program-card__balance">62,500</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--elite">Elite</span>
+                <span class="expiry-bar__label">
+                  <span>No expiry</span>
+                  <span>Last: 1 week ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points never expire. Transfer to 20+ airline and hotel
+                      partners.
+                    </p>
+                    <ul>
+                      <li>1:1 transfer to most partners</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 20+ airlines/hotels</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Chase UR -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Chase Ultimate Rewards</h4>
+                  <span class="program-type">Credit Card</span>
+                </div>
+              </div>
+              <div class="program-card__balance">48,000</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--gold">Gold</span>
+                <span class="expiry-bar__label">
+                  <span>No expiry</span>
+                  <span>Last: 3 days ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points never expire. Transfer to 11 airline and hotel
+                      partners.
+                    </p>
+                    <ul>
+                      <li>1:1 transfer to most partners</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 11 airlines/hotels</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Citi ThankYou -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Citi ThankYou Rewards</h4>
+                  <span class="program-type">Credit Card</span>
+                </div>
+              </div>
+              <div class="program-card__balance">32,000</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--silver">Silver</span>
+                <span class="expiry-bar__label">
+                  <span>No expiry</span>
+                  <span>Last: 1 week ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points never expire. Transfer to 15+ airline and hotel
+                      partners.
+                    </p>
+                    <ul>
+                      <li>1:1 transfer to most partners</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 15+ airlines/hotels</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <!-- Capital One -->
+            <div class="program-card">
+              <div class="program-card__header">
+                <span class="program-logo">💳</span>
+                <div class="program-info">
+                  <h4 class="program-name">Capital One Miles</h4>
+                  <span class="program-type">Credit Card</span>
+                </div>
+              </div>
+              <div class="program-card__balance">28,500</div>
+              <div class="program-card__status">
+                <span class="status-chip status-chip--silver">Silver</span>
+                <span class="expiry-bar__label">
+                  <span>No expiry</span>
+                  <span>Last: 2 weeks ago</span>
+                </span>
+              </div>
+              <div class="expiry-bar">
+                <div
+                  class="expiry-bar__fill expiry-bar__fill--safe"
+                  style="width: 100%"
+                ></div>
+              </div>
+              <div class="program-card__actions">
+                <button class="btn btn--secondary btn--sm">
+                  View Transactions
+                </button>
+                <details class="program-rules">
+                  <summary class="btn btn--secondary btn--sm">
+                    Program Rules
+                  </summary>
+                  <div class="rules-content">
+                    <p>
+                      Points never expire. Transfer to 15+ airline and hotel
+                      partners.
+                    </p>
+                    <ul>
+                      <li>1:1 transfer to most partners</li>
+                      <li>No blackout dates</li>
+                      <li>Partners: 15+ airlines/hotels</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Add Program Button -->
+        <div class="add-program-section">
+          <button class="btn btn--primary btn--lg">
+            <span class="icon">➕</span>
+            Add New Program
+          </button>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Simple tab switching functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tabs__tab");
+        const sections = document.querySelectorAll(".programs-section");
+
+        tabs.forEach((tab, index) => {
+          tab.addEventListener("click", () => {
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("tabs__tab--active"));
+            // Add active class to clicked tab
+            tab.classList.add("tabs__tab--active");
+
+            // Hide all sections
+            sections.forEach((section) => (section.style.display = "none"));
+            // Show corresponding section
+            if (sections[index]) {
+              sections[index].style.display = "block";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

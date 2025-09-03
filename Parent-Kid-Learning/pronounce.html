@@ -1,299 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pronunciation Practice - Parent-Kid Learning App</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layouts.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="stylesheet" href="styles/print.css">
-</head>
-<body class="theme-light">
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
     <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Parent-Kid Learning</h1>
-            <div class="header__controls">
-                <span class="language-chip">EN</span>
-                <div class="profile-avatar">👨‍👩‍👧‍👦</div>
-            </div>
+      <div class="header__content">
+        <h1 class="header__title">Parent-Kid Learning</h1>
+        <div class="header__controls">
+          <span class="language-chip">EN</span>
+          <div class="profile-avatar">👨‍👩‍👧‍👦</div>
         </div>
+      </div>
     </header>
 
     <main class="main">
-        <div class="pronounce-layout">
-            <div class="pronounce-layout__header">
-                <h1 class="pronounce-layout__title">Pronunciation Practice</h1>
-                <p class="pronounce-layout__description">Practice saying words together with syllable breaks and helpful tips</p>
-            </div>
-
-            <div class="pronounce-layout__word-sets">
-                <div class="word-set-selector">
-                    <a href="#" class="word-set-tab word-set-tab--active">Animals</a>
-                    <a href="#" class="word-set-tab">Fruits</a>
-                    <a href="#" class="word-set-tab">Colors</a>
-                    <a href="#" class="word-set-tab">Family</a>
-                    <a href="#" class="word-set-tab">Numbers</a>
-                </div>
-
-                <div class="word-grid">
-                    <!-- Animal Words -->
-                    <div class="word-card">
-                        <div class="word-card__image">🐱</div>
-                        <h3 class="word-card__word">Cat</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">बिल्ली (Hindi)</span>
-                            <span class="word-card__translation">मांजर (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Open your mouth wide for /æ/ like in "cat"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🐕</div>
-                        <h3 class="word-card__word">Dog</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">कुत्ता (Hindi)</span>
-                            <span class="word-card__translation">कुत्रा (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Round your lips for /ɔ/ like in "dog"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🐄</div>
-                        <h3 class="word-card__word">Cow</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">गाय (Hindi)</span>
-                            <span class="word-card__translation">गाय (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Open wide for /aʊ/ like in "cow"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🐘</div>
-                        <h3 class="word-card__word">Elephant</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">हाथी (Hindi)</span>
-                            <span class="word-card__translation">हत्ती (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Say "el-e-phant" with clear breaks</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🦁</div>
-                        <h3 class="word-card__word">Lion</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">शेर (Hindi)</span>
-                            <span class="word-card__translation">सिंह (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Open wide for /aɪ/ like in "lion"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🐯</div>
-                        <h3 class="word-card__word">Tiger</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">बाघ (Hindi)</span>
-                            <span class="word-card__translation">वाघ (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Say "ti-ger" with a hard /g/ sound</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <!-- Fruit Words -->
-                    <div class="word-card">
-                        <div class="word-card__image">🍎</div>
-                        <h3 class="word-card__word">Apple</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">सेब (Hindi)</span>
-                            <span class="word-card__translation">सफरचंद (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Open wide for /æ/ like in "cat"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🥭</div>
-                        <h3 class="word-card__word">Mango</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">आम (Hindi)</span>
-                            <span class="word-card__translation">आंबा (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Say "man-go" with clear breaks</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🍌</div>
-                        <h3 class="word-card__word">Banana</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">केला (Hindi)</span>
-                            <span class="word-card__translation">केळी (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Say "ba-na-na" with equal stress</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <!-- Color Words -->
-                    <div class="word-card">
-                        <div class="word-card__image">🔴</div>
-                        <h3 class="word-card__word">Red</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">लाल (Hindi)</span>
-                            <span class="word-card__translation">लाल (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Open wide for /ɛ/ like in "red"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🔵</div>
-                        <h3 class="word-card__word">Blue</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">नीला (Hindi)</span>
-                            <span class="word-card__translation">निळा (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Round your lips for /u/ like in "blue"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-
-                    <div class="word-card">
-                        <div class="word-card__image">🟢</div>
-                        <h3 class="word-card__word">Green</h3>
-                        <div class="word-card__translations">
-                            <span class="word-card__translation">हरा (Hindi)</span>
-                            <span class="word-card__translation">हिरवा (Marathi)</span>
-                        </div>
-                        <div class="word-card__syllables">
-                            <div class="word-card__syllable-dot"></div>
-                        </div>
-                        <p class="word-card__mouth-tip">Open wide for /i/ like in "green"</p>
-                        <div class="word-card__actions">
-                            <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
-                            <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="parent-tip">
-                    <div class="parent-tip__icon">💡</div>
-                    <p class="parent-tip__text">Tap the dots: <strong>Ap • ple</strong> — short <strong>/æ/</strong> like in <em>cat</em>. Practice together!</p>
-                </div>
-
-                <div class="mini-games">
-                    <h3>Mini Games</h3>
-                    <div class="mini-games__grid">
-                        <div class="mini-game-card">
-                            <h4>Find the Word</h4>
-                            <p>Listen and tap the matching picture</p>
-                        </div>
-                        <div class="mini-game-card">
-                            <h4>Match Picture</h4>
-                            <p>Connect words with their images</p>
-                        </div>
-                        <div class="mini-game-card">
-                            <h4>Say and Stick</h4>
-                            <p>Say the word and earn a star</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <nav class="quick-nav">
-                <a href="index.html" class="quick-nav__link">🏠 Home</a>
-                <a href="stories.html" class="quick-nav__link">📚 Stories</a>
-                <a href="rhymes.html" class="quick-nav__link">🎵 Rhymes</a>
-                <a href="progress.html" class="quick-nav__link">🏆 Progress</a>
-            </nav>
+      <div class="pronounce-layout">
+        <div class="pronounce-layout__header">
+          <h1 class="pronounce-layout__title">Pronunciation Practice</h1>
+          <p class="pronounce-layout__description">
+            Practice saying words together with syllable breaks and helpful tips
+          </p>
         </div>
+
+        <div class="pronounce-layout__word-sets">
+          <div class="word-set-selector">
+            <a href="#" class="word-set-tab word-set-tab--active">Animals</a>
+            <a href="#" class="word-set-tab">Fruits</a>
+            <a href="#" class="word-set-tab">Colors</a>
+            <a href="#" class="word-set-tab">Family</a>
+            <a href="#" class="word-set-tab">Numbers</a>
+          </div>
+
+          <div class="word-grid">
+            <!-- Animal Words -->
+            <div class="word-card">
+              <div class="word-card__image">🐱</div>
+              <h3 class="word-card__word">Cat</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">बिल्ली (Hindi)</span>
+                <span class="word-card__translation">मांजर (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Open your mouth wide for /æ/ like in "cat"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🐕</div>
+              <h3 class="word-card__word">Dog</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">कुत्ता (Hindi)</span>
+                <span class="word-card__translation">कुत्रा (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Round your lips for /ɔ/ like in "dog"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🐄</div>
+              <h3 class="word-card__word">Cow</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">गाय (Hindi)</span>
+                <span class="word-card__translation">गाय (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Open wide for /aʊ/ like in "cow"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🐘</div>
+              <h3 class="word-card__word">Elephant</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">हाथी (Hindi)</span>
+                <span class="word-card__translation">हत्ती (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Say "el-e-phant" with clear breaks
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🦁</div>
+              <h3 class="word-card__word">Lion</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">शेर (Hindi)</span>
+                <span class="word-card__translation">सिंह (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Open wide for /aɪ/ like in "lion"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🐯</div>
+              <h3 class="word-card__word">Tiger</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">बाघ (Hindi)</span>
+                <span class="word-card__translation">वाघ (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Say "ti-ger" with a hard /g/ sound
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <!-- Fruit Words -->
+            <div class="word-card">
+              <div class="word-card__image">🍎</div>
+              <h3 class="word-card__word">Apple</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">सेब (Hindi)</span>
+                <span class="word-card__translation">सफरचंद (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Open wide for /æ/ like in "cat"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🥭</div>
+              <h3 class="word-card__word">Mango</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">आम (Hindi)</span>
+                <span class="word-card__translation">आंबा (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">Say "man-go" with clear breaks</p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🍌</div>
+              <h3 class="word-card__word">Banana</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">केला (Hindi)</span>
+                <span class="word-card__translation">केळी (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Say "ba-na-na" with equal stress
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <!-- Color Words -->
+            <div class="word-card">
+              <div class="word-card__image">🔴</div>
+              <h3 class="word-card__word">Red</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">लाल (Hindi)</span>
+                <span class="word-card__translation">लाल (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Open wide for /ɛ/ like in "red"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🔵</div>
+              <h3 class="word-card__word">Blue</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">नीला (Hindi)</span>
+                <span class="word-card__translation">निळा (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Round your lips for /u/ like in "blue"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+
+            <div class="word-card">
+              <div class="word-card__image">🟢</div>
+              <h3 class="word-card__word">Green</h3>
+              <div class="word-card__translations">
+                <span class="word-card__translation">हरा (Hindi)</span>
+                <span class="word-card__translation">हिरवा (Marathi)</span>
+              </div>
+              <div class="word-card__syllables">
+                <div class="word-card__syllable-dot"></div>
+              </div>
+              <p class="word-card__mouth-tip">
+                Open wide for /i/ like in "green"
+              </p>
+              <div class="word-card__actions">
+                <a href="#" class="word-card__action-btn">🎤 Tap to say</a>
+                <a href="#" class="word-card__action-btn">🔊 Repeat after me</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="parent-tip">
+            <div class="parent-tip__icon">💡</div>
+            <p class="parent-tip__text">
+              Tap the dots: <strong>Ap • ple</strong> — short
+              <strong>/æ/</strong> like in <em>cat</em>. Practice together!
+            </p>
+          </div>
+
+          <div class="mini-games">
+            <h3>Mini Games</h3>
+            <div class="mini-games__grid">
+              <div class="mini-game-card">
+                <h4>Find the Word</h4>
+                <p>Listen and tap the matching picture</p>
+              </div>
+              <div class="mini-game-card">
+                <h4>Match Picture</h4>
+                <p>Connect words with their images</p>
+              </div>
+              <div class="mini-game-card">
+                <h4>Say and Stick</h4>
+                <p>Say the word and earn a star</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="quick-nav">
+          <a href="index.html" class="quick-nav__link">🏠 Home</a>
+          <a href="stories.html" class="quick-nav__link">📚 Stories</a>
+          <a href="rhymes.html" class="quick-nav__link">🎵 Rhymes</a>
+          <a href="progress.html" class="quick-nav__link">🏆 Progress</a>
+        </nav>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <p class="footer__text">For families • v0.1 • <a href="#" class="footer__link">Print</a></p>
-        </div>
+      <div class="footer__content">
+        <p class="footer__text">
+          For families • v0.1 • <a href="#" class="footer__link">Print</a>
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

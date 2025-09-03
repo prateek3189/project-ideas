@@ -1,0 +1,426 @@
+/* Print Styles - Budget Buddy */
+
+@media print {
+  /* Reset all colors and shadows for print */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .sidebar,
+  .header__actions,
+  .theme-toggle,
+  .footer__help,
+  button,
+  .btn,
+  .filter-pill,
+  .import-tabs__header {
+    display: none !important;
+  }
+
+  /* App layout for print */
+  .app {
+    display: block;
+    grid-template-areas: none;
+    grid-template-columns: none;
+    grid-template-rows: none;
+  }
+
+  .header {
+    position: static;
+    border-bottom: 2px solid black;
+    padding: 0 0 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .header__brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header__logo {
+    background: black !important;
+    color: white !important;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .header__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black !important;
+  }
+
+  .main {
+    padding: 0;
+    background: white !important;
+  }
+
+  .footer {
+    position: static;
+    border-top: 1px solid black;
+    padding: 1rem 0 0 0;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: black !important;
+  }
+
+  /* Typography for print */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+    color: #666 !important;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: left;
+    color: black !important;
+  }
+
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+  }
+
+  /* Monthly Statement Styles */
+  .statement-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+  }
+
+  .statement-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .statement-period {
+    font-size: 1rem;
+    color: black !important;
+  }
+
+  .statement-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid black;
+  }
+
+  .statement-summary__item {
+    text-align: center;
+  }
+
+  .statement-summary__label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: black !important;
+  }
+
+  .statement-summary__value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: monospace;
+    color: black !important;
+  }
+
+  .statement-summary__value--income {
+    color: black !important;
+  }
+
+  .statement-summary__value--expense {
+    color: black !important;
+  }
+
+  /* Transaction table for statements */
+  .statement-transactions {
+    margin-bottom: 2rem;
+  }
+
+  .statement-transactions th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .statement-transactions td {
+    font-size: 0.875rem;
+    vertical-align: top;
+  }
+
+  .statement-transactions .amount {
+    font-family: monospace;
+    text-align: right;
+  }
+
+  .statement-transactions .amount--debit {
+    color: black !important;
+  }
+
+  .statement-transactions .amount--credit {
+    color: black !important;
+  }
+
+  /* Category breakdown */
+  .statement-categories {
+    margin-bottom: 2rem;
+  }
+
+  .statement-categories h3 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5rem;
+  }
+
+  .category-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .category-row:last-child {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+  }
+
+  .category-name {
+    font-weight: 500;
+  }
+
+  .category-amount {
+    font-family: monospace;
+    font-weight: 500;
+  }
+
+  /* Budget Report Styles */
+  .budget-report {
+    margin-bottom: 2rem;
+  }
+
+  .budget-report h2 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5rem;
+  }
+
+  .budget-category {
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    page-break-inside: avoid;
+  }
+
+  .budget-category__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .budget-category__name {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+
+  .budget-category__amount {
+    font-family: monospace;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+
+  .budget-category__progress {
+    height: 20px;
+    background: #f0f0f0 !important;
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .budget-category__progress::after {
+    content: attr(data-progress) "%";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: black !important;
+  }
+
+  .budget-category__details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+  }
+
+  .budget-category__spent {
+    font-family: monospace;
+  }
+
+  .budget-category__remaining {
+    font-family: monospace;
+  }
+
+  /* Page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Footer for each page */
+  .print-footer {
+    position: fixed;
+    bottom: 0.5in;
+    left: 1in;
+    right: 1in;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666 !important;
+    border-top: 1px solid #ccc;
+    padding-top: 0.5rem;
+  }
+
+  /* Hide interactive elements */
+  input,
+  select,
+  textarea {
+    border: 1px solid black !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Ensure proper spacing */
+  .tile,
+  .account-card,
+  .receipt-card {
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: white !important;
+  }
+
+  .tile__value,
+  .account-card__balance {
+    font-family: monospace;
+    font-weight: bold;
+    color: black !important;
+  }
+
+  /* Chart blocks as simple lists */
+  .chart-block {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: white !important;
+  }
+
+  .chart-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .chart-bar:last-child {
+    border-bottom: none;
+  }
+
+  .chart-bar__label {
+    font-weight: 500;
+  }
+
+  .chart-bar__value {
+    font-family: monospace;
+    font-weight: 500;
+  }
+
+  /* Print-specific utility classes */
+  .print-only {
+    display: block !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure text is readable */
+  .text-primary,
+  .text-secondary,
+  .text-tertiary {
+    color: black !important;
+  }
+
+  .text-income,
+  .text-expense,
+  .text-warning,
+  .text-error,
+  .text-success {
+    color: black !important;
+  }
+}

@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - About</title>
+    <meta
+      name="description"
+      content="Learn about Budget Buddy's methodology, privacy, and disclaimers"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Statement</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="accounts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a
+                  href="about.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">About Budget Buddy</h1>
+            <p class="main__subtitle">
+              Your personal finance companion for effortless expense tracking
+            </p>
+          </div>
+
+          <!-- App Overview -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">What is Budget Buddy?</h2>
+              <p
+                style="
+                  margin-bottom: 1.5rem;
+                  line-height: var(--line-height-relaxed);
+                "
+              >
+                Budget Buddy is a personal finance application designed to make
+                expense tracking effortless and automatic. By parsing SMS
+                messages from your bank and UPI transactions, it automatically
+                categorizes your spending and provides insights into your
+                financial habits.
+              </p>
+              <p
+                style="
+                  margin-bottom: 1.5rem;
+                  line-height: var(--line-height-relaxed);
+                "
+              >
+                The app focuses on <strong>privacy-first design</strong> - all
+                data processing happens locally on your device. No personal
+                financial information is sent to external servers, giving you
+                complete control over your data.
+              </p>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 1rem;
+                  margin-top: 2rem;
+                "
+              >
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">🔒</div>
+                  <div
+                    style="
+                      font-weight: var(--font-weight-semibold);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    Privacy First
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                    "
+                  >
+                    Local processing only
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">🤖</div>
+                  <div
+                    style="
+                      font-weight: var(--font-weight-semibold);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    Auto-Categorization
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                    "
+                  >
+                    Smart transaction parsing
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">📱</div>
+                  <div
+                    style="
+                      font-weight: var(--font-weight-semibold);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    SMS Integration
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                    "
+                  >
+                    Works with bank SMS
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">📊</div>
+                  <div
+                    style="
+                      font-weight: var(--font-weight-semibold);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    Rich Insights
+                  </div>
+                  <div
+                    style="
+                      font-size: var(--font-size-sm);
+                      color: var(--color-text-secondary);
+                    "
+                  >
+                    Detailed analytics
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- How It Works -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">How It Works</h2>
+              <p
+                style="margin-bottom: 2rem; color: var(--color-text-secondary)"
+              >
+                Budget Buddy uses advanced text parsing algorithms to extract
+                transaction information from your SMS messages and UPI data.
+              </p>
+
+              <div style="display: grid; gap: 1.5rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    1
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      SMS Parsing
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Extract merchant names, amounts, dates, and account
+                      information from bank SMS messages
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    2
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Auto-Categorization
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Automatically assign categories based on merchant names
+                      and custom rules
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    3
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Data Analysis
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Generate insights, trends, and budget tracking based on
+                      your transaction history
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.5rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-lg);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    4
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Local Storage
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      All data is stored securely on your device with no
+                      external transmission
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supported Banks -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">Supported Banks & Services</h2>
+              <p
+                style="margin-bottom: 2rem; color: var(--color-text-secondary)"
+              >
+                Budget Buddy works with SMS messages from most major Indian
+                banks and UPI services.
+              </p>
+
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                  gap: 1rem;
+                "
+              >
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    HDFC Bank
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    SBI
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    ICICI Bank
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    Axis Bank
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    Kotak Bank
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    PNB
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    Paytm
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    PhonePe
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    Google Pay
+                  </div>
+                </div>
+                <div
+                  style="
+                    text-align: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div style="font-weight: var(--font-weight-semibold)">
+                    BHIM UPI
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 2rem;
+                  padding: 1rem;
+                  background: var(--color-accent-light);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div
+                  style="
+                    font-size: var(--font-size-sm);
+                    color: var(--color-accent);
+                  "
+                >
+                  <strong>💡 Note:</strong> If your bank is not listed, Budget
+                  Buddy can still work with most SMS formats. You can manually
+                  add parsing rules in Settings.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy Policy -->
+          <div class="dashboard-section" id="privacy">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">Privacy Policy</h2>
+              <p
+                style="
+                  margin-bottom: 1.5rem;
+                  line-height: var(--line-height-relaxed);
+                "
+              >
+                Your privacy is our top priority. Budget Buddy is designed with
+                privacy-first principles to ensure your financial data remains
+                secure and private.
+              </p>
+
+              <h3 style="margin-bottom: 1rem; margin-top: 2rem">
+                Data Collection
+              </h3>
+              <ul
+                style="
+                  margin-bottom: 1.5rem;
+                  padding-left: 1.5rem;
+                  line-height: var(--line-height-relaxed);
+                "
+              >
+                <li>
+                  <strong>No Personal Data Collection:</strong> We do not
+                  collect, store, or transmit any personal information
+                </li>
+                <li>
+                  <strong>Local Processing Only:</strong> All SMS parsing and
+                  data analysis happens on your device
+                </li>
+                <li>
+                  <strong>No Account Access:</strong> We never access your bank
+                  accounts or financial institutions
+                </li>
+                <li>
+                  <strong>No Data Sharing:</strong> Your data is never shared
+                  with third parties
+                </li>
+              </ul>
+
+              <h3 style="margin-bottom: 1rem; margin-top: 2rem">
+                Data Storage
+              </h3>
+              <ul
+                style="
+                  margin-bottom: 1.5rem;
+                  padding-left: 1.5rem;
+                  line-height: var(--line-height-relaxed);
+                "
+              >
+                <li>
+                  <strong>Local Storage:</strong> All data is stored locally on
+                  your device
+                </li>
+                <li>
+                  <strong>Encryption:</strong> Sensitive data is encrypted using
+                  device-level security
+                </li>
+                <li>
+                  <strong>Data Masking:</strong> Account numbers and sensitive
+                  information are masked in displays
+                </li>
+                <li>
+                  <strong>User Control:</strong> You can export, delete, or
+                  modify your data at any time
+                </li>
+              </ul>
+
+              <h3 style="margin-bottom: 1rem; margin-top: 2rem">Permissions</h3>
+              <ul
+                style="
+                  margin-bottom: 1.5rem;
+                  padding-left: 1.5rem;
+                  line-height: var(--line-height-relaxed);
+                "
+              >
+                <li>
+                  <strong>SMS Access:</strong> Required to read bank SMS
+                  messages for transaction parsing
+                </li>
+                <li>
+                  <strong>Storage Access:</strong> Required to store your
+                  financial data locally
+                </li>
+                <li>
+                  <strong>No Network Access:</strong> The app does not require
+                  internet connectivity
+                </li>
+              </ul>
+
+              <div
+                style="
+                  padding: 1rem;
+                  background: var(--color-success);
+                  color: white;
+                  border-radius: var(--radius-md);
+                  margin-top: 2rem;
+                "
+              >
+                <div style="font-size: var(--font-size-sm)">
+                  <strong>✅ Privacy Guarantee:</strong> Your financial data
+                  never leaves your device. We cannot access, view, or share
+                  your personal information.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disclaimers -->
+          <div class="dashboard-section" id="disclaimer">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">Important Disclaimers</h2>
+
+              <div style="margin-bottom: 2rem">
+                <h3 style="margin-bottom: 1rem; color: var(--color-warning)">
+                  ⚠️ Financial Advice Disclaimer
+                </h3>
+                <p
+                  style="
+                    margin-bottom: 1rem;
+                    line-height: var(--line-height-relaxed);
+                  "
+                >
+                  Budget Buddy is a personal finance tracking tool and does not
+                  provide financial advice. All insights, suggestions, and
+                  analysis are for informational purposes only. Please consult
+                  with a qualified financial advisor for personalized financial
+                  advice.
+                </p>
+              </div>
+
+              <div style="margin-bottom: 2rem">
+                <h3 style="margin-bottom: 1rem; color: var(--color-warning)">
+                  ⚠️ Data Accuracy Disclaimer
+                </h3>
+                <p
+                  style="
+                    margin-bottom: 1rem;
+                    line-height: var(--line-height-relaxed);
+                  "
+                >
+                  While Budget Buddy strives for accuracy in parsing SMS
+                  messages and categorizing transactions, the automated nature
+                  of the process means errors may occur. Always verify important
+                  transactions against your official bank statements.
+                </p>
+              </div>
+
+              <div style="margin-bottom: 2rem">
+                <h3 style="margin-bottom: 1rem; color: var(--color-warning)">
+                  ⚠️ Bank Statement Verification
+                </h3>
+                <p
+                  style="
+                    margin-bottom: 1rem;
+                    line-height: var(--line-height-relaxed);
+                  "
+                >
+                  Budget Buddy is designed to complement, not replace, your
+                  official bank statements. Always refer to your bank's official
+                  records for accurate account balances and transaction details.
+                </p>
+              </div>
+
+              <div style="margin-bottom: 2rem">
+                <h3 style="margin-bottom: 1rem; color: var(--color-warning)">
+                  ⚠️ SMS Parsing Limitations
+                </h3>
+                <p
+                  style="
+                    margin-bottom: 1rem;
+                    line-height: var(--line-height-relaxed);
+                  "
+                >
+                  SMS parsing accuracy depends on the format and content of your
+                  bank's messages. Different banks may use varying formats, and
+                  some transactions may not be parsed correctly. Manual review
+                  and correction may be necessary.
+                </p>
+              </div>
+
+              <div style="margin-bottom: 2rem">
+                <h3 style="margin-bottom: 1rem; color: var(--color-warning)">
+                  ⚠️ Software Limitations
+                </h3>
+                <p
+                  style="
+                    margin-bottom: 1rem;
+                    line-height: var(--line-height-relaxed);
+                  "
+                >
+                  Budget Buddy is provided "as is" without warranties of any
+                  kind. We do not guarantee uninterrupted service or error-free
+                  operation. Users are responsible for backing up their data and
+                  verifying transaction accuracy.
+                </p>
+              </div>
+
+              <div
+                style="
+                  padding: 1rem;
+                  background: var(--color-error);
+                  color: white;
+                  border-radius: var(--radius-md);
+                "
+              >
+                <div style="font-size: var(--font-size-sm)">
+                  <strong>🚨 Important:</strong> Always verify critical
+                  financial information with your bank. Budget Buddy is a
+                  tracking tool, not a replacement for official banking
+                  services.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Version Information -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">Version Information</h2>
+
+              <div style="display: grid; gap: 1rem">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Current Version
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      v1.0.0
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      color: var(--color-success);
+                      font-weight: var(--font-weight-bold);
+                    "
+                  >
+                    Latest
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Release Date
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      September 2024
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      Build Type
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Static HTML/CSS Prototype
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div>
+                    <div style="font-weight: var(--font-weight-medium)">
+                      License
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      MIT License
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 2rem;
+                  padding: 1rem;
+                  background: var(--color-bg-tertiary);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <h3 style="margin-bottom: 1rem">Changelog</h3>
+                <div
+                  style="
+                    font-size: var(--font-size-sm);
+                    line-height: var(--line-height-relaxed);
+                  "
+                >
+                  <div style="margin-bottom: 0.5rem">
+                    <strong>v1.0.0 (September 2024)</strong>
+                  </div>
+                  <ul style="padding-left: 1.5rem; margin-bottom: 1rem">
+                    <li>Initial release with static HTML/CSS prototype</li>
+                    <li>SMS parsing interface and preview</li>
+                    <li>UPI transaction import functionality</li>
+                    <li>CSV file upload and mapping</li>
+                    <li>Dashboard with budget tracking</li>
+                    <li>Transaction history and filtering</li>
+                    <li>Insights and analytics</li>
+                    <li>Account management</li>
+                    <li>Settings and customization</li>
+                    <li>Dark mode and accessibility features</li>
+                    <li>Print-friendly layouts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Support -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h2 style="margin-bottom: 1rem">Support & Contact</h2>
+              <p
+                style="margin-bottom: 2rem; color: var(--color-text-secondary)"
+              >
+                Need help with Budget Buddy? Here are some resources to get you
+                started.
+              </p>
+
+              <div style="display: grid; gap: 1rem">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    📖
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      User Guide
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Comprehensive guide to using all Budget Buddy features
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    ❓
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      FAQ
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Frequently asked questions and troubleshooting tips
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    🐛
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Report Issues
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Found a bug or have a feature request? Let us know!
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background: var(--color-bg-tertiary);
+                    border-radius: var(--radius-md);
+                  "
+                >
+                  <div
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: var(--color-accent);
+                      border-radius: 50%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 1.2rem;
+                    "
+                  >
+                    💬
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-weight: var(--font-weight-semibold);
+                        margin-bottom: 0.25rem;
+                      "
+                    >
+                      Community
+                    </div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Join our community for tips, tricks, and discussions
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

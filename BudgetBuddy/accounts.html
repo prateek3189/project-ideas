@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Buddy - Accounts</title>
+    <meta
+      name="description"
+      content="Manage your bank accounts, cards, and UPI handles"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__brand">
+          <div class="header__logo">💰</div>
+          <h1 class="header__title">Budget Buddy</h1>
+        </div>
+        <div class="header__actions">
+          <div class="header__month-picker">
+            <span>📅</span>
+            <span>September 2024</span>
+          </div>
+          <a href="#print" class="header__print-link" onclick="window.print()">
+            <span>🖨️</span>
+            <span>Print Statement</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Overview</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="index.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📊</span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="transactions.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">💳</span>
+                  Transactions
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="budgets.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🎯</span>
+                  Budgets
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="insights.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📈</span>
+                  Insights
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Data</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="import.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">📥</span>
+                  Import
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a
+                  href="accounts.html"
+                  class="sidebar__nav-link sidebar__nav-link--active"
+                >
+                  <span class="sidebar__nav-icon">🏦</span>
+                  Accounts
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="receipts.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">🧾</span>
+                  Receipts
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__section">
+            <h2 class="sidebar__section-title">Settings</h2>
+            <ul class="sidebar__nav-list">
+              <li class="sidebar__nav-item">
+                <a href="settings.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">⚙️</span>
+                  Settings
+                </a>
+              </li>
+              <li class="sidebar__nav-item">
+                <a href="about.html" class="sidebar__nav-link">
+                  <span class="sidebar__nav-icon">ℹ️</span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar__theme-toggle">
+          <button class="theme-toggle" onclick="toggleTheme()">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+            />
+            <span class="theme-toggle__slider"></span>
+            <span class="theme-toggle__icon">🌙</span>
+            <span class="theme-toggle__label">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main">
+        <div class="main__content">
+          <div class="main__header">
+            <h1 class="main__title">Accounts</h1>
+            <p class="main__subtitle">
+              Manage your bank accounts, cards, and UPI handles
+            </p>
+          </div>
+
+          <!-- Account Summary -->
+          <div class="dashboard-section">
+            <div class="dashboard-grid">
+              <div class="tile tile--success">
+                <div class="tile__header">
+                  <h3 class="tile__title">Total Balance</h3>
+                  <span class="tile__icon">💰</span>
+                </div>
+                <div class="tile__value tabular-nums">₹1,25,450</div>
+                <div class="tile__subtitle">Across 4 accounts</div>
+              </div>
+
+              <div class="tile tile--info">
+                <div class="tile__header">
+                  <h3 class="tile__title">Active Accounts</h3>
+                  <span class="tile__icon">🏦</span>
+                </div>
+                <div class="tile__value tabular-nums">4</div>
+                <div class="tile__subtitle">2 banks, 1 card, 1 UPI</div>
+              </div>
+
+              <div class="tile tile--warning">
+                <div class="tile__header">
+                  <h3 class="tile__title">Last Import</h3>
+                  <span class="tile__icon">📥</span>
+                </div>
+                <div class="tile__value">2 hours ago</div>
+                <div class="tile__subtitle">SMS + UPI sync</div>
+              </div>
+
+              <div class="tile tile--spend">
+                <div class="tile__header">
+                  <h3 class="tile__title">Pending Review</h3>
+                  <span class="tile__icon">⚠️</span>
+                </div>
+                <div class="tile__value tabular-nums">3</div>
+                <div class="tile__subtitle">Transactions need review</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Account Cards -->
+          <div class="dashboard-section">
+            <h2 class="dashboard-section__title">Your Accounts</h2>
+
+            <div class="dashboard-grid">
+              <!-- SBI Savings Account -->
+              <div class="account-card">
+                <div class="account-card__header">
+                  <div class="account-card__type">
+                    <div class="account-card__icon">🏦</div>
+                    <div class="account-card__name">SBI Savings Account</div>
+                  </div>
+                  <div class="account-card__balance tabular-nums">₹85,230</div>
+                </div>
+                <div class="account-card__meta">
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Account Number
+                    </div>
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-medium);
+                      "
+                    >
+                      ****1234
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Last Import
+                    </div>
+                    <div style="font-size: var(--font-size-sm)">
+                      2 hours ago
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+                  <button class="btn btn--secondary" style="flex: 1">
+                    Import SMS
+                  </button>
+                  <button class="btn btn--secondary" style="flex: 1">
+                    View Statement
+                  </button>
+                </div>
+              </div>
+
+              <!-- HDFC Credit Card -->
+              <div class="account-card">
+                <div class="account-card__header">
+                  <div class="account-card__type">
+                    <div class="account-card__icon">💳</div>
+                    <div class="account-card__name">HDFC Credit Card</div>
+                  </div>
+                  <div class="account-card__balance tabular-nums">₹12,450</div>
+                </div>
+                <div class="account-card__meta">
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Card Number
+                    </div>
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-medium);
+                      "
+                    >
+                      ****5678
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Last Import
+                    </div>
+                    <div style="font-size: var(--font-size-sm)">1 hour ago</div>
+                  </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+                  <button class="btn btn--secondary" style="flex: 1">
+                    Import SMS
+                  </button>
+                  <button class="btn btn--secondary" style="flex: 1">
+                    View Statement
+                  </button>
+                </div>
+              </div>
+
+              <!-- UPI Account -->
+              <div class="account-card">
+                <div class="account-card__header">
+                  <div class="account-card__type">
+                    <div class="account-card__icon">📱</div>
+                    <div class="account-card__name">UPI Primary</div>
+                  </div>
+                  <div class="account-card__balance tabular-nums">₹2,780</div>
+                </div>
+                <div class="account-card__meta">
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      UPI ID
+                    </div>
+                    <div
+                      style="
+                        font-family: var(--font-family-mono);
+                        font-weight: var(--font-weight-medium);
+                      "
+                    >
+                      alice@okicici
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Last Import
+                    </div>
+                    <div style="font-size: var(--font-size-sm)">30 min ago</div>
+                  </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+                  <button class="btn btn--secondary" style="flex: 1">
+                    Import UPI
+                  </button>
+                  <button class="btn btn--secondary" style="flex: 1">
+                    View History
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cash Account -->
+              <div class="account-card">
+                <div class="account-card__header">
+                  <div class="account-card__type">
+                    <div class="account-card__icon">💵</div>
+                    <div class="account-card__name">Cash</div>
+                  </div>
+                  <div class="account-card__balance tabular-nums">₹24,990</div>
+                </div>
+                <div class="account-card__meta">
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Type
+                    </div>
+                    <div style="font-size: var(--font-size-sm)">
+                      Manual Entry
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
+                      "
+                    >
+                      Last Updated
+                    </div>
+                    <div style="font-size: var(--font-size-sm)">Yesterday</div>
+                  </div>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem">
+                  <button class="btn btn--secondary" style="flex: 1">
+                    Update Balance
+                  </button>
+                  <button class="btn btn--secondary" style="flex: 1">
+                    Add Transaction
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auto-Categorization Rules -->
+          <div class="dashboard-section">
+            <h2 class="dashboard-section__title">Auto-Categorization Rules</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: 2rem">
+              These rules automatically categorize transactions based on
+              merchant names and descriptions.
+            </p>
+
+            <div style="display: grid; gap: 1rem">
+              <div class="rule-row">
+                <div class="rule-row__pattern">SWIGGY</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--food">Food</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">ZOMATO</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--food">Food</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">OLA CABS</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--transport">Transport</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">UBER</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--transport">Transport</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">AMAZON</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--shopping">Shopping</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">FLIPKART</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--shopping">Shopping</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">ELECTRICITY BILL</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--bills">Bills</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">INTERNET BILL</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--bills">Bills</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">NETFLIX</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--entertainment">Entertainment</span>
+                </div>
+              </div>
+
+              <div class="rule-row">
+                <div class="rule-row__pattern">MEDICAL STORE</div>
+                <div class="rule-row__arrow">→</div>
+                <div class="rule-row__action">
+                  <span class="pill pill--health">Health</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem">
+              <button class="btn">Add New Rule</button>
+              <button class="btn btn--secondary">Edit Rules</button>
+              <button class="btn btn--secondary">Import Rules</button>
+            </div>
+          </div>
+
+          <!-- Account Statements -->
+          <div class="dashboard-section">
+            <h2 class="dashboard-section__title">Recent Statements</h2>
+
+            <div class="tile">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 1rem;
+                "
+              >
+                <h3>SBI Savings Account - September 2024</h3>
+                <button class="btn btn--secondary">Download PDF</button>
+              </div>
+
+              <table style="width: 100%; border-collapse: collapse">
+                <thead>
+                  <tr style="background: var(--color-bg-tertiary)">
+                    <th
+                      style="
+                        padding: 0.75rem;
+                        text-align: left;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Date
+                    </th>
+                    <th
+                      style="
+                        padding: 0.75rem;
+                        text-align: left;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Description
+                    </th>
+                    <th
+                      style="
+                        padding: 0.75rem;
+                        text-align: right;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Debit
+                    </th>
+                    <th
+                      style="
+                        padding: 0.75rem;
+                        text-align: right;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Credit
+                    </th>
+                    <th
+                      style="
+                        padding: 0.75rem;
+                        text-align: right;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Balance
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Sep 1
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Salary Credit
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                      "
+                    >
+                      -
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                        color: var(--color-income);
+                      "
+                    >
+                      ₹40,000
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                      "
+                    >
+                      ₹85,230
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Sep 10
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Electricity Bill
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                        color: var(--color-expense);
+                      "
+                    >
+                      ₹2,100
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                      "
+                    >
+                      -
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                      "
+                    >
+                      ₹83,130
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Sep 20
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                      "
+                    >
+                      Internet Bill
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                        color: var(--color-expense);
+                      "
+                    >
+                      ₹1,200
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                      "
+                    >
+                      -
+                    </td>
+                    <td
+                      style="
+                        padding: 0.75rem;
+                        border-bottom: 1px solid var(--color-border);
+                        text-align: right;
+                        font-family: var(--font-family-mono);
+                      "
+                    >
+                      ₹81,930
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Account Management -->
+          <div class="dashboard-section">
+            <div class="tile">
+              <h3 style="margin-bottom: 1rem">Account Management</h3>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+                <button class="btn">Add New Account</button>
+                <button class="btn btn--secondary">Sync All Accounts</button>
+                <button class="btn btn--secondary">Export Data</button>
+                <button class="btn btn--secondary">Account Settings</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__version">v1.0.0</div>
+        <div class="footer__help">
+          <a href="about.html" class="footer__help-link">Help</a>
+          <a href="about.html#privacy" class="footer__help-link">Privacy</a>
+          <a href="about.html#disclaimer" class="footer__help-link"
+            >Disclaimer</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+
+        // Update checkbox state
+        const checkbox = document.getElementById("theme-toggle");
+        if (checkbox) {
+          checkbox.checked = savedTheme === "dark";
+        }
+      });
+    </script>
+  </body>
+</html>

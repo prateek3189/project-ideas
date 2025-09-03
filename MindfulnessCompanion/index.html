@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Today</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a
+            href="index.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a href="meditate.html" class="sidebar__link">
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a href="breathe.html" class="sidebar__link">
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a href="checkin.html" class="sidebar__link">
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a href="insights.html" class="sidebar__link">
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a href="library.html" class="sidebar__link">
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a href="settings.html" class="sidebar__link">
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Good morning</h2>
+            <p class="welcome__subtitle">Take a moment to center yourself</p>
+          </section>
+
+          <section class="quick-start">
+            <h3 class="section-title">Quick Start</h3>
+            <div class="tile-grid">
+              <a href="breathe.html" class="tile tile--today tile--breathe">
+                <div class="tile__icon">💨</div>
+                <div class="tile__content">
+                  <h4 class="tile__title">Breathe 1 min</h4>
+                  <p class="tile__subtitle">Quick reset between meetings</p>
+                </div>
+              </a>
+
+              <a href="meditate.html" class="tile tile--today tile--meditate">
+                <div class="tile__icon">🧘</div>
+                <div class="tile__content">
+                  <h4 class="tile__title">Meditate 5 min</h4>
+                  <p class="tile__subtitle">Gentle focus and calm</p>
+                </div>
+              </a>
+
+              <a href="checkin.html" class="tile tile--today tile--checkin">
+                <div class="tile__icon">📝</div>
+                <div class="tile__content">
+                  <h4 class="tile__title">Check-in now</h4>
+                  <p class="tile__subtitle">How are you feeling?</p>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <section class="daily-plan">
+            <h3 class="section-title">Today's Plan</h3>
+            <div class="plan">
+              <div class="plan__step plan__step--completed">
+                <div class="plan__number">1</div>
+                <div class="plan__content">
+                  <h4 class="plan__title">Breathe (1-2 min)</h4>
+                  <p class="plan__description">
+                    Box breathing to center yourself
+                  </p>
+                </div>
+                <div class="plan__status">✓</div>
+              </div>
+
+              <div class="plan__step">
+                <div class="plan__number">2</div>
+                <div class="plan__content">
+                  <h4 class="plan__title">Meditate (5-10 min)</h4>
+                  <p class="plan__description">Body scan for relaxation</p>
+                </div>
+                <div class="plan__status">○</div>
+              </div>
+
+              <div class="plan__step">
+                <div class="plan__number">3</div>
+                <div class="plan__content">
+                  <h4 class="plan__title">Reflect (2 prompts)</h4>
+                  <p class="plan__description">Gratitude and intention</p>
+                </div>
+                <div class="plan__status">○</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="nudge">
+            <div class="nudge__content">
+              <h3 class="nudge__title">Feeling tense?</h3>
+              <p class="nudge__text">
+                Unclench your jaw. Drop the shoulders. Inhale gently for 4.
+              </p>
+              <a href="breathe.html" class="nudge__cta">Try 4 slow breaths</a>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

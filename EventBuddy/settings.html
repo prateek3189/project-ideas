@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Event Buddy</title>
+    <meta
+      name="description"
+      content="Customize your Event Buddy experience with personalized settings and preferences."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="profile.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="form-layout">
+          <div class="main__header">
+            <h1 class="main__title">Settings</h1>
+            <p class="main__subtitle">Customize your Event Buddy experience</p>
+          </div>
+
+          <!-- Account Settings -->
+          <div class="form-section">
+            <h2 class="form-section__title">Account Settings</h2>
+
+            <div class="form-row">
+              <div>
+                <label for="firstName" class="required">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value="Prateek"
+                  required
+                />
+              </div>
+              <div>
+                <label for="lastName" class="required">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value="Magarde"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="email" class="required">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="prateek@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value="+91 98765 43210"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="city">Default City</label>
+                <select id="city" name="city">
+                  <option value="mumbai" selected>Mumbai</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="bangalore">Bangalore</option>
+                  <option value="chennai">Chennai</option>
+                  <option value="kolkata">Kolkata</option>
+                  <option value="hyderabad">Hyderabad</option>
+                  <option value="pune">Pune</option>
+                </select>
+              </div>
+              <div>
+                <label for="timezone">Timezone</label>
+                <select id="timezone" name="timezone">
+                  <option value="Asia/Kolkata" selected>
+                    Asia/Kolkata (IST)
+                  </option>
+                  <option value="UTC">UTC</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notification Settings -->
+          <div class="form-section">
+            <h2 class="form-section__title">Notification Preferences</h2>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Email Notifications</div>
+                  <div class="text-sm text-muted">
+                    Receive updates about your events and tickets
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" checked />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Push Notifications</div>
+                  <div class="text-sm text-muted">
+                    Get instant alerts on your device
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" checked />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Event Reminders</div>
+                  <div class="text-sm text-muted">
+                    Reminders before your events start
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" checked />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Marketing Updates</div>
+                  <div class="text-sm text-muted">
+                    News about new features and events
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy Settings -->
+          <div class="form-section">
+            <h2 class="form-section__title">Privacy & Security</h2>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Public Profile</div>
+                  <div class="text-sm text-muted">
+                    Allow others to see your public profile
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" checked />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Show Attendance</div>
+                  <div class="text-sm text-muted">
+                    Display your event attendance on profile
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" checked />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Data Analytics</div>
+                  <div class="text-sm text-muted">
+                    Help improve Event Buddy with usage data
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" checked />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-4">Data Management</h3>
+              <div class="flex gap-4">
+                <button class="btn-secondary">📥 Export My Data</button>
+                <button class="btn-secondary">🗑️ Delete Account</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appearance Settings -->
+          <div class="form-section">
+            <h2 class="form-section__title">Appearance</h2>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block font-medium mb-3">Theme</label>
+                <div class="flex gap-4">
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="theme"
+                      value="light"
+                      class="mr-3"
+                      checked
+                    />
+                    <div>
+                      <div class="font-medium">Light</div>
+                      <div class="text-sm text-muted">
+                        Clean and bright interface
+                      </div>
+                    </div>
+                  </label>
+
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="theme"
+                      value="dark"
+                      class="mr-3"
+                    />
+                    <div>
+                      <div class="font-medium">Dark</div>
+                      <div class="text-sm text-muted">Easy on the eyes</div>
+                    </div>
+                  </label>
+
+                  <label
+                    class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-border-light"
+                  >
+                    <input
+                      type="radio"
+                      name="theme"
+                      value="high-contrast"
+                      class="mr-3"
+                    />
+                    <div>
+                      <div class="font-medium">High Contrast</div>
+                      <div class="text-sm text-muted">
+                        Maximum accessibility
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-medium mb-3">Language</label>
+                <select class="w-full max-w-xs">
+                  <option value="en" selected>English</option>
+                  <option value="hi">हिन्दी</option>
+                  <option value="mr">मराठी</option>
+                  <option value="gu">ગુજરાતી</option>
+                  <option value="ta">தமிழ்</option>
+                  <option value="te">తెలుగు</option>
+                </select>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-4 border rounded-lg"
+              >
+                <div>
+                  <div class="font-medium">Reduced Motion</div>
+                  <div class="text-sm text-muted">
+                    Minimize animations and transitions
+                  </div>
+                </div>
+                <label class="theme-toggle">
+                  <input type="checkbox" />
+                  <span class="theme-toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Settings -->
+          <div class="form-section">
+            <h2 class="form-section__title">Payment & Billing</h2>
+
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold mb-3">Saved Payment Methods</h3>
+                <div class="space-y-3">
+                  <div
+                    class="flex items-center justify-between p-4 border rounded-lg"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">💳</span>
+                      <div>
+                        <div class="font-medium">**** **** **** 1234</div>
+                        <div class="text-sm text-muted">Expires 12/25</div>
+                      </div>
+                    </div>
+                    <button class="btn-secondary btn-sm">Remove</button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between p-4 border rounded-lg"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span class="text-2xl">📱</span>
+                      <div>
+                        <div class="font-medium">UPI ID: prateek@paytm</div>
+                        <div class="text-sm text-muted">
+                          PhonePe, Google Pay
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn-secondary btn-sm">Remove</button>
+                  </div>
+                </div>
+                <button class="btn-primary mt-3">Add Payment Method</button>
+              </div>
+
+              <div>
+                <h3 class="font-semibold mb-3">Billing Address</h3>
+                <div class="form-row">
+                  <div>
+                    <label for="billingAddress">Address</label>
+                    <textarea
+                      id="billingAddress"
+                      name="billingAddress"
+                      rows="3"
+                      placeholder="Enter your billing address"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button class="btn-secondary">Reset to Defaults</button>
+            <button class="btn-primary">Save Changes</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

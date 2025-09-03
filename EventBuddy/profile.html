@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - Event Buddy</title>
+    <meta
+      name="description"
+      content="Manage your Event Buddy profile, view your tickets, and organize your events."
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="header__logo">
+          <div class="header__logo-icon">🎉</div>
+          <span class="header__logo-text">Event Buddy</span>
+        </a>
+
+        <div class="header__search">
+          <span class="header__search-icon">🔍</span>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search events, venues, organizers..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div class="header__actions">
+          <div class="header__city-selector">
+            <span class="header__city-icon">📍</span>
+            <span class="header__city-text">Mumbai</span>
+          </div>
+
+          <a href="profile.html" class="header__profile">
+            <div class="header__profile-avatar">P</div>
+            <span>Profile</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__nav-item">
+            <a href="index.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🏠</span>
+              <span>Discover</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="calendar.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">📅</span>
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a
+              href="profile.html"
+              class="sidebar__nav-link sidebar__nav-link--active"
+            >
+              <span class="sidebar__nav-icon">🎫</span>
+              <span>My Tickets</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="organizer.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">🎪</span>
+              <span>Organize</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a href="orders.html" class="sidebar__nav-link">
+              <span class="sidebar__nav-icon">✅</span>
+              <span>Check-in</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__divider"></div>
+
+        <button class="sidebar__theme-toggle" onclick="toggleTheme()">
+          <span class="sidebar__nav-icon">🌙</span>
+          <span>Dark Mode</span>
+        </button>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="main" class="main">
+        <div class="main__header">
+          <h1 class="main__title">My Profile</h1>
+          <p class="main__subtitle">
+            Manage your tickets, events, and preferences
+          </p>
+        </div>
+
+        <!-- Profile Header -->
+        <div class="form-section mb-8">
+          <div class="flex items-center gap-6">
+            <div
+              class="organizer-card__avatar"
+              style="width: 80px; height: 80px; font-size: 2rem"
+            >
+              P
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold">Prateek Magarde</h2>
+              <p class="text-muted">prateek@example.com</p>
+              <div class="flex gap-2 mt-2">
+                <span class="tag-chip">Event Enthusiast</span>
+                <span class="tag-chip">Verified</span>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <button class="btn-secondary">Edit Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="form-section mb-8">
+          <div class="flex border-b mb-6">
+            <button
+              class="px-4 py-2 border-b-2 border-accent text-accent font-medium"
+            >
+              My Tickets
+            </button>
+            <button class="px-4 py-2 text-muted hover:text-primary">
+              Saved Events
+            </button>
+            <button class="px-4 py-2 text-muted hover:text-primary">
+              Organizer Profile
+            </button>
+          </div>
+
+          <!-- My Tickets Tab -->
+          <div>
+            <h3 class="text-xl font-semibold mb-6">My Tickets & RSVPs</h3>
+
+            <div class="space-y-6">
+              <!-- Upcoming Events -->
+              <div>
+                <h4 class="text-lg font-semibold mb-4">Upcoming Events</h4>
+                <div class="space-y-4">
+                  <div class="ticket-card">
+                    <div class="ticket-card__header">
+                      <div class="ticket-card__event">
+                        <h5 class="ticket-card__title">
+                          Indie Night @ Blue Door
+                        </h5>
+                        <div class="ticket-card__date">
+                          Friday, December 15, 2023 • 8:00 PM
+                        </div>
+                      </div>
+                      <div class="ticket-card__qr">
+                        <div class="qr-placeholder"></div>
+                      </div>
+                    </div>
+
+                    <div class="ticket-card__details">
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Ticket Type</div>
+                        <div class="ticket-detail__value">Early Bird</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Ticket Number</div>
+                        <div class="ticket-detail__value">TKT-001</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Attendee</div>
+                        <div class="ticket-detail__value">Prateek Magarde</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Price</div>
+                        <div class="ticket-detail__value">₹299</div>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-4">
+                      <button class="btn-primary btn-sm">
+                        📱 Add to Wallet
+                      </button>
+                      <button
+                        class="btn-secondary btn-sm"
+                        onclick="window.print()"
+                      >
+                        🖨️ Print
+                      </button>
+                      <a href="event.html" class="btn-secondary btn-sm"
+                        >View Event</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="ticket-card">
+                    <div class="ticket-card__header">
+                      <div class="ticket-card__event">
+                        <h5 class="ticket-card__title">Tech Meetup: AI & ML</h5>
+                        <div class="ticket-card__date">
+                          Wednesday, December 20, 2023 • 10:30 AM
+                        </div>
+                      </div>
+                      <div class="ticket-card__qr">
+                        <div class="qr-placeholder"></div>
+                      </div>
+                    </div>
+
+                    <div class="ticket-card__details">
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Ticket Type</div>
+                        <div class="ticket-detail__value">General</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Ticket Number</div>
+                        <div class="ticket-detail__value">TKT-045</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Attendee</div>
+                        <div class="ticket-detail__value">Prateek Magarde</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Price</div>
+                        <div class="ticket-detail__value">Free</div>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-4">
+                      <button class="btn-primary btn-sm">
+                        📱 Add to Wallet
+                      </button>
+                      <button
+                        class="btn-secondary btn-sm"
+                        onclick="window.print()"
+                      >
+                        🖨️ Print
+                      </button>
+                      <a href="event.html" class="btn-secondary btn-sm"
+                        >View Event</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Past Events -->
+              <div>
+                <h4 class="text-lg font-semibold mb-4">Past Events</h4>
+                <div class="space-y-4">
+                  <div class="ticket-card opacity-75">
+                    <div class="ticket-card__header">
+                      <div class="ticket-card__event">
+                        <h5 class="ticket-card__title">Yoga Workshop</h5>
+                        <div class="ticket-card__date">
+                          Sunday, December 10, 2023 • 6:30 AM
+                        </div>
+                      </div>
+                      <div class="ticket-card__qr">
+                        <div class="qr-placeholder"></div>
+                      </div>
+                    </div>
+
+                    <div class="ticket-card__details">
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Ticket Type</div>
+                        <div class="ticket-detail__value">General</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Ticket Number</div>
+                        <div class="ticket-detail__value">TKT-023</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Attendee</div>
+                        <div class="ticket-detail__value">Prateek Magarde</div>
+                      </div>
+                      <div class="ticket-detail">
+                        <div class="ticket-detail__label">Status</div>
+                        <div class="ticket-detail__value">Attended</div>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-4">
+                      <button class="btn-secondary btn-sm">
+                        📝 Leave Review
+                      </button>
+                      <a href="event.html" class="btn-secondary btn-sm"
+                        >View Event</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="form-section">
+          <h3 class="form-section__title">Your Event Journey</h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="stat-tile">
+              <div class="stat-tile__number">12</div>
+              <div class="stat-tile__label">Events Attended</div>
+            </div>
+
+            <div class="stat-tile">
+              <div class="stat-tile__number">3</div>
+              <div class="stat-tile__label">Events Organized</div>
+            </div>
+
+            <div class="stat-tile">
+              <div class="stat-tile__number">8</div>
+              <div class="stat-tile__label">Events Saved</div>
+            </div>
+
+            <div class="stat-tile">
+              <div class="stat-tile__number">4.8</div>
+              <div class="stat-tile__label">Average Rating</div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="settings.html" class="footer__link">Settings</a>
+          <a href="#" class="footer__link">Help</a>
+          <a href="#" class="footer__link">Privacy</a>
+          <a href="#" class="footer__link">Terms</a>
+        </div>
+        <div>Event Buddy v0.1 - Discover amazing events near you</div>
+      </footer>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        // Update button text
+        const button = document.querySelector(
+          ".sidebar__theme-toggle span:last-child"
+        );
+        button.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+      }
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      const button = document.querySelector(
+        ".sidebar__theme-toggle span:last-child"
+      );
+      button.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar - Booking & Subscription Management</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app-shell">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header__brand">
+          <h1 class="brand__title">BookingHub</h1>
+          <span class="brand__location">Mumbai Central</span>
+        </div>
+        <div class="header__actions">
+          <div class="date-picker">
+            <input type="date" class="date-picker__input" value="2025-01-15" />
+          </div>
+          <button class="btn btn--secondary" onclick="window.print()">
+            <span class="icon">🖨️</span>
+            Print
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar Navigation -->
+      <nav class="app-sidebar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="icon">📊</span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="calendar.html" class="nav-link">
+              <span class="icon">📅</span>
+              Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="bookings.html" class="nav-link">
+              <span class="icon">📝</span>
+              Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">
+              <span class="icon">👥</span>
+              Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="plans.html" class="nav-link">
+              <span class="icon">💳</span>
+              Plans & Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">
+              <span class="icon">🏢</span>
+              Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="staff.html" class="nav-link">
+              <span class="icon">👨‍💼</span>
+              Staff
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="billing.html" class="nav-link">
+              <span class="icon">💰</span>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="analytics.html" class="nav-link">
+              <span class="icon">📈</span>
+              Analytics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <span class="icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="icon">🌙</span>
+          </button>
+          <a href="about.html" class="nav-link nav-link--small">About</a>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h1 class="page-title">Calendar</h1>
+          <p class="page-subtitle">Manage your bookings and availability</p>
+        </div>
+
+        <!-- Calendar Controls -->
+        <div class="calendar-controls">
+          <div class="calendar-nav">
+            <button class="btn btn--secondary btn--sm">
+              <span class="icon">◀</span>
+              Previous
+            </button>
+            <h2 class="calendar__title">January 2025</h2>
+            <button class="btn btn--secondary btn--sm">
+              Next
+              <span class="icon">▶</span>
+            </button>
+          </div>
+
+          <div class="calendar-filters">
+            <select class="form-select" style="width: auto">
+              <option>All Services</option>
+              <option>Hair Salon</option>
+              <option>Gym</option>
+              <option>Yoga Studio</option>
+              <option>Co-working</option>
+            </select>
+
+            <select class="form-select" style="width: auto">
+              <option>All Staff</option>
+              <option>Arjun Patel</option>
+              <option>Neha Singh</option>
+              <option>Kabir Sharma</option>
+            </select>
+
+            <div class="view-tabs">
+              <button class="btn btn--secondary btn--sm">Day</button>
+              <button class="btn btn--primary btn--sm">Week</button>
+              <button class="btn btn--secondary btn--sm">Month</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendar Layout -->
+        <div class="calendar-layout">
+          <!-- Main Calendar -->
+          <div class="calendar-main">
+            <!-- Week View with Staff Lanes -->
+            <div class="calendar__lanes">
+              <!-- Monday -->
+              <div class="calendar__lane">
+                <div class="calendar__lane-header">
+                  <span>Monday, Jan 13</span>
+                  <span class="badge badge--confirmed">8 bookings</span>
+                </div>
+                <div
+                  class="calendar__lane-content"
+                  style="
+                    grid-template-columns: repeat(24, 1fr);
+                    min-height: 6rem;
+                  "
+                >
+                  <!-- Arjun's Schedule -->
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 10/11; grid-row: 1"
+                  >
+                    <div class="slot__title">Haircut</div>
+                    <div class="slot__member">Priya Sharma</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 11/12; grid-row: 1"
+                  >
+                    <div class="slot__title">Color</div>
+                    <div class="slot__member">Deepika Mehta</div>
+                    <div class="slot__status">
+                      <span class="badge badge--due">Due</span>
+                    </div>
+                  </div>
+
+                  <!-- Neha's Schedule -->
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 9/10; grid-row: 2"
+                  >
+                    <div class="slot__title">PT Session</div>
+                    <div class="slot__member">Rajesh Kumar</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--waitlist"
+                    style="grid-column: 12/13; grid-row: 2"
+                  >
+                    <div class="slot__title">1:1 Coaching</div>
+                    <div class="slot__member">Sneha Reddy</div>
+                    <div class="slot__status">
+                      <span class="badge badge--waitlist">Waitlist #2</span>
+                    </div>
+                  </div>
+
+                  <!-- Kabir's Schedule -->
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 18/19; grid-row: 3"
+                  >
+                    <div class="slot__title">Yoga Class</div>
+                    <div class="slot__member">12/15 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tuesday -->
+              <div class="calendar__lane">
+                <div class="calendar__lane-header">
+                  <span>Tuesday, Jan 14</span>
+                  <span class="badge badge--confirmed">12 bookings</span>
+                </div>
+                <div
+                  class="calendar__lane-content"
+                  style="
+                    grid-template-columns: repeat(24, 1fr);
+                    min-height: 6rem;
+                  "
+                >
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 10/11; grid-row: 1"
+                  >
+                    <div class="slot__title">Haircut</div>
+                    <div class="slot__member">Amit Joshi</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 11/12; grid-row: 1"
+                  >
+                    <div class="slot__title">Styling</div>
+                    <div class="slot__member">Kavya Patel</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 9/10; grid-row: 2"
+                  >
+                    <div class="slot__title">PT Session</div>
+                    <div class="slot__member">Vikram Singh</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 12/13; grid-row: 2"
+                  >
+                    <div class="slot__title">Group Fitness</div>
+                    <div class="slot__member">8/12 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 18/19; grid-row: 3"
+                  >
+                    <div class="slot__title">Meditation</div>
+                    <div class="slot__member">15/20 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wednesday -->
+              <div class="calendar__lane">
+                <div class="calendar__lane-header">
+                  <span>Wednesday, Jan 15</span>
+                  <span class="badge badge--confirmed">15 bookings</span>
+                </div>
+                <div
+                  class="calendar__lane-content"
+                  style="
+                    grid-template-columns: repeat(24, 1fr);
+                    min-height: 6rem;
+                  "
+                >
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 10/11; grid-row: 1"
+                  >
+                    <div class="slot__title">Haircut</div>
+                    <div class="slot__member">Rohit Sharma</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 11/12; grid-row: 1"
+                  >
+                    <div class="slot__title">Facial</div>
+                    <div class="slot__member">Anita Desai</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 9/10; grid-row: 2"
+                  >
+                    <div class="slot__title">PT Session</div>
+                    <div class="slot__member">Suresh Kumar</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 12/13; grid-row: 2"
+                  >
+                    <div class="slot__title">CrossFit</div>
+                    <div class="slot__member">10/12 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 18/19; grid-row: 3"
+                  >
+                    <div class="slot__title">Pilates</div>
+                    <div class="slot__member">8/10 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--cancelled"
+                    style="grid-column: 14/15; grid-row: 1"
+                  >
+                    <div class="slot__title">Massage</div>
+                    <div class="slot__member">Cancelled</div>
+                    <div class="slot__status">
+                      <span class="badge badge--cancelled">Cancelled</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thursday -->
+              <div class="calendar__lane">
+                <div class="calendar__lane-header">
+                  <span>Thursday, Jan 16</span>
+                  <span class="badge badge--confirmed">10 bookings</span>
+                </div>
+                <div
+                  class="calendar__lane-content"
+                  style="
+                    grid-template-columns: repeat(24, 1fr);
+                    min-height: 6rem;
+                  "
+                >
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 10/11; grid-row: 1"
+                  >
+                    <div class="slot__title">Haircut</div>
+                    <div class="slot__member">Manish Gupta</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 11/12; grid-row: 1"
+                  >
+                    <div class="slot__title">Beard Trim</div>
+                    <div class="slot__member">Arjun Singh</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 9/10; grid-row: 2"
+                  >
+                    <div class="slot__title">PT Session</div>
+                    <div class="slot__member">Priya Reddy</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 12/13; grid-row: 2"
+                  >
+                    <div class="slot__title">Zumba</div>
+                    <div class="slot__member">12/15 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 18/19; grid-row: 3"
+                  >
+                    <div class="slot__title">Yoga Flow</div>
+                    <div class="slot__member">10/12 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Friday -->
+              <div class="calendar__lane">
+                <div class="calendar__lane-header">
+                  <span>Friday, Jan 17</span>
+                  <span class="badge badge--confirmed">18 bookings</span>
+                </div>
+                <div
+                  class="calendar__lane-content"
+                  style="
+                    grid-template-columns: repeat(24, 1fr);
+                    min-height: 6rem;
+                  "
+                >
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 10/11; grid-row: 1"
+                  >
+                    <div class="slot__title">Haircut</div>
+                    <div class="slot__member">Ravi Kumar</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 11/12; grid-row: 1"
+                  >
+                    <div class="slot__title">Color & Style</div>
+                    <div class="slot__member">Sunita Patel</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 9/10; grid-row: 2"
+                  >
+                    <div class="slot__title">PT Session</div>
+                    <div class="slot__member">Kiran Sharma</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 12/13; grid-row: 2"
+                  >
+                    <div class="slot__title">HIIT</div>
+                    <div class="slot__member">8/10 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--confirmed"
+                    style="grid-column: 18/19; grid-row: 3"
+                  >
+                    <div class="slot__title">Power Yoga</div>
+                    <div class="slot__member">14/15 members</div>
+                    <div class="slot__status">
+                      <span class="badge badge--paid">Paid</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="slot slot--waitlist"
+                    style="grid-column: 19/20; grid-row: 3"
+                  >
+                    <div class="slot__title">Evening Yoga</div>
+                    <div class="slot__member">Waitlist #3</div>
+                    <div class="slot__status">
+                      <span class="badge badge--waitlist">Waitlist #3</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calendar Sidebar -->
+          <div class="calendar-sidebar">
+            <h3 class="section-title">Quick Actions</h3>
+
+            <div class="card">
+              <div class="card__content">
+                <button class="btn btn--primary w-full mb-4">
+                  <span class="icon">➕</span>
+                  New Booking
+                </button>
+
+                <button class="btn btn--secondary w-full mb-4">
+                  <span class="icon">📋</span>
+                  Block Time
+                </button>
+
+                <button class="btn btn--secondary w-full">
+                  <span class="icon">🔄</span>
+                  Recurring Booking
+                </button>
+              </div>
+            </div>
+
+            <h3 class="section-title">Today's Summary</h3>
+
+            <div class="card">
+              <div class="card__content">
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">Total Bookings</span>
+                    <span class="utilization-item__percentage">72</span>
+                  </div>
+                </div>
+
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">Occupancy Rate</span>
+                    <span class="utilization-item__percentage">78%</span>
+                  </div>
+                  <div class="bar bar--occupancy">
+                    <div class="bar__fill" style="width: 78%"></div>
+                  </div>
+                </div>
+
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">Waitlist</span>
+                    <span class="utilization-item__percentage">5</span>
+                  </div>
+                </div>
+
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">No Shows</span>
+                    <span class="utilization-item__percentage">3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="section-title">Staff Availability</h3>
+
+            <div class="card">
+              <div class="card__content">
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">Arjun Patel</span>
+                    <span class="utilization-item__percentage">85%</span>
+                  </div>
+                  <div class="bar bar--occupancy">
+                    <div class="bar__fill" style="width: 85%"></div>
+                  </div>
+                </div>
+
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">Neha Singh</span>
+                    <span class="utilization-item__percentage">72%</span>
+                  </div>
+                  <div class="bar bar--occupancy">
+                    <div class="bar__fill" style="width: 72%"></div>
+                  </div>
+                </div>
+
+                <div class="utilization-item">
+                  <div class="utilization-item__header">
+                    <span class="utilization-item__name">Kabir Sharma</span>
+                    <span class="utilization-item__percentage">68%</span>
+                  </div>
+                  <div class="bar bar--occupancy">
+                    <div class="bar__fill" style="width: 68%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="section-title">Upcoming</h3>
+
+            <div class="booking-list">
+              <div class="booking-card">
+                <div class="booking-card__time">10:00</div>
+                <div class="booking-card__content">
+                  <h4 class="booking-card__service">Haircut</h4>
+                  <p class="booking-card__member">Priya Sharma</p>
+                </div>
+                <div class="booking-card__status">
+                  <span class="badge badge--confirmed">Confirmed</span>
+                </div>
+              </div>
+
+              <div class="booking-card">
+                <div class="booking-card__time">11:00</div>
+                <div class="booking-card__content">
+                  <h4 class="booking-card__service">PT Session</h4>
+                  <p class="booking-card__member">Rajesh Kumar</p>
+                </div>
+                <div class="booking-card__status">
+                  <span class="badge badge--confirmed">Confirmed</span>
+                </div>
+              </div>
+
+              <div class="booking-card">
+                <div class="booking-card__time">12:30</div>
+                <div class="booking-card__content">
+                  <h4 class="booking-card__service">Yoga Class</h4>
+                  <p class="booking-card__member">Sneha Reddy</p>
+                </div>
+                <div class="booking-card__status">
+                  <span class="badge badge--waitlist">Waitlist #2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer__content">
+          <p>&copy; 2025 BookingHub. All rights reserved.</p>
+          <div class="footer__links">
+            <a href="about.html">About</a>
+            <a href="settings.html#privacy">Privacy</a>
+            <a href="settings.html#terms">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

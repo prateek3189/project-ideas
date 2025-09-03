@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Personal Coach - Insights</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layouts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<body class="theme-light">
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">AI Personal Coach</h1>
+                <div class="header-actions">
+                    <div class="date-pill">
+                        <time datetime="2024-01-15">Mon, Jan 15</time>
+                    </div>
+                    <a href="#print" class="print-link" aria-label="Print weekly plan">Print</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Today</a></li>
+                <li><a href="tracks.html" class="nav-link">Tracks</a></li>
+                <li><a href="plans.html" class="nav-link">Plans</a></li>
+                <li><a href="insights.html" class="nav-link nav-link--active" aria-current="page">Insights</a></li>
+                <li><a href="library.html" class="nav-link">Library</a></li>
+                <li><a href="settings.html" class="nav-link">Settings</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-toggle__button" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="page-header">
+                <h2 class="page-title">Insights & Progress</h2>
+                <p class="text-muted">Your weekly performance and trends</p>
+            </div>
+
+            <div class="insights-tiles">
+                <div class="stat-tile">
+                    <div class="stat-tile__value">6</div>
+                    <div class="stat-tile__label">Day Streak</div>
+                    <div class="stat-tile__trend stat-tile__trend--up">+2 from last week</div>
+                </div>
+                <div class="stat-tile">
+                    <div class="stat-tile__value">78%</div>
+                    <div class="stat-tile__label">Adherence</div>
+                    <div class="stat-tile__trend stat-tile__trend--up">+5% from last week</div>
+                </div>
+                <div class="stat-tile">
+                    <div class="stat-tile__value">7.1h</div>
+                    <div class="stat-tile__label">Avg Sleep</div>
+                    <div class="stat-tile__trend stat-tile__trend--neutral">Same as last week</div>
+                </div>
+                <div class="stat-tile">
+                    <div class="stat-tile__value">8.2h</div>
+                    <div class="stat-tile__label">Focus Hours</div>
+                    <div class="stat-tile__trend stat-tile__trend--up">+0.7h from last week</div>
+                </div>
+            </div>
+
+            <div class="insights-grid">
+                <div class="insights-charts">
+                    <div class="chart-container">
+                        <h3 class="chart-container__title">Weekly Focus Hours</h3>
+                        <div class="chart-bars">
+                            <div class="chart-bar chart-bar--focus" style="height: 60%;" title="Mon: 2.5h"></div>
+                            <div class="chart-bar chart-bar--focus" style="height: 80%;" title="Tue: 3.2h"></div>
+                            <div class="chart-bar chart-bar--focus" style="height: 70%;" title="Wed: 2.8h"></div>
+                            <div class="chart-bar chart-bar--focus" style="height: 90%;" title="Thu: 3.6h"></div>
+                            <div class="chart-bar chart-bar--focus" style="height: 75%;" title="Fri: 3.0h"></div>
+                            <div class="chart-bar chart-bar--focus" style="height: 40%;" title="Sat: 1.6h"></div>
+                            <div class="chart-bar chart-bar--focus" style="height: 30%;" title="Sun: 1.2h"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-muted mt-2">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 class="chart-container__title">Workout Completion</h3>
+                        <div class="chart-bars">
+                            <div class="chart-bar chart-bar--fitness" style="height: 100%;" title="Mon: Completed"></div>
+                            <div class="chart-bar chart-bar--fitness" style="height: 100%;" title="Tue: Completed"></div>
+                            <div class="chart-bar chart-bar--fitness" style="height: 80%;" title="Wed: Partial"></div>
+                            <div class="chart-bar chart-bar--fitness" style="height: 100%;" title="Thu: Completed"></div>
+                            <div class="chart-bar chart-bar--fitness" style="height: 60%;" title="Fri: Partial"></div>
+                            <div class="chart-bar chart-bar--fitness" style="height: 100%;" title="Sat: Completed"></div>
+                            <div class="chart-bar chart-bar--fitness" style="height: 100%;" title="Sun: Completed"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-muted mt-2">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 class="chart-container__title">Current Streak</h3>
+                        <div class="streak-ring">
+                            <div class="streak-ring__circle">
+                                <div class="streak-ring__inner">6</div>
+                            </div>
+                        </div>
+                        <p class="text-center text-muted">Days of consistent habits</p>
+                    </div>
+                </div>
+
+                <div class="highlights-list">
+                    <h3 class="highlights-list__title">Weekly Highlights</h3>
+                    <ul class="highlights-list__items">
+                        <li>
+                            <strong>Deep work increased 20%</strong> vs last week
+                        </li>
+                        <li>
+                            <strong>Perfect workout streak</strong> for 4 days
+                        </li>
+                        <li>
+                            <strong>Sleep consistency improved</strong> by 0.3h average
+                        </li>
+                        <li>
+                            <strong>Leadership activities</strong> completed 100%
+                        </li>
+                        <li>
+                            <strong>Energy levels stable</strong> throughout the week
+                        </li>
+                        <li>
+                            <strong>Meeting diet successful</strong> - under 4h daily
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-container__title">Energy vs Output Correlation</h3>
+                <div class="flex items-end gap-2 h-32 p-4">
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-success rounded-t" style="height: 70%;" title="High Energy"></div>
+                        <div class="text-xs text-muted mt-2">Mon</div>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-success rounded-t" style="height: 85%;" title="High Energy"></div>
+                        <div class="text-xs text-muted mt-2">Tue</div>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-warning rounded-t" style="height: 60%;" title="Medium Energy"></div>
+                        <div class="text-xs text-muted mt-2">Wed</div>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-success rounded-t" style="height: 90%;" title="High Energy"></div>
+                        <div class="text-xs text-muted mt-2">Thu</div>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-warning rounded-t" style="height: 55%;" title="Medium Energy"></div>
+                        <div class="text-xs text-muted mt-2">Fri</div>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-danger rounded-t" style="height: 40%;" title="Low Energy"></div>
+                        <div class="text-xs text-muted mt-2">Sat</div>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="w-full bg-danger rounded-t" style="height: 35%;" title="Low Energy"></div>
+                        <div class="text-xs text-muted mt-2">Sun</div>
+                    </div>
+                </div>
+                <p class="text-sm text-muted mt-4">
+                    <strong>Insight:</strong> Higher energy days correlate with better focus and workout completion. 
+                    Consider adjusting intensity on low-energy days.
+                </p>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p class="footer-text">AI Personal Coach — v0.1</p>
+            <a href="about.html" class="footer-link">About</a>
+        </footer>
+    </div>
+</body>
+</html>

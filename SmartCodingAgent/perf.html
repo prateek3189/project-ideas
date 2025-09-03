@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Coding Agent - Performance</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Shell -->
+    <header class="shell__header">
+      <div class="shell__header-content">
+        <h1 class="shell__title">
+          <span class="shell__icon">🤖</span>
+          Smart Coding Agent
+        </h1>
+        <div class="shell__controls">
+          <div class="repo-selector">
+            <span class="repo-selector__name">my-project</span>
+            <span class="badge badge--branch">main</span>
+          </div>
+          <button class="btn btn--ghost" aria-label="Print performance report">
+            <span class="btn__icon">🖨️</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="shell__body">
+      <nav class="shell__sidebar">
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">
+              <span class="nav__icon">💻</span>
+              Workspace
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="diff.html" class="nav__link">
+              <span class="nav__icon">📊</span>
+              Diff Review
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="tests.html" class="nav__link">
+              <span class="nav__icon">🧪</span>
+              Tests
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              href="perf.html"
+              class="nav__link nav__link--active"
+              aria-current="page"
+            >
+              <span class="nav__icon">⚡</span>
+              Performance
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="playbooks.html" class="nav__link">
+              <span class="nav__icon">📚</span>
+              Playbooks
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="settings.html" class="nav__link">
+              <span class="nav__icon">⚙️</span>
+              Settings
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">
+              <span class="nav__icon">ℹ️</span>
+              About
+            </a>
+          </li>
+        </ul>
+
+        <div class="project-tree">
+          <h3 class="project-tree__title">Performance Files</h3>
+          <ul class="project-tree__list">
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📄</span>
+              src/table.ts
+              <div class="project-tree__stats">
+                <span class="badge badge--warning">38% time</span>
+              </div>
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📄</span>
+              src/api.ts
+              <div class="project-tree__stats">
+                <span class="badge badge--warning">25% time</span>
+              </div>
+            </li>
+            <li class="project-tree__item">
+              <span class="project-tree__icon">📄</span>
+              src/utils.ts
+              <div class="project-tree__stats">
+                <span class="badge badge--success">12% time</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="theme-toggle">
+          <button class="btn btn--ghost" aria-label="Toggle theme">
+            <span class="btn__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main id="main-content" class="shell__main">
+        <!-- Performance Page -->
+        <div class="perf-page">
+          <!-- Header -->
+          <div class="perf-page__header">
+            <div class="perf-page__title">
+              <h1>Performance Analysis</h1>
+              <div class="perf-page__meta">
+                <span class="badge badge--warning">Budget Exceeded</span>
+                <span class="badge badge--info">6 hotspots found</span>
+                <span class="badge badge--secondary">240ms p95</span>
+              </div>
+            </div>
+            <div class="perf-page__actions">
+              <button class="btn btn--primary">Profile Code</button>
+              <button class="btn btn--secondary">Optimize</button>
+              <button class="btn btn--ghost">Export Report</button>
+            </div>
+          </div>
+
+          <!-- Budget Status -->
+          <div class="perf-page__budget">
+            <div class="alert alert--warning">
+              <div class="alert__title">Performance Budget Exceeded</div>
+              <div class="alert__message">
+                Target p95 latency: <strong>180ms</strong> | Current:
+                <strong>240ms</strong> | Over budget by:
+                <strong>60ms (33%)</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Performance Budgets -->
+          <div class="perf-page__budgets">
+            <h2>Performance Budgets</h2>
+            <div class="budget-grid">
+              <div class="budget-item">
+                <div class="budget-item__header">
+                  <span class="budget-item__label">p95 Latency</span>
+                  <span class="budget-chip budget-chip--exceeded"
+                    >240ms / 180ms</span
+                  >
+                </div>
+                <div class="meter meter--danger">
+                  <div class="meter__fill" style="width: 133%"></div>
+                </div>
+              </div>
+
+              <div class="budget-item">
+                <div class="budget-item__header">
+                  <span class="budget-item__label">Memory Usage</span>
+                  <span class="budget-chip budget-chip--within"
+                    >45MB / 100MB</span
+                  >
+                </div>
+                <div class="meter meter--success">
+                  <div class="meter__fill" style="width: 45%"></div>
+                </div>
+              </div>
+
+              <div class="budget-item">
+                <div class="budget-item__header">
+                  <span class="budget-item__label">Bundle Size</span>
+                  <span class="budget-chip budget-chip--within"
+                    >2.1MB / 3MB</span
+                  >
+                </div>
+                <div class="meter meter--success">
+                  <div class="meter__fill" style="width: 70%"></div>
+                </div>
+              </div>
+
+              <div class="budget-item">
+                <div class="budget-item__header">
+                  <span class="budget-item__label">CPU Usage</span>
+                  <span class="budget-chip budget-chip--exceeded"
+                    >85% / 70%</span
+                  >
+                </div>
+                <div class="meter meter--danger">
+                  <div class="meter__fill" style="width: 121%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspots -->
+          <div class="perf-page__hotspots">
+            <h2>Performance Hotspots</h2>
+            <div class="hotspots-list">
+              <div class="hotspot__row">
+                <div class="hotspot__location">
+                  <span class="hotspot__file">src/table.ts:parseLargeJson</span>
+                  <span class="hotspot__function">parseLargeJson()</span>
+                </div>
+                <div class="hotspot__metric">38%</div>
+                <div class="complexity-bar complexity-bar--high">
+                  <div class="complexity-bar__fill" style="width: 90%"></div>
+                </div>
+                <div class="hotspot__suggestion">Stream + chunk parse</div>
+              </div>
+
+              <div class="hotspot__row">
+                <div class="hotspot__location">
+                  <span class="hotspot__file">src/api.ts:getUserProjects</span>
+                  <span class="hotspot__function">getUserProjects()</span>
+                </div>
+                <div class="hotspot__metric">25%</div>
+                <div class="complexity-bar complexity-bar--medium">
+                  <div class="complexity-bar__fill" style="width: 65%"></div>
+                </div>
+                <div class="hotspot__suggestion">Batch with IN clause</div>
+              </div>
+
+              <div class="hotspot__row">
+                <div class="hotspot__location">
+                  <span class="hotspot__file">src/table.ts:buildRows</span>
+                  <span class="hotspot__function">buildRows()</span>
+                </div>
+                <div class="hotspot__metric">18%</div>
+                <div class="complexity-bar complexity-bar--medium">
+                  <div class="complexity-bar__fill" style="width: 55%"></div>
+                </div>
+                <div class="hotspot__suggestion">Memoize results</div>
+              </div>
+
+              <div class="hotspot__row">
+                <div class="hotspot__location">
+                  <span class="hotspot__file">src/api.ts:fetchData</span>
+                  <span class="hotspot__function">fetchData()</span>
+                </div>
+                <div class="hotspot__metric">12%</div>
+                <div class="complexity-bar complexity-bar--low">
+                  <div class="complexity-bar__fill" style="width: 35%"></div>
+                </div>
+                <div class="hotspot__suggestion">Add request caching</div>
+              </div>
+
+              <div class="hotspot__row">
+                <div class="hotspot__location">
+                  <span class="hotspot__file">src/utils.ts:formatData</span>
+                  <span class="hotspot__function">formatData()</span>
+                </div>
+                <div class="hotspot__metric">5%</div>
+                <div class="complexity-bar complexity-bar--low">
+                  <div class="complexity-bar__fill" style="width: 25%"></div>
+                </div>
+                <div class="hotspot__suggestion">Use native methods</div>
+              </div>
+
+              <div class="hotspot__row">
+                <div class="hotspot__location">
+                  <span class="hotspot__file">src/table.ts:renderTable</span>
+                  <span class="hotspot__function">renderTable()</span>
+                </div>
+                <div class="hotspot__metric">2%</div>
+                <div class="complexity-bar complexity-bar--low">
+                  <div class="complexity-bar__fill" style="width: 15%"></div>
+                </div>
+                <div class="hotspot__suggestion">Virtual scrolling</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Optimization Suggestions -->
+          <div class="perf-page__suggestions">
+            <h2>Optimization Suggestions</h2>
+            <div class="suggestions-grid">
+              <div class="suggestion-card">
+                <div class="suggestion-card__header">
+                  <span class="suggestion-card__icon">🚀</span>
+                  <span class="suggestion-card__title"
+                    >Algorithmic Optimization</span
+                  >
+                  <span class="badge badge--success">High Impact</span>
+                </div>
+                <div class="suggestion-card__content">
+                  <p>
+                    <strong>parseLargeJson:</strong> Replace synchronous
+                    JSON.parse with streaming parser for large datasets.
+                  </p>
+                  <p><strong>Impact:</strong> ~30% reduction in parse time</p>
+                  <p><strong>Effort:</strong> Medium (2-3 hours)</p>
+                </div>
+              </div>
+
+              <div class="suggestion-card">
+                <div class="suggestion-card__header">
+                  <span class="suggestion-card__icon">🔄</span>
+                  <span class="suggestion-card__title">Caching Strategy</span>
+                  <span class="badge badge--success">High Impact</span>
+                </div>
+                <div class="suggestion-card__content">
+                  <p>
+                    <strong>getUserProjects:</strong> Implement Redis caching
+                    for user project data.
+                  </p>
+                  <p><strong>Impact:</strong> ~60% reduction in API calls</p>
+                  <p><strong>Effort:</strong> High (1-2 days)</p>
+                </div>
+              </div>
+
+              <div class="suggestion-card">
+                <div class="suggestion-card__header">
+                  <span class="suggestion-card__icon">⚡</span>
+                  <span class="suggestion-card__title">Micro-optimization</span>
+                  <span class="badge badge--warning">Medium Impact</span>
+                </div>
+                <div class="suggestion-card__content">
+                  <p>
+                    <strong>buildRows:</strong> Add memoization to prevent
+                    redundant calculations.
+                  </p>
+                  <p><strong>Impact:</strong> ~15% reduction in render time</p>
+                  <p><strong>Effort:</strong> Low (30 minutes)</p>
+                </div>
+              </div>
+
+              <div class="suggestion-card">
+                <div class="suggestion-card__header">
+                  <span class="suggestion-card__icon">📦</span>
+                  <span class="suggestion-card__title"
+                    >Bundle Optimization</span
+                  >
+                  <span class="badge badge--info">Low Impact</span>
+                </div>
+                <div class="suggestion-card__content">
+                  <p>
+                    <strong>Code Splitting:</strong> Implement lazy loading for
+                    table components.
+                  </p>
+                  <p>
+                    <strong>Impact:</strong> ~20% reduction in initial bundle
+                  </p>
+                  <p><strong>Effort:</strong> Medium (1 day)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Before/After Comparison -->
+          <div class="perf-page__comparison">
+            <h2>Before/After Analysis</h2>
+            <div class="comparison-grid">
+              <div class="comparison-item">
+                <h3>Current Performance</h3>
+                <div class="comparison-metrics">
+                  <div class="comparison-metric">
+                    <span class="comparison-metric__label">p95 Latency</span>
+                    <span
+                      class="comparison-metric__value comparison-metric__value--bad"
+                      >240ms</span
+                    >
+                  </div>
+                  <div class="comparison-metric">
+                    <span class="comparison-metric__label">Memory Peak</span>
+                    <span
+                      class="comparison-metric__value comparison-metric__value--ok"
+                      >85MB</span
+                    >
+                  </div>
+                  <div class="comparison-metric">
+                    <span class="comparison-metric__label">CPU Usage</span>
+                    <span
+                      class="comparison-metric__value comparison-metric__value--bad"
+                      >85%</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="comparison-item">
+                <h3>Projected Performance</h3>
+                <div class="comparison-metrics">
+                  <div class="comparison-metric">
+                    <span class="comparison-metric__label">p95 Latency</span>
+                    <span
+                      class="comparison-metric__value comparison-metric__value--good"
+                      >165ms</span
+                    >
+                  </div>
+                  <div class="comparison-metric">
+                    <span class="comparison-metric__label">Memory Peak</span>
+                    <span
+                      class="comparison-metric__value comparison-metric__value--good"
+                      >65MB</span
+                    >
+                  </div>
+                  <div class="comparison-metric">
+                    <span class="comparison-metric__label">CPU Usage</span>
+                    <span
+                      class="comparison-metric__value comparison-metric__value--good"
+                      >55%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="shell__footer">
+      <div class="status-bar">
+        <div class="status-bar__left">
+          <span class="status-bar__model">GPT-4</span>
+          <span class="status-bar__tokens">~4.1k tokens</span>
+        </div>
+        <div class="status-bar__right">
+          <span class="status-bar__latency">—</span>
+          <span class="status-bar__git">main*</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

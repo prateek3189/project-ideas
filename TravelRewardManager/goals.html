@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Reward Manager - Trip Goals</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme-light">
+    <div class="app-layout">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="header-content">
+          <h1 class="app-title">Travel Reward Manager</h1>
+          <div class="header-actions">
+            <div class="currency-switch">
+              <span class="currency-label">Currency:</span>
+              <select class="currency-select" aria-label="Select currency">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </div>
+            <button class="print-button" onclick="window.print()">
+              <span class="icon">🖨️</span>
+              Print
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="app-sidebar">
+        <div class="sidebar-content">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <span class="icon">📊</span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <span class="icon">💳</span>
+                Wallet
+              </a>
+            </li>
+            <li class="nav-item nav-item--active">
+              <a href="goals.html" class="nav-link">
+                <span class="icon">🎯</span>
+                Trip Goals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="awards.html" class="nav-link">
+                <span class="icon">✈️</span>
+                Award Finder
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="transfers.html" class="nav-link">
+                <span class="icon">🔄</span>
+                Transfer Hub
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="insights.html" class="nav-link">
+                <span class="icon">📈</span>
+                Insights
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="alerts.html" class="nav-link">
+                <span class="icon">🔔</span>
+                Alerts & Deals
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <span class="icon">⚙️</span>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">
+                <span class="icon">ℹ️</span>
+                About
+              </a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <button class="theme-toggle" aria-label="Toggle theme">
+              <span class="icon">🌙</span>
+              Dark Mode
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="app-main">
+        <div class="page-header">
+          <h2 class="page-title">Trip Goals</h2>
+          <p class="page-subtitle">
+            Plan your dream trips and track progress towards redemptions
+          </p>
+        </div>
+
+        <!-- Quick Add Goal -->
+        <section class="quick-add-section">
+          <div class="search-form">
+            <h3 class="search-form__title">Quick Add Trip Goal</h3>
+            <form class="search-form__content">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="from-city" class="search-form__label">From</label>
+                  <input
+                    type="text"
+                    id="from-city"
+                    class="search-form__input"
+                    placeholder="City or Airport"
+                    aria-label="Departure city or airport"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="to-city" class="search-form__label">To</label>
+                  <input
+                    type="text"
+                    id="to-city"
+                    class="search-form__input"
+                    placeholder="City or Airport"
+                    aria-label="Destination city or airport"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="travel-dates" class="search-form__label"
+                    >Dates</label
+                  >
+                  <input
+                    type="text"
+                    id="travel-dates"
+                    class="search-form__input"
+                    placeholder="Flexible dates"
+                    aria-label="Travel dates"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="passengers" class="search-form__label"
+                    >Passengers</label
+                  >
+                  <select id="passengers" class="search-form__select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn--primary">
+                  <span class="icon">🔍</span>
+                  Find Award Availability
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Active Goals -->
+        <section class="goals-section">
+          <h3 class="section-title">Active Trip Goals</h3>
+          <div class="goals-grid">
+            <!-- Tokyo Trip -->
+            <div class="goal-card">
+              <div class="goal-card__header">
+                <h4 class="goal-card__title">Tokyo Spring 2025</h4>
+                <span class="goal-card__status goal-card__status--planning"
+                  >Planning</span
+                >
+              </div>
+              <div class="goal-card__route">
+                <span class="route-segment">BOM → NRT</span>
+                <span class="route-separator">→</span>
+                <span class="route-segment">NRT → BOM</span>
+              </div>
+              <div class="goal-card__dates">March 15-22, 2025</div>
+              <div class="goal-card__details">
+                <div class="detail-row">
+                  <span class="detail-label">Required Points:</span>
+                  <span class="detail-value">45,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Current Balance:</span>
+                  <span class="detail-value">38,500</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Gap:</span>
+                  <span class="detail-value gap-value">6,500</span>
+                </div>
+              </div>
+              <div class="gap-bar">
+                <div class="gap-bar__fill" style="width: 85%"></div>
+                <span class="gap-label">85% Complete</span>
+              </div>
+              <div class="goal-card__preferences">
+                <span class="preference-chip">Business Class</span>
+                <span class="preference-chip">Direct Preferred</span>
+                <span class="preference-chip">Star Alliance</span>
+              </div>
+              <div class="goal-card__actions">
+                <button class="btn btn--secondary btn--sm">View Options</button>
+                <button class="btn btn--secondary btn--sm">Update Goal</button>
+              </div>
+            </div>
+
+            <!-- Paris Trip -->
+            <div class="goal-card">
+              <div class="goal-card__header">
+                <h4 class="goal-card__title">Paris Summer 2025</h4>
+                <span class="goal-card__status goal-card__status--ready"
+                  >Ready to Book</span
+                >
+              </div>
+              <div class="goal-card__route">
+                <span class="route-segment">BOM → CDG</span>
+                <span class="route-separator">→</span>
+                <span class="route-segment">CDG → BOM</span>
+              </div>
+              <div class="goal-card__dates">July 10-20, 2025</div>
+              <div class="goal-card__details">
+                <div class="detail-row">
+                  <span class="detail-label">Required Points:</span>
+                  <span class="detail-value">52,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Current Balance:</span>
+                  <span class="detail-value">58,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Surplus:</span>
+                  <span class="detail-value surplus-value">+6,000</span>
+                </div>
+              </div>
+              <div class="gap-bar">
+                <div class="gap-bar__fill" style="width: 100%"></div>
+                <span class="gap-label">100% Complete</span>
+              </div>
+              <div class="goal-card__preferences">
+                <span class="preference-chip">Economy Class</span>
+                <span class="preference-chip">Flexible Dates</span>
+                <span class="preference-chip">SkyTeam</span>
+              </div>
+              <div class="goal-card__actions">
+                <button class="btn btn--primary btn--sm">Book Now</button>
+                <button class="btn btn--secondary btn--sm">View Options</button>
+              </div>
+            </div>
+
+            <!-- Singapore Trip -->
+            <div class="goal-card">
+              <div class="goal-card__header">
+                <h4 class="goal-card__title">Singapore Weekend</h4>
+                <span class="goal-card__status goal-card__status--planning"
+                  >Planning</span
+                >
+              </div>
+              <div class="goal-card__route">
+                <span class="route-segment">BOM → SIN</span>
+                <span class="route-separator">→</span>
+                <span class="route-segment">SIN → BOM</span>
+              </div>
+              <div class="goal-card__dates">May 3-5, 2025</div>
+              <div class="goal-card__details">
+                <div class="detail-row">
+                  <span class="detail-label">Required Points:</span>
+                  <span class="detail-value">18,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Current Balance:</span>
+                  <span class="detail-value">18,500</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Surplus:</span>
+                  <span class="detail-value surplus-value">+500</span>
+                </div>
+              </div>
+              <div class="gap-bar">
+                <div class="gap-bar__fill" style="width: 100%"></div>
+                <span class="gap-label">100% Complete</span>
+              </div>
+              <div class="goal-card__preferences">
+                <span class="preference-chip">Economy Class</span>
+                <span class="preference-chip">Weekend Trip</span>
+                <span class="preference-chip">KrisFlyer</span>
+              </div>
+              <div class="goal-card__actions">
+                <button class="btn btn--primary btn--sm">Book Now</button>
+                <button class="btn btn--secondary btn--sm">View Options</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Completed Goals -->
+        <section class="completed-goals-section">
+          <h3 class="section-title">Completed Trips</h3>
+          <div class="goals-grid">
+            <!-- London Trip -->
+            <div class="goal-card goal-card--completed">
+              <div class="goal-card__header">
+                <h4 class="goal-card__title">London Christmas 2024</h4>
+                <span class="goal-card__status goal-card__status--completed"
+                  >Completed</span
+                >
+              </div>
+              <div class="goal-card__route">
+                <span class="route-segment">BOM → LHR</span>
+                <span class="route-separator">→</span>
+                <span class="route-segment">LHR → BOM</span>
+              </div>
+              <div class="goal-card__dates">December 20-27, 2024</div>
+              <div class="goal-card__details">
+                <div class="detail-row">
+                  <span class="detail-label">Points Used:</span>
+                  <span class="detail-value">48,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Value Saved:</span>
+                  <span class="detail-value">₹76,800</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">CPP:</span>
+                  <span class="detail-value">1.6</span>
+                </div>
+              </div>
+              <div class="goal-card__preferences">
+                <span class="preference-chip">Business Class</span>
+                <span class="preference-chip">Avios</span>
+                <span class="preference-chip">Holiday Trip</span>
+              </div>
+              <div class="goal-card__actions">
+                <button class="btn btn--secondary btn--sm">View Details</button>
+                <button class="btn btn--secondary btn--sm">Book Again</button>
+              </div>
+            </div>
+
+            <!-- Dubai Trip -->
+            <div class="goal-card goal-card--completed">
+              <div class="goal-card__header">
+                <h4 class="goal-card__title">Dubai Business 2024</h4>
+                <span class="goal-card__status goal-card__status--completed"
+                  >Completed</span
+                >
+              </div>
+              <div class="goal-card__route">
+                <span class="route-segment">BOM → DXB</span>
+                <span class="route-separator">→</span>
+                <span class="route-segment">DXB → BOM</span>
+              </div>
+              <div class="goal-card__dates">October 15-18, 2024</div>
+              <div class="goal-card__details">
+                <div class="detail-row">
+                  <span class="detail-label">Points Used:</span>
+                  <span class="detail-value">22,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Value Saved:</span>
+                  <span class="detail-value">₹33,000</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">CPP:</span>
+                  <span class="detail-value">1.5</span>
+                </div>
+              </div>
+              <div class="goal-card__preferences">
+                <span class="preference-chip">Economy Class</span>
+                <span class="preference-chip">Emirates</span>
+                <span class="preference-chip">Business Trip</span>
+              </div>
+              <div class="goal-card__actions">
+                <button class="btn btn--secondary btn--sm">View Details</button>
+                <button class="btn btn--secondary btn--sm">Book Again</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Goal Insights -->
+        <section class="insights-section">
+          <h3 class="section-title">Goal Insights</h3>
+          <div class="insights-grid">
+            <div class="insight-card">
+              <h4 class="insight-card__title">Points Efficiency</h4>
+              <div class="insight-card__content">
+                <p>
+                  Your current goals average <strong>1.6 cpp</strong>, which is
+                  above the recommended minimum of 1.2 cpp.
+                </p>
+                <div class="insight-metric">
+                  <span class="metric-label">Best Value Goal:</span>
+                  <span class="metric-value">Paris Summer 2025 (1.8 cpp)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="insight-card">
+              <h4 class="insight-card__title">Timeline Analysis</h4>
+              <div class="insight-card__content">
+                <p>
+                  You have <strong>3 active goals</strong> with varying
+                  completion timelines.
+                </p>
+                <div class="insight-metric">
+                  <span class="metric-label">Next Deadline:</span>
+                  <span class="metric-value">Singapore Weekend (May 3)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="insight-card">
+              <h4 class="insight-card__title">Transfer Opportunities</h4>
+              <div class="insight-card__content">
+                <p>
+                  Consider transferring from <strong>Amex MR</strong> to
+                  complete your Tokyo goal faster.
+                </p>
+                <div class="insight-metric">
+                  <span class="metric-label">Recommended Transfer:</span>
+                  <span class="metric-value">6,500 MR → KrisFlyer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span class="footer-version">v1.0.0</span>
+          <span class="footer-help">Need help? Check the About page</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

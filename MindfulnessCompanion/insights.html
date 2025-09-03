@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindfulness Companion — Insights</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="stylesheet" href="styles/print.css" />
+  </head>
+  <body class="theme--light">
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Mindfulness Companion</h1>
+          <div class="header__meta">
+            <time class="header__date" datetime="2024-01-15"
+              >Monday, January 15</time
+            >
+            <a href="#" class="header__print" onclick="window.print()"
+              >Print Weekly</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <nav class="sidebar">
+        <div class="sidebar__nav">
+          <a href="index.html" class="sidebar__link">
+            <span class="sidebar__icon">🏠</span>
+            Today
+          </a>
+          <a href="meditate.html" class="sidebar__link">
+            <span class="sidebar__icon">🧘</span>
+            Meditate
+          </a>
+          <a href="breathe.html" class="sidebar__link">
+            <span class="sidebar__icon">💨</span>
+            Breathe
+          </a>
+          <a href="checkin.html" class="sidebar__link">
+            <span class="sidebar__icon">📝</span>
+            Check-in
+          </a>
+          <a
+            href="insights.html"
+            class="sidebar__link sidebar__link--active"
+            aria-current="page"
+          >
+            <span class="sidebar__icon">📊</span>
+            Insights
+          </a>
+          <a href="library.html" class="sidebar__link">
+            <span class="sidebar__icon">📚</span>
+            Library
+          </a>
+          <a href="settings.html" class="sidebar__link">
+            <span class="sidebar__icon">⚙️</span>
+            Settings
+          </a>
+          <a href="about.html" class="sidebar__link">
+            <span class="sidebar__icon">ℹ️</span>
+            About
+          </a>
+        </div>
+
+        <div class="sidebar__footer">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle__icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="container">
+          <section class="welcome">
+            <h2 class="welcome__title">Your Insights</h2>
+            <p class="welcome__subtitle">
+              Track your progress and celebrate your practice
+            </p>
+          </section>
+
+          <section class="stats-overview">
+            <h3 class="section-title">This Week's Summary</h3>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile__value">7</div>
+                <div class="stat-tile__label">Days in a Row</div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">45</div>
+                <div class="stat-tile__label">Total Minutes</div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">4.2</div>
+                <div class="stat-tile__label">Avg Stress Level</div>
+              </div>
+
+              <div class="stat-tile">
+                <div class="stat-tile__value">6.4</div>
+                <div class="stat-tile__label">Avg Daily Minutes</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="trends">
+            <h3 class="section-title">Trends & Patterns</h3>
+            <div class="trend-blocks">
+              <div class="trend-block">
+                <h4 class="trend-block__title">Weekly Stress Levels</h4>
+                <div class="trend-block__chart">
+                  <div class="trend-block__bars">
+                    <div class="trend-block__bar trend-block__bar--day-1"></div>
+                    <div class="trend-block__bar trend-block__bar--day-2"></div>
+                    <div class="trend-block__bar trend-block__bar--day-3"></div>
+                    <div class="trend-block__bar trend-block__bar--day-4"></div>
+                    <div class="trend-block__bar trend-block__bar--day-5"></div>
+                    <div class="trend-block__bar trend-block__bar--day-6"></div>
+                    <div class="trend-block__bar trend-block__bar--day-7"></div>
+                  </div>
+                  <div class="trend-block__labels">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+                  </div>
+                </div>
+                <p class="trend-block__insight">
+                  Your stress levels have been decreasing throughout the week.
+                  Great job managing your stress!
+                </p>
+              </div>
+
+              <div class="trend-block">
+                <h4 class="trend-block__title">Daily Practice Time</h4>
+                <div class="trend-block__chart">
+                  <div class="trend-block__bars">
+                    <div class="trend-block__bar trend-block__bar--day-1"></div>
+                    <div class="trend-block__bar trend-block__bar--day-2"></div>
+                    <div class="trend-block__bar trend-block__bar--day-3"></div>
+                    <div class="trend-block__bar trend-block__bar--day-4"></div>
+                    <div class="trend-block__bar trend-block__bar--day-5"></div>
+                    <div class="trend-block__bar trend-block__bar--day-6"></div>
+                    <div class="trend-block__bar trend-block__bar--day-7"></div>
+                  </div>
+                  <div class="trend-block__labels">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+                  </div>
+                </div>
+                <p class="trend-block__insight">
+                  You're maintaining consistent practice time. Consistency beats
+                  intensity!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="badges-earned">
+            <h3 class="section-title">Your Badges</h3>
+            <div class="badges">
+              <div class="badge badge--unlocked">
+                <span class="badge__icon">🔥</span>
+                <span class="badge__name">Week of Calm</span>
+              </div>
+
+              <div class="badge badge--unlocked">
+                <span class="badge__icon">💨</span>
+                <span class="badge__name">Daily Breather</span>
+              </div>
+
+              <div class="badge badge--unlocked">
+                <span class="badge__icon">🌙</span>
+                <span class="badge__name">Night Wind-down</span>
+              </div>
+
+              <div class="badge badge--locked">
+                <span class="badge__icon">🧘</span>
+                <span class="badge__name">Meditation Master</span>
+              </div>
+
+              <div class="badge badge--locked">
+                <span class="badge__icon">📝</span>
+                <span class="badge__name">Journal Keeper</span>
+              </div>
+
+              <div class="badge badge--locked">
+                <span class="badge__icon">🎯</span>
+                <span class="badge__name">Focus Champion</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="insights-summary">
+            <h3 class="section-title">Personal Insights</h3>
+            <div class="insights-content">
+              <div class="insight-item">
+                <h4>Your Practice Pattern</h4>
+                <p>
+                  You tend to practice more in the morning and evening. This
+                  suggests you're naturally finding times that work well with
+                  your daily rhythm.
+                </p>
+              </div>
+
+              <div class="insight-item">
+                <h4>Stress Management</h4>
+                <p>
+                  Your stress levels are lowest on days when you practice for
+                  10+ minutes. Longer sessions seem to have a more lasting
+                  impact on your stress.
+                </p>
+              </div>
+
+              <div class="insight-item">
+                <h4>Mood Connection</h4>
+                <p>
+                  You're most likely to feel "Calm" after breathing exercises
+                  and "Energized" after meditation sessions. This can help you
+                  choose practices based on your current needs.
+                </p>
+              </div>
+
+              <div class="insight-item">
+                <h4>Body Awareness</h4>
+                <p>
+                  You frequently notice tension in your shoulders and neck.
+                  Consider incorporating more body scan practices to help
+                  release this tension.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="recommendations">
+            <h3 class="section-title">Personalized Recommendations</h3>
+            <div class="recommendations-grid">
+              <div class="recommendation-card">
+                <h4>Try Body Scan Meditation</h4>
+                <p>
+                  Since you often feel tension in your shoulders and neck, a
+                  10-minute body scan could help you release this tension and
+                  feel more relaxed.
+                </p>
+                <a href="meditate.html" class="recommendation-card__cta"
+                  >Start Body Scan</a
+                >
+              </div>
+
+              <div class="recommendation-card">
+                <h4>Morning Breathing Routine</h4>
+                <p>
+                  Your morning practice times are very consistent. Consider
+                  starting each day with 5 minutes of box breathing to set a
+                  calm tone.
+                </p>
+                <a href="breathe.html" class="recommendation-card__cta"
+                  >Practice Box Breathing</a
+                >
+              </div>
+
+              <div class="recommendation-card">
+                <h4>Evening Gratitude</h4>
+                <p>
+                  Your evening check-ins show you're often grateful for small
+                  moments. Try ending each day with a gratitude meditation to
+                  strengthen this practice.
+                </p>
+                <a href="meditate.html" class="recommendation-card__cta"
+                  >Gratitude Session</a
+                >
+              </div>
+            </div>
+          </section>
+
+          <section class="progress-celebration">
+            <h3 class="section-title">Celebrate Your Progress</h3>
+            <div class="celebration-content">
+              <div class="celebration-message">
+                <h4>🎉 You're Doing Great!</h4>
+                <p>
+                  You've maintained a daily practice for 7 days straight. That's
+                  a significant achievement! Remember, every moment of
+                  mindfulness counts, no matter how small.
+                </p>
+              </div>
+
+              <div class="progress-milestones">
+                <h4>Your Milestones</h4>
+                <ul class="milestones-list">
+                  <li>✅ First week of consistent practice</li>
+                  <li>✅ Reduced average stress from 6.8 to 4.2</li>
+                  <li>✅ Discovered your optimal practice times</li>
+                  <li>🔄 Next goal: 14 days in a row</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="weekly-report">
+            <h3 class="section-title">Weekly Report</h3>
+            <div class="report-actions">
+              <button class="btn btn--primary" onclick="window.print()">
+                Print Weekly Report
+              </button>
+              <a href="#" class="btn btn--secondary">Export Data</a>
+            </div>
+
+            <div class="print-header">
+              <div class="print-header__title">
+                Mindfulness Companion - Weekly Report
+              </div>
+              <div class="print-header__subtitle">
+                January 8 - January 15, 2024
+              </div>
+              <div class="print-header__date">
+                Generated on January 15, 2024
+              </div>
+            </div>
+
+            <div class="print-footer">
+              <p>
+                Remember: Consistency beats intensity. Every moment of
+                mindfulness matters.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">Mindfulness Companion v1.0</p>
+          <p class="footer__text">Take care of yourself</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
